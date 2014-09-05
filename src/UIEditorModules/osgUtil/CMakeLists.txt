@@ -1,0 +1,147 @@
+PROJECT(Module_osgUtil_QQuickLibrary)
+SET(PATH_TO_osg_LIBRARY   "D:/SRC/OpenSceneGraph-3.2/lib/osg.lib")
+
+ADD_DEFINITIONS (-DMETAQQUICKLIBRARY_osgUtil_LIBRARY)
+set(PATHTOHEADER ${PROJECT_SOURCE_DIR}/../src/ )
+	INCLUDE_directories(${PATHTOHEADER})
+			SET(SOURCES_CPP  
+osgUtil_MetaQQuickLib.cpp
+osgUtil_AddRangeOperatorQQQ.cpp
+osgUtil_BaseOptimizerVisitorQQQ.cpp
+osgUtil_CubeMapGeneratorQQQ.cpp
+osgUtil_CullVisitorQQQ.cpp
+osgUtil_DelaunayConstraintQQQ.cpp
+osgUtil_DelaunayTriangulatorQQQ.cpp
+osgUtil_DisplayRequirementsVisitorQQQ.cpp
+osgUtil_DrawElementTypeSimplifierQQQ.cpp
+osgUtil_DrawElementTypeSimplifierVisitorQQQ.cpp
+osgUtil_EdgeCollectorQQQ.cpp
+osgUtil_GLObjectsOperationQQQ.cpp
+osgUtil_GLObjectsVisitorQQQ.cpp
+osgUtil_GeometryCollectorQQQ.cpp
+osgUtil_HalfWayMapGeneratorQQQ.cpp
+osgUtil_HighlightMapGeneratorQQQ.cpp
+osgUtil_HitQQQ.cpp
+osgUtil_IncrementalCompileOperationQQQ.cpp
+osgUtil_IndexMeshVisitorQQQ.cpp
+osgUtil_IntersectVisitorQQQ.cpp
+osgUtil_IntersectionVisitorQQQ.cpp
+osgUtil_IntersectorQQQ.cpp
+osgUtil_IntersectorGroupQQQ.cpp
+osgUtil_LessDepthSortFunctorQQQ.cpp
+osgUtil_LineSegmentIntersectorQQQ.cpp
+osgUtil_MultiplyRangeOperatorQQQ.cpp
+osgUtil_OptimizerQQQ.cpp
+osgUtil_PerlinNoiseQQQ.cpp
+osgUtil_PickVisitorQQQ.cpp
+osgUtil_PlaneIntersectorQQQ.cpp
+osgUtil_PolytopeIntersectorQQQ.cpp
+osgUtil_PositionalStateContainerQQQ.cpp
+osgUtil_PrintVisitorQQQ.cpp
+osgUtil_ReflectionMapGeneratorQQQ.cpp
+osgUtil_RenderBinQQQ.cpp
+osgUtil_RenderLeafQQQ.cpp
+osgUtil_RenderStageQQQ.cpp
+osgUtil_ReversePrimitiveFunctorQQQ.cpp
+osgUtil_SceneGraphBuilderQQQ.cpp
+osgUtil_SceneViewQQQ.cpp
+osgUtil_ShaderGenCacheQQQ.cpp
+osgUtil_ShaderGenVisitorQQQ.cpp
+osgUtil_SimplifierQQQ.cpp
+osgUtil_SmoothingVisitorQQQ.cpp
+osgUtil_StateGraphQQQ.cpp
+osgUtil_StateToCompileQQQ.cpp
+osgUtil_StatisticsQQQ.cpp
+osgUtil_StatsVisitorQQQ.cpp
+osgUtil_TangentSpaceGeneratorQQQ.cpp
+osgUtil_TessellatorQQQ.cpp
+osgUtil_TransformAttributeFunctorQQQ.cpp
+osgUtil_TransformCallbackQQQ.cpp
+osgUtil_TriStripVisitorQQQ.cpp
+osgUtil_UpdateVisitorQQQ.cpp
+osgUtil_VertexAccessOrderVisitorQQQ.cpp
+osgUtil_VertexCacheMissVisitorQQQ.cpp
+osgUtil_VertexCacheVisitorQQQ.cpp
+osgUtil_dereference_clearQQQ.cpp
+osgUtil_dereference_lessQQQ.cpp
+	)
+	SET(PROJECT_INCLUDES
+osgUtil_MetaQQuickLib.hpp
+osgUtil_AddRangeOperatorQQQ.hpp
+osgUtil_BaseOptimizerVisitorQQQ.hpp
+osgUtil_CubeMapGeneratorQQQ.hpp
+osgUtil_CullVisitorQQQ.hpp
+osgUtil_DelaunayConstraintQQQ.hpp
+osgUtil_DelaunayTriangulatorQQQ.hpp
+osgUtil_DisplayRequirementsVisitorQQQ.hpp
+osgUtil_DrawElementTypeSimplifierQQQ.hpp
+osgUtil_DrawElementTypeSimplifierVisitorQQQ.hpp
+osgUtil_EdgeCollectorQQQ.hpp
+osgUtil_GLObjectsOperationQQQ.hpp
+osgUtil_GLObjectsVisitorQQQ.hpp
+osgUtil_GeometryCollectorQQQ.hpp
+osgUtil_HalfWayMapGeneratorQQQ.hpp
+osgUtil_HighlightMapGeneratorQQQ.hpp
+osgUtil_HitQQQ.hpp
+osgUtil_IncrementalCompileOperationQQQ.hpp
+osgUtil_IndexMeshVisitorQQQ.hpp
+osgUtil_IntersectVisitorQQQ.hpp
+osgUtil_IntersectionVisitorQQQ.hpp
+osgUtil_IntersectorQQQ.hpp
+osgUtil_IntersectorGroupQQQ.hpp
+osgUtil_LessDepthSortFunctorQQQ.hpp
+osgUtil_LineSegmentIntersectorQQQ.hpp
+osgUtil_MultiplyRangeOperatorQQQ.hpp
+osgUtil_OptimizerQQQ.hpp
+osgUtil_PerlinNoiseQQQ.hpp
+osgUtil_PickVisitorQQQ.hpp
+osgUtil_PlaneIntersectorQQQ.hpp
+osgUtil_PolytopeIntersectorQQQ.hpp
+osgUtil_PositionalStateContainerQQQ.hpp
+osgUtil_PrintVisitorQQQ.hpp
+osgUtil_ReflectionMapGeneratorQQQ.hpp
+osgUtil_RenderBinQQQ.hpp
+osgUtil_RenderLeafQQQ.hpp
+osgUtil_RenderStageQQQ.hpp
+osgUtil_ReversePrimitiveFunctorQQQ.hpp
+osgUtil_SceneGraphBuilderQQQ.hpp
+osgUtil_SceneViewQQQ.hpp
+osgUtil_ShaderGenCacheQQQ.hpp
+osgUtil_ShaderGenVisitorQQQ.hpp
+osgUtil_SimplifierQQQ.hpp
+osgUtil_SmoothingVisitorQQQ.hpp
+osgUtil_StateGraphQQQ.hpp
+osgUtil_StateToCompileQQQ.hpp
+osgUtil_StatisticsQQQ.hpp
+osgUtil_StatsVisitorQQQ.hpp
+osgUtil_TangentSpaceGeneratorQQQ.hpp
+osgUtil_TessellatorQQQ.hpp
+osgUtil_TransformAttributeFunctorQQQ.hpp
+osgUtil_TransformCallbackQQQ.hpp
+osgUtil_TriStripVisitorQQQ.hpp
+osgUtil_UpdateVisitorQQQ.hpp
+osgUtil_VertexAccessOrderVisitorQQQ.hpp
+osgUtil_VertexCacheMissVisitorQQQ.hpp
+osgUtil_VertexCacheVisitorQQQ.hpp
+osgUtil_dereference_clearQQQ.hpp
+osgUtil_dereference_lessQQQ.hpp
+)
+	INCLUDE_DIRECTORIES("../../../../MetaQQuickInterfaceLib")
+include_directories(
+${CMAKE_CURRENT_BINARY_DIR}
+"${CMAKE_CURRENT_BINARY_DIR}/include"
+)
+
+ 
+
+QT5_WRAP_CPP(PROJECT_INCLUDES_MOC_OSG_UTIL    ${PROJECT_INCLUDES}  ) 
+
+SET(LIBRARY_OUTPUT_PATH ${CMAKE_HOME_DIRECTORY}/bin/PlugIns)
+
+ADD_LIBRARY(${PROJECT_NAME} MODULE ${SOURCES_CPP} ${PROJECT_INCLUDES_MOC_OSG_UTIL} )
+TARGET_LINK_LIBRARIES(${PROJECT_NAME}
+MetaQQuickLibraryLib
+${Boost_LIBRARIES}
+)
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PROJECT_LABEL "Module UIEditor_osgUtil"   )
+#COMPILE_FLAGS -std=c++11

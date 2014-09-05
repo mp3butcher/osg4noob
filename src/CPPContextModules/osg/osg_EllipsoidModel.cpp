@@ -1,0 +1,17 @@
+#include "osg_EllipsoidModel.hpp"
+#include <list>
+#include <iostream>
+#include <typeinfo>
+#include <memory>
+#include "Export.h"
+#include <MetaClass.h>
+#include <osg/CoordinateSystemNode>
+#include <osg/ref_ptr>
+
+using namespace std;
+using namespace pmoc;
+	  Instance osg_EllipsoidModel::createInstance(){
+osg::ref_ptr<osg::EllipsoidModel> realinstance				;
+realinstance = new osg::EllipsoidModel ()					;
+_managedinstances.insert(realinstance);
+	 return(Instance(this,(void*)realinstance.get()								));}
