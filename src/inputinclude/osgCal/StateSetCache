@@ -1,0 +1,387 @@
+/* -*- c++ -*-
+    Copyright (C) 2007 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__STATE_SET_CACHE_H__
+#define __OSGCAL__STATE_SET_CACHE_H__
+
+#include <stdexcept>
+#include <map>
+
+#include <osg/Texture2D>
+#include <osg/Referenced>
+#include <osg/Material>
+#include <osgCal/Export>
+#include <osgCal/Material>
+#include <osgCal/MeshData>
+#include <osgCal/MeshParameters>
+#include <osgCal/ShadersCache>
+
+namespace osgCal
+{
+    template < typename T >
+    struct ref_ptr_less : std::binary_function< osg::ref_ptr< T >, osg::ref_ptr< T >, bool >
+    {
+            bool operator () ( const osg::ref_ptr< T >& a,
+                               const osg::ref_ptr< T >& b ) const
+            {
+                if ( a.get() == b.get() )
+                {
+                    return false;
+                }
+                else
+                {
+                    return *a.get() < *b.get();
+                }
+            }
+    };
+
+    template < typename T, typename Second >
+    struct ref_ptr_second_less :
+            std::binary_function< std::pair< osg::ref_ptr< T >, Second >,
+                                  std::pair< osg::ref_ptr< T >, Second >,
+                                  bool >
+    {
+            bool operator () ( const std::pair< osg::ref_ptr< T >, Second >& a,
+                               const std::pair< osg::ref_ptr< T >, Second >& b ) const
+            {
+//                (a < b ? true : ( b < a ? false : t ))
+                if ( a.first.get() == b.first.get() )
+                {
+                    return a.second < b.second;
+                }
+                else if ( *a.first.get() < *b.first.get() )
+                {
+                    return true;
+                }
+                else if ( *b.first.get() < *a.first.get() )
+                {
+                    return false;
+                }
+                else
+                {
+                    return a.second < b.second;
+                }
+            }
+    };
+
+    /**
+     * To maximize state sharing we use separate caches for
+     * osg::Material, osg::Texture2D, osg::StateSet (SoftwareMaterial,
+     * for software meshes),
+     * osg::Program and osg::StateSet (Material, with shaders).
+     *
+     * Here is an internal cache hierarchy (the keys are shown in brakets):
+     *
+     * HardwareMeshStateSetCache[Material]
+     *  |- SoftwareMeshStateSetCache[SoftwareMaterial]
+     *  |- -|- TexturesCache[TextureDesc]
+     *  |   \- MaterialsCache[OsgMaterial]
+     *  \- ShadersCache[ShaderFlags]
+     */
+    class MaterialsCache : public osg::Referenced
+    {
+        public:
+            typedef osg::ref_ptr< OsgMaterial > Key;
+            osg::Material* get( const Key& md );
+
+        private:
+            typedef std::map< Key,
+                              osg::Material*,
+                              ref_ptr_less< OsgMaterial > > Map;
+            Map cache;
+
+            osg::Material* createMaterial( const Key& desc );
+    };
+
+    class TexturesCache : public osg::Referenced
+    {
+        public:
+            osg::Texture2D* get( const TextureDesc& td );
+
+        private:
+            typedef std::map< TextureDesc, osg::Texture2D* > Map;
+            Map cache;
+
+            osg::Texture2D* createTexture( const TextureDesc& fileName )
+                throw (std::runtime_error);
+    };
+
+    class SwMeshStateSetCache : public osg::Referenced
+    {
+        public:
+            SwMeshStateSetCache( MaterialsCache* mc,
+                                 TexturesCache*  tc );
+
+            typedef osg::ref_ptr< SoftwareMaterial > Key;
+
+            osg::StateSet* get( const Key& swsd );
+
+        private:
+            typedef std::map< Key,
+                              osg::StateSet*,
+                              ref_ptr_less< SoftwareMaterial >
+                              > Map;
+
+            Map cache;
+            osg::ref_ptr< MaterialsCache > materialsCache;
+            osg::ref_ptr< TexturesCache >  texturesCache;
+
+            osg::StateSet* createSwMeshStateSet( const Key& swsd );
+    };
+
+	 class HwInstancingMeshStateSetCache : public osg::Referenced
+    {
+        public:
+            HwInstancingMeshStateSetCache( SwMeshStateSetCache* swssc,
+                                 TexturesCache*       tc,
+                                 ShadersCache*        sc );
+
+            typedef osg::ref_ptr< Material > MKey;
+
+            osg::StateSet* get( const MKey& swsd,
+                                int         bonesCount,
+                                MeshParameters* p );
+
+            struct HWKey
+            {
+                    int bonesCount;
+                    osg::Fog::Mode fogMode;
+                    bool useDepthFirstMesh;
+
+                    HWKey( int _bonesCount,
+                           osg::Fog::Mode _fogMode,
+                           bool _useDepthFirstMesh )
+                        : bonesCount( _bonesCount )
+                        , fogMode( _fogMode )
+                        , useDepthFirstMesh( _useDepthFirstMesh )
+                    {}
+            };
+
+        private:
+            // map from < state desc, < bones count, useDepthFirstMesh > >
+            typedef std::pair< MKey, HWKey > Key;
+            typedef std::map< Key,
+                              osg::StateSet*,
+                              ref_ptr_second_less< Material, HWKey >
+                              > Map;
+
+            Map cache;
+            osg::ref_ptr< SwMeshStateSetCache > swMeshStateSetCache;
+            osg::ref_ptr< TexturesCache >       texturesCache;
+            osg::ref_ptr< ShadersCache >        shadersCache;
+
+            osg::StateSet* createHwInstancingMeshStateSet( const Key& matAndBones );
+    };
+    OSGCAL_EXPORT bool operator < ( const HwInstancingMeshStateSetCache::HWKey& k1,
+                                    const HwInstancingMeshStateSetCache::HWKey& k2 );
+
+    class HwMeshStateSetCache : public osg::Referenced
+    {
+        public:
+            HwMeshStateSetCache( SwMeshStateSetCache* swssc,
+                                 TexturesCache*       tc,
+                                 ShadersCache*        sc );
+
+            typedef osg::ref_ptr< Material > MKey;
+
+            osg::StateSet* get( const MKey& swsd,
+                                int         bonesCount,
+                                MeshParameters* p );
+
+            struct HWKey
+            {
+                    int bonesCount;
+                    osg::Fog::Mode fogMode;
+                    bool useDepthFirstMesh;
+
+                    HWKey( int _bonesCount,
+                           osg::Fog::Mode _fogMode,
+                           bool _useDepthFirstMesh )
+                        : bonesCount( _bonesCount )
+                        , fogMode( _fogMode )
+                        , useDepthFirstMesh( _useDepthFirstMesh )
+                    {}
+            };
+
+        private:
+            // map from < state desc, < bones count, useDepthFirstMesh > >
+            typedef std::pair< MKey, HWKey > Key;
+            typedef std::map< Key,
+                              osg::StateSet*,
+                              ref_ptr_second_less< Material, HWKey >
+                              > Map;
+
+            Map cache;
+            osg::ref_ptr< SwMeshStateSetCache > swMeshStateSetCache;
+            osg::ref_ptr< TexturesCache >       texturesCache;
+            osg::ref_ptr< ShadersCache >        shadersCache;
+
+            osg::StateSet* createHwMeshStateSet( const Key& matAndBones );
+    };
+    OSGCAL_EXPORT bool operator < ( const HwMeshStateSetCache::HWKey& k1,
+                                    const HwMeshStateSetCache::HWKey& k2 );
+
+    /////////////////Blendshapes//////////////////////////
+
+	 class HwBlendShapeInstancingMeshStateSetCache : public osg::Referenced
+    {
+        public:
+       const  MeshData* curmeshdata;//access to blendshapes
+
+            HwBlendShapeInstancingMeshStateSetCache( SwMeshStateSetCache* swssc,
+                                 TexturesCache*       tc,
+                                 ShadersCache*        sc );
+
+            typedef osg::ref_ptr< Material > MKey;
+
+            osg::StateSet* get( const MKey& swsd,
+                                int         bonesCount,
+                                MeshParameters* p ,const MeshData*d );
+
+            struct HWKey
+            {
+                    int bonesCount;
+                    osg::Fog::Mode fogMode;
+                    bool useDepthFirstMesh;
+                    std::string blendshapemesh;
+
+                    HWKey( int _bonesCount,
+                           osg::Fog::Mode _fogMode,
+                           bool _useDepthFirstMesh, std::string _blendshapemesh )
+                        : bonesCount( _bonesCount )
+                        , fogMode( _fogMode )
+                        , useDepthFirstMesh( _useDepthFirstMesh )
+                        , blendshapemesh( _blendshapemesh )
+                    {}
+            };
+
+        private:
+            // map from < state desc, < bones count, useDepthFirstMesh > >
+            typedef std::pair< MKey, HWKey > Key;
+            typedef std::map< Key,
+                              osg::StateSet*,
+                              ref_ptr_second_less< Material, HWKey >
+                              > Map;
+
+            Map cache;
+            osg::ref_ptr< SwMeshStateSetCache > swMeshStateSetCache;
+            osg::ref_ptr< TexturesCache >       texturesCache;
+            osg::ref_ptr< ShadersCache >        shadersCache;
+
+            osg::StateSet* createHwBlendShapeInstancingMeshStateSet( const Key& matAndBones );
+    };
+    OSGCAL_EXPORT bool operator < ( const HwBlendShapeInstancingMeshStateSetCache::HWKey& k1,
+                                    const HwBlendShapeInstancingMeshStateSetCache::HWKey& k2 );
+
+    class HwBlendShapeMeshStateSetCache : public osg::Referenced
+    {
+        public:  const  MeshData* curmeshdata;//access to blendshapes
+
+            HwBlendShapeMeshStateSetCache( SwMeshStateSetCache* swssc,
+                                 TexturesCache*       tc,
+                                 ShadersCache*        sc );
+
+            typedef osg::ref_ptr< Material > MKey;
+
+            osg::StateSet* get( const MKey& swsd,
+                                int         bonesCount,
+                                MeshParameters* p,const MeshData*d );
+
+            struct HWKey
+            {
+                    int bonesCount;
+                    osg::Fog::Mode fogMode;
+                    bool useDepthFirstMesh;
+std::string blendshapemesh;
+                    HWKey(int _bonesCount,
+                           osg::Fog::Mode _fogMode,
+                           bool _useDepthFirstMesh, std::string _blendshapemesh )
+                        : bonesCount( _bonesCount )
+                        , fogMode( _fogMode )
+                        , useDepthFirstMesh( _useDepthFirstMesh )
+                        , blendshapemesh( _blendshapemesh )
+                    {}
+
+            };
+
+        private:
+            // map from < state desc, < bones count, useDepthFirstMesh > >
+            typedef std::pair< MKey, HWKey > Key;
+            typedef std::map< Key,
+                              osg::StateSet*,
+                              ref_ptr_second_less< Material, HWKey >
+                              > Map;
+
+            Map cache;
+            osg::ref_ptr< SwMeshStateSetCache > swMeshStateSetCache;
+            osg::ref_ptr< TexturesCache >       texturesCache;
+            osg::ref_ptr< ShadersCache >        shadersCache;
+
+            osg::StateSet* createHwBlendShapeMeshStateSet( const Key& matAndBones );
+    };
+
+
+    OSGCAL_EXPORT bool operator < ( const HwBlendShapeMeshStateSetCache::HWKey& k1,
+                                    const HwBlendShapeMeshStateSetCache::HWKey& k2 );
+
+    ////////////////////////
+
+    class DepthMeshStateSetCache : public osg::Referenced
+    {
+        public:
+            DepthMeshStateSetCache( ShadersCache* sc )
+                : shadersCache( sc )
+            {}
+            osg::StateSet* get( const Material* material,
+                                int             bonesCount );
+
+        private:
+            // map from < bone count, sides count > to stateset
+            typedef std::map< std::pair< int, int >, osg::StateSet* > Map;
+
+            Map cache;
+            osg::ref_ptr< ShadersCache >        shadersCache;
+
+            osg::StateSet* createDepthMeshStateSet( const std::pair< int, int >& boneAndSidesCount );
+    };
+
+    class StateSetCache : public osg::Referenced
+    {
+        public:
+
+            StateSetCache();
+
+            osg::ref_ptr< SwMeshStateSetCache >     swMeshStateSetCache;
+            osg::ref_ptr< HwMeshStateSetCache >     hwMeshStateSetCache;
+            osg::ref_ptr< HwInstancingMeshStateSetCache >     hwInstancingMeshStateSetCache;
+                osg::ref_ptr< HwBlendShapeMeshStateSetCache >     hwBlendShapeMeshStateSetCache;
+            osg::ref_ptr< HwBlendShapeInstancingMeshStateSetCache >     hwBlendShapeInstancingMeshStateSetCache;
+            osg::ref_ptr< DepthMeshStateSetCache >  depthMeshStateSetCache;
+
+            /**
+             * Return global state set cache instance. Instance is
+             * keeped inside osg::observer_ptr so it will be removed
+             * when last reference to StateSetCache is removed. Also
+             * instance does not exists until first instance() call.
+             */
+            static StateSetCache* instance();
+
+    };
+
+}; // namespace osgCal
+
+#endif

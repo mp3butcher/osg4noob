@@ -1,0 +1,86 @@
+/* -*- c++ -*-
+    Copyright (C) 2007 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__CORE_MESH_H__
+#define __OSGCAL__CORE_MESH_H__
+
+#include <osgCal/Export>
+#include <osgCal/MeshData>
+#include <osgCal/Material>
+#include <osgCal/MeshParameters>
+#include <osgCal/MeshDisplayLists>
+#include <osgCal/MeshStateSets>
+
+namespace osgCal
+{
+    class CoreModel;
+    
+    /**
+     * Cal3d hardware submesh prepared for fast creation.
+     *
+     * Remark that it is not cal3d CalCoreMesh wrapper. It is hardware
+     * submesh which is actually drawn (there can be more that one
+     * CoreMesh per CalCoreMesh due to total bones count limit in
+     * shader).
+     *
+     * CalHardwareMesh as well as CalHardwareModel is not used in
+     * osgCal. All the necessary data (\c MeshData) is prepared in the
+     * MeshLoader and then loaded from meshes cache file (or from memory
+     * if there is no cache, but it is slow for large meshes and does
+     * many things that can be done offline [TBN calculation,
+     * rigidness detection, etc.]).
+     */
+    struct OSGCAL_EXPORT CoreMesh : public osg::Referenced
+    {
+        public:
+
+            /**
+             * Creation of fresh mesh from data and material.
+             * New display list is created in this case.
+             */
+            CoreMesh( const CoreModel* model,
+                      MeshData*        data,
+                      const Material*  material,
+                      const MeshParameters* ds  );
+
+            /**
+             * Creation of mesh with new material and display settings.
+             * Display list is shared in this case.
+             */
+            CoreMesh( const CoreModel* model,
+                      const CoreMesh* mesh,
+                      const Material* newMaterial,
+                      const MeshParameters* newDs  );
+
+            /**
+             * Mutable since we free some data after display lists compiled.
+             */
+            mutable osg::ref_ptr< MeshData >    data;
+
+            osg::ref_ptr< Material >            material;
+            osg::ref_ptr< MeshParameters >      parameters;
+
+            osg::ref_ptr< MeshDisplayLists >    displayLists;
+            osg::ref_ptr< MeshStateSets >       stateSets;
+
+            virtual void releaseGLObjects( osg::State* state = 0 ) const;
+
+    };
+
+}; // namespace osgCal
+
+#endif

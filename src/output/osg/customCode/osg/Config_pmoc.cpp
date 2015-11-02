@@ -1,0 +1,3 @@
+#include <osg/Config>
+//includes
+

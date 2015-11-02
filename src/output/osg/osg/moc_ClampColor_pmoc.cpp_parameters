@@ -1,0 +1,9 @@
+-ID:/SRC/PMOC/src/output/osg/../src
+-ID:/SRC/osgTRUNKSVN/include
+-ID:/SRC/PMOC/src/output
+-ID:/SRC/PMOC/src/inputinclude
+-DosgPMOC_LIBRARY
+-DWIN32
+-o
+D:/SRC/PMOC/src/output/osg/osg/moc_ClampColor_pmoc.cpp
+D:/SRC/PMOC/src/output/osg/osg/ClampColor_pmoc.hpp

@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>content/openbutton.png</file>
+    <file>content/savebutton.png</file>
+</qresource>
+</RCC>

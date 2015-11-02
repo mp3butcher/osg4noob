@@ -1,0 +1,230 @@
+/* -*- c++ -*-
+    Copyright (C) 2003 <ryu@gpul.org>
+    Copyright (C) 2006 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__CORE_MODEL_H__
+#define __OSGCAL__CORE_MODEL_H__
+
+#include <vector>
+#include <map>
+#include <stdexcept>
+
+#include <cal3d/cal3d.h>
+
+#include <osgCal/Export>
+#include <osgCal/CoreMesh>
+
+namespace osgCal
+{
+/**
+ * Core Model class that creates a templated core object.
+ * In order to create an animated model, a cal3d core model has to
+ * be created. Given this core model it is possible to instantiate it
+ * by creating a model which is in fact the real animated model and
+ * object which can be inserted into an osg graph.
+ */
+class OSGCAL_EXPORT CoreModel : public osg::Object
+{
+public:
+    META_Object(osgCal, CoreModel);
+
+    CoreModel();
+
+    /**
+     * Loads cal3d core model and prepare all internal stuff for fast Models creation.
+     * This function may be called only once.
+     */
+    std::string cfgFileName;
+    void load( const std::string& cfgFileName,
+               MeshParametersSelector* p = 0 ) throw (std::runtime_error);
+
+    void load( const std::string& cfgFileName,
+               MeshParameters* p ) throw (std::runtime_error)
+    {
+        load( cfgFileName, new ConstMeshParametersSelector( p ) );
+    }
+
+    /**
+     * Same as load, but doesn't throw exceptions on error.
+     */
+    bool loadNoThrow( const std::string& cfgFileName,
+                      std::string&       errorText,
+                      MeshParametersSelector* ps = 0 ) throw ();
+
+    CalCoreModel*  getCalCoreModel()  const
+    {
+        return calCoreModel;
+    }
+
+    StateSetCache* getStateSetCache() const
+    {
+        return stateSetCache.get();
+    }
+
+    float getScale() const
+    {
+        return scale;
+    }
+
+    typedef std::vector< osg::ref_ptr< CoreMesh > > MeshVector;
+
+    const MeshVector&                   getMeshes()         const
+    {
+        return meshes;
+    }
+    const std::vector< std::string >&   getAnimationNames() const
+    {
+        return animationNames;
+    }
+    const std::vector< float >&         getAnimationDurations() const
+    {
+        return animationDurations;
+    }
+
+
+void setBlendShapeBuffer(int meshid,GLfloat *data){
+_blenshapeBuffer[meshid]=data;
+}
+
+GLfloat *getBlendShapeBuffer(int meshid){
+return _blenshapeBuffer[meshid];
+}
+void setMaxBonePerMesh(GLuint i)
+    {
+        _maxbonepermesh=i;
+    }
+    const GLuint getMaxBonePerMesh()const
+    {
+        return _maxbonepermesh;
+    }
+    virtual void releaseGLObjects( osg::State* state = 0 ) const;
+protected:
+    CoreModel(const CoreModel&, const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY);
+    virtual ~CoreModel();
+
+std::map<int,GLfloat*> _blenshapeBuffer;
+
+
+
+    float               scale;
+    CalCoreModel*       calCoreModel;
+
+    osg::ref_ptr< StateSetCache > stateSetCache;
+
+    MeshVector                  meshes;
+    std::vector< std::string >  animationNames;
+    std::vector< float >        animationDurations;
+	protected:
+    GLuint _maxbonepermesh;//
+};
+
+
+#define MAX_ANIMATIONS 50
+/**Experimental Implementation of Character Animation Instancing*/
+/**Animations are sampled with constant time step and store into TBO*/
+class OSGCAL_EXPORT CoreModelGPU : public CoreModel
+{
+protected:
+   ~CoreModelGPU(){
+    delete []_metaAnim;
+    }
+public:
+    META_Object(osgCal, CoreModelGPU);
+
+    CoreModelGPU();
+    //animating sampling rate
+    //void setSamplingRate(float);
+    //const float setSamplingRate()const ;
+
+
+
+//void setBlendShapeNames(std::vector<std::string>[] ){};///hack 4 preparer
+
+
+    void setAnimBaseKeyFrames(std::vector<int> &base);
+    const	std::vector<int> &getAnimBaseKeyFrames()const
+    {
+        return _baseAnim;
+    }
+    const	std::vector<int> &getAnimEndKeyFrames()const
+    {
+        return _endAnim;
+    }
+    void setAnimEndKeyFrames(std::vector<int> &base);
+    const GLuint * getUniformMetaData()const
+    {
+        return _metaAnim;
+    }
+    void setAnimationBuffer( int m,GLfloat *   /*  [MAXBONEPERMESH][TOTALKEYFRAME][vec4]*/ buffer)
+    {
+        _animationbuffer[m]=buffer;
+    }
+
+    GLfloat* getAnimationBuffer( const  int m) const
+    {
+        return _animationbuffer.at(m);
+    }
+
+   void setMorphIdsAnimationBuffer( std::vector<GLuint>  buffer)
+    {
+        _morphidsanimationbuffer=buffer;
+    }
+
+  const std::vector<GLuint> & getMorphIdsAnimationBuffer(  ) const
+    {
+        return _morphidsanimationbuffer ;
+    }
+ void setMorphWeightsAnimationBuffer(std::vector<GLfloat>    buffer)
+    {
+        _morphweightsanimationbuffer=buffer;
+    }
+
+   const std::vector<GLfloat>& getMorphWeightsAnimationBuffer(  ) const
+    {
+        return _morphweightsanimationbuffer ;
+    }
+
+
+
+
+
+    void load( const std::string& cfgFileName,
+               MeshParameters* p ) throw (std::runtime_error);
+    CoreModelGPU(const CoreModelGPU&, const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY);
+    //     virtual ~CoreModelGPU();
+private:
+    std::vector<int> _baseAnim,_endAnim;
+    GLuint * _metaAnim;
+    std::map< const int, GLfloat *> _animationbuffer;
+    std::vector<GLuint> _morphidsanimationbuffer;
+    std::vector<GLfloat> _morphweightsanimationbuffer;
+
+
+};
+// -- CalCoreModel I/O --
+
+OSGCAL_EXPORT CalCoreModel* loadCoreModel( const std::string& cfgFileName,
+        float& scale,
+        bool ignoreMeshes = false
+       )throw (std::runtime_error);
+;
+
+OSGCAL_EXPORT void  dummyMeshload(CalCoreModel* ,const std::string& cfgFileName      ) throw (std::runtime_error);
+
+}; // namespace osgCal
+
+#endif

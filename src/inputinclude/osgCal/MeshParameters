@@ -1,0 +1,124 @@
+/* -*- c++ -*-
+    Copyright (C) 2007 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__MESH_PARAMETERS_H__
+#define __OSGCAL__MESH_PARAMETERS_H__
+
+#include <osg/Referenced>
+#include <osg/Fog>
+
+#include <osgCal/Export>
+#include <osgCal/MeshData>
+
+namespace osgCal
+{
+    /**
+     * Mesh specific parameters. They can be selected one for all
+     * meshes (at CoreModel::load stage), can be selected per core
+     * mesh in core model, can be used to create modified core meshes
+     * at Model::load stage, and can be used to change any specific mesh
+     * parameters using Mesh->changeParameters at any time.
+     */
+    struct OSGCAL_EXPORT MeshParameters : osg::Referenced
+    {
+        public:
+            MeshParameters();
+
+            /**
+             * Return global constant with default parameters.
+             */
+            static const MeshParameters* defaults();
+
+            /**
+             * Use fixed function pipeline for drawing.
+             * Use it for testing purpouses only, many
+             * features are not supported in software mode.
+             * Also switching between hw/sw rendering is not
+             * supported.
+             */
+            bool software;
+            bool instanced;
+                    
+            /**
+             * Show Tangent-Binormal-Normal basis.
+             */
+            bool showTBN; // TODO: restore it
+
+            /**
+             * Enable fog in shader (exp, exp2 or linear mode),
+             * 0 by default (no fog). Not needed for software meshes.
+             */
+            osg::Fog::Mode fogMode;
+
+            /**
+             * Draw depth only part of submesh first to reduce pixel
+             * shading overhead of processing pixels that are not
+             * visible.
+             * Remark that this option also increases vertex
+             * processing time, so it must be used only when pixel
+             * shading is a bottleneck.
+             * Also this option is ignored for transparent meshes
+             * since it will cause incorrect display to them.
+             */
+            bool useDepthFirstMesh;
+
+            /**
+             * Turn of vertex position calculation on CPU. Can cause
+             * incorrect mesh bounding boxes (some meshes may not draw
+             * when they are actually on screen). This option free
+             * some CPU resources, but use it only when model is fully
+             * visible on the screen in default mode (hence with
+             * default bounding boxes).
+             */
+            bool noSoftwareVertexUpdate;
+    };
+
+    /**
+     * Class which helps to select specific per-mesh parameters.
+     */
+    struct OSGCAL_EXPORT MeshParametersSelector : public osg::Referenced
+    {
+            virtual MeshParameters* getParameters( const MeshData* ) = 0;
+    };
+
+    struct OSGCAL_EXPORT DefaultMeshParametersSelector : public MeshParametersSelector
+    {
+            /**
+             * Return global selector instance.
+             */
+            static DefaultMeshParametersSelector* instance();
+            
+            virtual MeshParameters* getParameters( const MeshData* );
+    };
+
+    struct OSGCAL_EXPORT ConstMeshParametersSelector : public MeshParametersSelector
+    {
+            osg::ref_ptr< MeshParameters > mp;
+            ConstMeshParametersSelector( MeshParameters* p )
+                : mp( p )
+            {}
+                    
+            virtual MeshParameters* getParameters( const MeshData* )
+            {
+                return mp.get();
+            }
+    };
+
+
+}; // namespace osgCal
+
+#endif

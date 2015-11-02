@@ -1,0 +1,433 @@
+/* -*- c++ -*-
+    Copyright (C) 2003 <ryu@gpul.org>
+    Copyright (C) 2006 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__MODEL_H__
+#define __OSGCAL__MODEL_H__
+
+#include <map>
+#include <vector>
+#include <string.h>
+
+#include <osg/Group>
+#include <osg/Geometry>
+#include <osg/observer_ptr>
+
+#include <cal3d/cal3d.h>
+
+#include <osgCal/Export>
+#include <osgCal/CoreModel>
+#include <osgCal/Mesh>
+
+namespace osgCal {
+
+    // -- Mesh adding for Model::load --
+
+    class Model; // forward
+
+    /**
+     * Mesh adder used at load stage.
+     */
+    struct OSGCAL_EXPORT BasicMeshAdder : public osg::Referenced
+    {
+        virtual void add( Model* model,
+                          const CoreMesh* mesh ) = 0;
+    };
+
+    /**
+     * Default mesh adder -- it adds all meshes with default materials
+     * and display settings.
+     */
+    struct OSGCAL_EXPORT DefaultMeshAdder : public BasicMeshAdder
+    {
+        virtual void add( Model* model,
+                          const CoreMesh* mesh );
+    };
+
+    struct OSGCAL_EXPORT OneMeshAdder : public DefaultMeshAdder
+    {
+        std::string meshName;
+
+        OneMeshAdder( const std::string& mn )
+            : meshName( mn )
+        {}
+
+        virtual void add( Model* model,
+                          const CoreMesh* mesh )
+        {
+            if ( mesh->data->name == meshName )
+            {
+                DefaultMeshAdder::add( model, mesh );
+            }
+        }
+    };
+
+
+    // -- Model --
+
+    class ModelData; // forward declaration, see after Model
+    class Mesh;
+
+    class OSGCAL_EXPORT Model : public osg::Group
+    {
+
+        public:
+
+            META_Object(osgCal, Model);
+
+            Model();
+
+        public:
+
+            /**
+             * Create model from core model.
+             * This function may be called only once.
+             */
+        virtual    void load( CoreModel* coreModel,
+                       BasicMeshAdder* meshAdder = 0 );
+
+const osg::Geode* getGeode()const{return geode;}
+void setGeode(osg::Geode*g){geode=g;}
+ void setModelData (ModelData*m){modelData=m;};
+
+void addosgCalMesh(Mesh*g);
+            /**
+             * Add core model mesh to model.
+             */
+            Mesh* addMesh( const CoreMesh* mesh );
+
+            /**
+             * Remove specified mesh from the model.
+             */
+            void removeMesh( Mesh* mesh );
+
+            /**
+             * Add user node to specified bone.
+             */
+            void addNode( int boneId,
+                          osg::Node* node );
+
+           /**
+             * Remove user node from specified bone.
+             */
+            void removeNode( int boneId,
+                             osg::Node* node );
+
+            /**
+             * Add user drawable to specified bone.
+             */
+            void addDrawable( int boneId,
+                              osg::Drawable* drawable );
+
+            /**
+             * Remove user drawable from specified bone.
+             */
+            void removeDrawable( int boneId,
+                                 osg::Drawable* drawable );
+
+            const CoreModel* getCoreModel() const;
+            const ModelData* getModelData() const { return modelData.get(); }
+            CalModel*        getCalModel();
+
+            /**
+             * Enable/disable automatic model updating using
+             * UpdateCallback. Enabled by default.
+             */
+            void setAutoUpdate( bool enabled );
+
+            /**
+             * Update meshes.
+             */
+           virtual     void update( double deltaTime );
+
+            /**
+             * Forced update of meshes, use it when you change bone
+             * positions manually and don't run any animations.
+             */
+          virtual   void update();
+
+            /**
+             * Blend animation cycle to the specified weight
+             * in specified time.
+             */
+            void blendCycle( int id,
+                             float weight,
+                             float delay,
+                             float timeFactor = 1.0f );
+
+            /**
+             * Clear animation cycle in specified amount of time.
+             */
+            void clearCycle( int id,
+                             float delay );
+
+            /**
+             * Run single animation:
+             *
+             * ^ weight            autoLock=true
+             * |                  /
+             * |   * * * * * * * * *
+             * |  *|           |*   autoLock=false
+             * | * |           | * /
+             * |*  |           |  *
+             * 0---+-----------+---0--> time
+             * | 1 |     2     | 3 |
+             *
+             * 1 - delayIn;
+             * 3 - delayOut
+             * 1+2+3 - animation duration.
+             *
+             * If autoLock is true, then there is no fade out stage,
+             * animation finishes and stay.
+             */
+            void executeAction( int id,
+                                float delayIn = 0.0f,
+                                float delayOut = 0.0f,
+                                float weightTarget = 1.0f,
+                                bool autoLock = false,
+                                float timeFactor = 1.0f );
+
+            /**
+             * Remove specified animation.
+             */
+            void removeAction( int id );
+
+            void   setTimeFactor( double timeFactor = 1.0f );
+            double getTimeFactor() const;
+
+            typedef std::vector< Mesh* > MeshesList;
+            typedef std::map< std::string, MeshesList > MeshMap;
+
+            /**
+             * Return list of meshes corresponding to specified name.
+             */
+            const MeshesList& getMeshes( const std::string& name ) const
+                throw (std::runtime_error);
+
+            const MeshMap& getMeshMap() const { return meshes; }
+
+            /**
+             * Compiles hardware meshes state sets when accept osgUtil::GLObjectsVisitor.
+             */
+            virtual void accept( osg::NodeVisitor& nv );
+
+            /**
+             * If State is non-zero, this function releases any
+             * associated OpenGL objects for the specified graphics
+             * context.
+             *
+             * Otherwise, releases OpenGL objexts for all graphics
+             * contexts.
+             *
+             * This function is needed to remove shaders & display
+             * lists when the osg::GraphicsContext is closed from
+             * osgViewer::~Viewer().
+             *
+             * Since the scene is typically owned by osgViewer::Viewer
+             * CoreModel's destructor will be called only after
+             * GraphicsContext is already closed so display lists and
+             * shaders will be removed from non-existing context.
+             */
+            virtual void releaseGLObjects( osg::State* state = 0 ) const;
+
+        protected:
+
+            virtual ~Model();
+
+
+            Model(const Model&, const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY);
+
+            osg::ref_ptr< ModelData >   modelData;
+       protected:
+
+            MeshMap                     meshes;
+
+            /**
+             * Geode where deformable or non-rigged objects are placed.
+             */
+            osg::ref_ptr< osg::Geode >  geode;
+
+            // we use matrix transforms for rigid meshes and user nodes/drawables,
+            // one transform per bone
+            typedef std::pair< osg::MatrixTransform*, osg::Geode* > TransformAndGeode;
+            typedef std::map< int, TransformAndGeode > RigidTransformsMap;
+
+            RigidTransformsMap          rigidTransforms;
+
+            TransformAndGeode& getOrCreateTransformAndGeode( int boneId );
+
+            std::vector< Mesh* >     updatableMeshes;
+
+            /**
+             * Non updatable (rigid) meshes, needed for compiling state sets.
+             */
+            std::vector< Mesh* >     nonUpdatableMeshes;
+
+            double timeFactor;
+
+
+            void addMeshDrawable( const CoreMesh* mesh,
+                                  osg::Drawable*  drawable );
+
+            void removeMeshDrawable( const CoreMesh* mesh,
+                                     osg::Drawable*  drawable );
+
+            friend class HardwareMesh; // for add/remove depth mesh
+
+            /**
+             * For internal use only.
+             * This function is called from \c HardwareMesh::onDisplaySettingsChanged
+             * when depth mesh is requested.
+             */
+            void addDepthMesh( DepthMesh* depthMesh );
+
+            /**
+             * For internal use only.
+             * This function is called from \c HardwareMesh::onDisplaySettingsChanged
+             * when depth mesh is requested.
+             */
+            void removeDepthMesh( DepthMesh* depthMesh );
+
+            void updateMeshes();
+
+    };
+
+
+    // -- Model data --
+
+    /**
+     * Contains CalModel and skeleton updating functions. It is separated
+     * from Model to remove circular references between submeshes and
+     * model.
+     */
+    class OSGCAL_EXPORT ModelData : public osg::Object //4serializationReferenced
+    {
+        public: 
+		ModelData();
+        ModelData(const ModelData& geometry,const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY);
+META_Object(osgCal,ModelData)
+            struct BoneParams
+            {
+                    BoneParams()
+                        : bone( 0 )
+                        , deformed( false )
+                        , changed( false )
+                    {}
+
+                    CalBone*     bone;
+                    osg::Matrix3 rotation;
+                    osg::Vec3f   translation;
+                    bool         deformed;
+                    bool         changed;
+            };
+ 
+            ModelData( CoreModel* cm,
+                       Model*     m );
+                       virtual void setup();
+            ~ModelData();
+
+            /**
+             * Perform skeleton and BoneParams arrays update.
+             * Return true, if something was changed, false otherwise.
+             */
+          virtual  bool update( float deltaTime );
+
+            /**
+             * Forced update of bone matrices, use it when you change
+             * bone positions manually.
+             */
+           virtual  bool update();
+
+            CalMixer* getCalMixer() { return calMixer; }
+CalMorphTargetMixer *calMorphMixer;
+ float  morphweights [4] ;
+        int  morphids [4];
+            /**
+             * Get rotation[9] and translation[3] ready for glUniform[Matrix]3fv.
+             * Remark that you must pass not local bone index in mesh,
+             * but bone id (using MeshData::getBoneId(index)).
+             */
+            void getBoneRotationTranslation( int boneId,
+                                             GLfloat* rotation,
+                                             GLfloat* translation ) const
+            {
+                const BoneParams& b = bones[ boneId ];
+                memcpy( rotation   , b.rotation.ptr()   , 9 * sizeof( GLfloat ) );
+                memcpy( translation, b.translation.ptr(), 3 * sizeof( GLfloat ) );
+            }
+
+            osg::Matrix getBoneMatrix( int boneId ) const
+            {
+                const BoneParams&   b = bones[ boneId ];
+                const osg::Matrix3& r = b.rotation;
+                const osg::Vec3f&   t = b.translation;
+                return osg::Matrix( r[0] , r[1] , r[2] , 0.0,
+                                    r[3] , r[4] , r[5] , 0.0,
+                                    r[6] , r[7] , r[8] , 0.0,
+                                    t.x(), t.y(), t.z(), 1.0 );
+            }
+
+            /**
+             * Get bone parameters. Remark that we have
+             * (skeleton bones count + 1) bones, since we add fake
+             * non-moving bone for unrigged vertices.
+             */
+            const BoneParams& getBoneParams( int boneId ) const
+            {
+                return bones[ boneId ];
+            }
+
+      void       setModel(  Model*m) { model=m;setup(); }
+            const Model*    getModel()const { return model.get(); }
+            const CoreModel* getCoreModel() const { return coreModel; }
+            void setCoreModel(  CoreModel* c)   {  coreModel=c; setup();}
+
+
+
+
+            CalModel*        getCalModel() { return calModel; }
+
+
+            /**
+             * Returns associated model, throws error if the model was deleted.
+             */
+            Model* getModel()
+                throw (std::runtime_error);
+
+            void setUpdateForced()
+            {
+                updateForced = true;
+            }
+
+        protected:
+
+            osg::ref_ptr< CoreModel >   coreModel;
+            osg::observer_ptr< Model >  model;
+            CalModel*                   calModel;
+            CalMixer*                   calMixer;
+
+            typedef std::vector< BoneParams > BoneParamsVector;
+            BoneParamsVector            bones;
+            bool                        updateForced;
+    };
+
+
+
+
+}; // namespace osgCal
+
+#endif

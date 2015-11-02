@@ -1,0 +1,100 @@
+/* OpenSceneGraph
+*
+*  Permission is hereby granted, free of charge, to any person obtaining a copy
+*  of this software and associated documentation files (the "Software"), to deal
+*  in the Software without restriction, including without limitation the rights
+*  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+*  copies of the Software, and to permit persons to whom the Software is
+*  furnished to do so, subject to the following conditions:
+*
+*  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+*  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+*  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+*  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+*  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+*  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+*  THE SOFTWARE.
+*
+* author:      Julien Valentin 2013-10-01
+* copyright:   (C) 2013
+* license:     OpenSceneGraph Public License (OSGPL)
+*
+
+*/
+
+#ifndef OSGPINGPONGFEEDBACK
+#define OSGPINGPONGFEEDBACK 1
+#include <osg/GL2Extensions>
+#include <osg/Notify>
+#include <osg/ref_ptr>
+#include <osg/Geode>
+#include <osg/Geometry>
+#include <osg/Point>
+#include <osg/Vec3>
+#include <osg/Vec4>
+#include <osg/Program>
+#include <osg/Shader>
+#include <osg/BlendFunc>
+
+#include <osg/Uniform>
+#include <osgViewer/Viewer>
+
+#include <osg/BufferIndexBinding>
+
+namespace osgCal{
+
+///////////////////////////////////////////////////////////////////
+//hacking data
+class InitGeneratorData{
+public:
+	osg::GLExtensions* ext;
+	osg::GLExtensions * ext2;
+};
+
+
+class SomePointsGenerator:public osg::Geometry{
+public:
+	SomePointsGenerator();
+	void setRenderer(osg::Geometry*renderer);
+	GLuint getNumPrimitivesGenerated()const;
+
+protected:
+	mutable InitGeneratorData  _renderData;//ext data
+	osg::Program * _program;
+	osg::ref_ptr<osg::VertexBufferObject> genbuffer;//Renderer buffer
+	osg::Vec4Array* vAry;
+
+	virtual void drawImplementation( osg::RenderInfo& renderInfo ) const;
+};
+/////////////////////////////////////////////////////////////////////////////////////
+/*
+class SomePointsRenderer : public osg::Geometry	{
+public:
+
+	SomePointsRenderer(SomePointsGenerator*_generator){
+
+		setUseVertexBufferObjects(true);
+
+		osg::Vec4Array* vAry2 = new osg::Vec4Array;
+		vAry2->resize(_generator->getNumPrimitivesGenerated());
+		setVertexArray(vAry2);
+		addPrimitiveSet( new osg::DrawArrays( GL_LINES, 0,_generator->getNumPrimitivesGenerated()));
+
+		osg::StateSet* sset = getOrCreateStateSet();
+		///hacking rendering order
+		/*osg::BlendFunc* bf = new
+		osg::BlendFunc(osg::BlendFunc::SRC_ALPHA,
+		osg::BlendFunc::ONE_MINUS_SRC_ALPHA );
+		sset->setAttributeAndModes(bf);* /
+
+		sset->setMode( GL_LIGHTING, osg::StateAttribute::OFF );
+		getOrCreateVertexBufferObject();
+		sset->setAttribute( createRenderShader() );
+
+	}
+
+
+
+};*/
+}
+#endif

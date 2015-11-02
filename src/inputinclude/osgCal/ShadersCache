@@ -1,0 +1,96 @@
+/* -*- c++ -*-
+    Copyright (C) 2007 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__SHADERS_CACHE_H__
+#define __OSGCAL__SHADERS_CACHE_H__
+
+#include <map>
+
+#include <osg/Program>
+#include <osgCal/Export>
+#include <osgCal/Material>
+
+namespace osgCal
+{
+
+    // -- Shader cache --
+
+    inline int SHADER_FLAG_BONES(int _nbones) { return 0x10000 * _nbones; }
+
+    enum ShaderFlags
+    {
+        SHADER_FLAG_DEPTH_ONLY      =  0x1000,
+        DEPTH_ONLY_MASK             = ~0x04FF, // ignore aything except bones
+        SHADER_FLAG_TWO_SIDED       =  0x0100,
+        SHADER_FLAG_BUMP_MAPPING    =  0x0080,
+        SHADER_FLAG_FOG_MODE_MASK   = (0x0040 + 0x0020),
+        SHADER_FLAG_FOG_MODE_LINEAR = (0x0040 + 0x0020),
+        SHADER_FLAG_FOG_MODE_EXP2   =  0x0040,
+        SHADER_FLAG_FOG_MODE_EXP    =  0x0020,
+        SHADER_FLAG_RGBA            =  0x0010, // enable blending of RGBA textures
+        SHADER_FLAG_OPACITY         =  0x0008,
+        SHADER_FLAG_TEXTURING       =  0x0004,
+        SHADER_FLAG_NORMAL_MAPPING  =  0x0002,
+        SHADER_FLAG_SHINING         =  0x0001,
+        SHADER_FLAG_INSTANCING        =  0x100000,
+        SHADER_FLAG_BLENDSHAPE        =  0x1000000
+    };
+
+    int materialShaderFlags( const Material& material );
+
+    /**
+     * Set of shaders with specific flags.
+     */
+    class OSGCAL_EXPORT ShadersCache : public osg::Referenced
+    {
+        public:
+
+            ~ShadersCache();
+
+//             osg::Program* get( const Material& material,
+//                                int             bonesCount = 0,
+//                                osg::Fog::Mode  fogMode = 0 );
+
+            osg::Program* get( int flags );
+
+            /**
+             * Return global shaders cache instance. Instance is
+             * keeped inside osg::observer_ptr so it will be removed
+             * when last reference to ShadersCache is removed. Also
+             * instance does not exists until first instance() call.
+             */
+            static ShadersCache* instance();
+
+            virtual void releaseGLObjects( osg::State* state = 0 ) const;
+
+        private:
+
+            osg::Shader* getVertexShader( int flags );
+            osg::Shader* getFragmentShader( int flags );
+
+            typedef std::map< int, osg::ref_ptr< osg::Program > > ProgramsMap;
+            ProgramsMap programs;
+
+            typedef std::map< int, osg::ref_ptr< osg::Shader > > ShadersMap;
+            ShadersMap vertexShaders;
+            ShadersMap fragmentShaders;
+    };
+
+
+}; // namespace osgCal
+
+#endif

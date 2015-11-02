@@ -1,0 +1,3 @@
+#include <osgParticle/Version>
+//includes
+

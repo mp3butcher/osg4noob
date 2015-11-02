@@ -1,0 +1,174 @@
+/* -*- c++ -*-
+    Copyright (C) 2006 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__MESHDATA_H__
+#define __OSGCAL__MESHDATA_H__
+
+#include <cal3d/cal3d.h>
+
+#include <osgCal/Export>
+#include <osg/Array>
+#include <osg/PrimitiveSet>
+#include <osg/BoundingBox>
+
+namespace osgCal
+{
+struct Constants
+{
+    enum
+    {
+        MAX_BONES_PER_MESH   = 30,
+        MAX_BLENDSHAPES_PER_MODEL   = 50,
+        MAX_VERTEX_PER_MODEL = 1000000
+    };
+};
+
+typedef osg::Vec3Array      VertexBuffer;
+typedef osg::Vec4Array      WeightBuffer;
+// TODO: weight & matrixIndex dependent from bones count?
+typedef osg::Vec2Array      TexCoordBuffer;
+
+typedef osg::Vec4ubArray    MatrixIndexBuffer;
+
+/**
+ * Index buffer may be DrawElementsUByte/UShort/UInt depending
+ * from indexes count.
+ */
+typedef osg::PrimitiveSet   IndexBuffer;
+
+#ifdef OSG_CAL_BYTE_BUFFERS
+typedef osg::Vec3bArray     NormalBuffer;
+typedef osg::Vec4bArray     TangentAndHandednessBuffer;
+// byte is not supported by setTexCoordPointer,
+// but supported in setNormalPointer
+#else
+typedef osg::Vec3Array      NormalBuffer;
+typedef osg::Vec4Array      TangentAndHandednessBuffer;
+//    typedef osg::Vec4sArray     TangentAndHandednessBuffer;
+#endif
+
+// -- Mesh data --
+
+/**
+ * Mesh data that is loaded from external file or created using
+ * CalHardwareModel. This structure contains geometry part of
+ * mesh and material pointer. State sets and display lists are
+ * managed in Model/CoreModel.
+ */
+struct MeshData : public osg::Referenced
+{
+public:
+
+    MeshData()
+        : coreMaterial( 0 )
+        , rigid( false )
+        , rigidBoneId( -1 )
+        , maxBonesInfluence( 0 )
+    {}
+
+    /**
+     * Mesh name, may duplicate since for one source
+     * CalCoreMesh there can be more than one hardware mesh.
+     */
+    std::string                   name;
+
+    CalCoreMaterial*              coreMaterial;
+
+    /**
+     * Is mesh rigid?
+     * Mesh is rigid when all its vertices are
+     * rigged to one bone with weight = 1.0,
+     * or when no one vertex is rigged at all.
+     */
+    bool                          rigid;
+
+    /**
+     * Rigid mesh bone id, or -1 when mesh is not rigged at all.
+     */
+    int                           rigidBoneId;
+
+    /**
+     * Max influencing bones used to select shader. Zero for
+     * rigid meshes.
+     */
+    int                           maxBonesInfluence;
+
+    /**
+     * Map between indices in matrix index buffer and indices
+     * of bones in CalSkeleton, exists only for non-rigid meshes
+     */
+    std::vector< int >            bonesIndices;
+
+    /**
+     * Bounding box in non-deformed state.
+     */
+    osg::BoundingBox              boundingBox;
+
+    osg::ref_ptr< osg::Vec4Array >                blendshapeBuffer;
+    unsigned int numBlendShapes;//,blendshapebasevertex;
+    std::vector<std::string> blendshapeNames;
+    /**
+     * DrawElementsUInt osg::PrimitiveSet is used as index
+     * buffer to share it between meshes and use for picking.
+     */
+    osg::ref_ptr< IndexBuffer >                 indexBuffer;
+    osg::ref_ptr< VertexBuffer >                vertexBuffer;
+
+    /**
+     * weight and matrixIndex buffers exists only for
+     * non-rigid meshes.
+     */
+    osg::ref_ptr< WeightBuffer >                weightBuffer;
+    osg::ref_ptr< MatrixIndexBuffer >           matrixIndexBuffer;
+
+    osg::ref_ptr< NormalBuffer >                normalBuffer;
+
+    /**
+     * texCoordBuffer & tangentAndHandednessBuffer exists only
+     * for meshes with
+     */
+    osg::ref_ptr< TexCoordBuffer >              texCoordBuffer;
+    osg::ref_ptr< TangentAndHandednessBuffer >  tangentAndHandednessBuffer;
+
+    int getIndicesCount() const
+    {
+        return indexBuffer->getNumIndices();
+    }
+
+    int getBonesCount() const
+    {
+        return bonesIndices.size();
+    }
+    int getBoneId( int index ) const
+    {
+        return bonesIndices[ index ];
+    }
+    CalBone* getBone( int index,
+                      CalSkeleton* skeleton ) const
+    {
+        const std::vector< CalBone* >& vectorBone = skeleton->getVectorBone();
+        return vectorBone[ getBoneId( index ) ];
+    }
+
+};
+
+typedef std::vector< osg::ref_ptr< MeshData > > MeshesVector;
+
+
+}; // namespace osgCal
+
+#endif

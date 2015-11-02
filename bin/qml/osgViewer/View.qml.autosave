@@ -1,0 +1,153 @@
+import QtQuick 2.1
+import QtQuick.Window 2.0
+import QtQuick.Layouts 1.0
+import QtQuick.Controls 1.0
+
+import QtQuick.Dialogs 1.0
+import ".."
+
+FocusScope {
+    width: 320
+    height: 300
+    onXChanged: link2par.updateLinkCanvas()
+    onYChanged: link2par.updateLinkCanvas()
+    LinkToParent {
+        id: link2par
+        target: main
+    }
+
+    PropertyAnimation on x {
+        to: 300
+    }
+    PropertyAnimation on y {
+        to: 50
+    }
+    id: main
+    property var qmodel
+
+    //this
+    ColumnLayout {
+        anchors.fill: parent
+        Rectangle {
+            // main rectangle
+            id: rectangle
+            border.color: "black"
+            border.width: 3
+            radius: 10
+            color: "cyan"
+            anchors.fill: parent
+            /////CLASSIC PART BEGIN/////////////////////////////////////////////////////
+            MouseArea {
+                objectName: 'pmocmousearea' ///PMOC MANDATORY MouseArea
+
+                anchors.fill: parent
+                acceptedButtons: Qt.AllButtons
+                drag.target: main
+                drag.axis: Drag.XandYAxis
+                onClicked: if (mouse.button == Qt.LeftButton)
+                               globalEditor.setOperand(main.qmodel)
+            /////CLASSIC PART TO END/////////////////////////////////////////////////////
+            ColumnLayout {
+                id: classmain
+                objectName: "osgViewer_ViewQQQ"
+                property var osgViewer_View  //QQModel
+
+Button{width:160
+    iconSource :'../../content/openbutton.png'
+   onClicked :fileDialog.visible=true 
+   
+   FileDialog {
+modality:Qt.ApplicationModal
+     nameFilters: [ "osg File(*.osgt *.osgb)", "All files (*)" ]
+    visible:false 
+    id: fileDialog
+    title: "Please choose a file"
+    onAccepted: {
+    globalEditor.osg_Node_added.connect( classmain.osgViewer_View.childAdded)
+        console.log("You chose: " + fileDialog.fileUrls)
+        classmain.osgViewer_View.addChildFromFile(fileDialog.fileUrls[0])
+    }
+    onRejected: {
+        console.log("Canceled")
+        Qt.quit()
+    }
+    Component.onCompleted: visible = false
+}
+    }
+                /*onCompleted called befor property setting
+                Component.onCompleted:
+    globalEditor.osg_Node_added.connect( classmain.osgViewer_View.childAdded)*/
+
+
+ 
+                
+//onChildrenChanged:  globalEditor.osg_Node_added.connect(   classmain.osgViewer_View.childAdded)
+ 
+ //  width: parent.width-10
+            //    height: 240
+           //     opacity: 1.0
+           //     color: "orange"
+                //	x:300
+                y: 50
+	//x:5
+             //   anchors.left: parent.left-5
+            //    anchors.right: parent.right+5
+
+                ListView {
+
+                   // anchors.left: parent.left
+               // anchors.right: parent.right
+                
+                   // y: 100
+                   width: 400
+                    height: 200
+                    model: classmain.osgViewer_View.children
+                    delegate: Rectangle {
+                        property int m_iIndex: model.index
+                        id: caseDrawable
+                        height: 25
+// anchors.fill: parent 
+ anchors.leftMargin:5
+                        width: parent.width-10
+                        color: "red"
+                        MouseArea {
+
+                            anchors.fill: parent
+
+                            onDoubleClicked: {
+                                console.log(model)
+
+                                console.log(parent.m_iIndex)
+                                classmain.osgViewer_View.childSelected(
+                                            parent.m_iIndex)
+
+                                //soft way to maintain child preview
+
+                                
+                            }
+                            Grid {
+                                columns: 2
+                                width: 200
+                                id: layout
+                                anchors.fill: parent
+
+                                Label {
+                                    text: model.type
+                                }
+                                TextEdit {
+
+                                    text: model.name
+                                    onTextChanged: {
+                                        model.name = text
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+}
+

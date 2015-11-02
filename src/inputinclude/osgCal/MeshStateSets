@@ -1,0 +1,56 @@
+/* -*- c++ -*-
+    Copyright (C) 2007 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__MESH_STATE_SETS_H__
+#define __OSGCAL__MESH_STATE_SETS_H__
+
+#include <osg/StateSet>
+#include <stdexcept>
+
+#include <cal3d/cal3d.h>
+
+#include <osgCal/Export>
+#include <osgCal/StateSetCache>
+#include <osgCal/MeshData>
+#include <osgCal/Material>
+#include <osgCal/MeshParameters>
+
+namespace osgCal
+{
+    /**
+     * List of state sets used by Model's meshes
+     */
+    struct MeshStateSets : public osg::Referenced
+    {
+        public:
+            MeshStateSets( StateSetCache*  c,
+                           const MeshData* d,
+                           const Material* m,
+                           const MeshParameters* p );
+                    
+            osg::ref_ptr< osg::StateSet >   stateSet;
+            osg::ref_ptr< osg::StateSet >   staticStateSet; ///< zero bones state set
+
+            osg::ref_ptr< osg::StateSet >   depthOnly; ///< depth only hw state ste
+            osg::ref_ptr< osg::StateSet >   staticDepthOnly; ///< zero bones state set
+
+            virtual void releaseGLObjects( osg::State* state = 0 ) const;
+    };
+
+}; // namespace osgCal
+
+#endif

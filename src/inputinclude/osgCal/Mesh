@@ -1,0 +1,96 @@
+/* -*- c++ -*-
+    Copyright (C) 2007 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__MESH_H__
+#define __OSGCAL__MESH_H__
+
+#include <osg/Version>
+#include <osg/Geometry>
+#include <osg/PrimitiveSet>
+#include <osg/Fog>
+#include <osgUtil/GLObjectsVisitor>
+
+#include <osgCal/Export>
+#include <osgCal/DepthMesh>
+#include <osgCal/Model>
+
+namespace osgCal
+{
+    class ModelData;
+
+    /**
+     * \c osg::Drawable used to render \c Mesh.
+     */
+    class OSGCAL_EXPORT Mesh : public osg::Geometry
+    {
+        public:
+  Mesh();
+
+        /** Copy constructor using CopyOp to manage deep vs shallow copy. */
+        Mesh(const Mesh& geometry,const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY);
+     META_Node(osgCal,Mesh)
+
+
+            Mesh( ModelData*      modelData,
+                  const CoreMesh* mesh );
+
+
+virtual void setup();
+ void setModelData (ModelData*modelData);
+            const ModelData * getModelData ( )const{return modelData.get();}
+            void setCoreMesh (CoreMesh* mesh);
+
+            virtual void update() {};//= 0;
+
+          virtual  osg::BoundingBox computeBoundingBox() const { return boundingBox; }
+
+            const CoreMesh* getCoreMesh() const { return mesh.get(); }
+
+            /**
+             * Return depth submesh for this mesh, can be NULL (for non-opaque meshes).
+             */
+            DepthMesh* getDepthMesh() { return depthMesh.get(); }
+
+            /**
+             * We don't support osgUtil::TransformAttributeFunctor
+             * since for ridig meshes we share the same vertex
+             * buffer that must not be transformed for each model.
+             */
+            virtual bool supports( const AttributeFunctor& ) { return false; }
+
+            /**
+             * For compiling all statesets when Model accepts osgUtil::GLObjectsVisitor.
+             * Don't used by software meshes, used by depth and hardware ones.
+             */
+            virtual void accept( osgUtil::GLObjectsVisitor* ) {}
+
+            void changeParameters( const MeshParameters* );
+      protected:
+
+            osg::ref_ptr< ModelData >             modelData;
+            osg::ref_ptr< const CoreMesh >        mesh;
+            osg::BoundingBox                      boundingBox;
+            bool                                  deformed;
+
+            osg::ref_ptr< DepthMesh >             depthMesh;
+
+            virtual void onParametersChanged( const MeshParameters* previousParameters );
+    };
+
+}; //namespace osgCal
+
+#endif

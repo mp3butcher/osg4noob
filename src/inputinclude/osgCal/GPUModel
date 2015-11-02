@@ -1,0 +1,70 @@
+/* -*- c++ -*-
+    Copyright (C) 2003 <ryu@gpul.org>
+    Copyright (C) 2006 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__GPUModel_H__
+#define __OSGCAL__GPUModel_H__
+
+#include <map>
+#include <vector>
+#include <string.h>
+
+#include <osg/Group>
+#include <osg/Geometry>
+#include <osg/observer_ptr>
+
+#include <cal3d/cal3d.h>
+
+#include <osgCal/Export>
+#include <osgCal/Model>
+#include <osg/TextureBuffer>
+
+#include <osgCal/Mesh>
+
+namespace osgCal
+{
+
+// -- Mesh adding for Model::load --
+
+/**Experimental Implementation of Character Animation Instancing*/
+/**Animations are sampled with constant time step and store into TBO (COremodelGPU)*/
+/**GPUModel use instance cloud reduction culling*/
+/**CONCEPT TODO: GPU controlled mixer  */
+/**CODE TODO:Try to make instance culling a Node/CullCallBakc and use it here too*/
+/**Make it more flexible for user..derive from Model can be a problem too*/
+class OSGCAL_EXPORT GPUModel :public Model
+{
+public:
+
+    META_Object(osgCal, GPUModel);
+
+    GPUModel();
+GPUModel(const osgCal::GPUModel&, const osg::CopyOp&);
+    virtual    void load( CoreModel* coreModel,
+                          BasicMeshAdder* meshAdder = 0 );
+    
+   // virtual   const osg::BoundingSphere& getBound() const;
+  //  virtual osg::BoundingBox computeBounds() const;
+//   virtual void traverse(osg::NodeVisitor& nv);
+   
+
+};
+
+
+}; // namespace osgCal
+
+#endif

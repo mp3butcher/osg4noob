@@ -1,0 +1,133 @@
+import QtQuick 2.0
+import QtQuick.Window 2.0
+import QtQuick.Layouts 1.0
+import QtQuick.Controls 1.0
+
+import QtQuick 2.1
+
+
+//import osg_GeodeQQQ_QModel 1.0 //avoid the use of signal but do shit with polymorphic father
+import ".."
+
+FocusScope {
+    width: 320
+    height: 300
+    onXChanged: link2par.updateLinkCanvas()
+    onYChanged: link2par.updateLinkCanvas()
+    LinkToParent {
+        id: link2par
+        target: main
+    }
+
+    PropertyAnimation on x {
+        to: 300
+    }
+    PropertyAnimation on y {
+        to: 50
+    }
+    id: main
+    property var qmodel
+
+    //this
+    ColumnLayout {
+        anchors.fill: parent
+        Rectangle {
+            // main rectangle
+            id: rectangle
+            border.color: "black"
+            border.width: 3
+            radius: 10
+            color: "cyan"
+            anchors.fill: parent
+            /////CLASSIC PART BEGIN/////////////////////////////////////////////////////
+            MouseArea {
+                objectName: 'pmocmousearea' ///PMOC MANDATORY MouseArea
+
+                anchors.fill: parent
+                acceptedButtons: Qt.AllButtons
+                drag.target: main
+                drag.axis: Drag.XandYAxis
+                onClicked: if (mouse.button == Qt.LeftButton)
+                               globalEditor.setOperand(main.qmodel)
+
+                ////////////////////////////////CLASSIC PART TO END/////////////////////////////////////////////////
+                /////CLASSIC PART TO END//////////////////////////////////////////////////////////////////////
+
+                //QQModel
+                Column {
+                    y: 20
+                    objectName: "osg_GeometryQQQ"
+                    property var osg_Geometry
+                    id: obj
+
+                    Button {
+                        // anchors.top:parent.top+100
+                        x: 10
+                        width: 200
+                        text: 'generate tangentspace'
+
+                        onClicked: obj.osg_Geometry.generateTangentSpace(0, 6)
+                    }
+
+                    ScrollView {
+                        height: 75
+                        x: 10
+                        ListView {
+                            //                        y:25
+
+                            // anchors.fill:parent
+
+                            // anchors.left: parent.left
+                            // anchors.right: parent.right
+
+                            // y: 100
+                            // width: 400
+                            //height: 200
+                            model: obj.osg_Geometry.vertexAttribArrays
+
+                            delegate: Rectangle {
+                                property int m_iIndex: model.index
+                                id: caseDrawable
+                                height: 25
+                                width:120
+                                // anchors.fill: parent
+                                //anchors.leftMargin: 5
+                                //width: layout.width // parent.width-10
+                                color: "turquoise"
+                                MouseArea {
+                                    //width: childrenRect.width
+                                    //        height: childrenRect.height
+                                    anchors.fill: parent
+                                    onDoubleClicked: {
+                                        console.log("modelFOQFOQSODFQSOFOQSOFQOSFOQSOFOQSOFOQ")
+
+                                        console.log(parent.m_iIndex)
+                                        obj.osg_Geometry.popSelectedVertexArray(
+                                                    parent.m_iIndex)
+
+                                        //soft way to maintain child preview
+                                    }
+                                    Grid {
+                                        columns: 2
+                                        //  width: 200
+                                        id: layout
+
+                                        //anchors.fill: parent
+                                        Label {
+                                            text: model.type
+                                        }
+                                        TextEdit {
+
+                                            text: model.name
+                                           
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

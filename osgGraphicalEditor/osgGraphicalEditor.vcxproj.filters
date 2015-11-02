@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\osgQtWindowing\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\osgQtWindowing\QtToOSGView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\UIEditorMAIN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\UIEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\baseqwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\TreeNodeModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\TreeNodeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\colorcomponentsplugin\colorcomponents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\moc_baseqwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\osgQtWindowing\moc_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\osgQtWindowing\moc_QtToOSGView.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\moc_UIEditorMAIN.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\moc_UIEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\moc_TreeNodeModel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\moc_TreeNodeItem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\SRC\PMOC\osgGraphicalEditor\colorcomponentsplugin\moc_colorcomponents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\SRC\PMOC\osgGraphicalEditor\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\SRC\PMOC\osgGraphicalEditor\CMakeLists.txt" />
+    <CustomBuild Include="D:\SRC\PMOC\osgGraphicalEditor\mainwindow.ui" />
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\db29456a04cd6a23d0ca49d178df3237\moc_baseqwindow.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\040d68b4199171498537ab14e37ab718\moc_mainwindow.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\040d68b4199171498537ab14e37ab718\moc_QtToOSGView.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\db29456a04cd6a23d0ca49d178df3237\moc_UIEditorMAIN.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\db29456a04cd6a23d0ca49d178df3237\moc_UIEditor.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\db29456a04cd6a23d0ca49d178df3237\moc_TreeNodeModel.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\db29456a04cd6a23d0ca49d178df3237\moc_TreeNodeItem.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="D:\SRC\PMOC\CMakeFiles\6e6177f0a62c2723c1cb44655b3f013c\moc_colorcomponents.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{2E37BE33-0CB1-31E4-A51F-2EDC762485DC}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{4C5B880D-F991-3DF8-ADF3-5BE80AF37DF2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{8352984A-0ADF-3AF0-8DBF-9AB5223619B6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

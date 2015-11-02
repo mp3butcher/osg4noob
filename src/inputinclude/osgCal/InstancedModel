@@ -1,0 +1,506 @@
+/* -*- c++ -*-
+    Copyright (C) 2003 <ryu@gpul.org>
+    Copyright (C) 2006 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__INSTANCEDMODEL_H__
+#define __OSGCAL__INSTANCEDMODEL_H__
+
+#include <map>
+#include <vector>
+#include <string.h>
+
+#include <osg/Group>
+#include <osg/Geometry>
+#include <osg/observer_ptr>
+
+#include <cal3d/cal3d.h>
+
+#include <osgCal/Export>
+#include <osgCal/Model>
+#include <osg/TextureBuffer>
+
+#include <osgCal/Mesh>
+
+namespace osgCal
+{
+
+
+// Create and return a StateSet appropriate for performing an occlusion
+//   query test (disable lighting, texture mapping, etc). Probably some
+//   room for improvement here. Could disable shaders, for example.
+osg::StateSet* initOQState();
+
+// Create and return a StateSet for rendering a debug representation of query geometry.
+osg::StateSet* initOQDebugState();
+
+// TestResult -- stores (per context) results of an occlusion query
+//   test performed by TransformFeedBackGeometry. An InstancedCullingNode has a
+//   Geode owning a single TransformFeedBackGeometry that
+//   draws the occlusion query geometry. TransformFeedBackGeometry keeps a
+//   TestResult per context to store the result/status of each query.
+// Accessed during the cull and draw traversals.
+class OSGCAL_EXPORT TestResult : public osg::Referenced
+{
+public:
+    TestResult() : _init( false ), _id( 0 ), _contextID( 0 ), _active( false ), _numPrimitiveGenerated( 0 ) {}
+    ~TestResult() {}
+
+    bool _init;
+
+    // Query ID for this context.
+    GLuint _id;
+
+
+    // Context ID owning this query ID.
+    unsigned int _contextID;
+
+    // Set to true when a query gets issued and set to
+    //   false when the result is retrieved.
+    mutable bool _active;
+
+    // Result of last query.
+    GLint _numPrimitiveGenerated;
+};
+
+
+
+class OSGCAL_EXPORT TextureBuffer4FeedBack : public osg::TextureBuffer
+{
+public:
+
+    META_StateAttribute(osgCal, TextureBuffer4FeedBack, TEXTURE);
+
+    TextureBuffer4FeedBack():osg::TextureBuffer()
+    {
+
+    }
+
+
+    TextureBuffer4FeedBack( const TextureBuffer4FeedBack& oqn, const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY ) {}
+
+    void   bind4FeedBack(unsigned int contextID,int feedbackindex);
+    void  unbind4FeedBack(unsigned int contextID,int feedbackindex);
+};
+
+
+class OSGCAL_EXPORT InstancedPrimitiveSetCollector : public osg::NodeVisitor
+{
+
+    std::vector<osg::ref_ptr<osg::PrimitiveSet> > primscollected;
+public:
+
+    InstancedPrimitiveSetCollector(  ) :osg::NodeVisitor(TRAVERSE_ALL_CHILDREN)
+    {
+
+
+    }
+    std::vector<osg::ref_ptr<osg::PrimitiveSet> >& getPrimitivesCollected()
+    {
+        return primscollected;
+    }
+
+    virtual void apply(osg::Geode &n);
+
+};
+
+
+class InstancedModel;
+
+
+class OSGCAL_EXPORT TunableGeometry : public osg::Geometry{
+friend class osg::VertexBufferObject;
+
+public:
+TunableGeometry(){};
+
+};
+class TransformFeedBackGeometry;
+class OSGCAL_EXPORT UpdateInstancesGeometry : public TunableGeometry
+{
+public:
+    TransformFeedBackGeometry*_culler;
+    UpdateInstancesGeometry(const std::string& oqnName=std::string("") ,TransformFeedBackGeometry*parent =0);
+    ~UpdateInstancesGeometry(){}
+
+    ///Geometry used as input for the underlying TransformFeedBackGeometry
+    ///each VertexArray is taken as a point vertex attribs  to be culled
+    //feel free to given them other semantic than regular ones
+
+    osg::ref_ptr<osg::Geometry> _geom,_generatedGeometry;
+
+
+    osg::ref_ptr <osg::VertexBufferObject > _generatedVBO;
+
+///TODO evolve to uniform attribute semantic (vec4 attribarray with padding and give the semantic you like)
+    void setGeom2Reduce(osg::Geometry*g) ;
+
+    ///update Buffer
+    const osg::Geometry * getTargetGeometry()const
+    {
+        return _generatedGeometry;
+    }
+    void  setTargetGeometry(osg::Geometry *t)
+    {
+        _generatedGeometry=t;
+    }
+
+    virtual void drawImplementation( osg::RenderInfo& renderInfo ) const;
+
+
+
+    };
+
+
+
+
+// TransformFeedBackGeometry -- A Drawable that performs a point cloud reduction + result query,
+//   using its geometric data as source and a TextureBuffer as output
+class OSGCAL_EXPORT TransformFeedBackGeometry : public TunableGeometry
+{
+public:
+
+    InstancedModel*_gr;
+    TransformFeedBackGeometry( InstancedModel*parent,const std::string& oqnName=std::string("") );
+    ~TransformFeedBackGeometry();
+
+    ///Geometry used as input for the underlying TransformFeedBackGeometry
+    ///each VertexArray is taken as a point vertex attribs  to be culled
+    //feel free to given them other semantic than regular ones
+
+    osg::ref_ptr<osg::Geometry> _geom;
+
+    const osg::Geometry* getGeom2Reduce()const
+    {
+        return _geom;
+    };
+
+
+///TODO evolve to uniform attribute semantic (vec4 attribarray with padding and give the semantic you like)
+    void setGeom2Reduce(osg::Geometry*g) ;
+
+
+    ///CulledInstance Buffer
+    const TextureBuffer4FeedBack * getReducedTBO()const
+    {
+        return _generatedTBO;
+    }
+    void  setReducedTBO(TextureBuffer4FeedBack*t)
+    {
+        _generatedTBO=t;
+    }
+
+
+///end properties
+
+   // const unsigned int & getNumCulledInstance()const;
+
+
+    void reset();
+
+    // TBD implement copy constructor
+
+    virtual void drawImplementation( osg::RenderInfo& renderInfo ) const;
+
+    mutable   osg::GLExtensions*   _ext;
+  //  virtual void compileGLObjects(osg::RenderInfo& renderInfo) const;
+    unsigned int getNumPrimitiveGenerated( const osg::Camera* cam );
+
+    virtual void releaseGLObjects( osg::State* state = 0 ) const;
+
+    static void deleteQueryObject( unsigned int contextID, GLuint handle );
+    static void flushDeletedQueryObjects( unsigned int contextID, double currentTime, double& availableTime );
+    static void discardDeletedQueryObjects( unsigned int contextID );
+
+protected:
+    osg::ref_ptr <TextureBuffer4FeedBack > _generatedTBO;
+    typedef std::map< const osg::Camera*, TestResult > ResultMap;
+    mutable ResultMap _results;
+    mutable OpenThreads::Mutex _mapMutex;
+
+    // Needed for debug only
+    std::string _oqnName;
+};
+/** update VBO drawimplementation.
+class OSGCAL_EXPORT UpdateDrawCallBack:public osg::Drawable::DrawCallback
+{
+public:
+    virtual void drawImplementation(osg::RenderInfo& /*renderInfo* /,const osg::Drawable* /*drawable* /) const;
+
+};*/
+// -- Mesh adding for Model::load --
+
+/**Experimental Implementation of Character Animation Instancing*/
+/**Animations are sampled with constant time step and store into TBO (COremodelGPU)*/
+/**InstancedModel use instance cloud reduction culling*/
+/**CONCEPT TODO: GPU controlled mixer  */
+/**CODE TODO:Try to make instance culling a Node/CullCallBakc and use it here too*/
+/**Make it more flexible for user..derive from Model can be a problem too*/
+class OSGCAL_EXPORT InstancedModel :public Model
+{
+public:
+virtual void update( double deltaTime );
+
+virtual void update();
+    META_Object(osgCal, InstancedModel);
+
+    InstancedModel();
+    virtual    void load( CoreModel* coreModel,
+                          BasicMeshAdder* meshAdder = 0 );
+    //void setNumInstances(unsigned int);
+   // const unsigned int getNumInstances()const;
+
+    /*set TBO Instances data (this buffer became the only way to interact)*/
+    /*assume padded float data*/
+    /*assume first Vec4 is pos.xyz,pad then animations weights/time for GPU mixer*/
+    /**BADIDEA update (weights,time) on autoupdate according culling results:
+    not culled= should be update according timestep*/
+
+
+    void setInstancesDataArray(osg::Vec4Array*);
+    const osg::Vec4Array* getInstancesDataArray();
+
+    //user helper
+    //note : doesnt dirty Buffer so call it dirty when finished*/
+    void setInstanceData(unsigned int,osg::Vec4Array*);
+
+
+    //void setInstancesDataStride(unsigned int);
+//override addChild in order to mimic OVERIDE for TBO (cf cpp)
+//VERYBAD BUT WORK WITHOUT HACKING OSG
+    virtual bool addChild(osg::Node*);
+
+///return index of the current PingPong Cloud Reducer
+    inline int activeIndex()const
+    {
+        return  _queryGeode->getDrawable(0)->getDrawCallback()?1:0;
+    }
+
+    const osg::Program * getReductionProgram()const
+    {
+        return _reductionprogram;
+    }
+
+
+
+    void setReductionProgram( osg::Program *p);
+    const osg::Program * getUpdateProgram()const
+    {
+        return _updateprogram;
+    }
+
+
+
+    void setUpdateProgram( osg::Program *p);
+
+    void setReservedActive(GLuint i) ;
+    const GLuint getReservedActive()const
+    {
+        return _reservedtu;
+    }
+
+    const std::string getGLSLNameInChildren()const
+    {
+        return _TBOglslName;
+    }
+
+    const osg::Vec3 & getExtents()const
+    {
+        return _extents;
+    }
+
+    void setExtents(osg::Vec3 ext);
+
+//name  of the generated TBO used in children's glsl programs
+    void setGLSLNameInChildren(std::string s);
+
+
+    osg::ref_ptr<osg::Geometry> _geom;
+
+    const osg::Geometry* getGeom2Reduce()const
+    {
+        return _geom;
+    };
+
+    void setGeom2Reduce(osg::Geometry*g);
+
+
+    virtual   const osg::BoundingSphere& getBound() const;
+    virtual osg::BoundingBox computeBounds() const;
+//   virtual void traverse(osg::NodeVisitor& nv);
+    virtual void releaseGLObjects( osg::State* state = 0 ) const;
+
+
+    // When disabled, OQN doesn't perform occlusion queries, and simply
+    //   renders its children.
+    void setQueriesEnabled( bool enable=true );
+
+    bool getQueriesEnabled() const
+    {
+        return _enabled;
+    }
+
+
+
+    // Specifies how many frames to wait before issuing another query.
+    void setQueryFrameCount( unsigned int frames )
+    {
+        _queryFrameCount = frames;
+    }
+    unsigned int getQueryFrameCount() const
+    {
+        return _queryFrameCount;
+    }
+
+    // Indicate whether or not the bounding box used in the occlusion query test
+    //   should be rendered. Handy for debugging and development.
+    // Should only be called outside of cull/draw. No thread issues.
+    void setDebugDisplay( bool enable );
+    bool getDebugDisplay() const;
+
+
+    // Set and get the StateSet used by the InstancedCullingNode
+    //   when rendering the query geometry. OQN creates its own by
+    //   default, but if you use many OQNs you might want to use
+    //   this method to set all OQNs to use the same StateSet
+    //   for more efficient processing.
+    void setQueryStateSet( osg::StateSet* ss );
+    osg::StateSet* getQueryStateSet();
+    const osg::StateSet* getQueryStateSet() const;
+
+    // Get the TransformFeedBackGeometry object used for occlusion query. Returns 0 if no TransformFeedBackGeometry is created.
+    osgCal::TransformFeedBackGeometry* getTransformFeedBackGeometry();
+    const osgCal::TransformFeedBackGeometry* getTransformFeedBackGeometry() const;
+
+    // Set and get the StateSet used by the InstancedCullingNode
+    //   when rendering the debug query geometry (see setDebugDisplay).
+    void setDebugStateSet( osg::StateSet* ss );
+    osg::StateSet* getDebugStateSet();
+    const osg::StateSet* getDebugStateSet() const;
+
+    // For statistics gathering, e.g., by a NodeVisitor.
+    bool getPassed() const;
+
+    ///override cull traversal traverse instead...
+    virtual void traverse(osg::NodeVisitor &);
+
+    // Delete unused query IDs for this contextID.
+    static void flushDeletedQueryObjects( unsigned int contextID, double currentTime, double& availableTime );
+
+    // discard all the cached query objects which need to be deleted
+    // in the OpenGL context related to contextID.
+    // Note, unlike flush no OpenGL calls are made, instead the handles are all removed.
+    // this call is useful for when an OpenGL context has been destroyed.
+    static void discardDeletedQueryObjects( unsigned int contextID );
+
+    void updatePrimitivesSet(unsigned int i);
+protected:
+//osg::ref_ptr<TransformFeedBackGeometry>
+   // osg::ref_ptr<UpdateDrawCallBack> _updateDrawCallBack;
+
+    InstancedPrimitiveSetCollector _primitivesetVisitor;
+    virtual bool getPassed( const osg::Camera* camera, osg::NodeVisitor& nv );
+    void traverseQuery( const osg::Camera* camera, osg::NodeVisitor& nv );
+    void traverseDebug( osg::NodeVisitor& nv );
+    virtual void createSupportNodes();
+
+    osg::ref_ptr< osg::Geode > _queryGeode;
+    osg::ref_ptr< osg::Geode > _debugGeode;
+
+    osg::ref_ptr<osg::Program> _reductionprogram,_updateprogram;
+    bool _enabled;
+    std::string _TBOglslName;
+    osg::Vec3 _extents;
+    GLuint _reservedtu;
+
+    // Tracks the last frame number that we performed a query.
+    // User can set how many times  (See setQueryFrameCount).
+    typedef std::map< const osg::Camera*, unsigned int > FrameCountMap;
+    FrameCountMap _frameCountMap;
+    mutable OpenThreads::Mutex _frameCountMutex;
+
+    // For statistics gathering
+    bool _passed;
+
+    // User-settable variables
+    //no used  unsigned int _visThreshold;
+    unsigned int _queryFrameCount;
+    bool _debugBB;
+
+    osg::ref_ptr<osg::Uniform> _curanimationid, _curanimationtime,
+    _extentsuniform;
+    // Required to ensure that computeBound() is thread-safe.
+    mutable OpenThreads::Mutex _computeBoundMutex;
+
+protected:
+    InstancedModel(const InstancedModel&, const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY);
+
+    //   virtual ~InstancedModel();
+osg::  ref_ptr<osg::UIntArray> _metaAnimArray ;//Animations descriptions (begin/end frames)
+std::vector<GLuint> _bakedMorphIds;
+std::vector<GLfloat> _bakedMorphWeights;
+
+private:
+
+    bool _dirty;
+
+
+};
+
+///special mixer in order to replace skeleton update with animationweights
+///this way we minimize GPU<->CPU update com
+class OSGCAL_EXPORT GPUMixer :public CalMixer{
+
+
+public:
+GPUMixer(CalModel*p):CalMixer(p){
+
+}
+float getCurAnimationTime(){return m_animationTime;}
+typedef   std::pair<int ,float> AnimWeight;
+std::vector<AnimWeight> ShaderControls;///mixer output
+};
+
+class OSGCAL_EXPORT AnimationModelData : public ModelData
+{
+public:
+
+
+
+    AnimationModelData( CoreModel* cm,
+                        Model*     m );
+    ~AnimationModelData() {}
+
+    /**
+    * Perform skeleton and BoneParams arrays update.
+    * Return true, if something was changed, false otherwise.
+    */
+    virtual  bool update( float deltaTime );
+
+
+    virtual  bool update();
+
+
+    typedef  std::pair<int,float> AnimTimePair;
+
+    //animation Data
+    std::vector< AnimTimePair> animdata;
+
+};
+
+}; // namespace osgCal
+
+#endif

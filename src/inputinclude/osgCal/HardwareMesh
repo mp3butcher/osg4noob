@@ -1,0 +1,118 @@
+/* -*- c++ -*-
+    Copyright (C) 2006 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__HARDWAREMESH_H__
+#define __OSGCAL__HARDWAREMESH_H__
+
+#include <osgCal/Mesh>
+
+#include <osg/TextureBuffer>
+namespace osgCal
+{
+    class OSGCAL_EXPORT HardwareMesh : public Mesh
+    {
+        public:
+
+
+
+          HardwareMesh();
+
+        /** Copy constructor using CopyOp to manage deep vs shallow copy. */
+        HardwareMesh(const HardwareMesh& geometry,const osg::CopyOp& copyop=osg::CopyOp::SHALLOW_COPY);
+     META_Node(osgCal,HardwareMesh)
+
+
+
+            HardwareMesh( ModelData*      modelData,
+                          const CoreMesh* mesh );
+            virtual void setup( ) ;
+
+
+   //  virtual  osg::BoundingBox computeBound() const {return osg::Geometry:: computeBound();}
+            virtual void drawImplementation( osg::RenderInfo& renderInfo ) const;
+            /**
+             * Real draw implementation called from HardwareMesh & MeshDepth.
+             * They differ in only in state sets so pass it explicitly.
+             */
+           virtual void drawImplementation( osg::RenderInfo&     renderInfo,
+                                     const osg::StateSet* stateSet) const;
+
+            virtual void compileGLObjects(osg::RenderInfo& renderInfo) const;
+
+            virtual void update();
+
+            /**
+             * For compiling all statesets when Model accepts osgUtil::GLObjectsVisitor.
+           virtual void accept( osgUtil::GLObjectsVisitor* glv );
+   */
+
+        private:
+
+            // TODO: merge MeshDepth & HardwareMesh into one
+            // class and move all shared part into other structure.
+
+            /**
+             * Draw implementation part which resides in the display
+             * list.
+             * It performs all the drawing related calls except
+             * rotation/translation uniforms setup (which is mesh dependent).
+             */
+            void innerDrawImplementation( osg::RenderInfo& renderInfo,
+                                          GLuint           displayList = 0 ) const;
+
+            virtual void onParametersChanged( const MeshParameters* previousDs );
+            protected:
+               mutable bool _needcompilation;///flags in order to know when to call compileGLObjects()
+               mutable	GLuint _BlendShapesTBO,_BlendShapesTBOBTex;
+    };
+    class  GPUMixedHardwareMesh: public HardwareMesh
+    {
+        public:
+
+            osg::Object* cloneType() const;
+            osg::Object* clone( const osg::CopyOp& ) const;
+            virtual bool isSameKindAs(const osg::Object* obj) const { return dynamic_cast<const GPUMixedHardwareMesh *>(obj)!=NULL; }
+            virtual const char* libraryName() const { return "osgCal"; }
+            virtual const char* className() const { return "GPUMixedHardwareMesh"; }
+
+			///retrieve data set in GPUCoreModel and create Character Animation TBO
+            virtual    void compileGLObjects(osg::RenderInfo& renderInfo) const;
+            GPUMixedHardwareMesh( ModelData*      modelData,
+                          const CoreMesh* mesh );
+
+
+            virtual void drawImplementation( osg::RenderInfo&     renderInfo,
+                                     const osg::StateSet* stateSet) const;
+
+				//update (animationid,animationtime) instancecouple
+            virtual void update();
+
+            /**
+             * For compiling all statesets when Model accepts osgUtil::GLObjectsVisitor.?
+             */
+            //virtual void accept( osgUtil::GLObjectsVisitor* glv );
+
+
+            osg::ref_ptr<osg::TextureBuffer>   _boneTBO;
+
+            mutable	GLuint _BonesTBO,_BonesTBOTex;
+            mutable	GLuint _CulledInstanceTBO,_CulledInstanceTBOTex;
+
+			};
+}; //namespace osgCal
+
+#endif

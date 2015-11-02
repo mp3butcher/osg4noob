@@ -1,0 +1,134 @@
+/* -*- c++ -*-
+    Copyright (C) 2007 Vladimir Shabanov <vshabanoff@gmail.com>
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+*/
+#ifndef __OSGCAL__MATERIAL_H__
+#define __OSGCAL__MATERIAL_H__
+
+#include <string>
+
+#include <cal3d/cal3d.h>
+
+#include <osg/Referenced>
+#include <osg/Vec4>
+#include <osgCal/Export>
+
+namespace osgCal
+{
+    /**
+     * osg::Material description + glossiness (which can be > 128.0,
+     * so the separate type).
+     *
+     * This structure is also used as cache key for osg::Material cache.
+     */
+    class OSGCAL_EXPORT OsgMaterial : public osg::Referenced
+    {
+        public:
+            osg::Vec4      ambientColor;
+            osg::Vec4      diffuseColor;
+            osg::Vec4      specularColor;
+            float          glossiness;
+
+            OsgMaterial()
+                : glossiness( 0 )
+            {}
+
+            /**
+             * Setup material using core material and glossiness &
+             * shininess.
+             * There is a trouble with exporter, shininess value is
+             * actually a specularColor strength and actual shininess
+             * (which named as `glossiness' in 3DSMax) doesn't
+             * exported at all.
+             */
+            void setupOsgMaterial( CalCoreMaterial* ccm,
+                                   float glossiness,
+                                   float opacity );
+    };
+
+    /**
+     * Textures description, also used as textures cache key,
+     * contatins file name with full path.
+     */
+    typedef std::string TextureDesc;
+
+    /**
+     * Material description software only part, also used as software
+     * mesh state set cache key.
+     */
+    class OSGCAL_EXPORT SoftwareMaterial : public OsgMaterial
+    {
+        public:
+            TextureDesc  diffuseMap;
+
+            /**
+             * Number of sides for mesh.
+             * 0 -- undefined (use default OSG culling);
+             * 1 -- one side (backface culling);
+             * 2 -- two sides (no culling);
+             */
+            int          sides;
+
+            SoftwareMaterial()
+                : sides( 0 )
+            {}
+    };
+
+    /**
+     * Material description, also used as hardware mesh state set
+     * cache key.
+     */
+    class OSGCAL_EXPORT Material : public SoftwareMaterial
+    {
+        public:
+            TextureDesc  normalsMap;
+            TextureDesc  bumpMap;
+            float        normalsMapAmount; /// currently not supported
+            float        bumpMapAmount;
+            std::string blendmeshname;
+
+            Material()
+                : normalsMapAmount( 0 )
+                , bumpMapAmount( 0 )
+            {}
+
+            /**
+             * Create whole state description from cal3d material
+             * and its maps.
+             */
+            Material( CalCoreMaterial* m,
+                      const std::string& dir );
+    };
+
+    // -- Some utility --
+
+    OSGCAL_EXPORT bool operator < ( const OsgMaterial& md1,
+                                    const OsgMaterial& md2 );
+
+    OSGCAL_EXPORT bool operator < ( const SoftwareMaterial& d1,
+                                    const SoftwareMaterial& d2 );
+
+    OSGCAL_EXPORT bool operator < ( const Material& d1,
+                                    const Material& d2 );
+
+    OSGCAL_EXPORT std::ostream&
+    operator << ( std::ostream& os,
+                  const osgCal::Material& sd );
+
+
+}; // namespace osgCal
+
+#endif

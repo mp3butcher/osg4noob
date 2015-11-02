@@ -1,0 +1,4 @@
+#include <osg/BufferTemplate>
+//includes
+
+

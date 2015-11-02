@@ -1,0 +1,106 @@
+import QtQuick 2.1
+import QtQuick.Window 2.0
+import QtQuick.Layouts 1.0
+import QtQuick.Controls 1.0
+
+//import QtQuick 2.1
+import osgQtQuick 1.0
+import "../.."
+
+FocusScope {
+    width: 320
+    height: 500
+    onXChanged: link2par.updateLinkCanvas()
+    onYChanged: link2par.updateLinkCanvas()
+    LinkToParent {
+        id: link2par
+        target: main
+    }
+
+    PropertyAnimation on x {
+        to: 300
+    }
+    PropertyAnimation on y {
+        to: 50
+    }
+    id: main
+    property var qmodel
+
+    //this
+    ColumnLayout {
+        anchors.fill: parent
+        Rectangle {
+            // main rectangle
+            id: rectangle
+            border.color: "black"
+            border.width: 3
+            radius: 10
+            color: "cyan"
+            anchors.fill: parent
+            /////CLASSIC PART BEGIN/////////////////////////////////////////////////////
+            MouseArea {
+                objectName: 'pmocmousearea' ///PMOC MANDATORY MouseArea
+
+                anchors.fill: parent
+                acceptedButtons: Qt.AllButtons
+                drag.target: main
+                drag.axis: Drag.XandYAxis
+                onClicked: if (mouse.button == Qt.LeftButton)
+                               globalEditor.setOperand(main.qmodel)
+
+                /////CLASSIC PART TO END//////////////////////////////////////////////////////////////////////
+                Rectangle {
+                    border.color: "black"
+                    border.width: 3
+                    radius: 10
+                    width: childrenRect.width
+                    height: childrenRect.height
+                    color: "yellow"
+
+                    Column {  width: childrenRect.width
+                    height: childrenRect.height
+                        id: obj
+                        objectName: "osg_NodeQQQ"
+                        property var osg_Node
+                        //QQModel
+                        /*onCompleted called befor property setting..have to emit a fake parentChanged signal*/
+                        onParentChanged: {
+
+                            globalEditor.osg_NodeCallback_removed.connect(
+                                        obj.osg_Node.callbacksChanged)
+                            //                    globalEditor.osg_NodeCallback_added.connect(                                obj.osg_Node.callbacksChanged)
+                        }
+                        //height: 250
+                        //implicit_height: 250
+                        // width: 200
+/*
+Button{
+text:'fisfok' 
+ anchors.fill:parent
+menu:maintoolbar.m_Add_a_Child
+onClicked: globalEditor.menu.parent=obj;
+}*/
+
+                        GroupBox {//x:10
+
+                          
+
+                            Grid {
+
+                    width: childrenRect.width
+                    height: childrenRect.height
+                                //  height: 250
+                                columns: 2
+                                //    width: 200
+                                id: layout
+
+                                //   anchors.fill: parent
+                            
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
