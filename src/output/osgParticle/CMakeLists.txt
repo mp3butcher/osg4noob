@@ -62,8 +62,8 @@ if(0)
 
  add_custom_command(
     OUTPUT ${file_tro} ${file_troc}  #BEWARE: remove stubs after first generation in order not to be remove on clean  ${file_custom_tro} ${file_custom_troc}
-    COMMAND mylex  ${_file}  -o ../output/osgParticle/ --conf ../output/ContextGenerator.conf
-    DEPENDS mylex  ${PATHTOHEADER}/${_file}
+    COMMAND pmoc  ${_file}  -o ../output/osgParticle/ --conf ../output/ContextGenerator.conf
+    DEPENDS pmoc  ${PATHTOHEADER}/${_file}
 WORKING_DIRECTORY ${PATHTOHEADER}
 
   )
@@ -92,8 +92,8 @@ set(pluginfile_troc ${CMAKE_BINARY_DIR}/src/output/osgParticle/plugin.cpp)
 add_custom_command(
 
     OUTPUT ${pluginfile_tro} ${pluginfile_troc}
-    COMMAND mylex  --genplugin ../output/osgParticle/fileslist.txt --conf ../output/ContextGenerator.conf -o ../output/osgParticle/plugin
-    DEPENDS mylex ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
+    COMMAND pmoc  --genplugin ../output/osgParticle/fileslist.txt --conf ../output/ContextGenerator.conf -o ../output/osgParticle/plugin
+    DEPENDS pmoc ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
 WORKING_DIRECTORY ${PATHTOHEADER}
 
   )
@@ -101,7 +101,7 @@ endif()
  list(APPEND hpp_gen ${pluginfile_tro})
  list(APPEND cpp_gen ${pluginfile_troc})
 
-#INCLUDE_DIRECTORIES( "../mylex/")
+#INCLUDE_DIRECTORIES( "../pmoc/")
 INCLUDE_DIRECTORIES( "${CMAKE_BINARY_DIR}/src/output/osgParticle")
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
@@ -126,6 +126,8 @@ TARGET_LINK_LIBRARIES(${PROJECT_NAME}
 ${Boost_LIBRARIES}
 ${OPENSCENEGRAPH_LIBRARIES}
 )
+qt5_use_modules(${PROJECT_NAME} Quick Gui OpenGL Core Widgets)
+
 SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PROJECT_LABEL "Module UIEditor_osgParticle"  COMPILE_FLAGS -std=c++11 
  LIBRARY_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/PlugIns
 LIBRARY_OUTPUT_DIRECTORY_DEBUG  ${CMAKE_HOME_DIRECTORY}/bin/PlugIns

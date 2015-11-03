@@ -6,9 +6,8 @@
 -ID:/SRC/openal/vorbis/include
 -ID:/SRC/openal/libogg/include
 -ID:/SRC/osgTRUNKSVN/include
--ID:/SRC/osg4noobGIT/osgGraphicalEditor/../src
--ID:/SRC/osg4noobGIT/osgGraphicalEditor/../MetaQMLInterfaceLib
 -ID:/SRC/osg4noobGIT/osgGraphicalEditor/src
+-ID:/SRC/osg4noobGIT/osgGraphicalEditor/../include
 -ID:/SRC/osg4noobGIT/osgGraphicalEditor
 -ID:/SRC/osg4noobGIT/osgGraphicalEditor/include
 -ID:/SRC/osgTRUNKSVN/include

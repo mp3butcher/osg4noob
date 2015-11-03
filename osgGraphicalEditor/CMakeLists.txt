@@ -116,64 +116,23 @@ find_package(OpenSceneGraph 3.2.0 REQUIRED
 INCLUDE_directories(${OSG_INCLUDE_DIR})
 
 
-FILE(GLOB_RECURSE  UI_GENERATOR_CONFIG_FILE UI_Generator.conf)
-if(  UI_GENERATOR_CONFIG_FILE STREQUAL "")
-message("UI_Generator.conf not found!!!!!!!!!")
-endif()
-FILE(GLOB_RECURSE  CONTEXT_GENERATOR_CONFIG_FILE ContextGenerator.conf)
-if(  CONTEXT_GENERATOR_CONFIG_FILE STREQUAL "")
-message("ContextGenerator.conf not found!!!!!!!!!")
-endif()
-#HEADER TO SCAN are in current directory
-set (PATHTOHEADER ${PROJECT_SOURCE_DIR}/../src/)
-
-INCLUDE_directories(${PATHTOHEADER})
- FILE(GLOB_RECURSE  OSG_INCLUDES RELATIVE ${PATHTOHEADER}/inputinclude/osg  ${PATHTOHEADER}/inputinclude/osg/*[^.]*
- #inputinclude/osg/*
-#inputinclude/osgUtil/*
-#inputinclude/osgParticle/*
- )
-SET(CMAKE_CURRENT_SOURCE_DIR inputinclude)
- #   message(${OSG_INCLUDES})
- #link_directories(${Boost_LIBRARY_DIRS})
-#SET(SOURCES_UI  osgQtOctreeFluid/mainwindow.ui )
-#QT5_WRAP_UI(SOURCES_UI_H  ${SOURCES_UI})
-
-SET(PROJECT_INCLUDES
-#osg/Node
-#osg/Geometry
-${OSG_INCLUDES}
-)
-
-#INCLUDE_DIRECTORIES("../MetaInterfaceLib")
-INCLUDE_DIRECTORIES("../MetaQMLInterfaceLib")
-#INCLUDE_DIRECTORIES( "../mylex/")
+ 
+#INCLUDE_DIRECTORIES("../MetaQMLInterfaceLib")
+#INCLUDE_DIRECTORIES( "../pmoc/")
 INCLUDE_DIRECTORIES( "src")
+
+INCLUDE_DIRECTORIES("../include")
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     "${CMAKE_CURRENT_BINARY_DIR}/include"
     ${OPENSCENEGRAPH_INCLUDE_DIRS})
-# INCLUDE_DIRECTORIES( ${BOOST_INCLUDE_PATH})
-# include_directories(${Boost_INCLUDE_DIR})
-# include_directories(${Qt5Widgets_INCLUDES})
-# include_directories(${Qt5OpenGL_INCLUDES})
-# include_directories(${Qt5Core_INCLUDES})
-# include_directories(${Qt5_INCLUDES})
+ 
 
 
 SET(${configUIfile} REQUIRED)
 set(h_gen)
 set(cpp_gen)
-foreach(_file ${PROJECT_INCLUDES})
-#GUI COmponents
-  set(file_tro "${_file}QModel_pmoc.hpp")
-set(file_troc "${_file}QModel_pmoc.cpp")
- #list(APPEND h_gen ${file_tro}) #CANTBE KNOW AT ADVANCE...
- #list(APPEND cpp_gen ${file_troc})
-endforeach()
- #..SO SEARCH HARD
-# FILE(GLOB_RECURSE  SOURCES_HPP RELATIVE ${PROJECT_SOURCE_DIR}  src/*.hpp)
-#  FILE(GLOB_RECURSE  SOURCES_CPP RELATIVE ${PROJECT_SOURCE_DIR}  src/*.cpp)
+ 
 SET(SOURCES_CPP
 osgQtWindowing/mainwindow.cpp
 osgQtWindowing/QtToOSGView.cpp
@@ -205,37 +164,13 @@ QT5_WRAP_UI(SOURCES_UI_H  ${SOURCES_UI})
 #set(CMAKE_AUTOMOC ON)
 list(APPEND SOURCES_CPP ${SOURCES_UI_H})
 
-
-#Meta Object Factory (all generated)
-#set(file_tro "src/CPPContext_pmoc.hpp")
-#set(file_troc "src/CPPContext_pmoc.cpp")
-#list(APPEND h_gen ${file_tro})
-# list(APPEND cpp_gen ${file_troc})
-#Generated GUI Editor skeleton(holes to fill)
-
-# list(APPEND h_gen ${file_tro})
-# list(APPEND cpp_gen ${file_troc})
-
-
-
-#  list(APPEND obfuscate_shaders ${file_tro})
-#  list(APPEND cpp_gen ${file_troc})
-
- # list(APPEND PROJECT_INCLUDES )
- #${PROJECT_INCLUDES}
-
-#QT5_WRAP_CPP(${PROJECT_NAME} PROJECT__MOC ${h_gen}     ${SOURCES_CPP})
-
-#SOURCE_GROUP( "Interface Files" ".*frag")
-#SOURCE_GROUP( "Resources Files" ".*\\.qrc")${QT_LIBRARIES}
-#SET(QT_USE_QTOPENGL yes)
+ 
 
 message(${SOURCES_HPP})
 QT5_WRAP_CPP(PROJECT_INCLUDES_MOC1  ${SOURCES_HPP}  )
 ADD_EXECUTABLE(${PROJECT_NAME} ${cpp_gen} ${h_gen} ${SOURCES_CPP}  ${PROJECT_INCLUDES_MOC1})
 
-
-#qt5_use_modules(${PROJECT_NAME}  Widgets)
+ 
 
 #IMPORTANTT external where to set Library for linking
 #INCLUDE(LibsForLinking)
@@ -244,12 +179,11 @@ TARGET_LINK_LIBRARIES(${PROJECT_NAME}
 #${BOOST_REGEX_LIBRARIES}
 osgQtQuick
 
-MetaQQuickLibraryLib
-#${Boost_LIBRARIES}
+#MetaQQuickLibraryLib
+"../lib/msvc2013-x64/lib/MetaQQuickLibraryLib"
 
-${OPENTHREADS_LIBRARIES}   ${OPENSCENEGRAPH_LIBRARIES} #${OSGVOLUME_LIBRARY}  ${OSGSHADOW_LIBRARY}  ${OSGUTIL_LIBRARY}  ${OSGTEXT_LIBRARY} ${OSGPARTICLES_LIBRARY} ${OSGTERRAIN_LIBRARY} ${OSGSIM_LIBRARY} ${OSGVIEWER_LIBRARY} ${OSGWIDGET_LIBRARY}
-# ${OSGBULLET_LIBRARY} ${OSGAUDIO_LIBRARY} ${OSGWORKS_LIBRARY} ${OSGCAL2_LIBRARY} ${OSGWORKS_LIBRARY} ${OSGBULLET_LIBRARY} ${OSGAUDIO_LIBRARY}
-# ${PMOC_EXTERNAL_LIBS} ${OSGMULTIGRID_LIBRARY}
+${OPENTHREADS_LIBRARIES}   ${OPENSCENEGRAPH_LIBRARIES}  
+# ${PMOC_EXTERNAL_LIBS}  
 ${QSCINTILLA_LIBRARY}
 )
 
