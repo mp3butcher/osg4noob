@@ -182,10 +182,9 @@
 #include <customCode/osg/ScriptEngine_pmoc.hpp>
 #include <customCode/osg/Sequence_pmoc.hpp>
 #include <customCode/osg/ShadeModel_pmoc.hpp>
-#include <customCode/osg/Shader_pmoc.hpp>
+//#include <customCode/osg/Shader_pmoc.hpp>
 #include <customCode/osg/ShaderAttribute_pmoc.hpp>
-#include <customCode/osg/Shader_pmoc.hpp>
-#include <customCode/osg/Shader_pmoc.hpp>
+
 #include <customCode/osg/ShaderComposer_pmoc.hpp>
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 #include <customCode/osg/BufferObject_pmoc.hpp>
@@ -458,10 +457,10 @@ _components.insert( new osg::MetaQMLScriptEngine());
 _components.insert( new osg::MetaQMLScriptNodeCallback()); 
 _components.insert( new osg::MetaQMLSequence()); 
 _components.insert( new osg::MetaQMLShadeModel()); 
-_components.insert( new osg::MetaQMLShader()); 
+//_components.insert( new osg::MetaQMLShader()); 
 _components.insert( new osg::MetaQMLShaderAttribute()); 
-_components.insert( new osg::MetaQMLShaderBinary()); 
-_components.insert( new osg::MetaQMLShaderComponent()); 
+//_components.insert( new osg::MetaQMLShaderBinary()); 
+//_components.insert( new osg::MetaQMLShaderComponent()); 
 _components.insert( new osg::MetaQMLShaderComposer()); 
 _components.insert( new osg::MetaQMLShaderStorageBufferBinding()); 
 _components.insert( new osg::MetaQMLShaderStorageBufferObject()); 
@@ -703,10 +702,10 @@ MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ScriptEngine")->ad
 MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ScriptNodeCallback")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::NodeCallback")); 
 MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Sequence")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Group")); 
 MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShadeModel")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::StateAttribute")); 
-MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Shader")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Object")); 
+//MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Shader")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Object")); 
 MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderAttribute")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::StateAttribute")); 
-MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderBinary")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Object")); 
-MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderComponent")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Object")); 
+//MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderBinary")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Object")); 
+//MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderComponent")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Object")); 
 MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderComposer")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::Object")); 
 MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderStorageBufferBinding")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::BufferIndexBinding")); 
 MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::ShaderStorageBufferObject")->addParent(MetaQQuickLibraryRegistry::instance()->getMetaClassByID("osg::BufferObject")); 

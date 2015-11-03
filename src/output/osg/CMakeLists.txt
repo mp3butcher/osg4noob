@@ -131,7 +131,7 @@ ADD_LIBRARY(${PROJECT_NAME} MODULE ${cpp_gen}  ${PROJECT_ADDITIONAL_SRC} #${PROJ
 ${ADDITIONAL_MOC})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME}
 #MetaQQuickLibraryLib 
-"../../../lib/msvc2013-x64/lib/MetaQQuickLibraryLib.lib"
+"../../../lib/msvc2013-x64/lib/MetaQQuickLibraryLib"
 ${QSCINTILLA_LIBRARY}
 ${OPENSCENEGRAPH_LIBRARIES} 
 
