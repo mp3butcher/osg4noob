@@ -29,7 +29,7 @@ message("projectsourcedir ${CMAKE_BINARY_DIR}/src/inputinclude")
  FILE(GLOB_RECURSE  OSG_INCLUDES RELATIVE ${CMAKE_BINARY_DIR}/src/inputinclude      ${CMAKE_BINARY_DIR}/src/inputinclude/osg/*
 )
 
-
+ 
 #SET(CMAKE_CURRENT_SOURCE_DIR  ${PATHTOHEADER})
     message(${OSG_INCLUDES})
  link_directories(${Boost_LIBRARY_DIRS})
@@ -47,11 +47,10 @@ set(cpp_gen)
 file(REMOVE fileslist.txt)
 foreach(_file ${OSG_INCLUDES})
 ##  string(REPLACE "." "_" file_tro ${_file})
-  set(file_tro ${CMAKE_BINARY_DIR}/src/output/osg/${_file}_pmoc.hpp)
+set(file_tro ${CMAKE_BINARY_DIR}/src/output/osg/${_file}_pmoc.hpp)
 set(file_troc ${CMAKE_BINARY_DIR}/src/output/osg/${_file}_pmoc.cpp)
-  set(file_custom_tro ${CMAKE_BINARY_DIR}/src/output/osg/customCode/${_file}_pmoc.hpp)
+set(file_custom_tro ${CMAKE_BINARY_DIR}/src/output/osg/customCode/${_file}_pmoc.hpp)
 set(file_custom_troc ${CMAKE_BINARY_DIR}/src/output/osg/customCode/${_file}_pmoc.cpp)
-   #set(file_troc )
 
 file(APPEND fileslist.txt "#include <${_file}>\n"  )
    message (${PATHTOHEADER})
@@ -81,7 +80,7 @@ customCode/osg/AttribListModel.cpp
 customCode/osg/PagedLodListModel.cpp
 ) 
 
-QT5_WRAP_CPP(PROJECT_INCLUDES_MOC_OSG    ${PROJECT_ADDITIONAL_INCLUDES}  ${hpp_gen} )
+QT5_WRAP_CPP(PROJECT_INCLUDES_MOC_OSG   ${PROJECT_ADDITIONAL_INCLUDES}  ${hpp_gen} )
 #QT5_WRAP_CPP(ADDITIONAL_MOC  )
 
 #generate Plugin from filelist.txt
@@ -96,6 +95,14 @@ add_custom_command(
     DEPENDS pmoc ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
 WORKING_DIRECTORY ${PATHTOHEADER}
 
+  )
+else()
+#FAKE just for depends
+add_custom_command(
+    OUTPUT ${pluginfile_tro} ${pluginfile_troc}
+    COMMAND echo off
+    DEPENDS  ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
+WORKING_DIRECTORY ${PATHTOHEADER}
   )
 endif()  
  list(APPEND hpp_gen ${pluginfile_tro})

@@ -1,4 +1,5 @@
 #include <osg/Program>
+#include <osg/Shader>
 //includes
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
@@ -6,7 +7,7 @@
 #include <osg/Program_pmoc.hpp>
 #include <customCode/osg/Program_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
-#include <customCode/osg/Shader_pmoc.hpp>
+//#include <customCode/osg/Shader_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <osg/Shader>
 using namespace pmoc;
@@ -62,7 +63,7 @@ QString  osg::QReflect_Program::getTransformFeedBackVarying( unsigned int p0)con
 QString ret(_model->getTransformFeedBackVarying(p0).c_str());return ret;
 
 }
-osg::QReflect_Shader*osg::QReflect_Program::getShader( unsigned int p0)const{
+/*osg::QReflect_Shader*osg::QReflect_Program::getShader( unsigned int p0)const{
 PMOCSAFEADDOBJECT(*_model->getShader(p0),inst);
 return inst.isValid()?((osg::QReflect_Shader * )inst.model->createQQModel(&inst)):NULL;
 }
@@ -76,7 +77,7 @@ _model->addShader(par->_model);
 void   osg::QReflect_Program::pmoc_reverse_addShader( osg::QReflect_Shader *par){
 _model->removeShader(par->_model);
 emit ShaderCollectionChanged();
-}
+}*/
 
 ///DefaultConstructor////////////////
 osg::QReflect_Program::QReflect_Program(Instance *i,QObject* parent):QQModel(i,parent),_model(0){

@@ -8,11 +8,11 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Callback_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <customCode/osg/Shader_pmoc.hpp>
+//#include <customCode/osg/Shader_pmoc.hpp>
 #include <osg/Callback>
 #include <osg/Callback_pmoc.hpp>
 #include <osg/Shader>
-#include <osg/Shader_pmoc.hpp>
+//#include <osg/Shader_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_StateAttribute::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
@@ -42,10 +42,7 @@ const  char*  osg::QReflect_StateAttribute::libraryName()const{
 return _model->libraryName();
 
 }
-osg::QReflect_ShaderComponent * osg::QReflect_StateAttribute::getShaderComponent()const{
-PMOCSAFEADDOBJECT(*_model->getShaderComponent(),inst);
-return inst.isValid()?((osg::QReflect_ShaderComponent * )inst.model->createQQModel(&inst)):NULL;
-}
+
 osg::QReflect_StateAttribute*osg::QReflect_StateAttribute::asStateAttribute()const{
 PMOCSAFEADDOBJECT(*_model->asStateAttribute(),inst);
 return inst.isValid()?((osg::QReflect_StateAttribute * )inst.model->createQQModel(&inst)):NULL;
@@ -65,18 +62,23 @@ return inst.isValid()?((osg::QReflect_StateAttributeCallback * )inst.model->crea
 void osg::QReflect_StateAttribute::pmoc_reverse_setEventCallback( osg::QReflect_StateAttributeCallback *par){_model->setEventCallback(NULL);
 emit EventCallbackChanged(NULL);
 }
-void osg::QReflect_StateAttribute::pmoc_reverse_setShaderComponent( osg::QReflect_ShaderComponent *par){_model->setShaderComponent(NULL);
-emit ShaderComponentChanged(NULL);
-}
+
 void osg::QReflect_StateAttribute::pmoc_reverse_setUpdateCallback( osg::QReflect_StateAttributeCallback *par){_model->setUpdateCallback(NULL);
 emit UpdateCallbackChanged(NULL);
 }
 void osg::QReflect_StateAttribute::setEventCallback( osg::QReflect_StateAttributeCallback *par){_model->setEventCallback(par->_model);
 emit EventCallbackChanged(par);
 }
+/*osg::QReflect_ShaderComponent * osg::QReflect_StateAttribute::getShaderComponent()const{
+PMOCSAFEADDOBJECT(*_model->getShaderComponent(),inst);
+return inst.isValid()?((osg::QReflect_ShaderComponent * )inst.model->createQQModel(&inst)):NULL;
+}
+void osg::QReflect_StateAttribute::pmoc_reverse_setShaderComponent( osg::QReflect_ShaderComponent *par){_model->setShaderComponent(NULL);
+emit ShaderComponentChanged(NULL);
+}
 void osg::QReflect_StateAttribute::setShaderComponent( osg::QReflect_ShaderComponent *par){_model->setShaderComponent(par->_model);
 emit ShaderComponentChanged(par);
-}
+}*/
 void osg::QReflect_StateAttribute::setUpdateCallback( osg::QReflect_StateAttributeCallback *par){_model->setUpdateCallback(par->_model);
 emit UpdateCallbackChanged(par);
 }

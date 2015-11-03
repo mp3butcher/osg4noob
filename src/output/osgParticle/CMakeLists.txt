@@ -85,17 +85,23 @@ endif()
 
 QT5_WRAP_CPP(PROJECT_INCLUDES_MOC_OSG    ${PROJECT_ADDITIONAL_INCLUDES}  ${hpp_gen} )
 #QT5_WRAP_CPP(ADDITIONAL_MOC  )
-if(0)
-#generate Plugin from filelist.txt
   set(pluginfile_tro ${CMAKE_BINARY_DIR}/src/output/osgParticle/plugin.h)
 set(pluginfile_troc ${CMAKE_BINARY_DIR}/src/output/osgParticle/plugin.cpp)
+if(0)
+#generate Plugin from filelist.txt
 add_custom_command(
-
     OUTPUT ${pluginfile_tro} ${pluginfile_troc}
     COMMAND pmoc  --genplugin ../output/osgParticle/fileslist.txt --conf ../output/ContextGenerator.conf -o ../output/osgParticle/plugin
     DEPENDS pmoc ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
 WORKING_DIRECTORY ${PATHTOHEADER}
-
+  )
+ else()
+#FAKE just for depends
+add_custom_command(
+OUTPUT ${pluginfile_tro} ${pluginfile_troc}
+    COMMAND echo off
+    DEPENDS  ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
+WORKING_DIRECTORY ${PATHTOHEADER}
   )
 endif()
  list(APPEND hpp_gen ${pluginfile_tro})
@@ -122,7 +128,7 @@ ADD_LIBRARY(${PROJECT_NAME} MODULE ${cpp_gen}  ${PROJECT_ADDITIONAL_SRC}  #${PRO
 ${ADDITIONAL_MOC})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME}
 #MetaQQuickLibraryLib ${QSCINTILLA_LIBRARY}
-"../../../lib/msvc2013-x64/lib/MetaQQuickLibraryLib.lib"
+"../../../lib/msvc2013-x64/lib/MetaQQuickLibraryLib"
 ${Boost_LIBRARIES}
 ${OPENSCENEGRAPH_LIBRARIES}
 )

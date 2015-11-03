@@ -119,7 +119,6 @@ virtual ~QReflect_StateAttribute( );
 //virtual const  Texture * asTexture();
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  bool  isTextureAttribute()const;
-Q_INVOKABLE  osg::QReflect_ShaderComponent * getShaderComponent()const;
 Q_INVOKABLE  osg::QReflect_StateAttributeCallback * getEventCallback()const;
 Q_INVOKABLE  osg::QReflect_StateAttributeCallback * getUpdateCallback()const;
 Q_INVOKABLE  unsigned int  getMember()const;
@@ -130,14 +129,15 @@ Q_INVOKABLE osg::QReflect_StateAttribute*  asStateAttribute();
 Q_INVOKABLE osg::QReflect_StateAttribute*  asStateAttribute()const;
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
 Q_INVOKABLE void pmoc_reverse_setEventCallback( osg::QReflect_StateAttributeCallback *par=0);
-Q_INVOKABLE void pmoc_reverse_setShaderComponent( osg::QReflect_ShaderComponent *par=0);
+/*Q_INVOKABLE void pmoc_reverse_setShaderComponent( osg::QReflect_ShaderComponent *par=0);
+Q_INVOKABLE  osg::QReflect_ShaderComponent * getShaderComponent()const;
+Q_INVOKABLE void setShaderComponent( osg::QReflect_ShaderComponent *par);*/
 Q_INVOKABLE void pmoc_reverse_setUpdateCallback( osg::QReflect_StateAttributeCallback *par=0);
 Q_INVOKABLE void setEventCallback( osg::QReflect_StateAttributeCallback *par);
-Q_INVOKABLE void setShaderComponent( osg::QReflect_ShaderComponent *par);
 Q_INVOKABLE void setUpdateCallback( osg::QReflect_StateAttributeCallback *par);
 signals: void EventCallbackChanged(const osg::QReflect_StateAttributeCallback*);
 public:
-signals: void ShaderComponentChanged(const osg::QReflect_ShaderComponent*);
+//signals: void ShaderComponentChanged(const osg::QReflect_ShaderComponent*);
 public:
 signals: void UpdateCallbackChanged(const osg::QReflect_StateAttributeCallback*);
 public:
