@@ -10,5 +10,5 @@ This is a test case of using PMOC on OpenSceneGraph Libraries
 | MSVC2013 x64 or x86 |
 
 BEWARE:
-closed lib and dll (msvc2013) are in the lib directory:
+closed lib and dll (msvc2013 and linux gcc644.9.2) are in the lib directory:
 copy the good one in bin in order to make it work
