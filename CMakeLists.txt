@@ -5,7 +5,7 @@
 
 cmake_minimum_required(VERSION 2.8.9)
 
-project(testlex)
+project(osg4noob)
 # automatically add CMAKE_CURRENT_SOURCE_DIR and CMAKE_CURRENT_BINARY_DIR to the include directories in every directory
 #SET(CMAKE_INCLUDE_CURRENT_DIR yes)
 set(CMAKE_PREFIX_PATH "$ENV{QTDIR}/lib/cmake;$ENV{WINSDKDIR};${CMAKE_PREFIX_PATH}"   )
@@ -16,7 +16,7 @@ set(CMAKE_PREFIX_PATH "$ENV{QTDIR}/lib/cmake;$ENV{WINSDKDIR};${CMAKE_PREFIX_PATH
 #set (CMAKE_CXX_COMPILER D:\Qt\Qt5.1.1mingw\Tools\mingw48_32\bin\mingw32-g++.exe)
 #FILE(TO_CMAKE_PATH ${CMAKE_HOME_DIRECTORY}/CMake  INSTANCING_MODULE_PATH)
 SET (CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_HOME_DIRECTORY}/CMake)
-find_package(osgCal REQUIRED)
+#find_package(osgCal REQUIRED)
 find_package(OpenSceneGraph 3.2.0 REQUIRED
     osg
 	osgAnimation
@@ -78,26 +78,20 @@ SET(CMAKE_DEBUG_POSTFIX "d")
 subdirs(
 #  src/output/bullet
   src/output/osg
-src/output/osgUtil
+#src/output/osgUtil
 src/output/osgParticle
-src/output/osgShadow
-src/output/osgGA
-src/output/osgDB
-src/output/osgAnimation
-src/output/osgCal 
-
-src/output/osgManipulator
-src/output/osgViewer
+#src/output/osgShadow
+#src/output/osgGA
+#src/output/osgDB
+#src/output/osgAnimation
+#src/output/osgCal 
+#src/output/osgManipulator
+#src/output/osgViewer
 #src/output/osgMG
-src/output/osgVolume
+#src/output/osgVolume
+#pmoc
+#MetaQMLInterfaceLib
  
-  mylex
-MetaQMLInterfaceLib
- # MetaInterfaceLib
- # MetaQQuickInterfaceLib
-  #mylex4dll
-MetaCPP
-pmoc
 osgGraphicalEditor
   #EditorGenerator2
  # EditorGenerator

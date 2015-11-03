@@ -59,24 +59,7 @@ file(APPEND fileslist.txt "#include <${_file}>\n"  )
    message (${file_troc})
 
 if(0)
-set(BoxerOutputs)
- list(APPEND BoxerOutputs ${file_tro})
- list(APPEND BoxerOutputs ${file_troc})
-if(not EXISTS ${file_custom_tro})
- list(APPEND BoxerOutputs ${file_custom_tro})
-endif()
-if(not EXISTS ${file_custom_troc})
- list(APPEND BoxerOutputs ${file_custom_troc})
-endif()
 
-  add_custom_command(
-    OUTPUT ${BoxerOutputs}
-    COMMAND mylex  ${_file}  -o ../output/osgParticle/ --conf ../output/ContextGenerator.conf
-    DEPENDS mylex
-WORKING_DIRECTORY ${PATHTOHEADER}
-
-  )
-else()
  add_custom_command(
     OUTPUT ${file_tro} ${file_troc}  #BEWARE: remove stubs after first generation in order not to be remove on clean  ${file_custom_tro} ${file_custom_troc}
     COMMAND mylex  ${_file}  -o ../output/osgParticle/ --conf ../output/ContextGenerator.conf
@@ -102,7 +85,7 @@ endif()
 
 QT5_WRAP_CPP(PROJECT_INCLUDES_MOC_OSG    ${PROJECT_ADDITIONAL_INCLUDES}  ${hpp_gen} )
 #QT5_WRAP_CPP(ADDITIONAL_MOC  )
-
+if(0)
 #generate Plugin from filelist.txt
   set(pluginfile_tro ${CMAKE_BINARY_DIR}/src/output/osgParticle/plugin.h)
 set(pluginfile_troc ${CMAKE_BINARY_DIR}/src/output/osgParticle/plugin.cpp)
@@ -114,6 +97,7 @@ add_custom_command(
 WORKING_DIRECTORY ${PATHTOHEADER}
 
   )
+endif()
  list(APPEND hpp_gen ${pluginfile_tro})
  list(APPEND cpp_gen ${pluginfile_troc})
 
@@ -123,51 +107,22 @@ include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     "${CMAKE_BINARY_DIR}/src/include"
     ${OPENSCENEGRAPH_INCLUDE_DIRS})
-# INCLUDE_DIRECTORIES( ${BOOST_INCLUDE_PATH})
-# include_directories(${Boost_INCLUDE_DIR})
-# include_directories(${Qt5Widgets_INCLUDES})
-# include_directories(${Qt5OpenGL_INCLUDES})
-# include_directories(${Qt5Core_INCLUDES})
-# include_directories(${Qt5_INCLUDES})
-
-
-
-
-
-
-#ADD_LIBRARY(${PROJECT_NAME} SHARED ${cpp_gen} )
-
-
-#qt5_use_modules(testcompil Widgets)
-
-#TARGET_LINK_LIBRARIES(${PROJECT_NAME}
-#${BOOST_REGEX_LIBRARIES}
-#${Boost_LIBRARIES}
-#${OPENTHREADS_LIBRARIES}  ${OPENSCENEGRAPH_LIBRARIES} ${OSGVOLUME_LIBRARY} #${OSGTEXT_LIBRARY} #
-#${OSGWORKS_LIBRARY}
-#${OSGCAL2_LIBRARY}  ${OSGBULLET_LIBRARY} ${OSGAUDIO_LIBRARY} ${OSGMULTIGRID_LIBRARY} )
-
-#qt5_use_modules(${PROJECT_NAME}  Quick Gui OpenGL Core Widgets)
-
-#SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PROJECT_LABEL "DownCast Library"  COMPILE_FLAGS -std=c++11 )
-
-
-	#INCLUDE_DIRECTORIES("../../../MetaInterfaceLib")
-	INCLUDE_DIRECTORIES("../../../MetaQMLInterfaceLib")
+	
+	INCLUDE_DIRECTORIES("../../../include")
 include_directories(
 ${CMAKE_CURRENT_BINARY_DIR}
 "${CMAKE_CURRENT_BINARY_DIR}/include"
 )
 
-
-#set(CMAKE_AUTOMOC ON)
+ 
 
 
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_HOME_DIRECTORY}/bin/PlugIns)
 ADD_LIBRARY(${PROJECT_NAME} MODULE ${cpp_gen}  ${PROJECT_ADDITIONAL_SRC}  #${PROJECT_INCLUDES_MOC_OSG}
 ${ADDITIONAL_MOC})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME}
-MetaQQuickLibraryLib ${QSCINTILLA_LIBRARY}
+#MetaQQuickLibraryLib ${QSCINTILLA_LIBRARY}
+"../../../lib/msvc2013-x64/lib/MetaQQuickLibraryLib.lib"
 ${Boost_LIBRARIES}
 ${OPENSCENEGRAPH_LIBRARIES}
 )

@@ -1,4 +1,4 @@
--ID:/SRC/PMOC/osgGraphicalEditor/../osgQtQuick/include
+-ID:/SRC/osg4noobGIT/osgGraphicalEditor/../osgQtQuick/include
 -ID:/SRC/Bullet/src
 -ID:/SRC/cal3dXGIT/src
 -ID:/SRC/openal/openal-soft-1.11.753/include
@@ -6,13 +6,13 @@
 -ID:/SRC/openal/vorbis/include
 -ID:/SRC/openal/libogg/include
 -ID:/SRC/osgTRUNKSVN/include
--ID:/SRC/PMOC/osgGraphicalEditor/../src
--ID:/SRC/PMOC/osgGraphicalEditor/../MetaQMLInterfaceLib
--ID:/SRC/PMOC/osgGraphicalEditor/src
--ID:/SRC/PMOC/osgGraphicalEditor
--ID:/SRC/PMOC/osgGraphicalEditor/include
+-ID:/SRC/osg4noobGIT/osgGraphicalEditor/../src
+-ID:/SRC/osg4noobGIT/osgGraphicalEditor/../MetaQMLInterfaceLib
+-ID:/SRC/osg4noobGIT/osgGraphicalEditor/src
+-ID:/SRC/osg4noobGIT/osgGraphicalEditor
+-ID:/SRC/osg4noobGIT/osgGraphicalEditor/include
 -ID:/SRC/osgTRUNKSVN/include
 -DWIN32
 -o
-D:/SRC/PMOC/osgGraphicalEditor/osgQtWindowing/moc_mainwindow.cpp
-D:/SRC/PMOC/osgGraphicalEditor/osgQtWindowing/mainwindow.h
+D:/SRC/osg4noobGIT/osgGraphicalEditor/osgQtWindowing/moc_mainwindow.cpp
+D:/SRC/osg4noobGIT/osgGraphicalEditor/osgQtWindowing/mainwindow.h

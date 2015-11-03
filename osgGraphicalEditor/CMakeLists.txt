@@ -238,7 +238,7 @@ ADD_EXECUTABLE(${PROJECT_NAME} ${cpp_gen} ${h_gen} ${SOURCES_CPP}  ${PROJECT_INC
 #qt5_use_modules(${PROJECT_NAME}  Widgets)
 
 #IMPORTANTT external where to set Library for linking
-INCLUDE(LibsForLinking)
+#INCLUDE(LibsForLinking)
 
 TARGET_LINK_LIBRARIES(${PROJECT_NAME}
 #${BOOST_REGEX_LIBRARIES}

@@ -1,8 +1,8 @@
-# Install script for directory: D:/SRC/PMOC/osgGraphicalEditor
+# Install script for directory: D:/SRC/osg4noobGIT/osgGraphicalEditor
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files/testlex")
+  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/testlex")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 

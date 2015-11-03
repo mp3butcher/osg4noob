@@ -1,9 +1,9 @@
--ID:/SRC/PMOC/src/output/osg/../src
+-ID:/SRC/osg4noobGIT/src/output/osg/../src
 -ID:/SRC/osgTRUNKSVN/include
--ID:/SRC/PMOC/src/output
--ID:/SRC/PMOC/src/inputinclude
+-ID:/SRC/osg4noobGIT/src/output
+-ID:/SRC/osg4noobGIT/src/inputinclude
 -DosgPMOC_LIBRARY
 -DWIN32
 -o
-D:/SRC/PMOC/src/output/osg/osg/moc_Stats_pmoc.cpp
-D:/SRC/PMOC/src/output/osg/osg/Stats_pmoc.hpp
+D:/SRC/osg4noobGIT/src/output/osg/osg/moc_Stats_pmoc.cpp
+D:/SRC/osg4noobGIT/src/output/osg/osg/Stats_pmoc.hpp

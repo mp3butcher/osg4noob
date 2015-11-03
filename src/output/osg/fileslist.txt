@@ -128,7 +128,6 @@
 #include <osg/ScriptEngine>
 #include <osg/Sequence>
 #include <osg/ShadeModel>
-#include <osg/Shader>
 #include <osg/ShaderAttribute>
 #include <osg/ShaderComposer>
 #include <osg/ShadowVolumeOccluder>

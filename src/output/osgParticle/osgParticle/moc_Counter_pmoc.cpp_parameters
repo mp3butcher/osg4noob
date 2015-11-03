@@ -1,10 +1,10 @@
--ID:/SRC/PMOC/src/output/osgParticle/../src
+-ID:/SRC/osg4noobGIT/src/output/osgParticle/../src
 -ID:/SRC/osgTRUNKSVN/include
--ID:/SRC/PMOC/src/output
--ID:/SRC/PMOC/src/output/osg
--ID:/SRC/PMOC/src/inputinclude
+-ID:/SRC/osg4noobGIT/src/output
+-ID:/SRC/osg4noobGIT/src/output/osg
+-ID:/SRC/osg4noobGIT/src/inputinclude
 -DosgParticlePMOC_LIBRARY
 -DWIN32
 -o
-D:/SRC/PMOC/src/output/osgParticle/osgParticle/moc_Counter_pmoc.cpp
-D:/SRC/PMOC/src/output/osgParticle/osgParticle/Counter_pmoc.hpp
+D:/SRC/osg4noobGIT/src/output/osgParticle/osgParticle/moc_Counter_pmoc.cpp
+D:/SRC/osg4noobGIT/src/output/osgParticle/osgParticle/Counter_pmoc.hpp
