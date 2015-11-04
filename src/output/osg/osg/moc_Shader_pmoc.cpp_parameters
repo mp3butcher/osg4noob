@@ -1,8 +1,0 @@
--I/home/xeul/SRC/PMOC/src/output/osg/../src
--I/home/xeul/SRC/OSGSVN/include
--I/home/xeul/SRC/PMOC/src/output
--I/home/xeul/SRC/PMOC/src/inputinclude
--DosgPMOC_LIBRARY
--o
-/home/xeul/SRC/PMOC/src/output/osg/osg/moc_Shader_pmoc.cpp
-/home/xeul/SRC/PMOC/src/output/osg/osg/Shader_pmoc.hpp
