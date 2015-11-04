@@ -85,6 +85,10 @@ return ret;}
 #include <osg/BufferObject>
 #include <osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
+ GLuint  osg::QReflect_BufferIndexBinding::getIndex()const{
+return _model->getIndex();
+
+}
  int  osg::QReflect_BufferIndexBinding::getOffset()const{
 return _model->getOffset();
 

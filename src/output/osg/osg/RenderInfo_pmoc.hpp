@@ -5,13 +5,13 @@
 #include <osg/RenderInfo_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_State;
+class QReflect_Camera;
 			} ;
 namespace osg{ 
 class QReflect_Referenced;
 			} ;
 namespace osg{ 
-class QReflect_Camera;
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_View;

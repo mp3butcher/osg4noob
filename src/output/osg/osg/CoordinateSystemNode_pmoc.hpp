@@ -3,9 +3,6 @@
 
 #include <osg/CoordinateSystemNode_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_Matrixd;
-			} ;
 #include <osg/CoordinateSystemNode>
 #include <osg/CoordinateSystemNode>
 
@@ -25,14 +22,14 @@ virtual ~QReflect_EllipsoidModel( );
 //EllipsoidModel
 // bool  operator==(const  EllipsoidModel & ,const  EllipsoidModel &);
 // osg::Vec3d  computeLocalUpVector( double  , double  , double );
+// void  computeCoordinateFrame( double  , double  , osg::Matrixd &);
+// void  computeLocalToWorldTransformFromLatLongHeight( double  , double  , double  , osg::Matrixd &);
+// void  computeLocalToWorldTransformFromXYZ( double  , double  , double  , osg::Matrixd &);
+// void  convertLatLongHeightToXYZ( double  , double  , double  , double & , double & , double &);
+// void  convertXYZToLatLongHeight( double  , double  , double  , double & , double & , double &);
 Q_INVOKABLE  bool  isWGS84()const;
 Q_INVOKABLE const double  getRadiusEquator()const;
 Q_INVOKABLE const double  getRadiusPolar()const;
-Q_INVOKABLE void  computeCoordinateFrame( double  , double  ,osg::QReflect_Matrixd *)const;
-Q_INVOKABLE void  computeLocalToWorldTransformFromLatLongHeight( double  , double  , double  ,osg::QReflect_Matrixd *)const;
-Q_INVOKABLE void  computeLocalToWorldTransformFromXYZ( double  , double  , double  ,osg::QReflect_Matrixd *)const;
-Q_INVOKABLE void  convertLatLongHeightToXYZ( double  , double  , double  , double & , double & , double &)const;
-Q_INVOKABLE void  convertXYZToLatLongHeight( double  , double  , double  , double & , double & , double &)const;
 Q_INVOKABLE void setRadiusEquator(const double &);
 Q_INVOKABLE void setRadiusPolar(const double &);
 Q_PROPERTY(double RadiusEquator  READ getRadiusEquator WRITE setRadiusEquator NOTIFY RadiusEquatorChanged)
@@ -67,10 +64,10 @@ public:
 #include <osg/CoordinateSystemNode_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_CoordinateSystemNode;
+class QReflect_EllipsoidModel;
 			} ;
 namespace osg{ 
-class QReflect_EllipsoidModel;
+class QReflect_CoordinateSystemNode;
 			} ;
 #include <osg/CoordinateSystemNode>
 #include <osg/CoordinateSystemNode>

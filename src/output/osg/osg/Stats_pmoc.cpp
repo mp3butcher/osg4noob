@@ -11,18 +11,6 @@ using namespace pmoc;
 return _model->collectStats(std::string(p0.toStdString()));
 
 }
- bool  osg::QReflect_Stats::getAttribute( unsigned int p0 ,const  QString &p1 , double &p2)const{
-return _model->getAttribute(p0 ,std::string(p1.toStdString()) ,p2);
-
-}
- bool  osg::QReflect_Stats::getAveragedAttribute( unsigned int p0 , unsigned int p1 ,const  QString &p2 , double &p3 , bool p4)const{
-return _model->getAveragedAttribute(p0 ,p1 ,std::string(p2.toStdString()) ,p3 ,p4);
-
-}
- bool  osg::QReflect_Stats::getAveragedAttribute(const  QString &p0 , double &p1 , bool p2)const{
-return _model->getAveragedAttribute(std::string(p0.toStdString()) ,p1 ,p2);
-
-}
  bool  osg::QReflect_Stats::setAttribute( unsigned int p0 ,const  QString &p1 , double p2){
 return _model->setAttribute(p0 ,std::string(p1.toStdString()) ,p2);
 

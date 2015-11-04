@@ -23,6 +23,7 @@ virtual ~QReflect_TextureObjectManager( );
 // TextureObjectSet * getTextureObjectSet(const  Texture::TextureProfile &);
 // osg::ref_ptr<Texture::TextureObject>  generateTextureObject(const  Texture * , GLenum );
 // osg::ref_ptr<Texture::TextureObject>  generateTextureObject(const  Texture * , GLenum  , GLint  , GLenum  , GLsizei  , GLsizei  , GLsizei  , GLint );
+// void  flushDeletedGLObjects( double  , double &);
 // void  recomputeStats( std::ostream &);
 // void  reportStats( std::ostream &);
 Q_INVOKABLE  bool  checkConsistency()const;
@@ -42,7 +43,6 @@ Q_INVOKABLE void  deleteAllGLObjects();
 Q_INVOKABLE void  discardAllDeletedGLObjects();
 Q_INVOKABLE void  discardAllGLObjects();
 Q_INVOKABLE void  flushAllDeletedGLObjects();
-Q_INVOKABLE void  flushDeletedGLObjects( double  , double &);
 Q_INVOKABLE void  handlePendingOrphandedTextureObjects();
 Q_INVOKABLE void  newFrame(osg::QReflect_FrameStamp *);
 Q_INVOKABLE void  resetStats();
@@ -105,16 +105,17 @@ TextureObjectSet * _model;
 QReflect_TextureObjectSet(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TextureObjectSet( );
 //TextureObjectSet
+// bool  makeSpace( unsigned int &);
 // osg::ref_ptr<Texture::TextureObject>  takeFromOrphans( Texture *);
 // osg::ref_ptr<Texture::TextureObject>  takeOrGenerate( Texture *);
 // void  addToBack( Texture::TextureObject *);
+// void  flushDeletedTextureObjects( double  , double &);
 // void  moveToBack( Texture::TextureObject *);
 // void  moveToSet( Texture::TextureObject * , TextureObjectSet *);
 // void  orphan( Texture::TextureObject *);
 // void  remove( Texture::TextureObject *);
 //const  Texture::TextureProfile & getProfile();
 Q_INVOKABLE  bool  checkConsistency()const;
-Q_INVOKABLE  bool  makeSpace( unsigned int &);
 Q_INVOKABLE  unsigned int  computeNumTextureObjectsInList()const;
 Q_INVOKABLE  unsigned int  getNumOfTextureObjects()const;
 Q_INVOKABLE  unsigned int  getNumOrphans()const;
@@ -125,7 +126,6 @@ Q_INVOKABLE void  deleteAllTextureObjects();
 Q_INVOKABLE void  discardAllDeletedTextureObjects();
 Q_INVOKABLE void  discardAllTextureObjects();
 Q_INVOKABLE void  flushAllDeletedTextureObjects();
-Q_INVOKABLE void  flushDeletedTextureObjects( double  , double &);
 Q_INVOKABLE void  handlePendingOrphandedTextureObjects();
 public slots:
 virtual void updateModel();
@@ -151,16 +151,16 @@ public:
 #include <osg/Texture_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_State;
-			} ;
-namespace osg{ 
-class QReflect_Vec4d;
-			} ;
-namespace osg{ 
 class QReflect_Object;
 			} ;
 namespace osg{ 
 class QReflect_Texture;
+			} ;
+namespace osg{ 
+class QReflect_State;
+			} ;
+namespace osg{ 
+class QReflect_Vec4d;
 			} ;
 namespace osg{ 
 class QReflect_Vec4i;
@@ -280,30 +280,29 @@ virtual ~QReflect_Texture( );
 //Texture
 // GLenum  getSourceFormat();
 // GLenum  getSourceType();
-// GLint  getBorderWidth();
-// GLint  getInternalFormat();
 // ImageAttachment & getImageAttachment();
 // TextureObject * generateAndAssignTextureObject( unsigned int  , GLenum );
 // TextureObject * generateAndAssignTextureObject( unsigned int  , GLenum  , GLint  , GLenum  , GLsizei  , GLsizei  , GLsizei  , GLint );
 // TextureObject * getTextureObject( unsigned int );
 //virtual  Type  getType();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-// bool  isCompressedInternalFormat( GLint );
 // osg::ref_ptr<TextureObject>  generateTextureObject(const  Texture * , unsigned int  , GLenum );
 // osg::ref_ptr<TextureObject>  generateTextureObject(const  Texture * , unsigned int  , GLenum  , GLint  , GLenum  , GLsizei  , GLsizei  , GLsizei  , GLint );
 // void  applyTexImage2D_load( State & , GLenum  ,const  Image * , GLsizei  , GLsizei  , GLsizei );
 // void  applyTexImage2D_subload( State & , GLenum  ,const  Image * , GLsizei  , GLsizei  , GLint  , GLsizei );
 // void  bindToImageUnit( unsigned int  , GLenum  , GLenum  , int  , bool  , int );
+//virtual  void  compileGLObjects( State &);
 // void  getCompressedSize( GLenum  , GLint  , GLint  , GLint  , GLint & , GLint &);
-// void  setBorderWidth( GLint );
-// void  setInternalFormat( GLint );
 // void  setSourceFormat( GLenum );
 // void  setSourceType( GLenum );
 // void  setTextureObject( unsigned int  , TextureObject *);
 //const  ImageAttachment & getImageAttachment();
 //const  Vec4d & getBorderColor();
 //const  Vec4i & getSwizzle();
+Q_INVOKABLE  GLint  getBorderWidth()const;
+Q_INVOKABLE  GLint  getInternalFormat()const;
 Q_INVOKABLE  bool  areAllTextureObjectsLoaded()const;
+Q_INVOKABLE  bool  isCompressedInternalFormat( GLint );
 Q_INVOKABLE  bool  isCompressedInternalFormat()const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  bool  isTextureAttribute()const;
@@ -330,13 +329,14 @@ Q_INVOKABLE osg::QReflect_Texture::ShadowCompareFunc  getShadowCompareFunc()cons
 Q_INVOKABLE osg::QReflect_Texture::ShadowTextureMode  getShadowTextureMode()const;
 Q_INVOKABLE osg::QReflect_Texture::WrapMode  getWrap(osg::QReflect_Texture::WrapParameter )const;
 Q_INVOKABLE void  allocateMipmapLevels();
-Q_INVOKABLE void  compileGLObjects(osg::QReflect_State *)const;
 Q_INVOKABLE void  dirtyTextureObject();
 Q_INVOKABLE void  dirtyTextureParameters();
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
 Q_INVOKABLE void  setBorderColor(osg::QReflect_Vec4d *);
+Q_INVOKABLE void  setBorderWidth( GLint );
 Q_INVOKABLE void  setFilter(osg::QReflect_Texture::FilterParameter  ,osg::QReflect_Texture::FilterMode );
+Q_INVOKABLE void  setInternalFormat( GLint );
 Q_INVOKABLE void  setInternalFormatMode(osg::QReflect_Texture::InternalFormatMode );
 Q_INVOKABLE void  setShadowCompareFunc(osg::QReflect_Texture::ShadowCompareFunc );
 Q_INVOKABLE void  setShadowTextureMode(osg::QReflect_Texture::ShadowTextureMode );

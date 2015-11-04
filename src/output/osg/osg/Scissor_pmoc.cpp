@@ -44,10 +44,6 @@ return _model->x();
 return _model->y();
 
 }
- void osg::QReflect_Scissor::getScissor( int &p0 , int &p1 , int &p2 , int &p3)const{
- _model->getScissor(p0 ,p1 ,p2 ,p3);
-
-}
  void osg::QReflect_Scissor::setScissor( int p0 , int p1 , int p2 , int p3){
  _model->setScissor(p0 ,p1 ,p2 ,p3);
 

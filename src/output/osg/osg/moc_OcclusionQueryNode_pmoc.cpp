@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'OcclusionQueryNode_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'OcclusionQueryNode_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -110,8 +110,8 @@ int osg::QReflect_TestResult::qt_metacall(QMetaObject::Call _c, int _id, void **
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_OcclusionQueryNode_t {
-    QByteArrayData data[42];
-    char stringdata0[813];
+    QByteArrayData data[36];
+    char stringdata0[703];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -131,37 +131,31 @@ QT_MOC_LITERAL(7, 150, 20), // "QueryStateSetChanged"
 QT_MOC_LITERAL(8, 171, 26), // "VisibilityThresholdChanged"
 QT_MOC_LITERAL(9, 198, 11), // "updateModel"
 QT_MOC_LITERAL(10, 210, 9), // "getPassed"
-QT_MOC_LITERAL(11, 220, 21), // "osg::QReflect_Camera*"
-QT_MOC_LITERAL(12, 242, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(13, 269, 16), // "getDebugStateSet"
-QT_MOC_LITERAL(14, 286, 23), // "osg::QReflect_StateSet*"
-QT_MOC_LITERAL(15, 310, 16), // "getQueryStateSet"
-QT_MOC_LITERAL(16, 327, 15), // "getDebugDisplay"
-QT_MOC_LITERAL(17, 343, 17), // "getQueriesEnabled"
-QT_MOC_LITERAL(18, 361, 18), // "getQueryFrameCount"
-QT_MOC_LITERAL(19, 380, 22), // "getVisibilityThreshold"
-QT_MOC_LITERAL(20, 403, 16), // "getQueryGeometry"
-QT_MOC_LITERAL(21, 420, 28), // "osg::QReflect_QueryGeometry*"
-QT_MOC_LITERAL(22, 449, 26), // "discardDeletedQueryObjects"
-QT_MOC_LITERAL(23, 476, 24), // "flushDeletedQueryObjects"
-QT_MOC_LITERAL(24, 501, 7), // "double&"
-QT_MOC_LITERAL(25, 509, 16), // "releaseGLObjects"
-QT_MOC_LITERAL(26, 526, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(27, 547, 13), // "traverseDebug"
-QT_MOC_LITERAL(28, 561, 13), // "traverseQuery"
-QT_MOC_LITERAL(29, 575, 29), // "pmoc_reverse_setDebugStateSet"
-QT_MOC_LITERAL(30, 605, 3), // "par"
-QT_MOC_LITERAL(31, 609, 29), // "pmoc_reverse_setQueryStateSet"
-QT_MOC_LITERAL(32, 639, 15), // "setDebugDisplay"
-QT_MOC_LITERAL(33, 655, 16), // "setDebugStateSet"
-QT_MOC_LITERAL(34, 672, 17), // "setQueriesEnabled"
-QT_MOC_LITERAL(35, 690, 18), // "setQueryFrameCount"
-QT_MOC_LITERAL(36, 709, 16), // "setQueryStateSet"
-QT_MOC_LITERAL(37, 726, 22), // "setVisibilityThreshold"
-QT_MOC_LITERAL(38, 749, 12), // "DebugDisplay"
-QT_MOC_LITERAL(39, 762, 14), // "QueriesEnabled"
-QT_MOC_LITERAL(40, 777, 15), // "QueryFrameCount"
-QT_MOC_LITERAL(41, 793, 19) // "VisibilityThreshold"
+QT_MOC_LITERAL(11, 220, 16), // "getDebugStateSet"
+QT_MOC_LITERAL(12, 237, 23), // "osg::QReflect_StateSet*"
+QT_MOC_LITERAL(13, 261, 16), // "getQueryStateSet"
+QT_MOC_LITERAL(14, 278, 15), // "getDebugDisplay"
+QT_MOC_LITERAL(15, 294, 17), // "getQueriesEnabled"
+QT_MOC_LITERAL(16, 312, 18), // "getQueryFrameCount"
+QT_MOC_LITERAL(17, 331, 22), // "getVisibilityThreshold"
+QT_MOC_LITERAL(18, 354, 16), // "getQueryGeometry"
+QT_MOC_LITERAL(19, 371, 28), // "osg::QReflect_QueryGeometry*"
+QT_MOC_LITERAL(20, 400, 26), // "discardDeletedQueryObjects"
+QT_MOC_LITERAL(21, 427, 16), // "releaseGLObjects"
+QT_MOC_LITERAL(22, 444, 20), // "osg::QReflect_State*"
+QT_MOC_LITERAL(23, 465, 29), // "pmoc_reverse_setDebugStateSet"
+QT_MOC_LITERAL(24, 495, 3), // "par"
+QT_MOC_LITERAL(25, 499, 29), // "pmoc_reverse_setQueryStateSet"
+QT_MOC_LITERAL(26, 529, 15), // "setDebugDisplay"
+QT_MOC_LITERAL(27, 545, 16), // "setDebugStateSet"
+QT_MOC_LITERAL(28, 562, 17), // "setQueriesEnabled"
+QT_MOC_LITERAL(29, 580, 18), // "setQueryFrameCount"
+QT_MOC_LITERAL(30, 599, 16), // "setQueryStateSet"
+QT_MOC_LITERAL(31, 616, 22), // "setVisibilityThreshold"
+QT_MOC_LITERAL(32, 639, 12), // "DebugDisplay"
+QT_MOC_LITERAL(33, 652, 14), // "QueriesEnabled"
+QT_MOC_LITERAL(34, 667, 15), // "QueryFrameCount"
+QT_MOC_LITERAL(35, 683, 19) // "VisibilityThreshold"
 
     },
     "osg::QReflect_OcclusionQueryNode\0"
@@ -169,18 +163,14 @@ QT_MOC_LITERAL(41, 793, 19) // "VisibilityThreshold"
     "const osg::QReflect_StateSet*\0"
     "QueriesEnabledChanged\0QueryFrameCountChanged\0"
     "QueryStateSetChanged\0VisibilityThresholdChanged\0"
-    "updateModel\0getPassed\0osg::QReflect_Camera*\0"
-    "osg::QReflect_NodeVisitor*\0getDebugStateSet\0"
+    "updateModel\0getPassed\0getDebugStateSet\0"
     "osg::QReflect_StateSet*\0getQueryStateSet\0"
     "getDebugDisplay\0getQueriesEnabled\0"
     "getQueryFrameCount\0getVisibilityThreshold\0"
     "getQueryGeometry\0osg::QReflect_QueryGeometry*\0"
-    "discardDeletedQueryObjects\0"
-    "flushDeletedQueryObjects\0double&\0"
-    "releaseGLObjects\0osg::QReflect_State*\0"
-    "traverseDebug\0traverseQuery\0"
-    "pmoc_reverse_setDebugStateSet\0par\0"
-    "pmoc_reverse_setQueryStateSet\0"
+    "discardDeletedQueryObjects\0releaseGLObjects\0"
+    "osg::QReflect_State*\0pmoc_reverse_setDebugStateSet\0"
+    "par\0pmoc_reverse_setQueryStateSet\0"
     "setDebugDisplay\0setDebugStateSet\0"
     "setQueriesEnabled\0setQueryFrameCount\0"
     "setQueryStateSet\0setVisibilityThreshold\0"
@@ -195,50 +185,46 @@ static const uint qt_meta_data_osg__QReflect_OcclusionQueryNode[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      32,   14, // methods
-       4,  254, // properties
+      28,   14, // methods
+       4,  214, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        6,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  174,    2, 0x06 /* Public */,
-       3,    1,  177,    2, 0x06 /* Public */,
-       5,    1,  180,    2, 0x06 /* Public */,
-       6,    1,  183,    2, 0x06 /* Public */,
-       7,    1,  186,    2, 0x06 /* Public */,
-       8,    1,  189,    2, 0x06 /* Public */,
+       1,    1,  154,    2, 0x06 /* Public */,
+       3,    1,  157,    2, 0x06 /* Public */,
+       5,    1,  160,    2, 0x06 /* Public */,
+       6,    1,  163,    2, 0x06 /* Public */,
+       7,    1,  166,    2, 0x06 /* Public */,
+       8,    1,  169,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       9,    0,  192,    2, 0x0a /* Public */,
+       9,    0,  172,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      10,    0,  193,    2, 0x02 /* Public */,
-      10,    2,  194,    2, 0x02 /* Public */,
-      13,    0,  199,    2, 0x02 /* Public */,
-      15,    0,  200,    2, 0x02 /* Public */,
-      16,    0,  201,    2, 0x02 /* Public */,
-      17,    0,  202,    2, 0x02 /* Public */,
-      18,    0,  203,    2, 0x02 /* Public */,
-      19,    0,  204,    2, 0x02 /* Public */,
-      20,    0,  205,    2, 0x02 /* Public */,
-      20,    0,  206,    2, 0x02 /* Public */,
-      22,    1,  207,    2, 0x02 /* Public */,
-      23,    3,  210,    2, 0x02 /* Public */,
-      25,    1,  217,    2, 0x02 /* Public */,
-      27,    1,  220,    2, 0x02 /* Public */,
-      28,    2,  223,    2, 0x02 /* Public */,
-      29,    1,  228,    2, 0x02 /* Public */,
-      29,    0,  231,    2, 0x22 /* Public | MethodCloned */,
-      31,    1,  232,    2, 0x02 /* Public */,
-      31,    0,  235,    2, 0x22 /* Public | MethodCloned */,
-      32,    1,  236,    2, 0x02 /* Public */,
-      33,    1,  239,    2, 0x02 /* Public */,
-      34,    1,  242,    2, 0x02 /* Public */,
-      35,    1,  245,    2, 0x02 /* Public */,
-      36,    1,  248,    2, 0x02 /* Public */,
-      37,    1,  251,    2, 0x02 /* Public */,
+      10,    0,  173,    2, 0x02 /* Public */,
+      11,    0,  174,    2, 0x02 /* Public */,
+      13,    0,  175,    2, 0x02 /* Public */,
+      14,    0,  176,    2, 0x02 /* Public */,
+      15,    0,  177,    2, 0x02 /* Public */,
+      16,    0,  178,    2, 0x02 /* Public */,
+      17,    0,  179,    2, 0x02 /* Public */,
+      18,    0,  180,    2, 0x02 /* Public */,
+      18,    0,  181,    2, 0x02 /* Public */,
+      20,    1,  182,    2, 0x02 /* Public */,
+      21,    1,  185,    2, 0x02 /* Public */,
+      23,    1,  188,    2, 0x02 /* Public */,
+      23,    0,  191,    2, 0x22 /* Public | MethodCloned */,
+      25,    1,  192,    2, 0x02 /* Public */,
+      25,    0,  195,    2, 0x22 /* Public | MethodCloned */,
+      26,    1,  196,    2, 0x02 /* Public */,
+      27,    1,  199,    2, 0x02 /* Public */,
+      28,    1,  202,    2, 0x02 /* Public */,
+      29,    1,  205,    2, 0x02 /* Public */,
+      30,    1,  208,    2, 0x02 /* Public */,
+      31,    1,  211,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -253,36 +239,32 @@ static const uint qt_meta_data_osg__QReflect_OcclusionQueryNode[] = {
 
  // methods: parameters
     QMetaType::Bool,
-    QMetaType::Bool, 0x80000000 | 11, 0x80000000 | 12,    2,    2,
-    0x80000000 | 14,
-    0x80000000 | 14,
+    0x80000000 | 12,
+    0x80000000 | 12,
     QMetaType::Bool,
     QMetaType::Bool,
     QMetaType::UInt,
     QMetaType::UInt,
-    0x80000000 | 21,
-    0x80000000 | 21,
+    0x80000000 | 19,
+    0x80000000 | 19,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, QMetaType::UInt, QMetaType::Double, 0x80000000 | 24,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 26,    2,
-    QMetaType::Void, 0x80000000 | 12,    2,
-    QMetaType::Void, 0x80000000 | 11, 0x80000000 | 12,    2,    2,
-    QMetaType::Void, 0x80000000 | 14,   30,
+    QMetaType::Void, 0x80000000 | 22,    2,
+    QMetaType::Void, 0x80000000 | 12,   24,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 14,   30,
+    QMetaType::Void, 0x80000000 | 12,   24,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    2,
-    QMetaType::Void, 0x80000000 | 14,   30,
+    QMetaType::Void, 0x80000000 | 12,   24,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 14,   30,
+    QMetaType::Void, 0x80000000 | 12,   24,
     QMetaType::Void, QMetaType::UInt,    2,
 
  // properties: name, type, flags
-      38, QMetaType::Bool, 0x00495103,
-      39, QMetaType::Bool, 0x00495103,
-      40, QMetaType::UInt, 0x00495103,
-      41, QMetaType::UInt, 0x00495103,
+      32, QMetaType::Bool, 0x00495103,
+      33, QMetaType::Bool, 0x00495103,
+      34, QMetaType::UInt, 0x00495103,
+      35, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -308,39 +290,34 @@ void osg::QReflect_OcclusionQueryNode::qt_static_metacall(QObject *_o, QMetaObje
         case 6: _t->updateModel(); break;
         case 7: { bool _r = _t->getPassed();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 8: { bool _r = _t->getPassed((*reinterpret_cast< osg::QReflect_Camera*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 9: { osg::QReflect_StateSet* _r = _t->getDebugStateSet();
+        case 8: { osg::QReflect_StateSet* _r = _t->getDebugStateSet();
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateSet**>(_a[0]) = _r; }  break;
-        case 10: { osg::QReflect_StateSet* _r = _t->getQueryStateSet();
+        case 9: { osg::QReflect_StateSet* _r = _t->getQueryStateSet();
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateSet**>(_a[0]) = _r; }  break;
-        case 11: { bool _r = _t->getDebugDisplay();
+        case 10: { bool _r = _t->getDebugDisplay();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 12: { bool _r = _t->getQueriesEnabled();
+        case 11: { bool _r = _t->getQueriesEnabled();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 13: { uint _r = _t->getQueryFrameCount();
+        case 12: { uint _r = _t->getQueryFrameCount();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 14: { uint _r = _t->getVisibilityThreshold();
+        case 13: { uint _r = _t->getVisibilityThreshold();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
+        case 14: { osg::QReflect_QueryGeometry* _r = _t->getQueryGeometry();
+            if (_a[0]) *reinterpret_cast< osg::QReflect_QueryGeometry**>(_a[0]) = _r; }  break;
         case 15: { osg::QReflect_QueryGeometry* _r = _t->getQueryGeometry();
             if (_a[0]) *reinterpret_cast< osg::QReflect_QueryGeometry**>(_a[0]) = _r; }  break;
-        case 16: { osg::QReflect_QueryGeometry* _r = _t->getQueryGeometry();
-            if (_a[0]) *reinterpret_cast< osg::QReflect_QueryGeometry**>(_a[0]) = _r; }  break;
-        case 17: _t->discardDeletedQueryObjects((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 18: _t->flushDeletedQueryObjects((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3]))); break;
-        case 19: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 20: _t->traverseDebug((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 21: _t->traverseQuery((*reinterpret_cast< osg::QReflect_Camera*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[2]))); break;
-        case 22: _t->pmoc_reverse_setDebugStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
-        case 23: _t->pmoc_reverse_setDebugStateSet(); break;
-        case 24: _t->pmoc_reverse_setQueryStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
-        case 25: _t->pmoc_reverse_setQueryStateSet(); break;
-        case 26: _t->setDebugDisplay((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 27: _t->setDebugStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
-        case 28: _t->setQueriesEnabled((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 29: _t->setQueryFrameCount((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 30: _t->setQueryStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
-        case 31: _t->setVisibilityThreshold((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 16: _t->discardDeletedQueryObjects((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 17: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
+        case 18: _t->pmoc_reverse_setDebugStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
+        case 19: _t->pmoc_reverse_setDebugStateSet(); break;
+        case 20: _t->pmoc_reverse_setQueryStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
+        case 21: _t->pmoc_reverse_setQueryStateSet(); break;
+        case 22: _t->setDebugDisplay((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 23: _t->setDebugStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
+        case 24: _t->setQueriesEnabled((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 25: _t->setQueryFrameCount((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 26: _t->setQueryStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
+        case 27: _t->setVisibilityThreshold((*reinterpret_cast< const uint(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -436,13 +413,13 @@ int osg::QReflect_OcclusionQueryNode::qt_metacall(QMetaObject::Call _c, int _id,
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 32)
+        if (_id < 28)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 32;
+        _id -= 28;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 32)
+        if (_id < 28)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 32;
+        _id -= 28;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
@@ -506,8 +483,8 @@ void osg::QReflect_OcclusionQueryNode::VisibilityThresholdChanged(const unsigned
     QMetaObject::activate(this, &staticMetaObject, 5, _a);
 }
 struct qt_meta_stringdata_osg__QReflect_QueryGeometry_t {
-    QByteArrayData data[13];
-    char stringdata0[225];
+    QByteArrayData data[11];
+    char stringdata0[172];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -521,23 +498,19 @@ QT_MOC_LITERAL(1, 28, 11), // "updateModel"
 QT_MOC_LITERAL(2, 40, 0), // ""
 QT_MOC_LITERAL(3, 41, 12), // "getNumPixels"
 QT_MOC_LITERAL(4, 54, 21), // "osg::QReflect_Camera*"
-QT_MOC_LITERAL(5, 76, 26), // "discardDeletedQueryObjects"
-QT_MOC_LITERAL(6, 103, 18), // "drawImplementation"
-QT_MOC_LITERAL(7, 122, 25), // "osg::QReflect_RenderInfo*"
-QT_MOC_LITERAL(8, 148, 24), // "flushDeletedQueryObjects"
-QT_MOC_LITERAL(9, 173, 7), // "double&"
-QT_MOC_LITERAL(10, 181, 16), // "releaseGLObjects"
-QT_MOC_LITERAL(11, 198, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(12, 219, 5) // "reset"
+QT_MOC_LITERAL(5, 76, 17), // "deleteQueryObject"
+QT_MOC_LITERAL(6, 94, 6), // "GLuint"
+QT_MOC_LITERAL(7, 101, 26), // "discardDeletedQueryObjects"
+QT_MOC_LITERAL(8, 128, 16), // "releaseGLObjects"
+QT_MOC_LITERAL(9, 145, 20), // "osg::QReflect_State*"
+QT_MOC_LITERAL(10, 166, 5) // "reset"
 
     },
     "osg::QReflect_QueryGeometry\0updateModel\0"
     "\0getNumPixels\0osg::QReflect_Camera*\0"
-    "discardDeletedQueryObjects\0"
-    "drawImplementation\0osg::QReflect_RenderInfo*\0"
-    "flushDeletedQueryObjects\0double&\0"
-    "releaseGLObjects\0osg::QReflect_State*\0"
-    "reset"
+    "deleteQueryObject\0GLuint\0"
+    "discardDeletedQueryObjects\0releaseGLObjects\0"
+    "osg::QReflect_State*\0reset"
 };
 #undef QT_MOC_LITERAL
 
@@ -547,7 +520,7 @@ static const uint qt_meta_data_osg__QReflect_QueryGeometry[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       7,   14, // methods
+       6,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -555,25 +528,23 @@ static const uint qt_meta_data_osg__QReflect_QueryGeometry[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   49,    2, 0x0a /* Public */,
+       1,    0,   44,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    1,   50,    2, 0x02 /* Public */,
-       5,    1,   53,    2, 0x02 /* Public */,
-       6,    1,   56,    2, 0x02 /* Public */,
-       8,    3,   59,    2, 0x02 /* Public */,
-      10,    1,   66,    2, 0x02 /* Public */,
-      12,    0,   69,    2, 0x02 /* Public */,
+       3,    1,   45,    2, 0x02 /* Public */,
+       5,    2,   48,    2, 0x02 /* Public */,
+       7,    1,   53,    2, 0x02 /* Public */,
+       8,    1,   56,    2, 0x02 /* Public */,
+      10,    0,   59,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
 
  // methods: parameters
     QMetaType::UInt, 0x80000000 | 4,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 6,    2,    2,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 7,    2,
-    QMetaType::Void, QMetaType::UInt, QMetaType::Double, 0x80000000 | 9,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 11,    2,
+    QMetaType::Void, 0x80000000 | 9,    2,
     QMetaType::Void,
 
        0        // eod
@@ -588,11 +559,10 @@ void osg::QReflect_QueryGeometry::qt_static_metacall(QObject *_o, QMetaObject::C
         case 0: _t->updateModel(); break;
         case 1: { uint _r = _t->getNumPixels((*reinterpret_cast< osg::QReflect_Camera*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 2: _t->discardDeletedQueryObjects((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 3: _t->drawImplementation((*reinterpret_cast< osg::QReflect_RenderInfo*(*)>(_a[1]))); break;
-        case 4: _t->flushDeletedQueryObjects((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3]))); break;
-        case 5: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 6: _t->reset(); break;
+        case 2: _t->deleteQueryObject((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< GLuint(*)>(_a[2]))); break;
+        case 3: _t->discardDeletedQueryObjects((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 4: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
+        case 5: _t->reset(); break;
         default: ;
         }
     }
@@ -623,13 +593,13 @@ int osg::QReflect_QueryGeometry::qt_metacall(QMetaObject::Call _c, int _id, void
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 7)
+        if (_id < 6)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 7;
+        _id -= 6;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 7)
+        if (_id < 6)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 7;
+        _id -= 6;
     }
     return _id;
 }

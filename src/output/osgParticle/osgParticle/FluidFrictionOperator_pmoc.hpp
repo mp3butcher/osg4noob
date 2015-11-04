@@ -6,14 +6,14 @@
 #include <QObject>
 #include <osgParticle/FluidFrictionOperator_pmoc.hpp>
 #include <QObject>
+namespace osgParticle{ 
+class QReflect_Program;
+			} ;
 namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osgParticle{ 
 class QReflect_Particle;
-			} ;
-namespace osgParticle{ 
-class QReflect_Program;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/FluidFrictionOperator>

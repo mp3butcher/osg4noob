@@ -3,22 +3,28 @@
 #include <osg/Uniform_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Vec2f;
+class QReflect_Vec3f;
 			} ;
 namespace osg{ 
-class QReflect_Vec3f;
+class QReflect_Vec2f;
 			} ;
 namespace osg{ 
 class QReflect_Vec4f;
 			} ;
 namespace osg{ 
-class QReflect_Vec2d;
-			} ;
-namespace osg{ 
 class QReflect_Vec3d;
 			} ;
 namespace osg{ 
+class QReflect_Vec2d;
+			} ;
+namespace osg{ 
 class QReflect_Vec4d;
+			} ;
+namespace osg{ 
+class QReflect_Matrixf;
+			} ;
+namespace osg{ 
+class QReflect_Matrixd;
 			} ;
 namespace osg{ 
 class QReflect_Uniform;
@@ -27,10 +33,7 @@ namespace osg{
 class QReflect_UniformCallback;
 			} ;
 namespace osg{ 
-class QReflect_Matrixf;
-			} ;
-namespace osg{ 
-class QReflect_Matrixd;
+class QReflect_GLExtensions;
 			} ;
 #include <osg/Uniform>
 #include <osg/Uniform>
@@ -173,6 +176,10 @@ virtual ~QReflect_Uniform( );
 // ParentList  getParents();
 // StateSet * getParent( unsigned int );
 // UIntArray * getUIntArray();
+// bool  get( bool &);
+// bool  get( double &);
+// bool  get( float &);
+// bool  get( int &);
 // bool  get( osg::Matrix2 &);
 // bool  get( osg::Matrix2d &);
 // bool  get( osg::Matrix2x3 &);
@@ -189,6 +196,28 @@ virtual ~QReflect_Uniform( );
 // bool  get( osg::Matrix4x2d &);
 // bool  get( osg::Matrix4x3 &);
 // bool  get( osg::Matrix4x3d &);
+// bool  get( osg::Matrixd &);
+// bool  get( osg::Matrixf &);
+// bool  get( osg::Vec2 &);
+// bool  get( osg::Vec2d &);
+// bool  get( osg::Vec3 &);
+// bool  get( osg::Vec3d &);
+// bool  get( osg::Vec4 &);
+// bool  get( osg::Vec4d &);
+// bool  get( unsigned int &);
+// bool  get( bool & , bool &);
+// bool  get( int & , int &);
+// bool  get( unsigned int & , unsigned int &);
+// bool  get( bool & , bool & , bool &);
+// bool  get( int & , int & , int &);
+// bool  get( unsigned int & , unsigned int & , unsigned int &);
+// bool  get( bool & , bool & , bool & , bool &);
+// bool  get( int & , int & , int & , int &);
+// bool  get( unsigned int & , unsigned int & , unsigned int & , unsigned int &);
+// bool  getElement( unsigned int  , bool &);
+// bool  getElement( unsigned int  , double &);
+// bool  getElement( unsigned int  , float &);
+// bool  getElement( unsigned int  , int &);
 // bool  getElement( unsigned int  , osg::Matrix2 &);
 // bool  getElement( unsigned int  , osg::Matrix2d &);
 // bool  getElement( unsigned int  , osg::Matrix2x3 &);
@@ -205,6 +234,24 @@ virtual ~QReflect_Uniform( );
 // bool  getElement( unsigned int  , osg::Matrix4x2d &);
 // bool  getElement( unsigned int  , osg::Matrix4x3 &);
 // bool  getElement( unsigned int  , osg::Matrix4x3d &);
+// bool  getElement( unsigned int  , osg::Matrixd &);
+// bool  getElement( unsigned int  , osg::Matrixf &);
+// bool  getElement( unsigned int  , osg::Vec2 &);
+// bool  getElement( unsigned int  , osg::Vec2d &);
+// bool  getElement( unsigned int  , osg::Vec3 &);
+// bool  getElement( unsigned int  , osg::Vec3d &);
+// bool  getElement( unsigned int  , osg::Vec4 &);
+// bool  getElement( unsigned int  , osg::Vec4d &);
+// bool  getElement( unsigned int  , unsigned int &);
+// bool  getElement( unsigned int  , bool & , bool &);
+// bool  getElement( unsigned int  , int & , int &);
+// bool  getElement( unsigned int  , unsigned int & , unsigned int &);
+// bool  getElement( unsigned int  , bool & , bool & , bool &);
+// bool  getElement( unsigned int  , int & , int & , int &);
+// bool  getElement( unsigned int  , unsigned int & , unsigned int & , unsigned int &);
+// bool  getElement( unsigned int  , bool & , bool & , bool & , bool &);
+// bool  getElement( unsigned int  , int & , int & , int & , int &);
+// bool  getElement( unsigned int  , unsigned int & , unsigned int & , unsigned int & , unsigned int &);
 // bool  operator!=(const  Uniform &);
 // bool  operator<(const  Uniform &);
 // bool  operator==(const  Uniform &);
@@ -244,57 +291,12 @@ virtual ~QReflect_Uniform( );
 // bool  setElement( unsigned int  ,const  osg::Matrix4x2d &);
 // bool  setElement( unsigned int  ,const  osg::Matrix4x3 &);
 // bool  setElement( unsigned int  ,const  osg::Matrix4x3d &);
-// void  apply(const  GLExtensions * , GLint );
 //const  DoubleArray * getDoubleArray();
 //const  FloatArray * getFloatArray();
 //const  IntArray * getIntArray();
 //const  ParentList & getParents();
 //const  StateSet * getParent( unsigned int );
 //const  UIntArray * getUIntArray();
-Q_INVOKABLE  bool  get( bool & , bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  get( bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  get( bool & , bool &)const;
-Q_INVOKABLE  bool  get( bool &)const;
-Q_INVOKABLE  bool  get( double &)const;
-Q_INVOKABLE  bool  get( float &)const;
-Q_INVOKABLE  bool  get( int & , int & , int & , int &)const;
-Q_INVOKABLE  bool  get( int & , int & , int &)const;
-Q_INVOKABLE  bool  get( int & , int &)const;
-Q_INVOKABLE  bool  get( int &)const;
-Q_INVOKABLE  bool  get( unsigned int & , unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  get( unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  get( unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  get( unsigned int &)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Matrixd *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Matrixf *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec2d *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec2f *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec3d *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec3f *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec4d *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec4f *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool & , bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool & , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , double &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , float &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int & , int & , int & , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int & , int & , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int & , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int & , unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Matrixd *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Matrixf *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec2d *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec2f *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec3d *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec3f *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec4d *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec4f *)const;
 Q_INVOKABLE  bool  set( bool  , bool  , bool  , bool );
 Q_INVOKABLE  bool  set( bool  , bool  , bool );
 Q_INVOKABLE  bool  set( bool  , bool );
@@ -357,6 +359,7 @@ Q_INVOKABLE osg::QReflect_Uniform*  asUniform()const;
 Q_INVOKABLE osg::QReflect_Uniform::Type  getGlApiType(osg::QReflect_Uniform::Type );
 Q_INVOKABLE osg::QReflect_Uniform::Type  getType()const;
 Q_INVOKABLE osg::QReflect_Uniform::Type  getTypeId(const  QString &);
+Q_INVOKABLE void  apply(osg::QReflect_GLExtensions * , GLint )const;
 Q_INVOKABLE void  copyData(osg::QReflect_Uniform *);
 Q_INVOKABLE void  dirty();
 Q_INVOKABLE void  setName(const  QString &);

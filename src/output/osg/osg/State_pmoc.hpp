@@ -55,19 +55,16 @@ namespace osg{
 class QReflect_Array;
 			} ;
 namespace osg{ 
-class QReflect_VertexAttribAlias;
+class QReflect_ShaderComposer;
 			} ;
 namespace osg{ 
-class QReflect_ShaderComposer;
+class QReflect_DisplaySettings;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
 			} ;
 namespace osg{ 
 class QReflect_RefMatrixd;
-			} ;
-namespace osg{ 
-class QReflect_DisplaySettings;
 			} ;
 namespace osg{ 
 class QReflect_FrameStamp;
@@ -77,6 +74,9 @@ class QReflect_GLBufferObject;
 			} ;
 namespace osg{ 
 class QReflect_Viewport;
+			} ;
+namespace osg{ 
+class QReflect_VertexAttribAlias;
 			} ;
 namespace osg{ 
 class QReflect_GraphicsCostEstimator;
@@ -112,11 +112,6 @@ virtual ~QReflect_State( );
 // DefineMap & getDefineMap();
 // DynamicObjectRenderingCompletedCallback * getDynamicObjectRenderingCompletedCallback();
 // GLBeginEndAdapter & getGLBeginEndAdapter();
-// GLint  getAttribLocation(const  std::string &);
-// GLint  getMaxTextureCoords();
-// GLint  getMaxTextureUnits();
-// GLint  getUniformLocation( unsigned int );
-// GLint  getUniformLocation(const  std::string &);
 // GLuint64  getGpuTimestamp();
 // GraphicsContext * getGraphicsContext();
 // Polytope  getViewFrustum();
@@ -136,6 +131,7 @@ virtual ~QReflect_State( );
 // bool  getModeValidity( StateAttribute::GLMode );
 // bool  supportsShaderRequirements(const  osg::ShaderDefines &);
 // std::string  getDefineString(const  osg::ShaderDefines &);
+// void  captureCurrentState( StateSet &);
 // void  drawQuads( GLint  , GLsizei  , GLsizei );
 // void  glDrawArraysInstanced( GLenum  , GLint  , GLsizei  , GLsizei );
 // void  glDrawElementsInstanced( GLenum  , GLsizei  , GLenum  ,const  GLvoid * , GLsizei );
@@ -184,6 +180,11 @@ virtual ~QReflect_State( );
 //const  osg::Matrix & getInitialViewMatrix();
 //const  osg::Matrix & getModelViewMatrix();
 //const  osg::Matrix & getProjectionMatrix();
+Q_INVOKABLE  GLint  getAttribLocation(const  QString &)const;
+Q_INVOKABLE  GLint  getMaxTextureCoords()const;
+Q_INVOKABLE  GLint  getMaxTextureUnits()const;
+Q_INVOKABLE  GLint  getUniformLocation( unsigned int )const;
+Q_INVOKABLE  GLint  getUniformLocation(const  QString &)const;
 Q_INVOKABLE  bool  applyAttribute(osg::QReflect_StateAttribute *);
 Q_INVOKABLE  bool  applyTextureAttribute( unsigned int  ,osg::QReflect_StateAttribute *);
 Q_INVOKABLE  bool  checkGLErrors(const  char *)const;
@@ -240,7 +241,6 @@ Q_INVOKABLE void  applyShaderCompositionUniform(osg::QReflect_Uniform * , unsign
 Q_INVOKABLE void  bindElementBufferObject(osg::QReflect_GLBufferObject *);
 Q_INVOKABLE void  bindPixelBufferObject(osg::QReflect_GLBufferObject *);
 Q_INVOKABLE void  bindVertexBufferObject(osg::QReflect_GLBufferObject *);
-Q_INVOKABLE void  captureCurrentState(osg::QReflect_StateSet *)const;
 Q_INVOKABLE void  decrementDynamicObjectCount();
 Q_INVOKABLE void  dirtyAllAttributes();
 Q_INVOKABLE void  dirtyAllModes();

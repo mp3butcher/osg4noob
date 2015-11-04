@@ -8,7 +8,6 @@
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
-#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
  int  osg::QReflect_TextureCubeMap::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
@@ -24,14 +23,6 @@ return _model->getNumImages();
 }
  unsigned int&  osg::QReflect_TextureCubeMap::getModifiedCount( unsigned int p0 , unsigned int p1)const{
 return _model->getModifiedCount(p0 ,p1);
-
-}
- void osg::QReflect_TextureCubeMap::apply(osg::QReflect_State *p0)const{
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_TextureCubeMap::copyTexSubImageCubeMap(osg::QReflect_State *p0 , int p1 , int p2 , int p3 , int p4 , int p5 , int p6 , int p7){
- _model->copyTexSubImageCubeMap(*p0->_model ,p1 ,p2 ,p3 ,p4 ,p5 ,p6 ,p7);
 
 }
  void osg::QReflect_TextureCubeMap::setImage( unsigned int p0 ,osg::QReflect_Image *p1){

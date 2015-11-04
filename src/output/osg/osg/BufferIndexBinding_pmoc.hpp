@@ -23,9 +23,9 @@ QReflect_BufferIndexBinding(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BufferIndexBinding( );
 //BufferIndexBinding
 // GLenum  getTarget();
-// GLuint  getIndex();
 //virtual  unsigned   getMember();
 //virtual  void  apply( State &);
+Q_INVOKABLE  GLuint  getIndex()const;
 Q_INVOKABLE  int  getOffset()const;
 Q_INVOKABLE  int  getSize()const;
 Q_INVOKABLE  osg::QReflect_BufferObject * getBufferObject()const;

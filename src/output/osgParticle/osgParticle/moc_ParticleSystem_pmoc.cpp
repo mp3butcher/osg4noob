@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ParticleSystem_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ParticleSystem_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_ParticleSystem_t {
-    QByteArrayData data[72];
-    char stringdata0[1380];
+    QByteArrayData data[68];
+    char stringdata0[1301];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -62,45 +62,41 @@ QT_MOC_LITERAL(29, 568, 65), // "osgParticle::QReflect_Particl..."
 QT_MOC_LITERAL(30, 634, 11), // "getSortMode"
 QT_MOC_LITERAL(31, 646, 46), // "osgParticle::QReflect_Particl..."
 QT_MOC_LITERAL(32, 693, 15), // "destroyParticle"
-QT_MOC_LITERAL(33, 709, 18), // "drawImplementation"
-QT_MOC_LITERAL(34, 728, 25), // "osg::QReflect_RenderInfo*"
-QT_MOC_LITERAL(35, 754, 13), // "reuseParticle"
-QT_MOC_LITERAL(36, 768, 15), // "setAlignVectorX"
-QT_MOC_LITERAL(37, 784, 20), // "osg::QReflect_Vec3f*"
-QT_MOC_LITERAL(38, 805, 15), // "setAlignVectorY"
-QT_MOC_LITERAL(39, 821, 15), // "setAlignVectors"
-QT_MOC_LITERAL(40, 837, 20), // "setDefaultAttributes"
-QT_MOC_LITERAL(41, 858, 32), // "setDefaultAttributesUsingShaders"
-QT_MOC_LITERAL(42, 891, 26), // "setDefaultParticleTemplate"
-QT_MOC_LITERAL(43, 918, 20), // "setParticleAlignment"
-QT_MOC_LITERAL(44, 939, 30), // "setParticleScaleReferenceFrame"
-QT_MOC_LITERAL(45, 970, 11), // "setSortMode"
-QT_MOC_LITERAL(46, 982, 6), // "update"
-QT_MOC_LITERAL(47, 989, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(48, 1016, 22), // "setDoublePassRendering"
-QT_MOC_LITERAL(49, 1039, 15), // "setFreezeOnCull"
-QT_MOC_LITERAL(50, 1055, 9), // "setFrozen"
-QT_MOC_LITERAL(51, 1065, 16), // "setLevelOfDetail"
-QT_MOC_LITERAL(52, 1082, 13), // "setUseShaders"
-QT_MOC_LITERAL(53, 1096, 17), // "setUseVertexArray"
-QT_MOC_LITERAL(54, 1114, 21), // "setVisibilityDistance"
-QT_MOC_LITERAL(55, 1136, 19), // "DoublePassRendering"
-QT_MOC_LITERAL(56, 1156, 12), // "FreezeOnCull"
-QT_MOC_LITERAL(57, 1169, 6), // "Frozen"
-QT_MOC_LITERAL(58, 1176, 10), // "UseShaders"
-QT_MOC_LITERAL(59, 1187, 14), // "UseVertexArray"
-QT_MOC_LITERAL(60, 1202, 18), // "VisibilityDistance"
-QT_MOC_LITERAL(61, 1221, 13), // "LevelOfDetail"
-QT_MOC_LITERAL(62, 1235, 9), // "Alignment"
-QT_MOC_LITERAL(63, 1245, 9), // "BILLBOARD"
-QT_MOC_LITERAL(64, 1255, 5), // "FIXED"
-QT_MOC_LITERAL(65, 1261, 27), // "ParticleScaleReferenceFrame"
-QT_MOC_LITERAL(66, 1289, 17), // "LOCAL_COORDINATES"
-QT_MOC_LITERAL(67, 1307, 17), // "WORLD_COORDINATES"
-QT_MOC_LITERAL(68, 1325, 8), // "SortMode"
-QT_MOC_LITERAL(69, 1334, 7), // "NO_SORT"
-QT_MOC_LITERAL(70, 1342, 18), // "SORT_FRONT_TO_BACK"
-QT_MOC_LITERAL(71, 1361, 18) // "SORT_BACK_TO_FRONT"
+QT_MOC_LITERAL(33, 709, 13), // "reuseParticle"
+QT_MOC_LITERAL(34, 723, 15), // "setAlignVectorX"
+QT_MOC_LITERAL(35, 739, 20), // "osg::QReflect_Vec3f*"
+QT_MOC_LITERAL(36, 760, 15), // "setAlignVectorY"
+QT_MOC_LITERAL(37, 776, 15), // "setAlignVectors"
+QT_MOC_LITERAL(38, 792, 20), // "setDefaultAttributes"
+QT_MOC_LITERAL(39, 813, 32), // "setDefaultAttributesUsingShaders"
+QT_MOC_LITERAL(40, 846, 26), // "setDefaultParticleTemplate"
+QT_MOC_LITERAL(41, 873, 20), // "setParticleAlignment"
+QT_MOC_LITERAL(42, 894, 30), // "setParticleScaleReferenceFrame"
+QT_MOC_LITERAL(43, 925, 11), // "setSortMode"
+QT_MOC_LITERAL(44, 937, 22), // "setDoublePassRendering"
+QT_MOC_LITERAL(45, 960, 15), // "setFreezeOnCull"
+QT_MOC_LITERAL(46, 976, 9), // "setFrozen"
+QT_MOC_LITERAL(47, 986, 16), // "setLevelOfDetail"
+QT_MOC_LITERAL(48, 1003, 13), // "setUseShaders"
+QT_MOC_LITERAL(49, 1017, 17), // "setUseVertexArray"
+QT_MOC_LITERAL(50, 1035, 21), // "setVisibilityDistance"
+QT_MOC_LITERAL(51, 1057, 19), // "DoublePassRendering"
+QT_MOC_LITERAL(52, 1077, 12), // "FreezeOnCull"
+QT_MOC_LITERAL(53, 1090, 6), // "Frozen"
+QT_MOC_LITERAL(54, 1097, 10), // "UseShaders"
+QT_MOC_LITERAL(55, 1108, 14), // "UseVertexArray"
+QT_MOC_LITERAL(56, 1123, 18), // "VisibilityDistance"
+QT_MOC_LITERAL(57, 1142, 13), // "LevelOfDetail"
+QT_MOC_LITERAL(58, 1156, 9), // "Alignment"
+QT_MOC_LITERAL(59, 1166, 9), // "BILLBOARD"
+QT_MOC_LITERAL(60, 1176, 5), // "FIXED"
+QT_MOC_LITERAL(61, 1182, 27), // "ParticleScaleReferenceFrame"
+QT_MOC_LITERAL(62, 1210, 17), // "LOCAL_COORDINATES"
+QT_MOC_LITERAL(63, 1228, 17), // "WORLD_COORDINATES"
+QT_MOC_LITERAL(64, 1246, 8), // "SortMode"
+QT_MOC_LITERAL(65, 1255, 7), // "NO_SORT"
+QT_MOC_LITERAL(66, 1263, 18), // "SORT_FRONT_TO_BACK"
+QT_MOC_LITERAL(67, 1282, 18) // "SORT_BACK_TO_FRONT"
 
     },
     "osgParticle::QReflect_ParticleSystem\0"
@@ -120,8 +116,7 @@ QT_MOC_LITERAL(71, 1361, 18) // "SORT_BACK_TO_FRONT"
     "getParticleScaleReferenceFrame\0"
     "osgParticle::QReflect_ParticleSystem::ParticleScaleReferenceFrame\0"
     "getSortMode\0osgParticle::QReflect_ParticleSystem::SortMode\0"
-    "destroyParticle\0drawImplementation\0"
-    "osg::QReflect_RenderInfo*\0reuseParticle\0"
+    "destroyParticle\0reuseParticle\0"
     "setAlignVectorX\0osg::QReflect_Vec3f*\0"
     "setAlignVectorY\0setAlignVectors\0"
     "setDefaultAttributes\0"
@@ -129,15 +124,14 @@ QT_MOC_LITERAL(71, 1361, 18) // "SORT_BACK_TO_FRONT"
     "setDefaultParticleTemplate\0"
     "setParticleAlignment\0"
     "setParticleScaleReferenceFrame\0"
-    "setSortMode\0update\0osg::QReflect_NodeVisitor*\0"
-    "setDoublePassRendering\0setFreezeOnCull\0"
-    "setFrozen\0setLevelOfDetail\0setUseShaders\0"
-    "setUseVertexArray\0setVisibilityDistance\0"
-    "DoublePassRendering\0FreezeOnCull\0"
-    "Frozen\0UseShaders\0UseVertexArray\0"
-    "VisibilityDistance\0LevelOfDetail\0"
-    "Alignment\0BILLBOARD\0FIXED\0"
-    "ParticleScaleReferenceFrame\0"
+    "setSortMode\0setDoublePassRendering\0"
+    "setFreezeOnCull\0setFrozen\0setLevelOfDetail\0"
+    "setUseShaders\0setUseVertexArray\0"
+    "setVisibilityDistance\0DoublePassRendering\0"
+    "FreezeOnCull\0Frozen\0UseShaders\0"
+    "UseVertexArray\0VisibilityDistance\0"
+    "LevelOfDetail\0Alignment\0BILLBOARD\0"
+    "FIXED\0ParticleScaleReferenceFrame\0"
     "LOCAL_COORDINATES\0WORLD_COORDINATES\0"
     "SortMode\0NO_SORT\0SORT_FRONT_TO_BACK\0"
     "SORT_BACK_TO_FRONT"
@@ -150,65 +144,63 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleSystem[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      47,   14, // methods
-       7,  372, // properties
-       3,  400, // enums/sets
+      45,   14, // methods
+       7,  354, // properties
+       3,  382, // enums/sets
        0,    0, // constructors
        0,       // flags
        7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  249,    2, 0x06 /* Public */,
-       3,    1,  252,    2, 0x06 /* Public */,
-       4,    1,  255,    2, 0x06 /* Public */,
-       5,    1,  258,    2, 0x06 /* Public */,
-       6,    1,  261,    2, 0x06 /* Public */,
-       7,    1,  264,    2, 0x06 /* Public */,
-       8,    1,  267,    2, 0x06 /* Public */,
+       1,    1,  239,    2, 0x06 /* Public */,
+       3,    1,  242,    2, 0x06 /* Public */,
+       4,    1,  245,    2, 0x06 /* Public */,
+       5,    1,  248,    2, 0x06 /* Public */,
+       6,    1,  251,    2, 0x06 /* Public */,
+       7,    1,  254,    2, 0x06 /* Public */,
+       8,    1,  257,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       9,    0,  270,    2, 0x0a /* Public */,
+       9,    0,  260,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      10,    0,  271,    2, 0x02 /* Public */,
-      11,    0,  272,    2, 0x02 /* Public */,
-      12,    1,  273,    2, 0x02 /* Public */,
-      13,    0,  276,    2, 0x02 /* Public */,
-      14,    0,  277,    2, 0x02 /* Public */,
-      15,    0,  278,    2, 0x02 /* Public */,
-      16,    0,  279,    2, 0x02 /* Public */,
-      17,    0,  280,    2, 0x02 /* Public */,
-      18,    0,  281,    2, 0x02 /* Public */,
-      19,    0,  282,    2, 0x02 /* Public */,
-      20,    0,  283,    2, 0x02 /* Public */,
-      21,    0,  284,    2, 0x02 /* Public */,
-      22,    0,  285,    2, 0x02 /* Public */,
-      23,    1,  286,    2, 0x02 /* Public */,
-      25,    1,  289,    2, 0x02 /* Public */,
-      25,    1,  292,    2, 0x02 /* Public */,
-      26,    0,  295,    2, 0x02 /* Public */,
-      28,    0,  296,    2, 0x02 /* Public */,
-      30,    0,  297,    2, 0x02 /* Public */,
-      32,    1,  298,    2, 0x02 /* Public */,
-      33,    1,  301,    2, 0x02 /* Public */,
-      35,    1,  304,    2, 0x02 /* Public */,
-      36,    1,  307,    2, 0x02 /* Public */,
-      38,    1,  310,    2, 0x02 /* Public */,
-      39,    2,  313,    2, 0x02 /* Public */,
-      40,    4,  318,    2, 0x02 /* Public */,
-      41,    3,  327,    2, 0x02 /* Public */,
-      42,    1,  334,    2, 0x02 /* Public */,
-      43,    1,  337,    2, 0x02 /* Public */,
-      44,    1,  340,    2, 0x02 /* Public */,
-      45,    1,  343,    2, 0x02 /* Public */,
-      46,    2,  346,    2, 0x02 /* Public */,
-      48,    1,  351,    2, 0x02 /* Public */,
-      49,    1,  354,    2, 0x02 /* Public */,
-      50,    1,  357,    2, 0x02 /* Public */,
-      51,    1,  360,    2, 0x02 /* Public */,
-      52,    1,  363,    2, 0x02 /* Public */,
-      53,    1,  366,    2, 0x02 /* Public */,
-      54,    1,  369,    2, 0x02 /* Public */,
+      10,    0,  261,    2, 0x02 /* Public */,
+      11,    0,  262,    2, 0x02 /* Public */,
+      12,    1,  263,    2, 0x02 /* Public */,
+      13,    0,  266,    2, 0x02 /* Public */,
+      14,    0,  267,    2, 0x02 /* Public */,
+      15,    0,  268,    2, 0x02 /* Public */,
+      16,    0,  269,    2, 0x02 /* Public */,
+      17,    0,  270,    2, 0x02 /* Public */,
+      18,    0,  271,    2, 0x02 /* Public */,
+      19,    0,  272,    2, 0x02 /* Public */,
+      20,    0,  273,    2, 0x02 /* Public */,
+      21,    0,  274,    2, 0x02 /* Public */,
+      22,    0,  275,    2, 0x02 /* Public */,
+      23,    1,  276,    2, 0x02 /* Public */,
+      25,    1,  279,    2, 0x02 /* Public */,
+      25,    1,  282,    2, 0x02 /* Public */,
+      26,    0,  285,    2, 0x02 /* Public */,
+      28,    0,  286,    2, 0x02 /* Public */,
+      30,    0,  287,    2, 0x02 /* Public */,
+      32,    1,  288,    2, 0x02 /* Public */,
+      33,    1,  291,    2, 0x02 /* Public */,
+      34,    1,  294,    2, 0x02 /* Public */,
+      36,    1,  297,    2, 0x02 /* Public */,
+      37,    2,  300,    2, 0x02 /* Public */,
+      38,    4,  305,    2, 0x02 /* Public */,
+      39,    3,  314,    2, 0x02 /* Public */,
+      40,    1,  321,    2, 0x02 /* Public */,
+      41,    1,  324,    2, 0x02 /* Public */,
+      42,    1,  327,    2, 0x02 /* Public */,
+      43,    1,  330,    2, 0x02 /* Public */,
+      44,    1,  333,    2, 0x02 /* Public */,
+      45,    1,  336,    2, 0x02 /* Public */,
+      46,    1,  339,    2, 0x02 /* Public */,
+      47,    1,  342,    2, 0x02 /* Public */,
+      48,    1,  345,    2, 0x02 /* Public */,
+      49,    1,  348,    2, 0x02 /* Public */,
+      50,    1,  351,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -243,18 +235,16 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleSystem[] = {
     0x80000000 | 29,
     0x80000000 | 31,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 34,    2,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 37,    2,
-    QMetaType::Void, 0x80000000 | 37,    2,
-    QMetaType::Void, 0x80000000 | 37, 0x80000000 | 37,    2,    2,
+    QMetaType::Void, 0x80000000 | 35,    2,
+    QMetaType::Void, 0x80000000 | 35,    2,
+    QMetaType::Void, 0x80000000 | 35, 0x80000000 | 35,    2,    2,
     QMetaType::Void, QMetaType::QString, QMetaType::Bool, QMetaType::Bool, QMetaType::Int,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::QString, QMetaType::Bool, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 24,    2,
     QMetaType::Void, 0x80000000 | 27,    2,
     QMetaType::Void, 0x80000000 | 29,    2,
     QMetaType::Void, 0x80000000 | 31,    2,
-    QMetaType::Void, QMetaType::Double, 0x80000000 | 47,    2,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Bool,    2,
@@ -264,13 +254,13 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleSystem[] = {
     QMetaType::Void, QMetaType::Double,    2,
 
  // properties: name, type, flags
+      51, QMetaType::Bool, 0x00495103,
+      52, QMetaType::Bool, 0x00495103,
+      53, QMetaType::Bool, 0x00495103,
+      54, QMetaType::Bool, 0x00495103,
       55, QMetaType::Bool, 0x00495103,
-      56, QMetaType::Bool, 0x00495103,
-      57, QMetaType::Bool, 0x00495103,
-      58, QMetaType::Bool, 0x00495103,
-      59, QMetaType::Bool, 0x00495103,
-      60, QMetaType::Double, 0x00495103,
-      61, QMetaType::Int, 0x00495103,
+      56, QMetaType::Double, 0x00495103,
+      57, QMetaType::Int, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -282,18 +272,18 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleSystem[] = {
        3,
 
  // enums: name, flags, count, data
-      62, 0x0,    2,  412,
-      65, 0x0,    2,  416,
-      68, 0x0,    3,  420,
+      58, 0x0,    2,  394,
+      61, 0x0,    2,  398,
+      64, 0x0,    3,  402,
 
  // enum data: key, value
-      63, uint(osgParticle::QReflect_ParticleSystem::BILLBOARD),
-      64, uint(osgParticle::QReflect_ParticleSystem::FIXED),
-      66, uint(osgParticle::QReflect_ParticleSystem::LOCAL_COORDINATES),
-      67, uint(osgParticle::QReflect_ParticleSystem::WORLD_COORDINATES),
-      69, uint(osgParticle::QReflect_ParticleSystem::NO_SORT),
-      70, uint(osgParticle::QReflect_ParticleSystem::SORT_FRONT_TO_BACK),
-      71, uint(osgParticle::QReflect_ParticleSystem::SORT_BACK_TO_FRONT),
+      59, uint(osgParticle::QReflect_ParticleSystem::BILLBOARD),
+      60, uint(osgParticle::QReflect_ParticleSystem::FIXED),
+      62, uint(osgParticle::QReflect_ParticleSystem::LOCAL_COORDINATES),
+      63, uint(osgParticle::QReflect_ParticleSystem::WORLD_COORDINATES),
+      65, uint(osgParticle::QReflect_ParticleSystem::NO_SORT),
+      66, uint(osgParticle::QReflect_ParticleSystem::SORT_FRONT_TO_BACK),
+      67, uint(osgParticle::QReflect_ParticleSystem::SORT_BACK_TO_FRONT),
 
        0        // eod
 };
@@ -350,25 +340,23 @@ void osgParticle::QReflect_ParticleSystem::qt_static_metacall(QObject *_o, QMeta
         case 26: { osgParticle::QReflect_ParticleSystem::SortMode _r = _t->getSortMode();
             if (_a[0]) *reinterpret_cast< osgParticle::QReflect_ParticleSystem::SortMode*>(_a[0]) = _r; }  break;
         case 27: _t->destroyParticle((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 28: _t->drawImplementation((*reinterpret_cast< osg::QReflect_RenderInfo*(*)>(_a[1]))); break;
-        case 29: _t->reuseParticle((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 30: _t->setAlignVectorX((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 31: _t->setAlignVectorY((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 32: _t->setAlignVectors((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[2]))); break;
-        case 33: _t->setDefaultAttributes((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 34: _t->setDefaultAttributesUsingShaders((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 35: _t->setDefaultParticleTemplate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1]))); break;
-        case 36: _t->setParticleAlignment((*reinterpret_cast< osgParticle::QReflect_ParticleSystem::Alignment(*)>(_a[1]))); break;
-        case 37: _t->setParticleScaleReferenceFrame((*reinterpret_cast< osgParticle::QReflect_ParticleSystem::ParticleScaleReferenceFrame(*)>(_a[1]))); break;
-        case 38: _t->setSortMode((*reinterpret_cast< osgParticle::QReflect_ParticleSystem::SortMode(*)>(_a[1]))); break;
-        case 39: _t->update((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[2]))); break;
-        case 40: _t->setDoublePassRendering((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 41: _t->setFreezeOnCull((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 42: _t->setFrozen((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 43: _t->setLevelOfDetail((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 44: _t->setUseShaders((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 45: _t->setUseVertexArray((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 46: _t->setVisibilityDistance((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 28: _t->reuseParticle((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 29: _t->setAlignVectorX((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 30: _t->setAlignVectorY((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 31: _t->setAlignVectors((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[2]))); break;
+        case 32: _t->setDefaultAttributes((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 33: _t->setDefaultAttributesUsingShaders((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 34: _t->setDefaultParticleTemplate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1]))); break;
+        case 35: _t->setParticleAlignment((*reinterpret_cast< osgParticle::QReflect_ParticleSystem::Alignment(*)>(_a[1]))); break;
+        case 36: _t->setParticleScaleReferenceFrame((*reinterpret_cast< osgParticle::QReflect_ParticleSystem::ParticleScaleReferenceFrame(*)>(_a[1]))); break;
+        case 37: _t->setSortMode((*reinterpret_cast< osgParticle::QReflect_ParticleSystem::SortMode(*)>(_a[1]))); break;
+        case 38: _t->setDoublePassRendering((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 39: _t->setFreezeOnCull((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 40: _t->setFrozen((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 41: _t->setLevelOfDetail((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 42: _t->setUseShaders((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 43: _t->setUseVertexArray((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 44: _t->setVisibilityDistance((*reinterpret_cast< const double(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -476,13 +464,13 @@ int osgParticle::QReflect_ParticleSystem::qt_metacall(QMetaObject::Call _c, int 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 47)
+        if (_id < 45)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 47;
+        _id -= 45;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 47)
+        if (_id < 45)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 47;
+        _id -= 45;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

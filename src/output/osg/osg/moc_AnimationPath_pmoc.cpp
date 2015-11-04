@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'AnimationPath_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'AnimationPath_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_AnimationPath_t {
-    QByteArrayData data[19];
-    char stringdata0[248];
+    QByteArrayData data[15];
+    char stringdata0[181];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,28 +33,23 @@ QT_MOC_LITERAL(0, 0, 27), // "osg::QReflect_AnimationPath"
 QT_MOC_LITERAL(1, 28, 11), // "updateModel"
 QT_MOC_LITERAL(2, 40, 0), // ""
 QT_MOC_LITERAL(3, 41, 5), // "empty"
-QT_MOC_LITERAL(4, 47, 10), // "getInverse"
-QT_MOC_LITERAL(5, 58, 22), // "osg::QReflect_Matrixd*"
-QT_MOC_LITERAL(6, 81, 22), // "osg::QReflect_Matrixf*"
-QT_MOC_LITERAL(7, 104, 9), // "getMatrix"
-QT_MOC_LITERAL(8, 114, 12), // "getFirstTime"
-QT_MOC_LITERAL(9, 127, 11), // "getLastTime"
-QT_MOC_LITERAL(10, 139, 9), // "getPeriod"
-QT_MOC_LITERAL(11, 149, 11), // "getLoopMode"
-QT_MOC_LITERAL(12, 161, 37), // "osg::QReflect_AnimationPath::..."
-QT_MOC_LITERAL(13, 199, 5), // "clear"
-QT_MOC_LITERAL(14, 205, 11), // "setLoopMode"
-QT_MOC_LITERAL(15, 217, 8), // "LoopMode"
-QT_MOC_LITERAL(16, 226, 5), // "SWING"
-QT_MOC_LITERAL(17, 232, 4), // "LOOP"
-QT_MOC_LITERAL(18, 237, 10) // "NO_LOOPING"
+QT_MOC_LITERAL(4, 47, 12), // "getFirstTime"
+QT_MOC_LITERAL(5, 60, 11), // "getLastTime"
+QT_MOC_LITERAL(6, 72, 9), // "getPeriod"
+QT_MOC_LITERAL(7, 82, 11), // "getLoopMode"
+QT_MOC_LITERAL(8, 94, 37), // "osg::QReflect_AnimationPath::..."
+QT_MOC_LITERAL(9, 132, 5), // "clear"
+QT_MOC_LITERAL(10, 138, 11), // "setLoopMode"
+QT_MOC_LITERAL(11, 150, 8), // "LoopMode"
+QT_MOC_LITERAL(12, 159, 5), // "SWING"
+QT_MOC_LITERAL(13, 165, 4), // "LOOP"
+QT_MOC_LITERAL(14, 170, 10) // "NO_LOOPING"
 
     },
     "osg::QReflect_AnimationPath\0updateModel\0"
-    "\0empty\0getInverse\0osg::QReflect_Matrixd*\0"
-    "osg::QReflect_Matrixf*\0getMatrix\0"
-    "getFirstTime\0getLastTime\0getPeriod\0"
-    "getLoopMode\0osg::QReflect_AnimationPath::LoopMode\0"
+    "\0empty\0getFirstTime\0getLastTime\0"
+    "getPeriod\0getLoopMode\0"
+    "osg::QReflect_AnimationPath::LoopMode\0"
     "clear\0setLoopMode\0LoopMode\0SWING\0LOOP\0"
     "NO_LOOPING"
 };
@@ -66,52 +61,44 @@ static const uint qt_meta_data_osg__QReflect_AnimationPath[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+       8,   14, // methods
        0,    0, // properties
-       1,  104, // enums/sets
+       1,   64, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x0a /* Public */,
+       1,    0,   54,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    0,   75,    2, 0x02 /* Public */,
-       4,    2,   76,    2, 0x02 /* Public */,
-       4,    2,   81,    2, 0x02 /* Public */,
-       7,    2,   86,    2, 0x02 /* Public */,
-       7,    2,   91,    2, 0x02 /* Public */,
-       8,    0,   96,    2, 0x02 /* Public */,
-       9,    0,   97,    2, 0x02 /* Public */,
-      10,    0,   98,    2, 0x02 /* Public */,
-      11,    0,   99,    2, 0x02 /* Public */,
-      13,    0,  100,    2, 0x02 /* Public */,
-      14,    1,  101,    2, 0x02 /* Public */,
+       3,    0,   55,    2, 0x02 /* Public */,
+       4,    0,   56,    2, 0x02 /* Public */,
+       5,    0,   57,    2, 0x02 /* Public */,
+       6,    0,   58,    2, 0x02 /* Public */,
+       7,    0,   59,    2, 0x02 /* Public */,
+       9,    0,   60,    2, 0x02 /* Public */,
+      10,    1,   61,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
 
  // methods: parameters
     QMetaType::Bool,
-    QMetaType::Bool, QMetaType::Double, 0x80000000 | 5,    2,    2,
-    QMetaType::Bool, QMetaType::Double, 0x80000000 | 6,    2,    2,
-    QMetaType::Bool, QMetaType::Double, 0x80000000 | 5,    2,    2,
-    QMetaType::Bool, QMetaType::Double, 0x80000000 | 6,    2,    2,
     QMetaType::Double,
     QMetaType::Double,
     QMetaType::Double,
-    0x80000000 | 12,
+    0x80000000 | 8,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12,    2,
+    QMetaType::Void, 0x80000000 | 8,    2,
 
  // enums: name, flags, count, data
-      15, 0x0,    3,  108,
+      11, 0x0,    3,   68,
 
  // enum data: key, value
-      16, uint(osg::QReflect_AnimationPath::SWING),
-      17, uint(osg::QReflect_AnimationPath::LOOP),
-      18, uint(osg::QReflect_AnimationPath::NO_LOOPING),
+      12, uint(osg::QReflect_AnimationPath::SWING),
+      13, uint(osg::QReflect_AnimationPath::LOOP),
+      14, uint(osg::QReflect_AnimationPath::NO_LOOPING),
 
        0        // eod
 };
@@ -125,24 +112,16 @@ void osg::QReflect_AnimationPath::qt_static_metacall(QObject *_o, QMetaObject::C
         case 0: _t->updateModel(); break;
         case 1: { bool _r = _t->empty();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 2: { bool _r = _t->getInverse((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 3: { bool _r = _t->getInverse((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixf*(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 4: { bool _r = _t->getMatrix((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 5: { bool _r = _t->getMatrix((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixf*(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 6: { double _r = _t->getFirstTime();
+        case 2: { double _r = _t->getFirstTime();
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
-        case 7: { double _r = _t->getLastTime();
+        case 3: { double _r = _t->getLastTime();
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
-        case 8: { double _r = _t->getPeriod();
+        case 4: { double _r = _t->getPeriod();
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
-        case 9: { osg::QReflect_AnimationPath::LoopMode _r = _t->getLoopMode();
+        case 5: { osg::QReflect_AnimationPath::LoopMode _r = _t->getLoopMode();
             if (_a[0]) *reinterpret_cast< osg::QReflect_AnimationPath::LoopMode*>(_a[0]) = _r; }  break;
-        case 10: _t->clear(); break;
-        case 11: _t->setLoopMode((*reinterpret_cast< osg::QReflect_AnimationPath::LoopMode(*)>(_a[1]))); break;
+        case 6: _t->clear(); break;
+        case 7: _t->setLoopMode((*reinterpret_cast< osg::QReflect_AnimationPath::LoopMode(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -173,13 +152,13 @@ int osg::QReflect_AnimationPath::qt_metacall(QMetaObject::Call _c, int _id, void
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 8;
     }
     return _id;
 }

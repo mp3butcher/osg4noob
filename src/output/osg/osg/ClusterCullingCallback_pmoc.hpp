@@ -8,16 +8,16 @@ namespace osg{
 class QReflect_Vec3f;
 			} ;
 namespace osg{ 
-class QReflect_Object;
-			} ;
-namespace osg{ 
-class QReflect_Drawable;
-			} ;
-namespace osg{ 
 class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_NodeVisitor;
+			} ;
+namespace osg{ 
+class QReflect_Object;
+			} ;
+namespace osg{ 
+class QReflect_Drawable;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;

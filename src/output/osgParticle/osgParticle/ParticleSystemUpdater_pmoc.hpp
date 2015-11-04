@@ -4,9 +4,6 @@
 
 #include <osgParticle/ParticleSystemUpdater_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_NodeVisitor;
-			} ;
 namespace osgParticle{ 
 class QReflect_ParticleSystem;
 			} ;
@@ -33,6 +30,7 @@ QReflect_ParticleSystemUpdater(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ParticleSystemUpdater( );
 //ParticleSystemUpdater
 //virtual  osg::BoundingSphere  computeBound();
+//virtual  void  traverse( osg::NodeVisitor &);
 Q_INVOKABLE  bool  containsParticleSystem(osgParticle::QReflect_ParticleSystem *)const;
 Q_INVOKABLE  bool  removeParticleSystem( unsigned int  , unsigned int );
 Q_INVOKABLE  bool  replaceParticleSystem(osgParticle::QReflect_ParticleSystem * ,osgParticle::QReflect_ParticleSystem *);
@@ -41,7 +39,6 @@ Q_INVOKABLE  unsigned int  getNumParticleSystems()const;
 Q_INVOKABLE  unsigned int  getParticleSystemIndex(osgParticle::QReflect_ParticleSystem *)const;
 Q_INVOKABLE osgParticle::QReflect_ParticleSystem*  getParticleSystem( unsigned int );
 Q_INVOKABLE osgParticle::QReflect_ParticleSystem*  getParticleSystem( unsigned int )const;
-Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 virtual Q_INVOKABLE void   addParticleSystem( osgParticle::QReflect_ParticleSystem *par);//{return new osgParticle::QReflect_ParticleSystem(_model->getParticleSystem());}
 virtual Q_INVOKABLE void pmoc_reverse_addParticleSystem( osgParticle::QReflect_ParticleSystem *par);//{_model->setParticleSystem(par->_model);emit ParticleSystemCollectionChanged(par);}
 signals: void ParticleSystemCollectionChanged();

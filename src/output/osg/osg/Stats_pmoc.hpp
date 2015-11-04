@@ -20,13 +20,13 @@ QReflect_Stats(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Stats( );
 //Stats
 // AttributeMap & getAttributeMap( unsigned int );
+// bool  getAttribute( unsigned int  ,const  std::string & , double &);
+// bool  getAveragedAttribute(const  std::string & , double & , bool );
+// bool  getAveragedAttribute( unsigned int  , unsigned int  ,const  std::string & , double & , bool );
 // void  report( std::ostream & ,const  char *);
 // void  report( std::ostream & , unsigned int  ,const  char *);
 //const  AttributeMap & getAttributeMap( unsigned int );
 Q_INVOKABLE  bool  collectStats(const  QString &)const;
-Q_INVOKABLE  bool  getAttribute( unsigned int  ,const  QString & , double &)const;
-Q_INVOKABLE  bool  getAveragedAttribute( unsigned int  , unsigned int  ,const  QString & , double & , bool )const;
-Q_INVOKABLE  bool  getAveragedAttribute(const  QString & , double & , bool )const;
 Q_INVOKABLE  bool  setAttribute( unsigned int  ,const  QString & , double );
 Q_INVOKABLE  unsigned int  getEarliestFrameNumber()const;
 Q_INVOKABLE  unsigned int  getLatestFrameNumber()const;

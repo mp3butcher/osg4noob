@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Texture1D_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Texture1D_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Texture1D_t {
-    QByteArrayData data[28];
-    char stringdata0[445];
+    QByteArrayData data[24];
+    char stringdata0[385];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,18 +45,14 @@ QT_MOC_LITERAL(12, 200, 20), // "osg::QReflect_Image*"
 QT_MOC_LITERAL(13, 221, 12), // "getNumImages"
 QT_MOC_LITERAL(14, 234, 16), // "getModifiedCount"
 QT_MOC_LITERAL(15, 251, 18), // "getNumMipmapLevels"
-QT_MOC_LITERAL(16, 270, 5), // "apply"
-QT_MOC_LITERAL(17, 276, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(18, 297, 14), // "copyTexImage1D"
-QT_MOC_LITERAL(19, 312, 17), // "copyTexSubImage1D"
-QT_MOC_LITERAL(20, 330, 8), // "setImage"
-QT_MOC_LITERAL(21, 339, 21), // "pmoc_reverse_setImage"
-QT_MOC_LITERAL(22, 361, 3), // "par"
-QT_MOC_LITERAL(23, 365, 18), // "setNumMipmapLevels"
-QT_MOC_LITERAL(24, 384, 15), // "getTextureWidth"
-QT_MOC_LITERAL(25, 400, 15), // "setTextureWidth"
-QT_MOC_LITERAL(26, 416, 12), // "TextureWidth"
-QT_MOC_LITERAL(27, 429, 15) // "NumMipmapLevels"
+QT_MOC_LITERAL(16, 270, 8), // "setImage"
+QT_MOC_LITERAL(17, 279, 21), // "pmoc_reverse_setImage"
+QT_MOC_LITERAL(18, 301, 3), // "par"
+QT_MOC_LITERAL(19, 305, 18), // "setNumMipmapLevels"
+QT_MOC_LITERAL(20, 324, 15), // "getTextureWidth"
+QT_MOC_LITERAL(21, 340, 15), // "setTextureWidth"
+QT_MOC_LITERAL(22, 356, 12), // "TextureWidth"
+QT_MOC_LITERAL(23, 369, 15) // "NumMipmapLevels"
 
     },
     "osg::QReflect_Texture1D\0ImageChanged\0"
@@ -66,12 +62,10 @@ QT_MOC_LITERAL(27, 429, 15) // "NumMipmapLevels"
     "getTextureDepth\0getTextureHeight\0"
     "getImage\0osg::QReflect_Image*\0"
     "getNumImages\0getModifiedCount\0"
-    "getNumMipmapLevels\0apply\0osg::QReflect_State*\0"
-    "copyTexImage1D\0copyTexSubImage1D\0"
-    "setImage\0pmoc_reverse_setImage\0par\0"
-    "setNumMipmapLevels\0getTextureWidth\0"
-    "setTextureWidth\0TextureWidth\0"
-    "NumMipmapLevels"
+    "getNumMipmapLevels\0setImage\0"
+    "pmoc_reverse_setImage\0par\0setNumMipmapLevels\0"
+    "getTextureWidth\0setTextureWidth\0"
+    "TextureWidth\0NumMipmapLevels"
 };
 #undef QT_MOC_LITERAL
 
@@ -81,41 +75,38 @@ static const uint qt_meta_data_osg__QReflect_Texture1D[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      23,   14, // methods
-       2,  198, // properties
+      20,   14, // methods
+       2,  160, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  129,    2, 0x06 /* Public */,
-       4,    1,  132,    2, 0x06 /* Public */,
-       5,    1,  135,    2, 0x06 /* Public */,
+       1,    1,  114,    2, 0x06 /* Public */,
+       4,    1,  117,    2, 0x06 /* Public */,
+       5,    1,  120,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,  138,    2, 0x0a /* Public */,
+       6,    0,  123,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       7,    1,  139,    2, 0x02 /* Public */,
-       9,    0,  142,    2, 0x02 /* Public */,
-      10,    0,  143,    2, 0x02 /* Public */,
-      11,    0,  144,    2, 0x02 /* Public */,
-      13,    0,  145,    2, 0x02 /* Public */,
-      14,    1,  146,    2, 0x02 /* Public */,
-      15,    0,  149,    2, 0x02 /* Public */,
-      11,    1,  150,    2, 0x02 /* Public */,
-      11,    1,  153,    2, 0x02 /* Public */,
-      16,    1,  156,    2, 0x02 /* Public */,
-      18,    4,  159,    2, 0x02 /* Public */,
-      19,    5,  168,    2, 0x02 /* Public */,
-      20,    2,  179,    2, 0x02 /* Public */,
-      21,    1,  184,    2, 0x02 /* Public */,
-      21,    0,  187,    2, 0x22 /* Public | MethodCloned */,
-      20,    1,  188,    2, 0x02 /* Public */,
-      23,    1,  191,    2, 0x02 /* Public */,
-      24,    0,  194,    2, 0x02 /* Public */,
-      25,    1,  195,    2, 0x02 /* Public */,
+       7,    1,  124,    2, 0x02 /* Public */,
+       9,    0,  127,    2, 0x02 /* Public */,
+      10,    0,  128,    2, 0x02 /* Public */,
+      11,    0,  129,    2, 0x02 /* Public */,
+      13,    0,  130,    2, 0x02 /* Public */,
+      14,    1,  131,    2, 0x02 /* Public */,
+      15,    0,  134,    2, 0x02 /* Public */,
+      11,    1,  135,    2, 0x02 /* Public */,
+      11,    1,  138,    2, 0x02 /* Public */,
+      16,    2,  141,    2, 0x02 /* Public */,
+      17,    1,  146,    2, 0x02 /* Public */,
+      17,    0,  149,    2, 0x22 /* Public | MethodCloned */,
+      16,    1,  150,    2, 0x02 /* Public */,
+      19,    1,  153,    2, 0x02 /* Public */,
+      20,    0,  156,    2, 0x02 /* Public */,
+      21,    1,  157,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -135,20 +126,17 @@ static const uint qt_meta_data_osg__QReflect_Texture1D[] = {
     QMetaType::UInt,
     0x80000000 | 12, QMetaType::UInt,    2,
     0x80000000 | 12, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 17,    2,
-    QMetaType::Void, 0x80000000 | 17, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 17, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::UInt, 0x80000000 | 12,    2,    2,
-    QMetaType::Void, 0x80000000 | 12,   22,
+    QMetaType::Void, 0x80000000 | 12,   18,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12,   22,
+    QMetaType::Void, 0x80000000 | 12,   18,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Int,
     QMetaType::Void, QMetaType::Int,    2,
 
  // properties: name, type, flags
-      26, QMetaType::Int, 0x00495103,
-      27, QMetaType::UInt, 0x00495103,
+      22, QMetaType::Int, 0x00495103,
+      23, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        2,
@@ -184,17 +172,14 @@ void osg::QReflect_Texture1D::qt_static_metacall(QObject *_o, QMetaObject::Call 
             if (_a[0]) *reinterpret_cast< osg::QReflect_Image**>(_a[0]) = _r; }  break;
         case 12: { osg::QReflect_Image* _r = _t->getImage((*reinterpret_cast< uint(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_Image**>(_a[0]) = _r; }  break;
-        case 13: _t->apply((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 14: _t->copyTexImage1D((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 15: _t->copyTexSubImage1D((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5]))); break;
-        case 16: _t->setImage((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2]))); break;
-        case 17: _t->pmoc_reverse_setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
-        case 18: _t->pmoc_reverse_setImage(); break;
-        case 19: _t->setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
-        case 20: _t->setNumMipmapLevels((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 21: { int _r = _t->getTextureWidth();
+        case 13: _t->setImage((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2]))); break;
+        case 14: _t->pmoc_reverse_setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
+        case 15: _t->pmoc_reverse_setImage(); break;
+        case 16: _t->setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
+        case 17: _t->setNumMipmapLevels((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 18: { int _r = _t->getTextureWidth();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 22: _t->setTextureWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 19: _t->setTextureWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -268,13 +253,13 @@ int osg::QReflect_Texture1D::qt_metacall(QMetaObject::Call _c, int _id, void **_
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 23)
+        if (_id < 20)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 23;
+        _id -= 20;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 23)
+        if (_id < 20)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 23;
+        _id -= 20;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

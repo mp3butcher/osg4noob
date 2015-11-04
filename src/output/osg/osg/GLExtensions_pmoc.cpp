@@ -8,6 +8,10 @@
 #include <customCode/osg/Referenced_pmoc.hpp>
 #include <customCode/osg/GLExtensions_pmoc.hpp>
 using namespace pmoc;
+ GLuint  osg::QReflect_GLExtensions::getCurrentProgram()const{
+return _model->getCurrentProgram();
+
+}
  bool  osg::QReflect_GLExtensions::isBindImageTextureSupported()const{
 return _model->isBindImageTextureSupported();
 

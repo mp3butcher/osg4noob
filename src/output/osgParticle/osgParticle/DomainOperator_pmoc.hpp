@@ -5,16 +5,16 @@
 #include <osgParticle/DomainOperator_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Plane;
-			} ;
-namespace osg{ 
 class QReflect_Vec3f;
 			} ;
-namespace osgParticle{ 
-class QReflect_Particle;
+namespace osg{ 
+class QReflect_Plane;
 			} ;
 namespace osgParticle{ 
 class QReflect_Program;
+			} ;
+namespace osgParticle{ 
+class QReflect_Particle;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/DomainOperator>

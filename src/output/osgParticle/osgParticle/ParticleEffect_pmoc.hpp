@@ -8,9 +8,6 @@ namespace osg{
 class QReflect_Object;
 			} ;
 namespace osg{ 
-class QReflect_NodeVisitor;
-			} ;
-namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osgParticle{ 
@@ -36,6 +33,7 @@ ParticleEffect * _model;
 QReflect_ParticleEffect(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ParticleEffect( );
 //ParticleEffect
+//virtual  void  accept( osg::NodeVisitor &);
 //const  Particle & getDefaultParticleTemplate();
 //const  osg::Vec3 & getPosition();
 //const  osg::Vec3 & getWind();
@@ -52,7 +50,6 @@ Q_INVOKABLE const double  getParticleDuration()const;
 Q_INVOKABLE const double  getStartTime()const;
 Q_INVOKABLE const float  getIntensity()const;
 Q_INVOKABLE const float  getScale()const;
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void  buildEffect();
 Q_INVOKABLE void  setDefaultParticleTemplate(osgParticle::QReflect_Particle *);
 Q_INVOKABLE void  setDefaults();

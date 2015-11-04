@@ -6,27 +6,9 @@
 #include <osg/AnimationPath_pmoc.hpp>
 #include <customCode/osg/AnimationPath_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <customCode/osg/Matrixd_pmoc.hpp>
-#include <customCode/osg/Matrixf_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_AnimationPath::empty()const{
 return _model->empty();
-
-}
- bool  osg::QReflect_AnimationPath::getInverse( double p0 ,osg::QReflect_Matrixd *p1)const{
-return _model->getInverse(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_AnimationPath::getInverse( double p0 ,osg::QReflect_Matrixf *p1)const{
-return _model->getInverse(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_AnimationPath::getMatrix( double p0 ,osg::QReflect_Matrixd *p1)const{
-return _model->getMatrix(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_AnimationPath::getMatrix( double p0 ,osg::QReflect_Matrixf *p1)const{
-return _model->getMatrix(p0 ,*p1->_model);
 
 }
  double  osg::QReflect_AnimationPath::getFirstTime()const{

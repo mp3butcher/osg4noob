@@ -3,9 +3,6 @@
 #include <osg/TextureRectangle_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_State;
-			} ;
-namespace osg{ 
 class QReflect_Image;
 			} ;
 namespace osg{ 
@@ -30,6 +27,9 @@ virtual ~QReflect_TextureRectangle( );
 //TextureRectangle
 //virtual  GLenum  getTextureTarget();
 // SubloadCallback * getSubloadCallback();
+//virtual  void  apply( State &);
+// void  copyTexImage2D( State & , int  , int  , int  , int );
+// void  copyTexSubImage2D( State & , int  , int  , int  , int  , int  , int );
 // void  setSubloadCallback( SubloadCallback *);
 //const  SubloadCallback * getSubloadCallback();
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
@@ -39,9 +39,6 @@ Q_INVOKABLE  unsigned int  getNumImages()const;
 Q_INVOKABLE  unsigned int&  getModifiedCount( unsigned int )const;
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int );
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int )const;
-Q_INVOKABLE void  apply(osg::QReflect_State *)const;
-Q_INVOKABLE void  copyTexImage2D(osg::QReflect_State * , int  , int  , int  , int );
-Q_INVOKABLE void  copyTexSubImage2D(osg::QReflect_State * , int  , int  , int  , int  , int  , int );
 Q_INVOKABLE void  setImage( unsigned int  ,osg::QReflect_Image *);
 Q_INVOKABLE void  setTextureSize( int  , int )const;
 Q_INVOKABLE void pmoc_reverse_setImage( osg::QReflect_Image *par=0);

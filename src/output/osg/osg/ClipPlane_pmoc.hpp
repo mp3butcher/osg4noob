@@ -3,10 +3,7 @@
 #include <osg/ClipPlane_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_CopyOp;
-			} ;
-namespace osg{ 
-class QReflect_Plane;
+class QReflect_Vec4d;
 			} ;
 namespace osg{ 
 class QReflect_Object;
@@ -15,7 +12,10 @@ namespace osg{
 class QReflect_StateAttribute;
 			} ;
 namespace osg{ 
-class QReflect_Vec4d;
+class QReflect_CopyOp;
+			} ;
+namespace osg{ 
+class QReflect_Plane;
 			} ;
 #include <osg/ClipPlane>
 #include <osg/ClipPlane>

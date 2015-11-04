@@ -18,6 +18,10 @@
 #include <osg/State>
 #include <osg/State_pmoc.hpp>
 using namespace pmoc;
+ GLuint  osg::QReflect_GraphicsContext::getDefaultFboId()const{
+return _model->getDefaultFboId();
+
+}
  bool  osg::QReflect_GraphicsContext::isCurrent()const{
 return _model->isCurrent();
 
@@ -104,6 +108,10 @@ return _model->getMaxContextID();
 }
  void osg::QReflect_GraphicsContext::setCompileContext( unsigned int p0 ,osg::QReflect_GraphicsContext *p1){
  _model->setCompileContext(p0 ,p1->_model);
+
+}
+ void osg::QReflect_GraphicsContext::setDefaultFboId( GLuint p0){
+ _model->setDefaultFboId(p0);
 
 }
  void osg::QReflect_GraphicsContext::swapBuffers(){

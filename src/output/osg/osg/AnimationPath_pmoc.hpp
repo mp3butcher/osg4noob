@@ -2,12 +2,6 @@
 #define  osg_AnimationPath_pmocHPP 1
 #include <osg/AnimationPath_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_Matrixf;
-			} ;
-namespace osg{ 
-class QReflect_Matrixd;
-			} ;
 #include <osg/AnimationPath>
 #include <osg/AnimationPath>
 
@@ -35,6 +29,10 @@ virtual ~QReflect_AnimationPath( );
 //AnimationPath
 // TimeControlPointMap & getTimeControlPointMap();
 //virtual  bool  getInterpolatedControlPoint( double  , ControlPoint &);
+// bool  getInverse( double  , Matrixd &);
+// bool  getInverse( double  , Matrixf &);
+// bool  getMatrix( double  , Matrixd &);
+// bool  getMatrix( double  , Matrixf &);
 // void  insert( double  ,const  ControlPoint &);
 // void  read( std::istream &);
 // void  setTimeControlPointMap( TimeControlPointMap &);
@@ -42,10 +40,6 @@ virtual ~QReflect_AnimationPath( );
 // void  write( TimeControlPointMap::const_iterator  , std::ostream &);
 //const  TimeControlPointMap & getTimeControlPointMap();
 Q_INVOKABLE  bool  empty()const;
-Q_INVOKABLE  bool  getInverse( double  ,osg::QReflect_Matrixd *)const;
-Q_INVOKABLE  bool  getInverse( double  ,osg::QReflect_Matrixf *)const;
-Q_INVOKABLE  bool  getMatrix( double  ,osg::QReflect_Matrixd *)const;
-Q_INVOKABLE  bool  getMatrix( double  ,osg::QReflect_Matrixf *)const;
 Q_INVOKABLE  double  getFirstTime()const;
 Q_INVOKABLE  double  getLastTime()const;
 Q_INVOKABLE  double  getPeriod()const;

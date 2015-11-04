@@ -10,6 +10,10 @@
 #include <customCode/osg/Vec2f_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_PatchParameter::getVertices()const{
+return _model->getVertices();
+
+}
  int  osg::QReflect_PatchParameter::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
@@ -20,6 +24,10 @@ return _model->compare(*p0->_model);
 }
  void osg::QReflect_PatchParameter::setPatchDefaultOuterLevel(osg::QReflect_Vec4f *p0){
  _model->setPatchDefaultOuterLevel(*p0->_model);
+
+}
+ void osg::QReflect_PatchParameter::setVertices( GLint p0){
+ _model->setVertices(p0);
 
 }
 

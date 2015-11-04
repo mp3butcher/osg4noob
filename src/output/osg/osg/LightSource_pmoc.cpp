@@ -7,7 +7,6 @@
 #include <customCode/osg/LightSource_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/Light_pmoc.hpp>
-#include <customCode/osg/StateSet_pmoc.hpp>
 #include <osg/Light>
 #include <osg/Light_pmoc.hpp>
 using namespace pmoc;
@@ -17,10 +16,6 @@ using namespace pmoc;
 }
  void osg::QReflect_LightSource::setReferenceFrame(osg::QReflect_LightSource::ReferenceFrame p0){
  _model->setReferenceFrame(static_cast<osg::LightSource::ReferenceFrame>(p0));
-
-}
- void osg::QReflect_LightSource::setStateSetModes(osg::QReflect_StateSet *p0 , unsigned int p1)const{
- _model->setStateSetModes(*p0->_model ,p1);
 
 }
  void osg::QReflect_LightSource::setThreadSafeRefUnref( bool p0){

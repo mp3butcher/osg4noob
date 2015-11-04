@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Geode_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Geode_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Geode_t {
-    QByteArrayData data[19];
-    char stringdata0[302];
+    QByteArrayData data[17];
+    char stringdata0[259];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,11 +43,9 @@ QT_MOC_LITERAL(10, 161, 15), // "getNumDrawables"
 QT_MOC_LITERAL(11, 177, 11), // "getDrawable"
 QT_MOC_LITERAL(12, 189, 7), // "asGeode"
 QT_MOC_LITERAL(13, 197, 20), // "osg::QReflect_Geode*"
-QT_MOC_LITERAL(14, 218, 16), // "compileDrawables"
-QT_MOC_LITERAL(15, 235, 25), // "osg::QReflect_RenderInfo*"
-QT_MOC_LITERAL(16, 261, 11), // "addDrawable"
-QT_MOC_LITERAL(17, 273, 3), // "par"
-QT_MOC_LITERAL(18, 277, 24) // "pmoc_reverse_addDrawable"
+QT_MOC_LITERAL(14, 218, 11), // "addDrawable"
+QT_MOC_LITERAL(15, 230, 3), // "par"
+QT_MOC_LITERAL(16, 234, 24) // "pmoc_reverse_addDrawable"
 
     },
     "osg::QReflect_Geode\0DrawableCollectionChanged\0"
@@ -56,7 +54,6 @@ QT_MOC_LITERAL(18, 277, 24) // "pmoc_reverse_addDrawable"
     "replaceDrawable\0setDrawable\0"
     "getDrawableIndex\0getNumDrawables\0"
     "getDrawable\0asGeode\0osg::QReflect_Geode*\0"
-    "compileDrawables\0osg::QReflect_RenderInfo*\0"
     "addDrawable\0par\0pmoc_reverse_addDrawable"
 };
 #undef QT_MOC_LITERAL
@@ -67,7 +64,7 @@ static const uint qt_meta_data_osg__QReflect_Geode[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      14,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -75,25 +72,24 @@ static const uint qt_meta_data_osg__QReflect_Geode[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   89,    2, 0x06 /* Public */,
+       1,    0,   84,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   90,    2, 0x0a /* Public */,
+       3,    0,   85,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    1,   91,    2, 0x02 /* Public */,
-       6,    2,   94,    2, 0x02 /* Public */,
-       7,    2,   99,    2, 0x02 /* Public */,
-       8,    2,  104,    2, 0x02 /* Public */,
-       9,    1,  109,    2, 0x02 /* Public */,
-      10,    0,  112,    2, 0x02 /* Public */,
-      11,    1,  113,    2, 0x02 /* Public */,
-      11,    1,  116,    2, 0x02 /* Public */,
-      12,    0,  119,    2, 0x02 /* Public */,
-      12,    0,  120,    2, 0x02 /* Public */,
-      14,    1,  121,    2, 0x02 /* Public */,
-      16,    1,  124,    2, 0x02 /* Public */,
-      18,    1,  127,    2, 0x02 /* Public */,
+       4,    1,   86,    2, 0x02 /* Public */,
+       6,    2,   89,    2, 0x02 /* Public */,
+       7,    2,   94,    2, 0x02 /* Public */,
+       8,    2,   99,    2, 0x02 /* Public */,
+       9,    1,  104,    2, 0x02 /* Public */,
+      10,    0,  107,    2, 0x02 /* Public */,
+      11,    1,  108,    2, 0x02 /* Public */,
+      11,    1,  111,    2, 0x02 /* Public */,
+      12,    0,  114,    2, 0x02 /* Public */,
+      12,    0,  115,    2, 0x02 /* Public */,
+      14,    1,  116,    2, 0x02 /* Public */,
+      16,    1,  119,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -112,9 +108,8 @@ static const uint qt_meta_data_osg__QReflect_Geode[] = {
     0x80000000 | 5, QMetaType::UInt,    2,
     0x80000000 | 13,
     0x80000000 | 13,
-    QMetaType::Void, 0x80000000 | 15,    2,
-    QMetaType::Void, 0x80000000 | 5,   17,
-    QMetaType::Void, 0x80000000 | 5,   17,
+    QMetaType::Void, 0x80000000 | 5,   15,
+    QMetaType::Void, 0x80000000 | 5,   15,
 
        0        // eod
 };
@@ -147,9 +142,8 @@ void osg::QReflect_Geode::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
             if (_a[0]) *reinterpret_cast< osg::QReflect_Geode**>(_a[0]) = _r; }  break;
         case 11: { osg::QReflect_Geode* _r = _t->asGeode();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Geode**>(_a[0]) = _r; }  break;
-        case 12: _t->compileDrawables((*reinterpret_cast< osg::QReflect_RenderInfo*(*)>(_a[1]))); break;
-        case 13: _t->addDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
-        case 14: _t->pmoc_reverse_addDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
+        case 12: _t->addDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
+        case 13: _t->pmoc_reverse_addDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -189,13 +183,13 @@ int osg::QReflect_Geode::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 14)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 15;
+        _id -= 14;
     }
     return _id;
 }

@@ -3,12 +3,6 @@
 
 #include <osg/ComputeBoundsVisitor_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_Polytope;
-			} ;
-namespace osg{ 
-class QReflect_Matrixd;
-			} ;
 #include <osg/ComputeBoundsVisitor>
 #include <osg/ComputeBoundsVisitor>
 
@@ -30,11 +24,11 @@ virtual ~QReflect_ComputeBoundsVisitor( );
 // void  apply( osg::Drawable &);
 // void  apply( osg::Transform &);
 // void  applyBoundingBox(const  osg::BoundingBox &);
+// void  getBase( osg::Polytope & , float );
+// void  getPolytope( osg::Polytope & , float );
+// void  pushMatrix( osg::Matrix &);
 //const  MatrixStack & getMatrixStack();
-Q_INVOKABLE void  getBase(osg::QReflect_Polytope * , float )const;
-Q_INVOKABLE void  getPolytope(osg::QReflect_Polytope * , float )const;
 Q_INVOKABLE void  popMatrix();
-Q_INVOKABLE void  pushMatrix(osg::QReflect_Matrixd *);
 Q_INVOKABLE void  reset();
 public slots:
 virtual void updateModel();

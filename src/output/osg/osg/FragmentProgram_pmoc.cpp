@@ -7,7 +7,12 @@
 #include <customCode/osg/FragmentProgram_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
+ GLuint&  osg::QReflect_FragmentProgram::getFragmentProgramID( unsigned int p0)const{
+return _model->getFragmentProgramID(p0);
+
+}
  int  osg::QReflect_FragmentProgram::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
@@ -22,6 +27,10 @@ return _model->compare(*p0->_model);
 }
  void osg::QReflect_FragmentProgram::setFragmentProgram(const  char *p0){
  _model->setFragmentProgram(p0);
+
+}
+ void osg::QReflect_FragmentProgram::setProgramLocalParameter(const  GLuint p0 ,osg::QReflect_Vec4f *p1){
+ _model->setProgramLocalParameter(p0 ,*p1->_model);
 
 }
 const QString osg::QReflect_FragmentProgram::getFragmentProgram()const{return QString(_model->getFragmentProgram().c_str());}

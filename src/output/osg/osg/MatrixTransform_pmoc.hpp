@@ -4,13 +4,10 @@
 #include <osg/MatrixTransform_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_NodeVisitor;
+class QReflect_MatrixTransform;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
-			} ;
-namespace osg{ 
-class QReflect_MatrixTransform;
 			} ;
 #include <osg/MatrixTransform>
 #include <osg/MatrixTransform>
@@ -29,10 +26,10 @@ MatrixTransform * _model;
 QReflect_MatrixTransform(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_MatrixTransform( );
 //MatrixTransform
+//virtual  bool  computeLocalToWorldMatrix( Matrix & , NodeVisitor *);
+//virtual  bool  computeWorldToLocalMatrix( Matrix & , NodeVisitor *);
 //const  Matrix & getInverseMatrix();
 //const  Matrix & getMatrix();
-Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
 Q_INVOKABLE osg::QReflect_MatrixTransform*  asMatrixTransform();
 Q_INVOKABLE osg::QReflect_MatrixTransform*  asMatrixTransform()const;
 Q_INVOKABLE void  postMult(osg::QReflect_Matrixd *);

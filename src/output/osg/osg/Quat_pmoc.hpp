@@ -3,19 +3,19 @@
 #include <osg/Quat_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_Vec4f;
+			} ;
+namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osg{ 
-class QReflect_Quat;
-			} ;
-namespace osg{ 
-class QReflect_Vec4f;
+class QReflect_Vec4d;
 			} ;
 namespace osg{ 
 class QReflect_Vec3d;
 			} ;
 namespace osg{ 
-class QReflect_Vec4d;
+class QReflect_Quat;
 			} ;
 #include <osg/Quat>
 
@@ -52,6 +52,9 @@ virtual ~QReflect_Quat( );
 // value_type & operator[]( int );
 // void  get( Matrixd &);
 // void  get( Matrixf &);
+// void  getRotate( value_type & , Vec3d &);
+// void  getRotate( value_type & , Vec3f &);
+// void  getRotate( value_type & , value_type & , value_type & , value_type &);
 // void  set(const  Matrixd &);
 // void  set(const  Matrixf &);
 //const  Quat  inverse();
@@ -72,9 +75,6 @@ Q_INVOKABLE  double&  w();
 Q_INVOKABLE  double&  x();
 Q_INVOKABLE  double&  y();
 Q_INVOKABLE  double&  z();
-Q_INVOKABLE void  getRotate( double & , double & , double & , double &)const;
-Q_INVOKABLE void  getRotate( double & ,osg::QReflect_Vec3d *)const;
-Q_INVOKABLE void  getRotate( double & ,osg::QReflect_Vec3f *)const;
 Q_INVOKABLE void  makeRotate( double  , double  , double  , double );
 Q_INVOKABLE void  makeRotate( double  ,osg::QReflect_Vec3d * , double  ,osg::QReflect_Vec3d * , double  ,osg::QReflect_Vec3d *);
 Q_INVOKABLE void  makeRotate( double  ,osg::QReflect_Vec3d *);

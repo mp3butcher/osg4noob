@@ -193,7 +193,6 @@ return ret;}
 #include <customCode/osg/Drawable_pmoc.hpp>
 #include <customCode/osg/Array_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
-#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <osg/Array>
 #include <osg/Array_pmoc.hpp>
@@ -258,32 +257,8 @@ return _model->getNumVertexAttribArrays();
 return _model->getPrimitiveSetIndex(p0->_model);
 
 }
- void osg::QReflect_Geometry::accept(osg::QReflect_PrimitiveFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_Geometry::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_Geometry::compileGLObjects(osg::QReflect_RenderInfo *p0)const{
- _model->compileGLObjects(*p0->_model);
-
-}
  void osg::QReflect_Geometry::dirtyDisplayList(){
  _model->dirtyDisplayList();
-
-}
- void osg::QReflect_Geometry::drawImplementation(osg::QReflect_RenderInfo *p0)const{
- _model->drawImplementation(*p0->_model);
-
-}
- void osg::QReflect_Geometry::drawPrimitivesImplementation(osg::QReflect_RenderInfo *p0)const{
- _model->drawPrimitivesImplementation(*p0->_model);
-
-}
- void osg::QReflect_Geometry::drawVertexArraysImplementation(osg::QReflect_RenderInfo *p0)const{
- _model->drawVertexArraysImplementation(*p0->_model);
 
 }
  void osg::QReflect_Geometry::duplicateSharedArrays(){

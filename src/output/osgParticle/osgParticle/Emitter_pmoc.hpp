@@ -7,9 +7,6 @@
 namespace osg{ 
 class QReflect_Object;
 			} ;
-namespace osg{ 
-class QReflect_NodeVisitor;
-			} ;
 namespace osgParticle{ 
 class QReflect_Particle;
 			} ;
@@ -30,12 +27,12 @@ Emitter * _model;
 QReflect_Emitter(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Emitter( );
 //Emitter
+//virtual  void  accept( osg::NodeVisitor &);
 //const  Particle & getParticleTemplate();
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE const bool  getUseDefaultTemplate()const;
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void  setParticleTemplate(osgParticle::QReflect_Particle *);
 Q_INVOKABLE void setUseDefaultTemplate(const bool &);
 Q_PROPERTY(bool UseDefaultTemplate  READ getUseDefaultTemplate WRITE setUseDefaultTemplate NOTIFY UseDefaultTemplateChanged)

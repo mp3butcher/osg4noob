@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'DrawPixels_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'DrawPixels_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_DrawPixels_t {
-    QByteArrayData data[29];
-    char stringdata0[439];
+    QByteArrayData data[25];
+    char stringdata0[366];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -46,18 +46,14 @@ QT_MOC_LITERAL(13, 196, 14), // "getUseSubImage"
 QT_MOC_LITERAL(14, 211, 5), // "clone"
 QT_MOC_LITERAL(15, 217, 21), // "osg::QReflect_CopyOp*"
 QT_MOC_LITERAL(16, 239, 9), // "cloneType"
-QT_MOC_LITERAL(17, 249, 18), // "drawImplementation"
-QT_MOC_LITERAL(18, 268, 25), // "osg::QReflect_RenderInfo*"
-QT_MOC_LITERAL(19, 294, 21), // "getSubImageDimensions"
-QT_MOC_LITERAL(20, 316, 5), // "uint&"
-QT_MOC_LITERAL(21, 322, 11), // "setPosition"
-QT_MOC_LITERAL(22, 334, 20), // "osg::QReflect_Vec3f*"
-QT_MOC_LITERAL(23, 355, 21), // "setSubImageDimensions"
-QT_MOC_LITERAL(24, 377, 21), // "pmoc_reverse_setImage"
-QT_MOC_LITERAL(25, 399, 3), // "par"
-QT_MOC_LITERAL(26, 403, 8), // "setImage"
-QT_MOC_LITERAL(27, 412, 14), // "setUseSubImage"
-QT_MOC_LITERAL(28, 427, 11) // "UseSubImage"
+QT_MOC_LITERAL(17, 249, 11), // "setPosition"
+QT_MOC_LITERAL(18, 261, 20), // "osg::QReflect_Vec3f*"
+QT_MOC_LITERAL(19, 282, 21), // "setSubImageDimensions"
+QT_MOC_LITERAL(20, 304, 21), // "pmoc_reverse_setImage"
+QT_MOC_LITERAL(21, 326, 3), // "par"
+QT_MOC_LITERAL(22, 330, 8), // "setImage"
+QT_MOC_LITERAL(23, 339, 14), // "setUseSubImage"
+QT_MOC_LITERAL(24, 354, 11) // "UseSubImage"
 
     },
     "osg::QReflect_DrawPixels\0ImageChanged\0"
@@ -67,11 +63,9 @@ QT_MOC_LITERAL(28, 427, 11) // "UseSubImage"
     "getImage\0osg::QReflect_Image*\0className\0"
     "const char*\0libraryName\0getUseSubImage\0"
     "clone\0osg::QReflect_CopyOp*\0cloneType\0"
-    "drawImplementation\0osg::QReflect_RenderInfo*\0"
-    "getSubImageDimensions\0uint&\0setPosition\0"
-    "osg::QReflect_Vec3f*\0setSubImageDimensions\0"
-    "pmoc_reverse_setImage\0par\0setImage\0"
-    "setUseSubImage\0UseSubImage"
+    "setPosition\0osg::QReflect_Vec3f*\0"
+    "setSubImageDimensions\0pmoc_reverse_setImage\0"
+    "par\0setImage\0setUseSubImage\0UseSubImage"
 };
 #undef QT_MOC_LITERAL
 
@@ -81,36 +75,34 @@ static const uint qt_meta_data_osg__QReflect_DrawPixels[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
-       1,  156, // properties
+      16,   14, // methods
+       1,  134, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  104,    2, 0x06 /* Public */,
-       4,    1,  107,    2, 0x06 /* Public */,
+       1,    1,   94,    2, 0x06 /* Public */,
+       4,    1,   97,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,  110,    2, 0x0a /* Public */,
+       5,    0,  100,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       6,    1,  111,    2, 0x02 /* Public */,
-       8,    0,  114,    2, 0x02 /* Public */,
-      10,    0,  115,    2, 0x02 /* Public */,
-      12,    0,  116,    2, 0x02 /* Public */,
-      13,    0,  117,    2, 0x02 /* Public */,
-      14,    1,  118,    2, 0x02 /* Public */,
-      16,    0,  121,    2, 0x02 /* Public */,
-      17,    1,  122,    2, 0x02 /* Public */,
-      19,    4,  125,    2, 0x02 /* Public */,
-      21,    1,  134,    2, 0x02 /* Public */,
-      23,    4,  137,    2, 0x02 /* Public */,
-      24,    1,  146,    2, 0x02 /* Public */,
-      24,    0,  149,    2, 0x22 /* Public | MethodCloned */,
-      26,    1,  150,    2, 0x02 /* Public */,
-      27,    1,  153,    2, 0x02 /* Public */,
+       6,    1,  101,    2, 0x02 /* Public */,
+       8,    0,  104,    2, 0x02 /* Public */,
+      10,    0,  105,    2, 0x02 /* Public */,
+      12,    0,  106,    2, 0x02 /* Public */,
+      13,    0,  107,    2, 0x02 /* Public */,
+      14,    1,  108,    2, 0x02 /* Public */,
+      16,    0,  111,    2, 0x02 /* Public */,
+      17,    1,  112,    2, 0x02 /* Public */,
+      19,    4,  115,    2, 0x02 /* Public */,
+      20,    1,  124,    2, 0x02 /* Public */,
+      20,    0,  127,    2, 0x22 /* Public | MethodCloned */,
+      22,    1,  128,    2, 0x02 /* Public */,
+      23,    1,  131,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -128,16 +120,14 @@ static const uint qt_meta_data_osg__QReflect_DrawPixels[] = {
     0x80000000 | 7, 0x80000000 | 15,    2,
     0x80000000 | 7,
     QMetaType::Void, 0x80000000 | 18,    2,
-    QMetaType::Void, 0x80000000 | 20, 0x80000000 | 20, 0x80000000 | 20, 0x80000000 | 20,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 22,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::UInt, QMetaType::UInt, QMetaType::UInt,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 9,   25,
+    QMetaType::Void, 0x80000000 | 9,   21,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 9,   25,
+    QMetaType::Void, 0x80000000 | 9,   21,
     QMetaType::Void, QMetaType::Bool,    2,
 
  // properties: name, type, flags
-      28, QMetaType::Bool, 0x00495103,
+      24, QMetaType::Bool, 0x00495103,
 
  // properties: notify_signal_id
        1,
@@ -168,14 +158,12 @@ void osg::QReflect_DrawPixels::qt_static_metacall(QObject *_o, QMetaObject::Call
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
         case 9: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 10: _t->drawImplementation((*reinterpret_cast< osg::QReflect_RenderInfo*(*)>(_a[1]))); break;
-        case 11: _t->getSubImageDimensions((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])),(*reinterpret_cast< uint(*)>(_a[4]))); break;
-        case 12: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 13: _t->setSubImageDimensions((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])),(*reinterpret_cast< uint(*)>(_a[4]))); break;
-        case 14: _t->pmoc_reverse_setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
-        case 15: _t->pmoc_reverse_setImage(); break;
-        case 16: _t->setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
-        case 17: _t->setUseSubImage((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 10: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 11: _t->setSubImageDimensions((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])),(*reinterpret_cast< uint(*)>(_a[4]))); break;
+        case 12: _t->pmoc_reverse_setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
+        case 13: _t->pmoc_reverse_setImage(); break;
+        case 14: _t->setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
+        case 15: _t->setUseSubImage((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -241,13 +229,13 @@ int osg::QReflect_DrawPixels::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 18;
+        _id -= 16;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

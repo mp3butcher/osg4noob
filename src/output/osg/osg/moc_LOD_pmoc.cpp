@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'LOD_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'LOD_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_LOD_t {
-    QByteArrayData data[25];
-    char stringdata0[425];
+    QByteArrayData data[23];
+    char stringdata0[389];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,15 +45,13 @@ QT_MOC_LITERAL(12, 169, 28), // "osg::QReflect_LOD::RangeMode"
 QT_MOC_LITERAL(13, 198, 13), // "setCenterMode"
 QT_MOC_LITERAL(14, 212, 8), // "setRange"
 QT_MOC_LITERAL(15, 221, 12), // "setRangeMode"
-QT_MOC_LITERAL(16, 234, 8), // "traverse"
-QT_MOC_LITERAL(17, 243, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(18, 270, 10), // "CenterMode"
-QT_MOC_LITERAL(19, 281, 26), // "USE_BOUNDING_SPHERE_CENTER"
-QT_MOC_LITERAL(20, 308, 19), // "USER_DEFINED_CENTER"
-QT_MOC_LITERAL(21, 328, 41), // "UNION_OF_BOUNDING_SPHERE_AND_..."
-QT_MOC_LITERAL(22, 370, 9), // "RangeMode"
-QT_MOC_LITERAL(23, 380, 23), // "DISTANCE_FROM_EYE_POINT"
-QT_MOC_LITERAL(24, 404, 20) // "PIXEL_SIZE_ON_SCREEN"
+QT_MOC_LITERAL(16, 234, 10), // "CenterMode"
+QT_MOC_LITERAL(17, 245, 26), // "USE_BOUNDING_SPHERE_CENTER"
+QT_MOC_LITERAL(18, 272, 19), // "USER_DEFINED_CENTER"
+QT_MOC_LITERAL(19, 292, 41), // "UNION_OF_BOUNDING_SPHERE_AND_..."
+QT_MOC_LITERAL(20, 334, 9), // "RangeMode"
+QT_MOC_LITERAL(21, 344, 23), // "DISTANCE_FROM_EYE_POINT"
+QT_MOC_LITERAL(22, 368, 20) // "PIXEL_SIZE_ON_SCREEN"
 
     },
     "osg::QReflect_LOD\0updateModel\0\0addChild\0"
@@ -62,7 +60,6 @@ QT_MOC_LITERAL(24, 404, 20) // "PIXEL_SIZE_ON_SCREEN"
     "getCenterMode\0osg::QReflect_LOD::CenterMode\0"
     "getRangeMode\0osg::QReflect_LOD::RangeMode\0"
     "setCenterMode\0setRange\0setRangeMode\0"
-    "traverse\0osg::QReflect_NodeVisitor*\0"
     "CenterMode\0USE_BOUNDING_SPHERE_CENTER\0"
     "USER_DEFINED_CENTER\0"
     "UNION_OF_BOUNDING_SPHERE_AND_USER_DEFINED\0"
@@ -77,29 +74,28 @@ static const uint qt_meta_data_osg__QReflect_LOD[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      12,   14, // methods
        0,    0, // properties
-       2,  120, // enums/sets
+       2,  112, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   79,    2, 0x0a /* Public */,
+       1,    0,   74,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    3,   80,    2, 0x02 /* Public */,
-       3,    1,   87,    2, 0x02 /* Public */,
-       5,    2,   90,    2, 0x02 /* Public */,
-       6,    1,   95,    2, 0x02 /* Public */,
-       7,    1,   98,    2, 0x02 /* Public */,
-       8,    0,  101,    2, 0x02 /* Public */,
-       9,    0,  102,    2, 0x02 /* Public */,
-      11,    0,  103,    2, 0x02 /* Public */,
-      13,    1,  104,    2, 0x02 /* Public */,
-      14,    3,  107,    2, 0x02 /* Public */,
-      15,    1,  114,    2, 0x02 /* Public */,
-      16,    1,  117,    2, 0x02 /* Public */,
+       3,    3,   75,    2, 0x02 /* Public */,
+       3,    1,   82,    2, 0x02 /* Public */,
+       5,    2,   85,    2, 0x02 /* Public */,
+       6,    1,   90,    2, 0x02 /* Public */,
+       7,    1,   93,    2, 0x02 /* Public */,
+       8,    0,   96,    2, 0x02 /* Public */,
+       9,    0,   97,    2, 0x02 /* Public */,
+      11,    0,   98,    2, 0x02 /* Public */,
+      13,    1,   99,    2, 0x02 /* Public */,
+      14,    3,  102,    2, 0x02 /* Public */,
+      15,    1,  109,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -116,18 +112,17 @@ static const uint qt_meta_data_osg__QReflect_LOD[] = {
     QMetaType::Void, 0x80000000 | 10,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::Float, QMetaType::Float,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 12,    2,
-    QMetaType::Void, 0x80000000 | 17,    2,
 
  // enums: name, flags, count, data
-      18, 0x0,    3,  128,
-      22, 0x0,    2,  134,
+      16, 0x0,    3,  120,
+      20, 0x0,    2,  126,
 
  // enum data: key, value
-      19, uint(osg::QReflect_LOD::USE_BOUNDING_SPHERE_CENTER),
-      20, uint(osg::QReflect_LOD::USER_DEFINED_CENTER),
-      21, uint(osg::QReflect_LOD::UNION_OF_BOUNDING_SPHERE_AND_USER_DEFINED),
-      23, uint(osg::QReflect_LOD::DISTANCE_FROM_EYE_POINT),
-      24, uint(osg::QReflect_LOD::PIXEL_SIZE_ON_SCREEN),
+      17, uint(osg::QReflect_LOD::USE_BOUNDING_SPHERE_CENTER),
+      18, uint(osg::QReflect_LOD::USER_DEFINED_CENTER),
+      19, uint(osg::QReflect_LOD::UNION_OF_BOUNDING_SPHERE_AND_USER_DEFINED),
+      21, uint(osg::QReflect_LOD::DISTANCE_FROM_EYE_POINT),
+      22, uint(osg::QReflect_LOD::PIXEL_SIZE_ON_SCREEN),
 
        0        // eod
 };
@@ -158,7 +153,6 @@ void osg::QReflect_LOD::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 9: _t->setCenterMode((*reinterpret_cast< osg::QReflect_LOD::CenterMode(*)>(_a[1]))); break;
         case 10: _t->setRange((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
         case 11: _t->setRangeMode((*reinterpret_cast< osg::QReflect_LOD::RangeMode(*)>(_a[1]))); break;
-        case 12: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -189,13 +183,13 @@ int osg::QReflect_LOD::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 12;
     }
     return _id;
 }

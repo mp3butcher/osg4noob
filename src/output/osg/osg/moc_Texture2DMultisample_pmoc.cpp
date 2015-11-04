@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Texture2DMultisample_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Texture2DMultisample_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Texture2DMultisample_t {
-    QByteArrayData data[23];
-    char stringdata0[359];
+    QByteArrayData data[20];
+    char stringdata0[317];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -40,26 +40,22 @@ QT_MOC_LITERAL(7, 127, 15), // "getTextureDepth"
 QT_MOC_LITERAL(8, 143, 12), // "getNumImages"
 QT_MOC_LITERAL(9, 156, 8), // "getImage"
 QT_MOC_LITERAL(10, 165, 20), // "osg::QReflect_Image*"
-QT_MOC_LITERAL(11, 186, 14), // "allocateMipmap"
-QT_MOC_LITERAL(12, 201, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(13, 222, 5), // "apply"
-QT_MOC_LITERAL(14, 228, 8), // "setImage"
-QT_MOC_LITERAL(15, 237, 13), // "setNumSamples"
-QT_MOC_LITERAL(16, 251, 14), // "setTextureSize"
-QT_MOC_LITERAL(17, 266, 16), // "getTextureHeight"
-QT_MOC_LITERAL(18, 283, 15), // "getTextureWidth"
-QT_MOC_LITERAL(19, 299, 16), // "setTextureHeight"
-QT_MOC_LITERAL(20, 316, 15), // "setTextureWidth"
-QT_MOC_LITERAL(21, 332, 13), // "TextureHeight"
-QT_MOC_LITERAL(22, 346, 12) // "TextureWidth"
+QT_MOC_LITERAL(11, 186, 8), // "setImage"
+QT_MOC_LITERAL(12, 195, 13), // "setNumSamples"
+QT_MOC_LITERAL(13, 209, 14), // "setTextureSize"
+QT_MOC_LITERAL(14, 224, 16), // "getTextureHeight"
+QT_MOC_LITERAL(15, 241, 15), // "getTextureWidth"
+QT_MOC_LITERAL(16, 257, 16), // "setTextureHeight"
+QT_MOC_LITERAL(17, 274, 15), // "setTextureWidth"
+QT_MOC_LITERAL(18, 290, 13), // "TextureHeight"
+QT_MOC_LITERAL(19, 304, 12) // "TextureWidth"
 
     },
     "osg::QReflect_Texture2DMultisample\0"
     "TextureHeightChanged\0\0TextureWidthChanged\0"
     "updateModel\0compare\0osg::QReflect_StateAttribute*\0"
     "getTextureDepth\0getNumImages\0getImage\0"
-    "osg::QReflect_Image*\0allocateMipmap\0"
-    "osg::QReflect_State*\0apply\0setImage\0"
+    "osg::QReflect_Image*\0setImage\0"
     "setNumSamples\0setTextureSize\0"
     "getTextureHeight\0getTextureWidth\0"
     "setTextureHeight\0setTextureWidth\0"
@@ -73,35 +69,33 @@ static const uint qt_meta_data_osg__QReflect_Texture2DMultisample[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
-       2,  144, // properties
+      15,   14, // methods
+       2,  128, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   99,    2, 0x06 /* Public */,
-       3,    1,  102,    2, 0x06 /* Public */,
+       1,    1,   89,    2, 0x06 /* Public */,
+       3,    1,   92,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,  105,    2, 0x0a /* Public */,
+       4,    0,   95,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       5,    1,  106,    2, 0x02 /* Public */,
-       7,    0,  109,    2, 0x02 /* Public */,
-       8,    0,  110,    2, 0x02 /* Public */,
-       9,    1,  111,    2, 0x02 /* Public */,
-       9,    1,  114,    2, 0x02 /* Public */,
-      11,    1,  117,    2, 0x02 /* Public */,
-      13,    1,  120,    2, 0x02 /* Public */,
-      14,    2,  123,    2, 0x02 /* Public */,
-      15,    1,  128,    2, 0x02 /* Public */,
-      16,    2,  131,    2, 0x02 /* Public */,
-      17,    0,  136,    2, 0x02 /* Public */,
-      18,    0,  137,    2, 0x02 /* Public */,
-      19,    1,  138,    2, 0x02 /* Public */,
-      20,    1,  141,    2, 0x02 /* Public */,
+       5,    1,   96,    2, 0x02 /* Public */,
+       7,    0,   99,    2, 0x02 /* Public */,
+       8,    0,  100,    2, 0x02 /* Public */,
+       9,    1,  101,    2, 0x02 /* Public */,
+       9,    1,  104,    2, 0x02 /* Public */,
+      11,    2,  107,    2, 0x02 /* Public */,
+      12,    1,  112,    2, 0x02 /* Public */,
+      13,    2,  115,    2, 0x02 /* Public */,
+      14,    0,  120,    2, 0x02 /* Public */,
+      15,    0,  121,    2, 0x02 /* Public */,
+      16,    1,  122,    2, 0x02 /* Public */,
+      17,    1,  125,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    2,
@@ -116,8 +110,6 @@ static const uint qt_meta_data_osg__QReflect_Texture2DMultisample[] = {
     QMetaType::UInt,
     0x80000000 | 10, QMetaType::UInt,    2,
     0x80000000 | 10, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 12,    2,
-    QMetaType::Void, 0x80000000 | 12,    2,
     QMetaType::Void, QMetaType::UInt, 0x80000000 | 10,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
@@ -127,8 +119,8 @@ static const uint qt_meta_data_osg__QReflect_Texture2DMultisample[] = {
     QMetaType::Void, QMetaType::Int,    2,
 
  // properties: name, type, flags
-      21, QMetaType::Int, 0x00495103,
-      22, QMetaType::Int, 0x00495103,
+      18, QMetaType::Int, 0x00495103,
+      19, QMetaType::Int, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -156,17 +148,15 @@ void osg::QReflect_Texture2DMultisample::qt_static_metacall(QObject *_o, QMetaOb
             if (_a[0]) *reinterpret_cast< osg::QReflect_Image**>(_a[0]) = _r; }  break;
         case 7: { osg::QReflect_Image* _r = _t->getImage((*reinterpret_cast< uint(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_Image**>(_a[0]) = _r; }  break;
-        case 8: _t->allocateMipmap((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 9: _t->apply((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 10: _t->setImage((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2]))); break;
-        case 11: _t->setNumSamples((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 12: _t->setTextureSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 13: { int _r = _t->getTextureHeight();
+        case 8: _t->setImage((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2]))); break;
+        case 9: _t->setNumSamples((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->setTextureSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 11: { int _r = _t->getTextureHeight();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 14: { int _r = _t->getTextureWidth();
+        case 12: { int _r = _t->getTextureWidth();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 15: _t->setTextureHeight((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 16: _t->setTextureWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 13: _t->setTextureHeight((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 14: _t->setTextureWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -234,13 +224,13 @@ int osg::QReflect_Texture2DMultisample::qt_metacall(QMetaObject::Call _c, int _i
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 15)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 15;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
+        if (_id < 15)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 17;
+        _id -= 15;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

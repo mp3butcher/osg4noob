@@ -17,6 +17,10 @@
 #include <osg/BufferObject>
 #include <osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_Image::getInternalTextureFormat()const{
+return _model->getInternalTextureFormat();
+
+}
  bool  osg::QReflect_Image::isCompressed()const{
 return _model->isCompressed();
 
@@ -129,6 +133,10 @@ return _model->getTotalSizeInBytesIncludingMipmaps();
  _model->copySubImage(p0 ,p1 ,p2 ,p3->_model);
 
 }
+ void osg::QReflect_Image::ensureValidSizeForTexturing( GLint p0){
+ _model->ensureValidSizeForTexturing(p0);
+
+}
  void osg::QReflect_Image::flipDepth(){
  _model->flipDepth();
 
@@ -165,16 +173,16 @@ return _model->getTotalSizeInBytesIncludingMipmaps();
  _model->setFrameLastRendered(p0->_model);
 
 }
+ void osg::QReflect_Image::setInternalTextureFormat( GLint p0){
+ _model->setInternalTextureFormat(p0);
+
+}
  void osg::QReflect_Image::setOrigin(osg::QReflect_Image::Origin p0){
  _model->setOrigin(static_cast<osg::Image::Origin>(p0));
 
 }
  void osg::QReflect_Image::setWriteHint(osg::QReflect_Image::WriteHint p0){
  _model->setWriteHint(static_cast<osg::Image::WriteHint>(p0));
-
-}
- void osg::QReflect_Image::swap(osg::QReflect_Image *p0){
- _model->swap(*p0->_model);
 
 }
 const  char*  osg::QReflect_Image::className()const{

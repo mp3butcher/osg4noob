@@ -8,7 +8,6 @@
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
-#include <customCode/osg/State_pmoc.hpp>
 #include <osg/Image>
 #include <osg/Image_pmoc.hpp>
 using namespace pmoc;
@@ -26,18 +25,6 @@ return _model->getNumImages();
 }
  unsigned int&  osg::QReflect_TextureRectangle::getModifiedCount( unsigned int p0)const{
 return _model->getModifiedCount(p0);
-
-}
- void osg::QReflect_TextureRectangle::apply(osg::QReflect_State *p0)const{
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_TextureRectangle::copyTexImage2D(osg::QReflect_State *p0 , int p1 , int p2 , int p3 , int p4){
- _model->copyTexImage2D(*p0->_model ,p1 ,p2 ,p3 ,p4);
-
-}
- void osg::QReflect_TextureRectangle::copyTexSubImage2D(osg::QReflect_State *p0 , int p1 , int p2 , int p3 , int p4 , int p5 , int p6){
- _model->copyTexSubImage2D(*p0->_model ,p1 ,p2 ,p3 ,p4 ,p5 ,p6);
 
 }
  void osg::QReflect_TextureRectangle::setImage( unsigned int p0 ,osg::QReflect_Image *p1){

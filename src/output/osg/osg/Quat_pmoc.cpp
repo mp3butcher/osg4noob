@@ -55,18 +55,6 @@ return _model->y();
 return _model->z();
 
 }
- void osg::QReflect_Quat::getRotate( double &p0 , double &p1 , double &p2 , double &p3)const{
- _model->getRotate(p0 ,p1 ,p2 ,p3);
-
-}
- void osg::QReflect_Quat::getRotate( double &p0 ,osg::QReflect_Vec3d *p1)const{
- _model->getRotate(p0 ,*p1->_model);
-
-}
- void osg::QReflect_Quat::getRotate( double &p0 ,osg::QReflect_Vec3f *p1)const{
- _model->getRotate(p0 ,*p1->_model);
-
-}
  void osg::QReflect_Quat::makeRotate( double p0 , double p1 , double p2 , double p3){
  _model->makeRotate(p0 ,p1 ,p2 ,p3);
 

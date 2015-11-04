@@ -3,13 +3,13 @@
 #include <osg/TexGen_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Plane;
-			} ;
-namespace osg{ 
 class QReflect_StateAttribute;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
+			} ;
+namespace osg{ 
+class QReflect_Plane;
 			} ;
 #include <osg/TexGen>
 #include <osg/TexGen>

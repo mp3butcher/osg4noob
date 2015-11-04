@@ -5,13 +5,16 @@
 #include <osg/Geometry_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_State;
+			} ;
+namespace osg{ 
+class QReflect_PrimitiveFunctor;
+			} ;
+namespace osg{ 
 class QReflect_Array;
 			} ;
 namespace osg{ 
 class QReflect_PrimitiveSet;
-			} ;
-namespace osg{ 
-class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_VertexBufferObject;
@@ -20,16 +23,10 @@ namespace osg{
 class QReflect_ElementBufferObject;
 			} ;
 namespace osg{ 
-class QReflect_PrimitiveFunctor;
-			} ;
-namespace osg{ 
 class QReflect_PrimitiveIndexFunctor;
 			} ;
 namespace osg{ 
 class QReflect_Geometry;
-			} ;
-namespace osg{ 
-class QReflect_RenderInfo;
 			} ;
 #include <osg/Geometry>
 #include <osg/Geometry>
@@ -67,6 +64,12 @@ virtual ~QReflect_Geometry( );
 //virtual  bool  supports(const  Drawable::ConstAttributeFunctor &);
 //virtual  void  accept( Drawable::AttributeFunctor &);
 //virtual  void  accept( Drawable::ConstAttributeFunctor &);
+//virtual  void  accept( PrimitiveFunctor &);
+//virtual  void  accept( PrimitiveIndexFunctor &);
+//virtual  void  compileGLObjects( RenderInfo &);
+//virtual  void  drawImplementation( RenderInfo &);
+// void  drawPrimitivesImplementation( RenderInfo &);
+// void  drawVertexArraysImplementation( RenderInfo &);
 // void  setColorArray( Array * , osg::Array::Binding );
 // void  setFogCoordArray( Array * , osg::Array::Binding );
 // void  setNormalArray( Array * , osg::Array::Binding );
@@ -115,13 +118,7 @@ Q_INVOKABLE osg::QReflect_Geometry::AttributeBinding  getVertexAttribBinding( un
 Q_INVOKABLE osg::QReflect_PrimitiveSet*  getPrimitiveSet( unsigned int );
 Q_INVOKABLE osg::QReflect_PrimitiveSet*  getPrimitiveSet( unsigned int )const;
 Q_INVOKABLE osg::QReflect_VertexBufferObject*  getOrCreateVertexBufferObject();
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
-Q_INVOKABLE void  compileGLObjects(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  dirtyDisplayList();
-Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
-Q_INVOKABLE void  drawPrimitivesImplementation(osg::QReflect_RenderInfo *)const;
-Q_INVOKABLE void  drawVertexArraysImplementation(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  duplicateSharedArrays();
 Q_INVOKABLE void  fixDeprecatedData();
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;

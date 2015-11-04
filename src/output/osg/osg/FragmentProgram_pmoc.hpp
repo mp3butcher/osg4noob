@@ -5,6 +5,9 @@
 namespace osg{ 
 class QReflect_StateAttribute;
 			} ;
+namespace osg{ 
+class QReflect_Vec4f;
+			} ;
 #include <osg/FragmentProgram>
 #include <osg/FragmentProgram>
 
@@ -22,7 +25,6 @@ FragmentProgram * _model;
 QReflect_FragmentProgram(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_FragmentProgram( );
 //FragmentProgram
-// GLuint & getFragmentProgramID( unsigned int );
 // LocalParamList & getLocalParameters();
 // MatrixList & getMatrices();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
@@ -32,14 +34,15 @@ virtual ~QReflect_FragmentProgram( );
 // void  setLocalParameters(const  LocalParamList &);
 // void  setMatrices(const  MatrixList &);
 // void  setMatrix(const  GLenum  ,const  Matrix &);
-// void  setProgramLocalParameter(const  GLuint  ,const  Vec4 &);
 //const  LocalParamList & getLocalParameters();
 //const  MatrixList & getMatrices();
+Q_INVOKABLE  GLuint&  getFragmentProgramID( unsigned int )const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE const QString  getFragmentProgram()const;
 Q_INVOKABLE void  dirtyFragmentProgramObject();
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
 Q_INVOKABLE void  setFragmentProgram(const  char *);
+Q_INVOKABLE void  setProgramLocalParameter(const  GLuint  ,osg::QReflect_Vec4f *);
 Q_INVOKABLE void setFragmentProgram(const QString &);
 Q_PROPERTY(QString FragmentProgram  READ getFragmentProgram WRITE setFragmentProgram NOTIFY FragmentProgramChanged)
 signals: void FragmentProgramChanged(const QString&);

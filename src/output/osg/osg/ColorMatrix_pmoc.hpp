@@ -3,10 +3,10 @@
 #include <osg/ColorMatrix_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Matrixd;
+class QReflect_StateAttribute;
 			} ;
 namespace osg{ 
-class QReflect_StateAttribute;
+class QReflect_Matrixd;
 			} ;
 #include <osg/ColorMatrix>
 #include <osg/ColorMatrix>

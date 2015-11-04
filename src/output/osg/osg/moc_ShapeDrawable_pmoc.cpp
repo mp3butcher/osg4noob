@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ShapeDrawable_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ShapeDrawable_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -478,8 +478,8 @@ void osg::QReflect_TessellationHints::TargetNumFacesChanged(const unsigned int &
     QMetaObject::activate(this, &staticMetaObject, 8, _a);
 }
 struct qt_meta_stringdata_osg__QReflect_ShapeDrawable_t {
-    QByteArrayData data[25];
-    char stringdata0[448];
+    QByteArrayData data[22];
+    char stringdata0[396];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -505,14 +505,11 @@ QT_MOC_LITERAL(13, 257, 11), // "libraryName"
 QT_MOC_LITERAL(14, 269, 5), // "clone"
 QT_MOC_LITERAL(15, 275, 21), // "osg::QReflect_CopyOp*"
 QT_MOC_LITERAL(16, 297, 9), // "cloneType"
-QT_MOC_LITERAL(17, 307, 6), // "accept"
-QT_MOC_LITERAL(18, 314, 18), // "drawImplementation"
-QT_MOC_LITERAL(19, 333, 25), // "osg::QReflect_RenderInfo*"
-QT_MOC_LITERAL(20, 359, 8), // "setColor"
-QT_MOC_LITERAL(21, 368, 20), // "osg::QReflect_Vec4f*"
-QT_MOC_LITERAL(22, 389, 33), // "pmoc_reverse_setTessellationH..."
-QT_MOC_LITERAL(23, 423, 3), // "par"
-QT_MOC_LITERAL(24, 427, 20) // "setTessellationHints"
+QT_MOC_LITERAL(17, 307, 8), // "setColor"
+QT_MOC_LITERAL(18, 316, 20), // "osg::QReflect_Vec4f*"
+QT_MOC_LITERAL(19, 337, 33), // "pmoc_reverse_setTessellationH..."
+QT_MOC_LITERAL(20, 371, 3), // "par"
+QT_MOC_LITERAL(21, 375, 20) // "setTessellationHints"
 
     },
     "osg::QReflect_ShapeDrawable\0"
@@ -524,9 +521,7 @@ QT_MOC_LITERAL(24, 427, 20) // "setTessellationHints"
     "osg::QReflect_TessellationHints*\0"
     "className\0const char*\0libraryName\0"
     "clone\0osg::QReflect_CopyOp*\0cloneType\0"
-    "accept\0drawImplementation\0"
-    "osg::QReflect_RenderInfo*\0setColor\0"
-    "osg::QReflect_Vec4f*\0"
+    "setColor\0osg::QReflect_Vec4f*\0"
     "pmoc_reverse_setTessellationHints\0par\0"
     "setTessellationHints"
 };
@@ -538,7 +533,7 @@ static const uint qt_meta_data_osg__QReflect_ShapeDrawable[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      15,   14, // methods
+      13,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -546,25 +541,23 @@ static const uint qt_meta_data_osg__QReflect_ShapeDrawable[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   89,    2, 0x06 /* Public */,
+       1,    1,   79,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   92,    2, 0x0a /* Public */,
+       4,    0,   82,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       5,    1,   93,    2, 0x02 /* Public */,
-       7,    1,   96,    2, 0x02 /* Public */,
-       9,    0,   99,    2, 0x02 /* Public */,
-      11,    0,  100,    2, 0x02 /* Public */,
-      13,    0,  101,    2, 0x02 /* Public */,
-      14,    1,  102,    2, 0x02 /* Public */,
-      16,    0,  105,    2, 0x02 /* Public */,
-      17,    1,  106,    2, 0x02 /* Public */,
-      18,    1,  109,    2, 0x02 /* Public */,
-      20,    1,  112,    2, 0x02 /* Public */,
-      22,    1,  115,    2, 0x02 /* Public */,
-      22,    0,  118,    2, 0x22 /* Public | MethodCloned */,
-      24,    1,  119,    2, 0x02 /* Public */,
+       5,    1,   83,    2, 0x02 /* Public */,
+       7,    1,   86,    2, 0x02 /* Public */,
+       9,    0,   89,    2, 0x02 /* Public */,
+      11,    0,   90,    2, 0x02 /* Public */,
+      13,    0,   91,    2, 0x02 /* Public */,
+      14,    1,   92,    2, 0x02 /* Public */,
+      16,    0,   95,    2, 0x02 /* Public */,
+      17,    1,   96,    2, 0x02 /* Public */,
+      19,    1,   99,    2, 0x02 /* Public */,
+      19,    0,  102,    2, 0x22 /* Public | MethodCloned */,
+      21,    1,  103,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -580,12 +573,10 @@ static const uint qt_meta_data_osg__QReflect_ShapeDrawable[] = {
     0x80000000 | 12,
     0x80000000 | 6, 0x80000000 | 15,    2,
     0x80000000 | 6,
-    QMetaType::Void, 0x80000000 | 8,    2,
-    QMetaType::Void, 0x80000000 | 19,    2,
-    QMetaType::Void, 0x80000000 | 21,    2,
-    QMetaType::Void, 0x80000000 | 10,   23,
+    QMetaType::Void, 0x80000000 | 18,    2,
+    QMetaType::Void, 0x80000000 | 10,   20,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 10,   23,
+    QMetaType::Void, 0x80000000 | 10,   20,
 
        0        // eod
 };
@@ -612,25 +603,23 @@ void osg::QReflect_ShapeDrawable::qt_static_metacall(QObject *_o, QMetaObject::C
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
         case 8: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 9: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveFunctor*(*)>(_a[1]))); break;
-        case 10: _t->drawImplementation((*reinterpret_cast< osg::QReflect_RenderInfo*(*)>(_a[1]))); break;
-        case 11: _t->setColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
-        case 12: _t->pmoc_reverse_setTessellationHints((*reinterpret_cast< osg::QReflect_TessellationHints*(*)>(_a[1]))); break;
-        case 13: _t->pmoc_reverse_setTessellationHints(); break;
-        case 14: _t->setTessellationHints((*reinterpret_cast< osg::QReflect_TessellationHints*(*)>(_a[1]))); break;
+        case 9: _t->setColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
+        case 10: _t->pmoc_reverse_setTessellationHints((*reinterpret_cast< osg::QReflect_TessellationHints*(*)>(_a[1]))); break;
+        case 11: _t->pmoc_reverse_setTessellationHints(); break;
+        case 12: _t->setTessellationHints((*reinterpret_cast< osg::QReflect_TessellationHints*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 12:
+        case 10:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_TessellationHints* >(); break;
             }
             break;
-        case 14:
+        case 12:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -675,13 +664,13 @@ int osg::QReflect_ShapeDrawable::qt_metacall(QMetaObject::Call _c, int _id, void
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 15)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 13;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 15)
+        if (_id < 13)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 15;
+        _id -= 13;
     }
     return _id;
 }

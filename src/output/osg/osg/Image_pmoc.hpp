@@ -12,16 +12,16 @@ namespace osg{
 class QReflect_CopyOp;
 			} ;
 namespace osg{ 
-class QReflect_Vec2f;
-			} ;
-namespace osg{ 
-class QReflect_Vec3f;
+class QReflect_FrameStamp;
 			} ;
 namespace osg{ 
 class QReflect_Vec4f;
 			} ;
 namespace osg{ 
-class QReflect_FrameStamp;
+class QReflect_Vec3f;
+			} ;
+namespace osg{ 
+class QReflect_Vec2f;
 			} ;
 namespace osg{ 
 class QReflect_PixelBufferObject;
@@ -68,7 +68,6 @@ virtual ~QReflect_Image( );
 // GLenum  computePixelFormat( GLenum );
 // GLenum  getDataType();
 // GLenum  getPixelFormat();
-// GLint  getInternalTextureFormat();
 // Vec4  getColor(const  Vec2 &);
 // Vec4  getColor(const  Vec3 &);
 // Vec4  getColor( unsigned int  , unsigned   , unsigned  );
@@ -83,22 +82,22 @@ virtual ~QReflect_Image( );
 // unsigned int  computeRowWidthInBytes( int  , GLenum  , GLenum  , int );
 // void  addDimensionsChangedCallback( DimensionsChangedCallback *);
 //virtual  void  allocateImage( int  , int  , int  , GLenum  , GLenum  , int );
-// void  ensureValidSizeForTexturing( GLint );
 //virtual  void  readImageFromCurrentTexture( unsigned int  , bool  , GLenum  , unsigned int );
 //virtual  void  readPixels( int  , int  , int  , int  , GLenum  , GLenum  , int );
 // void  removeDimensionsChangedCallback( DimensionsChangedCallback *);
 //virtual  void  scaleImage( int  , int  , int  , GLenum );
 // void  setDataType( GLenum );
 //virtual  void  setImage( int  , int  , int  , GLint  , GLenum  , GLenum  , unsigned char * , AllocationMode  , int  , int );
-// void  setInternalTextureFormat( GLint );
 // void  setMipmapLevels(const  MipmapDataType &);
 // void  setPixelFormat( GLenum );
+// void  swap( osg::Image &);
 //virtual  void  update( NodeVisitor *);
 //virtual const  GLvoid * getDataPointer();
 //const  MipmapDataType & getMipmapLevels();
 //const  unsigned char * data();
 //const  unsigned char * data( unsigned int  , unsigned int  , unsigned int );
 //const  unsigned char * getMipmapData( unsigned int );
+Q_INVOKABLE  GLint  getInternalTextureFormat()const;
 Q_INVOKABLE  bool  isCompressed()const;
 Q_INVOKABLE  bool  isDataContiguous()const;
 Q_INVOKABLE  bool  isImageTranslucent()const;
@@ -141,6 +140,7 @@ Q_INVOKABLE osg::QReflect_Image::WriteHint  getWriteHint()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
 Q_INVOKABLE void  copySubImage( int  , int  , int  ,osg::QReflect_Image *);
+Q_INVOKABLE void  ensureValidSizeForTexturing( GLint );
 Q_INVOKABLE void  flipDepth();
 Q_INVOKABLE void  flipHorizontal();
 Q_INVOKABLE void  flipVertical();
@@ -150,9 +150,9 @@ Q_INVOKABLE void  setColor(osg::QReflect_Vec4f * , unsigned int  , unsigned int 
 Q_INVOKABLE void  setColor(osg::QReflect_Vec4f * ,osg::QReflect_Vec2f *);
 Q_INVOKABLE void  setColor(osg::QReflect_Vec4f * ,osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setFrameLastRendered(osg::QReflect_FrameStamp *);
+Q_INVOKABLE void  setInternalTextureFormat( GLint );
 Q_INVOKABLE void  setOrigin(osg::QReflect_Image::Origin );
 Q_INVOKABLE void  setWriteHint(osg::QReflect_Image::WriteHint );
-Q_INVOKABLE void  swap(osg::QReflect_Image *);
 Q_INVOKABLE void pmoc_reverse_setPixelBufferObject( osg::QReflect_PixelBufferObject *par=0);
 Q_INVOKABLE void setFileName(const QString &);
 Q_INVOKABLE void setPacking(const unsigned int &);

@@ -7,8 +7,6 @@
 #include <osg/OcclusionQueryNode_pmoc.hpp>
 #include <customCode/osg/OcclusionQueryNode_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
-#include <customCode/osg/Camera_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/StateSet_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <osg/StateSet>
@@ -18,28 +16,12 @@ using namespace pmoc;
 return _model->getPassed();
 
 }
- bool  osg::QReflect_OcclusionQueryNode::getPassed(osg::QReflect_Camera *p0 ,osg::QReflect_NodeVisitor *p1){
-return _model->getPassed(p0->_model ,*p1->_model);
-
-}
  void osg::QReflect_OcclusionQueryNode::discardDeletedQueryObjects( unsigned int p0){
  _model->discardDeletedQueryObjects(p0);
 
 }
- void osg::QReflect_OcclusionQueryNode::flushDeletedQueryObjects( unsigned int p0 , double p1 , double &p2){
- _model->flushDeletedQueryObjects(p0 ,p1 ,p2);
-
-}
  void osg::QReflect_OcclusionQueryNode::releaseGLObjects(osg::QReflect_State *p0)const{
  _model->releaseGLObjects(p0->_model);
-
-}
- void osg::QReflect_OcclusionQueryNode::traverseDebug(osg::QReflect_NodeVisitor *p0){
- _model->traverseDebug(*p0->_model);
-
-}
- void osg::QReflect_OcclusionQueryNode::traverseQuery(osg::QReflect_Camera *p0 ,osg::QReflect_NodeVisitor *p1){
- _model->traverseQuery(p0->_model ,*p1->_model);
 
 }
 const bool osg::QReflect_OcclusionQueryNode::getDebugDisplay()const{return _model->getDebugDisplay();}
@@ -150,23 +132,18 @@ return ret;}
 #include <customCode/osg/OcclusionQueryNode_pmoc.hpp>
 #include <customCode/osg/Geometry_pmoc.hpp>
 #include <customCode/osg/Camera_pmoc.hpp>
-#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
  unsigned int  osg::QReflect_QueryGeometry::getNumPixels(osg::QReflect_Camera *p0){
 return _model->getNumPixels(p0->_model);
 
 }
+ void osg::QReflect_QueryGeometry::deleteQueryObject( unsigned int p0 , GLuint p1){
+ _model->deleteQueryObject(p0 ,p1);
+
+}
  void osg::QReflect_QueryGeometry::discardDeletedQueryObjects( unsigned int p0){
  _model->discardDeletedQueryObjects(p0);
-
-}
- void osg::QReflect_QueryGeometry::drawImplementation(osg::QReflect_RenderInfo *p0)const{
- _model->drawImplementation(*p0->_model);
-
-}
- void osg::QReflect_QueryGeometry::flushDeletedQueryObjects( unsigned int p0 , double p1 , double &p2){
- _model->flushDeletedQueryObjects(p0 ,p1 ,p2);
 
 }
  void osg::QReflect_QueryGeometry::releaseGLObjects(osg::QReflect_State *p0)const{

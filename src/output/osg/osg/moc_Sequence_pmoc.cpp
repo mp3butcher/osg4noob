@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Sequence_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Sequence_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Sequence_t {
-    QByteArrayData data[70];
-    char stringdata0[842];
+    QByteArrayData data[65];
+    char stringdata0[782];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -61,44 +61,39 @@ QT_MOC_LITERAL(28, 378, 11), // "getLoopMode"
 QT_MOC_LITERAL(29, 390, 32), // "osg::QReflect_Sequence::LoopMode"
 QT_MOC_LITERAL(30, 423, 7), // "getMode"
 QT_MOC_LITERAL(31, 431, 36), // "osg::QReflect_Sequence::Seque..."
-QT_MOC_LITERAL(32, 468, 11), // "getDuration"
-QT_MOC_LITERAL(33, 480, 6), // "float&"
-QT_MOC_LITERAL(34, 487, 4), // "int&"
-QT_MOC_LITERAL(35, 492, 11), // "setDuration"
-QT_MOC_LITERAL(36, 504, 11), // "setInterval"
-QT_MOC_LITERAL(37, 516, 11), // "setLoopMode"
-QT_MOC_LITERAL(38, 528, 7), // "setMode"
-QT_MOC_LITERAL(39, 536, 7), // "setTime"
-QT_MOC_LITERAL(40, 544, 8), // "traverse"
-QT_MOC_LITERAL(41, 553, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(42, 580, 8), // "setBegin"
-QT_MOC_LITERAL(43, 589, 14), // "setClearOnStop"
-QT_MOC_LITERAL(44, 604, 14), // "setDefaultTime"
-QT_MOC_LITERAL(45, 619, 6), // "setEnd"
-QT_MOC_LITERAL(46, 626, 16), // "setLastFrameTime"
-QT_MOC_LITERAL(47, 643, 13), // "setNumRepeats"
-QT_MOC_LITERAL(48, 657, 8), // "setSpeed"
-QT_MOC_LITERAL(49, 666, 7), // "setSync"
-QT_MOC_LITERAL(50, 674, 8), // "setValue"
-QT_MOC_LITERAL(51, 683, 3), // "par"
-QT_MOC_LITERAL(52, 687, 21), // "pmoc_reverse_addChild"
-QT_MOC_LITERAL(53, 709, 11), // "ClearOnStop"
-QT_MOC_LITERAL(54, 721, 4), // "Sync"
-QT_MOC_LITERAL(55, 726, 11), // "DefaultTime"
-QT_MOC_LITERAL(56, 738, 13), // "LastFrameTime"
-QT_MOC_LITERAL(57, 752, 5), // "Speed"
-QT_MOC_LITERAL(58, 758, 5), // "Begin"
-QT_MOC_LITERAL(59, 764, 3), // "End"
-QT_MOC_LITERAL(60, 768, 10), // "NumRepeats"
-QT_MOC_LITERAL(61, 779, 5), // "Value"
-QT_MOC_LITERAL(62, 785, 8), // "LoopMode"
-QT_MOC_LITERAL(63, 794, 4), // "LOOP"
-QT_MOC_LITERAL(64, 799, 5), // "SWING"
-QT_MOC_LITERAL(65, 805, 12), // "SequenceMode"
-QT_MOC_LITERAL(66, 818, 5), // "START"
-QT_MOC_LITERAL(67, 824, 4), // "STOP"
-QT_MOC_LITERAL(68, 829, 5), // "PAUSE"
-QT_MOC_LITERAL(69, 835, 6) // "RESUME"
+QT_MOC_LITERAL(32, 468, 11), // "setDuration"
+QT_MOC_LITERAL(33, 480, 11), // "setInterval"
+QT_MOC_LITERAL(34, 492, 11), // "setLoopMode"
+QT_MOC_LITERAL(35, 504, 7), // "setMode"
+QT_MOC_LITERAL(36, 512, 7), // "setTime"
+QT_MOC_LITERAL(37, 520, 8), // "setBegin"
+QT_MOC_LITERAL(38, 529, 14), // "setClearOnStop"
+QT_MOC_LITERAL(39, 544, 14), // "setDefaultTime"
+QT_MOC_LITERAL(40, 559, 6), // "setEnd"
+QT_MOC_LITERAL(41, 566, 16), // "setLastFrameTime"
+QT_MOC_LITERAL(42, 583, 13), // "setNumRepeats"
+QT_MOC_LITERAL(43, 597, 8), // "setSpeed"
+QT_MOC_LITERAL(44, 606, 7), // "setSync"
+QT_MOC_LITERAL(45, 614, 8), // "setValue"
+QT_MOC_LITERAL(46, 623, 3), // "par"
+QT_MOC_LITERAL(47, 627, 21), // "pmoc_reverse_addChild"
+QT_MOC_LITERAL(48, 649, 11), // "ClearOnStop"
+QT_MOC_LITERAL(49, 661, 4), // "Sync"
+QT_MOC_LITERAL(50, 666, 11), // "DefaultTime"
+QT_MOC_LITERAL(51, 678, 13), // "LastFrameTime"
+QT_MOC_LITERAL(52, 692, 5), // "Speed"
+QT_MOC_LITERAL(53, 698, 5), // "Begin"
+QT_MOC_LITERAL(54, 704, 3), // "End"
+QT_MOC_LITERAL(55, 708, 10), // "NumRepeats"
+QT_MOC_LITERAL(56, 719, 5), // "Value"
+QT_MOC_LITERAL(57, 725, 8), // "LoopMode"
+QT_MOC_LITERAL(58, 734, 4), // "LOOP"
+QT_MOC_LITERAL(59, 739, 5), // "SWING"
+QT_MOC_LITERAL(60, 745, 12), // "SequenceMode"
+QT_MOC_LITERAL(61, 758, 5), // "START"
+QT_MOC_LITERAL(62, 764, 4), // "STOP"
+QT_MOC_LITERAL(63, 769, 5), // "PAUSE"
+QT_MOC_LITERAL(64, 775, 6) // "RESUME"
 
     },
     "osg::QReflect_Sequence\0BeginChanged\0"
@@ -114,13 +109,11 @@ QT_MOC_LITERAL(69, 835, 6) // "RESUME"
     "getValue\0getLoopMode\0"
     "osg::QReflect_Sequence::LoopMode\0"
     "getMode\0osg::QReflect_Sequence::SequenceMode\0"
-    "getDuration\0float&\0int&\0setDuration\0"
-    "setInterval\0setLoopMode\0setMode\0setTime\0"
-    "traverse\0osg::QReflect_NodeVisitor*\0"
-    "setBegin\0setClearOnStop\0setDefaultTime\0"
-    "setEnd\0setLastFrameTime\0setNumRepeats\0"
-    "setSpeed\0setSync\0setValue\0par\0"
-    "pmoc_reverse_addChild\0ClearOnStop\0"
+    "setDuration\0setInterval\0setLoopMode\0"
+    "setMode\0setTime\0setBegin\0setClearOnStop\0"
+    "setDefaultTime\0setEnd\0setLastFrameTime\0"
+    "setNumRepeats\0setSpeed\0setSync\0setValue\0"
+    "par\0pmoc_reverse_addChild\0ClearOnStop\0"
     "Sync\0DefaultTime\0LastFrameTime\0Speed\0"
     "Begin\0End\0NumRepeats\0Value\0LoopMode\0"
     "LOOP\0SWING\0SequenceMode\0START\0STOP\0"
@@ -134,64 +127,62 @@ static const uint qt_meta_data_osg__QReflect_Sequence[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      46,   14, // methods
-       9,  374, // properties
-       2,  410, // enums/sets
+      44,   14, // methods
+       9,  356, // properties
+       2,  392, // enums/sets
        0,    0, // constructors
        0,       // flags
       10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  244,    2, 0x06 /* Public */,
-       3,    0,  247,    2, 0x06 /* Public */,
-       4,    1,  248,    2, 0x06 /* Public */,
-       5,    1,  251,    2, 0x06 /* Public */,
-       6,    1,  254,    2, 0x06 /* Public */,
-       7,    1,  257,    2, 0x06 /* Public */,
-       8,    1,  260,    2, 0x06 /* Public */,
-       9,    1,  263,    2, 0x06 /* Public */,
-      10,    1,  266,    2, 0x06 /* Public */,
-      11,    1,  269,    2, 0x06 /* Public */,
+       1,    1,  234,    2, 0x06 /* Public */,
+       3,    0,  237,    2, 0x06 /* Public */,
+       4,    1,  238,    2, 0x06 /* Public */,
+       5,    1,  241,    2, 0x06 /* Public */,
+       6,    1,  244,    2, 0x06 /* Public */,
+       7,    1,  247,    2, 0x06 /* Public */,
+       8,    1,  250,    2, 0x06 /* Public */,
+       9,    1,  253,    2, 0x06 /* Public */,
+      10,    1,  256,    2, 0x06 /* Public */,
+      11,    1,  259,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,  272,    2, 0x0a /* Public */,
+      12,    0,  262,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      13,    2,  273,    2, 0x02 /* Public */,
-      15,    3,  278,    2, 0x02 /* Public */,
-      15,    2,  285,    2, 0x02 /* Public */,
-      16,    2,  290,    2, 0x02 /* Public */,
-      17,    1,  295,    2, 0x02 /* Public */,
-      18,    0,  298,    2, 0x02 /* Public */,
-      19,    0,  299,    2, 0x02 /* Public */,
-      20,    0,  300,    2, 0x02 /* Public */,
-      21,    0,  301,    2, 0x02 /* Public */,
-      22,    0,  302,    2, 0x02 /* Public */,
-      23,    0,  303,    2, 0x02 /* Public */,
-      24,    0,  304,    2, 0x02 /* Public */,
-      25,    0,  305,    2, 0x02 /* Public */,
-      26,    0,  306,    2, 0x02 /* Public */,
-      27,    0,  307,    2, 0x02 /* Public */,
-      28,    0,  308,    2, 0x02 /* Public */,
-      30,    0,  309,    2, 0x02 /* Public */,
-      32,    2,  310,    2, 0x02 /* Public */,
-      35,    2,  315,    2, 0x02 /* Public */,
-      36,    3,  320,    2, 0x02 /* Public */,
-      37,    1,  327,    2, 0x02 /* Public */,
-      38,    1,  330,    2, 0x02 /* Public */,
-      39,    2,  333,    2, 0x02 /* Public */,
-      40,    1,  338,    2, 0x02 /* Public */,
-      42,    1,  341,    2, 0x02 /* Public */,
-      43,    1,  344,    2, 0x02 /* Public */,
-      44,    1,  347,    2, 0x02 /* Public */,
-      45,    1,  350,    2, 0x02 /* Public */,
-      46,    1,  353,    2, 0x02 /* Public */,
-      47,    1,  356,    2, 0x02 /* Public */,
-      48,    1,  359,    2, 0x02 /* Public */,
-      49,    1,  362,    2, 0x02 /* Public */,
-      50,    1,  365,    2, 0x02 /* Public */,
-      13,    1,  368,    2, 0x02 /* Public */,
-      52,    1,  371,    2, 0x02 /* Public */,
+      13,    2,  263,    2, 0x02 /* Public */,
+      15,    3,  268,    2, 0x02 /* Public */,
+      15,    2,  275,    2, 0x02 /* Public */,
+      16,    2,  280,    2, 0x02 /* Public */,
+      17,    1,  285,    2, 0x02 /* Public */,
+      18,    0,  288,    2, 0x02 /* Public */,
+      19,    0,  289,    2, 0x02 /* Public */,
+      20,    0,  290,    2, 0x02 /* Public */,
+      21,    0,  291,    2, 0x02 /* Public */,
+      22,    0,  292,    2, 0x02 /* Public */,
+      23,    0,  293,    2, 0x02 /* Public */,
+      24,    0,  294,    2, 0x02 /* Public */,
+      25,    0,  295,    2, 0x02 /* Public */,
+      26,    0,  296,    2, 0x02 /* Public */,
+      27,    0,  297,    2, 0x02 /* Public */,
+      28,    0,  298,    2, 0x02 /* Public */,
+      30,    0,  299,    2, 0x02 /* Public */,
+      32,    2,  300,    2, 0x02 /* Public */,
+      33,    3,  305,    2, 0x02 /* Public */,
+      34,    1,  312,    2, 0x02 /* Public */,
+      35,    1,  315,    2, 0x02 /* Public */,
+      36,    2,  318,    2, 0x02 /* Public */,
+      37,    1,  323,    2, 0x02 /* Public */,
+      38,    1,  326,    2, 0x02 /* Public */,
+      39,    1,  329,    2, 0x02 /* Public */,
+      40,    1,  332,    2, 0x02 /* Public */,
+      41,    1,  335,    2, 0x02 /* Public */,
+      42,    1,  338,    2, 0x02 /* Public */,
+      43,    1,  341,    2, 0x02 /* Public */,
+      44,    1,  344,    2, 0x02 /* Public */,
+      45,    1,  347,    2, 0x02 /* Public */,
+      13,    1,  350,    2, 0x02 /* Public */,
+      47,    1,  353,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    2,
@@ -226,13 +217,11 @@ static const uint qt_meta_data_osg__QReflect_Sequence[] = {
     QMetaType::Int,
     0x80000000 | 29,
     0x80000000 | 31,
-    QMetaType::Void, 0x80000000 | 33, 0x80000000 | 34,    2,    2,
     QMetaType::Void, QMetaType::Float, QMetaType::Int,    2,    2,
     QMetaType::Void, 0x80000000 | 29, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 29,    2,
     QMetaType::Void, 0x80000000 | 31,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::Double,    2,    2,
-    QMetaType::Void, 0x80000000 | 41,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Double,    2,
@@ -242,19 +231,19 @@ static const uint qt_meta_data_osg__QReflect_Sequence[] = {
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 14,   51,
-    QMetaType::Void, 0x80000000 | 14,   51,
+    QMetaType::Void, 0x80000000 | 14,   46,
+    QMetaType::Void, 0x80000000 | 14,   46,
 
  // properties: name, type, flags
-      53, QMetaType::Bool, 0x00495103,
-      54, QMetaType::Bool, 0x00495103,
-      55, QMetaType::Double, 0x00495103,
-      56, QMetaType::Double, 0x00495103,
-      57, QMetaType::Float, 0x00495103,
-      58, QMetaType::Int, 0x00495103,
-      59, QMetaType::Int, 0x00495103,
-      60, QMetaType::Int, 0x00495103,
-      61, QMetaType::Int, 0x00495103,
+      48, QMetaType::Bool, 0x00495103,
+      49, QMetaType::Bool, 0x00495103,
+      50, QMetaType::Double, 0x00495103,
+      51, QMetaType::Double, 0x00495103,
+      52, QMetaType::Float, 0x00495103,
+      53, QMetaType::Int, 0x00495103,
+      54, QMetaType::Int, 0x00495103,
+      55, QMetaType::Int, 0x00495103,
+      56, QMetaType::Int, 0x00495103,
 
  // properties: notify_signal_id
        2,
@@ -268,16 +257,16 @@ static const uint qt_meta_data_osg__QReflect_Sequence[] = {
        9,
 
  // enums: name, flags, count, data
-      62, 0x0,    2,  418,
-      65, 0x0,    4,  422,
+      57, 0x0,    2,  400,
+      60, 0x0,    4,  404,
 
  // enum data: key, value
-      63, uint(osg::QReflect_Sequence::LOOP),
-      64, uint(osg::QReflect_Sequence::SWING),
-      66, uint(osg::QReflect_Sequence::START),
-      67, uint(osg::QReflect_Sequence::STOP),
-      68, uint(osg::QReflect_Sequence::PAUSE),
-      69, uint(osg::QReflect_Sequence::RESUME),
+      58, uint(osg::QReflect_Sequence::LOOP),
+      59, uint(osg::QReflect_Sequence::SWING),
+      61, uint(osg::QReflect_Sequence::START),
+      62, uint(osg::QReflect_Sequence::STOP),
+      63, uint(osg::QReflect_Sequence::PAUSE),
+      64, uint(osg::QReflect_Sequence::RESUME),
 
        0        // eod
 };
@@ -333,24 +322,22 @@ void osg::QReflect_Sequence::qt_static_metacall(QObject *_o, QMetaObject::Call _
             if (_a[0]) *reinterpret_cast< osg::QReflect_Sequence::LoopMode*>(_a[0]) = _r; }  break;
         case 27: { osg::QReflect_Sequence::SequenceMode _r = _t->getMode();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Sequence::SequenceMode*>(_a[0]) = _r; }  break;
-        case 28: _t->getDuration((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 29: _t->setDuration((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 30: _t->setInterval((*reinterpret_cast< osg::QReflect_Sequence::LoopMode(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 31: _t->setLoopMode((*reinterpret_cast< osg::QReflect_Sequence::LoopMode(*)>(_a[1]))); break;
-        case 32: _t->setMode((*reinterpret_cast< osg::QReflect_Sequence::SequenceMode(*)>(_a[1]))); break;
-        case 33: _t->setTime((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
-        case 34: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 35: _t->setBegin((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 36: _t->setClearOnStop((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 37: _t->setDefaultTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 38: _t->setEnd((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 39: _t->setLastFrameTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 40: _t->setNumRepeats((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 41: _t->setSpeed((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 42: _t->setSync((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 43: _t->setValue((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 44: _t->addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 45: _t->pmoc_reverse_addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
+        case 28: _t->setDuration((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 29: _t->setInterval((*reinterpret_cast< osg::QReflect_Sequence::LoopMode(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 30: _t->setLoopMode((*reinterpret_cast< osg::QReflect_Sequence::LoopMode(*)>(_a[1]))); break;
+        case 31: _t->setMode((*reinterpret_cast< osg::QReflect_Sequence::SequenceMode(*)>(_a[1]))); break;
+        case 32: _t->setTime((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 33: _t->setBegin((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 34: _t->setClearOnStop((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 35: _t->setDefaultTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 36: _t->setEnd((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 37: _t->setLastFrameTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 38: _t->setNumRepeats((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 39: _t->setSpeed((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 40: _t->setSync((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 41: _t->setValue((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 42: _t->addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
+        case 43: _t->pmoc_reverse_addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -480,13 +467,13 @@ int osg::QReflect_Sequence::qt_metacall(QMetaObject::Call _c, int _id, void **_a
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 46)
+        if (_id < 44)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 46;
+        _id -= 44;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 46)
+        if (_id < 44)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 46;
+        _id -= 44;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

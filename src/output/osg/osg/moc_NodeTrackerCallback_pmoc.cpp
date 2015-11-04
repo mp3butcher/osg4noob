@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'NodeTrackerCallback_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'NodeTrackerCallback_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_NodeTrackerCallback_t {
-    QByteArrayData data[13];
-    char stringdata0[222];
+    QByteArrayData data[12];
+    char stringdata0[215];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,17 +38,16 @@ QT_MOC_LITERAL(5, 90, 12), // "getTrackNode"
 QT_MOC_LITERAL(6, 103, 19), // "osg::QReflect_Node*"
 QT_MOC_LITERAL(7, 123, 16), // "setTrackNodePath"
 QT_MOC_LITERAL(8, 140, 31), // "osg::QReflect_ObserverNodePath*"
-QT_MOC_LITERAL(9, 172, 6), // "update"
-QT_MOC_LITERAL(10, 179, 25), // "pmoc_reverse_setTrackNode"
-QT_MOC_LITERAL(11, 205, 3), // "par"
-QT_MOC_LITERAL(12, 209, 12) // "setTrackNode"
+QT_MOC_LITERAL(9, 172, 25), // "pmoc_reverse_setTrackNode"
+QT_MOC_LITERAL(10, 198, 3), // "par"
+QT_MOC_LITERAL(11, 202, 12) // "setTrackNode"
 
     },
     "osg::QReflect_NodeTrackerCallback\0"
     "TrackNodeChanged\0\0const osg::QReflect_Node*\0"
     "updateModel\0getTrackNode\0osg::QReflect_Node*\0"
     "setTrackNodePath\0osg::QReflect_ObserverNodePath*\0"
-    "update\0pmoc_reverse_setTrackNode\0par\0"
+    "pmoc_reverse_setTrackNode\0par\0"
     "setTrackNode"
 };
 #undef QT_MOC_LITERAL
@@ -59,7 +58,7 @@ static const uint qt_meta_data_osg__QReflect_NodeTrackerCallback[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,18 +66,17 @@ static const uint qt_meta_data_osg__QReflect_NodeTrackerCallback[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   54,    2, 0x06 /* Public */,
+       1,    1,   49,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   57,    2, 0x0a /* Public */,
+       4,    0,   52,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       5,    0,   58,    2, 0x02 /* Public */,
-       7,    1,   59,    2, 0x02 /* Public */,
-       9,    1,   62,    2, 0x02 /* Public */,
-      10,    1,   65,    2, 0x02 /* Public */,
-      10,    0,   68,    2, 0x22 /* Public | MethodCloned */,
-      12,    1,   69,    2, 0x02 /* Public */,
+       5,    0,   53,    2, 0x02 /* Public */,
+       7,    1,   54,    2, 0x02 /* Public */,
+       9,    1,   57,    2, 0x02 /* Public */,
+       9,    0,   60,    2, 0x22 /* Public | MethodCloned */,
+      11,    1,   61,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -89,10 +87,9 @@ static const uint qt_meta_data_osg__QReflect_NodeTrackerCallback[] = {
  // methods: parameters
     0x80000000 | 6,
     QMetaType::Void, 0x80000000 | 8,    2,
-    QMetaType::Void, 0x80000000 | 6,    2,
-    QMetaType::Void, 0x80000000 | 6,   11,
+    QMetaType::Void, 0x80000000 | 6,   10,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 6,   11,
+    QMetaType::Void, 0x80000000 | 6,   10,
 
        0        // eod
 };
@@ -108,10 +105,9 @@ void osg::QReflect_NodeTrackerCallback::qt_static_metacall(QObject *_o, QMetaObj
         case 2: { osg::QReflect_Node* _r = _t->getTrackNode();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Node**>(_a[0]) = _r; }  break;
         case 3: _t->setTrackNodePath((*reinterpret_cast< osg::QReflect_ObserverNodePath*(*)>(_a[1]))); break;
-        case 4: _t->update((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 5: _t->pmoc_reverse_setTrackNode((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 6: _t->pmoc_reverse_setTrackNode(); break;
-        case 7: _t->setTrackNode((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
+        case 4: _t->pmoc_reverse_setTrackNode((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
+        case 5: _t->pmoc_reverse_setTrackNode(); break;
+        case 6: _t->setTrackNode((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -151,13 +147,13 @@ int osg::QReflect_NodeTrackerCallback::qt_metacall(QMetaObject::Call _c, int _id
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 7;
     }
     return _id;
 }

@@ -8,9 +8,6 @@ class QReflect_Image;
 namespace osg{ 
 class QReflect_StateAttribute;
 			} ;
-namespace osg{ 
-class QReflect_State;
-			} ;
 #include <osg/Texture2DMultisample>
 #include <osg/Texture2DMultisample>
 
@@ -31,13 +28,13 @@ virtual ~QReflect_Texture2DMultisample( );
 //virtual  GLenum  getTextureTarget();
 // GLsizei  getNumSamples();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
+//virtual  void  allocateMipmap( State &);
+//virtual  void  apply( State &);
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE  int  getTextureDepth()const;
 Q_INVOKABLE  unsigned int  getNumImages()const;
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int );
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int )const;
-Q_INVOKABLE void  allocateMipmap(osg::QReflect_State *)const;
-Q_INVOKABLE void  apply(osg::QReflect_State *)const;
 Q_INVOKABLE void  setImage( unsigned int  ,osg::QReflect_Image *);
 Q_INVOKABLE void  setNumSamples( int );
 Q_INVOKABLE void  setTextureSize( int  , int )const;

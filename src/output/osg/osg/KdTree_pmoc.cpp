@@ -77,12 +77,7 @@ return ret;}
 #include <osg/KdTree_pmoc.hpp>
 #include <customCode/osg/KdTree_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
-#include <customCode/osg/Geometry_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_KdTreeBuilder::apply(osg::QReflect_Geometry *p0){
- _model->apply(*p0->_model);
-
-}
 osg::QReflect_KdTreeBuilder*osg::QReflect_KdTreeBuilder::clone(){
 PMOCSAFEADDOBJECT(*_model->clone(),inst);
 return inst.isValid()?((osg::QReflect_KdTreeBuilder * )inst.model->createQQModel(&inst)):NULL;

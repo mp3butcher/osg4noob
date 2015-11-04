@@ -44,10 +44,10 @@ public:
 #include <osg/NodeVisitor_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_NodeVisitor;
+class QReflect_Node;
 			} ;
 namespace osg{ 
-class QReflect_Node;
+class QReflect_NodeVisitor;
 			} ;
 namespace osg{ 
 class QReflect_Vec3f;
@@ -109,6 +109,7 @@ virtual ~QReflect_NodeVisitor( );
 //virtual  void  apply( LOD &);
 //virtual  void  apply( LightSource &);
 //virtual  void  apply( MatrixTransform &);
+//virtual  void  apply( Node &);
 //virtual  void  apply( OccluderNode &);
 //virtual  void  apply( OcclusionQueryNode &);
 //virtual  void  apply( PagedLOD &);
@@ -121,6 +122,7 @@ virtual ~QReflect_NodeVisitor( );
 //virtual  void  apply( Transform &);
 // void  setDatabaseRequestHandler( DatabaseRequestHandler *);
 // void  setImageRequestHandler( ImageRequestHandler *);
+// void  traverse( Node &);
 //const  DatabaseRequestHandler * getDatabaseRequestHandler();
 //const  ImageRequestHandler * getImageRequestHandler();
 //const  NodePath & getNodePath();
@@ -136,7 +138,6 @@ Q_INVOKABLE osg::QReflect_NodeVisitor*  asNodeVisitor();
 Q_INVOKABLE osg::QReflect_NodeVisitor*  asNodeVisitor()const;
 Q_INVOKABLE osg::QReflect_NodeVisitor::TraversalMode  getTraversalMode()const;
 Q_INVOKABLE osg::QReflect_NodeVisitor::VisitorType  getVisitorType()const;
-Q_INVOKABLE void  apply(osg::QReflect_Node *);
 Q_INVOKABLE void  popFromNodePath();
 Q_INVOKABLE void  pushOntoNodePath(osg::QReflect_Node *);
 Q_INVOKABLE void  reset();
@@ -144,7 +145,6 @@ Q_INVOKABLE void  setNodeMaskOverride( unsigned int );
 Q_INVOKABLE void  setTraversalMask( unsigned int );
 Q_INVOKABLE void  setTraversalMode(osg::QReflect_NodeVisitor::TraversalMode );
 Q_INVOKABLE void  setVisitorType(osg::QReflect_NodeVisitor::VisitorType );
-Q_INVOKABLE void  traverse(osg::QReflect_Node *);
 Q_INVOKABLE void pmoc_reverse_setFrameStamp( osg::QReflect_FrameStamp *par=0);
 Q_INVOKABLE void setFrameStamp( osg::QReflect_FrameStamp *par);
 Q_INVOKABLE void setTraversalNumber(const unsigned int &);

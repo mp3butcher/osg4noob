@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Emitter_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Emitter_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_Emitter_t {
-    QByteArrayData data[16];
-    char stringdata0[287];
+    QByteArrayData data[14];
+    char stringdata0[253];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -39,21 +39,18 @@ QT_MOC_LITERAL(6, 104, 9), // "className"
 QT_MOC_LITERAL(7, 114, 11), // "const char*"
 QT_MOC_LITERAL(8, 126, 11), // "libraryName"
 QT_MOC_LITERAL(9, 138, 21), // "getUseDefaultTemplate"
-QT_MOC_LITERAL(10, 160, 6), // "accept"
-QT_MOC_LITERAL(11, 167, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(12, 194, 19), // "setParticleTemplate"
-QT_MOC_LITERAL(13, 214, 31), // "osgParticle::QReflect_Particle*"
-QT_MOC_LITERAL(14, 246, 21), // "setUseDefaultTemplate"
-QT_MOC_LITERAL(15, 268, 18) // "UseDefaultTemplate"
+QT_MOC_LITERAL(10, 160, 19), // "setParticleTemplate"
+QT_MOC_LITERAL(11, 180, 31), // "osgParticle::QReflect_Particle*"
+QT_MOC_LITERAL(12, 212, 21), // "setUseDefaultTemplate"
+QT_MOC_LITERAL(13, 234, 18) // "UseDefaultTemplate"
 
     },
     "osgParticle::QReflect_Emitter\0"
     "UseDefaultTemplateChanged\0\0updateModel\0"
     "isSameKindAs\0osg::QReflect_Object*\0"
     "className\0const char*\0libraryName\0"
-    "getUseDefaultTemplate\0accept\0"
-    "osg::QReflect_NodeVisitor*\0"
-    "setParticleTemplate\0osgParticle::QReflect_Particle*\0"
+    "getUseDefaultTemplate\0setParticleTemplate\0"
+    "osgParticle::QReflect_Particle*\0"
     "setUseDefaultTemplate\0UseDefaultTemplate"
 };
 #undef QT_MOC_LITERAL
@@ -64,27 +61,26 @@ static const uint qt_meta_data_osgParticle__QReflect_Emitter[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       9,   14, // methods
-       1,   78, // properties
+       8,   14, // methods
+       1,   70, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   59,    2, 0x06 /* Public */,
+       1,    1,   54,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   62,    2, 0x0a /* Public */,
+       3,    0,   57,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    1,   63,    2, 0x02 /* Public */,
-       6,    0,   66,    2, 0x02 /* Public */,
-       8,    0,   67,    2, 0x02 /* Public */,
-       9,    0,   68,    2, 0x02 /* Public */,
-      10,    1,   69,    2, 0x02 /* Public */,
-      12,    1,   72,    2, 0x02 /* Public */,
-      14,    1,   75,    2, 0x02 /* Public */,
+       4,    1,   58,    2, 0x02 /* Public */,
+       6,    0,   61,    2, 0x02 /* Public */,
+       8,    0,   62,    2, 0x02 /* Public */,
+       9,    0,   63,    2, 0x02 /* Public */,
+      10,    1,   64,    2, 0x02 /* Public */,
+      12,    1,   67,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -98,11 +94,10 @@ static const uint qt_meta_data_osgParticle__QReflect_Emitter[] = {
     0x80000000 | 7,
     QMetaType::Bool,
     QMetaType::Void, 0x80000000 | 11,    2,
-    QMetaType::Void, 0x80000000 | 13,    2,
     QMetaType::Void, QMetaType::Bool,    2,
 
  // properties: name, type, flags
-      15, QMetaType::Bool, 0x00495103,
+      13, QMetaType::Bool, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -126,9 +121,8 @@ void osgParticle::QReflect_Emitter::qt_static_metacall(QObject *_o, QMetaObject:
             if (_a[0]) *reinterpret_cast< const char**>(_a[0]) = _r; }  break;
         case 5: { bool _r = _t->getUseDefaultTemplate();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 6: _t->accept((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 7: _t->setParticleTemplate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1]))); break;
-        case 8: _t->setUseDefaultTemplate((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 6: _t->setParticleTemplate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1]))); break;
+        case 7: _t->setUseDefaultTemplate((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -188,13 +182,13 @@ int osgParticle::QReflect_Emitter::qt_metacall(QMetaObject::Call _c, int _id, vo
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 9)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 9;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 9)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 9;
+        _id -= 8;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

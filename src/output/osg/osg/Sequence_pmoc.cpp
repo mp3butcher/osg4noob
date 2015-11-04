@@ -6,7 +6,6 @@
 #include <osg/Sequence_pmoc.hpp>
 #include <customCode/osg/Sequence_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 #include <osg/Node>
 using namespace pmoc;
@@ -34,10 +33,6 @@ return _model->getTime(p0);
 return _model->getNumFrames();
 
 }
- void osg::QReflect_Sequence::getDuration( float &p0 , int &p1)const{
- _model->getDuration(p0 ,p1);
-
-}
  void osg::QReflect_Sequence::setDuration( float p0 , int p1){
  _model->setDuration(p0 ,p1);
 
@@ -56,10 +51,6 @@ return _model->getNumFrames();
 }
  void osg::QReflect_Sequence::setTime( unsigned int p0 , double p1){
  _model->setTime(p0 ,p1);
-
-}
- void osg::QReflect_Sequence::traverse(osg::QReflect_NodeVisitor *p0){
- _model->traverse(*p0->_model);
 
 }
 const bool osg::QReflect_Sequence::getClearOnStop()const{return _model->getClearOnStop();}

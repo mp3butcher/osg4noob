@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'NodeVisitor_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'NodeVisitor_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -110,8 +110,8 @@ int osg::QReflect_NodeAcceptOp::qt_metacall(QMetaObject::Call _c, int _id, void 
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_NodeVisitor_t {
-    QByteArrayData data[49];
-    char stringdata0[893];
+    QByteArrayData data[47];
+    char stringdata0[878];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -143,32 +143,30 @@ QT_MOC_LITERAL(19, 373, 16), // "getTraversalMode"
 QT_MOC_LITERAL(20, 390, 40), // "osg::QReflect_NodeVisitor::Tr..."
 QT_MOC_LITERAL(21, 431, 14), // "getVisitorType"
 QT_MOC_LITERAL(22, 446, 38), // "osg::QReflect_NodeVisitor::Vi..."
-QT_MOC_LITERAL(23, 485, 5), // "apply"
-QT_MOC_LITERAL(24, 491, 15), // "popFromNodePath"
-QT_MOC_LITERAL(25, 507, 16), // "pushOntoNodePath"
-QT_MOC_LITERAL(26, 524, 5), // "reset"
-QT_MOC_LITERAL(27, 530, 19), // "setNodeMaskOverride"
-QT_MOC_LITERAL(28, 550, 16), // "setTraversalMask"
-QT_MOC_LITERAL(29, 567, 16), // "setTraversalMode"
-QT_MOC_LITERAL(30, 584, 14), // "setVisitorType"
-QT_MOC_LITERAL(31, 599, 8), // "traverse"
-QT_MOC_LITERAL(32, 608, 26), // "pmoc_reverse_setFrameStamp"
-QT_MOC_LITERAL(33, 635, 3), // "par"
-QT_MOC_LITERAL(34, 639, 13), // "setFrameStamp"
-QT_MOC_LITERAL(35, 653, 18), // "setTraversalNumber"
-QT_MOC_LITERAL(36, 672, 15), // "TraversalNumber"
-QT_MOC_LITERAL(37, 688, 13), // "TraversalMode"
-QT_MOC_LITERAL(38, 702, 13), // "TRAVERSE_NONE"
-QT_MOC_LITERAL(39, 716, 16), // "TRAVERSE_PARENTS"
-QT_MOC_LITERAL(40, 733, 21), // "TRAVERSE_ALL_CHILDREN"
-QT_MOC_LITERAL(41, 755, 24), // "TRAVERSE_ACTIVE_CHILDREN"
-QT_MOC_LITERAL(42, 780, 11), // "VisitorType"
-QT_MOC_LITERAL(43, 792, 12), // "NODE_VISITOR"
-QT_MOC_LITERAL(44, 805, 14), // "UPDATE_VISITOR"
-QT_MOC_LITERAL(45, 820, 13), // "EVENT_VISITOR"
-QT_MOC_LITERAL(46, 834, 24), // "COLLECT_OCCLUDER_VISITOR"
-QT_MOC_LITERAL(47, 859, 12), // "CULL_VISITOR"
-QT_MOC_LITERAL(48, 872, 20) // "INTERSECTION_VISITOR"
+QT_MOC_LITERAL(23, 485, 15), // "popFromNodePath"
+QT_MOC_LITERAL(24, 501, 16), // "pushOntoNodePath"
+QT_MOC_LITERAL(25, 518, 5), // "reset"
+QT_MOC_LITERAL(26, 524, 19), // "setNodeMaskOverride"
+QT_MOC_LITERAL(27, 544, 16), // "setTraversalMask"
+QT_MOC_LITERAL(28, 561, 16), // "setTraversalMode"
+QT_MOC_LITERAL(29, 578, 14), // "setVisitorType"
+QT_MOC_LITERAL(30, 593, 26), // "pmoc_reverse_setFrameStamp"
+QT_MOC_LITERAL(31, 620, 3), // "par"
+QT_MOC_LITERAL(32, 624, 13), // "setFrameStamp"
+QT_MOC_LITERAL(33, 638, 18), // "setTraversalNumber"
+QT_MOC_LITERAL(34, 657, 15), // "TraversalNumber"
+QT_MOC_LITERAL(35, 673, 13), // "TraversalMode"
+QT_MOC_LITERAL(36, 687, 13), // "TRAVERSE_NONE"
+QT_MOC_LITERAL(37, 701, 16), // "TRAVERSE_PARENTS"
+QT_MOC_LITERAL(38, 718, 21), // "TRAVERSE_ALL_CHILDREN"
+QT_MOC_LITERAL(39, 740, 24), // "TRAVERSE_ACTIVE_CHILDREN"
+QT_MOC_LITERAL(40, 765, 11), // "VisitorType"
+QT_MOC_LITERAL(41, 777, 12), // "NODE_VISITOR"
+QT_MOC_LITERAL(42, 790, 14), // "UPDATE_VISITOR"
+QT_MOC_LITERAL(43, 805, 13), // "EVENT_VISITOR"
+QT_MOC_LITERAL(44, 819, 24), // "COLLECT_OCCLUDER_VISITOR"
+QT_MOC_LITERAL(45, 844, 12), // "CULL_VISITOR"
+QT_MOC_LITERAL(46, 857, 20) // "INTERSECTION_VISITOR"
 
     },
     "osg::QReflect_NodeVisitor\0FrameStampChanged\0"
@@ -183,11 +181,11 @@ QT_MOC_LITERAL(48, 872, 20) // "INTERSECTION_VISITOR"
     "osg::QReflect_NodeVisitor*\0getTraversalMode\0"
     "osg::QReflect_NodeVisitor::TraversalMode\0"
     "getVisitorType\0osg::QReflect_NodeVisitor::VisitorType\0"
-    "apply\0popFromNodePath\0pushOntoNodePath\0"
-    "reset\0setNodeMaskOverride\0setTraversalMask\0"
+    "popFromNodePath\0pushOntoNodePath\0reset\0"
+    "setNodeMaskOverride\0setTraversalMask\0"
     "setTraversalMode\0setVisitorType\0"
-    "traverse\0pmoc_reverse_setFrameStamp\0"
-    "par\0setFrameStamp\0setTraversalNumber\0"
+    "pmoc_reverse_setFrameStamp\0par\0"
+    "setFrameStamp\0setTraversalNumber\0"
     "TraversalNumber\0TraversalMode\0"
     "TRAVERSE_NONE\0TRAVERSE_PARENTS\0"
     "TRAVERSE_ALL_CHILDREN\0TRAVERSE_ACTIVE_CHILDREN\0"
@@ -203,46 +201,44 @@ static const uint qt_meta_data_osg__QReflect_NodeVisitor[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
-       1,  220, // properties
-       2,  224, // enums/sets
+      26,   14, // methods
+       1,  204, // properties
+       2,  208, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  154,    2, 0x06 /* Public */,
-       4,    1,  157,    2, 0x06 /* Public */,
+       1,    1,  144,    2, 0x06 /* Public */,
+       4,    1,  147,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,  160,    2, 0x0a /* Public */,
+       5,    0,  150,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       6,    1,  161,    2, 0x02 /* Public */,
-       8,    2,  164,    2, 0x02 /* Public */,
-      10,    2,  169,    2, 0x02 /* Public */,
-      11,    2,  174,    2, 0x02 /* Public */,
-      12,    0,  179,    2, 0x02 /* Public */,
-      14,    0,  180,    2, 0x02 /* Public */,
-      15,    0,  181,    2, 0x02 /* Public */,
-      16,    0,  182,    2, 0x02 /* Public */,
-      17,    0,  183,    2, 0x02 /* Public */,
-      17,    0,  184,    2, 0x02 /* Public */,
-      19,    0,  185,    2, 0x02 /* Public */,
-      21,    0,  186,    2, 0x02 /* Public */,
-      23,    1,  187,    2, 0x02 /* Public */,
-      24,    0,  190,    2, 0x02 /* Public */,
-      25,    1,  191,    2, 0x02 /* Public */,
-      26,    0,  194,    2, 0x02 /* Public */,
-      27,    1,  195,    2, 0x02 /* Public */,
-      28,    1,  198,    2, 0x02 /* Public */,
-      29,    1,  201,    2, 0x02 /* Public */,
-      30,    1,  204,    2, 0x02 /* Public */,
-      31,    1,  207,    2, 0x02 /* Public */,
-      32,    1,  210,    2, 0x02 /* Public */,
-      32,    0,  213,    2, 0x22 /* Public | MethodCloned */,
-      34,    1,  214,    2, 0x02 /* Public */,
-      35,    1,  217,    2, 0x02 /* Public */,
+       6,    1,  151,    2, 0x02 /* Public */,
+       8,    2,  154,    2, 0x02 /* Public */,
+      10,    2,  159,    2, 0x02 /* Public */,
+      11,    2,  164,    2, 0x02 /* Public */,
+      12,    0,  169,    2, 0x02 /* Public */,
+      14,    0,  170,    2, 0x02 /* Public */,
+      15,    0,  171,    2, 0x02 /* Public */,
+      16,    0,  172,    2, 0x02 /* Public */,
+      17,    0,  173,    2, 0x02 /* Public */,
+      17,    0,  174,    2, 0x02 /* Public */,
+      19,    0,  175,    2, 0x02 /* Public */,
+      21,    0,  176,    2, 0x02 /* Public */,
+      23,    0,  177,    2, 0x02 /* Public */,
+      24,    1,  178,    2, 0x02 /* Public */,
+      25,    0,  181,    2, 0x02 /* Public */,
+      26,    1,  182,    2, 0x02 /* Public */,
+      27,    1,  185,    2, 0x02 /* Public */,
+      28,    1,  188,    2, 0x02 /* Public */,
+      29,    1,  191,    2, 0x02 /* Public */,
+      30,    1,  194,    2, 0x02 /* Public */,
+      30,    0,  197,    2, 0x22 /* Public | MethodCloned */,
+      32,    1,  198,    2, 0x02 /* Public */,
+      33,    1,  201,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -264,7 +260,6 @@ static const uint qt_meta_data_osg__QReflect_NodeVisitor[] = {
     0x80000000 | 18,
     0x80000000 | 20,
     0x80000000 | 22,
-    QMetaType::Void, 0x80000000 | 7,    2,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 7,    2,
     QMetaType::Void,
@@ -272,33 +267,32 @@ static const uint qt_meta_data_osg__QReflect_NodeVisitor[] = {
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, 0x80000000 | 20,    2,
     QMetaType::Void, 0x80000000 | 22,    2,
-    QMetaType::Void, 0x80000000 | 7,    2,
-    QMetaType::Void, 0x80000000 | 13,   33,
+    QMetaType::Void, 0x80000000 | 13,   31,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 13,   33,
+    QMetaType::Void, 0x80000000 | 13,   31,
     QMetaType::Void, QMetaType::UInt,    2,
 
  // properties: name, type, flags
-      36, QMetaType::UInt, 0x00495103,
+      34, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        1,
 
  // enums: name, flags, count, data
-      37, 0x0,    4,  232,
-      42, 0x0,    6,  240,
+      35, 0x0,    4,  216,
+      40, 0x0,    6,  224,
 
  // enum data: key, value
-      38, uint(osg::QReflect_NodeVisitor::TRAVERSE_NONE),
-      39, uint(osg::QReflect_NodeVisitor::TRAVERSE_PARENTS),
-      40, uint(osg::QReflect_NodeVisitor::TRAVERSE_ALL_CHILDREN),
-      41, uint(osg::QReflect_NodeVisitor::TRAVERSE_ACTIVE_CHILDREN),
-      43, uint(osg::QReflect_NodeVisitor::NODE_VISITOR),
-      44, uint(osg::QReflect_NodeVisitor::UPDATE_VISITOR),
-      45, uint(osg::QReflect_NodeVisitor::EVENT_VISITOR),
-      46, uint(osg::QReflect_NodeVisitor::COLLECT_OCCLUDER_VISITOR),
-      47, uint(osg::QReflect_NodeVisitor::CULL_VISITOR),
-      48, uint(osg::QReflect_NodeVisitor::INTERSECTION_VISITOR),
+      36, uint(osg::QReflect_NodeVisitor::TRAVERSE_NONE),
+      37, uint(osg::QReflect_NodeVisitor::TRAVERSE_PARENTS),
+      38, uint(osg::QReflect_NodeVisitor::TRAVERSE_ALL_CHILDREN),
+      39, uint(osg::QReflect_NodeVisitor::TRAVERSE_ACTIVE_CHILDREN),
+      41, uint(osg::QReflect_NodeVisitor::NODE_VISITOR),
+      42, uint(osg::QReflect_NodeVisitor::UPDATE_VISITOR),
+      43, uint(osg::QReflect_NodeVisitor::EVENT_VISITOR),
+      44, uint(osg::QReflect_NodeVisitor::COLLECT_OCCLUDER_VISITOR),
+      45, uint(osg::QReflect_NodeVisitor::CULL_VISITOR),
+      46, uint(osg::QReflect_NodeVisitor::INTERSECTION_VISITOR),
 
        0        // eod
 };
@@ -336,19 +330,17 @@ void osg::QReflect_NodeVisitor::qt_static_metacall(QObject *_o, QMetaObject::Cal
             if (_a[0]) *reinterpret_cast< osg::QReflect_NodeVisitor::TraversalMode*>(_a[0]) = _r; }  break;
         case 14: { osg::QReflect_NodeVisitor::VisitorType _r = _t->getVisitorType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_NodeVisitor::VisitorType*>(_a[0]) = _r; }  break;
-        case 15: _t->apply((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 16: _t->popFromNodePath(); break;
-        case 17: _t->pushOntoNodePath((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 18: _t->reset(); break;
-        case 19: _t->setNodeMaskOverride((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 20: _t->setTraversalMask((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 21: _t->setTraversalMode((*reinterpret_cast< osg::QReflect_NodeVisitor::TraversalMode(*)>(_a[1]))); break;
-        case 22: _t->setVisitorType((*reinterpret_cast< osg::QReflect_NodeVisitor::VisitorType(*)>(_a[1]))); break;
-        case 23: _t->traverse((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 24: _t->pmoc_reverse_setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
-        case 25: _t->pmoc_reverse_setFrameStamp(); break;
-        case 26: _t->setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
-        case 27: _t->setTraversalNumber((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 15: _t->popFromNodePath(); break;
+        case 16: _t->pushOntoNodePath((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
+        case 17: _t->reset(); break;
+        case 18: _t->setNodeMaskOverride((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 19: _t->setTraversalMask((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 20: _t->setTraversalMode((*reinterpret_cast< osg::QReflect_NodeVisitor::TraversalMode(*)>(_a[1]))); break;
+        case 21: _t->setVisitorType((*reinterpret_cast< osg::QReflect_NodeVisitor::VisitorType(*)>(_a[1]))); break;
+        case 22: _t->pmoc_reverse_setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
+        case 23: _t->pmoc_reverse_setFrameStamp(); break;
+        case 24: _t->setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
+        case 25: _t->setTraversalNumber((*reinterpret_cast< const uint(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -414,13 +406,13 @@ int osg::QReflect_NodeVisitor::qt_metacall(QMetaObject::Call _c, int _id, void *
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 26)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 26;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 28)
+        if (_id < 26)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 28;
+        _id -= 26;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

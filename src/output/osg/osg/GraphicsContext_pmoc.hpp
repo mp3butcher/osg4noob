@@ -49,9 +49,6 @@ public:
 #include <osg/GraphicsContext_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_GraphicsContext;
-			} ;
-namespace osg{ 
 class QReflect_Object;
 			} ;
 namespace osg{ 
@@ -61,13 +58,16 @@ namespace osg{
 class QReflect_Vec4f;
 			} ;
 namespace osg{ 
+class QReflect_GraphicsContext;
+			} ;
+namespace osg{ 
+class QReflect_GraphicsThread;
+			} ;
+namespace osg{ 
 class QReflect_RefBlock;
 			} ;
 namespace osg{ 
 class QReflect_Operation;
-			} ;
-namespace osg{ 
-class QReflect_GraphicsThread;
 			} ;
 #include <osg/GraphicsContext>
 #include <osg/GraphicsContext>
@@ -93,7 +93,6 @@ virtual ~QReflect_GraphicsContext( );
 //GraphicsContext
 // Cameras & getCameras();
 // GLbitfield  getClearMask();
-// GLuint  getDefaultFboId();
 // GraphicsContext * createGraphicsContext( Traits *);
 // GraphicsContexts  getAllRegisteredGraphicsContexts();
 // GraphicsContexts  getRegisteredGraphicsContexts( unsigned int );
@@ -104,7 +103,6 @@ virtual ~QReflect_GraphicsContext( );
 // WindowingSystemInterface * getWindowingSystemInterface();
 // void  bindPBufferToTexture( GLenum );
 // void  setClearMask( GLbitfield );
-// void  setDefaultFboId( GLuint );
 // void  setResizedCallback( ResizedCallback *);
 // void  setSwapCallback( SwapCallback *);
 // void  setWindowingSystemInterface( WindowingSystemInterface *);
@@ -113,6 +111,7 @@ virtual ~QReflect_GraphicsContext( );
 //const  SwapCallback * getSwapCallback();
 //const  Traits * getTraits();
 //const  Vec4 & getClearColor();
+Q_INVOKABLE  GLuint  getDefaultFboId()const;
 Q_INVOKABLE  bool  isCurrent()const;
 Q_INVOKABLE  bool  isRealized()const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
@@ -144,6 +143,7 @@ Q_INVOKABLE void  resizedImplementation( int  , int  , int  , int );
 Q_INVOKABLE void  runOperations();
 Q_INVOKABLE void  setClearColor(osg::QReflect_Vec4f *);
 Q_INVOKABLE void  setCompileContext( unsigned int  ,osg::QReflect_GraphicsContext *);
+Q_INVOKABLE void  setDefaultFboId( GLuint );
 Q_INVOKABLE void  swapBuffers();
 Q_INVOKABLE void  swapBuffersCallbackOrImplemenation();
 Q_INVOKABLE void pmoc_reverse_add( osg::QReflect_Operation *par);//{_model->set(par->_model);emit CollectionChanged(par);}

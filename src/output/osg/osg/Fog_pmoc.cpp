@@ -9,12 +9,20 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_Fog::getFogCoordinateSource()const{
+return _model->getFogCoordinateSource();
+
+}
  int  osg::QReflect_Fog::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
 }
  void osg::QReflect_Fog::setColor(osg::QReflect_Vec4f *p0){
  _model->setColor(*p0->_model);
+
+}
+ void osg::QReflect_Fog::setFogCoordinateSource( GLint p0){
+ _model->setFogCoordinateSource(p0);
 
 }
  void osg::QReflect_Fog::setMode(osg::QReflect_Fog::Mode p0){

@@ -42,7 +42,7 @@ virtual ~QReflect_ShaderAttribute( );
 // void  setType( Type );
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-//Q_INVOKABLE  unsigned int  addShader(osg::QReflect_Shader *);
+Q_INVOKABLE  unsigned int  addShader(osg::QReflect_Shader *);
 Q_INVOKABLE  unsigned int  addUniform(osg::QReflect_Uniform *);
 Q_INVOKABLE  unsigned int  getNumShaders()const;
 Q_INVOKABLE  unsigned int  getNumUniforms()const;

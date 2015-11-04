@@ -6,14 +6,14 @@
 #include <QObject>
 #include <osgParticle/Operator_pmoc.hpp>
 #include <QObject>
+namespace osgParticle{ 
+class QReflect_Program;
+			} ;
 namespace osg{ 
 class QReflect_Object;
 			} ;
 namespace osgParticle{ 
 class QReflect_ParticleSystem;
-			} ;
-namespace osgParticle{ 
-class QReflect_Program;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/Operator>

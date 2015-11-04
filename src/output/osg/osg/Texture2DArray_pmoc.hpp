@@ -3,9 +3,6 @@
 #include <osg/Texture2DArray_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_State;
-			} ;
-namespace osg{ 
 class QReflect_Image;
 			} ;
 namespace osg{ 
@@ -31,6 +28,8 @@ virtual ~QReflect_Texture2DArray( );
 //virtual  GLenum  getTextureTarget();
 // SubloadCallback * getSubloadCallback();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
+//virtual  void  apply( State &);
+// void  copyTexSubImage2DArray( State & , int  , int  , int  , int  , int  , int  , int );
 // void  setSubloadCallback( SubloadCallback *);
 //const  SubloadCallback * getSubloadCallback();
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
@@ -39,8 +38,6 @@ Q_INVOKABLE  unsigned int&  getModifiedCount( unsigned int  , unsigned int )cons
 Q_INVOKABLE const unsigned int  getNumMipmapLevels()const;
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int );
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int )const;
-Q_INVOKABLE void  apply(osg::QReflect_State *)const;
-Q_INVOKABLE void  copyTexSubImage2DArray(osg::QReflect_State * , int  , int  , int  , int  , int  , int  , int );
 Q_INVOKABLE void  setImage( unsigned int  ,osg::QReflect_Image *);
 Q_INVOKABLE void  setTextureSize( int  , int  , int );
 Q_INVOKABLE void setNumMipmapLevels(const unsigned int &);

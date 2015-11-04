@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'CullingSet_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'CullingSet_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_CullingSet_t {
-    QByteArrayData data[36];
-    char stringdata0[698];
+    QByteArrayData data[30];
+    char stringdata0[575];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -38,33 +38,27 @@ QT_MOC_LITERAL(5, 91, 20), // "osg::QReflect_Vec3f*"
 QT_MOC_LITERAL(6, 112, 9), // "pixelSize"
 QT_MOC_LITERAL(7, 122, 14), // "getCullingMask"
 QT_MOC_LITERAL(8, 137, 31), // "getSmallFeatureCullingPixelSize"
-QT_MOC_LITERAL(9, 169, 11), // "addOccluder"
-QT_MOC_LITERAL(10, 181, 35), // "osg::QReflect_ShadowVolumeOcc..."
-QT_MOC_LITERAL(11, 217, 15), // "addStateFrustum"
-QT_MOC_LITERAL(12, 233, 23), // "osg::QReflect_StateSet*"
-QT_MOC_LITERAL(13, 257, 23), // "osg::QReflect_Polytope*"
-QT_MOC_LITERAL(14, 281, 14), // "popCurrentMask"
-QT_MOC_LITERAL(15, 296, 15), // "pushCurrentMask"
-QT_MOC_LITERAL(16, 312, 16), // "resetCullingMask"
-QT_MOC_LITERAL(17, 329, 3), // "set"
-QT_MOC_LITERAL(18, 333, 25), // "osg::QReflect_CullingSet*"
-QT_MOC_LITERAL(19, 359, 22), // "osg::QReflect_Matrixd*"
-QT_MOC_LITERAL(20, 382, 20), // "osg::QReflect_Vec4f*"
-QT_MOC_LITERAL(21, 403, 14), // "setCullingMask"
-QT_MOC_LITERAL(22, 418, 10), // "setFrustum"
-QT_MOC_LITERAL(23, 429, 18), // "setPixelSizeVector"
-QT_MOC_LITERAL(24, 448, 31), // "setSmallFeatureCullingPixelSize"
-QT_MOC_LITERAL(25, 480, 28), // "SmallFeatureCullingPixelSize"
-QT_MOC_LITERAL(26, 509, 10), // "MaskValues"
-QT_MOC_LITERAL(27, 520, 10), // "NO_CULLING"
-QT_MOC_LITERAL(28, 531, 26), // "VIEW_FRUSTUM_SIDES_CULLING"
-QT_MOC_LITERAL(29, 558, 18), // "NEAR_PLANE_CULLING"
-QT_MOC_LITERAL(30, 577, 17), // "FAR_PLANE_CULLING"
-QT_MOC_LITERAL(31, 595, 20), // "VIEW_FRUSTUM_CULLING"
-QT_MOC_LITERAL(32, 616, 21), // "SMALL_FEATURE_CULLING"
-QT_MOC_LITERAL(33, 638, 24), // "SHADOW_OCCLUSION_CULLING"
-QT_MOC_LITERAL(34, 663, 15), // "DEFAULT_CULLING"
-QT_MOC_LITERAL(35, 679, 18) // "ENABLE_ALL_CULLING"
+QT_MOC_LITERAL(9, 169, 14), // "popCurrentMask"
+QT_MOC_LITERAL(10, 184, 15), // "pushCurrentMask"
+QT_MOC_LITERAL(11, 200, 16), // "resetCullingMask"
+QT_MOC_LITERAL(12, 217, 3), // "set"
+QT_MOC_LITERAL(13, 221, 25), // "osg::QReflect_CullingSet*"
+QT_MOC_LITERAL(14, 247, 22), // "osg::QReflect_Matrixd*"
+QT_MOC_LITERAL(15, 270, 20), // "osg::QReflect_Vec4f*"
+QT_MOC_LITERAL(16, 291, 14), // "setCullingMask"
+QT_MOC_LITERAL(17, 306, 18), // "setPixelSizeVector"
+QT_MOC_LITERAL(18, 325, 31), // "setSmallFeatureCullingPixelSize"
+QT_MOC_LITERAL(19, 357, 28), // "SmallFeatureCullingPixelSize"
+QT_MOC_LITERAL(20, 386, 10), // "MaskValues"
+QT_MOC_LITERAL(21, 397, 10), // "NO_CULLING"
+QT_MOC_LITERAL(22, 408, 26), // "VIEW_FRUSTUM_SIDES_CULLING"
+QT_MOC_LITERAL(23, 435, 18), // "NEAR_PLANE_CULLING"
+QT_MOC_LITERAL(24, 454, 17), // "FAR_PLANE_CULLING"
+QT_MOC_LITERAL(25, 472, 20), // "VIEW_FRUSTUM_CULLING"
+QT_MOC_LITERAL(26, 493, 21), // "SMALL_FEATURE_CULLING"
+QT_MOC_LITERAL(27, 515, 24), // "SHADOW_OCCLUSION_CULLING"
+QT_MOC_LITERAL(28, 540, 15), // "DEFAULT_CULLING"
+QT_MOC_LITERAL(29, 556, 18) // "ENABLE_ALL_CULLING"
 
     },
     "osg::QReflect_CullingSet\0"
@@ -72,13 +66,10 @@ QT_MOC_LITERAL(35, 679, 18) // "ENABLE_ALL_CULLING"
     "\0updateModel\0clampedPixelSize\0"
     "osg::QReflect_Vec3f*\0pixelSize\0"
     "getCullingMask\0getSmallFeatureCullingPixelSize\0"
-    "addOccluder\0osg::QReflect_ShadowVolumeOccluder*\0"
-    "addStateFrustum\0osg::QReflect_StateSet*\0"
-    "osg::QReflect_Polytope*\0popCurrentMask\0"
-    "pushCurrentMask\0resetCullingMask\0set\0"
-    "osg::QReflect_CullingSet*\0"
+    "popCurrentMask\0pushCurrentMask\0"
+    "resetCullingMask\0set\0osg::QReflect_CullingSet*\0"
     "osg::QReflect_Matrixd*\0osg::QReflect_Vec4f*\0"
-    "setCullingMask\0setFrustum\0setPixelSizeVector\0"
+    "setCullingMask\0setPixelSizeVector\0"
     "setSmallFeatureCullingPixelSize\0"
     "SmallFeatureCullingPixelSize\0MaskValues\0"
     "NO_CULLING\0VIEW_FRUSTUM_SIDES_CULLING\0"
@@ -95,35 +86,32 @@ static const uint qt_meta_data_osg__QReflect_CullingSet[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
-       1,  148, // properties
-       1,  152, // enums/sets
+      14,   14, // methods
+       1,  122, // properties
+       1,  126, // enums/sets
        0,    0, // constructors
        0,       // flags
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   99,    2, 0x06 /* Public */,
+       1,    1,   84,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,  102,    2, 0x0a /* Public */,
+       3,    0,   87,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    2,  103,    2, 0x02 /* Public */,
-       6,    2,  108,    2, 0x02 /* Public */,
-       7,    0,  113,    2, 0x02 /* Public */,
-       8,    0,  114,    2, 0x02 /* Public */,
-       9,    1,  115,    2, 0x02 /* Public */,
-      11,    2,  118,    2, 0x02 /* Public */,
-      14,    0,  123,    2, 0x02 /* Public */,
-      15,    0,  124,    2, 0x02 /* Public */,
-      16,    0,  125,    2, 0x02 /* Public */,
-      17,    3,  126,    2, 0x02 /* Public */,
-      17,    1,  133,    2, 0x02 /* Public */,
-      21,    1,  136,    2, 0x02 /* Public */,
-      22,    1,  139,    2, 0x02 /* Public */,
-      23,    1,  142,    2, 0x02 /* Public */,
-      24,    1,  145,    2, 0x02 /* Public */,
+       4,    2,   88,    2, 0x02 /* Public */,
+       6,    2,   93,    2, 0x02 /* Public */,
+       7,    0,   98,    2, 0x02 /* Public */,
+       8,    0,   99,    2, 0x02 /* Public */,
+       9,    0,  100,    2, 0x02 /* Public */,
+      10,    0,  101,    2, 0x02 /* Public */,
+      11,    0,  102,    2, 0x02 /* Public */,
+      12,    3,  103,    2, 0x02 /* Public */,
+      12,    1,  110,    2, 0x02 /* Public */,
+      16,    1,  113,    2, 0x02 /* Public */,
+      17,    1,  116,    2, 0x02 /* Public */,
+      18,    1,  119,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Float,    2,
@@ -136,37 +124,34 @@ static const uint qt_meta_data_osg__QReflect_CullingSet[] = {
     QMetaType::Float, 0x80000000 | 5, QMetaType::Float,    2,    2,
     QMetaType::Int,
     QMetaType::Float,
-    QMetaType::Void, 0x80000000 | 10,    2,
-    QMetaType::Void, 0x80000000 | 12, 0x80000000 | 13,    2,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 18, 0x80000000 | 19, 0x80000000 | 20,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 18,    2,
-    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 13, 0x80000000 | 14, 0x80000000 | 15,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 13,    2,
-    QMetaType::Void, 0x80000000 | 20,    2,
+    QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 15,    2,
     QMetaType::Void, QMetaType::Float,    2,
 
  // properties: name, type, flags
-      25, QMetaType::Float, 0x00495103,
+      19, QMetaType::Float, 0x00495103,
 
  // properties: notify_signal_id
        0,
 
  // enums: name, flags, count, data
-      26, 0x0,    9,  156,
+      20, 0x0,    9,  130,
 
  // enum data: key, value
-      27, uint(osg::QReflect_CullingSet::NO_CULLING),
-      28, uint(osg::QReflect_CullingSet::VIEW_FRUSTUM_SIDES_CULLING),
-      29, uint(osg::QReflect_CullingSet::NEAR_PLANE_CULLING),
-      30, uint(osg::QReflect_CullingSet::FAR_PLANE_CULLING),
-      31, uint(osg::QReflect_CullingSet::VIEW_FRUSTUM_CULLING),
-      32, uint(osg::QReflect_CullingSet::SMALL_FEATURE_CULLING),
-      33, uint(osg::QReflect_CullingSet::SHADOW_OCCLUSION_CULLING),
-      34, uint(osg::QReflect_CullingSet::DEFAULT_CULLING),
-      35, uint(osg::QReflect_CullingSet::ENABLE_ALL_CULLING),
+      21, uint(osg::QReflect_CullingSet::NO_CULLING),
+      22, uint(osg::QReflect_CullingSet::VIEW_FRUSTUM_SIDES_CULLING),
+      23, uint(osg::QReflect_CullingSet::NEAR_PLANE_CULLING),
+      24, uint(osg::QReflect_CullingSet::FAR_PLANE_CULLING),
+      25, uint(osg::QReflect_CullingSet::VIEW_FRUSTUM_CULLING),
+      26, uint(osg::QReflect_CullingSet::SMALL_FEATURE_CULLING),
+      27, uint(osg::QReflect_CullingSet::SHADOW_OCCLUSION_CULLING),
+      28, uint(osg::QReflect_CullingSet::DEFAULT_CULLING),
+      29, uint(osg::QReflect_CullingSet::ENABLE_ALL_CULLING),
 
        0        // eod
 };
@@ -187,30 +172,27 @@ void osg::QReflect_CullingSet::qt_static_metacall(QObject *_o, QMetaObject::Call
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
         case 5: { float _r = _t->getSmallFeatureCullingPixelSize();
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
-        case 6: _t->addOccluder((*reinterpret_cast< osg::QReflect_ShadowVolumeOccluder*(*)>(_a[1]))); break;
-        case 7: _t->addStateFrustum((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Polytope*(*)>(_a[2]))); break;
-        case 8: _t->popCurrentMask(); break;
-        case 9: _t->pushCurrentMask(); break;
-        case 10: _t->resetCullingMask(); break;
-        case 11: _t->set((*reinterpret_cast< osg::QReflect_CullingSet*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[3]))); break;
-        case 12: _t->set((*reinterpret_cast< osg::QReflect_CullingSet*(*)>(_a[1]))); break;
-        case 13: _t->setCullingMask((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 14: _t->setFrustum((*reinterpret_cast< osg::QReflect_Polytope*(*)>(_a[1]))); break;
-        case 15: _t->setPixelSizeVector((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
-        case 16: _t->setSmallFeatureCullingPixelSize((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 6: _t->popCurrentMask(); break;
+        case 7: _t->pushCurrentMask(); break;
+        case 8: _t->resetCullingMask(); break;
+        case 9: _t->set((*reinterpret_cast< osg::QReflect_CullingSet*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[3]))); break;
+        case 10: _t->set((*reinterpret_cast< osg::QReflect_CullingSet*(*)>(_a[1]))); break;
+        case 11: _t->setCullingMask((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 12: _t->setPixelSizeVector((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
+        case 13: _t->setSmallFeatureCullingPixelSize((*reinterpret_cast< const float(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 11:
+        case 9:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_CullingSet* >(); break;
             }
             break;
-        case 12:
+        case 10:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -275,13 +257,13 @@ int osg::QReflect_CullingSet::qt_metacall(QMetaObject::Call _c, int _id, void **
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 14;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
+        if (_id < 14)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 14;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

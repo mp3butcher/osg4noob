@@ -3,10 +3,10 @@
 #include <osg/LightModel_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Vec4f;
+class QReflect_StateAttribute;
 			} ;
 namespace osg{ 
-class QReflect_StateAttribute;
+class QReflect_Vec4f;
 			} ;
 #include <osg/LightModel>
 #include <osg/LightModel>

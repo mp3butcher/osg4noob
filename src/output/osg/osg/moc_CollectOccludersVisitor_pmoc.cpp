@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'CollectOccludersVisitor_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'CollectOccludersVisitor_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_CollectOccludersVisitor_t {
-    QByteArrayData data[26];
-    char stringdata0[649];
+    QByteArrayData data[23];
+    char stringdata0[598];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -44,17 +44,14 @@ QT_MOC_LITERAL(11, 284, 30), // "getMinimumShadowOccluderVolume"
 QT_MOC_LITERAL(12, 315, 33), // "getMaximumNumberOfActiveOcclu..."
 QT_MOC_LITERAL(13, 349, 9), // "cloneType"
 QT_MOC_LITERAL(14, 359, 21), // "osg::QReflect_Object*"
-QT_MOC_LITERAL(15, 381, 5), // "apply"
-QT_MOC_LITERAL(16, 387, 19), // "osg::QReflect_Node*"
-QT_MOC_LITERAL(17, 407, 24), // "osg::QReflect_Transform*"
-QT_MOC_LITERAL(18, 432, 23), // "removeOccludedOccluders"
-QT_MOC_LITERAL(19, 456, 5), // "reset"
-QT_MOC_LITERAL(20, 462, 32), // "setCreateDrawablesOnOccludeNodes"
-QT_MOC_LITERAL(21, 495, 33), // "setMaximumNumberOfActiveOcclu..."
-QT_MOC_LITERAL(22, 529, 30), // "setMinimumShadowOccluderVolume"
-QT_MOC_LITERAL(23, 560, 29), // "CreateDrawablesOnOccludeNodes"
-QT_MOC_LITERAL(24, 590, 27), // "MinimumShadowOccluderVolume"
-QT_MOC_LITERAL(25, 618, 30) // "MaximumNumberOfActiveOccluders"
+QT_MOC_LITERAL(15, 381, 23), // "removeOccludedOccluders"
+QT_MOC_LITERAL(16, 405, 5), // "reset"
+QT_MOC_LITERAL(17, 411, 32), // "setCreateDrawablesOnOccludeNodes"
+QT_MOC_LITERAL(18, 444, 33), // "setMaximumNumberOfActiveOcclu..."
+QT_MOC_LITERAL(19, 478, 30), // "setMinimumShadowOccluderVolume"
+QT_MOC_LITERAL(20, 509, 29), // "CreateDrawablesOnOccludeNodes"
+QT_MOC_LITERAL(21, 539, 27), // "MinimumShadowOccluderVolume"
+QT_MOC_LITERAL(22, 567, 30) // "MaximumNumberOfActiveOccluders"
 
     },
     "osg::QReflect_CollectOccludersVisitor\0"
@@ -67,8 +64,7 @@ QT_MOC_LITERAL(25, 618, 30) // "MaximumNumberOfActiveOccluders"
     "getCreateDrawablesOnOccludeNodes\0"
     "getMinimumShadowOccluderVolume\0"
     "getMaximumNumberOfActiveOccluders\0"
-    "cloneType\0osg::QReflect_Object*\0apply\0"
-    "osg::QReflect_Node*\0osg::QReflect_Transform*\0"
+    "cloneType\0osg::QReflect_Object*\0"
     "removeOccludedOccluders\0reset\0"
     "setCreateDrawablesOnOccludeNodes\0"
     "setMaximumNumberOfActiveOccluders\0"
@@ -85,36 +81,34 @@ static const uint qt_meta_data_osg__QReflect_CollectOccludersVisitor[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
-       3,  150, // properties
+      16,   14, // methods
+       3,  134, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        3,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  104,    2, 0x06 /* Public */,
-       3,    1,  107,    2, 0x06 /* Public */,
-       4,    1,  110,    2, 0x06 /* Public */,
+       1,    1,   94,    2, 0x06 /* Public */,
+       3,    1,   97,    2, 0x06 /* Public */,
+       4,    1,  100,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       5,    0,  113,    2, 0x0a /* Public */,
+       5,    0,  103,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       6,    2,  114,    2, 0x02 /* Public */,
-       8,    2,  119,    2, 0x02 /* Public */,
-       9,    2,  124,    2, 0x02 /* Public */,
-      10,    0,  129,    2, 0x02 /* Public */,
-      11,    0,  130,    2, 0x02 /* Public */,
-      12,    0,  131,    2, 0x02 /* Public */,
-      13,    0,  132,    2, 0x02 /* Public */,
-      15,    1,  133,    2, 0x02 /* Public */,
-      15,    1,  136,    2, 0x02 /* Public */,
-      18,    0,  139,    2, 0x02 /* Public */,
-      19,    0,  140,    2, 0x02 /* Public */,
-      20,    1,  141,    2, 0x02 /* Public */,
-      21,    1,  144,    2, 0x02 /* Public */,
-      22,    1,  147,    2, 0x02 /* Public */,
+       6,    2,  104,    2, 0x02 /* Public */,
+       8,    2,  109,    2, 0x02 /* Public */,
+       9,    2,  114,    2, 0x02 /* Public */,
+      10,    0,  119,    2, 0x02 /* Public */,
+      11,    0,  120,    2, 0x02 /* Public */,
+      12,    0,  121,    2, 0x02 /* Public */,
+      13,    0,  122,    2, 0x02 /* Public */,
+      15,    0,  123,    2, 0x02 /* Public */,
+      16,    0,  124,    2, 0x02 /* Public */,
+      17,    1,  125,    2, 0x02 /* Public */,
+      18,    1,  128,    2, 0x02 /* Public */,
+      19,    1,  131,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -132,8 +126,6 @@ static const uint qt_meta_data_osg__QReflect_CollectOccludersVisitor[] = {
     QMetaType::Float,
     QMetaType::UInt,
     0x80000000 | 14,
-    QMetaType::Void, 0x80000000 | 16,    2,
-    QMetaType::Void, 0x80000000 | 17,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    2,
@@ -141,9 +133,9 @@ static const uint qt_meta_data_osg__QReflect_CollectOccludersVisitor[] = {
     QMetaType::Void, QMetaType::Float,    2,
 
  // properties: name, type, flags
-      23, QMetaType::Bool, 0x00495103,
-      24, QMetaType::Float, 0x00495103,
-      25, QMetaType::UInt, 0x00495103,
+      20, QMetaType::Bool, 0x00495103,
+      21, QMetaType::Float, 0x00495103,
+      22, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -177,13 +169,11 @@ void osg::QReflect_CollectOccludersVisitor::qt_static_metacall(QObject *_o, QMet
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
         case 10: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 11: _t->apply((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 12: _t->apply((*reinterpret_cast< osg::QReflect_Transform*(*)>(_a[1]))); break;
-        case 13: _t->removeOccludedOccluders(); break;
-        case 14: _t->reset(); break;
-        case 15: _t->setCreateDrawablesOnOccludeNodes((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 16: _t->setMaximumNumberOfActiveOccluders((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 17: _t->setMinimumShadowOccluderVolume((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 11: _t->removeOccludedOccluders(); break;
+        case 12: _t->reset(); break;
+        case 13: _t->setCreateDrawablesOnOccludeNodes((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 14: _t->setMaximumNumberOfActiveOccluders((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 15: _t->setMinimumShadowOccluderVolume((*reinterpret_cast< const float(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -259,13 +249,13 @@ int osg::QReflect_CollectOccludersVisitor::qt_metacall(QMetaObject::Call _c, int
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 16)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 18;
+        _id -= 16;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

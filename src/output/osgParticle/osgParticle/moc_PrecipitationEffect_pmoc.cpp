@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PrecipitationEffect_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'PrecipitationEffect_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_PrecipitationEffect_t {
-    QByteArrayData data[58];
-    char stringdata0[977];
+    QByteArrayData data[55];
+    char stringdata0[934];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -61,32 +61,29 @@ QT_MOC_LITERAL(28, 515, 15), // "getLineStateSet"
 QT_MOC_LITERAL(29, 531, 23), // "osg::QReflect_StateSet*"
 QT_MOC_LITERAL(30, 555, 16), // "getPointStateSet"
 QT_MOC_LITERAL(31, 572, 15), // "getQuadStateSet"
-QT_MOC_LITERAL(32, 588, 6), // "accept"
-QT_MOC_LITERAL(33, 595, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(34, 622, 4), // "rain"
-QT_MOC_LITERAL(35, 627, 11), // "setCellSize"
-QT_MOC_LITERAL(36, 639, 20), // "osg::QReflect_Vec3f*"
-QT_MOC_LITERAL(37, 660, 16), // "setParticleColor"
-QT_MOC_LITERAL(38, 677, 20), // "osg::QReflect_Vec4f*"
-QT_MOC_LITERAL(39, 698, 11), // "setPosition"
-QT_MOC_LITERAL(40, 710, 7), // "setWind"
-QT_MOC_LITERAL(41, 718, 4), // "snow"
-QT_MOC_LITERAL(42, 723, 8), // "traverse"
-QT_MOC_LITERAL(43, 732, 19), // "pmoc_reverse_setFog"
-QT_MOC_LITERAL(44, 752, 3), // "par"
-QT_MOC_LITERAL(45, 756, 16), // "setFarTransition"
-QT_MOC_LITERAL(46, 773, 6), // "setFog"
-QT_MOC_LITERAL(47, 780, 25), // "setMaximumParticleDensity"
-QT_MOC_LITERAL(48, 806, 17), // "setNearTransition"
-QT_MOC_LITERAL(49, 824, 15), // "setParticleSize"
-QT_MOC_LITERAL(50, 840, 16), // "setParticleSpeed"
-QT_MOC_LITERAL(51, 857, 21), // "setUseFarLineSegments"
-QT_MOC_LITERAL(52, 879, 18), // "UseFarLineSegments"
-QT_MOC_LITERAL(53, 898, 13), // "FarTransition"
-QT_MOC_LITERAL(54, 912, 22), // "MaximumParticleDensity"
-QT_MOC_LITERAL(55, 935, 14), // "NearTransition"
-QT_MOC_LITERAL(56, 950, 12), // "ParticleSize"
-QT_MOC_LITERAL(57, 963, 13) // "ParticleSpeed"
+QT_MOC_LITERAL(32, 588, 4), // "rain"
+QT_MOC_LITERAL(33, 593, 11), // "setCellSize"
+QT_MOC_LITERAL(34, 605, 20), // "osg::QReflect_Vec3f*"
+QT_MOC_LITERAL(35, 626, 16), // "setParticleColor"
+QT_MOC_LITERAL(36, 643, 20), // "osg::QReflect_Vec4f*"
+QT_MOC_LITERAL(37, 664, 11), // "setPosition"
+QT_MOC_LITERAL(38, 676, 7), // "setWind"
+QT_MOC_LITERAL(39, 684, 4), // "snow"
+QT_MOC_LITERAL(40, 689, 19), // "pmoc_reverse_setFog"
+QT_MOC_LITERAL(41, 709, 3), // "par"
+QT_MOC_LITERAL(42, 713, 16), // "setFarTransition"
+QT_MOC_LITERAL(43, 730, 6), // "setFog"
+QT_MOC_LITERAL(44, 737, 25), // "setMaximumParticleDensity"
+QT_MOC_LITERAL(45, 763, 17), // "setNearTransition"
+QT_MOC_LITERAL(46, 781, 15), // "setParticleSize"
+QT_MOC_LITERAL(47, 797, 16), // "setParticleSpeed"
+QT_MOC_LITERAL(48, 814, 21), // "setUseFarLineSegments"
+QT_MOC_LITERAL(49, 836, 18), // "UseFarLineSegments"
+QT_MOC_LITERAL(50, 855, 13), // "FarTransition"
+QT_MOC_LITERAL(51, 869, 22), // "MaximumParticleDensity"
+QT_MOC_LITERAL(52, 892, 14), // "NearTransition"
+QT_MOC_LITERAL(53, 907, 12), // "ParticleSize"
+QT_MOC_LITERAL(54, 920, 13) // "ParticleSpeed"
 
     },
     "osgParticle::QReflect_PrecipitationEffect\0"
@@ -104,18 +101,16 @@ QT_MOC_LITERAL(57, 963, 13) // "ParticleSpeed"
     "osg::QReflect_Geometry*\0getPointGeometry\0"
     "getQuadGeometry\0getLineStateSet\0"
     "osg::QReflect_StateSet*\0getPointStateSet\0"
-    "getQuadStateSet\0accept\0"
-    "osg::QReflect_NodeVisitor*\0rain\0"
-    "setCellSize\0osg::QReflect_Vec3f*\0"
-    "setParticleColor\0osg::QReflect_Vec4f*\0"
-    "setPosition\0setWind\0snow\0traverse\0"
-    "pmoc_reverse_setFog\0par\0setFarTransition\0"
-    "setFog\0setMaximumParticleDensity\0"
-    "setNearTransition\0setParticleSize\0"
-    "setParticleSpeed\0setUseFarLineSegments\0"
-    "UseFarLineSegments\0FarTransition\0"
-    "MaximumParticleDensity\0NearTransition\0"
-    "ParticleSize\0ParticleSpeed"
+    "getQuadStateSet\0rain\0setCellSize\0"
+    "osg::QReflect_Vec3f*\0setParticleColor\0"
+    "osg::QReflect_Vec4f*\0setPosition\0"
+    "setWind\0snow\0pmoc_reverse_setFog\0par\0"
+    "setFarTransition\0setFog\0"
+    "setMaximumParticleDensity\0setNearTransition\0"
+    "setParticleSize\0setParticleSpeed\0"
+    "setUseFarLineSegments\0UseFarLineSegments\0"
+    "FarTransition\0MaximumParticleDensity\0"
+    "NearTransition\0ParticleSize\0ParticleSpeed"
 };
 #undef QT_MOC_LITERAL
 
@@ -125,59 +120,57 @@ static const uint qt_meta_data_osgParticle__QReflect_PrecipitationEffect[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      41,   14, // methods
-       6,  308, // properties
+      39,   14, // methods
+       6,  292, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  219,    2, 0x06 /* Public */,
-       3,    1,  222,    2, 0x06 /* Public */,
-       5,    1,  225,    2, 0x06 /* Public */,
-       6,    1,  228,    2, 0x06 /* Public */,
-       7,    1,  231,    2, 0x06 /* Public */,
-       8,    1,  234,    2, 0x06 /* Public */,
-       9,    1,  237,    2, 0x06 /* Public */,
+       1,    1,  209,    2, 0x06 /* Public */,
+       3,    1,  212,    2, 0x06 /* Public */,
+       5,    1,  215,    2, 0x06 /* Public */,
+       6,    1,  218,    2, 0x06 /* Public */,
+       7,    1,  221,    2, 0x06 /* Public */,
+       8,    1,  224,    2, 0x06 /* Public */,
+       9,    1,  227,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      10,    0,  240,    2, 0x0a /* Public */,
+      10,    0,  230,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      11,    1,  241,    2, 0x02 /* Public */,
-      13,    0,  244,    2, 0x02 /* Public */,
-      15,    0,  245,    2, 0x02 /* Public */,
-      17,    0,  246,    2, 0x02 /* Public */,
-      18,    0,  247,    2, 0x02 /* Public */,
-      19,    0,  248,    2, 0x02 /* Public */,
-      20,    0,  249,    2, 0x02 /* Public */,
-      21,    0,  250,    2, 0x02 /* Public */,
-      22,    0,  251,    2, 0x02 /* Public */,
-      23,    0,  252,    2, 0x02 /* Public */,
-      24,    0,  253,    2, 0x02 /* Public */,
-      26,    0,  254,    2, 0x02 /* Public */,
-      27,    0,  255,    2, 0x02 /* Public */,
-      28,    0,  256,    2, 0x02 /* Public */,
-      30,    0,  257,    2, 0x02 /* Public */,
-      31,    0,  258,    2, 0x02 /* Public */,
-      32,    1,  259,    2, 0x02 /* Public */,
-      34,    1,  262,    2, 0x02 /* Public */,
-      35,    1,  265,    2, 0x02 /* Public */,
-      37,    1,  268,    2, 0x02 /* Public */,
-      39,    1,  271,    2, 0x02 /* Public */,
-      40,    1,  274,    2, 0x02 /* Public */,
-      41,    1,  277,    2, 0x02 /* Public */,
-      42,    1,  280,    2, 0x02 /* Public */,
-      43,    1,  283,    2, 0x02 /* Public */,
-      43,    0,  286,    2, 0x22 /* Public | MethodCloned */,
-      45,    1,  287,    2, 0x02 /* Public */,
-      46,    1,  290,    2, 0x02 /* Public */,
-      47,    1,  293,    2, 0x02 /* Public */,
-      48,    1,  296,    2, 0x02 /* Public */,
-      49,    1,  299,    2, 0x02 /* Public */,
-      50,    1,  302,    2, 0x02 /* Public */,
-      51,    1,  305,    2, 0x02 /* Public */,
+      11,    1,  231,    2, 0x02 /* Public */,
+      13,    0,  234,    2, 0x02 /* Public */,
+      15,    0,  235,    2, 0x02 /* Public */,
+      17,    0,  236,    2, 0x02 /* Public */,
+      18,    0,  237,    2, 0x02 /* Public */,
+      19,    0,  238,    2, 0x02 /* Public */,
+      20,    0,  239,    2, 0x02 /* Public */,
+      21,    0,  240,    2, 0x02 /* Public */,
+      22,    0,  241,    2, 0x02 /* Public */,
+      23,    0,  242,    2, 0x02 /* Public */,
+      24,    0,  243,    2, 0x02 /* Public */,
+      26,    0,  244,    2, 0x02 /* Public */,
+      27,    0,  245,    2, 0x02 /* Public */,
+      28,    0,  246,    2, 0x02 /* Public */,
+      30,    0,  247,    2, 0x02 /* Public */,
+      31,    0,  248,    2, 0x02 /* Public */,
+      32,    1,  249,    2, 0x02 /* Public */,
+      33,    1,  252,    2, 0x02 /* Public */,
+      35,    1,  255,    2, 0x02 /* Public */,
+      37,    1,  258,    2, 0x02 /* Public */,
+      38,    1,  261,    2, 0x02 /* Public */,
+      39,    1,  264,    2, 0x02 /* Public */,
+      40,    1,  267,    2, 0x02 /* Public */,
+      40,    0,  270,    2, 0x22 /* Public | MethodCloned */,
+      42,    1,  271,    2, 0x02 /* Public */,
+      43,    1,  274,    2, 0x02 /* Public */,
+      44,    1,  277,    2, 0x02 /* Public */,
+      45,    1,  280,    2, 0x02 /* Public */,
+      46,    1,  283,    2, 0x02 /* Public */,
+      47,    1,  286,    2, 0x02 /* Public */,
+      48,    1,  289,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Float,    2,
@@ -208,18 +201,16 @@ static const uint qt_meta_data_osgParticle__QReflect_PrecipitationEffect[] = {
     0x80000000 | 29,
     0x80000000 | 29,
     0x80000000 | 29,
-    QMetaType::Void, 0x80000000 | 33,    2,
     QMetaType::Void, QMetaType::Float,    2,
+    QMetaType::Void, 0x80000000 | 34,    2,
     QMetaType::Void, 0x80000000 | 36,    2,
-    QMetaType::Void, 0x80000000 | 38,    2,
-    QMetaType::Void, 0x80000000 | 36,    2,
-    QMetaType::Void, 0x80000000 | 36,    2,
+    QMetaType::Void, 0x80000000 | 34,    2,
+    QMetaType::Void, 0x80000000 | 34,    2,
     QMetaType::Void, QMetaType::Float,    2,
-    QMetaType::Void, 0x80000000 | 33,    2,
-    QMetaType::Void, 0x80000000 | 14,   44,
+    QMetaType::Void, 0x80000000 | 14,   41,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Float,    2,
-    QMetaType::Void, 0x80000000 | 14,   44,
+    QMetaType::Void, 0x80000000 | 14,   41,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Float,    2,
@@ -227,12 +218,12 @@ static const uint qt_meta_data_osgParticle__QReflect_PrecipitationEffect[] = {
     QMetaType::Void, QMetaType::Bool,    2,
 
  // properties: name, type, flags
-      52, QMetaType::Bool, 0x00495103,
+      49, QMetaType::Bool, 0x00495103,
+      50, QMetaType::Float, 0x00495103,
+      51, QMetaType::Float, 0x00495103,
+      52, QMetaType::Float, 0x00495103,
       53, QMetaType::Float, 0x00495103,
       54, QMetaType::Float, 0x00495103,
-      55, QMetaType::Float, 0x00495103,
-      56, QMetaType::Float, 0x00495103,
-      57, QMetaType::Float, 0x00495103,
 
  // properties: notify_signal_id
        6,
@@ -291,23 +282,21 @@ void osgParticle::QReflect_PrecipitationEffect::qt_static_metacall(QObject *_o, 
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateSet**>(_a[0]) = _r; }  break;
         case 23: { osg::QReflect_StateSet* _r = _t->getQuadStateSet();
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateSet**>(_a[0]) = _r; }  break;
-        case 24: _t->accept((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 25: _t->rain((*reinterpret_cast< float(*)>(_a[1]))); break;
-        case 26: _t->setCellSize((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 27: _t->setParticleColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
-        case 28: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 29: _t->setWind((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 30: _t->snow((*reinterpret_cast< float(*)>(_a[1]))); break;
-        case 31: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 32: _t->pmoc_reverse_setFog((*reinterpret_cast< osg::QReflect_Fog*(*)>(_a[1]))); break;
-        case 33: _t->pmoc_reverse_setFog(); break;
-        case 34: _t->setFarTransition((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 35: _t->setFog((*reinterpret_cast< osg::QReflect_Fog*(*)>(_a[1]))); break;
-        case 36: _t->setMaximumParticleDensity((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 37: _t->setNearTransition((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 38: _t->setParticleSize((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 39: _t->setParticleSpeed((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 40: _t->setUseFarLineSegments((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 24: _t->rain((*reinterpret_cast< float(*)>(_a[1]))); break;
+        case 25: _t->setCellSize((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 26: _t->setParticleColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
+        case 27: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 28: _t->setWind((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 29: _t->snow((*reinterpret_cast< float(*)>(_a[1]))); break;
+        case 30: _t->pmoc_reverse_setFog((*reinterpret_cast< osg::QReflect_Fog*(*)>(_a[1]))); break;
+        case 31: _t->pmoc_reverse_setFog(); break;
+        case 32: _t->setFarTransition((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 33: _t->setFog((*reinterpret_cast< osg::QReflect_Fog*(*)>(_a[1]))); break;
+        case 34: _t->setMaximumParticleDensity((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 35: _t->setNearTransition((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 36: _t->setParticleSize((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 37: _t->setParticleSpeed((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 38: _t->setUseFarLineSegments((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -413,13 +402,13 @@ int osgParticle::QReflect_PrecipitationEffect::qt_metacall(QMetaObject::Call _c,
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 41)
+        if (_id < 39)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 41;
+        _id -= 39;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 41)
+        if (_id < 39)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 41;
+        _id -= 39;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

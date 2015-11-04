@@ -3,16 +3,16 @@
 #include <osg/Polytope_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Plane;
-			} ;
-namespace osg{ 
-class QReflect_Polytope;
-			} ;
-namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
+			} ;
+namespace osg{ 
+class QReflect_Plane;
+			} ;
+namespace osg{ 
+class QReflect_Polytope;
 			} ;
 #include <osg/Polytope>
 

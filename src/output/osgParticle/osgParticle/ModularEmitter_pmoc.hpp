@@ -5,13 +5,13 @@
 #include <osgParticle/ModularEmitter_pmoc.hpp>
 #include <QObject>
 namespace osgParticle{ 
+class QReflect_Counter;
+			} ;
+namespace osgParticle{ 
 class QReflect_Placer;
 			} ;
 namespace osgParticle{ 
 class QReflect_Shooter;
-			} ;
-namespace osgParticle{ 
-class QReflect_Counter;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/ModularEmitter>

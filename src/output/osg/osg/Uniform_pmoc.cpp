@@ -7,6 +7,7 @@
 #include <customCode/osg/Uniform_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Callback_pmoc.hpp>
+#include <customCode/osg/GLExtensions_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/Matrixf_pmoc.hpp>
 #include <customCode/osg/Uniform_pmoc.hpp>
@@ -19,182 +20,6 @@
 #include <osg/Callback>
 #include <osg/Callback_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_Uniform::get( bool &p0 , bool &p1 , bool &p2 , bool &p3)const{
-return _model->get(p0 ,p1 ,p2 ,p3);
-
-}
- bool  osg::QReflect_Uniform::get( bool &p0 , bool &p1 , bool &p2)const{
-return _model->get(p0 ,p1 ,p2);
-
-}
- bool  osg::QReflect_Uniform::get( bool &p0 , bool &p1)const{
-return _model->get(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::get( bool &p0)const{
-return _model->get(p0);
-
-}
- bool  osg::QReflect_Uniform::get( double &p0)const{
-return _model->get(p0);
-
-}
- bool  osg::QReflect_Uniform::get( float &p0)const{
-return _model->get(p0);
-
-}
- bool  osg::QReflect_Uniform::get( int &p0 , int &p1 , int &p2 , int &p3)const{
-return _model->get(p0 ,p1 ,p2 ,p3);
-
-}
- bool  osg::QReflect_Uniform::get( int &p0 , int &p1 , int &p2)const{
-return _model->get(p0 ,p1 ,p2);
-
-}
- bool  osg::QReflect_Uniform::get( int &p0 , int &p1)const{
-return _model->get(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::get( int &p0)const{
-return _model->get(p0);
-
-}
- bool  osg::QReflect_Uniform::get( unsigned int &p0 , unsigned int &p1 , unsigned int &p2 , unsigned int &p3)const{
-return _model->get(p0 ,p1 ,p2 ,p3);
-
-}
- bool  osg::QReflect_Uniform::get( unsigned int &p0 , unsigned int &p1 , unsigned int &p2)const{
-return _model->get(p0 ,p1 ,p2);
-
-}
- bool  osg::QReflect_Uniform::get( unsigned int &p0 , unsigned int &p1)const{
-return _model->get(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::get( unsigned int &p0)const{
-return _model->get(p0);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Matrixd *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Matrixf *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Vec2d *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Vec2f *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Vec3d *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Vec3f *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Vec4d *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::get(osg::QReflect_Vec4f *p0)const{
-return _model->get(*p0->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , bool &p1 , bool &p2 , bool &p3 , bool &p4)const{
-return _model->getElement(p0 ,p1 ,p2 ,p3 ,p4);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , bool &p1 , bool &p2 , bool &p3)const{
-return _model->getElement(p0 ,p1 ,p2 ,p3);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , bool &p1 , bool &p2)const{
-return _model->getElement(p0 ,p1 ,p2);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , bool &p1)const{
-return _model->getElement(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , double &p1)const{
-return _model->getElement(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , float &p1)const{
-return _model->getElement(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , int &p1 , int &p2 , int &p3 , int &p4)const{
-return _model->getElement(p0 ,p1 ,p2 ,p3 ,p4);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , int &p1 , int &p2 , int &p3)const{
-return _model->getElement(p0 ,p1 ,p2 ,p3);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , int &p1 , int &p2)const{
-return _model->getElement(p0 ,p1 ,p2);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , int &p1)const{
-return _model->getElement(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , unsigned int &p1 , unsigned int &p2 , unsigned int &p3 , unsigned int &p4)const{
-return _model->getElement(p0 ,p1 ,p2 ,p3 ,p4);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , unsigned int &p1 , unsigned int &p2 , unsigned int &p3)const{
-return _model->getElement(p0 ,p1 ,p2 ,p3);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , unsigned int &p1 , unsigned int &p2)const{
-return _model->getElement(p0 ,p1 ,p2);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 , unsigned int &p1)const{
-return _model->getElement(p0 ,p1);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Matrixd *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Matrixf *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Vec2d *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Vec2f *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Vec3d *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Vec3f *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Vec4d *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
- bool  osg::QReflect_Uniform::getElement( unsigned int p0 ,osg::QReflect_Vec4f *p1)const{
-return _model->getElement(p0 ,*p1->_model);
-
-}
  bool  osg::QReflect_Uniform::set( bool p0 , bool p1 , bool p2 , bool p3){
 return _model->set(p0 ,p1 ,p2 ,p3);
 
@@ -401,6 +226,10 @@ return _model->getNameID(std::string(p0.toStdString()));
 }
  unsigned int  osg::QReflect_Uniform::getNumParents()const{
 return _model->getNumParents();
+
+}
+ void osg::QReflect_Uniform::apply(osg::QReflect_GLExtensions *p0 , GLint p1)const{
+ _model->apply(p0->_model ,p1);
 
 }
  void osg::QReflect_Uniform::copyData(osg::QReflect_Uniform *p0){

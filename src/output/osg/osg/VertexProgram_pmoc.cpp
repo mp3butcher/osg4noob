@@ -7,7 +7,12 @@
 #include <customCode/osg/VertexProgram_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
+ GLuint&  osg::QReflect_VertexProgram::getVertexProgramID( unsigned int p0)const{
+return _model->getVertexProgramID(p0);
+
+}
  int  osg::QReflect_VertexProgram::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
@@ -18,6 +23,10 @@ return _model->compare(*p0->_model);
 }
  void osg::QReflect_VertexProgram::resizeGLObjectBuffers( unsigned int p0){
  _model->resizeGLObjectBuffers(p0);
+
+}
+ void osg::QReflect_VertexProgram::setProgramLocalParameter(const  GLuint p0 ,osg::QReflect_Vec4f *p1){
+ _model->setProgramLocalParameter(p0 ,*p1->_model);
 
 }
  void osg::QReflect_VertexProgram::setVertexProgram(const  char *p0){

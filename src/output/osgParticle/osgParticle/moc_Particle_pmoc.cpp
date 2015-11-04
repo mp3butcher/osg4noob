@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Particle_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Particle_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_Particle_t {
-    QByteArrayData data[89];
-    char stringdata0[1408];
+    QByteArrayData data[88];
+    char stringdata0[1382];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -79,45 +79,44 @@ QT_MOC_LITERAL(46, 769, 32), // "osg::QReflect_GLBeginEndAdapter*"
 QT_MOC_LITERAL(47, 802, 9), // "endRender"
 QT_MOC_LITERAL(48, 812, 4), // "kill"
 QT_MOC_LITERAL(49, 817, 6), // "render"
-QT_MOC_LITERAL(50, 824, 25), // "osg::QReflect_RenderInfo*"
-QT_MOC_LITERAL(51, 850, 8), // "setAngle"
-QT_MOC_LITERAL(52, 859, 18), // "setAngularVelocity"
-QT_MOC_LITERAL(53, 878, 11), // "setPosition"
-QT_MOC_LITERAL(54, 890, 8), // "setShape"
-QT_MOC_LITERAL(55, 899, 14), // "setTextureTile"
-QT_MOC_LITERAL(56, 914, 19), // "setTextureTileRange"
-QT_MOC_LITERAL(57, 934, 11), // "setVelocity"
-QT_MOC_LITERAL(58, 946, 22), // "transformAngleVelocity"
-QT_MOC_LITERAL(59, 969, 22), // "osg::QReflect_Matrixd*"
-QT_MOC_LITERAL(60, 992, 25), // "transformPositionVelocity"
-QT_MOC_LITERAL(61, 1018, 33), // "pmoc_reverse_setAlphaInterpol..."
-QT_MOC_LITERAL(62, 1052, 3), // "par"
-QT_MOC_LITERAL(63, 1056, 33), // "pmoc_reverse_setColorInterpol..."
-QT_MOC_LITERAL(64, 1090, 24), // "pmoc_reverse_setDrawable"
-QT_MOC_LITERAL(65, 1115, 32), // "pmoc_reverse_setSizeInterpolator"
-QT_MOC_LITERAL(66, 1148, 20), // "setAlphaInterpolator"
-QT_MOC_LITERAL(67, 1169, 20), // "setColorInterpolator"
-QT_MOC_LITERAL(68, 1190, 8), // "setDepth"
-QT_MOC_LITERAL(69, 1199, 11), // "setDrawable"
-QT_MOC_LITERAL(70, 1211, 11), // "setLifeTime"
-QT_MOC_LITERAL(71, 1223, 7), // "setMass"
-QT_MOC_LITERAL(72, 1231, 15), // "setNextParticle"
-QT_MOC_LITERAL(73, 1247, 19), // "setPreviousParticle"
-QT_MOC_LITERAL(74, 1267, 9), // "setRadius"
-QT_MOC_LITERAL(75, 1277, 19), // "setSizeInterpolator"
-QT_MOC_LITERAL(76, 1297, 5), // "Depth"
-QT_MOC_LITERAL(77, 1303, 8), // "LifeTime"
-QT_MOC_LITERAL(78, 1312, 4), // "Mass"
-QT_MOC_LITERAL(79, 1317, 6), // "Radius"
-QT_MOC_LITERAL(80, 1324, 12), // "NextParticle"
-QT_MOC_LITERAL(81, 1337, 16), // "PreviousParticle"
-QT_MOC_LITERAL(82, 1354, 5), // "Shape"
-QT_MOC_LITERAL(83, 1360, 5), // "POINT"
-QT_MOC_LITERAL(84, 1366, 4), // "QUAD"
-QT_MOC_LITERAL(85, 1371, 18), // "QUAD_TRIANGLESTRIP"
-QT_MOC_LITERAL(86, 1390, 7), // "HEXAGON"
-QT_MOC_LITERAL(87, 1398, 4), // "LINE"
-QT_MOC_LITERAL(88, 1403, 4) // "USER"
+QT_MOC_LITERAL(50, 824, 8), // "setAngle"
+QT_MOC_LITERAL(51, 833, 18), // "setAngularVelocity"
+QT_MOC_LITERAL(52, 852, 11), // "setPosition"
+QT_MOC_LITERAL(53, 864, 8), // "setShape"
+QT_MOC_LITERAL(54, 873, 14), // "setTextureTile"
+QT_MOC_LITERAL(55, 888, 19), // "setTextureTileRange"
+QT_MOC_LITERAL(56, 908, 11), // "setVelocity"
+QT_MOC_LITERAL(57, 920, 22), // "transformAngleVelocity"
+QT_MOC_LITERAL(58, 943, 22), // "osg::QReflect_Matrixd*"
+QT_MOC_LITERAL(59, 966, 25), // "transformPositionVelocity"
+QT_MOC_LITERAL(60, 992, 33), // "pmoc_reverse_setAlphaInterpol..."
+QT_MOC_LITERAL(61, 1026, 3), // "par"
+QT_MOC_LITERAL(62, 1030, 33), // "pmoc_reverse_setColorInterpol..."
+QT_MOC_LITERAL(63, 1064, 24), // "pmoc_reverse_setDrawable"
+QT_MOC_LITERAL(64, 1089, 32), // "pmoc_reverse_setSizeInterpolator"
+QT_MOC_LITERAL(65, 1122, 20), // "setAlphaInterpolator"
+QT_MOC_LITERAL(66, 1143, 20), // "setColorInterpolator"
+QT_MOC_LITERAL(67, 1164, 8), // "setDepth"
+QT_MOC_LITERAL(68, 1173, 11), // "setDrawable"
+QT_MOC_LITERAL(69, 1185, 11), // "setLifeTime"
+QT_MOC_LITERAL(70, 1197, 7), // "setMass"
+QT_MOC_LITERAL(71, 1205, 15), // "setNextParticle"
+QT_MOC_LITERAL(72, 1221, 19), // "setPreviousParticle"
+QT_MOC_LITERAL(73, 1241, 9), // "setRadius"
+QT_MOC_LITERAL(74, 1251, 19), // "setSizeInterpolator"
+QT_MOC_LITERAL(75, 1271, 5), // "Depth"
+QT_MOC_LITERAL(76, 1277, 8), // "LifeTime"
+QT_MOC_LITERAL(77, 1286, 4), // "Mass"
+QT_MOC_LITERAL(78, 1291, 6), // "Radius"
+QT_MOC_LITERAL(79, 1298, 12), // "NextParticle"
+QT_MOC_LITERAL(80, 1311, 16), // "PreviousParticle"
+QT_MOC_LITERAL(81, 1328, 5), // "Shape"
+QT_MOC_LITERAL(82, 1334, 5), // "POINT"
+QT_MOC_LITERAL(83, 1340, 4), // "QUAD"
+QT_MOC_LITERAL(84, 1345, 18), // "QUAD_TRIANGLESTRIP"
+QT_MOC_LITERAL(85, 1364, 7), // "HEXAGON"
+QT_MOC_LITERAL(86, 1372, 4), // "LINE"
+QT_MOC_LITERAL(87, 1377, 4) // "USER"
 
     },
     "osgParticle::QReflect_Particle\0"
@@ -142,9 +141,9 @@ QT_MOC_LITERAL(88, 1403, 4) // "USER"
     "addAngularVelocity\0osg::QReflect_Vec3f*\0"
     "addVelocity\0beginRender\0"
     "osg::QReflect_GLBeginEndAdapter*\0"
-    "endRender\0kill\0render\0osg::QReflect_RenderInfo*\0"
-    "setAngle\0setAngularVelocity\0setPosition\0"
-    "setShape\0setTextureTile\0setTextureTileRange\0"
+    "endRender\0kill\0render\0setAngle\0"
+    "setAngularVelocity\0setPosition\0setShape\0"
+    "setTextureTile\0setTextureTileRange\0"
     "setVelocity\0transformAngleVelocity\0"
     "osg::QReflect_Matrixd*\0transformPositionVelocity\0"
     "pmoc_reverse_setAlphaInterpolator\0par\0"
@@ -167,88 +166,87 @@ static const uint qt_meta_data_osgParticle__QReflect_Particle[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      70,   14, // methods
-       6,  544, // properties
-       1,  568, // enums/sets
+      69,   14, // methods
+       6,  532, // properties
+       1,  556, // enums/sets
        0,    0, // constructors
        0,       // flags
       10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  364,    2, 0x06 /* Public */,
-       4,    1,  367,    2, 0x06 /* Public */,
-       5,    1,  370,    2, 0x06 /* Public */,
-       6,    1,  373,    2, 0x06 /* Public */,
-       8,    1,  376,    2, 0x06 /* Public */,
-       9,    1,  379,    2, 0x06 /* Public */,
-      10,    1,  382,    2, 0x06 /* Public */,
-      11,    1,  385,    2, 0x06 /* Public */,
-      12,    1,  388,    2, 0x06 /* Public */,
-      13,    1,  391,    2, 0x06 /* Public */,
+       1,    1,  359,    2, 0x06 /* Public */,
+       4,    1,  362,    2, 0x06 /* Public */,
+       5,    1,  365,    2, 0x06 /* Public */,
+       6,    1,  368,    2, 0x06 /* Public */,
+       8,    1,  371,    2, 0x06 /* Public */,
+       9,    1,  374,    2, 0x06 /* Public */,
+      10,    1,  377,    2, 0x06 /* Public */,
+      11,    1,  380,    2, 0x06 /* Public */,
+      12,    1,  383,    2, 0x06 /* Public */,
+      13,    1,  386,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      14,    0,  394,    2, 0x0a /* Public */,
+      14,    0,  389,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      15,    0,  395,    2, 0x02 /* Public */,
-      16,    2,  396,    2, 0x02 /* Public */,
-      17,    0,  401,    2, 0x02 /* Public */,
-      18,    0,  402,    2, 0x02 /* Public */,
-      19,    0,  403,    2, 0x02 /* Public */,
-      20,    0,  404,    2, 0x02 /* Public */,
-      21,    0,  405,    2, 0x02 /* Public */,
-      22,    0,  406,    2, 0x02 /* Public */,
-      23,    0,  407,    2, 0x02 /* Public */,
-      24,    0,  408,    2, 0x02 /* Public */,
-      25,    0,  409,    2, 0x02 /* Public */,
-      26,    0,  410,    2, 0x02 /* Public */,
-      27,    0,  411,    2, 0x02 /* Public */,
-      28,    0,  412,    2, 0x02 /* Public */,
-      30,    0,  413,    2, 0x02 /* Public */,
-      32,    0,  414,    2, 0x02 /* Public */,
-      33,    0,  415,    2, 0x02 /* Public */,
-      34,    0,  416,    2, 0x02 /* Public */,
-      35,    0,  417,    2, 0x02 /* Public */,
-      36,    0,  418,    2, 0x02 /* Public */,
-      37,    0,  419,    2, 0x02 /* Public */,
-      38,    0,  420,    2, 0x02 /* Public */,
-      39,    0,  421,    2, 0x02 /* Public */,
-      40,    0,  422,    2, 0x02 /* Public */,
-      42,    1,  423,    2, 0x02 /* Public */,
-      44,    1,  426,    2, 0x02 /* Public */,
-      45,    1,  429,    2, 0x02 /* Public */,
-      47,    1,  432,    2, 0x02 /* Public */,
-      48,    0,  435,    2, 0x02 /* Public */,
-      49,    5,  436,    2, 0x02 /* Public */,
-      49,    3,  447,    2, 0x02 /* Public */,
-      51,    1,  454,    2, 0x02 /* Public */,
-      52,    1,  457,    2, 0x02 /* Public */,
-      53,    1,  460,    2, 0x02 /* Public */,
-      54,    1,  463,    2, 0x02 /* Public */,
-      55,    3,  466,    2, 0x02 /* Public */,
-      56,    4,  473,    2, 0x02 /* Public */,
-      57,    1,  482,    2, 0x02 /* Public */,
-      58,    1,  485,    2, 0x02 /* Public */,
-      60,    3,  488,    2, 0x02 /* Public */,
-      60,    1,  495,    2, 0x02 /* Public */,
-      61,    1,  498,    2, 0x02 /* Public */,
-      61,    0,  501,    2, 0x22 /* Public | MethodCloned */,
-      63,    1,  502,    2, 0x02 /* Public */,
-      63,    0,  505,    2, 0x22 /* Public | MethodCloned */,
-      64,    1,  506,    2, 0x02 /* Public */,
-      64,    0,  509,    2, 0x22 /* Public | MethodCloned */,
-      65,    1,  510,    2, 0x02 /* Public */,
-      65,    0,  513,    2, 0x22 /* Public | MethodCloned */,
-      66,    1,  514,    2, 0x02 /* Public */,
-      67,    1,  517,    2, 0x02 /* Public */,
-      68,    1,  520,    2, 0x02 /* Public */,
-      69,    1,  523,    2, 0x02 /* Public */,
-      70,    1,  526,    2, 0x02 /* Public */,
-      71,    1,  529,    2, 0x02 /* Public */,
-      72,    1,  532,    2, 0x02 /* Public */,
-      73,    1,  535,    2, 0x02 /* Public */,
-      74,    1,  538,    2, 0x02 /* Public */,
-      75,    1,  541,    2, 0x02 /* Public */,
+      15,    0,  390,    2, 0x02 /* Public */,
+      16,    2,  391,    2, 0x02 /* Public */,
+      17,    0,  396,    2, 0x02 /* Public */,
+      18,    0,  397,    2, 0x02 /* Public */,
+      19,    0,  398,    2, 0x02 /* Public */,
+      20,    0,  399,    2, 0x02 /* Public */,
+      21,    0,  400,    2, 0x02 /* Public */,
+      22,    0,  401,    2, 0x02 /* Public */,
+      23,    0,  402,    2, 0x02 /* Public */,
+      24,    0,  403,    2, 0x02 /* Public */,
+      25,    0,  404,    2, 0x02 /* Public */,
+      26,    0,  405,    2, 0x02 /* Public */,
+      27,    0,  406,    2, 0x02 /* Public */,
+      28,    0,  407,    2, 0x02 /* Public */,
+      30,    0,  408,    2, 0x02 /* Public */,
+      32,    0,  409,    2, 0x02 /* Public */,
+      33,    0,  410,    2, 0x02 /* Public */,
+      34,    0,  411,    2, 0x02 /* Public */,
+      35,    0,  412,    2, 0x02 /* Public */,
+      36,    0,  413,    2, 0x02 /* Public */,
+      37,    0,  414,    2, 0x02 /* Public */,
+      38,    0,  415,    2, 0x02 /* Public */,
+      39,    0,  416,    2, 0x02 /* Public */,
+      40,    0,  417,    2, 0x02 /* Public */,
+      42,    1,  418,    2, 0x02 /* Public */,
+      44,    1,  421,    2, 0x02 /* Public */,
+      45,    1,  424,    2, 0x02 /* Public */,
+      47,    1,  427,    2, 0x02 /* Public */,
+      48,    0,  430,    2, 0x02 /* Public */,
+      49,    5,  431,    2, 0x02 /* Public */,
+      50,    1,  442,    2, 0x02 /* Public */,
+      51,    1,  445,    2, 0x02 /* Public */,
+      52,    1,  448,    2, 0x02 /* Public */,
+      53,    1,  451,    2, 0x02 /* Public */,
+      54,    3,  454,    2, 0x02 /* Public */,
+      55,    4,  461,    2, 0x02 /* Public */,
+      56,    1,  470,    2, 0x02 /* Public */,
+      57,    1,  473,    2, 0x02 /* Public */,
+      59,    3,  476,    2, 0x02 /* Public */,
+      59,    1,  483,    2, 0x02 /* Public */,
+      60,    1,  486,    2, 0x02 /* Public */,
+      60,    0,  489,    2, 0x22 /* Public | MethodCloned */,
+      62,    1,  490,    2, 0x02 /* Public */,
+      62,    0,  493,    2, 0x22 /* Public | MethodCloned */,
+      63,    1,  494,    2, 0x02 /* Public */,
+      63,    0,  497,    2, 0x22 /* Public | MethodCloned */,
+      64,    1,  498,    2, 0x02 /* Public */,
+      64,    0,  501,    2, 0x22 /* Public | MethodCloned */,
+      65,    1,  502,    2, 0x02 /* Public */,
+      66,    1,  505,    2, 0x02 /* Public */,
+      67,    1,  508,    2, 0x02 /* Public */,
+      68,    1,  511,    2, 0x02 /* Public */,
+      69,    1,  514,    2, 0x02 /* Public */,
+      70,    1,  517,    2, 0x02 /* Public */,
+      71,    1,  520,    2, 0x02 /* Public */,
+      72,    1,  523,    2, 0x02 /* Public */,
+      73,    1,  526,    2, 0x02 /* Public */,
+      74,    1,  529,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -296,7 +294,6 @@ static const uint qt_meta_data_osgParticle__QReflect_Particle[] = {
     QMetaType::Void, 0x80000000 | 46,    2,
     QMetaType::Void,
     QMetaType::Void, 0x80000000 | 46, 0x80000000 | 43, 0x80000000 | 43, 0x80000000 | 43, QMetaType::Float,    2,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 50, 0x80000000 | 43, 0x80000000 | 43,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 43,    2,
     QMetaType::Void, 0x80000000 | 43,    2,
     QMetaType::Void, 0x80000000 | 43,    2,
@@ -304,35 +301,35 @@ static const uint qt_meta_data_osgParticle__QReflect_Particle[] = {
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
     QMetaType::Void, 0x80000000 | 43,    2,
-    QMetaType::Void, 0x80000000 | 59,    2,
-    QMetaType::Void, 0x80000000 | 59, 0x80000000 | 59, QMetaType::Float,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 59,    2,
-    QMetaType::Void, 0x80000000 | 31,   62,
+    QMetaType::Void, 0x80000000 | 58,    2,
+    QMetaType::Void, 0x80000000 | 58, 0x80000000 | 58, QMetaType::Float,    2,    2,    2,
+    QMetaType::Void, 0x80000000 | 58,    2,
+    QMetaType::Void, 0x80000000 | 31,   61,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 31,   62,
+    QMetaType::Void, 0x80000000 | 31,   61,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 29,   62,
+    QMetaType::Void, 0x80000000 | 29,   61,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 31,   62,
+    QMetaType::Void, 0x80000000 | 31,   61,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 31,   62,
-    QMetaType::Void, 0x80000000 | 31,   62,
+    QMetaType::Void, 0x80000000 | 31,   61,
+    QMetaType::Void, 0x80000000 | 31,   61,
     QMetaType::Void, QMetaType::Double,    2,
-    QMetaType::Void, 0x80000000 | 29,   62,
+    QMetaType::Void, 0x80000000 | 29,   61,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Float,    2,
-    QMetaType::Void, 0x80000000 | 31,   62,
+    QMetaType::Void, 0x80000000 | 31,   61,
 
  // properties: name, type, flags
+      75, QMetaType::Double, 0x00495103,
       76, QMetaType::Double, 0x00495103,
-      77, QMetaType::Double, 0x00495103,
+      77, QMetaType::Float, 0x00495103,
       78, QMetaType::Float, 0x00495103,
-      79, QMetaType::Float, 0x00495103,
+      79, QMetaType::Int, 0x00495103,
       80, QMetaType::Int, 0x00495103,
-      81, QMetaType::Int, 0x00495103,
 
  // properties: notify_signal_id
        2,
@@ -343,15 +340,15 @@ static const uint qt_meta_data_osgParticle__QReflect_Particle[] = {
        7,
 
  // enums: name, flags, count, data
-      82, 0x0,    6,  572,
+      81, 0x0,    6,  560,
 
  // enum data: key, value
-      83, uint(osgParticle::QReflect_Particle::POINT),
-      84, uint(osgParticle::QReflect_Particle::QUAD),
-      85, uint(osgParticle::QReflect_Particle::QUAD_TRIANGLESTRIP),
-      86, uint(osgParticle::QReflect_Particle::HEXAGON),
-      87, uint(osgParticle::QReflect_Particle::LINE),
-      88, uint(osgParticle::QReflect_Particle::USER),
+      82, uint(osgParticle::QReflect_Particle::POINT),
+      83, uint(osgParticle::QReflect_Particle::QUAD),
+      84, uint(osgParticle::QReflect_Particle::QUAD_TRIANGLESTRIP),
+      85, uint(osgParticle::QReflect_Particle::HEXAGON),
+      86, uint(osgParticle::QReflect_Particle::LINE),
+      87, uint(osgParticle::QReflect_Particle::USER),
 
        0        // eod
 };
@@ -427,35 +424,34 @@ void osgParticle::QReflect_Particle::qt_static_metacall(QObject *_o, QMetaObject
         case 38: _t->endRender((*reinterpret_cast< osg::QReflect_GLBeginEndAdapter*(*)>(_a[1]))); break;
         case 39: _t->kill(); break;
         case 40: _t->render((*reinterpret_cast< osg::QReflect_GLBeginEndAdapter*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[3])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[4])),(*reinterpret_cast< float(*)>(_a[5]))); break;
-        case 41: _t->render((*reinterpret_cast< osg::QReflect_RenderInfo*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[3]))); break;
-        case 42: _t->setAngle((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 43: _t->setAngularVelocity((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 44: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 45: _t->setShape((*reinterpret_cast< osgParticle::QReflect_Particle::Shape(*)>(_a[1]))); break;
-        case 46: _t->setTextureTile((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 47: _t->setTextureTileRange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 48: _t->setVelocity((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 49: _t->transformAngleVelocity((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
-        case 50: _t->transformPositionVelocity((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
-        case 51: _t->transformPositionVelocity((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
-        case 52: _t->pmoc_reverse_setAlphaInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
-        case 53: _t->pmoc_reverse_setAlphaInterpolator(); break;
-        case 54: _t->pmoc_reverse_setColorInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
-        case 55: _t->pmoc_reverse_setColorInterpolator(); break;
-        case 56: _t->pmoc_reverse_setDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
-        case 57: _t->pmoc_reverse_setDrawable(); break;
-        case 58: _t->pmoc_reverse_setSizeInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
-        case 59: _t->pmoc_reverse_setSizeInterpolator(); break;
-        case 60: _t->setAlphaInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
-        case 61: _t->setColorInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
-        case 62: _t->setDepth((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 63: _t->setDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
-        case 64: _t->setLifeTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 65: _t->setMass((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 66: _t->setNextParticle((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 67: _t->setPreviousParticle((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 68: _t->setRadius((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 69: _t->setSizeInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
+        case 41: _t->setAngle((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 42: _t->setAngularVelocity((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 43: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 44: _t->setShape((*reinterpret_cast< osgParticle::QReflect_Particle::Shape(*)>(_a[1]))); break;
+        case 45: _t->setTextureTile((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 46: _t->setTextureTileRange((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 47: _t->setVelocity((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 48: _t->transformAngleVelocity((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
+        case 49: _t->transformPositionVelocity((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
+        case 50: _t->transformPositionVelocity((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
+        case 51: _t->pmoc_reverse_setAlphaInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
+        case 52: _t->pmoc_reverse_setAlphaInterpolator(); break;
+        case 53: _t->pmoc_reverse_setColorInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
+        case 54: _t->pmoc_reverse_setColorInterpolator(); break;
+        case 55: _t->pmoc_reverse_setDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
+        case 56: _t->pmoc_reverse_setDrawable(); break;
+        case 57: _t->pmoc_reverse_setSizeInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
+        case 58: _t->pmoc_reverse_setSizeInterpolator(); break;
+        case 59: _t->setAlphaInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
+        case 60: _t->setColorInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
+        case 61: _t->setDepth((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 62: _t->setDrawable((*reinterpret_cast< osg::QReflect_Drawable*(*)>(_a[1]))); break;
+        case 63: _t->setLifeTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 64: _t->setMass((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 65: _t->setNextParticle((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 66: _t->setPreviousParticle((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 67: _t->setRadius((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 68: _t->setSizeInterpolator((*reinterpret_cast< osgParticle::QReflect_Interpolator*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -579,13 +575,13 @@ int osgParticle::QReflect_Particle::qt_metacall(QMetaObject::Call _c, int _id, v
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 70)
+        if (_id < 69)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 70;
+        _id -= 69;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 70)
+        if (_id < 69)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 70;
+        _id -= 69;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

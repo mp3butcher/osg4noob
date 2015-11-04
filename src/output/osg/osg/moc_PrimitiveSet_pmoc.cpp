@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PrimitiveSet_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'PrimitiveSet_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -672,7 +672,7 @@ void osg::QReflect_DrawElements::ElementBufferObjectChanged(const osg::QReflect_
 }
 struct qt_meta_stringdata_osg__QReflect_DrawArrayLengths_t {
     QByteArrayData data[18];
-    char stringdata0[278];
+    char stringdata0[226];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -684,32 +684,30 @@ static const qt_meta_stringdata_osg__QReflect_DrawArrayLengths_t qt_meta_stringd
 QT_MOC_LITERAL(0, 0, 30), // "osg::QReflect_DrawArrayLengths"
 QT_MOC_LITERAL(1, 31, 11), // "updateModel"
 QT_MOC_LITERAL(2, 43, 0), // ""
-QT_MOC_LITERAL(3, 44, 12), // "isSameKindAs"
-QT_MOC_LITERAL(4, 57, 21), // "osg::QReflect_Object*"
-QT_MOC_LITERAL(5, 79, 13), // "getNumIndices"
-QT_MOC_LITERAL(6, 93, 16), // "getNumPrimitives"
-QT_MOC_LITERAL(7, 110, 5), // "index"
-QT_MOC_LITERAL(8, 116, 9), // "className"
-QT_MOC_LITERAL(9, 126, 11), // "const char*"
-QT_MOC_LITERAL(10, 138, 11), // "libraryName"
-QT_MOC_LITERAL(11, 150, 5), // "clone"
-QT_MOC_LITERAL(12, 156, 21), // "osg::QReflect_CopyOp*"
-QT_MOC_LITERAL(13, 178, 9), // "cloneType"
-QT_MOC_LITERAL(14, 188, 6), // "accept"
-QT_MOC_LITERAL(15, 195, 31), // "osg::QReflect_PrimitiveFunctor*"
-QT_MOC_LITERAL(16, 227, 36), // "osg::QReflect_PrimitiveIndexF..."
-QT_MOC_LITERAL(17, 264, 13) // "offsetIndices"
+QT_MOC_LITERAL(3, 44, 8), // "getFirst"
+QT_MOC_LITERAL(4, 53, 5), // "GLint"
+QT_MOC_LITERAL(5, 59, 12), // "isSameKindAs"
+QT_MOC_LITERAL(6, 72, 21), // "osg::QReflect_Object*"
+QT_MOC_LITERAL(7, 94, 13), // "getNumIndices"
+QT_MOC_LITERAL(8, 108, 16), // "getNumPrimitives"
+QT_MOC_LITERAL(9, 125, 5), // "index"
+QT_MOC_LITERAL(10, 131, 9), // "className"
+QT_MOC_LITERAL(11, 141, 11), // "const char*"
+QT_MOC_LITERAL(12, 153, 11), // "libraryName"
+QT_MOC_LITERAL(13, 165, 5), // "clone"
+QT_MOC_LITERAL(14, 171, 21), // "osg::QReflect_CopyOp*"
+QT_MOC_LITERAL(15, 193, 9), // "cloneType"
+QT_MOC_LITERAL(16, 203, 13), // "offsetIndices"
+QT_MOC_LITERAL(17, 217, 8) // "setFirst"
 
     },
     "osg::QReflect_DrawArrayLengths\0"
-    "updateModel\0\0isSameKindAs\0"
+    "updateModel\0\0getFirst\0GLint\0isSameKindAs\0"
     "osg::QReflect_Object*\0getNumIndices\0"
     "getNumPrimitives\0index\0className\0"
     "const char*\0libraryName\0clone\0"
-    "osg::QReflect_CopyOp*\0cloneType\0accept\0"
-    "osg::QReflect_PrimitiveFunctor*\0"
-    "osg::QReflect_PrimitiveIndexFunctor*\0"
-    "offsetIndices"
+    "osg::QReflect_CopyOp*\0cloneType\0"
+    "offsetIndices\0setFirst"
 };
 #undef QT_MOC_LITERAL
 
@@ -730,33 +728,33 @@ static const uint qt_meta_data_osg__QReflect_DrawArrayLengths[] = {
        1,    0,   74,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    1,   75,    2, 0x02 /* Public */,
-       5,    0,   78,    2, 0x02 /* Public */,
-       6,    0,   79,    2, 0x02 /* Public */,
-       7,    1,   80,    2, 0x02 /* Public */,
-       8,    0,   83,    2, 0x02 /* Public */,
+       3,    0,   75,    2, 0x02 /* Public */,
+       5,    1,   76,    2, 0x02 /* Public */,
+       7,    0,   79,    2, 0x02 /* Public */,
+       8,    0,   80,    2, 0x02 /* Public */,
+       9,    1,   81,    2, 0x02 /* Public */,
       10,    0,   84,    2, 0x02 /* Public */,
-      11,    1,   85,    2, 0x02 /* Public */,
-      13,    0,   88,    2, 0x02 /* Public */,
-      14,    1,   89,    2, 0x02 /* Public */,
-      14,    1,   92,    2, 0x02 /* Public */,
-      17,    1,   95,    2, 0x02 /* Public */,
+      12,    0,   85,    2, 0x02 /* Public */,
+      13,    1,   86,    2, 0x02 /* Public */,
+      15,    0,   89,    2, 0x02 /* Public */,
+      16,    1,   90,    2, 0x02 /* Public */,
+      17,    1,   93,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Bool, 0x80000000 | 4,    2,
+    0x80000000 | 4,
+    QMetaType::Bool, 0x80000000 | 6,    2,
     QMetaType::UInt,
     QMetaType::UInt,
     QMetaType::UInt, QMetaType::UInt,    2,
-    0x80000000 | 9,
-    0x80000000 | 9,
-    0x80000000 | 4, 0x80000000 | 12,    2,
-    0x80000000 | 4,
-    QMetaType::Void, 0x80000000 | 15,    2,
-    QMetaType::Void, 0x80000000 | 16,    2,
+    0x80000000 | 11,
+    0x80000000 | 11,
+    0x80000000 | 6, 0x80000000 | 14,    2,
+    0x80000000 | 6,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 4,    2,
 
        0        // eod
 };
@@ -768,44 +766,27 @@ void osg::QReflect_DrawArrayLengths::qt_static_metacall(QObject *_o, QMetaObject
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->updateModel(); break;
-        case 1: { bool _r = _t->isSameKindAs((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1])));
+        case 1: { GLint _r = _t->getFirst();
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 2: { bool _r = _t->isSameKindAs((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 2: { uint _r = _t->getNumIndices();
+        case 3: { uint _r = _t->getNumIndices();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 3: { uint _r = _t->getNumPrimitives();
+        case 4: { uint _r = _t->getNumPrimitives();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 4: { uint _r = _t->index((*reinterpret_cast< uint(*)>(_a[1])));
+        case 5: { uint _r = _t->index((*reinterpret_cast< uint(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 5: { const char* _r = _t->className();
+        case 6: { const char* _r = _t->className();
             if (_a[0]) *reinterpret_cast< const char**>(_a[0]) = _r; }  break;
-        case 6: { const char* _r = _t->libraryName();
+        case 7: { const char* _r = _t->libraryName();
             if (_a[0]) *reinterpret_cast< const char**>(_a[0]) = _r; }  break;
-        case 7: { osg::QReflect_Object* _r = _t->clone((*reinterpret_cast< osg::QReflect_CopyOp*(*)>(_a[1])));
+        case 8: { osg::QReflect_Object* _r = _t->clone((*reinterpret_cast< osg::QReflect_CopyOp*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 8: { osg::QReflect_Object* _r = _t->cloneType();
+        case 9: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 9: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveFunctor*(*)>(_a[1]))); break;
-        case 10: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveIndexFunctor*(*)>(_a[1]))); break;
-        case 11: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 11: _t->setFirst((*reinterpret_cast< GLint(*)>(_a[1]))); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 9:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveFunctor* >(); break;
-            }
-            break;
-        case 10:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveIndexFunctor* >(); break;
-            }
-            break;
         }
     }
 }
@@ -840,14 +821,14 @@ int osg::QReflect_DrawArrayLengths::qt_metacall(QMetaObject::Call _c, int _id, v
         _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 12)
-            qt_static_metacall(this, _c, _id, _a);
+            *reinterpret_cast<int*>(_a[0]) = -1;
         _id -= 12;
     }
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_DrawElementsUShort_t {
-    QByteArrayData data[24];
-    char stringdata0[365];
+    QByteArrayData data[21];
+    char stringdata0[289];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -872,14 +853,11 @@ QT_MOC_LITERAL(12, 172, 11), // "libraryName"
 QT_MOC_LITERAL(13, 184, 5), // "clone"
 QT_MOC_LITERAL(14, 190, 21), // "osg::QReflect_CopyOp*"
 QT_MOC_LITERAL(15, 212, 9), // "cloneType"
-QT_MOC_LITERAL(16, 222, 6), // "accept"
-QT_MOC_LITERAL(17, 229, 31), // "osg::QReflect_PrimitiveFunctor*"
-QT_MOC_LITERAL(18, 261, 36), // "osg::QReflect_PrimitiveIndexF..."
-QT_MOC_LITERAL(19, 298, 10), // "addElement"
-QT_MOC_LITERAL(20, 309, 13), // "offsetIndices"
-QT_MOC_LITERAL(21, 323, 15), // "reserveElements"
-QT_MOC_LITERAL(22, 339, 14), // "resizeElements"
-QT_MOC_LITERAL(23, 354, 10) // "setElement"
+QT_MOC_LITERAL(16, 222, 10), // "addElement"
+QT_MOC_LITERAL(17, 233, 13), // "offsetIndices"
+QT_MOC_LITERAL(18, 247, 15), // "reserveElements"
+QT_MOC_LITERAL(19, 263, 14), // "resizeElements"
+QT_MOC_LITERAL(20, 278, 10) // "setElement"
 
     },
     "osg::QReflect_DrawElementsUShort\0"
@@ -888,8 +866,6 @@ QT_MOC_LITERAL(23, 354, 10) // "setElement"
     "getElement\0getNumIndices\0getTotalDataSize\0"
     "index\0className\0const char*\0libraryName\0"
     "clone\0osg::QReflect_CopyOp*\0cloneType\0"
-    "accept\0osg::QReflect_PrimitiveFunctor*\0"
-    "osg::QReflect_PrimitiveIndexFunctor*\0"
     "addElement\0offsetIndices\0reserveElements\0"
     "resizeElements\0setElement"
 };
@@ -901,7 +877,7 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUShort[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -909,26 +885,24 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUShort[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  104,    2, 0x0a /* Public */,
+       1,    0,   94,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    1,  105,    2, 0x02 /* Public */,
-       5,    0,  108,    2, 0x02 /* Public */,
-       6,    1,  109,    2, 0x02 /* Public */,
-       7,    0,  112,    2, 0x02 /* Public */,
-       8,    0,  113,    2, 0x02 /* Public */,
-       9,    1,  114,    2, 0x02 /* Public */,
-      10,    0,  117,    2, 0x02 /* Public */,
-      12,    0,  118,    2, 0x02 /* Public */,
-      13,    1,  119,    2, 0x02 /* Public */,
-      15,    0,  122,    2, 0x02 /* Public */,
-      16,    1,  123,    2, 0x02 /* Public */,
-      16,    1,  126,    2, 0x02 /* Public */,
-      19,    1,  129,    2, 0x02 /* Public */,
-      20,    1,  132,    2, 0x02 /* Public */,
-      21,    1,  135,    2, 0x02 /* Public */,
-      22,    1,  138,    2, 0x02 /* Public */,
-      23,    2,  141,    2, 0x02 /* Public */,
+       3,    1,   95,    2, 0x02 /* Public */,
+       5,    0,   98,    2, 0x02 /* Public */,
+       6,    1,   99,    2, 0x02 /* Public */,
+       7,    0,  102,    2, 0x02 /* Public */,
+       8,    0,  103,    2, 0x02 /* Public */,
+       9,    1,  104,    2, 0x02 /* Public */,
+      10,    0,  107,    2, 0x02 /* Public */,
+      12,    0,  108,    2, 0x02 /* Public */,
+      13,    1,  109,    2, 0x02 /* Public */,
+      15,    0,  112,    2, 0x02 /* Public */,
+      16,    1,  113,    2, 0x02 /* Public */,
+      17,    1,  116,    2, 0x02 /* Public */,
+      18,    1,  119,    2, 0x02 /* Public */,
+      19,    1,  122,    2, 0x02 /* Public */,
+      20,    2,  125,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -944,8 +918,6 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUShort[] = {
     0x80000000 | 11,
     0x80000000 | 4, 0x80000000 | 14,    2,
     0x80000000 | 4,
-    QMetaType::Void, 0x80000000 | 17,    2,
-    QMetaType::Void, 0x80000000 | 18,    2,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::UInt,    2,
@@ -982,32 +954,12 @@ void osg::QReflect_DrawElementsUShort::qt_static_metacall(QObject *_o, QMetaObje
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
         case 10: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 11: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveFunctor*(*)>(_a[1]))); break;
-        case 12: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveIndexFunctor*(*)>(_a[1]))); break;
-        case 13: _t->addElement((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 14: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->reserveElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 16: _t->resizeElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 17: _t->setElement((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 11: _t->addElement((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 12: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->reserveElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 14: _t->resizeElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 15: _t->setElement((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 11:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveFunctor* >(); break;
-            }
-            break;
-        case 12:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveIndexFunctor* >(); break;
-            }
-            break;
         }
     }
 }
@@ -1037,19 +989,19 @@ int osg::QReflect_DrawElementsUShort::qt_metacall(QMetaObject::Call _c, int _id,
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        if (_id < 16)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 16;
     }
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_DrawElementsUByte_t {
-    QByteArrayData data[24];
-    char stringdata0[364];
+    QByteArrayData data[21];
+    char stringdata0[288];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -1074,14 +1026,11 @@ QT_MOC_LITERAL(12, 171, 11), // "libraryName"
 QT_MOC_LITERAL(13, 183, 5), // "clone"
 QT_MOC_LITERAL(14, 189, 21), // "osg::QReflect_CopyOp*"
 QT_MOC_LITERAL(15, 211, 9), // "cloneType"
-QT_MOC_LITERAL(16, 221, 6), // "accept"
-QT_MOC_LITERAL(17, 228, 31), // "osg::QReflect_PrimitiveFunctor*"
-QT_MOC_LITERAL(18, 260, 36), // "osg::QReflect_PrimitiveIndexF..."
-QT_MOC_LITERAL(19, 297, 10), // "addElement"
-QT_MOC_LITERAL(20, 308, 13), // "offsetIndices"
-QT_MOC_LITERAL(21, 322, 15), // "reserveElements"
-QT_MOC_LITERAL(22, 338, 14), // "resizeElements"
-QT_MOC_LITERAL(23, 353, 10) // "setElement"
+QT_MOC_LITERAL(16, 221, 10), // "addElement"
+QT_MOC_LITERAL(17, 232, 13), // "offsetIndices"
+QT_MOC_LITERAL(18, 246, 15), // "reserveElements"
+QT_MOC_LITERAL(19, 262, 14), // "resizeElements"
+QT_MOC_LITERAL(20, 277, 10) // "setElement"
 
     },
     "osg::QReflect_DrawElementsUByte\0"
@@ -1090,8 +1039,6 @@ QT_MOC_LITERAL(23, 353, 10) // "setElement"
     "getElement\0getNumIndices\0getTotalDataSize\0"
     "index\0className\0const char*\0libraryName\0"
     "clone\0osg::QReflect_CopyOp*\0cloneType\0"
-    "accept\0osg::QReflect_PrimitiveFunctor*\0"
-    "osg::QReflect_PrimitiveIndexFunctor*\0"
     "addElement\0offsetIndices\0reserveElements\0"
     "resizeElements\0setElement"
 };
@@ -1103,7 +1050,7 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUByte[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -1111,26 +1058,24 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUByte[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  104,    2, 0x0a /* Public */,
+       1,    0,   94,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    1,  105,    2, 0x02 /* Public */,
-       5,    0,  108,    2, 0x02 /* Public */,
-       6,    1,  109,    2, 0x02 /* Public */,
-       7,    0,  112,    2, 0x02 /* Public */,
-       8,    0,  113,    2, 0x02 /* Public */,
-       9,    1,  114,    2, 0x02 /* Public */,
-      10,    0,  117,    2, 0x02 /* Public */,
-      12,    0,  118,    2, 0x02 /* Public */,
-      13,    1,  119,    2, 0x02 /* Public */,
-      15,    0,  122,    2, 0x02 /* Public */,
-      16,    1,  123,    2, 0x02 /* Public */,
-      16,    1,  126,    2, 0x02 /* Public */,
-      19,    1,  129,    2, 0x02 /* Public */,
-      20,    1,  132,    2, 0x02 /* Public */,
-      21,    1,  135,    2, 0x02 /* Public */,
-      22,    1,  138,    2, 0x02 /* Public */,
-      23,    2,  141,    2, 0x02 /* Public */,
+       3,    1,   95,    2, 0x02 /* Public */,
+       5,    0,   98,    2, 0x02 /* Public */,
+       6,    1,   99,    2, 0x02 /* Public */,
+       7,    0,  102,    2, 0x02 /* Public */,
+       8,    0,  103,    2, 0x02 /* Public */,
+       9,    1,  104,    2, 0x02 /* Public */,
+      10,    0,  107,    2, 0x02 /* Public */,
+      12,    0,  108,    2, 0x02 /* Public */,
+      13,    1,  109,    2, 0x02 /* Public */,
+      15,    0,  112,    2, 0x02 /* Public */,
+      16,    1,  113,    2, 0x02 /* Public */,
+      17,    1,  116,    2, 0x02 /* Public */,
+      18,    1,  119,    2, 0x02 /* Public */,
+      19,    1,  122,    2, 0x02 /* Public */,
+      20,    2,  125,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -1146,8 +1091,6 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUByte[] = {
     0x80000000 | 11,
     0x80000000 | 4, 0x80000000 | 14,    2,
     0x80000000 | 4,
-    QMetaType::Void, 0x80000000 | 17,    2,
-    QMetaType::Void, 0x80000000 | 18,    2,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::UInt,    2,
@@ -1184,32 +1127,12 @@ void osg::QReflect_DrawElementsUByte::qt_static_metacall(QObject *_o, QMetaObjec
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
         case 10: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 11: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveFunctor*(*)>(_a[1]))); break;
-        case 12: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveIndexFunctor*(*)>(_a[1]))); break;
-        case 13: _t->addElement((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 14: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->reserveElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 16: _t->resizeElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 17: _t->setElement((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 11: _t->addElement((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 12: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->reserveElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 14: _t->resizeElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 15: _t->setElement((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 11:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveFunctor* >(); break;
-            }
-            break;
-        case 12:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveIndexFunctor* >(); break;
-            }
-            break;
         }
     }
 }
@@ -1239,19 +1162,19 @@ int osg::QReflect_DrawElementsUByte::qt_metacall(QMetaObject::Call _c, int _id, 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        if (_id < 16)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 16;
     }
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_DrawElementsUInt_t {
-    QByteArrayData data[24];
-    char stringdata0[363];
+    QByteArrayData data[21];
+    char stringdata0[287];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -1276,14 +1199,11 @@ QT_MOC_LITERAL(12, 170, 11), // "libraryName"
 QT_MOC_LITERAL(13, 182, 5), // "clone"
 QT_MOC_LITERAL(14, 188, 21), // "osg::QReflect_CopyOp*"
 QT_MOC_LITERAL(15, 210, 9), // "cloneType"
-QT_MOC_LITERAL(16, 220, 6), // "accept"
-QT_MOC_LITERAL(17, 227, 31), // "osg::QReflect_PrimitiveFunctor*"
-QT_MOC_LITERAL(18, 259, 36), // "osg::QReflect_PrimitiveIndexF..."
-QT_MOC_LITERAL(19, 296, 10), // "addElement"
-QT_MOC_LITERAL(20, 307, 13), // "offsetIndices"
-QT_MOC_LITERAL(21, 321, 15), // "reserveElements"
-QT_MOC_LITERAL(22, 337, 14), // "resizeElements"
-QT_MOC_LITERAL(23, 352, 10) // "setElement"
+QT_MOC_LITERAL(16, 220, 10), // "addElement"
+QT_MOC_LITERAL(17, 231, 13), // "offsetIndices"
+QT_MOC_LITERAL(18, 245, 15), // "reserveElements"
+QT_MOC_LITERAL(19, 261, 14), // "resizeElements"
+QT_MOC_LITERAL(20, 276, 10) // "setElement"
 
     },
     "osg::QReflect_DrawElementsUInt\0"
@@ -1292,8 +1212,6 @@ QT_MOC_LITERAL(23, 352, 10) // "setElement"
     "getElement\0getNumIndices\0getTotalDataSize\0"
     "index\0className\0const char*\0libraryName\0"
     "clone\0osg::QReflect_CopyOp*\0cloneType\0"
-    "accept\0osg::QReflect_PrimitiveFunctor*\0"
-    "osg::QReflect_PrimitiveIndexFunctor*\0"
     "addElement\0offsetIndices\0reserveElements\0"
     "resizeElements\0setElement"
 };
@@ -1305,7 +1223,7 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUInt[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
+      16,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -1313,26 +1231,24 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUInt[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  104,    2, 0x0a /* Public */,
+       1,    0,   94,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    1,  105,    2, 0x02 /* Public */,
-       5,    0,  108,    2, 0x02 /* Public */,
-       6,    1,  109,    2, 0x02 /* Public */,
-       7,    0,  112,    2, 0x02 /* Public */,
-       8,    0,  113,    2, 0x02 /* Public */,
-       9,    1,  114,    2, 0x02 /* Public */,
-      10,    0,  117,    2, 0x02 /* Public */,
-      12,    0,  118,    2, 0x02 /* Public */,
-      13,    1,  119,    2, 0x02 /* Public */,
-      15,    0,  122,    2, 0x02 /* Public */,
-      16,    1,  123,    2, 0x02 /* Public */,
-      16,    1,  126,    2, 0x02 /* Public */,
-      19,    1,  129,    2, 0x02 /* Public */,
-      20,    1,  132,    2, 0x02 /* Public */,
-      21,    1,  135,    2, 0x02 /* Public */,
-      22,    1,  138,    2, 0x02 /* Public */,
-      23,    2,  141,    2, 0x02 /* Public */,
+       3,    1,   95,    2, 0x02 /* Public */,
+       5,    0,   98,    2, 0x02 /* Public */,
+       6,    1,   99,    2, 0x02 /* Public */,
+       7,    0,  102,    2, 0x02 /* Public */,
+       8,    0,  103,    2, 0x02 /* Public */,
+       9,    1,  104,    2, 0x02 /* Public */,
+      10,    0,  107,    2, 0x02 /* Public */,
+      12,    0,  108,    2, 0x02 /* Public */,
+      13,    1,  109,    2, 0x02 /* Public */,
+      15,    0,  112,    2, 0x02 /* Public */,
+      16,    1,  113,    2, 0x02 /* Public */,
+      17,    1,  116,    2, 0x02 /* Public */,
+      18,    1,  119,    2, 0x02 /* Public */,
+      19,    1,  122,    2, 0x02 /* Public */,
+      20,    2,  125,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -1348,8 +1264,6 @@ static const uint qt_meta_data_osg__QReflect_DrawElementsUInt[] = {
     0x80000000 | 11,
     0x80000000 | 4, 0x80000000 | 14,    2,
     0x80000000 | 4,
-    QMetaType::Void, 0x80000000 | 17,    2,
-    QMetaType::Void, 0x80000000 | 18,    2,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::UInt,    2,
@@ -1386,32 +1300,12 @@ void osg::QReflect_DrawElementsUInt::qt_static_metacall(QObject *_o, QMetaObject
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
         case 10: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 11: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveFunctor*(*)>(_a[1]))); break;
-        case 12: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveIndexFunctor*(*)>(_a[1]))); break;
-        case 13: _t->addElement((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 14: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 15: _t->reserveElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 16: _t->resizeElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 17: _t->setElement((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 11: _t->addElement((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 12: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 13: _t->reserveElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 14: _t->resizeElements((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 15: _t->setElement((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 11:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveFunctor* >(); break;
-            }
-            break;
-        case 12:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveIndexFunctor* >(); break;
-            }
-            break;
         }
     }
 }
@@ -1441,19 +1335,19 @@ int osg::QReflect_DrawElementsUInt::qt_metacall(QMetaObject::Call _c, int _id, v
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 16)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 16;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        if (_id < 16)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 16;
     }
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_DrawArrays_t {
     QByteArrayData data[17];
-    char stringdata0[255];
+    char stringdata0[203];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -1465,29 +1359,28 @@ static const qt_meta_stringdata_osg__QReflect_DrawArrays_t qt_meta_stringdata_os
 QT_MOC_LITERAL(0, 0, 24), // "osg::QReflect_DrawArrays"
 QT_MOC_LITERAL(1, 25, 11), // "updateModel"
 QT_MOC_LITERAL(2, 37, 0), // ""
-QT_MOC_LITERAL(3, 38, 12), // "isSameKindAs"
-QT_MOC_LITERAL(4, 51, 21), // "osg::QReflect_Object*"
-QT_MOC_LITERAL(5, 73, 13), // "getNumIndices"
-QT_MOC_LITERAL(6, 87, 5), // "index"
-QT_MOC_LITERAL(7, 93, 9), // "className"
-QT_MOC_LITERAL(8, 103, 11), // "const char*"
-QT_MOC_LITERAL(9, 115, 11), // "libraryName"
-QT_MOC_LITERAL(10, 127, 5), // "clone"
-QT_MOC_LITERAL(11, 133, 21), // "osg::QReflect_CopyOp*"
-QT_MOC_LITERAL(12, 155, 9), // "cloneType"
-QT_MOC_LITERAL(13, 165, 6), // "accept"
-QT_MOC_LITERAL(14, 172, 31), // "osg::QReflect_PrimitiveFunctor*"
-QT_MOC_LITERAL(15, 204, 36), // "osg::QReflect_PrimitiveIndexF..."
-QT_MOC_LITERAL(16, 241, 13) // "offsetIndices"
+QT_MOC_LITERAL(3, 38, 8), // "getFirst"
+QT_MOC_LITERAL(4, 47, 5), // "GLint"
+QT_MOC_LITERAL(5, 53, 12), // "isSameKindAs"
+QT_MOC_LITERAL(6, 66, 21), // "osg::QReflect_Object*"
+QT_MOC_LITERAL(7, 88, 13), // "getNumIndices"
+QT_MOC_LITERAL(8, 102, 5), // "index"
+QT_MOC_LITERAL(9, 108, 9), // "className"
+QT_MOC_LITERAL(10, 118, 11), // "const char*"
+QT_MOC_LITERAL(11, 130, 11), // "libraryName"
+QT_MOC_LITERAL(12, 142, 5), // "clone"
+QT_MOC_LITERAL(13, 148, 21), // "osg::QReflect_CopyOp*"
+QT_MOC_LITERAL(14, 170, 9), // "cloneType"
+QT_MOC_LITERAL(15, 180, 13), // "offsetIndices"
+QT_MOC_LITERAL(16, 194, 8) // "setFirst"
 
     },
     "osg::QReflect_DrawArrays\0updateModel\0"
-    "\0isSameKindAs\0osg::QReflect_Object*\0"
-    "getNumIndices\0index\0className\0const char*\0"
-    "libraryName\0clone\0osg::QReflect_CopyOp*\0"
-    "cloneType\0accept\0osg::QReflect_PrimitiveFunctor*\0"
-    "osg::QReflect_PrimitiveIndexFunctor*\0"
-    "offsetIndices"
+    "\0getFirst\0GLint\0isSameKindAs\0"
+    "osg::QReflect_Object*\0getNumIndices\0"
+    "index\0className\0const char*\0libraryName\0"
+    "clone\0osg::QReflect_CopyOp*\0cloneType\0"
+    "offsetIndices\0setFirst"
 };
 #undef QT_MOC_LITERAL
 
@@ -1508,31 +1401,31 @@ static const uint qt_meta_data_osg__QReflect_DrawArrays[] = {
        1,    0,   69,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    1,   70,    2, 0x02 /* Public */,
-       5,    0,   73,    2, 0x02 /* Public */,
-       6,    1,   74,    2, 0x02 /* Public */,
-       7,    0,   77,    2, 0x02 /* Public */,
+       3,    0,   70,    2, 0x02 /* Public */,
+       5,    1,   71,    2, 0x02 /* Public */,
+       7,    0,   74,    2, 0x02 /* Public */,
+       8,    1,   75,    2, 0x02 /* Public */,
        9,    0,   78,    2, 0x02 /* Public */,
-      10,    1,   79,    2, 0x02 /* Public */,
-      12,    0,   82,    2, 0x02 /* Public */,
-      13,    1,   83,    2, 0x02 /* Public */,
-      13,    1,   86,    2, 0x02 /* Public */,
-      16,    1,   89,    2, 0x02 /* Public */,
+      11,    0,   79,    2, 0x02 /* Public */,
+      12,    1,   80,    2, 0x02 /* Public */,
+      14,    0,   83,    2, 0x02 /* Public */,
+      15,    1,   84,    2, 0x02 /* Public */,
+      16,    1,   87,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Bool, 0x80000000 | 4,    2,
+    0x80000000 | 4,
+    QMetaType::Bool, 0x80000000 | 6,    2,
     QMetaType::UInt,
     QMetaType::UInt, QMetaType::UInt,    2,
-    0x80000000 | 8,
-    0x80000000 | 8,
-    0x80000000 | 4, 0x80000000 | 11,    2,
-    0x80000000 | 4,
-    QMetaType::Void, 0x80000000 | 14,    2,
-    QMetaType::Void, 0x80000000 | 15,    2,
+    0x80000000 | 10,
+    0x80000000 | 10,
+    0x80000000 | 6, 0x80000000 | 13,    2,
+    0x80000000 | 6,
     QMetaType::Void, QMetaType::Int,    2,
+    QMetaType::Void, 0x80000000 | 4,    2,
 
        0        // eod
 };
@@ -1544,42 +1437,25 @@ void osg::QReflect_DrawArrays::qt_static_metacall(QObject *_o, QMetaObject::Call
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->updateModel(); break;
-        case 1: { bool _r = _t->isSameKindAs((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1])));
+        case 1: { GLint _r = _t->getFirst();
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 2: { bool _r = _t->isSameKindAs((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 2: { uint _r = _t->getNumIndices();
+        case 3: { uint _r = _t->getNumIndices();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 3: { uint _r = _t->index((*reinterpret_cast< uint(*)>(_a[1])));
+        case 4: { uint _r = _t->index((*reinterpret_cast< uint(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 4: { const char* _r = _t->className();
+        case 5: { const char* _r = _t->className();
             if (_a[0]) *reinterpret_cast< const char**>(_a[0]) = _r; }  break;
-        case 5: { const char* _r = _t->libraryName();
+        case 6: { const char* _r = _t->libraryName();
             if (_a[0]) *reinterpret_cast< const char**>(_a[0]) = _r; }  break;
-        case 6: { osg::QReflect_Object* _r = _t->clone((*reinterpret_cast< osg::QReflect_CopyOp*(*)>(_a[1])));
+        case 7: { osg::QReflect_Object* _r = _t->clone((*reinterpret_cast< osg::QReflect_CopyOp*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 7: { osg::QReflect_Object* _r = _t->cloneType();
+        case 8: { osg::QReflect_Object* _r = _t->cloneType();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 8: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveFunctor*(*)>(_a[1]))); break;
-        case 9: _t->accept((*reinterpret_cast< osg::QReflect_PrimitiveIndexFunctor*(*)>(_a[1]))); break;
-        case 10: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 9: _t->offsetIndices((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 10: _t->setFirst((*reinterpret_cast< GLint(*)>(_a[1]))); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 8:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveFunctor* >(); break;
-            }
-            break;
-        case 9:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_PrimitiveIndexFunctor* >(); break;
-            }
-            break;
         }
     }
 }
@@ -1614,7 +1490,7 @@ int osg::QReflect_DrawArrays::qt_metacall(QMetaObject::Call _c, int _id, void **
         _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         if (_id < 11)
-            qt_static_metacall(this, _c, _id, _a);
+            *reinterpret_cast<int*>(_a[0]) = -1;
         _id -= 11;
     }
     return _id;

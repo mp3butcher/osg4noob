@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'View_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'View_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_View_t {
-    QByteArrayData data[43];
-    char stringdata0[702];
+    QByteArrayData data[41];
+    char stringdata0[677];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -56,22 +56,20 @@ QT_MOC_LITERAL(23, 404, 12), // "getNumSlaves"
 QT_MOC_LITERAL(24, 417, 15), // "getLightingMode"
 QT_MOC_LITERAL(25, 433, 32), // "osg::QReflect_View::LightingMode"
 QT_MOC_LITERAL(26, 466, 15), // "setLightingMode"
-QT_MOC_LITERAL(27, 482, 4), // "take"
-QT_MOC_LITERAL(28, 487, 19), // "osg::QReflect_View*"
-QT_MOC_LITERAL(29, 507, 12), // "updateSlaves"
-QT_MOC_LITERAL(30, 520, 22), // "pmoc_reverse_setCamera"
-QT_MOC_LITERAL(31, 543, 3), // "par"
-QT_MOC_LITERAL(32, 547, 26), // "pmoc_reverse_setFrameStamp"
-QT_MOC_LITERAL(33, 574, 21), // "pmoc_reverse_setLight"
-QT_MOC_LITERAL(34, 596, 21), // "pmoc_reverse_setStats"
-QT_MOC_LITERAL(35, 618, 9), // "setCamera"
-QT_MOC_LITERAL(36, 628, 13), // "setFrameStamp"
-QT_MOC_LITERAL(37, 642, 8), // "setLight"
-QT_MOC_LITERAL(38, 651, 8), // "setStats"
-QT_MOC_LITERAL(39, 660, 12), // "LightingMode"
-QT_MOC_LITERAL(40, 673, 8), // "NO_LIGHT"
-QT_MOC_LITERAL(41, 682, 9), // "HEADLIGHT"
-QT_MOC_LITERAL(42, 692, 9) // "SKY_LIGHT"
+QT_MOC_LITERAL(27, 482, 12), // "updateSlaves"
+QT_MOC_LITERAL(28, 495, 22), // "pmoc_reverse_setCamera"
+QT_MOC_LITERAL(29, 518, 3), // "par"
+QT_MOC_LITERAL(30, 522, 26), // "pmoc_reverse_setFrameStamp"
+QT_MOC_LITERAL(31, 549, 21), // "pmoc_reverse_setLight"
+QT_MOC_LITERAL(32, 571, 21), // "pmoc_reverse_setStats"
+QT_MOC_LITERAL(33, 593, 9), // "setCamera"
+QT_MOC_LITERAL(34, 603, 13), // "setFrameStamp"
+QT_MOC_LITERAL(35, 617, 8), // "setLight"
+QT_MOC_LITERAL(36, 626, 8), // "setStats"
+QT_MOC_LITERAL(37, 635, 12), // "LightingMode"
+QT_MOC_LITERAL(38, 648, 8), // "NO_LIGHT"
+QT_MOC_LITERAL(39, 657, 9), // "HEADLIGHT"
+QT_MOC_LITERAL(40, 667, 9) // "SKY_LIGHT"
 
     },
     "osg::QReflect_View\0CameraChanged\0\0"
@@ -87,9 +85,9 @@ QT_MOC_LITERAL(42, 692, 9) // "SKY_LIGHT"
     "osg::QReflect_Stats*\0findSlaveIndexForCamera\0"
     "getNumSlaves\0getLightingMode\0"
     "osg::QReflect_View::LightingMode\0"
-    "setLightingMode\0take\0osg::QReflect_View*\0"
-    "updateSlaves\0pmoc_reverse_setCamera\0"
-    "par\0pmoc_reverse_setFrameStamp\0"
+    "setLightingMode\0updateSlaves\0"
+    "pmoc_reverse_setCamera\0par\0"
+    "pmoc_reverse_setFrameStamp\0"
     "pmoc_reverse_setLight\0pmoc_reverse_setStats\0"
     "setCamera\0setFrameStamp\0setLight\0"
     "setStats\0LightingMode\0NO_LIGHT\0HEADLIGHT\0"
@@ -103,48 +101,47 @@ static const uint qt_meta_data_osg__QReflect_View[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      30,   14, // methods
+      29,   14, // methods
        0,    0, // properties
-       1,  238, // enums/sets
+       1,  230, // enums/sets
        0,    0, // constructors
        0,       // flags
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  164,    2, 0x06 /* Public */,
-       4,    1,  167,    2, 0x06 /* Public */,
-       6,    1,  170,    2, 0x06 /* Public */,
-       8,    1,  173,    2, 0x06 /* Public */,
+       1,    1,  159,    2, 0x06 /* Public */,
+       4,    1,  162,    2, 0x06 /* Public */,
+       6,    1,  165,    2, 0x06 /* Public */,
+       8,    1,  168,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      10,    0,  176,    2, 0x0a /* Public */,
+      10,    0,  171,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      11,    2,  177,    2, 0x02 /* Public */,
-      11,    4,  182,    2, 0x02 /* Public */,
-      14,    1,  191,    2, 0x02 /* Public */,
-      15,    0,  194,    2, 0x02 /* Public */,
-      16,    0,  195,    2, 0x02 /* Public */,
-      18,    0,  196,    2, 0x02 /* Public */,
-      20,    0,  197,    2, 0x02 /* Public */,
-      22,    1,  198,    2, 0x02 /* Public */,
-      23,    0,  201,    2, 0x02 /* Public */,
-      24,    0,  202,    2, 0x02 /* Public */,
-      26,    1,  203,    2, 0x02 /* Public */,
-      27,    1,  206,    2, 0x02 /* Public */,
-      29,    0,  209,    2, 0x02 /* Public */,
-      30,    1,  210,    2, 0x02 /* Public */,
-      30,    0,  213,    2, 0x22 /* Public | MethodCloned */,
+      11,    2,  172,    2, 0x02 /* Public */,
+      11,    4,  177,    2, 0x02 /* Public */,
+      14,    1,  186,    2, 0x02 /* Public */,
+      15,    0,  189,    2, 0x02 /* Public */,
+      16,    0,  190,    2, 0x02 /* Public */,
+      18,    0,  191,    2, 0x02 /* Public */,
+      20,    0,  192,    2, 0x02 /* Public */,
+      22,    1,  193,    2, 0x02 /* Public */,
+      23,    0,  196,    2, 0x02 /* Public */,
+      24,    0,  197,    2, 0x02 /* Public */,
+      26,    1,  198,    2, 0x02 /* Public */,
+      27,    0,  201,    2, 0x02 /* Public */,
+      28,    1,  202,    2, 0x02 /* Public */,
+      28,    0,  205,    2, 0x22 /* Public | MethodCloned */,
+      30,    1,  206,    2, 0x02 /* Public */,
+      30,    0,  209,    2, 0x22 /* Public | MethodCloned */,
+      31,    1,  210,    2, 0x02 /* Public */,
+      31,    0,  213,    2, 0x22 /* Public | MethodCloned */,
       32,    1,  214,    2, 0x02 /* Public */,
       32,    0,  217,    2, 0x22 /* Public | MethodCloned */,
       33,    1,  218,    2, 0x02 /* Public */,
-      33,    0,  221,    2, 0x22 /* Public | MethodCloned */,
-      34,    1,  222,    2, 0x02 /* Public */,
-      34,    0,  225,    2, 0x22 /* Public | MethodCloned */,
-      35,    1,  226,    2, 0x02 /* Public */,
-      36,    1,  229,    2, 0x02 /* Public */,
-      37,    1,  232,    2, 0x02 /* Public */,
-      38,    1,  235,    2, 0x02 /* Public */,
+      34,    1,  221,    2, 0x02 /* Public */,
+      35,    1,  224,    2, 0x02 /* Public */,
+      36,    1,  227,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -167,28 +164,27 @@ static const uint qt_meta_data_osg__QReflect_View[] = {
     QMetaType::UInt,
     0x80000000 | 25,
     QMetaType::Void, 0x80000000 | 25,    2,
-    QMetaType::Void, 0x80000000 | 28,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12,   31,
+    QMetaType::Void, 0x80000000 | 12,   29,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 17,   31,
+    QMetaType::Void, 0x80000000 | 17,   29,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 19,   31,
+    QMetaType::Void, 0x80000000 | 19,   29,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 21,   31,
+    QMetaType::Void, 0x80000000 | 21,   29,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12,   31,
-    QMetaType::Void, 0x80000000 | 17,   31,
-    QMetaType::Void, 0x80000000 | 19,   31,
-    QMetaType::Void, 0x80000000 | 21,   31,
+    QMetaType::Void, 0x80000000 | 12,   29,
+    QMetaType::Void, 0x80000000 | 17,   29,
+    QMetaType::Void, 0x80000000 | 19,   29,
+    QMetaType::Void, 0x80000000 | 21,   29,
 
  // enums: name, flags, count, data
-      39, 0x0,    3,  242,
+      37, 0x0,    3,  234,
 
  // enum data: key, value
-      40, uint(osg::QReflect_View::NO_LIGHT),
-      41, uint(osg::QReflect_View::HEADLIGHT),
-      42, uint(osg::QReflect_View::SKY_LIGHT),
+      38, uint(osg::QReflect_View::NO_LIGHT),
+      39, uint(osg::QReflect_View::HEADLIGHT),
+      40, uint(osg::QReflect_View::SKY_LIGHT),
 
        0        // eod
 };
@@ -225,32 +221,20 @@ void osg::QReflect_View::qt_static_metacall(QObject *_o, QMetaObject::Call _c, i
         case 14: { osg::QReflect_View::LightingMode _r = _t->getLightingMode();
             if (_a[0]) *reinterpret_cast< osg::QReflect_View::LightingMode*>(_a[0]) = _r; }  break;
         case 15: _t->setLightingMode((*reinterpret_cast< osg::QReflect_View::LightingMode(*)>(_a[1]))); break;
-        case 16: _t->take((*reinterpret_cast< osg::QReflect_View*(*)>(_a[1]))); break;
-        case 17: _t->updateSlaves(); break;
-        case 18: _t->pmoc_reverse_setCamera((*reinterpret_cast< osg::QReflect_Camera*(*)>(_a[1]))); break;
-        case 19: _t->pmoc_reverse_setCamera(); break;
-        case 20: _t->pmoc_reverse_setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
-        case 21: _t->pmoc_reverse_setFrameStamp(); break;
-        case 22: _t->pmoc_reverse_setLight((*reinterpret_cast< osg::QReflect_Light*(*)>(_a[1]))); break;
-        case 23: _t->pmoc_reverse_setLight(); break;
-        case 24: _t->pmoc_reverse_setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
-        case 25: _t->pmoc_reverse_setStats(); break;
-        case 26: _t->setCamera((*reinterpret_cast< osg::QReflect_Camera*(*)>(_a[1]))); break;
-        case 27: _t->setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
-        case 28: _t->setLight((*reinterpret_cast< osg::QReflect_Light*(*)>(_a[1]))); break;
-        case 29: _t->setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
+        case 16: _t->updateSlaves(); break;
+        case 17: _t->pmoc_reverse_setCamera((*reinterpret_cast< osg::QReflect_Camera*(*)>(_a[1]))); break;
+        case 18: _t->pmoc_reverse_setCamera(); break;
+        case 19: _t->pmoc_reverse_setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
+        case 20: _t->pmoc_reverse_setFrameStamp(); break;
+        case 21: _t->pmoc_reverse_setLight((*reinterpret_cast< osg::QReflect_Light*(*)>(_a[1]))); break;
+        case 22: _t->pmoc_reverse_setLight(); break;
+        case 23: _t->pmoc_reverse_setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
+        case 24: _t->pmoc_reverse_setStats(); break;
+        case 25: _t->setCamera((*reinterpret_cast< osg::QReflect_Camera*(*)>(_a[1]))); break;
+        case 26: _t->setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
+        case 27: _t->setLight((*reinterpret_cast< osg::QReflect_Light*(*)>(_a[1]))); break;
+        case 28: _t->setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
         default: ;
-        }
-    } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        switch (_id) {
-        default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 16:
-            switch (*reinterpret_cast<int*>(_a[1])) {
-            default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-            case 0:
-                *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_View* >(); break;
-            }
-            break;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
@@ -307,13 +291,13 @@ int osg::QReflect_View::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 30)
+        if (_id < 29)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        _id -= 29;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 30)
-            qt_static_metacall(this, _c, _id, _a);
-        _id -= 30;
+        if (_id < 29)
+            *reinterpret_cast<int*>(_a[0]) = -1;
+        _id -= 29;
     }
     return _id;
 }

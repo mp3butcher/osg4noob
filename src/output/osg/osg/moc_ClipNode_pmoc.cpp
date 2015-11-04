@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ClipNode_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ClipNode_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_ClipNode_t {
-    QByteArrayData data[20];
-    char stringdata0[354];
+    QByteArrayData data[18];
+    char stringdata0[313];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -43,12 +43,10 @@ QT_MOC_LITERAL(10, 191, 12), // "addClipPlane"
 QT_MOC_LITERAL(11, 204, 3), // "par"
 QT_MOC_LITERAL(12, 208, 21), // "setLocalStateSetModes"
 QT_MOC_LITERAL(13, 230, 17), // "setReferenceFrame"
-QT_MOC_LITERAL(14, 248, 16), // "setStateSetModes"
-QT_MOC_LITERAL(15, 265, 23), // "osg::QReflect_StateSet*"
-QT_MOC_LITERAL(16, 289, 25), // "pmoc_reverse_addClipPlane"
-QT_MOC_LITERAL(17, 315, 14), // "ReferenceFrame"
-QT_MOC_LITERAL(18, 330, 11), // "RELATIVE_RF"
-QT_MOC_LITERAL(19, 342, 11) // "ABSOLUTE_RF"
+QT_MOC_LITERAL(14, 248, 25), // "pmoc_reverse_addClipPlane"
+QT_MOC_LITERAL(15, 274, 14), // "ReferenceFrame"
+QT_MOC_LITERAL(16, 289, 11), // "RELATIVE_RF"
+QT_MOC_LITERAL(17, 301, 11) // "ABSOLUTE_RF"
 
     },
     "osg::QReflect_ClipNode\0"
@@ -58,10 +56,8 @@ QT_MOC_LITERAL(19, 342, 11) // "ABSOLUTE_RF"
     "osg::QReflect_ClipNode::ReferenceFrame\0"
     "getClipPlane\0osg::QReflect_ClipPlane*\0"
     "addClipPlane\0par\0setLocalStateSetModes\0"
-    "setReferenceFrame\0setStateSetModes\0"
-    "osg::QReflect_StateSet*\0"
-    "pmoc_reverse_addClipPlane\0ReferenceFrame\0"
-    "RELATIVE_RF\0ABSOLUTE_RF"
+    "setReferenceFrame\0pmoc_reverse_addClipPlane\0"
+    "ReferenceFrame\0RELATIVE_RF\0ABSOLUTE_RF"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,30 +67,29 @@ static const uint qt_meta_data_osg__QReflect_ClipNode[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      11,   14, // methods
        0,    0, // properties
-       1,  104, // enums/sets
+       1,   94, // enums/sets
        0,    0, // constructors
        0,       // flags
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x06 /* Public */,
+       1,    0,   69,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   75,    2, 0x0a /* Public */,
+       3,    0,   70,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    1,   76,    2, 0x02 /* Public */,
-       5,    0,   79,    2, 0x02 /* Public */,
-       6,    0,   80,    2, 0x02 /* Public */,
-       8,    1,   81,    2, 0x02 /* Public */,
-       8,    1,   84,    2, 0x02 /* Public */,
-      10,    1,   87,    2, 0x02 /* Public */,
-      12,    1,   90,    2, 0x02 /* Public */,
-      13,    1,   93,    2, 0x02 /* Public */,
-      14,    2,   96,    2, 0x02 /* Public */,
-      16,    1,  101,    2, 0x02 /* Public */,
+       4,    1,   71,    2, 0x02 /* Public */,
+       5,    0,   74,    2, 0x02 /* Public */,
+       6,    0,   75,    2, 0x02 /* Public */,
+       8,    1,   76,    2, 0x02 /* Public */,
+       8,    1,   79,    2, 0x02 /* Public */,
+      10,    1,   82,    2, 0x02 /* Public */,
+      12,    1,   85,    2, 0x02 /* Public */,
+      13,    1,   88,    2, 0x02 /* Public */,
+      14,    1,   91,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -111,15 +106,14 @@ static const uint qt_meta_data_osg__QReflect_ClipNode[] = {
     QMetaType::Void, 0x80000000 | 9,   11,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, 0x80000000 | 7,    2,
-    QMetaType::Void, 0x80000000 | 15, QMetaType::UInt,    2,    2,
     QMetaType::Void, 0x80000000 | 9,   11,
 
  // enums: name, flags, count, data
-      17, 0x0,    2,  108,
+      15, 0x0,    2,   98,
 
  // enum data: key, value
-      18, uint(osg::QReflect_ClipNode::RELATIVE_RF),
-      19, uint(osg::QReflect_ClipNode::ABSOLUTE_RF),
+      16, uint(osg::QReflect_ClipNode::RELATIVE_RF),
+      17, uint(osg::QReflect_ClipNode::ABSOLUTE_RF),
 
        0        // eod
 };
@@ -145,8 +139,7 @@ void osg::QReflect_ClipNode::qt_static_metacall(QObject *_o, QMetaObject::Call _
         case 7: _t->addClipPlane((*reinterpret_cast< osg::QReflect_ClipPlane*(*)>(_a[1]))); break;
         case 8: _t->setLocalStateSetModes((*reinterpret_cast< uint(*)>(_a[1]))); break;
         case 9: _t->setReferenceFrame((*reinterpret_cast< osg::QReflect_ClipNode::ReferenceFrame(*)>(_a[1]))); break;
-        case 10: _t->setStateSetModes((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
-        case 11: _t->pmoc_reverse_addClipPlane((*reinterpret_cast< osg::QReflect_ClipPlane*(*)>(_a[1]))); break;
+        case 10: _t->pmoc_reverse_addClipPlane((*reinterpret_cast< osg::QReflect_ClipPlane*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -186,13 +179,13 @@ int osg::QReflect_ClipNode::qt_metacall(QMetaObject::Call _c, int _id, void **_a
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 12;
+        _id -= 11;
     }
     return _id;
 }

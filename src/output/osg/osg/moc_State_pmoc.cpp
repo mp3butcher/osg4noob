@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'State_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'State_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -110,8 +110,8 @@ int osg::QReflect_VertexAttribAlias::qt_metacall(QMetaObject::Call _c, int _id, 
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_State_t {
-    QByteArrayData data[186];
-    char stringdata0[4345];
+    QByteArrayData data[190];
+    char stringdata0[4407];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -140,172 +140,176 @@ QT_MOC_LITERAL(16, 423, 20), // "TimestampBitsChanged"
 QT_MOC_LITERAL(17, 444, 40), // "UseModelViewAndProjectionUnif..."
 QT_MOC_LITERAL(18, 485, 33), // "UseVertexAttributeAliasingCha..."
 QT_MOC_LITERAL(19, 519, 11), // "updateModel"
-QT_MOC_LITERAL(20, 531, 14), // "applyAttribute"
-QT_MOC_LITERAL(21, 546, 29), // "osg::QReflect_StateAttribute*"
-QT_MOC_LITERAL(22, 576, 21), // "applyTextureAttribute"
-QT_MOC_LITERAL(23, 598, 13), // "checkGLErrors"
-QT_MOC_LITERAL(24, 612, 11), // "const char*"
-QT_MOC_LITERAL(25, 624, 17), // "getAbortRendering"
-QT_MOC_LITERAL(26, 642, 19), // "isFogCoordSupported"
-QT_MOC_LITERAL(27, 662, 25), // "isSecondaryColorSupported"
-QT_MOC_LITERAL(28, 688, 29), // "isVertexBufferObjectSupported"
-QT_MOC_LITERAL(29, 718, 25), // "supportsShaderRequirement"
-QT_MOC_LITERAL(30, 744, 10), // "getGpuTime"
-QT_MOC_LITERAL(31, 755, 18), // "getDisplaySettings"
-QT_MOC_LITERAL(32, 774, 30), // "osg::QReflect_DisplaySettings*"
-QT_MOC_LITERAL(33, 805, 13), // "getFrameStamp"
-QT_MOC_LITERAL(34, 819, 25), // "osg::QReflect_FrameStamp*"
-QT_MOC_LITERAL(35, 845, 24), // "getGraphicsCostEstimator"
-QT_MOC_LITERAL(36, 870, 36), // "osg::QReflect_GraphicsCostEst..."
-QT_MOC_LITERAL(37, 907, 17), // "getShaderComposer"
-QT_MOC_LITERAL(38, 925, 29), // "osg::QReflect_ShaderComposer*"
-QT_MOC_LITERAL(39, 955, 21), // "getDynamicObjectCount"
-QT_MOC_LITERAL(40, 977, 20), // "getStateSetStackSize"
-QT_MOC_LITERAL(41, 998, 27), // "getShaderCompositionEnabled"
-QT_MOC_LITERAL(42, 1026, 36), // "getUseModelViewAndProjectionU..."
-QT_MOC_LITERAL(43, 1063, 29), // "getUseVertexAttributeAliasing"
-QT_MOC_LITERAL(44, 1093, 16), // "getTimestampBits"
-QT_MOC_LITERAL(45, 1110, 20), // "getActiveTextureUnit"
-QT_MOC_LITERAL(46, 1131, 26), // "getClientActiveTextureUnit"
-QT_MOC_LITERAL(47, 1158, 12), // "getContextID"
-QT_MOC_LITERAL(48, 1171, 26), // "getMaxBufferObjectPoolSize"
-QT_MOC_LITERAL(49, 1198, 21), // "getMaxTexturePoolSize"
-QT_MOC_LITERAL(50, 1220, 29), // "getCurrentElementBufferObject"
-QT_MOC_LITERAL(51, 1250, 29), // "osg::QReflect_GLBufferObject*"
-QT_MOC_LITERAL(52, 1280, 27), // "getCurrentPixelBufferObject"
-QT_MOC_LITERAL(53, 1308, 28), // "getCurrentVertexBufferObject"
-QT_MOC_LITERAL(54, 1337, 19), // "getCheckForGLErrors"
-QT_MOC_LITERAL(55, 1357, 37), // "osg::QReflect_State::CheckFor..."
-QT_MOC_LITERAL(56, 1395, 25), // "getGlobalDefaultAttribute"
-QT_MOC_LITERAL(57, 1421, 34), // "osg::QReflect_StateAttribute:..."
-QT_MOC_LITERAL(58, 1456, 32), // "getGlobalDefaultTextureAttribute"
-QT_MOC_LITERAL(59, 1489, 23), // "getLastAppliedAttribute"
-QT_MOC_LITERAL(60, 1513, 30), // "getLastAppliedTextureAttribute"
-QT_MOC_LITERAL(61, 1544, 25), // "getModelViewMatrixUniform"
-QT_MOC_LITERAL(62, 1570, 22), // "osg::QReflect_Uniform*"
-QT_MOC_LITERAL(63, 1593, 35), // "getModelViewProjectionMatrixU..."
-QT_MOC_LITERAL(64, 1629, 22), // "getNormalMatrixUniform"
-QT_MOC_LITERAL(65, 1652, 26), // "getProjectionMatrixUniform"
-QT_MOC_LITERAL(66, 1679, 18), // "getCurrentViewport"
-QT_MOC_LITERAL(67, 1698, 23), // "osg::QReflect_Viewport*"
-QT_MOC_LITERAL(68, 1722, 5), // "Color"
-QT_MOC_LITERAL(69, 1728, 13), // "MultiTexCoord"
-QT_MOC_LITERAL(70, 1742, 6), // "Normal"
-QT_MOC_LITERAL(71, 1749, 8), // "TexCoord"
-QT_MOC_LITERAL(72, 1758, 11), // "VerteAttrib"
-QT_MOC_LITERAL(73, 1770, 6), // "Vertex"
-QT_MOC_LITERAL(74, 1777, 5), // "apply"
-QT_MOC_LITERAL(75, 1783, 23), // "osg::QReflect_StateSet*"
-QT_MOC_LITERAL(76, 1807, 32), // "applyDisablingOfVertexAttributes"
-QT_MOC_LITERAL(77, 1840, 45), // "applyModelViewAndProjectionUn..."
-QT_MOC_LITERAL(78, 1886, 20), // "applyModelViewMatrix"
-QT_MOC_LITERAL(79, 1907, 22), // "osg::QReflect_Matrixd*"
-QT_MOC_LITERAL(80, 1930, 25), // "osg::QReflect_RefMatrixd*"
-QT_MOC_LITERAL(81, 1956, 21), // "applyProjectionMatrix"
-QT_MOC_LITERAL(82, 1978, 22), // "applyShaderComposition"
-QT_MOC_LITERAL(83, 2001, 29), // "applyShaderCompositionUniform"
-QT_MOC_LITERAL(84, 2031, 23), // "bindElementBufferObject"
-QT_MOC_LITERAL(85, 2055, 21), // "bindPixelBufferObject"
-QT_MOC_LITERAL(86, 2077, 22), // "bindVertexBufferObject"
-QT_MOC_LITERAL(87, 2100, 19), // "captureCurrentState"
-QT_MOC_LITERAL(88, 2120, 27), // "decrementDynamicObjectCount"
-QT_MOC_LITERAL(89, 2148, 18), // "dirtyAllAttributes"
-QT_MOC_LITERAL(90, 2167, 13), // "dirtyAllModes"
-QT_MOC_LITERAL(91, 2181, 20), // "dirtyAllVertexArrays"
-QT_MOC_LITERAL(92, 2202, 17), // "dirtyColorPointer"
-QT_MOC_LITERAL(93, 2220, 20), // "dirtyFogCoordPointer"
-QT_MOC_LITERAL(94, 2241, 18), // "dirtyNormalPointer"
-QT_MOC_LITERAL(95, 2260, 26), // "dirtySecondaryColorPointer"
-QT_MOC_LITERAL(96, 2287, 20), // "dirtyTexCoordPointer"
-QT_MOC_LITERAL(97, 2308, 38), // "dirtyTexCoordPointersAboveAnd..."
-QT_MOC_LITERAL(98, 2347, 24), // "dirtyVertexAttribPointer"
-QT_MOC_LITERAL(99, 2372, 42), // "dirtyVertexAttribPointersAbov..."
-QT_MOC_LITERAL(100, 2415, 18), // "dirtyVertexPointer"
-QT_MOC_LITERAL(101, 2434, 22), // "disableAllVertexArrays"
-QT_MOC_LITERAL(102, 2457, 19), // "disableColorPointer"
-QT_MOC_LITERAL(103, 2477, 22), // "disableFogCoordPointer"
-QT_MOC_LITERAL(104, 2500, 20), // "disableNormalPointer"
-QT_MOC_LITERAL(105, 2521, 28), // "disableSecondaryColorPointer"
-QT_MOC_LITERAL(106, 2550, 22), // "disableTexCoordPointer"
-QT_MOC_LITERAL(107, 2573, 40), // "disableTexCoordPointersAboveA..."
-QT_MOC_LITERAL(108, 2614, 26), // "disableVertexAttribPointer"
-QT_MOC_LITERAL(109, 2641, 44), // "disableVertexAttribPointersAb..."
-QT_MOC_LITERAL(110, 2686, 20), // "disableVertexPointer"
-QT_MOC_LITERAL(111, 2707, 14), // "frameCompleted"
-QT_MOC_LITERAL(112, 2722, 20), // "haveAppliedAttribute"
-QT_MOC_LITERAL(113, 2743, 27), // "haveAppliedTextureAttribute"
-QT_MOC_LITERAL(114, 2771, 24), // "initializeExtensionProcs"
-QT_MOC_LITERAL(115, 2796, 14), // "insertStateSet"
-QT_MOC_LITERAL(116, 2811, 31), // "lazyDisablingOfVertexAttributes"
-QT_MOC_LITERAL(117, 2843, 15), // "popAllStateSets"
-QT_MOC_LITERAL(118, 2859, 11), // "popStateSet"
-QT_MOC_LITERAL(119, 2871, 22), // "popStateSetStackToSize"
-QT_MOC_LITERAL(120, 2894, 12), // "pushStateSet"
-QT_MOC_LITERAL(121, 2907, 16), // "releaseGLObjects"
-QT_MOC_LITERAL(122, 2924, 14), // "removeStateSet"
-QT_MOC_LITERAL(123, 2939, 5), // "reset"
-QT_MOC_LITERAL(124, 2945, 25), // "resetVertexAttributeAlias"
-QT_MOC_LITERAL(125, 2971, 20), // "setAbortRenderingPtr"
-QT_MOC_LITERAL(126, 2992, 5), // "bool*"
-QT_MOC_LITERAL(127, 2998, 19), // "setCheckForGLErrors"
-QT_MOC_LITERAL(128, 3018, 13), // "setColorAlias"
-QT_MOC_LITERAL(129, 3032, 32), // "osg::QReflect_VertexAttribAlias*"
-QT_MOC_LITERAL(130, 3065, 15), // "setColorPointer"
-QT_MOC_LITERAL(131, 3081, 20), // "osg::QReflect_Array*"
-QT_MOC_LITERAL(132, 3102, 29), // "setCurrentElementBufferObject"
-QT_MOC_LITERAL(133, 3132, 27), // "setCurrentPixelBufferObject"
-QT_MOC_LITERAL(134, 3160, 28), // "setCurrentVertexBufferObject"
-QT_MOC_LITERAL(135, 3189, 21), // "setDynamicObjectCount"
-QT_MOC_LITERAL(136, 3211, 16), // "setFogCoordAlias"
-QT_MOC_LITERAL(137, 3228, 18), // "setFogCoordPointer"
-QT_MOC_LITERAL(138, 3247, 25), // "setGlobalDefaultAttribute"
-QT_MOC_LITERAL(139, 3273, 32), // "setGlobalDefaultTextureAttribute"
-QT_MOC_LITERAL(140, 3306, 20), // "setInitialViewMatrix"
-QT_MOC_LITERAL(141, 3327, 14), // "setNormalAlias"
-QT_MOC_LITERAL(142, 3342, 16), // "setNormalPointer"
-QT_MOC_LITERAL(143, 3359, 22), // "setSecondaryColorAlias"
-QT_MOC_LITERAL(144, 3382, 24), // "setSecondaryColorPointer"
-QT_MOC_LITERAL(145, 3407, 18), // "setTexCoordPointer"
-QT_MOC_LITERAL(146, 3426, 14), // "setVertexAlias"
-QT_MOC_LITERAL(147, 3441, 23), // "setVertexAttribIPointer"
-QT_MOC_LITERAL(148, 3465, 23), // "setVertexAttribLPointer"
-QT_MOC_LITERAL(149, 3489, 22), // "setVertexAttribPointer"
-QT_MOC_LITERAL(150, 3512, 16), // "setVertexPointer"
-QT_MOC_LITERAL(151, 3529, 25), // "unbindElementBufferObject"
-QT_MOC_LITERAL(152, 3555, 23), // "unbindPixelBufferObject"
-QT_MOC_LITERAL(153, 3579, 24), // "unbindVertexBufferObject"
-QT_MOC_LITERAL(154, 3604, 42), // "updateModelViewAndProjectionM..."
-QT_MOC_LITERAL(155, 3647, 31), // "pmoc_reverse_setDisplaySettings"
-QT_MOC_LITERAL(156, 3679, 3), // "par"
-QT_MOC_LITERAL(157, 3683, 26), // "pmoc_reverse_setFrameStamp"
-QT_MOC_LITERAL(158, 3710, 37), // "pmoc_reverse_setGraphicsCostE..."
-QT_MOC_LITERAL(159, 3748, 30), // "pmoc_reverse_setShaderComposer"
-QT_MOC_LITERAL(160, 3779, 20), // "setActiveTextureUnit"
-QT_MOC_LITERAL(161, 3800, 26), // "setClientActiveTextureUnit"
-QT_MOC_LITERAL(162, 3827, 12), // "setContextID"
-QT_MOC_LITERAL(163, 3840, 18), // "setDisplaySettings"
-QT_MOC_LITERAL(164, 3859, 13), // "setFrameStamp"
-QT_MOC_LITERAL(165, 3873, 24), // "setGraphicsCostEstimator"
-QT_MOC_LITERAL(166, 3898, 26), // "setMaxBufferObjectPoolSize"
-QT_MOC_LITERAL(167, 3925, 21), // "setMaxTexturePoolSize"
-QT_MOC_LITERAL(168, 3947, 17), // "setShaderComposer"
-QT_MOC_LITERAL(169, 3965, 27), // "setShaderCompositionEnabled"
-QT_MOC_LITERAL(170, 3993, 16), // "setTimestampBits"
-QT_MOC_LITERAL(171, 4010, 36), // "setUseModelViewAndProjectionU..."
-QT_MOC_LITERAL(172, 4047, 29), // "setUseVertexAttributeAliasing"
-QT_MOC_LITERAL(173, 4077, 24), // "ShaderCompositionEnabled"
-QT_MOC_LITERAL(174, 4102, 33), // "UseModelViewAndProjectionUnif..."
-QT_MOC_LITERAL(175, 4136, 26), // "UseVertexAttributeAliasing"
-QT_MOC_LITERAL(176, 4163, 13), // "TimestampBits"
-QT_MOC_LITERAL(177, 4177, 17), // "ActiveTextureUnit"
-QT_MOC_LITERAL(178, 4195, 23), // "ClientActiveTextureUnit"
-QT_MOC_LITERAL(179, 4219, 9), // "ContextID"
-QT_MOC_LITERAL(180, 4229, 23), // "MaxBufferObjectPoolSize"
-QT_MOC_LITERAL(181, 4253, 18), // "MaxTexturePoolSize"
-QT_MOC_LITERAL(182, 4272, 16), // "CheckForGLErrors"
-QT_MOC_LITERAL(183, 4289, 21), // "NEVER_CHECK_GL_ERRORS"
-QT_MOC_LITERAL(184, 4311, 14), // "ONCE_PER_FRAME"
-QT_MOC_LITERAL(185, 4326, 18) // "ONCE_PER_ATTRIBUTE"
+QT_MOC_LITERAL(20, 531, 17), // "getAttribLocation"
+QT_MOC_LITERAL(21, 549, 5), // "GLint"
+QT_MOC_LITERAL(22, 555, 19), // "getMaxTextureCoords"
+QT_MOC_LITERAL(23, 575, 18), // "getMaxTextureUnits"
+QT_MOC_LITERAL(24, 594, 18), // "getUniformLocation"
+QT_MOC_LITERAL(25, 613, 14), // "applyAttribute"
+QT_MOC_LITERAL(26, 628, 29), // "osg::QReflect_StateAttribute*"
+QT_MOC_LITERAL(27, 658, 21), // "applyTextureAttribute"
+QT_MOC_LITERAL(28, 680, 13), // "checkGLErrors"
+QT_MOC_LITERAL(29, 694, 11), // "const char*"
+QT_MOC_LITERAL(30, 706, 17), // "getAbortRendering"
+QT_MOC_LITERAL(31, 724, 19), // "isFogCoordSupported"
+QT_MOC_LITERAL(32, 744, 25), // "isSecondaryColorSupported"
+QT_MOC_LITERAL(33, 770, 29), // "isVertexBufferObjectSupported"
+QT_MOC_LITERAL(34, 800, 25), // "supportsShaderRequirement"
+QT_MOC_LITERAL(35, 826, 10), // "getGpuTime"
+QT_MOC_LITERAL(36, 837, 18), // "getDisplaySettings"
+QT_MOC_LITERAL(37, 856, 30), // "osg::QReflect_DisplaySettings*"
+QT_MOC_LITERAL(38, 887, 13), // "getFrameStamp"
+QT_MOC_LITERAL(39, 901, 25), // "osg::QReflect_FrameStamp*"
+QT_MOC_LITERAL(40, 927, 24), // "getGraphicsCostEstimator"
+QT_MOC_LITERAL(41, 952, 36), // "osg::QReflect_GraphicsCostEst..."
+QT_MOC_LITERAL(42, 989, 17), // "getShaderComposer"
+QT_MOC_LITERAL(43, 1007, 29), // "osg::QReflect_ShaderComposer*"
+QT_MOC_LITERAL(44, 1037, 21), // "getDynamicObjectCount"
+QT_MOC_LITERAL(45, 1059, 20), // "getStateSetStackSize"
+QT_MOC_LITERAL(46, 1080, 27), // "getShaderCompositionEnabled"
+QT_MOC_LITERAL(47, 1108, 36), // "getUseModelViewAndProjectionU..."
+QT_MOC_LITERAL(48, 1145, 29), // "getUseVertexAttributeAliasing"
+QT_MOC_LITERAL(49, 1175, 16), // "getTimestampBits"
+QT_MOC_LITERAL(50, 1192, 20), // "getActiveTextureUnit"
+QT_MOC_LITERAL(51, 1213, 26), // "getClientActiveTextureUnit"
+QT_MOC_LITERAL(52, 1240, 12), // "getContextID"
+QT_MOC_LITERAL(53, 1253, 26), // "getMaxBufferObjectPoolSize"
+QT_MOC_LITERAL(54, 1280, 21), // "getMaxTexturePoolSize"
+QT_MOC_LITERAL(55, 1302, 29), // "getCurrentElementBufferObject"
+QT_MOC_LITERAL(56, 1332, 29), // "osg::QReflect_GLBufferObject*"
+QT_MOC_LITERAL(57, 1362, 27), // "getCurrentPixelBufferObject"
+QT_MOC_LITERAL(58, 1390, 28), // "getCurrentVertexBufferObject"
+QT_MOC_LITERAL(59, 1419, 19), // "getCheckForGLErrors"
+QT_MOC_LITERAL(60, 1439, 37), // "osg::QReflect_State::CheckFor..."
+QT_MOC_LITERAL(61, 1477, 25), // "getGlobalDefaultAttribute"
+QT_MOC_LITERAL(62, 1503, 34), // "osg::QReflect_StateAttribute:..."
+QT_MOC_LITERAL(63, 1538, 32), // "getGlobalDefaultTextureAttribute"
+QT_MOC_LITERAL(64, 1571, 23), // "getLastAppliedAttribute"
+QT_MOC_LITERAL(65, 1595, 30), // "getLastAppliedTextureAttribute"
+QT_MOC_LITERAL(66, 1626, 25), // "getModelViewMatrixUniform"
+QT_MOC_LITERAL(67, 1652, 22), // "osg::QReflect_Uniform*"
+QT_MOC_LITERAL(68, 1675, 35), // "getModelViewProjectionMatrixU..."
+QT_MOC_LITERAL(69, 1711, 22), // "getNormalMatrixUniform"
+QT_MOC_LITERAL(70, 1734, 26), // "getProjectionMatrixUniform"
+QT_MOC_LITERAL(71, 1761, 18), // "getCurrentViewport"
+QT_MOC_LITERAL(72, 1780, 23), // "osg::QReflect_Viewport*"
+QT_MOC_LITERAL(73, 1804, 5), // "Color"
+QT_MOC_LITERAL(74, 1810, 13), // "MultiTexCoord"
+QT_MOC_LITERAL(75, 1824, 6), // "Normal"
+QT_MOC_LITERAL(76, 1831, 8), // "TexCoord"
+QT_MOC_LITERAL(77, 1840, 11), // "VerteAttrib"
+QT_MOC_LITERAL(78, 1852, 6), // "Vertex"
+QT_MOC_LITERAL(79, 1859, 5), // "apply"
+QT_MOC_LITERAL(80, 1865, 23), // "osg::QReflect_StateSet*"
+QT_MOC_LITERAL(81, 1889, 32), // "applyDisablingOfVertexAttributes"
+QT_MOC_LITERAL(82, 1922, 45), // "applyModelViewAndProjectionUn..."
+QT_MOC_LITERAL(83, 1968, 20), // "applyModelViewMatrix"
+QT_MOC_LITERAL(84, 1989, 22), // "osg::QReflect_Matrixd*"
+QT_MOC_LITERAL(85, 2012, 25), // "osg::QReflect_RefMatrixd*"
+QT_MOC_LITERAL(86, 2038, 21), // "applyProjectionMatrix"
+QT_MOC_LITERAL(87, 2060, 22), // "applyShaderComposition"
+QT_MOC_LITERAL(88, 2083, 29), // "applyShaderCompositionUniform"
+QT_MOC_LITERAL(89, 2113, 23), // "bindElementBufferObject"
+QT_MOC_LITERAL(90, 2137, 21), // "bindPixelBufferObject"
+QT_MOC_LITERAL(91, 2159, 22), // "bindVertexBufferObject"
+QT_MOC_LITERAL(92, 2182, 27), // "decrementDynamicObjectCount"
+QT_MOC_LITERAL(93, 2210, 18), // "dirtyAllAttributes"
+QT_MOC_LITERAL(94, 2229, 13), // "dirtyAllModes"
+QT_MOC_LITERAL(95, 2243, 20), // "dirtyAllVertexArrays"
+QT_MOC_LITERAL(96, 2264, 17), // "dirtyColorPointer"
+QT_MOC_LITERAL(97, 2282, 20), // "dirtyFogCoordPointer"
+QT_MOC_LITERAL(98, 2303, 18), // "dirtyNormalPointer"
+QT_MOC_LITERAL(99, 2322, 26), // "dirtySecondaryColorPointer"
+QT_MOC_LITERAL(100, 2349, 20), // "dirtyTexCoordPointer"
+QT_MOC_LITERAL(101, 2370, 38), // "dirtyTexCoordPointersAboveAnd..."
+QT_MOC_LITERAL(102, 2409, 24), // "dirtyVertexAttribPointer"
+QT_MOC_LITERAL(103, 2434, 42), // "dirtyVertexAttribPointersAbov..."
+QT_MOC_LITERAL(104, 2477, 18), // "dirtyVertexPointer"
+QT_MOC_LITERAL(105, 2496, 22), // "disableAllVertexArrays"
+QT_MOC_LITERAL(106, 2519, 19), // "disableColorPointer"
+QT_MOC_LITERAL(107, 2539, 22), // "disableFogCoordPointer"
+QT_MOC_LITERAL(108, 2562, 20), // "disableNormalPointer"
+QT_MOC_LITERAL(109, 2583, 28), // "disableSecondaryColorPointer"
+QT_MOC_LITERAL(110, 2612, 22), // "disableTexCoordPointer"
+QT_MOC_LITERAL(111, 2635, 40), // "disableTexCoordPointersAboveA..."
+QT_MOC_LITERAL(112, 2676, 26), // "disableVertexAttribPointer"
+QT_MOC_LITERAL(113, 2703, 44), // "disableVertexAttribPointersAb..."
+QT_MOC_LITERAL(114, 2748, 20), // "disableVertexPointer"
+QT_MOC_LITERAL(115, 2769, 14), // "frameCompleted"
+QT_MOC_LITERAL(116, 2784, 20), // "haveAppliedAttribute"
+QT_MOC_LITERAL(117, 2805, 27), // "haveAppliedTextureAttribute"
+QT_MOC_LITERAL(118, 2833, 24), // "initializeExtensionProcs"
+QT_MOC_LITERAL(119, 2858, 14), // "insertStateSet"
+QT_MOC_LITERAL(120, 2873, 31), // "lazyDisablingOfVertexAttributes"
+QT_MOC_LITERAL(121, 2905, 15), // "popAllStateSets"
+QT_MOC_LITERAL(122, 2921, 11), // "popStateSet"
+QT_MOC_LITERAL(123, 2933, 22), // "popStateSetStackToSize"
+QT_MOC_LITERAL(124, 2956, 12), // "pushStateSet"
+QT_MOC_LITERAL(125, 2969, 16), // "releaseGLObjects"
+QT_MOC_LITERAL(126, 2986, 14), // "removeStateSet"
+QT_MOC_LITERAL(127, 3001, 5), // "reset"
+QT_MOC_LITERAL(128, 3007, 25), // "resetVertexAttributeAlias"
+QT_MOC_LITERAL(129, 3033, 20), // "setAbortRenderingPtr"
+QT_MOC_LITERAL(130, 3054, 5), // "bool*"
+QT_MOC_LITERAL(131, 3060, 19), // "setCheckForGLErrors"
+QT_MOC_LITERAL(132, 3080, 13), // "setColorAlias"
+QT_MOC_LITERAL(133, 3094, 32), // "osg::QReflect_VertexAttribAlias*"
+QT_MOC_LITERAL(134, 3127, 15), // "setColorPointer"
+QT_MOC_LITERAL(135, 3143, 20), // "osg::QReflect_Array*"
+QT_MOC_LITERAL(136, 3164, 29), // "setCurrentElementBufferObject"
+QT_MOC_LITERAL(137, 3194, 27), // "setCurrentPixelBufferObject"
+QT_MOC_LITERAL(138, 3222, 28), // "setCurrentVertexBufferObject"
+QT_MOC_LITERAL(139, 3251, 21), // "setDynamicObjectCount"
+QT_MOC_LITERAL(140, 3273, 16), // "setFogCoordAlias"
+QT_MOC_LITERAL(141, 3290, 18), // "setFogCoordPointer"
+QT_MOC_LITERAL(142, 3309, 25), // "setGlobalDefaultAttribute"
+QT_MOC_LITERAL(143, 3335, 32), // "setGlobalDefaultTextureAttribute"
+QT_MOC_LITERAL(144, 3368, 20), // "setInitialViewMatrix"
+QT_MOC_LITERAL(145, 3389, 14), // "setNormalAlias"
+QT_MOC_LITERAL(146, 3404, 16), // "setNormalPointer"
+QT_MOC_LITERAL(147, 3421, 22), // "setSecondaryColorAlias"
+QT_MOC_LITERAL(148, 3444, 24), // "setSecondaryColorPointer"
+QT_MOC_LITERAL(149, 3469, 18), // "setTexCoordPointer"
+QT_MOC_LITERAL(150, 3488, 14), // "setVertexAlias"
+QT_MOC_LITERAL(151, 3503, 23), // "setVertexAttribIPointer"
+QT_MOC_LITERAL(152, 3527, 23), // "setVertexAttribLPointer"
+QT_MOC_LITERAL(153, 3551, 22), // "setVertexAttribPointer"
+QT_MOC_LITERAL(154, 3574, 16), // "setVertexPointer"
+QT_MOC_LITERAL(155, 3591, 25), // "unbindElementBufferObject"
+QT_MOC_LITERAL(156, 3617, 23), // "unbindPixelBufferObject"
+QT_MOC_LITERAL(157, 3641, 24), // "unbindVertexBufferObject"
+QT_MOC_LITERAL(158, 3666, 42), // "updateModelViewAndProjectionM..."
+QT_MOC_LITERAL(159, 3709, 31), // "pmoc_reverse_setDisplaySettings"
+QT_MOC_LITERAL(160, 3741, 3), // "par"
+QT_MOC_LITERAL(161, 3745, 26), // "pmoc_reverse_setFrameStamp"
+QT_MOC_LITERAL(162, 3772, 37), // "pmoc_reverse_setGraphicsCostE..."
+QT_MOC_LITERAL(163, 3810, 30), // "pmoc_reverse_setShaderComposer"
+QT_MOC_LITERAL(164, 3841, 20), // "setActiveTextureUnit"
+QT_MOC_LITERAL(165, 3862, 26), // "setClientActiveTextureUnit"
+QT_MOC_LITERAL(166, 3889, 12), // "setContextID"
+QT_MOC_LITERAL(167, 3902, 18), // "setDisplaySettings"
+QT_MOC_LITERAL(168, 3921, 13), // "setFrameStamp"
+QT_MOC_LITERAL(169, 3935, 24), // "setGraphicsCostEstimator"
+QT_MOC_LITERAL(170, 3960, 26), // "setMaxBufferObjectPoolSize"
+QT_MOC_LITERAL(171, 3987, 21), // "setMaxTexturePoolSize"
+QT_MOC_LITERAL(172, 4009, 17), // "setShaderComposer"
+QT_MOC_LITERAL(173, 4027, 27), // "setShaderCompositionEnabled"
+QT_MOC_LITERAL(174, 4055, 16), // "setTimestampBits"
+QT_MOC_LITERAL(175, 4072, 36), // "setUseModelViewAndProjectionU..."
+QT_MOC_LITERAL(176, 4109, 29), // "setUseVertexAttributeAliasing"
+QT_MOC_LITERAL(177, 4139, 24), // "ShaderCompositionEnabled"
+QT_MOC_LITERAL(178, 4164, 33), // "UseModelViewAndProjectionUnif..."
+QT_MOC_LITERAL(179, 4198, 26), // "UseVertexAttributeAliasing"
+QT_MOC_LITERAL(180, 4225, 13), // "TimestampBits"
+QT_MOC_LITERAL(181, 4239, 17), // "ActiveTextureUnit"
+QT_MOC_LITERAL(182, 4257, 23), // "ClientActiveTextureUnit"
+QT_MOC_LITERAL(183, 4281, 9), // "ContextID"
+QT_MOC_LITERAL(184, 4291, 23), // "MaxBufferObjectPoolSize"
+QT_MOC_LITERAL(185, 4315, 18), // "MaxTexturePoolSize"
+QT_MOC_LITERAL(186, 4334, 16), // "CheckForGLErrors"
+QT_MOC_LITERAL(187, 4351, 21), // "NEVER_CHECK_GL_ERRORS"
+QT_MOC_LITERAL(188, 4373, 14), // "ONCE_PER_FRAME"
+QT_MOC_LITERAL(189, 4388, 18) // "ONCE_PER_ATTRIBUTE"
 
     },
     "osg::QReflect_State\0ActiveTextureUnitChanged\0"
@@ -323,7 +327,9 @@ QT_MOC_LITERAL(185, 4326, 18) // "ONCE_PER_ATTRIBUTE"
     "TimestampBitsChanged\0"
     "UseModelViewAndProjectionUniformsChanged\0"
     "UseVertexAttributeAliasingChanged\0"
-    "updateModel\0applyAttribute\0"
+    "updateModel\0getAttribLocation\0GLint\0"
+    "getMaxTextureCoords\0getMaxTextureUnits\0"
+    "getUniformLocation\0applyAttribute\0"
     "osg::QReflect_StateAttribute*\0"
     "applyTextureAttribute\0checkGLErrors\0"
     "const char*\0getAbortRendering\0"
@@ -370,7 +376,7 @@ QT_MOC_LITERAL(185, 4326, 18) // "ONCE_PER_ATTRIBUTE"
     "applyProjectionMatrix\0applyShaderComposition\0"
     "applyShaderCompositionUniform\0"
     "bindElementBufferObject\0bindPixelBufferObject\0"
-    "bindVertexBufferObject\0captureCurrentState\0"
+    "bindVertexBufferObject\0"
     "decrementDynamicObjectCount\0"
     "dirtyAllAttributes\0dirtyAllModes\0"
     "dirtyAllVertexArrays\0dirtyColorPointer\0"
@@ -443,176 +449,180 @@ static const uint qt_meta_data_osg__QReflect_State[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-     158,   14, // methods
-       9, 1228, // properties
-       1, 1264, // enums/sets
+     162,   14, // methods
+       9, 1256, // properties
+       1, 1292, // enums/sets
        0,    0, // constructors
        0,       // flags
       13,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  804,    2, 0x06 /* Public */,
-       3,    1,  807,    2, 0x06 /* Public */,
-       4,    1,  810,    2, 0x06 /* Public */,
-       5,    1,  813,    2, 0x06 /* Public */,
-       7,    1,  816,    2, 0x06 /* Public */,
-       9,    1,  819,    2, 0x06 /* Public */,
-      11,    1,  822,    2, 0x06 /* Public */,
-      12,    1,  825,    2, 0x06 /* Public */,
-      13,    1,  828,    2, 0x06 /* Public */,
-      15,    1,  831,    2, 0x06 /* Public */,
-      16,    1,  834,    2, 0x06 /* Public */,
-      17,    1,  837,    2, 0x06 /* Public */,
-      18,    1,  840,    2, 0x06 /* Public */,
+       1,    1,  824,    2, 0x06 /* Public */,
+       3,    1,  827,    2, 0x06 /* Public */,
+       4,    1,  830,    2, 0x06 /* Public */,
+       5,    1,  833,    2, 0x06 /* Public */,
+       7,    1,  836,    2, 0x06 /* Public */,
+       9,    1,  839,    2, 0x06 /* Public */,
+      11,    1,  842,    2, 0x06 /* Public */,
+      12,    1,  845,    2, 0x06 /* Public */,
+      13,    1,  848,    2, 0x06 /* Public */,
+      15,    1,  851,    2, 0x06 /* Public */,
+      16,    1,  854,    2, 0x06 /* Public */,
+      17,    1,  857,    2, 0x06 /* Public */,
+      18,    1,  860,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      19,    0,  843,    2, 0x0a /* Public */,
+      19,    0,  863,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      20,    1,  844,    2, 0x02 /* Public */,
-      22,    2,  847,    2, 0x02 /* Public */,
-      23,    1,  852,    2, 0x02 /* Public */,
-      23,    1,  855,    2, 0x02 /* Public */,
-      25,    0,  858,    2, 0x02 /* Public */,
-      26,    0,  859,    2, 0x02 /* Public */,
-      27,    0,  860,    2, 0x02 /* Public */,
-      28,    0,  861,    2, 0x02 /* Public */,
-      29,    1,  862,    2, 0x02 /* Public */,
-      30,    0,  865,    2, 0x02 /* Public */,
-      31,    0,  866,    2, 0x02 /* Public */,
-      33,    0,  867,    2, 0x02 /* Public */,
-      35,    0,  868,    2, 0x02 /* Public */,
-      37,    0,  869,    2, 0x02 /* Public */,
-      39,    0,  870,    2, 0x02 /* Public */,
-      40,    0,  871,    2, 0x02 /* Public */,
-      41,    0,  872,    2, 0x02 /* Public */,
-      42,    0,  873,    2, 0x02 /* Public */,
-      43,    0,  874,    2, 0x02 /* Public */,
-      44,    0,  875,    2, 0x02 /* Public */,
-      45,    0,  876,    2, 0x02 /* Public */,
-      46,    0,  877,    2, 0x02 /* Public */,
-      47,    0,  878,    2, 0x02 /* Public */,
-      48,    0,  879,    2, 0x02 /* Public */,
-      49,    0,  880,    2, 0x02 /* Public */,
-      50,    0,  881,    2, 0x02 /* Public */,
-      52,    0,  882,    2, 0x02 /* Public */,
-      53,    0,  883,    2, 0x02 /* Public */,
-      54,    0,  884,    2, 0x02 /* Public */,
-      56,    2,  885,    2, 0x02 /* Public */,
-      58,    3,  890,    2, 0x02 /* Public */,
-      59,    2,  897,    2, 0x02 /* Public */,
-      60,    3,  902,    2, 0x02 /* Public */,
-      61,    0,  909,    2, 0x02 /* Public */,
-      63,    0,  910,    2, 0x02 /* Public */,
-      64,    0,  911,    2, 0x02 /* Public */,
-      65,    0,  912,    2, 0x02 /* Public */,
-      66,    0,  913,    2, 0x02 /* Public */,
-      68,    4,  914,    2, 0x02 /* Public */,
-      69,    5,  923,    2, 0x02 /* Public */,
-      70,    3,  934,    2, 0x02 /* Public */,
-      71,    4,  941,    2, 0x02 /* Public */,
-      72,    5,  950,    2, 0x02 /* Public */,
-      73,    4,  961,    2, 0x02 /* Public */,
-      74,    0,  970,    2, 0x02 /* Public */,
-      74,    1,  971,    2, 0x02 /* Public */,
-      76,    0,  974,    2, 0x02 /* Public */,
-      77,    0,  975,    2, 0x02 /* Public */,
-      78,    1,  976,    2, 0x02 /* Public */,
-      78,    1,  979,    2, 0x02 /* Public */,
-      81,    1,  982,    2, 0x02 /* Public */,
-      82,    0,  985,    2, 0x02 /* Public */,
-      83,    2,  986,    2, 0x02 /* Public */,
-      84,    1,  991,    2, 0x02 /* Public */,
-      85,    1,  994,    2, 0x02 /* Public */,
-      86,    1,  997,    2, 0x02 /* Public */,
-      87,    1, 1000,    2, 0x02 /* Public */,
-      88,    0, 1003,    2, 0x02 /* Public */,
-      89,    0, 1004,    2, 0x02 /* Public */,
-      90,    0, 1005,    2, 0x02 /* Public */,
-      91,    0, 1006,    2, 0x02 /* Public */,
-      92,    0, 1007,    2, 0x02 /* Public */,
-      93,    0, 1008,    2, 0x02 /* Public */,
-      94,    0, 1009,    2, 0x02 /* Public */,
-      95,    0, 1010,    2, 0x02 /* Public */,
-      96,    1, 1011,    2, 0x02 /* Public */,
-      97,    1, 1014,    2, 0x02 /* Public */,
-      98,    1, 1017,    2, 0x02 /* Public */,
-      99,    1, 1020,    2, 0x02 /* Public */,
-     100,    0, 1023,    2, 0x02 /* Public */,
-     101,    0, 1024,    2, 0x02 /* Public */,
-     102,    0, 1025,    2, 0x02 /* Public */,
-     103,    0, 1026,    2, 0x02 /* Public */,
-     104,    0, 1027,    2, 0x02 /* Public */,
-     105,    0, 1028,    2, 0x02 /* Public */,
-     106,    1, 1029,    2, 0x02 /* Public */,
-     107,    1, 1032,    2, 0x02 /* Public */,
-     108,    1, 1035,    2, 0x02 /* Public */,
-     109,    1, 1038,    2, 0x02 /* Public */,
-     110,    0, 1041,    2, 0x02 /* Public */,
-     111,    0, 1042,    2, 0x02 /* Public */,
-     112,    1, 1043,    2, 0x02 /* Public */,
-     112,    2, 1046,    2, 0x02 /* Public */,
-     113,    2, 1051,    2, 0x02 /* Public */,
-     113,    3, 1056,    2, 0x02 /* Public */,
-     114,    0, 1063,    2, 0x02 /* Public */,
-     115,    2, 1064,    2, 0x02 /* Public */,
-     116,    0, 1069,    2, 0x02 /* Public */,
-     117,    0, 1070,    2, 0x02 /* Public */,
-     118,    0, 1071,    2, 0x02 /* Public */,
-     119,    1, 1072,    2, 0x02 /* Public */,
-     120,    1, 1075,    2, 0x02 /* Public */,
-     121,    0, 1078,    2, 0x02 /* Public */,
-     122,    1, 1079,    2, 0x02 /* Public */,
-     123,    0, 1082,    2, 0x02 /* Public */,
-     124,    2, 1083,    2, 0x02 /* Public */,
-     125,    1, 1088,    2, 0x02 /* Public */,
-     127,    1, 1091,    2, 0x02 /* Public */,
-     128,    1, 1094,    2, 0x02 /* Public */,
-     130,    1, 1097,    2, 0x02 /* Public */,
-     132,    1, 1100,    2, 0x02 /* Public */,
-     133,    1, 1103,    2, 0x02 /* Public */,
-     134,    1, 1106,    2, 0x02 /* Public */,
-     135,    2, 1109,    2, 0x02 /* Public */,
-     136,    1, 1114,    2, 0x02 /* Public */,
-     137,    1, 1117,    2, 0x02 /* Public */,
-     138,    1, 1120,    2, 0x02 /* Public */,
-     139,    2, 1123,    2, 0x02 /* Public */,
-     140,    1, 1128,    2, 0x02 /* Public */,
-     141,    1, 1131,    2, 0x02 /* Public */,
-     142,    1, 1134,    2, 0x02 /* Public */,
-     143,    1, 1137,    2, 0x02 /* Public */,
-     144,    1, 1140,    2, 0x02 /* Public */,
-     145,    2, 1143,    2, 0x02 /* Public */,
-     146,    1, 1148,    2, 0x02 /* Public */,
-     147,    2, 1151,    2, 0x02 /* Public */,
-     148,    2, 1156,    2, 0x02 /* Public */,
-     149,    2, 1161,    2, 0x02 /* Public */,
-     150,    1, 1166,    2, 0x02 /* Public */,
-     151,    0, 1169,    2, 0x02 /* Public */,
-     152,    0, 1170,    2, 0x02 /* Public */,
-     153,    0, 1171,    2, 0x02 /* Public */,
-     154,    0, 1172,    2, 0x02 /* Public */,
-     155,    1, 1173,    2, 0x02 /* Public */,
-     155,    0, 1176,    2, 0x22 /* Public | MethodCloned */,
-     157,    1, 1177,    2, 0x02 /* Public */,
-     157,    0, 1180,    2, 0x22 /* Public | MethodCloned */,
-     158,    1, 1181,    2, 0x02 /* Public */,
-     158,    0, 1184,    2, 0x22 /* Public | MethodCloned */,
-     159,    1, 1185,    2, 0x02 /* Public */,
-     159,    0, 1188,    2, 0x22 /* Public | MethodCloned */,
-     160,    1, 1189,    2, 0x02 /* Public */,
-     161,    1, 1192,    2, 0x02 /* Public */,
-     162,    1, 1195,    2, 0x02 /* Public */,
-     163,    1, 1198,    2, 0x02 /* Public */,
-     164,    1, 1201,    2, 0x02 /* Public */,
-     165,    1, 1204,    2, 0x02 /* Public */,
-     166,    1, 1207,    2, 0x02 /* Public */,
-     167,    1, 1210,    2, 0x02 /* Public */,
-     168,    1, 1213,    2, 0x02 /* Public */,
-     169,    1, 1216,    2, 0x02 /* Public */,
-     170,    1, 1219,    2, 0x02 /* Public */,
-     171,    1, 1222,    2, 0x02 /* Public */,
-     172,    1, 1225,    2, 0x02 /* Public */,
+      20,    1,  864,    2, 0x02 /* Public */,
+      22,    0,  867,    2, 0x02 /* Public */,
+      23,    0,  868,    2, 0x02 /* Public */,
+      24,    1,  869,    2, 0x02 /* Public */,
+      24,    1,  872,    2, 0x02 /* Public */,
+      25,    1,  875,    2, 0x02 /* Public */,
+      27,    2,  878,    2, 0x02 /* Public */,
+      28,    1,  883,    2, 0x02 /* Public */,
+      28,    1,  886,    2, 0x02 /* Public */,
+      30,    0,  889,    2, 0x02 /* Public */,
+      31,    0,  890,    2, 0x02 /* Public */,
+      32,    0,  891,    2, 0x02 /* Public */,
+      33,    0,  892,    2, 0x02 /* Public */,
+      34,    1,  893,    2, 0x02 /* Public */,
+      35,    0,  896,    2, 0x02 /* Public */,
+      36,    0,  897,    2, 0x02 /* Public */,
+      38,    0,  898,    2, 0x02 /* Public */,
+      40,    0,  899,    2, 0x02 /* Public */,
+      42,    0,  900,    2, 0x02 /* Public */,
+      44,    0,  901,    2, 0x02 /* Public */,
+      45,    0,  902,    2, 0x02 /* Public */,
+      46,    0,  903,    2, 0x02 /* Public */,
+      47,    0,  904,    2, 0x02 /* Public */,
+      48,    0,  905,    2, 0x02 /* Public */,
+      49,    0,  906,    2, 0x02 /* Public */,
+      50,    0,  907,    2, 0x02 /* Public */,
+      51,    0,  908,    2, 0x02 /* Public */,
+      52,    0,  909,    2, 0x02 /* Public */,
+      53,    0,  910,    2, 0x02 /* Public */,
+      54,    0,  911,    2, 0x02 /* Public */,
+      55,    0,  912,    2, 0x02 /* Public */,
+      57,    0,  913,    2, 0x02 /* Public */,
+      58,    0,  914,    2, 0x02 /* Public */,
+      59,    0,  915,    2, 0x02 /* Public */,
+      61,    2,  916,    2, 0x02 /* Public */,
+      63,    3,  921,    2, 0x02 /* Public */,
+      64,    2,  928,    2, 0x02 /* Public */,
+      65,    3,  933,    2, 0x02 /* Public */,
+      66,    0,  940,    2, 0x02 /* Public */,
+      68,    0,  941,    2, 0x02 /* Public */,
+      69,    0,  942,    2, 0x02 /* Public */,
+      70,    0,  943,    2, 0x02 /* Public */,
+      71,    0,  944,    2, 0x02 /* Public */,
+      73,    4,  945,    2, 0x02 /* Public */,
+      74,    5,  954,    2, 0x02 /* Public */,
+      75,    3,  965,    2, 0x02 /* Public */,
+      76,    4,  972,    2, 0x02 /* Public */,
+      77,    5,  981,    2, 0x02 /* Public */,
+      78,    4,  992,    2, 0x02 /* Public */,
+      79,    0, 1001,    2, 0x02 /* Public */,
+      79,    1, 1002,    2, 0x02 /* Public */,
+      81,    0, 1005,    2, 0x02 /* Public */,
+      82,    0, 1006,    2, 0x02 /* Public */,
+      83,    1, 1007,    2, 0x02 /* Public */,
+      83,    1, 1010,    2, 0x02 /* Public */,
+      86,    1, 1013,    2, 0x02 /* Public */,
+      87,    0, 1016,    2, 0x02 /* Public */,
+      88,    2, 1017,    2, 0x02 /* Public */,
+      89,    1, 1022,    2, 0x02 /* Public */,
+      90,    1, 1025,    2, 0x02 /* Public */,
+      91,    1, 1028,    2, 0x02 /* Public */,
+      92,    0, 1031,    2, 0x02 /* Public */,
+      93,    0, 1032,    2, 0x02 /* Public */,
+      94,    0, 1033,    2, 0x02 /* Public */,
+      95,    0, 1034,    2, 0x02 /* Public */,
+      96,    0, 1035,    2, 0x02 /* Public */,
+      97,    0, 1036,    2, 0x02 /* Public */,
+      98,    0, 1037,    2, 0x02 /* Public */,
+      99,    0, 1038,    2, 0x02 /* Public */,
+     100,    1, 1039,    2, 0x02 /* Public */,
+     101,    1, 1042,    2, 0x02 /* Public */,
+     102,    1, 1045,    2, 0x02 /* Public */,
+     103,    1, 1048,    2, 0x02 /* Public */,
+     104,    0, 1051,    2, 0x02 /* Public */,
+     105,    0, 1052,    2, 0x02 /* Public */,
+     106,    0, 1053,    2, 0x02 /* Public */,
+     107,    0, 1054,    2, 0x02 /* Public */,
+     108,    0, 1055,    2, 0x02 /* Public */,
+     109,    0, 1056,    2, 0x02 /* Public */,
+     110,    1, 1057,    2, 0x02 /* Public */,
+     111,    1, 1060,    2, 0x02 /* Public */,
+     112,    1, 1063,    2, 0x02 /* Public */,
+     113,    1, 1066,    2, 0x02 /* Public */,
+     114,    0, 1069,    2, 0x02 /* Public */,
+     115,    0, 1070,    2, 0x02 /* Public */,
+     116,    1, 1071,    2, 0x02 /* Public */,
+     116,    2, 1074,    2, 0x02 /* Public */,
+     117,    2, 1079,    2, 0x02 /* Public */,
+     117,    3, 1084,    2, 0x02 /* Public */,
+     118,    0, 1091,    2, 0x02 /* Public */,
+     119,    2, 1092,    2, 0x02 /* Public */,
+     120,    0, 1097,    2, 0x02 /* Public */,
+     121,    0, 1098,    2, 0x02 /* Public */,
+     122,    0, 1099,    2, 0x02 /* Public */,
+     123,    1, 1100,    2, 0x02 /* Public */,
+     124,    1, 1103,    2, 0x02 /* Public */,
+     125,    0, 1106,    2, 0x02 /* Public */,
+     126,    1, 1107,    2, 0x02 /* Public */,
+     127,    0, 1110,    2, 0x02 /* Public */,
+     128,    2, 1111,    2, 0x02 /* Public */,
+     129,    1, 1116,    2, 0x02 /* Public */,
+     131,    1, 1119,    2, 0x02 /* Public */,
+     132,    1, 1122,    2, 0x02 /* Public */,
+     134,    1, 1125,    2, 0x02 /* Public */,
+     136,    1, 1128,    2, 0x02 /* Public */,
+     137,    1, 1131,    2, 0x02 /* Public */,
+     138,    1, 1134,    2, 0x02 /* Public */,
+     139,    2, 1137,    2, 0x02 /* Public */,
+     140,    1, 1142,    2, 0x02 /* Public */,
+     141,    1, 1145,    2, 0x02 /* Public */,
+     142,    1, 1148,    2, 0x02 /* Public */,
+     143,    2, 1151,    2, 0x02 /* Public */,
+     144,    1, 1156,    2, 0x02 /* Public */,
+     145,    1, 1159,    2, 0x02 /* Public */,
+     146,    1, 1162,    2, 0x02 /* Public */,
+     147,    1, 1165,    2, 0x02 /* Public */,
+     148,    1, 1168,    2, 0x02 /* Public */,
+     149,    2, 1171,    2, 0x02 /* Public */,
+     150,    1, 1176,    2, 0x02 /* Public */,
+     151,    2, 1179,    2, 0x02 /* Public */,
+     152,    2, 1184,    2, 0x02 /* Public */,
+     153,    2, 1189,    2, 0x02 /* Public */,
+     154,    1, 1194,    2, 0x02 /* Public */,
+     155,    0, 1197,    2, 0x02 /* Public */,
+     156,    0, 1198,    2, 0x02 /* Public */,
+     157,    0, 1199,    2, 0x02 /* Public */,
+     158,    0, 1200,    2, 0x02 /* Public */,
+     159,    1, 1201,    2, 0x02 /* Public */,
+     159,    0, 1204,    2, 0x22 /* Public | MethodCloned */,
+     161,    1, 1205,    2, 0x02 /* Public */,
+     161,    0, 1208,    2, 0x22 /* Public | MethodCloned */,
+     162,    1, 1209,    2, 0x02 /* Public */,
+     162,    0, 1212,    2, 0x22 /* Public | MethodCloned */,
+     163,    1, 1213,    2, 0x02 /* Public */,
+     163,    0, 1216,    2, 0x22 /* Public | MethodCloned */,
+     164,    1, 1217,    2, 0x02 /* Public */,
+     165,    1, 1220,    2, 0x02 /* Public */,
+     166,    1, 1223,    2, 0x02 /* Public */,
+     167,    1, 1226,    2, 0x02 /* Public */,
+     168,    1, 1229,    2, 0x02 /* Public */,
+     169,    1, 1232,    2, 0x02 /* Public */,
+     170,    1, 1235,    2, 0x02 /* Public */,
+     171,    1, 1238,    2, 0x02 /* Public */,
+     172,    1, 1241,    2, 0x02 /* Public */,
+     173,    1, 1244,    2, 0x02 /* Public */,
+     174,    1, 1247,    2, 0x02 /* Public */,
+     175,    1, 1250,    2, 0x02 /* Public */,
+     176,    1, 1253,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::UInt,    2,
@@ -633,20 +643,25 @@ static const uint qt_meta_data_osg__QReflect_State[] = {
     QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Bool, 0x80000000 | 21,    2,
-    QMetaType::Bool, QMetaType::UInt, 0x80000000 | 21,    2,    2,
-    QMetaType::Bool, 0x80000000 | 24,    2,
-    QMetaType::Bool, 0x80000000 | 21,    2,
+    0x80000000 | 21, QMetaType::QString,    2,
+    0x80000000 | 21,
+    0x80000000 | 21,
+    0x80000000 | 21, QMetaType::UInt,    2,
+    0x80000000 | 21, QMetaType::QString,    2,
+    QMetaType::Bool, 0x80000000 | 26,    2,
+    QMetaType::Bool, QMetaType::UInt, 0x80000000 | 26,    2,    2,
+    QMetaType::Bool, 0x80000000 | 29,    2,
+    QMetaType::Bool, 0x80000000 | 26,    2,
     QMetaType::Bool,
     QMetaType::Bool,
     QMetaType::Bool,
     QMetaType::Bool,
     QMetaType::Bool, QMetaType::QString,    2,
     QMetaType::Double,
-    0x80000000 | 32,
-    0x80000000 | 34,
-    0x80000000 | 36,
-    0x80000000 | 38,
+    0x80000000 | 37,
+    0x80000000 | 39,
+    0x80000000 | 41,
+    0x80000000 | 43,
     QMetaType::UInt,
     QMetaType::UInt,
     QMetaType::Bool,
@@ -658,19 +673,19 @@ static const uint qt_meta_data_osg__QReflect_State[] = {
     QMetaType::UInt,
     QMetaType::UInt,
     QMetaType::UInt,
-    0x80000000 | 51,
-    0x80000000 | 51,
-    0x80000000 | 51,
-    0x80000000 | 55,
-    0x80000000 | 21, 0x80000000 | 57, QMetaType::UInt,    2,    2,
-    0x80000000 | 21, QMetaType::UInt, 0x80000000 | 57, QMetaType::UInt,    2,    2,    2,
-    0x80000000 | 21, 0x80000000 | 57, QMetaType::UInt,    2,    2,
-    0x80000000 | 21, QMetaType::UInt, 0x80000000 | 57, QMetaType::UInt,    2,    2,    2,
-    0x80000000 | 62,
-    0x80000000 | 62,
-    0x80000000 | 62,
-    0x80000000 | 62,
+    0x80000000 | 56,
+    0x80000000 | 56,
+    0x80000000 | 56,
+    0x80000000 | 60,
+    0x80000000 | 26, 0x80000000 | 62, QMetaType::UInt,    2,    2,
+    0x80000000 | 26, QMetaType::UInt, 0x80000000 | 62, QMetaType::UInt,    2,    2,    2,
+    0x80000000 | 26, 0x80000000 | 62, QMetaType::UInt,    2,    2,
+    0x80000000 | 26, QMetaType::UInt, 0x80000000 | 62, QMetaType::UInt,    2,    2,    2,
     0x80000000 | 67,
+    0x80000000 | 67,
+    0x80000000 | 67,
+    0x80000000 | 67,
+    0x80000000 | 72,
     QMetaType::Void, QMetaType::Float, QMetaType::Float, QMetaType::Float, QMetaType::Float,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::Float, QMetaType::Float, QMetaType::Float, QMetaType::Float,    2,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Float, QMetaType::Float, QMetaType::Float,    2,    2,    2,
@@ -678,116 +693,115 @@ static const uint qt_meta_data_osg__QReflect_State[] = {
     QMetaType::Void, QMetaType::UInt, QMetaType::Float, QMetaType::Float, QMetaType::Float, QMetaType::Float,    2,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Float, QMetaType::Float, QMetaType::Float, QMetaType::Float,    2,    2,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 75,    2,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 79,    2,
-    QMetaType::Void, 0x80000000 | 80,    2,
     QMetaType::Void, 0x80000000 | 80,    2,
     QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 84,    2,
+    QMetaType::Void, 0x80000000 | 85,    2,
+    QMetaType::Void, 0x80000000 | 85,    2,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 67, QMetaType::UInt,    2,    2,
+    QMetaType::Void, 0x80000000 | 56,    2,
+    QMetaType::Void, 0x80000000 | 56,    2,
+    QMetaType::Void, 0x80000000 | 56,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void, QMetaType::UInt,    2,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, 0x80000000 | 26,    2,
     QMetaType::Void, 0x80000000 | 62, QMetaType::UInt,    2,    2,
-    QMetaType::Void, 0x80000000 | 51,    2,
-    QMetaType::Void, 0x80000000 | 51,    2,
-    QMetaType::Void, 0x80000000 | 51,    2,
-    QMetaType::Void, 0x80000000 | 75,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 26,    2,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 62, QMetaType::UInt,    2,    2,    2,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 80,    2,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 21,    2,
-    QMetaType::Void, 0x80000000 | 57, QMetaType::UInt,    2,    2,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 21,    2,    2,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 57, QMetaType::UInt,    2,    2,    2,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 75,    2,    2,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 75,    2,
+    QMetaType::Void, 0x80000000 | 80,    2,
     QMetaType::Void,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool, QMetaType::UInt,    2,    2,
-    QMetaType::Void, 0x80000000 | 126,    2,
-    QMetaType::Void, 0x80000000 | 55,    2,
-    QMetaType::Void, 0x80000000 | 129,    2,
-    QMetaType::Void, 0x80000000 | 131,    2,
-    QMetaType::Void, 0x80000000 | 51,    2,
-    QMetaType::Void, 0x80000000 | 51,    2,
-    QMetaType::Void, 0x80000000 | 51,    2,
+    QMetaType::Void, 0x80000000 | 130,    2,
+    QMetaType::Void, 0x80000000 | 60,    2,
+    QMetaType::Void, 0x80000000 | 133,    2,
+    QMetaType::Void, 0x80000000 | 135,    2,
+    QMetaType::Void, 0x80000000 | 56,    2,
+    QMetaType::Void, 0x80000000 | 56,    2,
+    QMetaType::Void, 0x80000000 | 56,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::Bool,    2,    2,
-    QMetaType::Void, 0x80000000 | 129,    2,
-    QMetaType::Void, 0x80000000 | 131,    2,
-    QMetaType::Void, 0x80000000 | 21,    2,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 21,    2,    2,
-    QMetaType::Void, 0x80000000 | 80,    2,
-    QMetaType::Void, 0x80000000 | 129,    2,
-    QMetaType::Void, 0x80000000 | 131,    2,
-    QMetaType::Void, 0x80000000 | 129,    2,
-    QMetaType::Void, 0x80000000 | 131,    2,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 131,    2,    2,
-    QMetaType::Void, 0x80000000 | 129,    2,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 131,    2,    2,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 131,    2,    2,
-    QMetaType::Void, QMetaType::UInt, 0x80000000 | 131,    2,    2,
-    QMetaType::Void, 0x80000000 | 131,    2,
+    QMetaType::Void, 0x80000000 | 133,    2,
+    QMetaType::Void, 0x80000000 | 135,    2,
+    QMetaType::Void, 0x80000000 | 26,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 26,    2,    2,
+    QMetaType::Void, 0x80000000 | 85,    2,
+    QMetaType::Void, 0x80000000 | 133,    2,
+    QMetaType::Void, 0x80000000 | 135,    2,
+    QMetaType::Void, 0x80000000 | 133,    2,
+    QMetaType::Void, 0x80000000 | 135,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 135,    2,    2,
+    QMetaType::Void, 0x80000000 | 133,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 135,    2,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 135,    2,    2,
+    QMetaType::Void, QMetaType::UInt, 0x80000000 | 135,    2,    2,
+    QMetaType::Void, 0x80000000 | 135,    2,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 32,  156,
+    QMetaType::Void, 0x80000000 | 37,  160,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 34,  156,
+    QMetaType::Void, 0x80000000 | 39,  160,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 36,  156,
+    QMetaType::Void, 0x80000000 | 41,  160,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 38,  156,
+    QMetaType::Void, 0x80000000 | 43,  160,
     QMetaType::Void,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 32,  156,
-    QMetaType::Void, 0x80000000 | 34,  156,
-    QMetaType::Void, 0x80000000 | 36,  156,
+    QMetaType::Void, 0x80000000 | 37,  160,
+    QMetaType::Void, 0x80000000 | 39,  160,
+    QMetaType::Void, 0x80000000 | 41,  160,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 38,  156,
+    QMetaType::Void, 0x80000000 | 43,  160,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Bool,    2,
 
  // properties: name, type, flags
-     173, QMetaType::Bool, 0x00495103,
-     174, QMetaType::Bool, 0x00495103,
-     175, QMetaType::Bool, 0x00495103,
-     176, QMetaType::Int, 0x00495103,
-     177, QMetaType::UInt, 0x00495103,
-     178, QMetaType::UInt, 0x00495103,
-     179, QMetaType::UInt, 0x00495103,
-     180, QMetaType::UInt, 0x00495103,
+     177, QMetaType::Bool, 0x00495103,
+     178, QMetaType::Bool, 0x00495103,
+     179, QMetaType::Bool, 0x00495103,
+     180, QMetaType::Int, 0x00495103,
      181, QMetaType::UInt, 0x00495103,
+     182, QMetaType::UInt, 0x00495103,
+     183, QMetaType::UInt, 0x00495103,
+     184, QMetaType::UInt, 0x00495103,
+     185, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        9,
@@ -801,12 +815,12 @@ static const uint qt_meta_data_osg__QReflect_State[] = {
        7,
 
  // enums: name, flags, count, data
-     182, 0x0,    3, 1268,
+     186, 0x0,    3, 1296,
 
  // enum data: key, value
-     183, uint(osg::QReflect_State::NEVER_CHECK_GL_ERRORS),
-     184, uint(osg::QReflect_State::ONCE_PER_FRAME),
-     185, uint(osg::QReflect_State::ONCE_PER_ATTRIBUTE),
+     187, uint(osg::QReflect_State::NEVER_CHECK_GL_ERRORS),
+     188, uint(osg::QReflect_State::ONCE_PER_FRAME),
+     189, uint(osg::QReflect_State::ONCE_PER_ATTRIBUTE),
 
        0        // eod
 };
@@ -831,222 +845,231 @@ void osg::QReflect_State::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 11: _t->UseModelViewAndProjectionUniformsChanged((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         case 12: _t->UseVertexAttributeAliasingChanged((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         case 13: _t->updateModel(); break;
-        case 14: { bool _r = _t->applyAttribute((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
+        case 14: { GLint _r = _t->getAttribLocation((*reinterpret_cast< const QString(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 15: { GLint _r = _t->getMaxTextureCoords();
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 16: { GLint _r = _t->getMaxTextureUnits();
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 17: { GLint _r = _t->getUniformLocation((*reinterpret_cast< uint(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 18: { GLint _r = _t->getUniformLocation((*reinterpret_cast< const QString(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 19: { bool _r = _t->applyAttribute((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 15: { bool _r = _t->applyTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[2])));
+        case 20: { bool _r = _t->applyTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 16: { bool _r = _t->checkGLErrors((*reinterpret_cast< const char*(*)>(_a[1])));
+        case 21: { bool _r = _t->checkGLErrors((*reinterpret_cast< const char*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 17: { bool _r = _t->checkGLErrors((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
+        case 22: { bool _r = _t->checkGLErrors((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 18: { bool _r = _t->getAbortRendering();
+        case 23: { bool _r = _t->getAbortRendering();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 19: { bool _r = _t->isFogCoordSupported();
+        case 24: { bool _r = _t->isFogCoordSupported();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 20: { bool _r = _t->isSecondaryColorSupported();
+        case 25: { bool _r = _t->isSecondaryColorSupported();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 21: { bool _r = _t->isVertexBufferObjectSupported();
+        case 26: { bool _r = _t->isVertexBufferObjectSupported();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 22: { bool _r = _t->supportsShaderRequirement((*reinterpret_cast< const QString(*)>(_a[1])));
+        case 27: { bool _r = _t->supportsShaderRequirement((*reinterpret_cast< const QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 23: { double _r = _t->getGpuTime();
+        case 28: { double _r = _t->getGpuTime();
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
-        case 24: { osg::QReflect_DisplaySettings* _r = _t->getDisplaySettings();
+        case 29: { osg::QReflect_DisplaySettings* _r = _t->getDisplaySettings();
             if (_a[0]) *reinterpret_cast< osg::QReflect_DisplaySettings**>(_a[0]) = _r; }  break;
-        case 25: { osg::QReflect_FrameStamp* _r = _t->getFrameStamp();
+        case 30: { osg::QReflect_FrameStamp* _r = _t->getFrameStamp();
             if (_a[0]) *reinterpret_cast< osg::QReflect_FrameStamp**>(_a[0]) = _r; }  break;
-        case 26: { osg::QReflect_GraphicsCostEstimator* _r = _t->getGraphicsCostEstimator();
+        case 31: { osg::QReflect_GraphicsCostEstimator* _r = _t->getGraphicsCostEstimator();
             if (_a[0]) *reinterpret_cast< osg::QReflect_GraphicsCostEstimator**>(_a[0]) = _r; }  break;
-        case 27: { osg::QReflect_ShaderComposer* _r = _t->getShaderComposer();
+        case 32: { osg::QReflect_ShaderComposer* _r = _t->getShaderComposer();
             if (_a[0]) *reinterpret_cast< osg::QReflect_ShaderComposer**>(_a[0]) = _r; }  break;
-        case 28: { uint _r = _t->getDynamicObjectCount();
+        case 33: { uint _r = _t->getDynamicObjectCount();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 29: { uint _r = _t->getStateSetStackSize();
+        case 34: { uint _r = _t->getStateSetStackSize();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 30: { bool _r = _t->getShaderCompositionEnabled();
+        case 35: { bool _r = _t->getShaderCompositionEnabled();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 31: { bool _r = _t->getUseModelViewAndProjectionUniforms();
+        case 36: { bool _r = _t->getUseModelViewAndProjectionUniforms();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 32: { bool _r = _t->getUseVertexAttributeAliasing();
+        case 37: { bool _r = _t->getUseVertexAttributeAliasing();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 33: { int _r = _t->getTimestampBits();
+        case 38: { int _r = _t->getTimestampBits();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 34: { uint _r = _t->getActiveTextureUnit();
+        case 39: { uint _r = _t->getActiveTextureUnit();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 35: { uint _r = _t->getClientActiveTextureUnit();
+        case 40: { uint _r = _t->getClientActiveTextureUnit();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 36: { uint _r = _t->getContextID();
+        case 41: { uint _r = _t->getContextID();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 37: { uint _r = _t->getMaxBufferObjectPoolSize();
+        case 42: { uint _r = _t->getMaxBufferObjectPoolSize();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 38: { uint _r = _t->getMaxTexturePoolSize();
+        case 43: { uint _r = _t->getMaxTexturePoolSize();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 39: { osg::QReflect_GLBufferObject* _r = _t->getCurrentElementBufferObject();
+        case 44: { osg::QReflect_GLBufferObject* _r = _t->getCurrentElementBufferObject();
             if (_a[0]) *reinterpret_cast< osg::QReflect_GLBufferObject**>(_a[0]) = _r; }  break;
-        case 40: { osg::QReflect_GLBufferObject* _r = _t->getCurrentPixelBufferObject();
+        case 45: { osg::QReflect_GLBufferObject* _r = _t->getCurrentPixelBufferObject();
             if (_a[0]) *reinterpret_cast< osg::QReflect_GLBufferObject**>(_a[0]) = _r; }  break;
-        case 41: { osg::QReflect_GLBufferObject* _r = _t->getCurrentVertexBufferObject();
+        case 46: { osg::QReflect_GLBufferObject* _r = _t->getCurrentVertexBufferObject();
             if (_a[0]) *reinterpret_cast< osg::QReflect_GLBufferObject**>(_a[0]) = _r; }  break;
-        case 42: { osg::QReflect_State::CheckForGLErrors _r = _t->getCheckForGLErrors();
+        case 47: { osg::QReflect_State::CheckForGLErrors _r = _t->getCheckForGLErrors();
             if (_a[0]) *reinterpret_cast< osg::QReflect_State::CheckForGLErrors*>(_a[0]) = _r; }  break;
-        case 43: { osg::QReflect_StateAttribute* _r = _t->getGlobalDefaultAttribute((*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])));
+        case 48: { osg::QReflect_StateAttribute* _r = _t->getGlobalDefaultAttribute((*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateAttribute**>(_a[0]) = _r; }  break;
-        case 44: { osg::QReflect_StateAttribute* _r = _t->getGlobalDefaultTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])));
+        case 49: { osg::QReflect_StateAttribute* _r = _t->getGlobalDefaultTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateAttribute**>(_a[0]) = _r; }  break;
-        case 45: { osg::QReflect_StateAttribute* _r = _t->getLastAppliedAttribute((*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])));
+        case 50: { osg::QReflect_StateAttribute* _r = _t->getLastAppliedAttribute((*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateAttribute**>(_a[0]) = _r; }  break;
-        case 46: { osg::QReflect_StateAttribute* _r = _t->getLastAppliedTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])));
+        case 51: { osg::QReflect_StateAttribute* _r = _t->getLastAppliedTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_StateAttribute**>(_a[0]) = _r; }  break;
-        case 47: { osg::QReflect_Uniform* _r = _t->getModelViewMatrixUniform();
+        case 52: { osg::QReflect_Uniform* _r = _t->getModelViewMatrixUniform();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Uniform**>(_a[0]) = _r; }  break;
-        case 48: { osg::QReflect_Uniform* _r = _t->getModelViewProjectionMatrixUniform();
+        case 53: { osg::QReflect_Uniform* _r = _t->getModelViewProjectionMatrixUniform();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Uniform**>(_a[0]) = _r; }  break;
-        case 49: { osg::QReflect_Uniform* _r = _t->getNormalMatrixUniform();
+        case 54: { osg::QReflect_Uniform* _r = _t->getNormalMatrixUniform();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Uniform**>(_a[0]) = _r; }  break;
-        case 50: { osg::QReflect_Uniform* _r = _t->getProjectionMatrixUniform();
+        case 55: { osg::QReflect_Uniform* _r = _t->getProjectionMatrixUniform();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Uniform**>(_a[0]) = _r; }  break;
-        case 51: { osg::QReflect_Viewport* _r = _t->getCurrentViewport();
+        case 56: { osg::QReflect_Viewport* _r = _t->getCurrentViewport();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Viewport**>(_a[0]) = _r; }  break;
-        case 52: _t->Color((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4]))); break;
-        case 53: _t->MultiTexCoord((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4])),(*reinterpret_cast< float(*)>(_a[5]))); break;
-        case 54: _t->Normal((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
-        case 55: _t->TexCoord((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4]))); break;
-        case 56: _t->VerteAttrib((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4])),(*reinterpret_cast< float(*)>(_a[5]))); break;
-        case 57: _t->Vertex((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4]))); break;
-        case 58: _t->apply(); break;
-        case 59: _t->apply((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
-        case 60: _t->applyDisablingOfVertexAttributes(); break;
-        case 61: _t->applyModelViewAndProjectionUniformsIfRequired(); break;
-        case 62: _t->applyModelViewMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
-        case 63: _t->applyModelViewMatrix((*reinterpret_cast< osg::QReflect_RefMatrixd*(*)>(_a[1]))); break;
-        case 64: _t->applyProjectionMatrix((*reinterpret_cast< osg::QReflect_RefMatrixd*(*)>(_a[1]))); break;
-        case 65: _t->applyShaderComposition(); break;
-        case 66: _t->applyShaderCompositionUniform((*reinterpret_cast< osg::QReflect_Uniform*(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
-        case 67: _t->bindElementBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
-        case 68: _t->bindPixelBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
-        case 69: _t->bindVertexBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
-        case 70: _t->captureCurrentState((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
-        case 71: _t->decrementDynamicObjectCount(); break;
-        case 72: _t->dirtyAllAttributes(); break;
-        case 73: _t->dirtyAllModes(); break;
-        case 74: _t->dirtyAllVertexArrays(); break;
-        case 75: _t->dirtyColorPointer(); break;
-        case 76: _t->dirtyFogCoordPointer(); break;
-        case 77: _t->dirtyNormalPointer(); break;
-        case 78: _t->dirtySecondaryColorPointer(); break;
-        case 79: _t->dirtyTexCoordPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 80: _t->dirtyTexCoordPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 81: _t->dirtyVertexAttribPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 82: _t->dirtyVertexAttribPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 83: _t->dirtyVertexPointer(); break;
-        case 84: _t->disableAllVertexArrays(); break;
-        case 85: _t->disableColorPointer(); break;
-        case 86: _t->disableFogCoordPointer(); break;
-        case 87: _t->disableNormalPointer(); break;
-        case 88: _t->disableSecondaryColorPointer(); break;
-        case 89: _t->disableTexCoordPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 90: _t->disableTexCoordPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 91: _t->disableVertexAttribPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 92: _t->disableVertexAttribPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 93: _t->disableVertexPointer(); break;
-        case 94: _t->frameCompleted(); break;
-        case 95: _t->haveAppliedAttribute((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1]))); break;
-        case 96: _t->haveAppliedAttribute((*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
-        case 97: _t->haveAppliedTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[2]))); break;
-        case 98: _t->haveAppliedTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3]))); break;
-        case 99: _t->initializeExtensionProcs(); break;
-        case 100: _t->insertStateSet((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[2]))); break;
-        case 101: _t->lazyDisablingOfVertexAttributes(); break;
-        case 102: _t->popAllStateSets(); break;
-        case 103: _t->popStateSet(); break;
-        case 104: _t->popStateSetStackToSize((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 105: _t->pushStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
-        case 106: _t->releaseGLObjects(); break;
-        case 107: _t->removeStateSet((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 108: _t->reset(); break;
-        case 109: _t->resetVertexAttributeAlias((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
-        case 110: _t->setAbortRenderingPtr((*reinterpret_cast< bool*(*)>(_a[1]))); break;
-        case 111: _t->setCheckForGLErrors((*reinterpret_cast< osg::QReflect_State::CheckForGLErrors(*)>(_a[1]))); break;
-        case 112: _t->setColorAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
-        case 113: _t->setColorPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
-        case 114: _t->setCurrentElementBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
-        case 115: _t->setCurrentPixelBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
-        case 116: _t->setCurrentVertexBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
-        case 117: _t->setDynamicObjectCount((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 118: _t->setFogCoordAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
-        case 119: _t->setFogCoordPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
-        case 120: _t->setGlobalDefaultAttribute((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1]))); break;
-        case 121: _t->setGlobalDefaultTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[2]))); break;
-        case 122: _t->setInitialViewMatrix((*reinterpret_cast< osg::QReflect_RefMatrixd*(*)>(_a[1]))); break;
-        case 123: _t->setNormalAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
-        case 124: _t->setNormalPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
-        case 125: _t->setSecondaryColorAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
-        case 126: _t->setSecondaryColorPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
-        case 127: _t->setTexCoordPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
-        case 128: _t->setVertexAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
-        case 129: _t->setVertexAttribIPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
-        case 130: _t->setVertexAttribLPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
-        case 131: _t->setVertexAttribPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
-        case 132: _t->setVertexPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
-        case 133: _t->unbindElementBufferObject(); break;
-        case 134: _t->unbindPixelBufferObject(); break;
-        case 135: _t->unbindVertexBufferObject(); break;
-        case 136: _t->updateModelViewAndProjectionMatrixUniforms(); break;
-        case 137: _t->pmoc_reverse_setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
-        case 138: _t->pmoc_reverse_setDisplaySettings(); break;
-        case 139: _t->pmoc_reverse_setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
-        case 140: _t->pmoc_reverse_setFrameStamp(); break;
-        case 141: _t->pmoc_reverse_setGraphicsCostEstimator((*reinterpret_cast< osg::QReflect_GraphicsCostEstimator*(*)>(_a[1]))); break;
-        case 142: _t->pmoc_reverse_setGraphicsCostEstimator(); break;
-        case 143: _t->pmoc_reverse_setShaderComposer((*reinterpret_cast< osg::QReflect_ShaderComposer*(*)>(_a[1]))); break;
-        case 144: _t->pmoc_reverse_setShaderComposer(); break;
-        case 145: _t->setActiveTextureUnit((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 146: _t->setClientActiveTextureUnit((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 147: _t->setContextID((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 148: _t->setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
-        case 149: _t->setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
-        case 150: _t->setGraphicsCostEstimator((*reinterpret_cast< osg::QReflect_GraphicsCostEstimator*(*)>(_a[1]))); break;
-        case 151: _t->setMaxBufferObjectPoolSize((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 152: _t->setMaxTexturePoolSize((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 153: _t->setShaderComposer((*reinterpret_cast< osg::QReflect_ShaderComposer*(*)>(_a[1]))); break;
-        case 154: _t->setShaderCompositionEnabled((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 155: _t->setTimestampBits((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 156: _t->setUseModelViewAndProjectionUniforms((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 157: _t->setUseVertexAttributeAliasing((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 57: _t->Color((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4]))); break;
+        case 58: _t->MultiTexCoord((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4])),(*reinterpret_cast< float(*)>(_a[5]))); break;
+        case 59: _t->Normal((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
+        case 60: _t->TexCoord((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4]))); break;
+        case 61: _t->VerteAttrib((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4])),(*reinterpret_cast< float(*)>(_a[5]))); break;
+        case 62: _t->Vertex((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4]))); break;
+        case 63: _t->apply(); break;
+        case 64: _t->apply((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
+        case 65: _t->applyDisablingOfVertexAttributes(); break;
+        case 66: _t->applyModelViewAndProjectionUniformsIfRequired(); break;
+        case 67: _t->applyModelViewMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
+        case 68: _t->applyModelViewMatrix((*reinterpret_cast< osg::QReflect_RefMatrixd*(*)>(_a[1]))); break;
+        case 69: _t->applyProjectionMatrix((*reinterpret_cast< osg::QReflect_RefMatrixd*(*)>(_a[1]))); break;
+        case 70: _t->applyShaderComposition(); break;
+        case 71: _t->applyShaderCompositionUniform((*reinterpret_cast< osg::QReflect_Uniform*(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 72: _t->bindElementBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
+        case 73: _t->bindPixelBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
+        case 74: _t->bindVertexBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
+        case 75: _t->decrementDynamicObjectCount(); break;
+        case 76: _t->dirtyAllAttributes(); break;
+        case 77: _t->dirtyAllModes(); break;
+        case 78: _t->dirtyAllVertexArrays(); break;
+        case 79: _t->dirtyColorPointer(); break;
+        case 80: _t->dirtyFogCoordPointer(); break;
+        case 81: _t->dirtyNormalPointer(); break;
+        case 82: _t->dirtySecondaryColorPointer(); break;
+        case 83: _t->dirtyTexCoordPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 84: _t->dirtyTexCoordPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 85: _t->dirtyVertexAttribPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 86: _t->dirtyVertexAttribPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 87: _t->dirtyVertexPointer(); break;
+        case 88: _t->disableAllVertexArrays(); break;
+        case 89: _t->disableColorPointer(); break;
+        case 90: _t->disableFogCoordPointer(); break;
+        case 91: _t->disableNormalPointer(); break;
+        case 92: _t->disableSecondaryColorPointer(); break;
+        case 93: _t->disableTexCoordPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 94: _t->disableTexCoordPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 95: _t->disableVertexAttribPointer((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 96: _t->disableVertexAttribPointersAboveAndIncluding((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 97: _t->disableVertexPointer(); break;
+        case 98: _t->frameCompleted(); break;
+        case 99: _t->haveAppliedAttribute((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1]))); break;
+        case 100: _t->haveAppliedAttribute((*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 101: _t->haveAppliedTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[2]))); break;
+        case 102: _t->haveAppliedTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute::Type(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3]))); break;
+        case 103: _t->initializeExtensionProcs(); break;
+        case 104: _t->insertStateSet((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[2]))); break;
+        case 105: _t->lazyDisablingOfVertexAttributes(); break;
+        case 106: _t->popAllStateSets(); break;
+        case 107: _t->popStateSet(); break;
+        case 108: _t->popStateSetStackToSize((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 109: _t->pushStateSet((*reinterpret_cast< osg::QReflect_StateSet*(*)>(_a[1]))); break;
+        case 110: _t->releaseGLObjects(); break;
+        case 111: _t->removeStateSet((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 112: _t->reset(); break;
+        case 113: _t->resetVertexAttributeAlias((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 114: _t->setAbortRenderingPtr((*reinterpret_cast< bool*(*)>(_a[1]))); break;
+        case 115: _t->setCheckForGLErrors((*reinterpret_cast< osg::QReflect_State::CheckForGLErrors(*)>(_a[1]))); break;
+        case 116: _t->setColorAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
+        case 117: _t->setColorPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
+        case 118: _t->setCurrentElementBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
+        case 119: _t->setCurrentPixelBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
+        case 120: _t->setCurrentVertexBufferObject((*reinterpret_cast< osg::QReflect_GLBufferObject*(*)>(_a[1]))); break;
+        case 121: _t->setDynamicObjectCount((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 122: _t->setFogCoordAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
+        case 123: _t->setFogCoordPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
+        case 124: _t->setGlobalDefaultAttribute((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1]))); break;
+        case 125: _t->setGlobalDefaultTextureAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[2]))); break;
+        case 126: _t->setInitialViewMatrix((*reinterpret_cast< osg::QReflect_RefMatrixd*(*)>(_a[1]))); break;
+        case 127: _t->setNormalAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
+        case 128: _t->setNormalPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
+        case 129: _t->setSecondaryColorAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
+        case 130: _t->setSecondaryColorPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
+        case 131: _t->setTexCoordPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
+        case 132: _t->setVertexAlias((*reinterpret_cast< osg::QReflect_VertexAttribAlias*(*)>(_a[1]))); break;
+        case 133: _t->setVertexAttribIPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
+        case 134: _t->setVertexAttribLPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
+        case 135: _t->setVertexAttribPointer((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Array*(*)>(_a[2]))); break;
+        case 136: _t->setVertexPointer((*reinterpret_cast< osg::QReflect_Array*(*)>(_a[1]))); break;
+        case 137: _t->unbindElementBufferObject(); break;
+        case 138: _t->unbindPixelBufferObject(); break;
+        case 139: _t->unbindVertexBufferObject(); break;
+        case 140: _t->updateModelViewAndProjectionMatrixUniforms(); break;
+        case 141: _t->pmoc_reverse_setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
+        case 142: _t->pmoc_reverse_setDisplaySettings(); break;
+        case 143: _t->pmoc_reverse_setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
+        case 144: _t->pmoc_reverse_setFrameStamp(); break;
+        case 145: _t->pmoc_reverse_setGraphicsCostEstimator((*reinterpret_cast< osg::QReflect_GraphicsCostEstimator*(*)>(_a[1]))); break;
+        case 146: _t->pmoc_reverse_setGraphicsCostEstimator(); break;
+        case 147: _t->pmoc_reverse_setShaderComposer((*reinterpret_cast< osg::QReflect_ShaderComposer*(*)>(_a[1]))); break;
+        case 148: _t->pmoc_reverse_setShaderComposer(); break;
+        case 149: _t->setActiveTextureUnit((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 150: _t->setClientActiveTextureUnit((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 151: _t->setContextID((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 152: _t->setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
+        case 153: _t->setFrameStamp((*reinterpret_cast< osg::QReflect_FrameStamp*(*)>(_a[1]))); break;
+        case 154: _t->setGraphicsCostEstimator((*reinterpret_cast< osg::QReflect_GraphicsCostEstimator*(*)>(_a[1]))); break;
+        case 155: _t->setMaxBufferObjectPoolSize((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 156: _t->setMaxTexturePoolSize((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 157: _t->setShaderComposer((*reinterpret_cast< osg::QReflect_ShaderComposer*(*)>(_a[1]))); break;
+        case 158: _t->setShaderCompositionEnabled((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 159: _t->setTimestampBits((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 160: _t->setUseModelViewAndProjectionUniforms((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 161: _t->setUseVertexAttributeAliasing((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 112:
+        case 116:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_VertexAttribAlias* >(); break;
             }
             break;
-        case 118:
+        case 122:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_VertexAttribAlias* >(); break;
             }
             break;
-        case 123:
+        case 127:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_VertexAttribAlias* >(); break;
             }
             break;
-        case 125:
+        case 129:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
                 *reinterpret_cast<int*>(_a[0]) = qRegisterMetaType< osg::QReflect_VertexAttribAlias* >(); break;
             }
             break;
-        case 128:
+        case 132:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -1199,13 +1222,13 @@ int osg::QReflect_State::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 158)
+        if (_id < 162)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 158;
+        _id -= 162;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 158)
+        if (_id < 162)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 158;
+        _id -= 162;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

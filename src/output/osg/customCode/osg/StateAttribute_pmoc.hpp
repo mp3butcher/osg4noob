@@ -16,7 +16,7 @@ class QReflect_ShaderComponent;
 #include <osg/Callback_pmoc.hpp>
 #include <osg/Object_pmoc.hpp>
 #include <osg/Shader>
-//#include <osg/Shader_pmoc.hpp>
+#include <osg/Shader_pmoc.hpp>
 #include <osg/StateAttribute>
 
 #include <osg/StateAttribute_pmoc.hpp>

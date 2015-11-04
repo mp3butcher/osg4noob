@@ -7,7 +7,6 @@
 #include <osgParticle/ParticleSystemUpdater_pmoc.hpp>
 #include <customCode/osgParticle/ParticleSystemUpdater_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osgParticle/ParticleSystem_pmoc.hpp>
 #include <osgParticle/ParticleSystem>
 using namespace pmoc;
@@ -33,10 +32,6 @@ return _model->getNumParticleSystems();
 }
  unsigned int  osgParticle::QReflect_ParticleSystemUpdater::getParticleSystemIndex(osgParticle::QReflect_ParticleSystem *p0)const{
 return _model->getParticleSystemIndex(p0->_model);
-
-}
- void osgParticle::QReflect_ParticleSystemUpdater::traverse(osg::QReflect_NodeVisitor *p0){
- _model->traverse(*p0->_model);
 
 }
 osgParticle::QReflect_ParticleSystem*osgParticle::QReflect_ParticleSystemUpdater::getParticleSystem( unsigned int p0)const{

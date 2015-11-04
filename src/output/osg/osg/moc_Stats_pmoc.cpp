@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Stats_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Stats_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Stats_t {
-    QByteArrayData data[15];
-    char stringdata0[187];
+    QByteArrayData data[12];
+    char stringdata0[145];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,21 +34,17 @@ QT_MOC_LITERAL(1, 20, 11), // "NameChanged"
 QT_MOC_LITERAL(2, 32, 0), // ""
 QT_MOC_LITERAL(3, 33, 11), // "updateModel"
 QT_MOC_LITERAL(4, 45, 12), // "collectStats"
-QT_MOC_LITERAL(5, 58, 12), // "getAttribute"
-QT_MOC_LITERAL(6, 71, 7), // "double&"
-QT_MOC_LITERAL(7, 79, 20), // "getAveragedAttribute"
-QT_MOC_LITERAL(8, 100, 12), // "setAttribute"
-QT_MOC_LITERAL(9, 113, 22), // "getEarliestFrameNumber"
-QT_MOC_LITERAL(10, 136, 20), // "getLatestFrameNumber"
-QT_MOC_LITERAL(11, 157, 7), // "getName"
-QT_MOC_LITERAL(12, 165, 8), // "allocate"
-QT_MOC_LITERAL(13, 174, 7), // "setName"
-QT_MOC_LITERAL(14, 182, 4) // "Name"
+QT_MOC_LITERAL(5, 58, 12), // "setAttribute"
+QT_MOC_LITERAL(6, 71, 22), // "getEarliestFrameNumber"
+QT_MOC_LITERAL(7, 94, 20), // "getLatestFrameNumber"
+QT_MOC_LITERAL(8, 115, 7), // "getName"
+QT_MOC_LITERAL(9, 123, 8), // "allocate"
+QT_MOC_LITERAL(10, 132, 7), // "setName"
+QT_MOC_LITERAL(11, 140, 4) // "Name"
 
     },
     "osg::QReflect_Stats\0NameChanged\0\0"
-    "updateModel\0collectStats\0getAttribute\0"
-    "double&\0getAveragedAttribute\0setAttribute\0"
+    "updateModel\0collectStats\0setAttribute\0"
     "getEarliestFrameNumber\0getLatestFrameNumber\0"
     "getName\0allocate\0setName\0Name"
 };
@@ -60,31 +56,28 @@ static const uint qt_meta_data_osg__QReflect_Stats[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
-       1,  132, // properties
+      10,   14, // methods
+       1,   92, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   79,    2, 0x06 /* Public */,
+       1,    1,   64,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   82,    2, 0x0a /* Public */,
+       3,    0,   67,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    1,   83,    2, 0x02 /* Public */,
-       5,    3,   86,    2, 0x02 /* Public */,
-       7,    5,   93,    2, 0x02 /* Public */,
-       7,    3,  104,    2, 0x02 /* Public */,
-       8,    3,  111,    2, 0x02 /* Public */,
-       9,    0,  118,    2, 0x02 /* Public */,
-      10,    0,  119,    2, 0x02 /* Public */,
-      11,    0,  120,    2, 0x02 /* Public */,
-      12,    1,  121,    2, 0x02 /* Public */,
-       4,    2,  124,    2, 0x02 /* Public */,
-      13,    1,  129,    2, 0x02 /* Public */,
+       4,    1,   68,    2, 0x02 /* Public */,
+       5,    3,   71,    2, 0x02 /* Public */,
+       6,    0,   78,    2, 0x02 /* Public */,
+       7,    0,   79,    2, 0x02 /* Public */,
+       8,    0,   80,    2, 0x02 /* Public */,
+       9,    1,   81,    2, 0x02 /* Public */,
+       4,    2,   84,    2, 0x02 /* Public */,
+      10,    1,   89,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::QString,    2,
@@ -94,9 +87,6 @@ static const uint qt_meta_data_osg__QReflect_Stats[] = {
 
  // methods: parameters
     QMetaType::Bool, QMetaType::QString,    2,
-    QMetaType::Bool, QMetaType::UInt, QMetaType::QString, 0x80000000 | 6,    2,    2,    2,
-    QMetaType::Bool, QMetaType::UInt, QMetaType::UInt, QMetaType::QString, 0x80000000 | 6, QMetaType::Bool,    2,    2,    2,    2,    2,
-    QMetaType::Bool, QMetaType::QString, 0x80000000 | 6, QMetaType::Bool,    2,    2,    2,
     QMetaType::Bool, QMetaType::UInt, QMetaType::QString, QMetaType::Double,    2,    2,    2,
     QMetaType::UInt,
     QMetaType::UInt,
@@ -106,7 +96,7 @@ static const uint qt_meta_data_osg__QReflect_Stats[] = {
     QMetaType::Void, QMetaType::QString,    2,
 
  // properties: name, type, flags
-      14, QMetaType::QString, 0x00495103,
+      11, QMetaType::QString, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -124,23 +114,17 @@ void osg::QReflect_Stats::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
         case 1: _t->updateModel(); break;
         case 2: { bool _r = _t->collectStats((*reinterpret_cast< const QString(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 3: { bool _r = _t->getAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])));
+        case 3: { bool _r = _t->setAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])));
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 4: { bool _r = _t->getAveragedAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 5: { bool _r = _t->getAveragedAttribute((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 6: { bool _r = _t->setAttribute((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 7: { uint _r = _t->getEarliestFrameNumber();
+        case 4: { uint _r = _t->getEarliestFrameNumber();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 8: { uint _r = _t->getLatestFrameNumber();
+        case 5: { uint _r = _t->getLatestFrameNumber();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 9: { QString _r = _t->getName();
+        case 6: { QString _r = _t->getName();
             if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
-        case 10: _t->allocate((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 11: _t->collectStats((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 12: _t->setName((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 7: _t->allocate((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 8: _t->collectStats((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
+        case 9: _t->setName((*reinterpret_cast< const QString(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -200,13 +184,13 @@ int osg::QReflect_Stats::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 10)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 10;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 10)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 10;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

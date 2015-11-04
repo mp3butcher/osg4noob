@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Switch_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Switch_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Switch_t {
-    QByteArrayData data[22];
-    char stringdata0[352];
+    QByteArrayData data[20];
+    char stringdata0[316];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,10 +47,8 @@ QT_MOC_LITERAL(14, 217, 8), // "asSwitch"
 QT_MOC_LITERAL(15, 226, 21), // "osg::QReflect_Switch*"
 QT_MOC_LITERAL(16, 248, 13), // "setChildValue"
 QT_MOC_LITERAL(17, 262, 8), // "setValue"
-QT_MOC_LITERAL(18, 271, 8), // "traverse"
-QT_MOC_LITERAL(19, 280, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(20, 307, 23), // "setNewChildDefaultValue"
-QT_MOC_LITERAL(21, 331, 20) // "NewChildDefaultValue"
+QT_MOC_LITERAL(18, 271, 23), // "setNewChildDefaultValue"
+QT_MOC_LITERAL(19, 295, 20) // "NewChildDefaultValue"
 
     },
     "osg::QReflect_Switch\0NewChildDefaultValueChanged\0"
@@ -60,8 +58,8 @@ QT_MOC_LITERAL(21, 331, 20) // "NewChildDefaultValue"
     "setAllChildrenOn\0setSingleChildOn\0"
     "getNewChildDefaultValue\0asSwitch\0"
     "osg::QReflect_Switch*\0setChildValue\0"
-    "setValue\0traverse\0osg::QReflect_NodeVisitor*\0"
-    "setNewChildDefaultValue\0NewChildDefaultValue"
+    "setValue\0setNewChildDefaultValue\0"
+    "NewChildDefaultValue"
 };
 #undef QT_MOC_LITERAL
 
@@ -71,37 +69,36 @@ static const uint qt_meta_data_osg__QReflect_Switch[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
-       1,  168, // properties
+      18,   14, // methods
+       1,  160, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  109,    2, 0x06 /* Public */,
+       1,    1,  104,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,  112,    2, 0x0a /* Public */,
+       3,    0,  107,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    2,  113,    2, 0x02 /* Public */,
-       4,    1,  118,    2, 0x02 /* Public */,
-       6,    1,  121,    2, 0x02 /* Public */,
-       7,    1,  124,    2, 0x02 /* Public */,
-       8,    3,  127,    2, 0x02 /* Public */,
-       8,    2,  134,    2, 0x02 /* Public */,
-       9,    2,  139,    2, 0x02 /* Public */,
-      10,    0,  144,    2, 0x02 /* Public */,
-      11,    0,  145,    2, 0x02 /* Public */,
-      12,    1,  146,    2, 0x02 /* Public */,
-      13,    0,  149,    2, 0x02 /* Public */,
-      14,    0,  150,    2, 0x02 /* Public */,
-      14,    0,  151,    2, 0x02 /* Public */,
-      16,    2,  152,    2, 0x02 /* Public */,
-      17,    2,  157,    2, 0x02 /* Public */,
-      18,    1,  162,    2, 0x02 /* Public */,
-      20,    1,  165,    2, 0x02 /* Public */,
+       4,    2,  108,    2, 0x02 /* Public */,
+       4,    1,  113,    2, 0x02 /* Public */,
+       6,    1,  116,    2, 0x02 /* Public */,
+       7,    1,  119,    2, 0x02 /* Public */,
+       8,    3,  122,    2, 0x02 /* Public */,
+       8,    2,  129,    2, 0x02 /* Public */,
+       9,    2,  134,    2, 0x02 /* Public */,
+      10,    0,  139,    2, 0x02 /* Public */,
+      11,    0,  140,    2, 0x02 /* Public */,
+      12,    1,  141,    2, 0x02 /* Public */,
+      13,    0,  144,    2, 0x02 /* Public */,
+      14,    0,  145,    2, 0x02 /* Public */,
+      14,    0,  146,    2, 0x02 /* Public */,
+      16,    2,  147,    2, 0x02 /* Public */,
+      17,    2,  152,    2, 0x02 /* Public */,
+      18,    1,  157,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -125,11 +122,10 @@ static const uint qt_meta_data_osg__QReflect_Switch[] = {
     0x80000000 | 15,
     QMetaType::Void, 0x80000000 | 5, QMetaType::Bool,    2,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::Bool,    2,    2,
-    QMetaType::Void, 0x80000000 | 19,    2,
     QMetaType::Void, QMetaType::Bool,    2,
 
  // properties: name, type, flags
-      21, QMetaType::Bool, 0x00495103,
+      19, QMetaType::Bool, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -173,8 +169,7 @@ void osg::QReflect_Switch::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
             if (_a[0]) *reinterpret_cast< osg::QReflect_Switch**>(_a[0]) = _r; }  break;
         case 15: _t->setChildValue((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
         case 16: _t->setValue((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2]))); break;
-        case 17: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 18: _t->setNewChildDefaultValue((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 17: _t->setNewChildDefaultValue((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -234,13 +229,13 @@ int osg::QReflect_Switch::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 19;
+        _id -= 18;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

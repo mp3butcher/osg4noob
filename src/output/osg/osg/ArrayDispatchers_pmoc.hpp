@@ -3,10 +3,10 @@
 #include <osg/ArrayDispatchers_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Array;
+class QReflect_AttributeDispatch;
 			} ;
 namespace osg{ 
-class QReflect_AttributeDispatch;
+class QReflect_Array;
 			} ;
 #include <osg/ArrayDispatchers>
 #include <osg/ArrayDispatchers>

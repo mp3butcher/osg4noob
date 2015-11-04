@@ -219,6 +219,10 @@ return _model->computeRequiredBufferSize();
 return _model->getNumBufferData();
 
 }
+ void osg::QReflect_BufferObject::deleteBufferObject( unsigned int p0 , GLuint p1){
+ _model->deleteBufferObject(p0 ,p1);
+
+}
  void osg::QReflect_BufferObject::dirty(){
  _model->dirty();
 
@@ -465,6 +469,14 @@ return ret;}
 #include <osg/BufferObject>
 #include <osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
+ GLuint  osg::QReflect_GLBufferObject::getGLObjectID()const{
+return _model->getGLObjectID();
+
+}
+ GLuint&  osg::QReflect_GLBufferObject::getGLObjectID(){
+return _model->getGLObjectID();
+
+}
  bool  osg::QReflect_GLBufferObject::hasAllBufferDataBeenRead()const{
 return _model->hasAllBufferDataBeenRead();
 
@@ -644,10 +656,6 @@ return _model->getNumberGenerated();
  _model->flushAllDeletedGLObjects();
 
 }
- void osg::QReflect_GLBufferObjectManager::flushDeletedGLObjects( double p0 , double &p1){
- _model->flushDeletedGLObjects(p0 ,p1);
-
-}
  void osg::QReflect_GLBufferObjectManager::handlePendingOrphandedGLBufferObjects(){
  _model->handlePendingOrphandedGLBufferObjects();
 
@@ -728,10 +736,6 @@ using namespace pmoc;
 return _model->checkConsistency();
 
 }
- bool  osg::QReflect_GLBufferObjectSet::makeSpace( unsigned int &p0){
-return _model->makeSpace(p0);
-
-}
  unsigned int  osg::QReflect_GLBufferObjectSet::computeNumGLBufferObjectsInList()const{
 return _model->computeNumGLBufferObjectsInList();
 
@@ -770,10 +774,6 @@ return _model->size();
 }
  void osg::QReflect_GLBufferObjectSet::flushAllDeletedGLBufferObjects(){
  _model->flushAllDeletedGLBufferObjects();
-
-}
- void osg::QReflect_GLBufferObjectSet::flushDeletedGLBufferObjects( double p0 , double &p1){
- _model->flushDeletedGLBufferObjects(p0 ,p1);
 
 }
  void osg::QReflect_GLBufferObjectSet::handlePendingOrphandedGLBufferObjects(){

@@ -15,14 +15,12 @@
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/Matrixf_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/OperationThread_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <customCode/osg/Stats_pmoc.hpp>
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/Vec3d_pmoc.hpp>
-#include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 #include <customCode/osg/Viewport_pmoc.hpp>
 #include <osg/DisplaySettings>
@@ -38,26 +36,6 @@
 #include <osg/Stats>
 #include <osg/Stats_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_Camera::computeLocalToWorldMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
-return _model->computeLocalToWorldMatrix(*p0->_model ,p1->_model);
-
-}
- bool  osg::QReflect_Camera::computeWorldToLocalMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
-return _model->computeWorldToLocalMatrix(*p0->_model ,p1->_model);
-
-}
- bool  osg::QReflect_Camera::getProjectionMatrixAsFrustum( double &p0 , double &p1 , double &p2 , double &p3 , double &p4 , double &p5)const{
-return _model->getProjectionMatrixAsFrustum(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
-
-}
- bool  osg::QReflect_Camera::getProjectionMatrixAsOrtho( double &p0 , double &p1 , double &p2 , double &p3 , double &p4 , double &p5)const{
-return _model->getProjectionMatrixAsOrtho(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
-
-}
- bool  osg::QReflect_Camera::getProjectionMatrixAsPerspective( double &p0 , double &p1 , double &p2 , double &p3)const{
-return _model->getProjectionMatrixAsPerspective(p0 ,p1 ,p2 ,p3);
-
-}
  bool  osg::QReflect_Camera::isRenderToTextureCamera()const{
 return _model->isRenderToTextureCamera();
 
@@ -92,14 +70,6 @@ return _model->getRenderOrderNum();
 }
  void osg::QReflect_Camera::dirtyAttachmentMap(){
  _model->dirtyAttachmentMap();
-
-}
- void osg::QReflect_Camera::getViewMatrixAsLookAt(osg::QReflect_Vec3d *p0 ,osg::QReflect_Vec3d *p1 ,osg::QReflect_Vec3d *p2 , double p3)const{
- _model->getViewMatrixAsLookAt(*p0->_model ,*p1->_model ,*p2->_model ,p3);
-
-}
- void osg::QReflect_Camera::getViewMatrixAsLookAt(osg::QReflect_Vec3f *p0 ,osg::QReflect_Vec3f *p1 ,osg::QReflect_Vec3f *p2 , float p3)const{
- _model->getViewMatrixAsLookAt(*p0->_model ,*p1->_model ,*p2->_model ,p3);
 
 }
  void osg::QReflect_Camera::inheritCullSettings(osg::QReflect_CullSettings *p0 , unsigned int p1){

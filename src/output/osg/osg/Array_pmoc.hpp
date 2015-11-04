@@ -2,84 +2,6 @@
 #define  osg_Array_pmocHPP 1
 #include <osg/Array_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_Vec4s;
-			} ;
-namespace osg{ 
-class QReflect_Vec2i;
-			} ;
-namespace osg{ 
-class QReflect_Vec3i;
-			} ;
-namespace osg{ 
-class QReflect_Vec4i;
-			} ;
-namespace osg{ 
-class QReflect_Vec2ub;
-			} ;
-namespace osg{ 
-class QReflect_Vec3ub;
-			} ;
-namespace osg{ 
-class QReflect_Vec2f;
-			} ;
-namespace osg{ 
-class QReflect_Vec3f;
-			} ;
-namespace osg{ 
-class QReflect_Vec4ub;
-			} ;
-namespace osg{ 
-class QReflect_Vec2us;
-			} ;
-namespace osg{ 
-class QReflect_Vec2b;
-			} ;
-namespace osg{ 
-class QReflect_Vec3b;
-			} ;
-namespace osg{ 
-class QReflect_Vec2s;
-			} ;
-namespace osg{ 
-class QReflect_Vec3s;
-			} ;
-namespace osg{ 
-class QReflect_Vec4b;
-			} ;
-namespace osg{ 
-class QReflect_Vec3us;
-			} ;
-namespace osg{ 
-class QReflect_Vec4us;
-			} ;
-namespace osg{ 
-class QReflect_Vec2ui;
-			} ;
-namespace osg{ 
-class QReflect_Vec3ui;
-			} ;
-namespace osg{ 
-class QReflect_Vec4ui;
-			} ;
-namespace osg{ 
-class QReflect_Vec4f;
-			} ;
-namespace osg{ 
-class QReflect_Vec2d;
-			} ;
-namespace osg{ 
-class QReflect_Vec3d;
-			} ;
-namespace osg{ 
-class QReflect_Vec4d;
-			} ;
-namespace osg{ 
-class QReflect_Matrixf;
-			} ;
-namespace osg{ 
-class QReflect_Matrixd;
-			} ;
 #include <osg/Array>
 
 #include <MetaQQuickClass.h>
@@ -103,32 +25,32 @@ virtual ~QReflect_ValueVisitor( );
 //virtual  void  apply( GLubyte &);
 //virtual  void  apply( GLuint &);
 //virtual  void  apply( GLushort &);
-Q_INVOKABLE void  apply(osg::QReflect_Matrixd *);
-Q_INVOKABLE void  apply(osg::QReflect_Matrixf *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2b *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2d *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2f *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2i *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2s *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2ub *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2ui *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec2us *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3b *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3d *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3i *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3s *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3ub *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3ui *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec3us *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4b *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4d *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4i *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4s *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4ub *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4ui *);
-Q_INVOKABLE void  apply(osg::QReflect_Vec4us *);
+//virtual  void  apply( Matrixd &);
+//virtual  void  apply( Matrixf &);
+//virtual  void  apply( Vec2 &);
+//virtual  void  apply( Vec2b &);
+//virtual  void  apply( Vec2d &);
+//virtual  void  apply( Vec2i &);
+//virtual  void  apply( Vec2s &);
+//virtual  void  apply( Vec2ub &);
+//virtual  void  apply( Vec2ui &);
+//virtual  void  apply( Vec2us &);
+//virtual  void  apply( Vec3 &);
+//virtual  void  apply( Vec3b &);
+//virtual  void  apply( Vec3d &);
+//virtual  void  apply( Vec3i &);
+//virtual  void  apply( Vec3s &);
+//virtual  void  apply( Vec3ub &);
+//virtual  void  apply( Vec3ui &);
+//virtual  void  apply( Vec3us &);
+//virtual  void  apply( Vec4 &);
+//virtual  void  apply( Vec4b &);
+//virtual  void  apply( Vec4d &);
+//virtual  void  apply( Vec4i &);
+//virtual  void  apply( Vec4s &);
+//virtual  void  apply( Vec4ub &);
+//virtual  void  apply( Vec4ui &);
+//virtual  void  apply( Vec4us &);
 public slots:
 virtual void updateModel();
  
@@ -155,6 +77,21 @@ public:
 #include <osg/Array_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_Vec2b;
+			} ;
+namespace osg{ 
+class QReflect_Vec4b;
+			} ;
+namespace osg{ 
+class QReflect_Vec3b;
+			} ;
+namespace osg{ 
+class QReflect_Vec2s;
+			} ;
+namespace osg{ 
+class QReflect_Vec3s;
+			} ;
+namespace osg{ 
 class QReflect_Vec4s;
 			} ;
 namespace osg{ 
@@ -173,31 +110,16 @@ namespace osg{
 class QReflect_Vec3ub;
 			} ;
 namespace osg{ 
-class QReflect_Vec2f;
-			} ;
-namespace osg{ 
-class QReflect_Vec3f;
+class QReflect_Vec2us;
 			} ;
 namespace osg{ 
 class QReflect_Vec4ub;
 			} ;
 namespace osg{ 
-class QReflect_Vec2us;
+class QReflect_Vec3f;
 			} ;
 namespace osg{ 
-class QReflect_Vec2b;
-			} ;
-namespace osg{ 
-class QReflect_Vec3b;
-			} ;
-namespace osg{ 
-class QReflect_Vec2s;
-			} ;
-namespace osg{ 
-class QReflect_Vec3s;
-			} ;
-namespace osg{ 
-class QReflect_Vec4b;
+class QReflect_Vec2f;
 			} ;
 namespace osg{ 
 class QReflect_Vec3us;
@@ -218,10 +140,10 @@ namespace osg{
 class QReflect_Vec4f;
 			} ;
 namespace osg{ 
-class QReflect_Vec2d;
+class QReflect_Vec3d;
 			} ;
 namespace osg{ 
-class QReflect_Vec3d;
+class QReflect_Vec2d;
 			} ;
 namespace osg{ 
 class QReflect_Vec4d;
@@ -250,11 +172,11 @@ virtual ~QReflect_ConstValueVisitor( );
 //virtual  void  apply(const  GLbyte &);
 //virtual  void  apply(const  GLdouble &);
 //virtual  void  apply(const  GLfloat &);
-//virtual  void  apply(const  GLint &);
 //virtual  void  apply(const  GLshort &);
 //virtual  void  apply(const  GLubyte &);
-//virtual  void  apply(const  GLuint &);
 //virtual  void  apply(const  GLushort &);
+Q_INVOKABLE void  apply(const  GLint &);
+Q_INVOKABLE void  apply(const  GLuint &);
 Q_INVOKABLE void  apply(osg::QReflect_Matrixd *);
 Q_INVOKABLE void  apply(osg::QReflect_Matrixf *);
 Q_INVOKABLE void  apply(osg::QReflect_Vec2b *);
@@ -306,9 +228,6 @@ public:
 } 
 #include <osg/Array_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_Array;
-			} ;
 #include <osg/Array>
 
 #include <MetaQQuickClass.h>
@@ -324,6 +243,7 @@ ArrayVisitor * _model;
 QReflect_ArrayVisitor(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ArrayVisitor( );
 //ArrayVisitor
+//virtual  void  apply( Array &);
 //virtual  void  apply( ByteArray &);
 //virtual  void  apply( DoubleArray &);
 //virtual  void  apply( FloatArray &);
@@ -358,7 +278,6 @@ virtual ~QReflect_ArrayVisitor( );
 //virtual  void  apply( Vec4ubArray &);
 //virtual  void  apply( Vec4uiArray &);
 //virtual  void  apply( Vec4usArray &);
-Q_INVOKABLE void  apply(osg::QReflect_Array *);
 public slots:
 virtual void updateModel();
  
@@ -385,10 +304,10 @@ public:
 #include <osg/Array_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Array;
+class QReflect_Object;
 			} ;
 namespace osg{ 
-class QReflect_Object;
+class QReflect_Array;
 			} ;
 namespace osg{ 
 class QReflect_VertexBufferObject;
@@ -460,7 +379,7 @@ QReflect_Array(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Array( );
 //Array
 // GLenum  getDataType();
-// GLint  getDataSize();
+Q_INVOKABLE  GLint  getDataSize()const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  osg::QReflect_VertexBufferObject * getVertexBufferObject()const;
 Q_INVOKABLE const  char*  className()const;

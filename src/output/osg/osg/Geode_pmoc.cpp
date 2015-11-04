@@ -7,7 +7,6 @@
 #include <customCode/osg/Geode_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/Drawable_pmoc.hpp>
-#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <osg/Drawable>
 using namespace pmoc;
  bool  osg::QReflect_Geode::containsDrawable(osg::QReflect_Drawable *p0)const{
@@ -32,10 +31,6 @@ return _model->getDrawableIndex(p0->_model);
 }
  unsigned int  osg::QReflect_Geode::getNumDrawables()const{
 return _model->getNumDrawables();
-
-}
- void osg::QReflect_Geode::compileDrawables(osg::QReflect_RenderInfo *p0){
- _model->compileDrawables(*p0->_model);
 
 }
 osg::QReflect_Drawable*osg::QReflect_Geode::getDrawable( unsigned int p0)const{

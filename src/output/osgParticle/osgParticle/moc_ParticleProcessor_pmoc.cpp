@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ParticleProcessor_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ParticleProcessor_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_ParticleProcessor_t {
-    QByteArrayData data[51];
-    char stringdata0[805];
+    QByteArrayData data[48];
+    char stringdata0[762];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -58,28 +58,25 @@ QT_MOC_LITERAL(25, 420, 12), // "getResetTime"
 QT_MOC_LITERAL(26, 433, 12), // "getStartTime"
 QT_MOC_LITERAL(27, 446, 17), // "getReferenceFrame"
 QT_MOC_LITERAL(28, 464, 55), // "osgParticle::QReflect_Particl..."
-QT_MOC_LITERAL(29, 520, 6), // "accept"
-QT_MOC_LITERAL(30, 527, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(31, 554, 17), // "setReferenceFrame"
-QT_MOC_LITERAL(32, 572, 8), // "traverse"
-QT_MOC_LITERAL(33, 581, 30), // "pmoc_reverse_setParticleSystem"
-QT_MOC_LITERAL(34, 612, 3), // "par"
-QT_MOC_LITERAL(35, 616, 14), // "setCurrentTime"
-QT_MOC_LITERAL(36, 631, 10), // "setEnabled"
-QT_MOC_LITERAL(37, 642, 10), // "setEndless"
-QT_MOC_LITERAL(38, 653, 11), // "setLifeTime"
-QT_MOC_LITERAL(39, 665, 17), // "setParticleSystem"
-QT_MOC_LITERAL(40, 683, 12), // "setResetTime"
-QT_MOC_LITERAL(41, 696, 12), // "setStartTime"
-QT_MOC_LITERAL(42, 709, 7), // "Enabled"
-QT_MOC_LITERAL(43, 717, 7), // "Endless"
-QT_MOC_LITERAL(44, 725, 11), // "CurrentTime"
-QT_MOC_LITERAL(45, 737, 8), // "LifeTime"
-QT_MOC_LITERAL(46, 746, 9), // "ResetTime"
-QT_MOC_LITERAL(47, 756, 9), // "StartTime"
-QT_MOC_LITERAL(48, 766, 14), // "ReferenceFrame"
-QT_MOC_LITERAL(49, 781, 11), // "RELATIVE_RF"
-QT_MOC_LITERAL(50, 793, 11) // "ABSOLUTE_RF"
+QT_MOC_LITERAL(29, 520, 17), // "setReferenceFrame"
+QT_MOC_LITERAL(30, 538, 30), // "pmoc_reverse_setParticleSystem"
+QT_MOC_LITERAL(31, 569, 3), // "par"
+QT_MOC_LITERAL(32, 573, 14), // "setCurrentTime"
+QT_MOC_LITERAL(33, 588, 10), // "setEnabled"
+QT_MOC_LITERAL(34, 599, 10), // "setEndless"
+QT_MOC_LITERAL(35, 610, 11), // "setLifeTime"
+QT_MOC_LITERAL(36, 622, 17), // "setParticleSystem"
+QT_MOC_LITERAL(37, 640, 12), // "setResetTime"
+QT_MOC_LITERAL(38, 653, 12), // "setStartTime"
+QT_MOC_LITERAL(39, 666, 7), // "Enabled"
+QT_MOC_LITERAL(40, 674, 7), // "Endless"
+QT_MOC_LITERAL(41, 682, 11), // "CurrentTime"
+QT_MOC_LITERAL(42, 694, 8), // "LifeTime"
+QT_MOC_LITERAL(43, 703, 9), // "ResetTime"
+QT_MOC_LITERAL(44, 713, 9), // "StartTime"
+QT_MOC_LITERAL(45, 723, 14), // "ReferenceFrame"
+QT_MOC_LITERAL(46, 738, 11), // "RELATIVE_RF"
+QT_MOC_LITERAL(47, 750, 11) // "ABSOLUTE_RF"
 
     },
     "osgParticle::QReflect_ParticleProcessor\0"
@@ -97,10 +94,8 @@ QT_MOC_LITERAL(50, 793, 11) // "ABSOLUTE_RF"
     "getLifeTime\0getResetTime\0getStartTime\0"
     "getReferenceFrame\0"
     "osgParticle::QReflect_ParticleProcessor::ReferenceFrame\0"
-    "accept\0osg::QReflect_NodeVisitor*\0"
-    "setReferenceFrame\0traverse\0"
-    "pmoc_reverse_setParticleSystem\0par\0"
-    "setCurrentTime\0setEnabled\0setEndless\0"
+    "setReferenceFrame\0pmoc_reverse_setParticleSystem\0"
+    "par\0setCurrentTime\0setEnabled\0setEndless\0"
     "setLifeTime\0setParticleSystem\0"
     "setResetTime\0setStartTime\0Enabled\0"
     "Endless\0CurrentTime\0LifeTime\0ResetTime\0"
@@ -115,52 +110,50 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleProcessor[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      34,   14, // methods
-       6,  256, // properties
-       1,  280, // enums/sets
+      32,   14, // methods
+       6,  240, // properties
+       1,  264, // enums/sets
        0,    0, // constructors
        0,       // flags
        7,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  184,    2, 0x06 /* Public */,
-       3,    1,  187,    2, 0x06 /* Public */,
-       4,    1,  190,    2, 0x06 /* Public */,
-       5,    1,  193,    2, 0x06 /* Public */,
-       6,    1,  196,    2, 0x06 /* Public */,
-       8,    1,  199,    2, 0x06 /* Public */,
-       9,    1,  202,    2, 0x06 /* Public */,
+       1,    1,  174,    2, 0x06 /* Public */,
+       3,    1,  177,    2, 0x06 /* Public */,
+       4,    1,  180,    2, 0x06 /* Public */,
+       5,    1,  183,    2, 0x06 /* Public */,
+       6,    1,  186,    2, 0x06 /* Public */,
+       8,    1,  189,    2, 0x06 /* Public */,
+       9,    1,  192,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      10,    0,  205,    2, 0x0a /* Public */,
+      10,    0,  195,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      11,    0,  206,    2, 0x02 /* Public */,
-      12,    0,  207,    2, 0x02 /* Public */,
-      13,    0,  208,    2, 0x02 /* Public */,
-      14,    1,  209,    2, 0x02 /* Public */,
-      16,    0,  212,    2, 0x02 /* Public */,
-      18,    0,  213,    2, 0x02 /* Public */,
-      20,    0,  214,    2, 0x02 /* Public */,
-      21,    0,  215,    2, 0x02 /* Public */,
-      22,    0,  216,    2, 0x02 /* Public */,
-      23,    0,  217,    2, 0x02 /* Public */,
-      24,    0,  218,    2, 0x02 /* Public */,
-      25,    0,  219,    2, 0x02 /* Public */,
-      26,    0,  220,    2, 0x02 /* Public */,
-      27,    0,  221,    2, 0x02 /* Public */,
-      29,    1,  222,    2, 0x02 /* Public */,
-      31,    1,  225,    2, 0x02 /* Public */,
-      32,    1,  228,    2, 0x02 /* Public */,
-      33,    1,  231,    2, 0x02 /* Public */,
-      33,    0,  234,    2, 0x22 /* Public | MethodCloned */,
-      35,    1,  235,    2, 0x02 /* Public */,
-      36,    1,  238,    2, 0x02 /* Public */,
-      37,    1,  241,    2, 0x02 /* Public */,
-      38,    1,  244,    2, 0x02 /* Public */,
-      39,    1,  247,    2, 0x02 /* Public */,
-      40,    1,  250,    2, 0x02 /* Public */,
-      41,    1,  253,    2, 0x02 /* Public */,
+      11,    0,  196,    2, 0x02 /* Public */,
+      12,    0,  197,    2, 0x02 /* Public */,
+      13,    0,  198,    2, 0x02 /* Public */,
+      14,    1,  199,    2, 0x02 /* Public */,
+      16,    0,  202,    2, 0x02 /* Public */,
+      18,    0,  203,    2, 0x02 /* Public */,
+      20,    0,  204,    2, 0x02 /* Public */,
+      21,    0,  205,    2, 0x02 /* Public */,
+      22,    0,  206,    2, 0x02 /* Public */,
+      23,    0,  207,    2, 0x02 /* Public */,
+      24,    0,  208,    2, 0x02 /* Public */,
+      25,    0,  209,    2, 0x02 /* Public */,
+      26,    0,  210,    2, 0x02 /* Public */,
+      27,    0,  211,    2, 0x02 /* Public */,
+      29,    1,  212,    2, 0x02 /* Public */,
+      30,    1,  215,    2, 0x02 /* Public */,
+      30,    0,  218,    2, 0x22 /* Public | MethodCloned */,
+      32,    1,  219,    2, 0x02 /* Public */,
+      33,    1,  222,    2, 0x02 /* Public */,
+      34,    1,  225,    2, 0x02 /* Public */,
+      35,    1,  228,    2, 0x02 /* Public */,
+      36,    1,  231,    2, 0x02 /* Public */,
+      37,    1,  234,    2, 0x02 /* Public */,
+      38,    1,  237,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Double,    2,
@@ -189,26 +182,24 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleProcessor[] = {
     QMetaType::Double,
     QMetaType::Double,
     0x80000000 | 28,
-    QMetaType::Void, 0x80000000 | 30,    2,
     QMetaType::Void, 0x80000000 | 28,    2,
-    QMetaType::Void, 0x80000000 | 30,    2,
-    QMetaType::Void, 0x80000000 | 17,   34,
+    QMetaType::Void, 0x80000000 | 17,   31,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Double,    2,
-    QMetaType::Void, 0x80000000 | 17,   34,
+    QMetaType::Void, 0x80000000 | 17,   31,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::Double,    2,
 
  // properties: name, type, flags
-      42, QMetaType::Bool, 0x00495103,
-      43, QMetaType::Bool, 0x00495103,
+      39, QMetaType::Bool, 0x00495103,
+      40, QMetaType::Bool, 0x00495103,
+      41, QMetaType::Double, 0x00495103,
+      42, QMetaType::Double, 0x00495103,
+      43, QMetaType::Double, 0x00495103,
       44, QMetaType::Double, 0x00495103,
-      45, QMetaType::Double, 0x00495103,
-      46, QMetaType::Double, 0x00495103,
-      47, QMetaType::Double, 0x00495103,
 
  // properties: notify_signal_id
        1,
@@ -219,11 +210,11 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleProcessor[] = {
        6,
 
  // enums: name, flags, count, data
-      48, 0x0,    2,  284,
+      45, 0x0,    2,  268,
 
  // enum data: key, value
-      49, uint(osgParticle::QReflect_ParticleProcessor::RELATIVE_RF),
-      50, uint(osgParticle::QReflect_ParticleProcessor::ABSOLUTE_RF),
+      46, uint(osgParticle::QReflect_ParticleProcessor::RELATIVE_RF),
+      47, uint(osgParticle::QReflect_ParticleProcessor::ABSOLUTE_RF),
 
        0        // eod
 };
@@ -270,18 +261,16 @@ void osgParticle::QReflect_ParticleProcessor::qt_static_metacall(QObject *_o, QM
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
         case 21: { osgParticle::QReflect_ParticleProcessor::ReferenceFrame _r = _t->getReferenceFrame();
             if (_a[0]) *reinterpret_cast< osgParticle::QReflect_ParticleProcessor::ReferenceFrame*>(_a[0]) = _r; }  break;
-        case 22: _t->accept((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 23: _t->setReferenceFrame((*reinterpret_cast< osgParticle::QReflect_ParticleProcessor::ReferenceFrame(*)>(_a[1]))); break;
-        case 24: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 25: _t->pmoc_reverse_setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
-        case 26: _t->pmoc_reverse_setParticleSystem(); break;
-        case 27: _t->setCurrentTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 28: _t->setEnabled((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 29: _t->setEndless((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 30: _t->setLifeTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 31: _t->setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
-        case 32: _t->setResetTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 33: _t->setStartTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 22: _t->setReferenceFrame((*reinterpret_cast< osgParticle::QReflect_ParticleProcessor::ReferenceFrame(*)>(_a[1]))); break;
+        case 23: _t->pmoc_reverse_setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
+        case 24: _t->pmoc_reverse_setParticleSystem(); break;
+        case 25: _t->setCurrentTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 26: _t->setEnabled((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 27: _t->setEndless((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 28: _t->setLifeTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 29: _t->setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
+        case 30: _t->setResetTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 31: _t->setStartTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -387,13 +376,13 @@ int osgParticle::QReflect_ParticleProcessor::qt_metacall(QMetaObject::Call _c, i
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 34)
+        if (_id < 32)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 34;
+        _id -= 32;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 34)
+        if (_id < 32)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 34;
+        _id -= 32;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

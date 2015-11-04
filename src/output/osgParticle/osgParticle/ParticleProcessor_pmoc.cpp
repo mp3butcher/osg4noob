@@ -7,7 +7,6 @@
 #include <osgParticle/ParticleProcessor_pmoc.hpp>
 #include <customCode/osgParticle/ParticleProcessor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osgParticle/ParticleSystem_pmoc.hpp>
 #include <osgParticle/ParticleSystem>
@@ -29,16 +28,8 @@ return _model->isEndless();
 return _model->isSameKindAs(p0->_model);
 
 }
- void osgParticle::QReflect_ParticleProcessor::accept(osg::QReflect_NodeVisitor *p0){
- _model->accept(*p0->_model);
-
-}
  void osgParticle::QReflect_ParticleProcessor::setReferenceFrame(osgParticle::QReflect_ParticleProcessor::ReferenceFrame p0){
  _model->setReferenceFrame(static_cast<osgParticle::ParticleProcessor::ReferenceFrame>(p0));
-
-}
- void osgParticle::QReflect_ParticleProcessor::traverse(osg::QReflect_NodeVisitor *p0){
- _model->traverse(*p0->_model);
 
 }
 const  char*  osgParticle::QReflect_ParticleProcessor::className()const{

@@ -3,22 +3,22 @@
 #include <osg/Plane_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Vec3d;
+class QReflect_Vec4f;
+			} ;
+namespace osg{ 
+class QReflect_Vec3f;
 			} ;
 namespace osg{ 
 class QReflect_Vec4d;
+			} ;
+namespace osg{ 
+class QReflect_Vec3d;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
 			} ;
 namespace osg{ 
 class QReflect_Plane;
-			} ;
-namespace osg{ 
-class QReflect_Vec3f;
-			} ;
-namespace osg{ 
-class QReflect_Vec4f;
 			} ;
 #include <osg/Plane>
 

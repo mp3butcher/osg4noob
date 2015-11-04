@@ -36,14 +36,10 @@ virtual ~QReflect_Program( );
 // ProgramBinary * getProgramBinary();
 // ShaderDefines & getShaderDefines();
 // bool  getGlProgramInfoLog( unsigned int  , std::string &);
-// void  addBindAttribLocation(const  std::string & , GLuint );
-// void  addBindFragDataLocation(const  std::string & , GLuint );
-// void  addBindUniformBlock(const  std::string & , GLuint );
 //virtual  void  apply( osg::State &);
 //virtual  void  compileGLObjects( osg::State &);
 // void  getComputeGroups( GLint & , GLint & , GLint &);
 //virtual  void  releaseGLObjects( osg::State *);
-// void  setComputeGroups( GLint  , GLint  , GLint );
 // void  setParameter( GLenum  , GLint );
 // void  setProgramBinary( ProgramBinary *);
 // void  setShaderDefines(const  ShaderDefines &);
@@ -58,18 +54,22 @@ Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE  unsigned int  getNumShaders()const;
 Q_INVOKABLE  unsigned int  getNumTransformFeedBackVaryings()const;
 Q_INVOKABLE QString  getTransformFeedBackVarying( unsigned int )const;
+Q_INVOKABLE osg::QReflect_Shader*  getShader( unsigned int );
+Q_INVOKABLE osg::QReflect_Shader*  getShader( unsigned int )const;
+Q_INVOKABLE void   addShader( osg::QReflect_Shader *par);//{return new osg::QReflect_Shader(_model->getShader());}
+Q_INVOKABLE void  addBindAttribLocation(const  QString & , GLuint );
+Q_INVOKABLE void  addBindFragDataLocation(const  QString & , GLuint );
+Q_INVOKABLE void  addBindUniformBlock(const  QString & , GLuint );
 Q_INVOKABLE void  addTransformFeedBackVarying(const  QString &);
 Q_INVOKABLE void  dirtyProgram();
 Q_INVOKABLE void  removeBindAttribLocation(const  QString &);
-Q_INVOKABLE void  removeBindFragDataLocation(const  QString &); 
+Q_INVOKABLE void  removeBindFragDataLocation(const  QString &);
 Q_INVOKABLE void  removeBindUniformBlock(const  QString &);
 Q_INVOKABLE void  removeTransformFeedBackVarying(const  QString &);
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
+Q_INVOKABLE void  setComputeGroups( GLint  , GLint  , GLint );
 Q_INVOKABLE void  setThreadSafeRefUnref( bool );
-/*Q_INVOKABLE osg::QReflect_Shader*  getShader( unsigned int );
-Q_INVOKABLE osg::QReflect_Shader*  getShader( unsigned int )const;
-Q_INVOKABLE void   addShader( osg::QReflect_Shader *par);//{return new osg::QReflect_Shader(_model->getShader());}
-Q_INVOKABLE void pmoc_reverse_addShader( osg::QReflect_Shader *par);//{_model->setShader(par->_model);emit ShaderCollectionChanged(par);}*/
+Q_INVOKABLE void pmoc_reverse_addShader( osg::QReflect_Shader *par);//{_model->setShader(par->_model);emit ShaderCollectionChanged(par);}
 signals: void ShaderCollectionChanged();
 public:
 public slots:

@@ -8,8 +8,16 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_LineStipple::getFactor()const{
+return _model->getFactor();
+
+}
  int  osg::QReflect_LineStipple::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
+
+}
+ void osg::QReflect_LineStipple::setFactor( GLint p0){
+ _model->setFactor(p0);
 
 }
 

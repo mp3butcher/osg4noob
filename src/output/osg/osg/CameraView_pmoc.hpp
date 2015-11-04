@@ -7,13 +7,7 @@ namespace osg{
 class QReflect_Vec3d;
 			} ;
 namespace osg{ 
-class QReflect_Matrixd;
-			} ;
-namespace osg{ 
 class QReflect_Quat;
-			} ;
-namespace osg{ 
-class QReflect_NodeVisitor;
 			} ;
 #include <osg/CameraView>
 #include <osg/CameraView>
@@ -40,10 +34,10 @@ CameraView * _model;
 QReflect_CameraView(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CameraView( );
 //CameraView
+//virtual  bool  computeLocalToWorldMatrix( Matrix & , NodeVisitor *);
+//virtual  bool  computeWorldToLocalMatrix( Matrix & , NodeVisitor *);
 //const  Quat & getAttitude();
 //const  Vec3d & getPosition();
-Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
 Q_INVOKABLE const double  getFieldOfView()const;
 Q_INVOKABLE const double  getFocalLength()const;
 Q_INVOKABLE osg::QReflect_CameraView::FieldOfViewMode  getFieldOfViewMode()const;

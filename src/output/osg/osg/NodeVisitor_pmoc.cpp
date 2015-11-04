@@ -86,10 +86,6 @@ return _model->getNodeMaskOverride();
 return _model->getTraversalMask();
 
 }
- void osg::QReflect_NodeVisitor::apply(osg::QReflect_Node *p0){
- _model->apply(*p0->_model);
-
-}
  void osg::QReflect_NodeVisitor::popFromNodePath(){
  _model->popFromNodePath();
 
@@ -116,10 +112,6 @@ return _model->getTraversalMask();
 }
  void osg::QReflect_NodeVisitor::setVisitorType(osg::QReflect_NodeVisitor::VisitorType p0){
  _model->setVisitorType(static_cast<osg::NodeVisitor::VisitorType>(p0));
-
-}
- void osg::QReflect_NodeVisitor::traverse(osg::QReflect_Node *p0){
- _model->traverse(*p0->_model);
 
 }
 const unsigned int osg::QReflect_NodeVisitor::getTraversalNumber()const{return _model->getTraversalNumber();}

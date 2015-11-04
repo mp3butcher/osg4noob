@@ -5,7 +5,7 @@
 #include <osgParticle/PrecipitationEffect_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_NodeVisitor;
+class QReflect_Fog;
 			} ;
 namespace osg{ 
 class QReflect_Object;
@@ -14,16 +14,13 @@ namespace osg{
 class QReflect_StateSet;
 			} ;
 namespace osg{ 
-class QReflect_Vec3f;
-			} ;
-namespace osg{ 
 class QReflect_Vec4f;
 			} ;
 namespace osg{ 
-class QReflect_Geometry;
+class QReflect_Vec3f;
 			} ;
 namespace osg{ 
-class QReflect_Fog;
+class QReflect_Geometry;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/PrecipitationEffect>
@@ -42,6 +39,8 @@ PrecipitationEffect * _model;
 QReflect_PrecipitationEffect(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_PrecipitationEffect( );
 //PrecipitationEffect
+//virtual  void  accept( osg::NodeVisitor &);
+//virtual  void  traverse( osg::NodeVisitor &);
 //const  osg::Vec3 & getCellSize();
 //const  osg::Vec3 & getPosition();
 //const  osg::Vec3 & getWind();
@@ -62,14 +61,12 @@ Q_INVOKABLE osg::QReflect_Geometry*  getQuadGeometry();
 Q_INVOKABLE osg::QReflect_StateSet*  getLineStateSet();
 Q_INVOKABLE osg::QReflect_StateSet*  getPointStateSet();
 Q_INVOKABLE osg::QReflect_StateSet*  getQuadStateSet();
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void  rain( float );
 Q_INVOKABLE void  setCellSize(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setParticleColor(osg::QReflect_Vec4f *);
 Q_INVOKABLE void  setPosition(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setWind(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  snow( float );
-Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void pmoc_reverse_setFog( osg::QReflect_Fog *par=0);
 Q_INVOKABLE void setFarTransition(const float &);
 Q_INVOKABLE void setFog( osg::QReflect_Fog *par);

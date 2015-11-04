@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ParticleSystemUpdater_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ParticleSystemUpdater_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_ParticleSystemUpdater_t {
-    QByteArrayData data[17];
-    char stringdata0[363];
+    QByteArrayData data[15];
+    char stringdata0[327];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,11 +41,9 @@ QT_MOC_LITERAL(8, 193, 17), // "setParticleSystem"
 QT_MOC_LITERAL(9, 211, 21), // "getNumParticleSystems"
 QT_MOC_LITERAL(10, 233, 22), // "getParticleSystemIndex"
 QT_MOC_LITERAL(11, 256, 17), // "getParticleSystem"
-QT_MOC_LITERAL(12, 274, 8), // "traverse"
-QT_MOC_LITERAL(13, 283, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(14, 310, 17), // "addParticleSystem"
-QT_MOC_LITERAL(15, 328, 3), // "par"
-QT_MOC_LITERAL(16, 332, 30) // "pmoc_reverse_addParticleSystem"
+QT_MOC_LITERAL(12, 274, 17), // "addParticleSystem"
+QT_MOC_LITERAL(13, 292, 3), // "par"
+QT_MOC_LITERAL(14, 296, 30) // "pmoc_reverse_addParticleSystem"
 
     },
     "osgParticle::QReflect_ParticleSystemUpdater\0"
@@ -55,7 +53,6 @@ QT_MOC_LITERAL(16, 332, 30) // "pmoc_reverse_addParticleSystem"
     "removeParticleSystem\0replaceParticleSystem\0"
     "setParticleSystem\0getNumParticleSystems\0"
     "getParticleSystemIndex\0getParticleSystem\0"
-    "traverse\0osg::QReflect_NodeVisitor*\0"
     "addParticleSystem\0par\0"
     "pmoc_reverse_addParticleSystem"
 };
@@ -67,7 +64,7 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleSystemUpdater[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -75,23 +72,22 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleSystemUpdater[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,   79,    2, 0x06 /* Public */,
+       1,    0,   74,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,   80,    2, 0x0a /* Public */,
+       3,    0,   75,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    1,   81,    2, 0x02 /* Public */,
-       6,    2,   84,    2, 0x02 /* Public */,
-       7,    2,   89,    2, 0x02 /* Public */,
-       8,    2,   94,    2, 0x02 /* Public */,
-       9,    0,   99,    2, 0x02 /* Public */,
-      10,    1,  100,    2, 0x02 /* Public */,
-      11,    1,  103,    2, 0x02 /* Public */,
-      11,    1,  106,    2, 0x02 /* Public */,
-      12,    1,  109,    2, 0x02 /* Public */,
-      14,    1,  112,    2, 0x02 /* Public */,
-      16,    1,  115,    2, 0x02 /* Public */,
+       4,    1,   76,    2, 0x02 /* Public */,
+       6,    2,   79,    2, 0x02 /* Public */,
+       7,    2,   84,    2, 0x02 /* Public */,
+       8,    2,   89,    2, 0x02 /* Public */,
+       9,    0,   94,    2, 0x02 /* Public */,
+      10,    1,   95,    2, 0x02 /* Public */,
+      11,    1,   98,    2, 0x02 /* Public */,
+      11,    1,  101,    2, 0x02 /* Public */,
+      12,    1,  104,    2, 0x02 /* Public */,
+      14,    1,  107,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -108,9 +104,8 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleSystemUpdater[] = {
     QMetaType::UInt, 0x80000000 | 5,    2,
     0x80000000 | 5, QMetaType::UInt,    2,
     0x80000000 | 5, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 13,    2,
-    QMetaType::Void, 0x80000000 | 5,   15,
-    QMetaType::Void, 0x80000000 | 5,   15,
+    QMetaType::Void, 0x80000000 | 5,   13,
+    QMetaType::Void, 0x80000000 | 5,   13,
 
        0        // eod
 };
@@ -139,9 +134,8 @@ void osgParticle::QReflect_ParticleSystemUpdater::qt_static_metacall(QObject *_o
             if (_a[0]) *reinterpret_cast< osgParticle::QReflect_ParticleSystem**>(_a[0]) = _r; }  break;
         case 9: { osgParticle::QReflect_ParticleSystem* _r = _t->getParticleSystem((*reinterpret_cast< uint(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< osgParticle::QReflect_ParticleSystem**>(_a[0]) = _r; }  break;
-        case 10: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 11: _t->addParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
-        case 12: _t->pmoc_reverse_addParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
+        case 10: _t->addParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
+        case 11: _t->pmoc_reverse_addParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -181,13 +175,13 @@ int osgParticle::QReflect_ParticleSystemUpdater::qt_metacall(QMetaObject::Call _
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 12;
     }
     return _id;
 }

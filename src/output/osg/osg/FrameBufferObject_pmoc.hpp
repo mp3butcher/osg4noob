@@ -18,7 +18,7 @@ GLFrameBufferObjectManager * _model;
 QReflect_GLFrameBufferObjectManager(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_GLFrameBufferObjectManager( );
 //GLFrameBufferObjectManager
-//virtual  void  deleteGLObject( GLuint );
+Q_INVOKABLE void  deleteGLObject( GLuint );
 public slots:
 virtual void updateModel();
  
@@ -42,12 +42,6 @@ public:
 } 
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_GLExtensions;
-			} ;
-namespace osg{ 
-class QReflect_State;
-			} ;
 namespace osg{ 
 class QReflect_Texture;
 			} ;
@@ -74,6 +68,7 @@ virtual ~QReflect_FrameBufferAttachment( );
 //FrameBufferAttachment
 // FrameBufferAttachment & operator=(const  FrameBufferAttachment &);
 // void  attach( State & , GLenum  , GLenum  ,const  GLExtensions *);
+// void  createRequiredTexturesAndApplyGenerateMipMap( State & ,const  GLExtensions *);
 Q_INVOKABLE  bool  isMultisample()const;
 Q_INVOKABLE  int  compare(osg::QReflect_FrameBufferAttachment *)const;
 Q_INVOKABLE  unsigned int  getCubeMapFace()const;
@@ -84,7 +79,6 @@ Q_INVOKABLE osg::QReflect_RenderBuffer*  getRenderBuffer();
 Q_INVOKABLE osg::QReflect_RenderBuffer*  getRenderBuffer()const;
 Q_INVOKABLE osg::QReflect_Texture*  getTexture();
 Q_INVOKABLE osg::QReflect_Texture*  getTexture()const;
-Q_INVOKABLE void  createRequiredTexturesAndApplyGenerateMipMap(osg::QReflect_State * ,osg::QReflect_GLExtensions *)const;
 public slots:
 virtual void updateModel();
  
@@ -137,8 +131,8 @@ QReflect_RenderBuffer(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_RenderBuffer( );
 //RenderBuffer
 // GLenum  getInternalFormat();
-// GLuint  getObjectID( unsigned int  ,const  GLExtensions *);
 // void  setInternalFormat( GLenum );
+Q_INVOKABLE  GLuint  getObjectID( unsigned int  ,osg::QReflect_GLExtensions *)const;
 Q_INVOKABLE  int  compare(osg::QReflect_RenderBuffer *)const;
 Q_INVOKABLE  int  getMaxSamples( unsigned int  ,osg::QReflect_GLExtensions *);
 Q_INVOKABLE const int  getColorSamples()const;
@@ -204,7 +198,7 @@ GLRenderBufferManager * _model;
 QReflect_GLRenderBufferManager(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_GLRenderBufferManager( );
 //GLRenderBufferManager
-//virtual  void  deleteGLObject( GLuint );
+Q_INVOKABLE void  deleteGLObject( GLuint );
 public slots:
 virtual void updateModel();
  
@@ -229,16 +223,15 @@ public:
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_State;
+class QReflect_StateAttribute;
 			} ;
 namespace osg{ 
-class QReflect_StateAttribute;
+class QReflect_State;
 			} ;
 #include <osg/FrameBufferObject>
 #include <osg/FrameBufferObject>
 
 #include <osg/ref_ptr>
-#include<osg/FrameBufferObject_pmoc.hpp>
 #include <MetaQQuickClass.h>
 namespace osg{
 class QReflect_FrameBufferObject: public pmoc::QQModel
@@ -259,17 +252,17 @@ FrameBufferObject * _model;
 QReflect_FrameBufferObject(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_FrameBufferObject( );
 //FrameBufferObject
-// GLuint  getHandle( unsigned int );
 // bool  hasAttachment( BufferComponent );
+// void  apply( State &);
+// void  apply( State & , BindTarget );
 // void  setAttachment( BufferComponent  ,const  FrameBufferAttachment &);
 //const  AttachmentMap & getAttachmentMap();
 //const  FrameBufferAttachment & getAttachment( BufferComponent );
 //const  MultipleRenderingTargets & getMultipleRenderingTargets();
+Q_INVOKABLE  GLuint  getHandle( unsigned int )const;
 Q_INVOKABLE  bool  hasMultipleRenderingTargets()const;
 Q_INVOKABLE  bool  isMultisample()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE void  apply(osg::QReflect_State * ,osg::QReflect_FrameBufferObject::BindTarget )const;
-Q_INVOKABLE void  apply(osg::QReflect_State *)const;
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
 public slots:

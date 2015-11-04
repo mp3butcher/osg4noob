@@ -6,7 +6,6 @@
 #include <osg/PagedLOD_pmoc.hpp>
 #include <customCode/osg/PagedLOD_pmoc.hpp>
 #include <customCode/osg/LOD_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 #include <customCode/osg/Referenced_pmoc.hpp>
 #include <osg/Referenced>
@@ -102,10 +101,6 @@ return _model->getNumTimeStamps();
 }
  void osg::QReflect_PagedLOD::setTimeStamp( unsigned int p0 , double p1){
  _model->setTimeStamp(p0 ,p1);
-
-}
- void osg::QReflect_PagedLOD::traverse(osg::QReflect_NodeVisitor *p0){
- _model->traverse(*p0->_model);
 
 }
 QString  osg::QReflect_PagedLOD::getFileName( unsigned int p0)const{

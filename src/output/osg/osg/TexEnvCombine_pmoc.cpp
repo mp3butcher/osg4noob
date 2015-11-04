@@ -10,6 +10,62 @@
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_TexEnvCombine::getCombine_Alpha()const{
+return _model->getCombine_Alpha();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getCombine_RGB()const{
+return _model->getCombine_RGB();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getOperand0_Alpha()const{
+return _model->getOperand0_Alpha();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getOperand0_RGB()const{
+return _model->getOperand0_RGB();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getOperand1_Alpha()const{
+return _model->getOperand1_Alpha();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getOperand1_RGB()const{
+return _model->getOperand1_RGB();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getOperand2_Alpha()const{
+return _model->getOperand2_Alpha();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getOperand2_RGB()const{
+return _model->getOperand2_RGB();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getSource0_Alpha()const{
+return _model->getSource0_Alpha();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getSource0_RGB()const{
+return _model->getSource0_RGB();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getSource1_Alpha()const{
+return _model->getSource1_Alpha();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getSource1_RGB()const{
+return _model->getSource1_RGB();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getSource2_Alpha()const{
+return _model->getSource2_Alpha();
+
+}
+ GLint  osg::QReflect_TexEnvCombine::getSource2_RGB()const{
+return _model->getSource2_RGB();
+
+}
  bool  osg::QReflect_TexEnvCombine::isTextureAttribute()const{
 return _model->isTextureAttribute();
 
@@ -18,12 +74,68 @@ return _model->isTextureAttribute();
 return _model->compare(*p0->_model);
 
 }
+ void osg::QReflect_TexEnvCombine::setCombine_Alpha( GLint p0){
+ _model->setCombine_Alpha(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setCombine_RGB( GLint p0){
+ _model->setCombine_RGB(p0);
+
+}
  void osg::QReflect_TexEnvCombine::setConstantColor(osg::QReflect_Vec4f *p0){
  _model->setConstantColor(*p0->_model);
 
 }
  void osg::QReflect_TexEnvCombine::setConstantColorAsLightDirection(osg::QReflect_Vec3f *p0){
  _model->setConstantColorAsLightDirection(*p0->_model);
+
+}
+ void osg::QReflect_TexEnvCombine::setOperand0_Alpha( GLint p0){
+ _model->setOperand0_Alpha(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setOperand0_RGB( GLint p0){
+ _model->setOperand0_RGB(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setOperand1_Alpha( GLint p0){
+ _model->setOperand1_Alpha(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setOperand1_RGB( GLint p0){
+ _model->setOperand1_RGB(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setOperand2_Alpha( GLint p0){
+ _model->setOperand2_Alpha(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setOperand2_RGB( GLint p0){
+ _model->setOperand2_RGB(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setSource0_Alpha( GLint p0){
+ _model->setSource0_Alpha(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setSource0_RGB( GLint p0){
+ _model->setSource0_RGB(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setSource1_Alpha( GLint p0){
+ _model->setSource1_Alpha(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setSource1_RGB( GLint p0){
+ _model->setSource1_RGB(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setSource2_Alpha( GLint p0){
+ _model->setSource2_Alpha(p0);
+
+}
+ void osg::QReflect_TexEnvCombine::setSource2_RGB( GLint p0){
+ _model->setSource2_RGB(p0);
 
 }
 const float osg::QReflect_TexEnvCombine::getScale_Alpha()const{return _model->getScale_Alpha();}

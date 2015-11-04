@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'ParticleEffect_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'ParticleEffect_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_ParticleEffect_t {
-    QByteArrayData data[57];
-    char stringdata0[1028];
+    QByteArrayData data[55];
+    char stringdata0[994];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -58,34 +58,32 @@ QT_MOC_LITERAL(25, 512, 19), // "getParticleDuration"
 QT_MOC_LITERAL(26, 532, 12), // "getStartTime"
 QT_MOC_LITERAL(27, 545, 12), // "getIntensity"
 QT_MOC_LITERAL(28, 558, 8), // "getScale"
-QT_MOC_LITERAL(29, 567, 6), // "accept"
-QT_MOC_LITERAL(30, 574, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(31, 601, 11), // "buildEffect"
-QT_MOC_LITERAL(32, 613, 26), // "setDefaultParticleTemplate"
-QT_MOC_LITERAL(33, 640, 31), // "osgParticle::QReflect_Particle*"
-QT_MOC_LITERAL(34, 672, 11), // "setDefaults"
-QT_MOC_LITERAL(35, 684, 11), // "setPosition"
-QT_MOC_LITERAL(36, 696, 20), // "osg::QReflect_Vec3f*"
-QT_MOC_LITERAL(37, 717, 7), // "setWind"
-QT_MOC_LITERAL(38, 725, 30), // "pmoc_reverse_setParticleSystem"
-QT_MOC_LITERAL(39, 756, 3), // "par"
-QT_MOC_LITERAL(40, 760, 17), // "setAutomaticSetup"
-QT_MOC_LITERAL(41, 778, 18), // "setEmitterDuration"
-QT_MOC_LITERAL(42, 797, 12), // "setIntensity"
-QT_MOC_LITERAL(43, 810, 19), // "setParticleDuration"
-QT_MOC_LITERAL(44, 830, 17), // "setParticleSystem"
-QT_MOC_LITERAL(45, 848, 8), // "setScale"
-QT_MOC_LITERAL(46, 857, 12), // "setStartTime"
-QT_MOC_LITERAL(47, 870, 18), // "setTextureFileName"
-QT_MOC_LITERAL(48, 889, 25), // "setUseLocalParticleSystem"
-QT_MOC_LITERAL(49, 915, 15), // "TextureFileName"
-QT_MOC_LITERAL(50, 931, 14), // "AutomaticSetup"
-QT_MOC_LITERAL(51, 946, 22), // "UseLocalParticleSystem"
-QT_MOC_LITERAL(52, 969, 15), // "EmitterDuration"
-QT_MOC_LITERAL(53, 985, 16), // "ParticleDuration"
-QT_MOC_LITERAL(54, 1002, 9), // "StartTime"
-QT_MOC_LITERAL(55, 1012, 9), // "Intensity"
-QT_MOC_LITERAL(56, 1022, 5) // "Scale"
+QT_MOC_LITERAL(29, 567, 11), // "buildEffect"
+QT_MOC_LITERAL(30, 579, 26), // "setDefaultParticleTemplate"
+QT_MOC_LITERAL(31, 606, 31), // "osgParticle::QReflect_Particle*"
+QT_MOC_LITERAL(32, 638, 11), // "setDefaults"
+QT_MOC_LITERAL(33, 650, 11), // "setPosition"
+QT_MOC_LITERAL(34, 662, 20), // "osg::QReflect_Vec3f*"
+QT_MOC_LITERAL(35, 683, 7), // "setWind"
+QT_MOC_LITERAL(36, 691, 30), // "pmoc_reverse_setParticleSystem"
+QT_MOC_LITERAL(37, 722, 3), // "par"
+QT_MOC_LITERAL(38, 726, 17), // "setAutomaticSetup"
+QT_MOC_LITERAL(39, 744, 18), // "setEmitterDuration"
+QT_MOC_LITERAL(40, 763, 12), // "setIntensity"
+QT_MOC_LITERAL(41, 776, 19), // "setParticleDuration"
+QT_MOC_LITERAL(42, 796, 17), // "setParticleSystem"
+QT_MOC_LITERAL(43, 814, 8), // "setScale"
+QT_MOC_LITERAL(44, 823, 12), // "setStartTime"
+QT_MOC_LITERAL(45, 836, 18), // "setTextureFileName"
+QT_MOC_LITERAL(46, 855, 25), // "setUseLocalParticleSystem"
+QT_MOC_LITERAL(47, 881, 15), // "TextureFileName"
+QT_MOC_LITERAL(48, 897, 14), // "AutomaticSetup"
+QT_MOC_LITERAL(49, 912, 22), // "UseLocalParticleSystem"
+QT_MOC_LITERAL(50, 935, 15), // "EmitterDuration"
+QT_MOC_LITERAL(51, 951, 16), // "ParticleDuration"
+QT_MOC_LITERAL(52, 968, 9), // "StartTime"
+QT_MOC_LITERAL(53, 978, 9), // "Intensity"
+QT_MOC_LITERAL(54, 988, 5) // "Scale"
 
     },
     "osgParticle::QReflect_ParticleEffect\0"
@@ -103,8 +101,7 @@ QT_MOC_LITERAL(56, 1022, 5) // "Scale"
     "getTextureFileName\0getAutomaticSetup\0"
     "getUseLocalParticleSystem\0getEmitterDuration\0"
     "getParticleDuration\0getStartTime\0"
-    "getIntensity\0getScale\0accept\0"
-    "osg::QReflect_NodeVisitor*\0buildEffect\0"
+    "getIntensity\0getScale\0buildEffect\0"
     "setDefaultParticleTemplate\0"
     "osgParticle::QReflect_Particle*\0"
     "setDefaults\0setPosition\0osg::QReflect_Vec3f*\0"
@@ -126,58 +123,57 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleEffect[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      40,   14, // methods
-       8,  302, // properties
+      39,   14, // methods
+       8,  294, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        9,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  214,    2, 0x06 /* Public */,
-       3,    1,  217,    2, 0x06 /* Public */,
-       4,    1,  220,    2, 0x06 /* Public */,
-       5,    1,  223,    2, 0x06 /* Public */,
-       6,    1,  226,    2, 0x06 /* Public */,
-       8,    1,  229,    2, 0x06 /* Public */,
-       9,    1,  232,    2, 0x06 /* Public */,
-      10,    1,  235,    2, 0x06 /* Public */,
-      11,    1,  238,    2, 0x06 /* Public */,
+       1,    1,  209,    2, 0x06 /* Public */,
+       3,    1,  212,    2, 0x06 /* Public */,
+       4,    1,  215,    2, 0x06 /* Public */,
+       5,    1,  218,    2, 0x06 /* Public */,
+       6,    1,  221,    2, 0x06 /* Public */,
+       8,    1,  224,    2, 0x06 /* Public */,
+       9,    1,  227,    2, 0x06 /* Public */,
+      10,    1,  230,    2, 0x06 /* Public */,
+      11,    1,  233,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      12,    0,  241,    2, 0x0a /* Public */,
+      12,    0,  236,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      13,    0,  242,    2, 0x02 /* Public */,
-      14,    1,  243,    2, 0x02 /* Public */,
-      16,    0,  246,    2, 0x02 /* Public */,
-      18,    0,  247,    2, 0x02 /* Public */,
-      20,    0,  248,    2, 0x02 /* Public */,
-      21,    0,  249,    2, 0x02 /* Public */,
-      22,    0,  250,    2, 0x02 /* Public */,
-      23,    0,  251,    2, 0x02 /* Public */,
-      24,    0,  252,    2, 0x02 /* Public */,
-      25,    0,  253,    2, 0x02 /* Public */,
-      26,    0,  254,    2, 0x02 /* Public */,
-      27,    0,  255,    2, 0x02 /* Public */,
-      28,    0,  256,    2, 0x02 /* Public */,
-      29,    1,  257,    2, 0x02 /* Public */,
-      31,    0,  260,    2, 0x02 /* Public */,
-      32,    1,  261,    2, 0x02 /* Public */,
-      34,    0,  264,    2, 0x02 /* Public */,
-      35,    1,  265,    2, 0x02 /* Public */,
-      37,    1,  268,    2, 0x02 /* Public */,
-      38,    1,  271,    2, 0x02 /* Public */,
-      38,    0,  274,    2, 0x22 /* Public | MethodCloned */,
-      40,    1,  275,    2, 0x02 /* Public */,
-      41,    1,  278,    2, 0x02 /* Public */,
-      42,    1,  281,    2, 0x02 /* Public */,
-      43,    1,  284,    2, 0x02 /* Public */,
-      44,    1,  287,    2, 0x02 /* Public */,
-      45,    1,  290,    2, 0x02 /* Public */,
-      46,    1,  293,    2, 0x02 /* Public */,
-      47,    1,  296,    2, 0x02 /* Public */,
-      48,    1,  299,    2, 0x02 /* Public */,
+      13,    0,  237,    2, 0x02 /* Public */,
+      14,    1,  238,    2, 0x02 /* Public */,
+      16,    0,  241,    2, 0x02 /* Public */,
+      18,    0,  242,    2, 0x02 /* Public */,
+      20,    0,  243,    2, 0x02 /* Public */,
+      21,    0,  244,    2, 0x02 /* Public */,
+      22,    0,  245,    2, 0x02 /* Public */,
+      23,    0,  246,    2, 0x02 /* Public */,
+      24,    0,  247,    2, 0x02 /* Public */,
+      25,    0,  248,    2, 0x02 /* Public */,
+      26,    0,  249,    2, 0x02 /* Public */,
+      27,    0,  250,    2, 0x02 /* Public */,
+      28,    0,  251,    2, 0x02 /* Public */,
+      29,    0,  252,    2, 0x02 /* Public */,
+      30,    1,  253,    2, 0x02 /* Public */,
+      32,    0,  256,    2, 0x02 /* Public */,
+      33,    1,  257,    2, 0x02 /* Public */,
+      35,    1,  260,    2, 0x02 /* Public */,
+      36,    1,  263,    2, 0x02 /* Public */,
+      36,    0,  266,    2, 0x22 /* Public | MethodCloned */,
+      38,    1,  267,    2, 0x02 /* Public */,
+      39,    1,  270,    2, 0x02 /* Public */,
+      40,    1,  273,    2, 0x02 /* Public */,
+      41,    1,  276,    2, 0x02 /* Public */,
+      42,    1,  279,    2, 0x02 /* Public */,
+      43,    1,  282,    2, 0x02 /* Public */,
+      44,    1,  285,    2, 0x02 /* Public */,
+      45,    1,  288,    2, 0x02 /* Public */,
+      46,    1,  291,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -207,33 +203,32 @@ static const uint qt_meta_data_osgParticle__QReflect_ParticleEffect[] = {
     QMetaType::Double,
     QMetaType::Float,
     QMetaType::Float,
-    QMetaType::Void, 0x80000000 | 30,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 33,    2,
+    QMetaType::Void, 0x80000000 | 31,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 36,    2,
-    QMetaType::Void, 0x80000000 | 36,    2,
-    QMetaType::Void, 0x80000000 | 17,   39,
+    QMetaType::Void, 0x80000000 | 34,    2,
+    QMetaType::Void, 0x80000000 | 34,    2,
+    QMetaType::Void, 0x80000000 | 17,   37,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Double,    2,
-    QMetaType::Void, 0x80000000 | 17,   39,
+    QMetaType::Void, 0x80000000 | 17,   37,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::Bool,    2,
 
  // properties: name, type, flags
-      49, QMetaType::QString, 0x00495103,
-      50, QMetaType::Bool, 0x00495103,
-      51, QMetaType::Bool, 0x00495103,
+      47, QMetaType::QString, 0x00495103,
+      48, QMetaType::Bool, 0x00495103,
+      49, QMetaType::Bool, 0x00495103,
+      50, QMetaType::Double, 0x00495103,
+      51, QMetaType::Double, 0x00495103,
       52, QMetaType::Double, 0x00495103,
-      53, QMetaType::Double, 0x00495103,
-      54, QMetaType::Double, 0x00495103,
-      55, QMetaType::Float, 0x00495103,
-      56, QMetaType::Float, 0x00495103,
+      53, QMetaType::Float, 0x00495103,
+      54, QMetaType::Float, 0x00495103,
 
  // properties: notify_signal_id
        7,
@@ -290,23 +285,22 @@ void osgParticle::QReflect_ParticleEffect::qt_static_metacall(QObject *_o, QMeta
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
         case 22: { float _r = _t->getScale();
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
-        case 23: _t->accept((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 24: _t->buildEffect(); break;
-        case 25: _t->setDefaultParticleTemplate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1]))); break;
-        case 26: _t->setDefaults(); break;
-        case 27: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 28: _t->setWind((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 29: _t->pmoc_reverse_setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
-        case 30: _t->pmoc_reverse_setParticleSystem(); break;
-        case 31: _t->setAutomaticSetup((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 32: _t->setEmitterDuration((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 33: _t->setIntensity((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 34: _t->setParticleDuration((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 35: _t->setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
-        case 36: _t->setScale((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 37: _t->setStartTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 38: _t->setTextureFileName((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 39: _t->setUseLocalParticleSystem((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 23: _t->buildEffect(); break;
+        case 24: _t->setDefaultParticleTemplate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1]))); break;
+        case 25: _t->setDefaults(); break;
+        case 26: _t->setPosition((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 27: _t->setWind((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 28: _t->pmoc_reverse_setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
+        case 29: _t->pmoc_reverse_setParticleSystem(); break;
+        case 30: _t->setAutomaticSetup((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 31: _t->setEmitterDuration((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 32: _t->setIntensity((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 33: _t->setParticleDuration((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 34: _t->setParticleSystem((*reinterpret_cast< osgParticle::QReflect_ParticleSystem*(*)>(_a[1]))); break;
+        case 35: _t->setScale((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 36: _t->setStartTime((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 37: _t->setTextureFileName((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 38: _t->setUseLocalParticleSystem((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -428,13 +422,13 @@ int osgParticle::QReflect_ParticleEffect::qt_metacall(QMetaObject::Call _c, int 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 40)
+        if (_id < 39)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 40;
+        _id -= 39;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 40)
+        if (_id < 39)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 40;
+        _id -= 39;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

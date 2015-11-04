@@ -6,8 +6,6 @@
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
-#include <customCode/osg/GLExtensions_pmoc.hpp>
-#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_FrameBufferAttachment::isMultisample()const{
 return _model->isMultisample();
@@ -31,10 +29,6 @@ return _model->getTextureArrayLayer();
 }
  unsigned int  osg::QReflect_FrameBufferAttachment::getTextureLevel()const{
 return _model->getTextureLevel();
-
-}
- void osg::QReflect_FrameBufferAttachment::createRequiredTexturesAndApplyGenerateMipMap(osg::QReflect_State *p0 ,osg::QReflect_GLExtensions *p1)const{
- _model->createRequiredTexturesAndApplyGenerateMipMap(*p0->_model ,p1->_model);
 
 }
 osg::QReflect_RenderBuffer*osg::QReflect_FrameBufferAttachment::getRenderBuffer()const{
@@ -109,6 +103,10 @@ return ret;}
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
+ GLuint  osg::QReflect_FrameBufferObject::getHandle( unsigned int p0)const{
+return _model->getHandle(p0);
+
+}
  bool  osg::QReflect_FrameBufferObject::hasMultipleRenderingTargets()const{
 return _model->hasMultipleRenderingTargets();
 
@@ -119,14 +117,6 @@ return _model->isMultisample();
 }
  int  osg::QReflect_FrameBufferObject::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
-
-}
- void osg::QReflect_FrameBufferObject::apply(osg::QReflect_State *p0 ,osg::QReflect_FrameBufferObject::BindTarget p1)const{
- _model->apply(*p0->_model ,static_cast<osg::FrameBufferObject::BindTarget>(p1));
-
-}
- void osg::QReflect_FrameBufferObject::apply(osg::QReflect_State *p0)const{
- _model->apply(*p0->_model);
 
 }
  void osg::QReflect_FrameBufferObject::releaseGLObjects(osg::QReflect_State *p0)const{
@@ -206,6 +196,10 @@ return ret;}
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_GLFrameBufferObjectManager::deleteGLObject( GLuint p0){
+ _model->deleteGLObject(p0);
+
+}
 
 ///DefaultConstructor////////////////
 osg::QReflect_GLFrameBufferObjectManager::QReflect_GLFrameBufferObjectManager(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
@@ -256,6 +250,10 @@ return ret;}
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_GLRenderBufferManager::deleteGLObject( GLuint p0){
+ _model->deleteGLObject(p0);
+
+}
 
 ///DefaultConstructor////////////////
 osg::QReflect_GLRenderBufferManager::QReflect_GLRenderBufferManager(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
@@ -310,6 +308,10 @@ return ret;}
 #include <customCode/osg/GLExtensions_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
+ GLuint  osg::QReflect_RenderBuffer::getObjectID( unsigned int p0 ,osg::QReflect_GLExtensions *p1)const{
+return _model->getObjectID(p0 ,p1->_model);
+
+}
  int  osg::QReflect_RenderBuffer::compare(osg::QReflect_RenderBuffer *p0)const{
 return _model->compare(*p0->_model);
 

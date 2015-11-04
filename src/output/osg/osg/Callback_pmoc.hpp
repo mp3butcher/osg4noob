@@ -208,10 +208,10 @@ public:
 #include <osg/Callback_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_CallbackObject;
+class QReflect_Object;
 			} ;
 namespace osg{ 
-class QReflect_Object;
+class QReflect_CallbackObject;
 			} ;
 #include <osg/Callback>
 #include <osg/Callback>

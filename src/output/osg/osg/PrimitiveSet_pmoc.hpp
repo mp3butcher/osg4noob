@@ -238,12 +238,6 @@ class QReflect_Object;
 namespace osg{ 
 class QReflect_CopyOp;
 			} ;
-namespace osg{ 
-class QReflect_PrimitiveFunctor;
-			} ;
-namespace osg{ 
-class QReflect_PrimitiveIndexFunctor;
-			} ;
 #include <osg/PrimitiveSet>
 #include <osg/PrimitiveSet>
 
@@ -261,9 +255,10 @@ DrawArrayLengths * _model;
 QReflect_DrawArrayLengths(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DrawArrayLengths( );
 //DrawArrayLengths
-// GLint  getFirst();
+//virtual  void  accept( PrimitiveFunctor &);
+//virtual  void  accept( PrimitiveIndexFunctor &);
 //virtual  void  draw( State & , bool );
-// void  setFirst( GLint );
+Q_INVOKABLE  GLint  getFirst()const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  unsigned int  getNumIndices()const;
 Q_INVOKABLE  unsigned int  getNumPrimitives()const;
@@ -272,9 +267,8 @@ Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
 Q_INVOKABLE void  offsetIndices( int );
+Q_INVOKABLE void  setFirst( GLint );
 public slots:
 virtual void updateModel();
  
@@ -306,12 +300,6 @@ class QReflect_Object;
 namespace osg{ 
 class QReflect_CopyOp;
 			} ;
-namespace osg{ 
-class QReflect_PrimitiveFunctor;
-			} ;
-namespace osg{ 
-class QReflect_PrimitiveIndexFunctor;
-			} ;
 #include <osg/PrimitiveSet>
 #include <osg/PrimitiveSet>
 
@@ -330,6 +318,8 @@ QReflect_DrawElementsUShort(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DrawElementsUShort( );
 //DrawElementsUShort
 //virtual  GLenum  getDataType();
+//virtual  void  accept( PrimitiveFunctor &);
+//virtual  void  accept( PrimitiveIndexFunctor &);
 //virtual  void  draw( State & , bool );
 //virtual const  GLvoid * getDataPointer();
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
@@ -342,8 +332,6 @@ Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
 Q_INVOKABLE void  addElement( unsigned int );
 Q_INVOKABLE void  offsetIndices( int );
 Q_INVOKABLE void  reserveElements( unsigned int );
@@ -380,12 +368,6 @@ class QReflect_Object;
 namespace osg{ 
 class QReflect_CopyOp;
 			} ;
-namespace osg{ 
-class QReflect_PrimitiveFunctor;
-			} ;
-namespace osg{ 
-class QReflect_PrimitiveIndexFunctor;
-			} ;
 #include <osg/PrimitiveSet>
 #include <osg/PrimitiveSet>
 
@@ -404,6 +386,8 @@ QReflect_DrawElementsUByte(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DrawElementsUByte( );
 //DrawElementsUByte
 //virtual  GLenum  getDataType();
+//virtual  void  accept( PrimitiveFunctor &);
+//virtual  void  accept( PrimitiveIndexFunctor &);
 //virtual  void  draw( State & , bool );
 //virtual const  GLvoid * getDataPointer();
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
@@ -416,8 +400,6 @@ Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
 Q_INVOKABLE void  addElement( unsigned int );
 Q_INVOKABLE void  offsetIndices( int );
 Q_INVOKABLE void  reserveElements( unsigned int );
@@ -454,12 +436,6 @@ class QReflect_Object;
 namespace osg{ 
 class QReflect_CopyOp;
 			} ;
-namespace osg{ 
-class QReflect_PrimitiveFunctor;
-			} ;
-namespace osg{ 
-class QReflect_PrimitiveIndexFunctor;
-			} ;
 #include <osg/PrimitiveSet>
 #include <osg/PrimitiveSet>
 
@@ -478,6 +454,8 @@ QReflect_DrawElementsUInt(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DrawElementsUInt( );
 //DrawElementsUInt
 //virtual  GLenum  getDataType();
+//virtual  void  accept( PrimitiveFunctor &);
+//virtual  void  accept( PrimitiveIndexFunctor &);
 //virtual  void  draw( State & , bool );
 //virtual const  GLvoid * getDataPointer();
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
@@ -490,8 +468,6 @@ Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
 Q_INVOKABLE void  addElement( unsigned int );
 Q_INVOKABLE void  offsetIndices( int );
 Q_INVOKABLE void  reserveElements( unsigned int );
@@ -528,12 +504,6 @@ class QReflect_Object;
 namespace osg{ 
 class QReflect_CopyOp;
 			} ;
-namespace osg{ 
-class QReflect_PrimitiveFunctor;
-			} ;
-namespace osg{ 
-class QReflect_PrimitiveIndexFunctor;
-			} ;
 #include <osg/PrimitiveSet>
 #include <osg/PrimitiveSet>
 
@@ -551,12 +521,13 @@ DrawArrays * _model;
 QReflect_DrawArrays(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DrawArrays( );
 //DrawArrays
-// GLint  getFirst();
 // GLsizei  getCount();
+//virtual  void  accept( PrimitiveFunctor &);
+//virtual  void  accept( PrimitiveIndexFunctor &);
 //virtual  void  draw( State & , bool );
 // void  set( GLenum  , GLint  , GLsizei );
 // void  setCount( GLsizei );
-// void  setFirst( GLint );
+Q_INVOKABLE  GLint  getFirst()const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  unsigned int  getNumIndices()const;
 Q_INVOKABLE  unsigned int  index( unsigned int )const;
@@ -564,9 +535,8 @@ Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
 Q_INVOKABLE void  offsetIndices( int );
+Q_INVOKABLE void  setFirst( GLint );
 public slots:
 virtual void updateModel();
  

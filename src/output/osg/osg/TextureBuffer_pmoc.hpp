@@ -3,9 +3,6 @@
 #include <osg/TextureBuffer_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_State;
-			} ;
-namespace osg{ 
 class QReflect_Image;
 			} ;
 namespace osg{ 
@@ -30,6 +27,8 @@ virtual ~QReflect_TextureBuffer( );
 //TextureBuffer
 //virtual  GLenum  getTextureTarget();
 // GLenum  getUsageHint();
+//virtual  void  allocateMipmap( State &);
+//virtual  void  apply( State &);
 // void  bindBufferAs( unsigned int  , GLenum );
 // void  setUsageHint( GLenum );
 // void  unbindBufferAs( unsigned int  , GLenum );
@@ -41,8 +40,6 @@ Q_INVOKABLE  unsigned int  getNumImages()const;
 Q_INVOKABLE  unsigned int&  getModifiedCount( unsigned int )const;
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int );
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int )const;
-Q_INVOKABLE void  allocateMipmap(osg::QReflect_State *)const;
-Q_INVOKABLE void  apply(osg::QReflect_State *)const;
 Q_INVOKABLE void  setImage( unsigned int  ,osg::QReflect_Image *);
 Q_INVOKABLE void pmoc_reverse_setImage( osg::QReflect_Image *par=0);
 Q_INVOKABLE void setImage( osg::QReflect_Image *par);

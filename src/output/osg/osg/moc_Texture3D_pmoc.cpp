@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Texture3D_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Texture3D_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Texture3D_t {
-    QByteArrayData data[36];
-    char stringdata0[566];
+    QByteArrayData data[31];
+    char stringdata0[501];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -45,26 +45,21 @@ QT_MOC_LITERAL(12, 208, 20), // "osg::QReflect_Image*"
 QT_MOC_LITERAL(13, 229, 12), // "getNumImages"
 QT_MOC_LITERAL(14, 242, 16), // "getModifiedCount"
 QT_MOC_LITERAL(15, 259, 18), // "getNumMipmapLevels"
-QT_MOC_LITERAL(16, 278, 5), // "apply"
-QT_MOC_LITERAL(17, 284, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(18, 305, 17), // "copyTexSubImage3D"
-QT_MOC_LITERAL(19, 323, 14), // "getTextureSize"
-QT_MOC_LITERAL(20, 338, 4), // "int&"
-QT_MOC_LITERAL(21, 343, 8), // "setImage"
-QT_MOC_LITERAL(22, 352, 14), // "setTextureSize"
-QT_MOC_LITERAL(23, 367, 21), // "pmoc_reverse_setImage"
-QT_MOC_LITERAL(24, 389, 3), // "par"
-QT_MOC_LITERAL(25, 393, 18), // "setNumMipmapLevels"
-QT_MOC_LITERAL(26, 412, 15), // "getTextureDepth"
-QT_MOC_LITERAL(27, 428, 16), // "getTextureHeight"
-QT_MOC_LITERAL(28, 445, 15), // "getTextureWidth"
-QT_MOC_LITERAL(29, 461, 15), // "setTextureDepth"
-QT_MOC_LITERAL(30, 477, 16), // "setTextureHeight"
-QT_MOC_LITERAL(31, 494, 15), // "setTextureWidth"
-QT_MOC_LITERAL(32, 510, 12), // "TextureDepth"
-QT_MOC_LITERAL(33, 523, 13), // "TextureHeight"
-QT_MOC_LITERAL(34, 537, 12), // "TextureWidth"
-QT_MOC_LITERAL(35, 550, 15) // "NumMipmapLevels"
+QT_MOC_LITERAL(16, 278, 8), // "setImage"
+QT_MOC_LITERAL(17, 287, 14), // "setTextureSize"
+QT_MOC_LITERAL(18, 302, 21), // "pmoc_reverse_setImage"
+QT_MOC_LITERAL(19, 324, 3), // "par"
+QT_MOC_LITERAL(20, 328, 18), // "setNumMipmapLevels"
+QT_MOC_LITERAL(21, 347, 15), // "getTextureDepth"
+QT_MOC_LITERAL(22, 363, 16), // "getTextureHeight"
+QT_MOC_LITERAL(23, 380, 15), // "getTextureWidth"
+QT_MOC_LITERAL(24, 396, 15), // "setTextureDepth"
+QT_MOC_LITERAL(25, 412, 16), // "setTextureHeight"
+QT_MOC_LITERAL(26, 429, 15), // "setTextureWidth"
+QT_MOC_LITERAL(27, 445, 12), // "TextureDepth"
+QT_MOC_LITERAL(28, 458, 13), // "TextureHeight"
+QT_MOC_LITERAL(29, 472, 12), // "TextureWidth"
+QT_MOC_LITERAL(30, 485, 15) // "NumMipmapLevels"
 
     },
     "osg::QReflect_Texture3D\0ImageChanged\0"
@@ -74,14 +69,13 @@ QT_MOC_LITERAL(35, 550, 15) // "NumMipmapLevels"
     "updateModel\0compare\0osg::QReflect_StateAttribute*\0"
     "getImage\0osg::QReflect_Image*\0"
     "getNumImages\0getModifiedCount\0"
-    "getNumMipmapLevels\0apply\0osg::QReflect_State*\0"
-    "copyTexSubImage3D\0getTextureSize\0int&\0"
-    "setImage\0setTextureSize\0pmoc_reverse_setImage\0"
-    "par\0setNumMipmapLevels\0getTextureDepth\0"
-    "getTextureHeight\0getTextureWidth\0"
-    "setTextureDepth\0setTextureHeight\0"
-    "setTextureWidth\0TextureDepth\0TextureHeight\0"
-    "TextureWidth\0NumMipmapLevels"
+    "getNumMipmapLevels\0setImage\0setTextureSize\0"
+    "pmoc_reverse_setImage\0par\0setNumMipmapLevels\0"
+    "getTextureDepth\0getTextureHeight\0"
+    "getTextureWidth\0setTextureDepth\0"
+    "setTextureHeight\0setTextureWidth\0"
+    "TextureDepth\0TextureHeight\0TextureWidth\0"
+    "NumMipmapLevels"
 };
 #undef QT_MOC_LITERAL
 
@@ -91,46 +85,43 @@ static const uint qt_meta_data_osg__QReflect_Texture3D[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      28,   14, // methods
-       4,  246, // properties
+      25,   14, // methods
+       4,  204, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  154,    2, 0x06 /* Public */,
-       4,    1,  157,    2, 0x06 /* Public */,
-       5,    1,  160,    2, 0x06 /* Public */,
-       6,    1,  163,    2, 0x06 /* Public */,
-       7,    1,  166,    2, 0x06 /* Public */,
+       1,    1,  139,    2, 0x06 /* Public */,
+       4,    1,  142,    2, 0x06 /* Public */,
+       5,    1,  145,    2, 0x06 /* Public */,
+       6,    1,  148,    2, 0x06 /* Public */,
+       7,    1,  151,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    0,  169,    2, 0x0a /* Public */,
+       8,    0,  154,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       9,    1,  170,    2, 0x02 /* Public */,
-      11,    0,  173,    2, 0x02 /* Public */,
-      13,    0,  174,    2, 0x02 /* Public */,
-      14,    1,  175,    2, 0x02 /* Public */,
-      15,    0,  178,    2, 0x02 /* Public */,
-      11,    1,  179,    2, 0x02 /* Public */,
-      11,    1,  182,    2, 0x02 /* Public */,
-      16,    1,  185,    2, 0x02 /* Public */,
-      18,    8,  188,    2, 0x02 /* Public */,
-      19,    3,  205,    2, 0x02 /* Public */,
-      21,    2,  212,    2, 0x02 /* Public */,
-      22,    3,  217,    2, 0x02 /* Public */,
-      23,    1,  224,    2, 0x02 /* Public */,
-      23,    0,  227,    2, 0x22 /* Public | MethodCloned */,
-      21,    1,  228,    2, 0x02 /* Public */,
-      25,    1,  231,    2, 0x02 /* Public */,
-      26,    0,  234,    2, 0x02 /* Public */,
-      27,    0,  235,    2, 0x02 /* Public */,
-      28,    0,  236,    2, 0x02 /* Public */,
-      29,    1,  237,    2, 0x02 /* Public */,
-      30,    1,  240,    2, 0x02 /* Public */,
-      31,    1,  243,    2, 0x02 /* Public */,
+       9,    1,  155,    2, 0x02 /* Public */,
+      11,    0,  158,    2, 0x02 /* Public */,
+      13,    0,  159,    2, 0x02 /* Public */,
+      14,    1,  160,    2, 0x02 /* Public */,
+      15,    0,  163,    2, 0x02 /* Public */,
+      11,    1,  164,    2, 0x02 /* Public */,
+      11,    1,  167,    2, 0x02 /* Public */,
+      16,    2,  170,    2, 0x02 /* Public */,
+      17,    3,  175,    2, 0x02 /* Public */,
+      18,    1,  182,    2, 0x02 /* Public */,
+      18,    0,  185,    2, 0x22 /* Public | MethodCloned */,
+      16,    1,  186,    2, 0x02 /* Public */,
+      20,    1,  189,    2, 0x02 /* Public */,
+      21,    0,  192,    2, 0x02 /* Public */,
+      22,    0,  193,    2, 0x02 /* Public */,
+      23,    0,  194,    2, 0x02 /* Public */,
+      24,    1,  195,    2, 0x02 /* Public */,
+      25,    1,  198,    2, 0x02 /* Public */,
+      26,    1,  201,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -150,14 +141,11 @@ static const uint qt_meta_data_osg__QReflect_Texture3D[] = {
     QMetaType::UInt,
     0x80000000 | 12, QMetaType::UInt,    2,
     0x80000000 | 12, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 17,    2,
-    QMetaType::Void, 0x80000000 | 17, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 20, 0x80000000 | 20, 0x80000000 | 20,    2,    2,    2,
     QMetaType::Void, QMetaType::UInt, 0x80000000 | 12,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 12,   24,
+    QMetaType::Void, 0x80000000 | 12,   19,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 12,   24,
+    QMetaType::Void, 0x80000000 | 12,   19,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Int,
     QMetaType::Int,
@@ -167,10 +155,10 @@ static const uint qt_meta_data_osg__QReflect_Texture3D[] = {
     QMetaType::Void, QMetaType::Int,    2,
 
  // properties: name, type, flags
-      32, QMetaType::Int, 0x00495103,
-      33, QMetaType::Int, 0x00495103,
-      34, QMetaType::Int, 0x00495103,
-      35, QMetaType::UInt, 0x00495103,
+      27, QMetaType::Int, 0x00495103,
+      28, QMetaType::Int, 0x00495103,
+      29, QMetaType::Int, 0x00495103,
+      30, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        2,
@@ -206,24 +194,21 @@ void osg::QReflect_Texture3D::qt_static_metacall(QObject *_o, QMetaObject::Call 
             if (_a[0]) *reinterpret_cast< osg::QReflect_Image**>(_a[0]) = _r; }  break;
         case 12: { osg::QReflect_Image* _r = _t->getImage((*reinterpret_cast< uint(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< osg::QReflect_Image**>(_a[0]) = _r; }  break;
-        case 13: _t->apply((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 14: _t->copyTexSubImage3D((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4])),(*reinterpret_cast< int(*)>(_a[5])),(*reinterpret_cast< int(*)>(_a[6])),(*reinterpret_cast< int(*)>(_a[7])),(*reinterpret_cast< int(*)>(_a[8]))); break;
-        case 15: _t->getTextureSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 16: _t->setImage((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2]))); break;
-        case 17: _t->setTextureSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 18: _t->pmoc_reverse_setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
-        case 19: _t->pmoc_reverse_setImage(); break;
-        case 20: _t->setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
-        case 21: _t->setNumMipmapLevels((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 22: { int _r = _t->getTextureDepth();
+        case 13: _t->setImage((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2]))); break;
+        case 14: _t->setTextureSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 15: _t->pmoc_reverse_setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
+        case 16: _t->pmoc_reverse_setImage(); break;
+        case 17: _t->setImage((*reinterpret_cast< osg::QReflect_Image*(*)>(_a[1]))); break;
+        case 18: _t->setNumMipmapLevels((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 19: { int _r = _t->getTextureDepth();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 23: { int _r = _t->getTextureHeight();
+        case 20: { int _r = _t->getTextureHeight();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 24: { int _r = _t->getTextureWidth();
+        case 21: { int _r = _t->getTextureWidth();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 25: _t->setTextureDepth((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 26: _t->setTextureHeight((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 27: _t->setTextureWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 22: _t->setTextureDepth((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 23: _t->setTextureHeight((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 24: _t->setTextureWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -313,13 +298,13 @@ int osg::QReflect_Texture3D::qt_metacall(QMetaObject::Call _c, int _id, void **_
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 28)
+        if (_id < 25)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 28;
+        _id -= 25;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 28)
+        if (_id < 25)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 28;
+        _id -= 25;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

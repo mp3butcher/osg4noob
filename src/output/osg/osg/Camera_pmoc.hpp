@@ -42,10 +42,7 @@ public:
 #include <osg/Camera_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_CullSettings;
-			} ;
-namespace osg{ 
-class QReflect_NodeVisitor;
+class QReflect_Viewport;
 			} ;
 namespace osg{ 
 class QReflect_Object;
@@ -60,13 +57,13 @@ namespace osg{
 class QReflect_State;
 			} ;
 namespace osg{ 
-class QReflect_Vec3f;
-			} ;
-namespace osg{ 
-class QReflect_Vec3d;
+class QReflect_DisplaySettings;
 			} ;
 namespace osg{ 
 class QReflect_Vec4f;
+			} ;
+namespace osg{ 
+class QReflect_Vec3d;
 			} ;
 namespace osg{ 
 class QReflect_Matrixf;
@@ -75,28 +72,25 @@ namespace osg{
 class QReflect_Matrixd;
 			} ;
 namespace osg{ 
-class QReflect_DisplaySettings;
-			} ;
-namespace osg{ 
 class QReflect_Camera;
-			} ;
-namespace osg{ 
-class QReflect_Viewport;
 			} ;
 namespace osg{ 
 class QReflect_ColorMask;
 			} ;
 namespace osg{ 
-class QReflect_GraphicsContext;
+class QReflect_CullSettings;
 			} ;
 namespace osg{ 
-class QReflect_OperationThread;
+class QReflect_Stats;
+			} ;
+namespace osg{ 
+class QReflect_GraphicsContext;
 			} ;
 namespace osg{ 
 class QReflect_GraphicsOperation;
 			} ;
 namespace osg{ 
-class QReflect_Stats;
+class QReflect_OperationThread;
 			} ;
 #include <osg/Camera>
 #include <osg/Camera>
@@ -196,9 +190,16 @@ virtual ~QReflect_Camera( );
 // Matrixd  getInverseViewMatrix();
 // OpenThreads::Mutex * getDataChangeMutex();
 // View * getView();
+//virtual  bool  computeLocalToWorldMatrix( Matrix & , NodeVisitor *);
+//virtual  bool  computeWorldToLocalMatrix( Matrix & , NodeVisitor *);
+// bool  getProjectionMatrixAsFrustum( double & , double & , double & , double & , double & , double &);
+// bool  getProjectionMatrixAsOrtho( double & , double & , double & , double & , double & , double &);
+// bool  getProjectionMatrixAsPerspective( double & , double & , double & , double &);
 // osg::Matrixd & getProjectionMatrix();
 // osg::Matrixd & getViewMatrix();
 // void  attach( BufferComponent  , GLenum );
+// void  getViewMatrixAsLookAt( osg::Vec3d & , osg::Vec3d & , osg::Vec3d & , double );
+// void  getViewMatrixAsLookAt( osg::Vec3f & , osg::Vec3f & , osg::Vec3f & , float );
 // void  setClearMask( GLbitfield );
 // void  setDrawBuffer( GLenum );
 // void  setFinalDrawCallback( DrawCallback *);
@@ -217,11 +218,6 @@ virtual ~QReflect_Camera( );
 //const  osg::Matrixd & getViewMatrix();
 //const  osg::Vec4 & getClearAccum();
 //const  osg::Vec4 & getClearColor();
-Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  getProjectionMatrixAsFrustum( double & , double & , double & , double & , double & , double &)const;
-Q_INVOKABLE  bool  getProjectionMatrixAsOrtho( double & , double & , double & , double & , double & , double &)const;
-Q_INVOKABLE  bool  getProjectionMatrixAsPerspective( double & , double & , double & , double &)const;
 Q_INVOKABLE  bool  isRenderToTextureCamera()const;
 Q_INVOKABLE  int  getImplicitBufferAttachmentRenderMask( bool )const;
 Q_INVOKABLE  int  getImplicitBufferAttachmentResolveMask( bool )const;
@@ -252,8 +248,6 @@ Q_INVOKABLE void  attach(osg::QReflect_Camera::BufferComponent  ,osg::QReflect_T
 Q_INVOKABLE void  createCameraThread();
 Q_INVOKABLE void  detach(osg::QReflect_Camera::BufferComponent );
 Q_INVOKABLE void  dirtyAttachmentMap();
-Q_INVOKABLE void  getViewMatrixAsLookAt(osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * , double )const;
-Q_INVOKABLE void  getViewMatrixAsLookAt(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * , float )const;
 Q_INVOKABLE void  inheritCullSettings(osg::QReflect_CullSettings * , unsigned int );
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
 Q_INVOKABLE void  resize( int  , int  , int );

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Group_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Group_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Group_t {
-    QByteArrayData data[23];
-    char stringdata0[332];
+    QByteArrayData data[21];
+    char stringdata0[296];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -47,11 +47,9 @@ QT_MOC_LITERAL(14, 187, 20), // "osg::QReflect_Group*"
 QT_MOC_LITERAL(15, 208, 8), // "getChild"
 QT_MOC_LITERAL(16, 217, 21), // "resizeGLObjectBuffers"
 QT_MOC_LITERAL(17, 239, 21), // "setThreadSafeRefUnref"
-QT_MOC_LITERAL(18, 261, 8), // "traverse"
-QT_MOC_LITERAL(19, 270, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(20, 297, 8), // "addChild"
-QT_MOC_LITERAL(21, 306, 3), // "par"
-QT_MOC_LITERAL(22, 310, 21) // "pmoc_reverse_addChild"
+QT_MOC_LITERAL(18, 261, 8), // "addChild"
+QT_MOC_LITERAL(19, 270, 3), // "par"
+QT_MOC_LITERAL(20, 274, 21) // "pmoc_reverse_addChild"
 
     },
     "osg::QReflect_Group\0ChildCollectionChanged\0"
@@ -60,9 +58,8 @@ QT_MOC_LITERAL(22, 310, 21) // "pmoc_reverse_addChild"
     "replaceChild\0setChild\0getChildIndex\0"
     "getNumChildren\0asGroup\0osg::QReflect_Group*\0"
     "getChild\0resizeGLObjectBuffers\0"
-    "setThreadSafeRefUnref\0traverse\0"
-    "osg::QReflect_NodeVisitor*\0addChild\0"
-    "par\0pmoc_reverse_addChild"
+    "setThreadSafeRefUnref\0addChild\0par\0"
+    "pmoc_reverse_addChild"
 };
 #undef QT_MOC_LITERAL
 
@@ -72,7 +69,7 @@ static const uint qt_meta_data_osg__QReflect_Group[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -80,29 +77,28 @@ static const uint qt_meta_data_osg__QReflect_Group[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    0,  109,    2, 0x06 /* Public */,
+       1,    0,  104,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       3,    0,  110,    2, 0x0a /* Public */,
+       3,    0,  105,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       4,    1,  111,    2, 0x02 /* Public */,
-       6,    2,  114,    2, 0x02 /* Public */,
-       7,    2,  119,    2, 0x02 /* Public */,
-       8,    2,  124,    2, 0x02 /* Public */,
-       9,    2,  129,    2, 0x02 /* Public */,
-      10,    2,  134,    2, 0x02 /* Public */,
-      11,    1,  139,    2, 0x02 /* Public */,
-      12,    0,  142,    2, 0x02 /* Public */,
-      13,    0,  143,    2, 0x02 /* Public */,
-      13,    0,  144,    2, 0x02 /* Public */,
-      15,    1,  145,    2, 0x02 /* Public */,
-      15,    1,  148,    2, 0x02 /* Public */,
-      16,    1,  151,    2, 0x02 /* Public */,
-      17,    1,  154,    2, 0x02 /* Public */,
-      18,    1,  157,    2, 0x02 /* Public */,
-      20,    1,  160,    2, 0x02 /* Public */,
-      22,    1,  163,    2, 0x02 /* Public */,
+       4,    1,  106,    2, 0x02 /* Public */,
+       6,    2,  109,    2, 0x02 /* Public */,
+       7,    2,  114,    2, 0x02 /* Public */,
+       8,    2,  119,    2, 0x02 /* Public */,
+       9,    2,  124,    2, 0x02 /* Public */,
+      10,    2,  129,    2, 0x02 /* Public */,
+      11,    1,  134,    2, 0x02 /* Public */,
+      12,    0,  137,    2, 0x02 /* Public */,
+      13,    0,  138,    2, 0x02 /* Public */,
+      13,    0,  139,    2, 0x02 /* Public */,
+      15,    1,  140,    2, 0x02 /* Public */,
+      15,    1,  143,    2, 0x02 /* Public */,
+      16,    1,  146,    2, 0x02 /* Public */,
+      17,    1,  149,    2, 0x02 /* Public */,
+      18,    1,  152,    2, 0x02 /* Public */,
+      20,    1,  155,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void,
@@ -125,9 +121,8 @@ static const uint qt_meta_data_osg__QReflect_Group[] = {
     0x80000000 | 5, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::Bool,    2,
-    QMetaType::Void, 0x80000000 | 19,    2,
-    QMetaType::Void, 0x80000000 | 5,   21,
-    QMetaType::Void, 0x80000000 | 5,   21,
+    QMetaType::Void, 0x80000000 | 5,   19,
+    QMetaType::Void, 0x80000000 | 5,   19,
 
        0        // eod
 };
@@ -166,9 +161,8 @@ void osg::QReflect_Group::qt_static_metacall(QObject *_o, QMetaObject::Call _c, 
             if (_a[0]) *reinterpret_cast< osg::QReflect_Node**>(_a[0]) = _r; }  break;
         case 14: _t->resizeGLObjectBuffers((*reinterpret_cast< uint(*)>(_a[1]))); break;
         case 15: _t->setThreadSafeRefUnref((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 16: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 17: _t->addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
-        case 18: _t->pmoc_reverse_addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
+        case 16: _t->addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
+        case 17: _t->pmoc_reverse_addChild((*reinterpret_cast< osg::QReflect_Node*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -208,13 +202,13 @@ int osg::QReflect_Group::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 18)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 19;
+        _id -= 18;
     }
     return _id;
 }

@@ -151,12 +151,19 @@ return ret;}
 #include <customCode/osg/Drawable_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
-#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/Shape_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <osg/Shape>
 #include <osg/Shape_pmoc.hpp>
 using namespace pmoc;
+ GLuint  osg::QReflect_Drawable::generateDisplayList( unsigned int p0 , unsigned int p1){
+return _model->generateDisplayList(p0 ,p1);
+
+}
+ GLuint&  osg::QReflect_Drawable::getDisplayList( unsigned int p0)const{
+return _model->getDisplayList(p0);
+
+}
  bool  osg::QReflect_Drawable::supports(osg::QReflect_PrimitiveFunctor *p0)const{
 return _model->supports(*p0->_model);
 
@@ -169,32 +176,16 @@ return _model->supports(*p0->_model);
 return _model->getGLObjectSizeHint();
 
 }
- void osg::QReflect_Drawable::accept(osg::QReflect_PrimitiveFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_Drawable::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_Drawable::compileGLObjects(osg::QReflect_RenderInfo *p0)const{
- _model->compileGLObjects(*p0->_model);
-
-}
  void osg::QReflect_Drawable::computeDataVariance(){
  _model->computeDataVariance();
 
 }
+ void osg::QReflect_Drawable::deleteDisplayList( unsigned int p0 , GLuint p1 , unsigned int p2){
+ _model->deleteDisplayList(p0 ,p1 ,p2);
+
+}
  void osg::QReflect_Drawable::dirtyDisplayList(){
  _model->dirtyDisplayList();
-
-}
- void osg::QReflect_Drawable::draw(osg::QReflect_RenderInfo *p0)const{
- _model->draw(*p0->_model);
-
-}
- void osg::QReflect_Drawable::drawImplementation(osg::QReflect_RenderInfo *p0)const{
- _model->drawImplementation(*p0->_model);
 
 }
  void osg::QReflect_Drawable::releaseGLObjects(osg::QReflect_State *p0)const{

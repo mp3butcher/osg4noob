@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Camera_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,7 +12,7 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Camera_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
@@ -110,8 +110,8 @@ int osg::QReflect_CameraRenderOrderSortOp::qt_metacall(QMetaObject::Call _c, int
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_Camera_t {
-    QByteArrayData data[168];
-    char stringdata0[3505];
+    QByteArrayData data[159];
+    char stringdata0[3286];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -139,155 +139,146 @@ QT_MOC_LITERAL(15, 371, 27), // "const osg::QReflect_Object*"
 QT_MOC_LITERAL(16, 399, 12), // "StatsChanged"
 QT_MOC_LITERAL(17, 412, 26), // "const osg::QReflect_Stats*"
 QT_MOC_LITERAL(18, 439, 11), // "updateModel"
-QT_MOC_LITERAL(19, 451, 25), // "computeLocalToWorldMatrix"
-QT_MOC_LITERAL(20, 477, 22), // "osg::QReflect_Matrixd*"
-QT_MOC_LITERAL(21, 500, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(22, 527, 25), // "computeWorldToLocalMatrix"
-QT_MOC_LITERAL(23, 553, 28), // "getProjectionMatrixAsFrustum"
-QT_MOC_LITERAL(24, 582, 7), // "double&"
-QT_MOC_LITERAL(25, 590, 26), // "getProjectionMatrixAsOrtho"
-QT_MOC_LITERAL(26, 617, 32), // "getProjectionMatrixAsPerspective"
-QT_MOC_LITERAL(27, 650, 23), // "isRenderToTextureCamera"
-QT_MOC_LITERAL(28, 674, 37), // "getImplicitBufferAttachmentRe..."
-QT_MOC_LITERAL(29, 712, 38), // "getImplicitBufferAttachmentRe..."
-QT_MOC_LITERAL(30, 751, 17), // "getRenderOrderNum"
-QT_MOC_LITERAL(31, 769, 18), // "getDisplaySettings"
-QT_MOC_LITERAL(32, 788, 30), // "osg::QReflect_DisplaySettings*"
-QT_MOC_LITERAL(33, 819, 18), // "getGraphicsContext"
-QT_MOC_LITERAL(34, 838, 30), // "osg::QReflect_GraphicsContext*"
-QT_MOC_LITERAL(35, 869, 11), // "getRenderer"
-QT_MOC_LITERAL(36, 881, 32), // "osg::QReflect_GraphicsOperation*"
-QT_MOC_LITERAL(37, 914, 17), // "getRenderingCache"
-QT_MOC_LITERAL(38, 932, 21), // "osg::QReflect_Object*"
-QT_MOC_LITERAL(39, 954, 15), // "getCameraThread"
-QT_MOC_LITERAL(40, 970, 30), // "osg::QReflect_OperationThread*"
-QT_MOC_LITERAL(41, 1001, 8), // "getStats"
-QT_MOC_LITERAL(42, 1010, 20), // "osg::QReflect_Stats*"
-QT_MOC_LITERAL(43, 1031, 18), // "getAllowEventFocus"
-QT_MOC_LITERAL(44, 1050, 13), // "getClearDepth"
-QT_MOC_LITERAL(45, 1064, 15), // "getClearStencil"
-QT_MOC_LITERAL(46, 1080, 29), // "getAttachmentMapModifiedCount"
-QT_MOC_LITERAL(47, 1110, 8), // "asCamera"
-QT_MOC_LITERAL(48, 1119, 21), // "osg::QReflect_Camera*"
-QT_MOC_LITERAL(49, 1141, 25), // "getProjectionResizePolicy"
-QT_MOC_LITERAL(50, 1167, 44), // "osg::QReflect_Camera::Project..."
-QT_MOC_LITERAL(51, 1212, 14), // "getRenderOrder"
-QT_MOC_LITERAL(52, 1227, 33), // "osg::QReflect_Camera::RenderO..."
-QT_MOC_LITERAL(53, 1261, 23), // "getRenderTargetFallback"
-QT_MOC_LITERAL(54, 1285, 48), // "osg::QReflect_Camera::RenderT..."
-QT_MOC_LITERAL(55, 1334, 29), // "getRenderTargetImplementation"
-QT_MOC_LITERAL(56, 1364, 17), // "getTransformOrder"
-QT_MOC_LITERAL(57, 1382, 36), // "osg::QReflect_Camera::Transfo..."
-QT_MOC_LITERAL(58, 1419, 12), // "getColorMask"
-QT_MOC_LITERAL(59, 1432, 24), // "osg::QReflect_ColorMask*"
-QT_MOC_LITERAL(60, 1457, 11), // "getViewport"
-QT_MOC_LITERAL(61, 1469, 23), // "osg::QReflect_Viewport*"
-QT_MOC_LITERAL(62, 1493, 6), // "attach"
-QT_MOC_LITERAL(63, 1500, 37), // "osg::QReflect_Camera::BufferC..."
-QT_MOC_LITERAL(64, 1538, 20), // "osg::QReflect_Image*"
-QT_MOC_LITERAL(65, 1559, 22), // "osg::QReflect_Texture*"
-QT_MOC_LITERAL(66, 1582, 18), // "createCameraThread"
-QT_MOC_LITERAL(67, 1601, 6), // "detach"
-QT_MOC_LITERAL(68, 1608, 18), // "dirtyAttachmentMap"
-QT_MOC_LITERAL(69, 1627, 21), // "getViewMatrixAsLookAt"
-QT_MOC_LITERAL(70, 1649, 20), // "osg::QReflect_Vec3d*"
-QT_MOC_LITERAL(71, 1670, 20), // "osg::QReflect_Vec3f*"
-QT_MOC_LITERAL(72, 1691, 19), // "inheritCullSettings"
-QT_MOC_LITERAL(73, 1711, 27), // "osg::QReflect_CullSettings*"
-QT_MOC_LITERAL(74, 1739, 16), // "releaseGLObjects"
-QT_MOC_LITERAL(75, 1756, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(76, 1777, 6), // "resize"
-QT_MOC_LITERAL(77, 1784, 17), // "resizeAttachments"
-QT_MOC_LITERAL(78, 1802, 21), // "resizeGLObjectBuffers"
-QT_MOC_LITERAL(79, 1824, 13), // "setClearAccum"
-QT_MOC_LITERAL(80, 1838, 20), // "osg::QReflect_Vec4f*"
-QT_MOC_LITERAL(81, 1859, 13), // "setClearColor"
-QT_MOC_LITERAL(82, 1873, 12), // "setColorMask"
-QT_MOC_LITERAL(83, 1886, 31), // "setImplicitBufferAttachmentMask"
-QT_MOC_LITERAL(84, 1918, 37), // "setImplicitBufferAttachmentRe..."
-QT_MOC_LITERAL(85, 1956, 38), // "setImplicitBufferAttachmentRe..."
-QT_MOC_LITERAL(86, 1995, 19), // "setProjectionMatrix"
-QT_MOC_LITERAL(87, 2015, 22), // "osg::QReflect_Matrixf*"
-QT_MOC_LITERAL(88, 2038, 28), // "setProjectionMatrixAsFrustum"
-QT_MOC_LITERAL(89, 2067, 26), // "setProjectionMatrixAsOrtho"
-QT_MOC_LITERAL(90, 2094, 28), // "setProjectionMatrixAsOrtho2D"
-QT_MOC_LITERAL(91, 2123, 32), // "setProjectionMatrixAsPerspective"
-QT_MOC_LITERAL(92, 2156, 25), // "setProjectionResizePolicy"
-QT_MOC_LITERAL(93, 2182, 14), // "setRenderOrder"
-QT_MOC_LITERAL(94, 2197, 29), // "setRenderTargetImplementation"
-QT_MOC_LITERAL(95, 2227, 17), // "setTransformOrder"
-QT_MOC_LITERAL(96, 2245, 13), // "setViewMatrix"
-QT_MOC_LITERAL(97, 2259, 21), // "setViewMatrixAsLookAt"
-QT_MOC_LITERAL(98, 2281, 11), // "setViewport"
-QT_MOC_LITERAL(99, 2293, 28), // "pmoc_reverse_setCameraThread"
-QT_MOC_LITERAL(100, 2322, 3), // "par"
-QT_MOC_LITERAL(101, 2326, 31), // "pmoc_reverse_setDisplaySettings"
-QT_MOC_LITERAL(102, 2358, 31), // "pmoc_reverse_setGraphicsContext"
-QT_MOC_LITERAL(103, 2390, 24), // "pmoc_reverse_setRenderer"
-QT_MOC_LITERAL(104, 2415, 30), // "pmoc_reverse_setRenderingCache"
-QT_MOC_LITERAL(105, 2446, 21), // "pmoc_reverse_setStats"
-QT_MOC_LITERAL(106, 2468, 18), // "setAllowEventFocus"
-QT_MOC_LITERAL(107, 2487, 29), // "setAttachmentMapModifiedCount"
-QT_MOC_LITERAL(108, 2517, 15), // "setCameraThread"
-QT_MOC_LITERAL(109, 2533, 13), // "setClearDepth"
-QT_MOC_LITERAL(110, 2547, 15), // "setClearStencil"
-QT_MOC_LITERAL(111, 2563, 18), // "setDisplaySettings"
-QT_MOC_LITERAL(112, 2582, 18), // "setGraphicsContext"
-QT_MOC_LITERAL(113, 2601, 11), // "setRenderer"
-QT_MOC_LITERAL(114, 2613, 17), // "setRenderingCache"
-QT_MOC_LITERAL(115, 2631, 8), // "setStats"
-QT_MOC_LITERAL(116, 2640, 15), // "AllowEventFocus"
-QT_MOC_LITERAL(117, 2656, 10), // "ClearDepth"
-QT_MOC_LITERAL(118, 2667, 12), // "ClearStencil"
-QT_MOC_LITERAL(119, 2680, 26), // "AttachmentMapModifiedCount"
-QT_MOC_LITERAL(120, 2707, 15), // "BufferComponent"
-QT_MOC_LITERAL(121, 2723, 12), // "DEPTH_BUFFER"
-QT_MOC_LITERAL(122, 2736, 14), // "STENCIL_BUFFER"
-QT_MOC_LITERAL(123, 2751, 27), // "PACKED_DEPTH_STENCIL_BUFFER"
-QT_MOC_LITERAL(124, 2779, 12), // "COLOR_BUFFER"
-QT_MOC_LITERAL(125, 2792, 13), // "COLOR_BUFFER0"
-QT_MOC_LITERAL(126, 2806, 13), // "COLOR_BUFFER1"
-QT_MOC_LITERAL(127, 2820, 13), // "COLOR_BUFFER2"
-QT_MOC_LITERAL(128, 2834, 13), // "COLOR_BUFFER3"
-QT_MOC_LITERAL(129, 2848, 13), // "COLOR_BUFFER4"
-QT_MOC_LITERAL(130, 2862, 13), // "COLOR_BUFFER5"
-QT_MOC_LITERAL(131, 2876, 13), // "COLOR_BUFFER6"
-QT_MOC_LITERAL(132, 2890, 13), // "COLOR_BUFFER7"
-QT_MOC_LITERAL(133, 2904, 13), // "COLOR_BUFFER8"
-QT_MOC_LITERAL(134, 2918, 13), // "COLOR_BUFFER9"
-QT_MOC_LITERAL(135, 2932, 14), // "COLOR_BUFFER10"
-QT_MOC_LITERAL(136, 2947, 14), // "COLOR_BUFFER11"
-QT_MOC_LITERAL(137, 2962, 14), // "COLOR_BUFFER12"
-QT_MOC_LITERAL(138, 2977, 14), // "COLOR_BUFFER13"
-QT_MOC_LITERAL(139, 2992, 14), // "COLOR_BUFFER14"
-QT_MOC_LITERAL(140, 3007, 14), // "COLOR_BUFFER15"
-QT_MOC_LITERAL(141, 3022, 24), // "ImplicitBufferAttachment"
-QT_MOC_LITERAL(142, 3047, 32), // "IMPLICIT_DEPTH_BUFFER_ATTACHMENT"
-QT_MOC_LITERAL(143, 3080, 34), // "IMPLICIT_STENCIL_BUFFER_ATTAC..."
-QT_MOC_LITERAL(144, 3115, 32), // "IMPLICIT_COLOR_BUFFER_ATTACHMENT"
-QT_MOC_LITERAL(145, 3148, 25), // "USE_DISPLAY_SETTINGS_MASK"
-QT_MOC_LITERAL(146, 3174, 22), // "ProjectionResizePolicy"
-QT_MOC_LITERAL(147, 3197, 5), // "FIXED"
-QT_MOC_LITERAL(148, 3203, 10), // "HORIZONTAL"
-QT_MOC_LITERAL(149, 3214, 8), // "VERTICAL"
-QT_MOC_LITERAL(150, 3223, 11), // "RenderOrder"
-QT_MOC_LITERAL(151, 3235, 10), // "PRE_RENDER"
-QT_MOC_LITERAL(152, 3246, 13), // "NESTED_RENDER"
-QT_MOC_LITERAL(153, 3260, 11), // "POST_RENDER"
-QT_MOC_LITERAL(154, 3272, 26), // "RenderTargetImplementation"
-QT_MOC_LITERAL(155, 3299, 19), // "FRAME_BUFFER_OBJECT"
-QT_MOC_LITERAL(156, 3319, 16), // "PIXEL_BUFFER_RTT"
-QT_MOC_LITERAL(157, 3336, 12), // "PIXEL_BUFFER"
-QT_MOC_LITERAL(158, 3349, 12), // "FRAME_BUFFER"
-QT_MOC_LITERAL(159, 3362, 15), // "SEPARATE_WINDOW"
-QT_MOC_LITERAL(160, 3378, 10), // "ResizeMask"
-QT_MOC_LITERAL(161, 3389, 15), // "RESIZE_VIEWPORT"
-QT_MOC_LITERAL(162, 3405, 18), // "RESIZE_ATTACHMENTS"
-QT_MOC_LITERAL(163, 3424, 23), // "RESIZE_PROJECTIONMATRIX"
-QT_MOC_LITERAL(164, 3448, 14), // "RESIZE_DEFAULT"
-QT_MOC_LITERAL(165, 3463, 14), // "TransformOrder"
-QT_MOC_LITERAL(166, 3478, 12), // "PRE_MULTIPLY"
-QT_MOC_LITERAL(167, 3491, 13) // "POST_MULTIPLY"
+QT_MOC_LITERAL(19, 451, 23), // "isRenderToTextureCamera"
+QT_MOC_LITERAL(20, 475, 37), // "getImplicitBufferAttachmentRe..."
+QT_MOC_LITERAL(21, 513, 38), // "getImplicitBufferAttachmentRe..."
+QT_MOC_LITERAL(22, 552, 17), // "getRenderOrderNum"
+QT_MOC_LITERAL(23, 570, 18), // "getDisplaySettings"
+QT_MOC_LITERAL(24, 589, 30), // "osg::QReflect_DisplaySettings*"
+QT_MOC_LITERAL(25, 620, 18), // "getGraphicsContext"
+QT_MOC_LITERAL(26, 639, 30), // "osg::QReflect_GraphicsContext*"
+QT_MOC_LITERAL(27, 670, 11), // "getRenderer"
+QT_MOC_LITERAL(28, 682, 32), // "osg::QReflect_GraphicsOperation*"
+QT_MOC_LITERAL(29, 715, 17), // "getRenderingCache"
+QT_MOC_LITERAL(30, 733, 21), // "osg::QReflect_Object*"
+QT_MOC_LITERAL(31, 755, 15), // "getCameraThread"
+QT_MOC_LITERAL(32, 771, 30), // "osg::QReflect_OperationThread*"
+QT_MOC_LITERAL(33, 802, 8), // "getStats"
+QT_MOC_LITERAL(34, 811, 20), // "osg::QReflect_Stats*"
+QT_MOC_LITERAL(35, 832, 18), // "getAllowEventFocus"
+QT_MOC_LITERAL(36, 851, 13), // "getClearDepth"
+QT_MOC_LITERAL(37, 865, 15), // "getClearStencil"
+QT_MOC_LITERAL(38, 881, 29), // "getAttachmentMapModifiedCount"
+QT_MOC_LITERAL(39, 911, 8), // "asCamera"
+QT_MOC_LITERAL(40, 920, 21), // "osg::QReflect_Camera*"
+QT_MOC_LITERAL(41, 942, 25), // "getProjectionResizePolicy"
+QT_MOC_LITERAL(42, 968, 44), // "osg::QReflect_Camera::Project..."
+QT_MOC_LITERAL(43, 1013, 14), // "getRenderOrder"
+QT_MOC_LITERAL(44, 1028, 33), // "osg::QReflect_Camera::RenderO..."
+QT_MOC_LITERAL(45, 1062, 23), // "getRenderTargetFallback"
+QT_MOC_LITERAL(46, 1086, 48), // "osg::QReflect_Camera::RenderT..."
+QT_MOC_LITERAL(47, 1135, 29), // "getRenderTargetImplementation"
+QT_MOC_LITERAL(48, 1165, 17), // "getTransformOrder"
+QT_MOC_LITERAL(49, 1183, 36), // "osg::QReflect_Camera::Transfo..."
+QT_MOC_LITERAL(50, 1220, 12), // "getColorMask"
+QT_MOC_LITERAL(51, 1233, 24), // "osg::QReflect_ColorMask*"
+QT_MOC_LITERAL(52, 1258, 11), // "getViewport"
+QT_MOC_LITERAL(53, 1270, 23), // "osg::QReflect_Viewport*"
+QT_MOC_LITERAL(54, 1294, 6), // "attach"
+QT_MOC_LITERAL(55, 1301, 37), // "osg::QReflect_Camera::BufferC..."
+QT_MOC_LITERAL(56, 1339, 20), // "osg::QReflect_Image*"
+QT_MOC_LITERAL(57, 1360, 22), // "osg::QReflect_Texture*"
+QT_MOC_LITERAL(58, 1383, 18), // "createCameraThread"
+QT_MOC_LITERAL(59, 1402, 6), // "detach"
+QT_MOC_LITERAL(60, 1409, 18), // "dirtyAttachmentMap"
+QT_MOC_LITERAL(61, 1428, 19), // "inheritCullSettings"
+QT_MOC_LITERAL(62, 1448, 27), // "osg::QReflect_CullSettings*"
+QT_MOC_LITERAL(63, 1476, 16), // "releaseGLObjects"
+QT_MOC_LITERAL(64, 1493, 20), // "osg::QReflect_State*"
+QT_MOC_LITERAL(65, 1514, 6), // "resize"
+QT_MOC_LITERAL(66, 1521, 17), // "resizeAttachments"
+QT_MOC_LITERAL(67, 1539, 21), // "resizeGLObjectBuffers"
+QT_MOC_LITERAL(68, 1561, 13), // "setClearAccum"
+QT_MOC_LITERAL(69, 1575, 20), // "osg::QReflect_Vec4f*"
+QT_MOC_LITERAL(70, 1596, 13), // "setClearColor"
+QT_MOC_LITERAL(71, 1610, 12), // "setColorMask"
+QT_MOC_LITERAL(72, 1623, 31), // "setImplicitBufferAttachmentMask"
+QT_MOC_LITERAL(73, 1655, 37), // "setImplicitBufferAttachmentRe..."
+QT_MOC_LITERAL(74, 1693, 38), // "setImplicitBufferAttachmentRe..."
+QT_MOC_LITERAL(75, 1732, 19), // "setProjectionMatrix"
+QT_MOC_LITERAL(76, 1752, 22), // "osg::QReflect_Matrixd*"
+QT_MOC_LITERAL(77, 1775, 22), // "osg::QReflect_Matrixf*"
+QT_MOC_LITERAL(78, 1798, 28), // "setProjectionMatrixAsFrustum"
+QT_MOC_LITERAL(79, 1827, 26), // "setProjectionMatrixAsOrtho"
+QT_MOC_LITERAL(80, 1854, 28), // "setProjectionMatrixAsOrtho2D"
+QT_MOC_LITERAL(81, 1883, 32), // "setProjectionMatrixAsPerspective"
+QT_MOC_LITERAL(82, 1916, 25), // "setProjectionResizePolicy"
+QT_MOC_LITERAL(83, 1942, 14), // "setRenderOrder"
+QT_MOC_LITERAL(84, 1957, 29), // "setRenderTargetImplementation"
+QT_MOC_LITERAL(85, 1987, 17), // "setTransformOrder"
+QT_MOC_LITERAL(86, 2005, 13), // "setViewMatrix"
+QT_MOC_LITERAL(87, 2019, 21), // "setViewMatrixAsLookAt"
+QT_MOC_LITERAL(88, 2041, 20), // "osg::QReflect_Vec3d*"
+QT_MOC_LITERAL(89, 2062, 11), // "setViewport"
+QT_MOC_LITERAL(90, 2074, 28), // "pmoc_reverse_setCameraThread"
+QT_MOC_LITERAL(91, 2103, 3), // "par"
+QT_MOC_LITERAL(92, 2107, 31), // "pmoc_reverse_setDisplaySettings"
+QT_MOC_LITERAL(93, 2139, 31), // "pmoc_reverse_setGraphicsContext"
+QT_MOC_LITERAL(94, 2171, 24), // "pmoc_reverse_setRenderer"
+QT_MOC_LITERAL(95, 2196, 30), // "pmoc_reverse_setRenderingCache"
+QT_MOC_LITERAL(96, 2227, 21), // "pmoc_reverse_setStats"
+QT_MOC_LITERAL(97, 2249, 18), // "setAllowEventFocus"
+QT_MOC_LITERAL(98, 2268, 29), // "setAttachmentMapModifiedCount"
+QT_MOC_LITERAL(99, 2298, 15), // "setCameraThread"
+QT_MOC_LITERAL(100, 2314, 13), // "setClearDepth"
+QT_MOC_LITERAL(101, 2328, 15), // "setClearStencil"
+QT_MOC_LITERAL(102, 2344, 18), // "setDisplaySettings"
+QT_MOC_LITERAL(103, 2363, 18), // "setGraphicsContext"
+QT_MOC_LITERAL(104, 2382, 11), // "setRenderer"
+QT_MOC_LITERAL(105, 2394, 17), // "setRenderingCache"
+QT_MOC_LITERAL(106, 2412, 8), // "setStats"
+QT_MOC_LITERAL(107, 2421, 15), // "AllowEventFocus"
+QT_MOC_LITERAL(108, 2437, 10), // "ClearDepth"
+QT_MOC_LITERAL(109, 2448, 12), // "ClearStencil"
+QT_MOC_LITERAL(110, 2461, 26), // "AttachmentMapModifiedCount"
+QT_MOC_LITERAL(111, 2488, 15), // "BufferComponent"
+QT_MOC_LITERAL(112, 2504, 12), // "DEPTH_BUFFER"
+QT_MOC_LITERAL(113, 2517, 14), // "STENCIL_BUFFER"
+QT_MOC_LITERAL(114, 2532, 27), // "PACKED_DEPTH_STENCIL_BUFFER"
+QT_MOC_LITERAL(115, 2560, 12), // "COLOR_BUFFER"
+QT_MOC_LITERAL(116, 2573, 13), // "COLOR_BUFFER0"
+QT_MOC_LITERAL(117, 2587, 13), // "COLOR_BUFFER1"
+QT_MOC_LITERAL(118, 2601, 13), // "COLOR_BUFFER2"
+QT_MOC_LITERAL(119, 2615, 13), // "COLOR_BUFFER3"
+QT_MOC_LITERAL(120, 2629, 13), // "COLOR_BUFFER4"
+QT_MOC_LITERAL(121, 2643, 13), // "COLOR_BUFFER5"
+QT_MOC_LITERAL(122, 2657, 13), // "COLOR_BUFFER6"
+QT_MOC_LITERAL(123, 2671, 13), // "COLOR_BUFFER7"
+QT_MOC_LITERAL(124, 2685, 13), // "COLOR_BUFFER8"
+QT_MOC_LITERAL(125, 2699, 13), // "COLOR_BUFFER9"
+QT_MOC_LITERAL(126, 2713, 14), // "COLOR_BUFFER10"
+QT_MOC_LITERAL(127, 2728, 14), // "COLOR_BUFFER11"
+QT_MOC_LITERAL(128, 2743, 14), // "COLOR_BUFFER12"
+QT_MOC_LITERAL(129, 2758, 14), // "COLOR_BUFFER13"
+QT_MOC_LITERAL(130, 2773, 14), // "COLOR_BUFFER14"
+QT_MOC_LITERAL(131, 2788, 14), // "COLOR_BUFFER15"
+QT_MOC_LITERAL(132, 2803, 24), // "ImplicitBufferAttachment"
+QT_MOC_LITERAL(133, 2828, 32), // "IMPLICIT_DEPTH_BUFFER_ATTACHMENT"
+QT_MOC_LITERAL(134, 2861, 34), // "IMPLICIT_STENCIL_BUFFER_ATTAC..."
+QT_MOC_LITERAL(135, 2896, 32), // "IMPLICIT_COLOR_BUFFER_ATTACHMENT"
+QT_MOC_LITERAL(136, 2929, 25), // "USE_DISPLAY_SETTINGS_MASK"
+QT_MOC_LITERAL(137, 2955, 22), // "ProjectionResizePolicy"
+QT_MOC_LITERAL(138, 2978, 5), // "FIXED"
+QT_MOC_LITERAL(139, 2984, 10), // "HORIZONTAL"
+QT_MOC_LITERAL(140, 2995, 8), // "VERTICAL"
+QT_MOC_LITERAL(141, 3004, 11), // "RenderOrder"
+QT_MOC_LITERAL(142, 3016, 10), // "PRE_RENDER"
+QT_MOC_LITERAL(143, 3027, 13), // "NESTED_RENDER"
+QT_MOC_LITERAL(144, 3041, 11), // "POST_RENDER"
+QT_MOC_LITERAL(145, 3053, 26), // "RenderTargetImplementation"
+QT_MOC_LITERAL(146, 3080, 19), // "FRAME_BUFFER_OBJECT"
+QT_MOC_LITERAL(147, 3100, 16), // "PIXEL_BUFFER_RTT"
+QT_MOC_LITERAL(148, 3117, 12), // "PIXEL_BUFFER"
+QT_MOC_LITERAL(149, 3130, 12), // "FRAME_BUFFER"
+QT_MOC_LITERAL(150, 3143, 15), // "SEPARATE_WINDOW"
+QT_MOC_LITERAL(151, 3159, 10), // "ResizeMask"
+QT_MOC_LITERAL(152, 3170, 15), // "RESIZE_VIEWPORT"
+QT_MOC_LITERAL(153, 3186, 18), // "RESIZE_ATTACHMENTS"
+QT_MOC_LITERAL(154, 3205, 23), // "RESIZE_PROJECTIONMATRIX"
+QT_MOC_LITERAL(155, 3229, 14), // "RESIZE_DEFAULT"
+QT_MOC_LITERAL(156, 3244, 14), // "TransformOrder"
+QT_MOC_LITERAL(157, 3259, 12), // "PRE_MULTIPLY"
+QT_MOC_LITERAL(158, 3272, 13) // "POST_MULTIPLY"
 
     },
     "osg::QReflect_Camera\0AllowEventFocusChanged\0"
@@ -302,14 +293,7 @@ QT_MOC_LITERAL(167, 3491, 13) // "POST_MULTIPLY"
     "RendererChanged\0const osg::QReflect_GraphicsOperation*\0"
     "RenderingCacheChanged\0const osg::QReflect_Object*\0"
     "StatsChanged\0const osg::QReflect_Stats*\0"
-    "updateModel\0computeLocalToWorldMatrix\0"
-    "osg::QReflect_Matrixd*\0"
-    "osg::QReflect_NodeVisitor*\0"
-    "computeWorldToLocalMatrix\0"
-    "getProjectionMatrixAsFrustum\0double&\0"
-    "getProjectionMatrixAsOrtho\0"
-    "getProjectionMatrixAsPerspective\0"
-    "isRenderToTextureCamera\0"
+    "updateModel\0isRenderToTextureCamera\0"
     "getImplicitBufferAttachmentRenderMask\0"
     "getImplicitBufferAttachmentResolveMask\0"
     "getRenderOrderNum\0getDisplaySettings\0"
@@ -335,9 +319,7 @@ QT_MOC_LITERAL(167, 3491, 13) // "POST_MULTIPLY"
     "attach\0osg::QReflect_Camera::BufferComponent\0"
     "osg::QReflect_Image*\0osg::QReflect_Texture*\0"
     "createCameraThread\0detach\0dirtyAttachmentMap\0"
-    "getViewMatrixAsLookAt\0osg::QReflect_Vec3d*\0"
-    "osg::QReflect_Vec3f*\0inheritCullSettings\0"
-    "osg::QReflect_CullSettings*\0"
+    "inheritCullSettings\0osg::QReflect_CullSettings*\0"
     "releaseGLObjects\0osg::QReflect_State*\0"
     "resize\0resizeAttachments\0resizeGLObjectBuffers\0"
     "setClearAccum\0osg::QReflect_Vec4f*\0"
@@ -345,7 +327,8 @@ QT_MOC_LITERAL(167, 3491, 13) // "POST_MULTIPLY"
     "setImplicitBufferAttachmentMask\0"
     "setImplicitBufferAttachmentRenderMask\0"
     "setImplicitBufferAttachmentResolveMask\0"
-    "setProjectionMatrix\0osg::QReflect_Matrixf*\0"
+    "setProjectionMatrix\0osg::QReflect_Matrixd*\0"
+    "osg::QReflect_Matrixf*\0"
     "setProjectionMatrixAsFrustum\0"
     "setProjectionMatrixAsOrtho\0"
     "setProjectionMatrixAsOrtho2D\0"
@@ -353,9 +336,9 @@ QT_MOC_LITERAL(167, 3491, 13) // "POST_MULTIPLY"
     "setProjectionResizePolicy\0setRenderOrder\0"
     "setRenderTargetImplementation\0"
     "setTransformOrder\0setViewMatrix\0"
-    "setViewMatrixAsLookAt\0setViewport\0"
-    "pmoc_reverse_setCameraThread\0par\0"
-    "pmoc_reverse_setDisplaySettings\0"
+    "setViewMatrixAsLookAt\0osg::QReflect_Vec3d*\0"
+    "setViewport\0pmoc_reverse_setCameraThread\0"
+    "par\0pmoc_reverse_setDisplaySettings\0"
     "pmoc_reverse_setGraphicsContext\0"
     "pmoc_reverse_setRenderer\0"
     "pmoc_reverse_setRenderingCache\0"
@@ -399,116 +382,109 @@ static const uint qt_meta_data_osg__QReflect_Camera[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      98,   14, // methods
-       4,  856, // properties
-       7,  872, // enums/sets
+      91,   14, // methods
+       4,  758, // properties
+       7,  774, // enums/sets
        0,    0, // constructors
        0,       // flags
       10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  504,    2, 0x06 /* Public */,
-       3,    1,  507,    2, 0x06 /* Public */,
-       4,    1,  510,    2, 0x06 /* Public */,
-       6,    1,  513,    2, 0x06 /* Public */,
-       7,    1,  516,    2, 0x06 /* Public */,
-       8,    1,  519,    2, 0x06 /* Public */,
-      10,    1,  522,    2, 0x06 /* Public */,
-      12,    1,  525,    2, 0x06 /* Public */,
-      14,    1,  528,    2, 0x06 /* Public */,
-      16,    1,  531,    2, 0x06 /* Public */,
+       1,    1,  469,    2, 0x06 /* Public */,
+       3,    1,  472,    2, 0x06 /* Public */,
+       4,    1,  475,    2, 0x06 /* Public */,
+       6,    1,  478,    2, 0x06 /* Public */,
+       7,    1,  481,    2, 0x06 /* Public */,
+       8,    1,  484,    2, 0x06 /* Public */,
+      10,    1,  487,    2, 0x06 /* Public */,
+      12,    1,  490,    2, 0x06 /* Public */,
+      14,    1,  493,    2, 0x06 /* Public */,
+      16,    1,  496,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-      18,    0,  534,    2, 0x0a /* Public */,
+      18,    0,  499,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-      19,    2,  535,    2, 0x02 /* Public */,
-      22,    2,  540,    2, 0x02 /* Public */,
-      23,    6,  545,    2, 0x02 /* Public */,
-      25,    6,  558,    2, 0x02 /* Public */,
-      26,    4,  571,    2, 0x02 /* Public */,
-      27,    0,  580,    2, 0x02 /* Public */,
-      28,    1,  581,    2, 0x02 /* Public */,
-      29,    1,  584,    2, 0x02 /* Public */,
-      30,    0,  587,    2, 0x02 /* Public */,
-      31,    0,  588,    2, 0x02 /* Public */,
-      33,    0,  589,    2, 0x02 /* Public */,
-      35,    0,  590,    2, 0x02 /* Public */,
-      37,    0,  591,    2, 0x02 /* Public */,
-      39,    0,  592,    2, 0x02 /* Public */,
-      41,    0,  593,    2, 0x02 /* Public */,
-      43,    0,  594,    2, 0x02 /* Public */,
-      44,    0,  595,    2, 0x02 /* Public */,
-      45,    0,  596,    2, 0x02 /* Public */,
-      46,    0,  597,    2, 0x02 /* Public */,
-      47,    0,  598,    2, 0x02 /* Public */,
-      47,    0,  599,    2, 0x02 /* Public */,
-      49,    0,  600,    2, 0x02 /* Public */,
-      51,    0,  601,    2, 0x02 /* Public */,
-      53,    0,  602,    2, 0x02 /* Public */,
-      55,    0,  603,    2, 0x02 /* Public */,
-      56,    0,  604,    2, 0x02 /* Public */,
-      58,    0,  605,    2, 0x02 /* Public */,
-      58,    0,  606,    2, 0x02 /* Public */,
-      60,    0,  607,    2, 0x02 /* Public */,
-      60,    0,  608,    2, 0x02 /* Public */,
-      62,    4,  609,    2, 0x02 /* Public */,
-      62,    7,  618,    2, 0x02 /* Public */,
-      66,    0,  633,    2, 0x02 /* Public */,
-      67,    1,  634,    2, 0x02 /* Public */,
-      68,    0,  637,    2, 0x02 /* Public */,
-      69,    4,  638,    2, 0x02 /* Public */,
-      69,    4,  647,    2, 0x02 /* Public */,
-      72,    2,  656,    2, 0x02 /* Public */,
-      74,    1,  661,    2, 0x02 /* Public */,
-      76,    3,  664,    2, 0x02 /* Public */,
-      77,    2,  671,    2, 0x02 /* Public */,
-      78,    1,  676,    2, 0x02 /* Public */,
-      79,    1,  679,    2, 0x02 /* Public */,
-      81,    1,  682,    2, 0x02 /* Public */,
-      82,    4,  685,    2, 0x02 /* Public */,
-      82,    1,  694,    2, 0x02 /* Public */,
-      83,    2,  697,    2, 0x02 /* Public */,
-      84,    1,  702,    2, 0x02 /* Public */,
-      85,    1,  705,    2, 0x02 /* Public */,
-      86,    1,  708,    2, 0x02 /* Public */,
-      86,    1,  711,    2, 0x02 /* Public */,
-      88,    6,  714,    2, 0x02 /* Public */,
-      89,    6,  727,    2, 0x02 /* Public */,
-      90,    4,  740,    2, 0x02 /* Public */,
-      91,    4,  749,    2, 0x02 /* Public */,
-      92,    1,  758,    2, 0x02 /* Public */,
-      93,    2,  761,    2, 0x02 /* Public */,
-      94,    2,  766,    2, 0x02 /* Public */,
-      94,    1,  771,    2, 0x02 /* Public */,
-      95,    1,  774,    2, 0x02 /* Public */,
-      96,    1,  777,    2, 0x02 /* Public */,
-      96,    1,  780,    2, 0x02 /* Public */,
-      97,    3,  783,    2, 0x02 /* Public */,
-      98,    4,  790,    2, 0x02 /* Public */,
-      98,    1,  799,    2, 0x02 /* Public */,
-      99,    1,  802,    2, 0x02 /* Public */,
-      99,    0,  805,    2, 0x22 /* Public | MethodCloned */,
-     101,    1,  806,    2, 0x02 /* Public */,
-     101,    0,  809,    2, 0x22 /* Public | MethodCloned */,
-     102,    1,  810,    2, 0x02 /* Public */,
-     102,    0,  813,    2, 0x22 /* Public | MethodCloned */,
-     103,    1,  814,    2, 0x02 /* Public */,
-     103,    0,  817,    2, 0x22 /* Public | MethodCloned */,
-     104,    1,  818,    2, 0x02 /* Public */,
-     104,    0,  821,    2, 0x22 /* Public | MethodCloned */,
-     105,    1,  822,    2, 0x02 /* Public */,
-     105,    0,  825,    2, 0x22 /* Public | MethodCloned */,
-     106,    1,  826,    2, 0x02 /* Public */,
-     107,    1,  829,    2, 0x02 /* Public */,
-     108,    1,  832,    2, 0x02 /* Public */,
-     109,    1,  835,    2, 0x02 /* Public */,
-     110,    1,  838,    2, 0x02 /* Public */,
-     111,    1,  841,    2, 0x02 /* Public */,
-     112,    1,  844,    2, 0x02 /* Public */,
-     113,    1,  847,    2, 0x02 /* Public */,
-     114,    1,  850,    2, 0x02 /* Public */,
-     115,    1,  853,    2, 0x02 /* Public */,
+      19,    0,  500,    2, 0x02 /* Public */,
+      20,    1,  501,    2, 0x02 /* Public */,
+      21,    1,  504,    2, 0x02 /* Public */,
+      22,    0,  507,    2, 0x02 /* Public */,
+      23,    0,  508,    2, 0x02 /* Public */,
+      25,    0,  509,    2, 0x02 /* Public */,
+      27,    0,  510,    2, 0x02 /* Public */,
+      29,    0,  511,    2, 0x02 /* Public */,
+      31,    0,  512,    2, 0x02 /* Public */,
+      33,    0,  513,    2, 0x02 /* Public */,
+      35,    0,  514,    2, 0x02 /* Public */,
+      36,    0,  515,    2, 0x02 /* Public */,
+      37,    0,  516,    2, 0x02 /* Public */,
+      38,    0,  517,    2, 0x02 /* Public */,
+      39,    0,  518,    2, 0x02 /* Public */,
+      39,    0,  519,    2, 0x02 /* Public */,
+      41,    0,  520,    2, 0x02 /* Public */,
+      43,    0,  521,    2, 0x02 /* Public */,
+      45,    0,  522,    2, 0x02 /* Public */,
+      47,    0,  523,    2, 0x02 /* Public */,
+      48,    0,  524,    2, 0x02 /* Public */,
+      50,    0,  525,    2, 0x02 /* Public */,
+      50,    0,  526,    2, 0x02 /* Public */,
+      52,    0,  527,    2, 0x02 /* Public */,
+      52,    0,  528,    2, 0x02 /* Public */,
+      54,    4,  529,    2, 0x02 /* Public */,
+      54,    7,  538,    2, 0x02 /* Public */,
+      58,    0,  553,    2, 0x02 /* Public */,
+      59,    1,  554,    2, 0x02 /* Public */,
+      60,    0,  557,    2, 0x02 /* Public */,
+      61,    2,  558,    2, 0x02 /* Public */,
+      63,    1,  563,    2, 0x02 /* Public */,
+      65,    3,  566,    2, 0x02 /* Public */,
+      66,    2,  573,    2, 0x02 /* Public */,
+      67,    1,  578,    2, 0x02 /* Public */,
+      68,    1,  581,    2, 0x02 /* Public */,
+      70,    1,  584,    2, 0x02 /* Public */,
+      71,    4,  587,    2, 0x02 /* Public */,
+      71,    1,  596,    2, 0x02 /* Public */,
+      72,    2,  599,    2, 0x02 /* Public */,
+      73,    1,  604,    2, 0x02 /* Public */,
+      74,    1,  607,    2, 0x02 /* Public */,
+      75,    1,  610,    2, 0x02 /* Public */,
+      75,    1,  613,    2, 0x02 /* Public */,
+      78,    6,  616,    2, 0x02 /* Public */,
+      79,    6,  629,    2, 0x02 /* Public */,
+      80,    4,  642,    2, 0x02 /* Public */,
+      81,    4,  651,    2, 0x02 /* Public */,
+      82,    1,  660,    2, 0x02 /* Public */,
+      83,    2,  663,    2, 0x02 /* Public */,
+      84,    2,  668,    2, 0x02 /* Public */,
+      84,    1,  673,    2, 0x02 /* Public */,
+      85,    1,  676,    2, 0x02 /* Public */,
+      86,    1,  679,    2, 0x02 /* Public */,
+      86,    1,  682,    2, 0x02 /* Public */,
+      87,    3,  685,    2, 0x02 /* Public */,
+      89,    4,  692,    2, 0x02 /* Public */,
+      89,    1,  701,    2, 0x02 /* Public */,
+      90,    1,  704,    2, 0x02 /* Public */,
+      90,    0,  707,    2, 0x22 /* Public | MethodCloned */,
+      92,    1,  708,    2, 0x02 /* Public */,
+      92,    0,  711,    2, 0x22 /* Public | MethodCloned */,
+      93,    1,  712,    2, 0x02 /* Public */,
+      93,    0,  715,    2, 0x22 /* Public | MethodCloned */,
+      94,    1,  716,    2, 0x02 /* Public */,
+      94,    0,  719,    2, 0x22 /* Public | MethodCloned */,
+      95,    1,  720,    2, 0x02 /* Public */,
+      95,    0,  723,    2, 0x22 /* Public | MethodCloned */,
+      96,    1,  724,    2, 0x02 /* Public */,
+      96,    0,  727,    2, 0x22 /* Public | MethodCloned */,
+      97,    1,  728,    2, 0x02 /* Public */,
+      98,    1,  731,    2, 0x02 /* Public */,
+      99,    1,  734,    2, 0x02 /* Public */,
+     100,    1,  737,    2, 0x02 /* Public */,
+     101,    1,  740,    2, 0x02 /* Public */,
+     102,    1,  743,    2, 0x02 /* Public */,
+     103,    1,  746,    2, 0x02 /* Public */,
+     104,    1,  749,    2, 0x02 /* Public */,
+     105,    1,  752,    2, 0x02 /* Public */,
+     106,    1,  755,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Bool,    2,
@@ -526,99 +502,92 @@ static const uint qt_meta_data_osg__QReflect_Camera[] = {
     QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Bool, 0x80000000 | 20, 0x80000000 | 21,    2,    2,
-    QMetaType::Bool, 0x80000000 | 20, 0x80000000 | 21,    2,    2,
-    QMetaType::Bool, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24,    2,    2,    2,    2,    2,    2,
-    QMetaType::Bool, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24,    2,    2,    2,    2,    2,    2,
-    QMetaType::Bool, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24, 0x80000000 | 24,    2,    2,    2,    2,
     QMetaType::Bool,
     QMetaType::Int, QMetaType::Bool,    2,
     QMetaType::Int, QMetaType::Bool,    2,
     QMetaType::Int,
+    0x80000000 | 24,
+    0x80000000 | 26,
+    0x80000000 | 28,
+    0x80000000 | 30,
     0x80000000 | 32,
     0x80000000 | 34,
-    0x80000000 | 36,
-    0x80000000 | 38,
-    0x80000000 | 40,
-    0x80000000 | 42,
     QMetaType::Bool,
     QMetaType::Double,
     QMetaType::Int,
     QMetaType::UInt,
-    0x80000000 | 48,
-    0x80000000 | 48,
-    0x80000000 | 50,
-    0x80000000 | 52,
-    0x80000000 | 54,
-    0x80000000 | 54,
-    0x80000000 | 57,
-    0x80000000 | 59,
-    0x80000000 | 59,
-    0x80000000 | 61,
-    0x80000000 | 61,
-    QMetaType::Void, 0x80000000 | 63, 0x80000000 | 64, QMetaType::UInt, QMetaType::UInt,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 63, 0x80000000 | 65, QMetaType::UInt, QMetaType::UInt, QMetaType::Bool, QMetaType::UInt, QMetaType::UInt,    2,    2,    2,    2,    2,    2,    2,
+    0x80000000 | 40,
+    0x80000000 | 40,
+    0x80000000 | 42,
+    0x80000000 | 44,
+    0x80000000 | 46,
+    0x80000000 | 46,
+    0x80000000 | 49,
+    0x80000000 | 51,
+    0x80000000 | 51,
+    0x80000000 | 53,
+    0x80000000 | 53,
+    QMetaType::Void, 0x80000000 | 55, 0x80000000 | 56, QMetaType::UInt, QMetaType::UInt,    2,    2,    2,    2,
+    QMetaType::Void, 0x80000000 | 55, 0x80000000 | 57, QMetaType::UInt, QMetaType::UInt, QMetaType::Bool, QMetaType::UInt, QMetaType::UInt,    2,    2,    2,    2,    2,    2,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 63,    2,
+    QMetaType::Void, 0x80000000 | 55,    2,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 70, 0x80000000 | 70, 0x80000000 | 70, QMetaType::Double,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 71, 0x80000000 | 71, 0x80000000 | 71, QMetaType::Float,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 73, QMetaType::UInt,    2,    2,
-    QMetaType::Void, 0x80000000 | 75,    2,
+    QMetaType::Void, 0x80000000 | 62, QMetaType::UInt,    2,    2,
+    QMetaType::Void, 0x80000000 | 64,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 80,    2,
-    QMetaType::Void, 0x80000000 | 80,    2,
+    QMetaType::Void, 0x80000000 | 69,    2,
+    QMetaType::Void, 0x80000000 | 69,    2,
     QMetaType::Void, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool, QMetaType::Bool,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 59,    2,
+    QMetaType::Void, 0x80000000 | 51,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 20,    2,
-    QMetaType::Void, 0x80000000 | 87,    2,
+    QMetaType::Void, 0x80000000 | 76,    2,
+    QMetaType::Void, 0x80000000 | 77,    2,
     QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    2,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    2,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, QMetaType::Double,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 50,    2,
-    QMetaType::Void, 0x80000000 | 52, QMetaType::Int,    2,    2,
-    QMetaType::Void, 0x80000000 | 54, 0x80000000 | 54,    2,    2,
-    QMetaType::Void, 0x80000000 | 54,    2,
-    QMetaType::Void, 0x80000000 | 57,    2,
-    QMetaType::Void, 0x80000000 | 20,    2,
-    QMetaType::Void, 0x80000000 | 87,    2,
-    QMetaType::Void, 0x80000000 | 70, 0x80000000 | 70, 0x80000000 | 70,    2,    2,    2,
+    QMetaType::Void, 0x80000000 | 42,    2,
+    QMetaType::Void, 0x80000000 | 44, QMetaType::Int,    2,    2,
+    QMetaType::Void, 0x80000000 | 46, 0x80000000 | 46,    2,    2,
+    QMetaType::Void, 0x80000000 | 46,    2,
+    QMetaType::Void, 0x80000000 | 49,    2,
+    QMetaType::Void, 0x80000000 | 76,    2,
+    QMetaType::Void, 0x80000000 | 77,    2,
+    QMetaType::Void, 0x80000000 | 88, 0x80000000 | 88, 0x80000000 | 88,    2,    2,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int, QMetaType::Int,    2,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 61,    2,
-    QMetaType::Void, 0x80000000 | 40,  100,
+    QMetaType::Void, 0x80000000 | 53,    2,
+    QMetaType::Void, 0x80000000 | 32,   91,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 32,  100,
+    QMetaType::Void, 0x80000000 | 24,   91,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 34,  100,
+    QMetaType::Void, 0x80000000 | 26,   91,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 36,  100,
+    QMetaType::Void, 0x80000000 | 28,   91,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 38,  100,
+    QMetaType::Void, 0x80000000 | 30,   91,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 42,  100,
+    QMetaType::Void, 0x80000000 | 34,   91,
     QMetaType::Void,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::UInt,    2,
-    QMetaType::Void, 0x80000000 | 40,  100,
+    QMetaType::Void, 0x80000000 | 32,   91,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 32,  100,
-    QMetaType::Void, 0x80000000 | 34,  100,
-    QMetaType::Void, 0x80000000 | 36,  100,
-    QMetaType::Void, 0x80000000 | 38,  100,
-    QMetaType::Void, 0x80000000 | 42,  100,
+    QMetaType::Void, 0x80000000 | 24,   91,
+    QMetaType::Void, 0x80000000 | 26,   91,
+    QMetaType::Void, 0x80000000 | 28,   91,
+    QMetaType::Void, 0x80000000 | 30,   91,
+    QMetaType::Void, 0x80000000 | 34,   91,
 
  // properties: name, type, flags
-     116, QMetaType::Bool, 0x00495103,
-     117, QMetaType::Double, 0x00495103,
-     118, QMetaType::Int, 0x00495103,
-     119, QMetaType::UInt, 0x00495103,
+     107, QMetaType::Bool, 0x00495103,
+     108, QMetaType::Double, 0x00495103,
+     109, QMetaType::Int, 0x00495103,
+     110, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -627,56 +596,56 @@ static const uint qt_meta_data_osg__QReflect_Camera[] = {
        1,
 
  // enums: name, flags, count, data
-     120, 0x0,   20,  900,
-     141, 0x0,    4,  940,
-     146, 0x0,    3,  948,
-     150, 0x0,    3,  954,
-     154, 0x0,    5,  960,
-     160, 0x0,    4,  970,
-     165, 0x0,    2,  978,
+     111, 0x0,   20,  802,
+     132, 0x0,    4,  842,
+     137, 0x0,    3,  850,
+     141, 0x0,    3,  856,
+     145, 0x0,    5,  862,
+     151, 0x0,    4,  872,
+     156, 0x0,    2,  880,
 
  // enum data: key, value
-     121, uint(osg::QReflect_Camera::DEPTH_BUFFER),
-     122, uint(osg::QReflect_Camera::STENCIL_BUFFER),
-     123, uint(osg::QReflect_Camera::PACKED_DEPTH_STENCIL_BUFFER),
-     124, uint(osg::QReflect_Camera::COLOR_BUFFER),
-     125, uint(osg::QReflect_Camera::COLOR_BUFFER0),
-     126, uint(osg::QReflect_Camera::COLOR_BUFFER1),
-     127, uint(osg::QReflect_Camera::COLOR_BUFFER2),
-     128, uint(osg::QReflect_Camera::COLOR_BUFFER3),
-     129, uint(osg::QReflect_Camera::COLOR_BUFFER4),
-     130, uint(osg::QReflect_Camera::COLOR_BUFFER5),
-     131, uint(osg::QReflect_Camera::COLOR_BUFFER6),
-     132, uint(osg::QReflect_Camera::COLOR_BUFFER7),
-     133, uint(osg::QReflect_Camera::COLOR_BUFFER8),
-     134, uint(osg::QReflect_Camera::COLOR_BUFFER9),
-     135, uint(osg::QReflect_Camera::COLOR_BUFFER10),
-     136, uint(osg::QReflect_Camera::COLOR_BUFFER11),
-     137, uint(osg::QReflect_Camera::COLOR_BUFFER12),
-     138, uint(osg::QReflect_Camera::COLOR_BUFFER13),
-     139, uint(osg::QReflect_Camera::COLOR_BUFFER14),
-     140, uint(osg::QReflect_Camera::COLOR_BUFFER15),
-     142, uint(osg::QReflect_Camera::IMPLICIT_DEPTH_BUFFER_ATTACHMENT),
-     143, uint(osg::QReflect_Camera::IMPLICIT_STENCIL_BUFFER_ATTACHMENT),
-     144, uint(osg::QReflect_Camera::IMPLICIT_COLOR_BUFFER_ATTACHMENT),
-     145, uint(osg::QReflect_Camera::USE_DISPLAY_SETTINGS_MASK),
-     147, uint(osg::QReflect_Camera::FIXED),
-     148, uint(osg::QReflect_Camera::HORIZONTAL),
-     149, uint(osg::QReflect_Camera::VERTICAL),
-     151, uint(osg::QReflect_Camera::PRE_RENDER),
-     152, uint(osg::QReflect_Camera::NESTED_RENDER),
-     153, uint(osg::QReflect_Camera::POST_RENDER),
-     155, uint(osg::QReflect_Camera::FRAME_BUFFER_OBJECT),
-     156, uint(osg::QReflect_Camera::PIXEL_BUFFER_RTT),
-     157, uint(osg::QReflect_Camera::PIXEL_BUFFER),
-     158, uint(osg::QReflect_Camera::FRAME_BUFFER),
-     159, uint(osg::QReflect_Camera::SEPARATE_WINDOW),
-     161, uint(osg::QReflect_Camera::RESIZE_VIEWPORT),
-     162, uint(osg::QReflect_Camera::RESIZE_ATTACHMENTS),
-     163, uint(osg::QReflect_Camera::RESIZE_PROJECTIONMATRIX),
-     164, uint(osg::QReflect_Camera::RESIZE_DEFAULT),
-     166, uint(osg::QReflect_Camera::PRE_MULTIPLY),
-     167, uint(osg::QReflect_Camera::POST_MULTIPLY),
+     112, uint(osg::QReflect_Camera::DEPTH_BUFFER),
+     113, uint(osg::QReflect_Camera::STENCIL_BUFFER),
+     114, uint(osg::QReflect_Camera::PACKED_DEPTH_STENCIL_BUFFER),
+     115, uint(osg::QReflect_Camera::COLOR_BUFFER),
+     116, uint(osg::QReflect_Camera::COLOR_BUFFER0),
+     117, uint(osg::QReflect_Camera::COLOR_BUFFER1),
+     118, uint(osg::QReflect_Camera::COLOR_BUFFER2),
+     119, uint(osg::QReflect_Camera::COLOR_BUFFER3),
+     120, uint(osg::QReflect_Camera::COLOR_BUFFER4),
+     121, uint(osg::QReflect_Camera::COLOR_BUFFER5),
+     122, uint(osg::QReflect_Camera::COLOR_BUFFER6),
+     123, uint(osg::QReflect_Camera::COLOR_BUFFER7),
+     124, uint(osg::QReflect_Camera::COLOR_BUFFER8),
+     125, uint(osg::QReflect_Camera::COLOR_BUFFER9),
+     126, uint(osg::QReflect_Camera::COLOR_BUFFER10),
+     127, uint(osg::QReflect_Camera::COLOR_BUFFER11),
+     128, uint(osg::QReflect_Camera::COLOR_BUFFER12),
+     129, uint(osg::QReflect_Camera::COLOR_BUFFER13),
+     130, uint(osg::QReflect_Camera::COLOR_BUFFER14),
+     131, uint(osg::QReflect_Camera::COLOR_BUFFER15),
+     133, uint(osg::QReflect_Camera::IMPLICIT_DEPTH_BUFFER_ATTACHMENT),
+     134, uint(osg::QReflect_Camera::IMPLICIT_STENCIL_BUFFER_ATTACHMENT),
+     135, uint(osg::QReflect_Camera::IMPLICIT_COLOR_BUFFER_ATTACHMENT),
+     136, uint(osg::QReflect_Camera::USE_DISPLAY_SETTINGS_MASK),
+     138, uint(osg::QReflect_Camera::FIXED),
+     139, uint(osg::QReflect_Camera::HORIZONTAL),
+     140, uint(osg::QReflect_Camera::VERTICAL),
+     142, uint(osg::QReflect_Camera::PRE_RENDER),
+     143, uint(osg::QReflect_Camera::NESTED_RENDER),
+     144, uint(osg::QReflect_Camera::POST_RENDER),
+     146, uint(osg::QReflect_Camera::FRAME_BUFFER_OBJECT),
+     147, uint(osg::QReflect_Camera::PIXEL_BUFFER_RTT),
+     148, uint(osg::QReflect_Camera::PIXEL_BUFFER),
+     149, uint(osg::QReflect_Camera::FRAME_BUFFER),
+     150, uint(osg::QReflect_Camera::SEPARATE_WINDOW),
+     152, uint(osg::QReflect_Camera::RESIZE_VIEWPORT),
+     153, uint(osg::QReflect_Camera::RESIZE_ATTACHMENTS),
+     154, uint(osg::QReflect_Camera::RESIZE_PROJECTIONMATRIX),
+     155, uint(osg::QReflect_Camera::RESIZE_DEFAULT),
+     157, uint(osg::QReflect_Camera::PRE_MULTIPLY),
+     158, uint(osg::QReflect_Camera::POST_MULTIPLY),
 
        0        // eod
 };
@@ -698,123 +667,111 @@ void osg::QReflect_Camera::qt_static_metacall(QObject *_o, QMetaObject::Call _c,
         case 8: _t->RenderingCacheChanged((*reinterpret_cast< const osg::QReflect_Object*(*)>(_a[1]))); break;
         case 9: _t->StatsChanged((*reinterpret_cast< const osg::QReflect_Stats*(*)>(_a[1]))); break;
         case 10: _t->updateModel(); break;
-        case 11: { bool _r = _t->computeLocalToWorldMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[2])));
+        case 11: { bool _r = _t->isRenderToTextureCamera();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 12: { bool _r = _t->computeWorldToLocalMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[2])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 13: { bool _r = _t->getProjectionMatrixAsFrustum((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 14: { bool _r = _t->getProjectionMatrixAsOrtho((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 15: { bool _r = _t->getProjectionMatrixAsPerspective((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])));
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 16: { bool _r = _t->isRenderToTextureCamera();
-            if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 17: { int _r = _t->getImplicitBufferAttachmentRenderMask((*reinterpret_cast< bool(*)>(_a[1])));
+        case 12: { int _r = _t->getImplicitBufferAttachmentRenderMask((*reinterpret_cast< bool(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 18: { int _r = _t->getImplicitBufferAttachmentResolveMask((*reinterpret_cast< bool(*)>(_a[1])));
+        case 13: { int _r = _t->getImplicitBufferAttachmentResolveMask((*reinterpret_cast< bool(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 19: { int _r = _t->getRenderOrderNum();
+        case 14: { int _r = _t->getRenderOrderNum();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 20: { osg::QReflect_DisplaySettings* _r = _t->getDisplaySettings();
+        case 15: { osg::QReflect_DisplaySettings* _r = _t->getDisplaySettings();
             if (_a[0]) *reinterpret_cast< osg::QReflect_DisplaySettings**>(_a[0]) = _r; }  break;
-        case 21: { osg::QReflect_GraphicsContext* _r = _t->getGraphicsContext();
+        case 16: { osg::QReflect_GraphicsContext* _r = _t->getGraphicsContext();
             if (_a[0]) *reinterpret_cast< osg::QReflect_GraphicsContext**>(_a[0]) = _r; }  break;
-        case 22: { osg::QReflect_GraphicsOperation* _r = _t->getRenderer();
+        case 17: { osg::QReflect_GraphicsOperation* _r = _t->getRenderer();
             if (_a[0]) *reinterpret_cast< osg::QReflect_GraphicsOperation**>(_a[0]) = _r; }  break;
-        case 23: { osg::QReflect_Object* _r = _t->getRenderingCache();
+        case 18: { osg::QReflect_Object* _r = _t->getRenderingCache();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Object**>(_a[0]) = _r; }  break;
-        case 24: { osg::QReflect_OperationThread* _r = _t->getCameraThread();
+        case 19: { osg::QReflect_OperationThread* _r = _t->getCameraThread();
             if (_a[0]) *reinterpret_cast< osg::QReflect_OperationThread**>(_a[0]) = _r; }  break;
-        case 25: { osg::QReflect_Stats* _r = _t->getStats();
+        case 20: { osg::QReflect_Stats* _r = _t->getStats();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Stats**>(_a[0]) = _r; }  break;
-        case 26: { bool _r = _t->getAllowEventFocus();
+        case 21: { bool _r = _t->getAllowEventFocus();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 27: { double _r = _t->getClearDepth();
+        case 22: { double _r = _t->getClearDepth();
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
-        case 28: { int _r = _t->getClearStencil();
+        case 23: { int _r = _t->getClearStencil();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 29: { uint _r = _t->getAttachmentMapModifiedCount();
+        case 24: { uint _r = _t->getAttachmentMapModifiedCount();
             if (_a[0]) *reinterpret_cast< uint*>(_a[0]) = _r; }  break;
-        case 30: { osg::QReflect_Camera* _r = _t->asCamera();
+        case 25: { osg::QReflect_Camera* _r = _t->asCamera();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Camera**>(_a[0]) = _r; }  break;
-        case 31: { osg::QReflect_Camera* _r = _t->asCamera();
+        case 26: { osg::QReflect_Camera* _r = _t->asCamera();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Camera**>(_a[0]) = _r; }  break;
-        case 32: { osg::QReflect_Camera::ProjectionResizePolicy _r = _t->getProjectionResizePolicy();
+        case 27: { osg::QReflect_Camera::ProjectionResizePolicy _r = _t->getProjectionResizePolicy();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Camera::ProjectionResizePolicy*>(_a[0]) = _r; }  break;
-        case 33: { osg::QReflect_Camera::RenderOrder _r = _t->getRenderOrder();
+        case 28: { osg::QReflect_Camera::RenderOrder _r = _t->getRenderOrder();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Camera::RenderOrder*>(_a[0]) = _r; }  break;
-        case 34: { osg::QReflect_Camera::RenderTargetImplementation _r = _t->getRenderTargetFallback();
+        case 29: { osg::QReflect_Camera::RenderTargetImplementation _r = _t->getRenderTargetFallback();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation*>(_a[0]) = _r; }  break;
-        case 35: { osg::QReflect_Camera::RenderTargetImplementation _r = _t->getRenderTargetImplementation();
+        case 30: { osg::QReflect_Camera::RenderTargetImplementation _r = _t->getRenderTargetImplementation();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation*>(_a[0]) = _r; }  break;
-        case 36: { osg::QReflect_Camera::TransformOrder _r = _t->getTransformOrder();
+        case 31: { osg::QReflect_Camera::TransformOrder _r = _t->getTransformOrder();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Camera::TransformOrder*>(_a[0]) = _r; }  break;
-        case 37: { osg::QReflect_ColorMask* _r = _t->getColorMask();
+        case 32: { osg::QReflect_ColorMask* _r = _t->getColorMask();
             if (_a[0]) *reinterpret_cast< osg::QReflect_ColorMask**>(_a[0]) = _r; }  break;
-        case 38: { osg::QReflect_ColorMask* _r = _t->getColorMask();
+        case 33: { osg::QReflect_ColorMask* _r = _t->getColorMask();
             if (_a[0]) *reinterpret_cast< osg::QReflect_ColorMask**>(_a[0]) = _r; }  break;
-        case 39: { osg::QReflect_Viewport* _r = _t->getViewport();
+        case 34: { osg::QReflect_Viewport* _r = _t->getViewport();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Viewport**>(_a[0]) = _r; }  break;
-        case 40: { osg::QReflect_Viewport* _r = _t->getViewport();
+        case 35: { osg::QReflect_Viewport* _r = _t->getViewport();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Viewport**>(_a[0]) = _r; }  break;
-        case 41: _t->attach((*reinterpret_cast< osg::QReflect_Camera::BufferComponent(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])),(*reinterpret_cast< uint(*)>(_a[4]))); break;
-        case 42: _t->attach((*reinterpret_cast< osg::QReflect_Camera::BufferComponent(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Texture*(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])),(*reinterpret_cast< uint(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5])),(*reinterpret_cast< uint(*)>(_a[6])),(*reinterpret_cast< uint(*)>(_a[7]))); break;
-        case 43: _t->createCameraThread(); break;
-        case 44: _t->detach((*reinterpret_cast< osg::QReflect_Camera::BufferComponent(*)>(_a[1]))); break;
-        case 45: _t->dirtyAttachmentMap(); break;
-        case 46: _t->getViewMatrixAsLookAt((*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
-        case 47: _t->getViewMatrixAsLookAt((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[3])),(*reinterpret_cast< float(*)>(_a[4]))); break;
-        case 48: _t->inheritCullSettings((*reinterpret_cast< osg::QReflect_CullSettings*(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
-        case 49: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 50: _t->resize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 51: _t->resizeAttachments((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 52: _t->resizeGLObjectBuffers((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 53: _t->setClearAccum((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
-        case 54: _t->setClearColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
-        case 55: _t->setColorMask((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3])),(*reinterpret_cast< bool(*)>(_a[4]))); break;
-        case 56: _t->setColorMask((*reinterpret_cast< osg::QReflect_ColorMask*(*)>(_a[1]))); break;
-        case 57: _t->setImplicitBufferAttachmentMask((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 58: _t->setImplicitBufferAttachmentRenderMask((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 59: _t->setImplicitBufferAttachmentResolveMask((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 60: _t->setProjectionMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
-        case 61: _t->setProjectionMatrix((*reinterpret_cast< osg::QReflect_Matrixf*(*)>(_a[1]))); break;
-        case 62: _t->setProjectionMatrixAsFrustum((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6]))); break;
-        case 63: _t->setProjectionMatrixAsOrtho((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6]))); break;
-        case 64: _t->setProjectionMatrixAsOrtho2D((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
-        case 65: _t->setProjectionMatrixAsPerspective((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
-        case 66: _t->setProjectionResizePolicy((*reinterpret_cast< osg::QReflect_Camera::ProjectionResizePolicy(*)>(_a[1]))); break;
-        case 67: _t->setRenderOrder((*reinterpret_cast< osg::QReflect_Camera::RenderOrder(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 68: _t->setRenderTargetImplementation((*reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation(*)>(_a[2]))); break;
-        case 69: _t->setRenderTargetImplementation((*reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation(*)>(_a[1]))); break;
-        case 70: _t->setTransformOrder((*reinterpret_cast< osg::QReflect_Camera::TransformOrder(*)>(_a[1]))); break;
-        case 71: _t->setViewMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
-        case 72: _t->setViewMatrix((*reinterpret_cast< osg::QReflect_Matrixf*(*)>(_a[1]))); break;
-        case 73: _t->setViewMatrixAsLookAt((*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[3]))); break;
-        case 74: _t->setViewport((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
-        case 75: _t->setViewport((*reinterpret_cast< osg::QReflect_Viewport*(*)>(_a[1]))); break;
-        case 76: _t->pmoc_reverse_setCameraThread((*reinterpret_cast< osg::QReflect_OperationThread*(*)>(_a[1]))); break;
-        case 77: _t->pmoc_reverse_setCameraThread(); break;
-        case 78: _t->pmoc_reverse_setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
-        case 79: _t->pmoc_reverse_setDisplaySettings(); break;
-        case 80: _t->pmoc_reverse_setGraphicsContext((*reinterpret_cast< osg::QReflect_GraphicsContext*(*)>(_a[1]))); break;
-        case 81: _t->pmoc_reverse_setGraphicsContext(); break;
-        case 82: _t->pmoc_reverse_setRenderer((*reinterpret_cast< osg::QReflect_GraphicsOperation*(*)>(_a[1]))); break;
-        case 83: _t->pmoc_reverse_setRenderer(); break;
-        case 84: _t->pmoc_reverse_setRenderingCache((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1]))); break;
-        case 85: _t->pmoc_reverse_setRenderingCache(); break;
-        case 86: _t->pmoc_reverse_setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
-        case 87: _t->pmoc_reverse_setStats(); break;
-        case 88: _t->setAllowEventFocus((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 89: _t->setAttachmentMapModifiedCount((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 90: _t->setCameraThread((*reinterpret_cast< osg::QReflect_OperationThread*(*)>(_a[1]))); break;
-        case 91: _t->setClearDepth((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 92: _t->setClearStencil((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 93: _t->setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
-        case 94: _t->setGraphicsContext((*reinterpret_cast< osg::QReflect_GraphicsContext*(*)>(_a[1]))); break;
-        case 95: _t->setRenderer((*reinterpret_cast< osg::QReflect_GraphicsOperation*(*)>(_a[1]))); break;
-        case 96: _t->setRenderingCache((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1]))); break;
-        case 97: _t->setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
+        case 36: _t->attach((*reinterpret_cast< osg::QReflect_Camera::BufferComponent(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Image*(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])),(*reinterpret_cast< uint(*)>(_a[4]))); break;
+        case 37: _t->attach((*reinterpret_cast< osg::QReflect_Camera::BufferComponent(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Texture*(*)>(_a[2])),(*reinterpret_cast< uint(*)>(_a[3])),(*reinterpret_cast< uint(*)>(_a[4])),(*reinterpret_cast< bool(*)>(_a[5])),(*reinterpret_cast< uint(*)>(_a[6])),(*reinterpret_cast< uint(*)>(_a[7]))); break;
+        case 38: _t->createCameraThread(); break;
+        case 39: _t->detach((*reinterpret_cast< osg::QReflect_Camera::BufferComponent(*)>(_a[1]))); break;
+        case 40: _t->dirtyAttachmentMap(); break;
+        case 41: _t->inheritCullSettings((*reinterpret_cast< osg::QReflect_CullSettings*(*)>(_a[1])),(*reinterpret_cast< uint(*)>(_a[2]))); break;
+        case 42: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
+        case 43: _t->resize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 44: _t->resizeAttachments((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 45: _t->resizeGLObjectBuffers((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 46: _t->setClearAccum((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
+        case 47: _t->setClearColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
+        case 48: _t->setColorMask((*reinterpret_cast< bool(*)>(_a[1])),(*reinterpret_cast< bool(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3])),(*reinterpret_cast< bool(*)>(_a[4]))); break;
+        case 49: _t->setColorMask((*reinterpret_cast< osg::QReflect_ColorMask*(*)>(_a[1]))); break;
+        case 50: _t->setImplicitBufferAttachmentMask((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 51: _t->setImplicitBufferAttachmentRenderMask((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 52: _t->setImplicitBufferAttachmentResolveMask((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 53: _t->setProjectionMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
+        case 54: _t->setProjectionMatrix((*reinterpret_cast< osg::QReflect_Matrixf*(*)>(_a[1]))); break;
+        case 55: _t->setProjectionMatrixAsFrustum((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6]))); break;
+        case 56: _t->setProjectionMatrixAsOrtho((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6]))); break;
+        case 57: _t->setProjectionMatrixAsOrtho2D((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
+        case 58: _t->setProjectionMatrixAsPerspective((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4]))); break;
+        case 59: _t->setProjectionResizePolicy((*reinterpret_cast< osg::QReflect_Camera::ProjectionResizePolicy(*)>(_a[1]))); break;
+        case 60: _t->setRenderOrder((*reinterpret_cast< osg::QReflect_Camera::RenderOrder(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 61: _t->setRenderTargetImplementation((*reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation(*)>(_a[2]))); break;
+        case 62: _t->setRenderTargetImplementation((*reinterpret_cast< osg::QReflect_Camera::RenderTargetImplementation(*)>(_a[1]))); break;
+        case 63: _t->setTransformOrder((*reinterpret_cast< osg::QReflect_Camera::TransformOrder(*)>(_a[1]))); break;
+        case 64: _t->setViewMatrix((*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[1]))); break;
+        case 65: _t->setViewMatrix((*reinterpret_cast< osg::QReflect_Matrixf*(*)>(_a[1]))); break;
+        case 66: _t->setViewMatrixAsLookAt((*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Vec3d*(*)>(_a[3]))); break;
+        case 67: _t->setViewport((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3])),(*reinterpret_cast< int(*)>(_a[4]))); break;
+        case 68: _t->setViewport((*reinterpret_cast< osg::QReflect_Viewport*(*)>(_a[1]))); break;
+        case 69: _t->pmoc_reverse_setCameraThread((*reinterpret_cast< osg::QReflect_OperationThread*(*)>(_a[1]))); break;
+        case 70: _t->pmoc_reverse_setCameraThread(); break;
+        case 71: _t->pmoc_reverse_setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
+        case 72: _t->pmoc_reverse_setDisplaySettings(); break;
+        case 73: _t->pmoc_reverse_setGraphicsContext((*reinterpret_cast< osg::QReflect_GraphicsContext*(*)>(_a[1]))); break;
+        case 74: _t->pmoc_reverse_setGraphicsContext(); break;
+        case 75: _t->pmoc_reverse_setRenderer((*reinterpret_cast< osg::QReflect_GraphicsOperation*(*)>(_a[1]))); break;
+        case 76: _t->pmoc_reverse_setRenderer(); break;
+        case 77: _t->pmoc_reverse_setRenderingCache((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1]))); break;
+        case 78: _t->pmoc_reverse_setRenderingCache(); break;
+        case 79: _t->pmoc_reverse_setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
+        case 80: _t->pmoc_reverse_setStats(); break;
+        case 81: _t->setAllowEventFocus((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 82: _t->setAttachmentMapModifiedCount((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 83: _t->setCameraThread((*reinterpret_cast< osg::QReflect_OperationThread*(*)>(_a[1]))); break;
+        case 84: _t->setClearDepth((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 85: _t->setClearStencil((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 86: _t->setDisplaySettings((*reinterpret_cast< osg::QReflect_DisplaySettings*(*)>(_a[1]))); break;
+        case 87: _t->setGraphicsContext((*reinterpret_cast< osg::QReflect_GraphicsContext*(*)>(_a[1]))); break;
+        case 88: _t->setRenderer((*reinterpret_cast< osg::QReflect_GraphicsOperation*(*)>(_a[1]))); break;
+        case 89: _t->setRenderingCache((*reinterpret_cast< osg::QReflect_Object*(*)>(_a[1]))); break;
+        case 90: _t->setStats((*reinterpret_cast< osg::QReflect_Stats*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -934,13 +891,13 @@ int osg::QReflect_Camera::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 98)
+        if (_id < 91)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 98;
+        _id -= 91;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 98)
+        if (_id < 91)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 98;
+        _id -= 91;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

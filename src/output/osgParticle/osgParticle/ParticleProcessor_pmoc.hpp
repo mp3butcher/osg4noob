@@ -7,9 +7,6 @@
 namespace osg{ 
 class QReflect_Object;
 			} ;
-namespace osg{ 
-class QReflect_NodeVisitor;
-			} ;
 namespace osgParticle{ 
 class QReflect_ParticleSystem;
 			} ;
@@ -42,6 +39,8 @@ virtual ~QReflect_ParticleProcessor( );
 // osg::Vec3  rotateWorldToLocal(const  osg::Vec3 &);
 // osg::Vec3  transformLocalToWorld(const  osg::Vec3 &);
 // osg::Vec3  transformWorldToLocal(const  osg::Vec3 &);
+//virtual  void  accept( osg::NodeVisitor &);
+// void  traverse( osg::NodeVisitor &);
 //const  osg::Matrix & getLocalToWorldMatrix();
 //const  osg::Matrix & getPreviousLocalToWorldMatrix();
 //const  osg::Matrix & getPreviousWorldToLocalMatrix();
@@ -60,9 +59,7 @@ Q_INVOKABLE const double  getLifeTime()const;
 Q_INVOKABLE const double  getResetTime()const;
 Q_INVOKABLE const double  getStartTime()const;
 Q_INVOKABLE osgParticle::QReflect_ParticleProcessor::ReferenceFrame  getReferenceFrame()const;
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void  setReferenceFrame(osgParticle::QReflect_ParticleProcessor::ReferenceFrame );
-Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void pmoc_reverse_setParticleSystem( osgParticle::QReflect_ParticleSystem *par=0);
 Q_INVOKABLE void setCurrentTime(const double &);
 Q_INVOKABLE void setEnabled(const bool &);

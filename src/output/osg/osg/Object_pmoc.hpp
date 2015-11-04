@@ -3,10 +3,10 @@
 #include <osg/Object_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Referenced;
+class QReflect_Object;
 			} ;
 namespace osg{ 
-class QReflect_Object;
+class QReflect_Referenced;
 			} ;
 #include <osg/Object>
 #include <osg/Object>

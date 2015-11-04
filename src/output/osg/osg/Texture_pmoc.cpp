@@ -14,8 +14,20 @@
 #include <osg/GraphicsContext>
 #include <osg/GraphicsContext_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_Texture::getBorderWidth()const{
+return _model->getBorderWidth();
+
+}
+ GLint  osg::QReflect_Texture::getInternalFormat()const{
+return _model->getInternalFormat();
+
+}
  bool  osg::QReflect_Texture::areAllTextureObjectsLoaded()const{
 return _model->areAllTextureObjectsLoaded();
+
+}
+ bool  osg::QReflect_Texture::isCompressedInternalFormat( GLint p0){
+return _model->isCompressedInternalFormat(p0);
 
 }
  bool  osg::QReflect_Texture::isCompressedInternalFormat()const{
@@ -50,10 +62,6 @@ return _model->getTextureParameterDirty(p0);
  _model->allocateMipmapLevels();
 
 }
- void osg::QReflect_Texture::compileGLObjects(osg::QReflect_State *p0)const{
- _model->compileGLObjects(*p0->_model);
-
-}
  void osg::QReflect_Texture::dirtyTextureObject(){
  _model->dirtyTextureObject();
 
@@ -74,8 +82,16 @@ return _model->getTextureParameterDirty(p0);
  _model->setBorderColor(*p0->_model);
 
 }
+ void osg::QReflect_Texture::setBorderWidth( GLint p0){
+ _model->setBorderWidth(p0);
+
+}
  void osg::QReflect_Texture::setFilter(osg::QReflect_Texture::FilterParameter p0 ,osg::QReflect_Texture::FilterMode p1){
  _model->setFilter(static_cast<osg::Texture::FilterParameter>(p0) ,static_cast<osg::Texture::FilterMode>(p1));
+
+}
+ void osg::QReflect_Texture::setInternalFormat( GLint p0){
+ _model->setInternalFormat(p0);
 
 }
  void osg::QReflect_Texture::setInternalFormatMode(osg::QReflect_Texture::InternalFormatMode p0){
@@ -282,10 +298,6 @@ return _model->getNumberGenerated();
  _model->flushAllDeletedGLObjects();
 
 }
- void osg::QReflect_TextureObjectManager::flushDeletedGLObjects( double p0 , double &p1){
- _model->flushDeletedGLObjects(p0 ,p1);
-
-}
  void osg::QReflect_TextureObjectManager::handlePendingOrphandedTextureObjects(){
  _model->handlePendingOrphandedTextureObjects();
 
@@ -361,10 +373,6 @@ using namespace pmoc;
 return _model->checkConsistency();
 
 }
- bool  osg::QReflect_TextureObjectSet::makeSpace( unsigned int &p0){
-return _model->makeSpace(p0);
-
-}
  unsigned int  osg::QReflect_TextureObjectSet::computeNumTextureObjectsInList()const{
 return _model->computeNumTextureObjectsInList();
 
@@ -399,10 +407,6 @@ return _model->size();
 }
  void osg::QReflect_TextureObjectSet::flushAllDeletedTextureObjects(){
  _model->flushAllDeletedTextureObjects();
-
-}
- void osg::QReflect_TextureObjectSet::flushDeletedTextureObjects( double p0 , double &p1){
- _model->flushDeletedTextureObjects(p0 ,p1);
 
 }
  void osg::QReflect_TextureObjectSet::handlePendingOrphandedTextureObjects(){

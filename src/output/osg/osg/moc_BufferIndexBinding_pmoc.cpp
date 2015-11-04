@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'BufferIndexBinding_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'BufferIndexBinding_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_BufferIndexBinding_t {
-    QByteArrayData data[14];
-    char stringdata0[229];
+    QByteArrayData data[16];
+    char stringdata0[245];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -34,23 +34,26 @@ QT_MOC_LITERAL(1, 33, 19), // "BufferObjectChanged"
 QT_MOC_LITERAL(2, 53, 0), // ""
 QT_MOC_LITERAL(3, 54, 33), // "const osg::QReflect_BufferObj..."
 QT_MOC_LITERAL(4, 88, 11), // "updateModel"
-QT_MOC_LITERAL(5, 100, 9), // "getOffset"
-QT_MOC_LITERAL(6, 110, 7), // "getSize"
-QT_MOC_LITERAL(7, 118, 15), // "getBufferObject"
-QT_MOC_LITERAL(8, 134, 27), // "osg::QReflect_BufferObject*"
-QT_MOC_LITERAL(9, 162, 9), // "setOffset"
-QT_MOC_LITERAL(10, 172, 7), // "setSize"
-QT_MOC_LITERAL(11, 180, 28), // "pmoc_reverse_setBufferObject"
-QT_MOC_LITERAL(12, 209, 3), // "par"
-QT_MOC_LITERAL(13, 213, 15) // "setBufferObject"
+QT_MOC_LITERAL(5, 100, 8), // "getIndex"
+QT_MOC_LITERAL(6, 109, 6), // "GLuint"
+QT_MOC_LITERAL(7, 116, 9), // "getOffset"
+QT_MOC_LITERAL(8, 126, 7), // "getSize"
+QT_MOC_LITERAL(9, 134, 15), // "getBufferObject"
+QT_MOC_LITERAL(10, 150, 27), // "osg::QReflect_BufferObject*"
+QT_MOC_LITERAL(11, 178, 9), // "setOffset"
+QT_MOC_LITERAL(12, 188, 7), // "setSize"
+QT_MOC_LITERAL(13, 196, 28), // "pmoc_reverse_setBufferObject"
+QT_MOC_LITERAL(14, 225, 3), // "par"
+QT_MOC_LITERAL(15, 229, 15) // "setBufferObject"
 
     },
     "osg::QReflect_BufferIndexBinding\0"
     "BufferObjectChanged\0\0"
     "const osg::QReflect_BufferObject*\0"
-    "updateModel\0getOffset\0getSize\0"
-    "getBufferObject\0osg::QReflect_BufferObject*\0"
-    "setOffset\0setSize\0pmoc_reverse_setBufferObject\0"
+    "updateModel\0getIndex\0GLuint\0getOffset\0"
+    "getSize\0getBufferObject\0"
+    "osg::QReflect_BufferObject*\0setOffset\0"
+    "setSize\0pmoc_reverse_setBufferObject\0"
     "par\0setBufferObject"
 };
 #undef QT_MOC_LITERAL
@@ -61,7 +64,7 @@ static const uint qt_meta_data_osg__QReflect_BufferIndexBinding[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -69,20 +72,21 @@ static const uint qt_meta_data_osg__QReflect_BufferIndexBinding[] = {
        1,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   64,    2, 0x06 /* Public */,
+       1,    1,   69,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   67,    2, 0x0a /* Public */,
+       4,    0,   72,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       5,    0,   68,    2, 0x02 /* Public */,
-       6,    0,   69,    2, 0x02 /* Public */,
-       7,    0,   70,    2, 0x02 /* Public */,
-       9,    1,   71,    2, 0x02 /* Public */,
-      10,    1,   74,    2, 0x02 /* Public */,
+       5,    0,   73,    2, 0x02 /* Public */,
+       7,    0,   74,    2, 0x02 /* Public */,
+       8,    0,   75,    2, 0x02 /* Public */,
+       9,    0,   76,    2, 0x02 /* Public */,
       11,    1,   77,    2, 0x02 /* Public */,
-      11,    0,   80,    2, 0x22 /* Public | MethodCloned */,
-      13,    1,   81,    2, 0x02 /* Public */,
+      12,    1,   80,    2, 0x02 /* Public */,
+      13,    1,   83,    2, 0x02 /* Public */,
+      13,    0,   86,    2, 0x22 /* Public | MethodCloned */,
+      15,    1,   87,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -91,14 +95,15 @@ static const uint qt_meta_data_osg__QReflect_BufferIndexBinding[] = {
     QMetaType::Void,
 
  // methods: parameters
+    0x80000000 | 6,
     QMetaType::Int,
     QMetaType::Int,
-    0x80000000 | 8,
+    0x80000000 | 10,
     QMetaType::Void, QMetaType::Int,    2,
     QMetaType::Void, QMetaType::Int,    2,
-    QMetaType::Void, 0x80000000 | 8,   12,
+    QMetaType::Void, 0x80000000 | 10,   14,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 8,   12,
+    QMetaType::Void, 0x80000000 | 10,   14,
 
        0        // eod
 };
@@ -111,17 +116,19 @@ void osg::QReflect_BufferIndexBinding::qt_static_metacall(QObject *_o, QMetaObje
         switch (_id) {
         case 0: _t->BufferObjectChanged((*reinterpret_cast< const osg::QReflect_BufferObject*(*)>(_a[1]))); break;
         case 1: _t->updateModel(); break;
-        case 2: { int _r = _t->getOffset();
+        case 2: { GLuint _r = _t->getIndex();
+            if (_a[0]) *reinterpret_cast< GLuint*>(_a[0]) = _r; }  break;
+        case 3: { int _r = _t->getOffset();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 3: { int _r = _t->getSize();
+        case 4: { int _r = _t->getSize();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 4: { osg::QReflect_BufferObject* _r = _t->getBufferObject();
+        case 5: { osg::QReflect_BufferObject* _r = _t->getBufferObject();
             if (_a[0]) *reinterpret_cast< osg::QReflect_BufferObject**>(_a[0]) = _r; }  break;
-        case 5: _t->setOffset((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 6: _t->setSize((*reinterpret_cast< int(*)>(_a[1]))); break;
-        case 7: _t->pmoc_reverse_setBufferObject((*reinterpret_cast< osg::QReflect_BufferObject*(*)>(_a[1]))); break;
-        case 8: _t->pmoc_reverse_setBufferObject(); break;
-        case 9: _t->setBufferObject((*reinterpret_cast< osg::QReflect_BufferObject*(*)>(_a[1]))); break;
+        case 6: _t->setOffset((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 7: _t->setSize((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 8: _t->pmoc_reverse_setBufferObject((*reinterpret_cast< osg::QReflect_BufferObject*(*)>(_a[1]))); break;
+        case 9: _t->pmoc_reverse_setBufferObject(); break;
+        case 10: _t->setBufferObject((*reinterpret_cast< osg::QReflect_BufferObject*(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -161,13 +168,13 @@ int osg::QReflect_BufferIndexBinding::qt_metacall(QMetaObject::Call _c, int _id,
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 11)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 10;
+        _id -= 11;
     }
     return _id;
 }

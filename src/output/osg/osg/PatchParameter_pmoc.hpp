@@ -28,14 +28,14 @@ PatchParameter * _model;
 QReflect_PatchParameter(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_PatchParameter( );
 //PatchParameter
-// GLint  getVertices();
 //virtual  void  apply( State &);
-// void  setVertices( GLint );
 //const  osg::Vec2 & getPatchDefaultInnerLevel();
 //const  osg::Vec4 & getPatchDefaultOuterLevel();
+Q_INVOKABLE  GLint  getVertices()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE void  setPatchDefaultInnerLevel(osg::QReflect_Vec2f *);
 Q_INVOKABLE void  setPatchDefaultOuterLevel(osg::QReflect_Vec4f *);
+Q_INVOKABLE void  setVertices( GLint );
 public slots:
 virtual void updateModel();
  

@@ -1,9 +1,8 @@
--ID:/SRC/osg4noobGIT/src/output/osg/../src
--ID:/SRC/osgTRUNKSVN/include
--ID:/SRC/osg4noobGIT/src/output
--ID:/SRC/osg4noobGIT/src/inputinclude
+-I/home/xeul/SRC/PMOC/src/output/osg/../src
+-I/home/xeul/SRC/OSGSVN/include
+-I/home/xeul/SRC/PMOC/src/output
+-I/home/xeul/SRC/PMOC/src/inputinclude
 -DosgPMOC_LIBRARY
--DWIN32
 -o
-D:/SRC/osg4noobGIT/src/output/osg/customCode/osg/moc_Shader_pmoc.cpp
-D:/SRC/osg4noobGIT/src/output/osg/customCode/osg/Shader_pmoc.hpp
+/home/xeul/SRC/PMOC/src/output/osg/customCode/osg/moc_Shader_pmoc.cpp
+/home/xeul/SRC/PMOC/src/output/osg/customCode/osg/Shader_pmoc.hpp

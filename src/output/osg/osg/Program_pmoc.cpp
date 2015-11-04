@@ -1,5 +1,4 @@
 #include <osg/Program>
-#include <osg/Shader>
 //includes
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
@@ -7,7 +6,7 @@
 #include <osg/Program_pmoc.hpp>
 #include <customCode/osg/Program_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
-//#include <customCode/osg/Shader_pmoc.hpp>
+#include <osg/Shader_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <osg/Shader>
 using namespace pmoc;
@@ -25,6 +24,18 @@ return _model->getNumShaders();
 }
  unsigned int  osg::QReflect_Program::getNumTransformFeedBackVaryings()const{
 return _model->getNumTransformFeedBackVaryings();
+
+}
+ void osg::QReflect_Program::addBindAttribLocation(const  QString &p0 , GLuint p1){
+ _model->addBindAttribLocation(std::string(p0.toStdString()) ,p1);
+
+}
+ void osg::QReflect_Program::addBindFragDataLocation(const  QString &p0 , GLuint p1){
+ _model->addBindFragDataLocation(std::string(p0.toStdString()) ,p1);
+
+}
+ void osg::QReflect_Program::addBindUniformBlock(const  QString &p0 , GLuint p1){
+ _model->addBindUniformBlock(std::string(p0.toStdString()) ,p1);
 
 }
  void osg::QReflect_Program::addTransformFeedBackVarying(const  QString &p0){
@@ -55,6 +66,10 @@ return _model->getNumTransformFeedBackVaryings();
  _model->resizeGLObjectBuffers(p0);
 
 }
+ void osg::QReflect_Program::setComputeGroups( GLint p0 , GLint p1 , GLint p2){
+ _model->setComputeGroups(p0 ,p1 ,p2);
+
+}
  void osg::QReflect_Program::setThreadSafeRefUnref( bool p0){
  _model->setThreadSafeRefUnref(p0);
 
@@ -63,7 +78,7 @@ QString  osg::QReflect_Program::getTransformFeedBackVarying( unsigned int p0)con
 QString ret(_model->getTransformFeedBackVarying(p0).c_str());return ret;
 
 }
-/*osg::QReflect_Shader*osg::QReflect_Program::getShader( unsigned int p0)const{
+osg::QReflect_Shader*osg::QReflect_Program::getShader( unsigned int p0)const{
 PMOCSAFEADDOBJECT(*_model->getShader(p0),inst);
 return inst.isValid()?((osg::QReflect_Shader * )inst.model->createQQModel(&inst)):NULL;
 }
@@ -77,7 +92,7 @@ _model->addShader(par->_model);
 void   osg::QReflect_Program::pmoc_reverse_addShader( osg::QReflect_Shader *par){
 _model->removeShader(par->_model);
 emit ShaderCollectionChanged();
-}*/
+}
 
 ///DefaultConstructor////////////////
 osg::QReflect_Program::QReflect_Program(Instance *i,QObject* parent):QQModel(i,parent),_model(0){

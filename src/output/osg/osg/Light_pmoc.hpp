@@ -12,10 +12,10 @@ namespace osg{
 class QReflect_CopyOp;
 			} ;
 namespace osg{ 
-class QReflect_Vec3f;
+class QReflect_Vec4f;
 			} ;
 namespace osg{ 
-class QReflect_Vec4f;
+class QReflect_Vec3f;
 			} ;
 #include <osg/Light>
 #include <osg/Light>

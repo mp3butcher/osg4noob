@@ -1,10 +1,9 @@
--ID:/SRC/osg4noobGIT/src/output/osgParticle/../src
--ID:/SRC/osgTRUNKSVN/include
--ID:/SRC/osg4noobGIT/src/output
--ID:/SRC/osg4noobGIT/src/output/osg
--ID:/SRC/osg4noobGIT/src/inputinclude
+-I/home/xeul/osg4noobGIT/src/output/osgParticle/../src
+-I/home/xeul/SRC/OSGSVN/include
+-I/home/xeul/osg4noobGIT/src/output
+-I/home/xeul/osg4noobGIT/src/output/osg
+-I/home/xeul/osg4noobGIT/src/inputinclude
 -DosgParticlePMOC_LIBRARY
--DWIN32
 -o
-D:/SRC/osg4noobGIT/src/output/osgParticle/customCode/osgParticle/moc_Emitter_pmoc.cpp
-D:/SRC/osg4noobGIT/src/output/osgParticle/customCode/osgParticle/Emitter_pmoc.hpp
+/home/xeul/osg4noobGIT/src/output/osgParticle/customCode/osgParticle/moc_Emitter_pmoc.cpp
+/home/xeul/osg4noobGIT/src/output/osgParticle/customCode/osgParticle/Emitter_pmoc.hpp

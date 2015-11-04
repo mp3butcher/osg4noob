@@ -101,22 +101,19 @@ public:
 #include <osg/ShapeDrawable_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Object;
+class QReflect_TessellationHints;
 			} ;
 namespace osg{ 
 class QReflect_PrimitiveFunctor;
 			} ;
 namespace osg{ 
-class QReflect_CopyOp;
-			} ;
-namespace osg{ 
 class QReflect_Vec4f;
 			} ;
 namespace osg{ 
-class QReflect_TessellationHints;
+class QReflect_Object;
 			} ;
 namespace osg{ 
-class QReflect_RenderInfo;
+class QReflect_CopyOp;
 			} ;
 #include <osg/ShapeDrawable>
 #include <osg/ShapeDrawable>
@@ -139,6 +136,8 @@ virtual ~QReflect_ShapeDrawable( );
 //virtual  bool  supports(const  AttributeFunctor &);
 //virtual  bool  supports(const  Drawable::ConstAttributeFunctor &);
 //virtual  void  accept( Drawable::ConstAttributeFunctor &);
+//virtual  void  accept( PrimitiveFunctor &);
+//virtual  void  drawImplementation( RenderInfo &);
 //const  Vec4 & getColor();
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  bool  supports(osg::QReflect_PrimitiveFunctor *)const;
@@ -147,8 +146,6 @@ Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
-Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  setColor(osg::QReflect_Vec4f *);
 Q_INVOKABLE void pmoc_reverse_setTessellationHints( osg::QReflect_TessellationHints *par=0);
 Q_INVOKABLE void setTessellationHints( osg::QReflect_TessellationHints *par);

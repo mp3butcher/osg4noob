@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'AngularDampingOperator_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'AngularDampingOperator_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osgParticle__QReflect_AngularDampingOperator_t {
-    QByteArrayData data[19];
-    char stringdata0[278];
+    QByteArrayData data[16];
+    char stringdata0[250];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,25 +36,21 @@ QT_MOC_LITERAL(3, 64, 16), // "CutoffLowChanged"
 QT_MOC_LITERAL(4, 81, 11), // "updateModel"
 QT_MOC_LITERAL(5, 93, 13), // "getCutoffHigh"
 QT_MOC_LITERAL(6, 107, 12), // "getCutoffLow"
-QT_MOC_LITERAL(7, 120, 9), // "getCutoff"
-QT_MOC_LITERAL(8, 130, 6), // "float&"
-QT_MOC_LITERAL(9, 137, 10), // "getDamping"
-QT_MOC_LITERAL(10, 148, 7), // "operate"
-QT_MOC_LITERAL(11, 156, 31), // "osgParticle::QReflect_Particle*"
-QT_MOC_LITERAL(12, 188, 9), // "setCutoff"
-QT_MOC_LITERAL(13, 198, 10), // "setDamping"
-QT_MOC_LITERAL(14, 209, 20), // "osg::QReflect_Vec3f*"
-QT_MOC_LITERAL(15, 230, 13), // "setCutoffHigh"
-QT_MOC_LITERAL(16, 244, 12), // "setCutoffLow"
-QT_MOC_LITERAL(17, 257, 10), // "CutoffHigh"
-QT_MOC_LITERAL(18, 268, 9) // "CutoffLow"
+QT_MOC_LITERAL(7, 120, 7), // "operate"
+QT_MOC_LITERAL(8, 128, 31), // "osgParticle::QReflect_Particle*"
+QT_MOC_LITERAL(9, 160, 9), // "setCutoff"
+QT_MOC_LITERAL(10, 170, 10), // "setDamping"
+QT_MOC_LITERAL(11, 181, 20), // "osg::QReflect_Vec3f*"
+QT_MOC_LITERAL(12, 202, 13), // "setCutoffHigh"
+QT_MOC_LITERAL(13, 216, 12), // "setCutoffLow"
+QT_MOC_LITERAL(14, 229, 10), // "CutoffHigh"
+QT_MOC_LITERAL(15, 240, 9) // "CutoffLow"
 
     },
     "osgParticle::QReflect_AngularDampingOperator\0"
     "CutoffHighChanged\0\0CutoffLowChanged\0"
     "updateModel\0getCutoffHigh\0getCutoffLow\0"
-    "getCutoff\0float&\0getDamping\0operate\0"
-    "osgParticle::QReflect_Particle*\0"
+    "operate\0osgParticle::QReflect_Particle*\0"
     "setCutoff\0setDamping\0osg::QReflect_Vec3f*\0"
     "setCutoffHigh\0setCutoffLow\0CutoffHigh\0"
     "CutoffLow"
@@ -67,32 +63,30 @@ static const uint qt_meta_data_osgParticle__QReflect_AngularDampingOperator[] = 
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      14,   14, // methods
-       2,  134, // properties
+      12,   14, // methods
+       2,  112, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   84,    2, 0x06 /* Public */,
-       3,    1,   87,    2, 0x06 /* Public */,
+       1,    1,   74,    2, 0x06 /* Public */,
+       3,    1,   77,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   90,    2, 0x0a /* Public */,
+       4,    0,   80,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       5,    0,   91,    2, 0x02 /* Public */,
-       6,    0,   92,    2, 0x02 /* Public */,
-       7,    2,   93,    2, 0x02 /* Public */,
-       9,    3,   98,    2, 0x02 /* Public */,
-      10,    2,  105,    2, 0x02 /* Public */,
-      12,    2,  110,    2, 0x02 /* Public */,
-      13,    3,  115,    2, 0x02 /* Public */,
-      13,    1,  122,    2, 0x02 /* Public */,
-      13,    1,  125,    2, 0x02 /* Public */,
-      15,    1,  128,    2, 0x02 /* Public */,
-      16,    1,  131,    2, 0x02 /* Public */,
+       5,    0,   81,    2, 0x02 /* Public */,
+       6,    0,   82,    2, 0x02 /* Public */,
+       7,    2,   83,    2, 0x02 /* Public */,
+       9,    2,   88,    2, 0x02 /* Public */,
+      10,    3,   93,    2, 0x02 /* Public */,
+      10,    1,  100,    2, 0x02 /* Public */,
+      10,    1,  103,    2, 0x02 /* Public */,
+      12,    1,  106,    2, 0x02 /* Public */,
+      13,    1,  109,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Float,    2,
@@ -104,19 +98,17 @@ static const uint qt_meta_data_osgParticle__QReflect_AngularDampingOperator[] = 
  // methods: parameters
     QMetaType::Float,
     QMetaType::Float,
-    QMetaType::Void, 0x80000000 | 8, 0x80000000 | 8,    2,    2,
-    QMetaType::Void, 0x80000000 | 8, 0x80000000 | 8, 0x80000000 | 8,    2,    2,    2,
-    QMetaType::Void, 0x80000000 | 11, QMetaType::Double,    2,    2,
+    QMetaType::Void, 0x80000000 | 8, QMetaType::Double,    2,    2,
     QMetaType::Void, QMetaType::Float, QMetaType::Float,    2,    2,
     QMetaType::Void, QMetaType::Float, QMetaType::Float, QMetaType::Float,    2,    2,    2,
     QMetaType::Void, QMetaType::Float,    2,
-    QMetaType::Void, 0x80000000 | 14,    2,
+    QMetaType::Void, 0x80000000 | 11,    2,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Float,    2,
 
  // properties: name, type, flags
-      17, QMetaType::Float, 0x00495103,
-      18, QMetaType::Float, 0x00495103,
+      14, QMetaType::Float, 0x00495103,
+      15, QMetaType::Float, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -138,15 +130,13 @@ void osgParticle::QReflect_AngularDampingOperator::qt_static_metacall(QObject *_
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
         case 4: { float _r = _t->getCutoffLow();
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
-        case 5: _t->getCutoff((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2]))); break;
-        case 6: _t->getDamping((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
-        case 7: _t->operate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
-        case 8: _t->setCutoff((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2]))); break;
-        case 9: _t->setDamping((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
-        case 10: _t->setDamping((*reinterpret_cast< float(*)>(_a[1]))); break;
-        case 11: _t->setDamping((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
-        case 12: _t->setCutoffHigh((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 13: _t->setCutoffLow((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 5: _t->operate((*reinterpret_cast< osgParticle::QReflect_Particle*(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
+        case 6: _t->setCutoff((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2]))); break;
+        case 7: _t->setDamping((*reinterpret_cast< float(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2])),(*reinterpret_cast< float(*)>(_a[3]))); break;
+        case 8: _t->setDamping((*reinterpret_cast< float(*)>(_a[1]))); break;
+        case 9: _t->setDamping((*reinterpret_cast< osg::QReflect_Vec3f*(*)>(_a[1]))); break;
+        case 10: _t->setCutoffHigh((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 11: _t->setCutoffLow((*reinterpret_cast< const float(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -214,13 +204,13 @@ int osgParticle::QReflect_AngularDampingOperator::qt_metacall(QMetaObject::Call 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 14)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 14;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 14)
+        if (_id < 12)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 14;
+        _id -= 12;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

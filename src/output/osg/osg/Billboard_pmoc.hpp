@@ -5,13 +5,10 @@
 #include <osg/Billboard_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Vec3f;
-			} ;
-namespace osg{ 
 class QReflect_Drawable;
 			} ;
 namespace osg{ 
-class QReflect_Matrixd;
+class QReflect_Vec3f;
 			} ;
 #include <osg/Billboard>
 #include <osg/Billboard>
@@ -45,13 +42,13 @@ virtual ~QReflect_Billboard( );
 //Billboard
 //virtual  BoundingSphere  computeBound();
 // PositionList & getPositionList();
+// bool  computeMatrix( Matrix & ,const  Vec3 & ,const  Vec3 &);
 // void  setPositionList( PositionList &);
 //const  PositionList & getPositionList();
 //const  Vec3 & getAxis();
 //const  Vec3 & getNormal();
 //const  Vec3 & getPosition( unsigned int );
 Q_INVOKABLE  bool  addDrawable(osg::QReflect_Drawable * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE  bool  computeMatrix(osg::QReflect_Matrixd * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *)const;
 Q_INVOKABLE osg::QReflect_Billboard::Mode  getMode()const;
 Q_INVOKABLE void  setAxis(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setMode(osg::QReflect_Billboard::Mode );

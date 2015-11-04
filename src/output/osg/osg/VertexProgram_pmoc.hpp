@@ -5,6 +5,9 @@
 namespace osg{ 
 class QReflect_StateAttribute;
 			} ;
+namespace osg{ 
+class QReflect_Vec4f;
+			} ;
 #include <osg/VertexProgram>
 #include <osg/VertexProgram>
 
@@ -22,7 +25,6 @@ VertexProgram * _model;
 QReflect_VertexProgram(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_VertexProgram( );
 //VertexProgram
-// GLuint & getVertexProgramID( unsigned int );
 // LocalParamList & getLocalParameters();
 // MatrixList & getMatrices();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
@@ -32,13 +34,14 @@ virtual ~QReflect_VertexProgram( );
 // void  setLocalParameters(const  LocalParamList &);
 // void  setMatrices(const  MatrixList &);
 // void  setMatrix(const  GLenum  ,const  Matrix &);
-// void  setProgramLocalParameter(const  GLuint  ,const  Vec4 &);
 //const  LocalParamList & getLocalParameters();
 //const  MatrixList & getMatrices();
+Q_INVOKABLE  GLuint&  getVertexProgramID( unsigned int )const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE const QString  getVertexProgram()const;
 Q_INVOKABLE void  dirtyVertexProgramObject();
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
+Q_INVOKABLE void  setProgramLocalParameter(const  GLuint  ,osg::QReflect_Vec4f *);
 Q_INVOKABLE void  setVertexProgram(const  char *);
 Q_INVOKABLE void setVertexProgram(const QString &);
 Q_PROPERTY(QString VertexProgram  READ getVertexProgram WRITE setVertexProgram NOTIFY VertexProgramChanged)

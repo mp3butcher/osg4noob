@@ -11,6 +11,10 @@
 #include <osg/BufferObject>
 #include <osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_Array::getDataSize()const{
+return _model->getDataSize();
+
+}
  bool  osg::QReflect_Array::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -127,12 +131,7 @@ return ret;}
 #include <QtQml/QQmlEngine>
 #include <osg/Array_pmoc.hpp>
 #include <customCode/osg/Array_pmoc.hpp>
-#include <customCode/osg/Array_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_ArrayVisitor::apply(osg::QReflect_Array *p0){
- _model->apply(*p0->_model);
-
-}
 
 ///DefaultConstructor////////////////
 osg::QReflect_ArrayVisitor::QReflect_ArrayVisitor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
@@ -270,6 +269,14 @@ return ret;}
 #include <customCode/osg/Vec4ui_pmoc.hpp>
 #include <customCode/osg/Vec4us_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_ConstValueVisitor::apply(const  GLint &p0){
+ _model->apply(p0);
+
+}
+ void osg::QReflect_ConstValueVisitor::apply(const  GLuint &p0){
+ _model->apply(p0);
+
+}
  void osg::QReflect_ConstValueVisitor::apply(osg::QReflect_Matrixd *p0){
  _model->apply(*p0->_model);
 
@@ -498,137 +505,7 @@ return ret;}
 #include <QtQml/QQmlEngine>
 #include <osg/Array_pmoc.hpp>
 #include <customCode/osg/Array_pmoc.hpp>
-#include <customCode/osg/Matrixd_pmoc.hpp>
-#include <customCode/osg/Matrixf_pmoc.hpp>
-#include <customCode/osg/Vec2b_pmoc.hpp>
-#include <customCode/osg/Vec2d_pmoc.hpp>
-#include <customCode/osg/Vec2f_pmoc.hpp>
-#include <customCode/osg/Vec2i_pmoc.hpp>
-#include <customCode/osg/Vec2s_pmoc.hpp>
-#include <customCode/osg/Vec2ub_pmoc.hpp>
-#include <customCode/osg/Vec2ui_pmoc.hpp>
-#include <customCode/osg/Vec2us_pmoc.hpp>
-#include <customCode/osg/Vec3b_pmoc.hpp>
-#include <customCode/osg/Vec3d_pmoc.hpp>
-#include <customCode/osg/Vec3f_pmoc.hpp>
-#include <customCode/osg/Vec3i_pmoc.hpp>
-#include <customCode/osg/Vec3s_pmoc.hpp>
-#include <customCode/osg/Vec3ub_pmoc.hpp>
-#include <customCode/osg/Vec3ui_pmoc.hpp>
-#include <customCode/osg/Vec3us_pmoc.hpp>
-#include <customCode/osg/Vec4b_pmoc.hpp>
-#include <customCode/osg/Vec4d_pmoc.hpp>
-#include <customCode/osg/Vec4f_pmoc.hpp>
-#include <customCode/osg/Vec4i_pmoc.hpp>
-#include <customCode/osg/Vec4s_pmoc.hpp>
-#include <customCode/osg/Vec4ub_pmoc.hpp>
-#include <customCode/osg/Vec4ui_pmoc.hpp>
-#include <customCode/osg/Vec4us_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Matrixd *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Matrixf *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2b *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2d *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2f *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2i *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2s *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2ub *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2ui *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec2us *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3b *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3d *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3f *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3i *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3s *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3ub *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3ui *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec3us *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4b *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4d *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4f *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4i *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4s *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4ub *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4ui *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_ValueVisitor::apply(osg::QReflect_Vec4us *p0){
- _model->apply(*p0->_model);
-
-}
 
 ///DefaultConstructor////////////////
 osg::QReflect_ValueVisitor::QReflect_ValueVisitor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'Fog_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'Fog_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_Fog_t {
-    QByteArrayData data[33];
-    char stringdata0[386];
+    QByteArrayData data[36];
+    char stringdata0[438];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,40 +36,45 @@ QT_MOC_LITERAL(3, 34, 10), // "EndChanged"
 QT_MOC_LITERAL(4, 45, 12), // "StartChanged"
 QT_MOC_LITERAL(5, 58, 19), // "UseRadialFogChanged"
 QT_MOC_LITERAL(6, 78, 11), // "updateModel"
-QT_MOC_LITERAL(7, 90, 7), // "compare"
-QT_MOC_LITERAL(8, 98, 29), // "osg::QReflect_StateAttribute*"
-QT_MOC_LITERAL(9, 128, 15), // "getUseRadialFog"
-QT_MOC_LITERAL(10, 144, 10), // "getDensity"
-QT_MOC_LITERAL(11, 155, 6), // "getEnd"
-QT_MOC_LITERAL(12, 162, 8), // "getStart"
-QT_MOC_LITERAL(13, 171, 7), // "getMode"
-QT_MOC_LITERAL(14, 179, 23), // "osg::QReflect_Fog::Mode"
-QT_MOC_LITERAL(15, 203, 8), // "setColor"
-QT_MOC_LITERAL(16, 212, 20), // "osg::QReflect_Vec4f*"
-QT_MOC_LITERAL(17, 233, 7), // "setMode"
-QT_MOC_LITERAL(18, 241, 10), // "setDensity"
-QT_MOC_LITERAL(19, 252, 6), // "setEnd"
-QT_MOC_LITERAL(20, 259, 8), // "setStart"
-QT_MOC_LITERAL(21, 268, 15), // "setUseRadialFog"
-QT_MOC_LITERAL(22, 284, 12), // "UseRadialFog"
-QT_MOC_LITERAL(23, 297, 7), // "Density"
-QT_MOC_LITERAL(24, 305, 3), // "End"
-QT_MOC_LITERAL(25, 309, 5), // "Start"
-QT_MOC_LITERAL(26, 315, 19), // "FogCoordinateSource"
-QT_MOC_LITERAL(27, 335, 14), // "FOG_COORDINATE"
-QT_MOC_LITERAL(28, 350, 14), // "FRAGMENT_DEPTH"
-QT_MOC_LITERAL(29, 365, 4), // "Mode"
-QT_MOC_LITERAL(30, 370, 6), // "LINEAR"
-QT_MOC_LITERAL(31, 377, 3), // "EXP"
-QT_MOC_LITERAL(32, 381, 4) // "EXP2"
+QT_MOC_LITERAL(7, 90, 22), // "getFogCoordinateSource"
+QT_MOC_LITERAL(8, 113, 5), // "GLint"
+QT_MOC_LITERAL(9, 119, 7), // "compare"
+QT_MOC_LITERAL(10, 127, 29), // "osg::QReflect_StateAttribute*"
+QT_MOC_LITERAL(11, 157, 15), // "getUseRadialFog"
+QT_MOC_LITERAL(12, 173, 10), // "getDensity"
+QT_MOC_LITERAL(13, 184, 6), // "getEnd"
+QT_MOC_LITERAL(14, 191, 8), // "getStart"
+QT_MOC_LITERAL(15, 200, 7), // "getMode"
+QT_MOC_LITERAL(16, 208, 23), // "osg::QReflect_Fog::Mode"
+QT_MOC_LITERAL(17, 232, 8), // "setColor"
+QT_MOC_LITERAL(18, 241, 20), // "osg::QReflect_Vec4f*"
+QT_MOC_LITERAL(19, 262, 22), // "setFogCoordinateSource"
+QT_MOC_LITERAL(20, 285, 7), // "setMode"
+QT_MOC_LITERAL(21, 293, 10), // "setDensity"
+QT_MOC_LITERAL(22, 304, 6), // "setEnd"
+QT_MOC_LITERAL(23, 311, 8), // "setStart"
+QT_MOC_LITERAL(24, 320, 15), // "setUseRadialFog"
+QT_MOC_LITERAL(25, 336, 12), // "UseRadialFog"
+QT_MOC_LITERAL(26, 349, 7), // "Density"
+QT_MOC_LITERAL(27, 357, 3), // "End"
+QT_MOC_LITERAL(28, 361, 5), // "Start"
+QT_MOC_LITERAL(29, 367, 19), // "FogCoordinateSource"
+QT_MOC_LITERAL(30, 387, 14), // "FOG_COORDINATE"
+QT_MOC_LITERAL(31, 402, 14), // "FRAGMENT_DEPTH"
+QT_MOC_LITERAL(32, 417, 4), // "Mode"
+QT_MOC_LITERAL(33, 422, 6), // "LINEAR"
+QT_MOC_LITERAL(34, 429, 3), // "EXP"
+QT_MOC_LITERAL(35, 433, 4) // "EXP2"
 
     },
     "osg::QReflect_Fog\0DensityChanged\0\0"
     "EndChanged\0StartChanged\0UseRadialFogChanged\0"
-    "updateModel\0compare\0osg::QReflect_StateAttribute*\0"
+    "updateModel\0getFogCoordinateSource\0"
+    "GLint\0compare\0osg::QReflect_StateAttribute*\0"
     "getUseRadialFog\0getDensity\0getEnd\0"
     "getStart\0getMode\0osg::QReflect_Fog::Mode\0"
-    "setColor\0osg::QReflect_Vec4f*\0setMode\0"
+    "setColor\0osg::QReflect_Vec4f*\0"
+    "setFogCoordinateSource\0setMode\0"
     "setDensity\0setEnd\0setStart\0setUseRadialFog\0"
     "UseRadialFog\0Density\0End\0Start\0"
     "FogCoordinateSource\0FOG_COORDINATE\0"
@@ -83,35 +88,37 @@ static const uint qt_meta_data_osg__QReflect_Fog[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      17,   14, // methods
-       4,  138, // properties
-       2,  154, // enums/sets
+      19,   14, // methods
+       4,  152, // properties
+       2,  168, // enums/sets
        0,    0, // constructors
        0,       // flags
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   99,    2, 0x06 /* Public */,
-       3,    1,  102,    2, 0x06 /* Public */,
-       4,    1,  105,    2, 0x06 /* Public */,
-       5,    1,  108,    2, 0x06 /* Public */,
+       1,    1,  109,    2, 0x06 /* Public */,
+       3,    1,  112,    2, 0x06 /* Public */,
+       4,    1,  115,    2, 0x06 /* Public */,
+       5,    1,  118,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,  111,    2, 0x0a /* Public */,
+       6,    0,  121,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       7,    1,  112,    2, 0x02 /* Public */,
-       9,    0,  115,    2, 0x02 /* Public */,
-      10,    0,  116,    2, 0x02 /* Public */,
-      11,    0,  117,    2, 0x02 /* Public */,
-      12,    0,  118,    2, 0x02 /* Public */,
-      13,    0,  119,    2, 0x02 /* Public */,
-      15,    1,  120,    2, 0x02 /* Public */,
-      17,    1,  123,    2, 0x02 /* Public */,
-      18,    1,  126,    2, 0x02 /* Public */,
-      19,    1,  129,    2, 0x02 /* Public */,
-      20,    1,  132,    2, 0x02 /* Public */,
-      21,    1,  135,    2, 0x02 /* Public */,
+       7,    0,  122,    2, 0x02 /* Public */,
+       9,    1,  123,    2, 0x02 /* Public */,
+      11,    0,  126,    2, 0x02 /* Public */,
+      12,    0,  127,    2, 0x02 /* Public */,
+      13,    0,  128,    2, 0x02 /* Public */,
+      14,    0,  129,    2, 0x02 /* Public */,
+      15,    0,  130,    2, 0x02 /* Public */,
+      17,    1,  131,    2, 0x02 /* Public */,
+      19,    1,  134,    2, 0x02 /* Public */,
+      20,    1,  137,    2, 0x02 /* Public */,
+      21,    1,  140,    2, 0x02 /* Public */,
+      22,    1,  143,    2, 0x02 /* Public */,
+      23,    1,  146,    2, 0x02 /* Public */,
+      24,    1,  149,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Float,    2,
@@ -123,24 +130,26 @@ static const uint qt_meta_data_osg__QReflect_Fog[] = {
     QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Int, 0x80000000 | 8,    2,
+    0x80000000 | 8,
+    QMetaType::Int, 0x80000000 | 10,    2,
     QMetaType::Bool,
     QMetaType::Float,
     QMetaType::Float,
     QMetaType::Float,
-    0x80000000 | 14,
+    0x80000000 | 16,
+    QMetaType::Void, 0x80000000 | 18,    2,
+    QMetaType::Void, 0x80000000 | 8,    2,
     QMetaType::Void, 0x80000000 | 16,    2,
-    QMetaType::Void, 0x80000000 | 14,    2,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Float,    2,
     QMetaType::Void, QMetaType::Bool,    2,
 
  // properties: name, type, flags
-      22, QMetaType::Bool, 0x00495103,
-      23, QMetaType::Float, 0x00495103,
-      24, QMetaType::Float, 0x00495103,
-      25, QMetaType::Float, 0x00495103,
+      25, QMetaType::Bool, 0x00495103,
+      26, QMetaType::Float, 0x00495103,
+      27, QMetaType::Float, 0x00495103,
+      28, QMetaType::Float, 0x00495103,
 
  // properties: notify_signal_id
        3,
@@ -149,15 +158,15 @@ static const uint qt_meta_data_osg__QReflect_Fog[] = {
        2,
 
  // enums: name, flags, count, data
-      26, 0x0,    2,  162,
-      29, 0x0,    3,  166,
+      29, 0x0,    2,  176,
+      32, 0x0,    3,  180,
 
  // enum data: key, value
-      27, uint(osg::QReflect_Fog::FOG_COORDINATE),
-      28, uint(osg::QReflect_Fog::FRAGMENT_DEPTH),
-      30, uint(osg::QReflect_Fog::LINEAR),
-      31, uint(osg::QReflect_Fog::EXP),
-      32, uint(osg::QReflect_Fog::EXP2),
+      30, uint(osg::QReflect_Fog::FOG_COORDINATE),
+      31, uint(osg::QReflect_Fog::FRAGMENT_DEPTH),
+      33, uint(osg::QReflect_Fog::LINEAR),
+      34, uint(osg::QReflect_Fog::EXP),
+      35, uint(osg::QReflect_Fog::EXP2),
 
        0        // eod
 };
@@ -173,24 +182,27 @@ void osg::QReflect_Fog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, in
         case 2: _t->StartChanged((*reinterpret_cast< const float(*)>(_a[1]))); break;
         case 3: _t->UseRadialFogChanged((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         case 4: _t->updateModel(); break;
-        case 5: { int _r = _t->compare((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
+        case 5: { GLint _r = _t->getFogCoordinateSource();
+            if (_a[0]) *reinterpret_cast< GLint*>(_a[0]) = _r; }  break;
+        case 6: { int _r = _t->compare((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 6: { bool _r = _t->getUseRadialFog();
+        case 7: { bool _r = _t->getUseRadialFog();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 7: { float _r = _t->getDensity();
+        case 8: { float _r = _t->getDensity();
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
-        case 8: { float _r = _t->getEnd();
+        case 9: { float _r = _t->getEnd();
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
-        case 9: { float _r = _t->getStart();
+        case 10: { float _r = _t->getStart();
             if (_a[0]) *reinterpret_cast< float*>(_a[0]) = _r; }  break;
-        case 10: { osg::QReflect_Fog::Mode _r = _t->getMode();
+        case 11: { osg::QReflect_Fog::Mode _r = _t->getMode();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Fog::Mode*>(_a[0]) = _r; }  break;
-        case 11: _t->setColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
-        case 12: _t->setMode((*reinterpret_cast< osg::QReflect_Fog::Mode(*)>(_a[1]))); break;
-        case 13: _t->setDensity((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 14: _t->setEnd((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 15: _t->setStart((*reinterpret_cast< const float(*)>(_a[1]))); break;
-        case 16: _t->setUseRadialFog((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 12: _t->setColor((*reinterpret_cast< osg::QReflect_Vec4f*(*)>(_a[1]))); break;
+        case 13: _t->setFogCoordinateSource((*reinterpret_cast< GLint(*)>(_a[1]))); break;
+        case 14: _t->setMode((*reinterpret_cast< osg::QReflect_Fog::Mode(*)>(_a[1]))); break;
+        case 15: _t->setDensity((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 16: _t->setEnd((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 17: _t->setStart((*reinterpret_cast< const float(*)>(_a[1]))); break;
+        case 18: _t->setUseRadialFog((*reinterpret_cast< const bool(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -274,13 +286,13 @@ int osg::QReflect_Fog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 17)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 17;
+        _id -= 19;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 17)
+        if (_id < 19)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 17;
+        _id -= 19;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

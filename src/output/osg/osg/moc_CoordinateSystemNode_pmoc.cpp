@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'CoordinateSystemNode_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'CoordinateSystemNode_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_EllipsoidModel_t {
-    QByteArrayData data[19];
-    char stringdata0[368];
+    QByteArrayData data[12];
+    char stringdata0[180];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -37,28 +37,16 @@ QT_MOC_LITERAL(4, 70, 11), // "updateModel"
 QT_MOC_LITERAL(5, 82, 7), // "isWGS84"
 QT_MOC_LITERAL(6, 90, 16), // "getRadiusEquator"
 QT_MOC_LITERAL(7, 107, 14), // "getRadiusPolar"
-QT_MOC_LITERAL(8, 122, 22), // "computeCoordinateFrame"
-QT_MOC_LITERAL(9, 145, 22), // "osg::QReflect_Matrixd*"
-QT_MOC_LITERAL(10, 168, 45), // "computeLocalToWorldTransformF..."
-QT_MOC_LITERAL(11, 214, 35), // "computeLocalToWorldTransformF..."
-QT_MOC_LITERAL(12, 250, 25), // "convertLatLongHeightToXYZ"
-QT_MOC_LITERAL(13, 276, 7), // "double&"
-QT_MOC_LITERAL(14, 284, 25), // "convertXYZToLatLongHeight"
-QT_MOC_LITERAL(15, 310, 16), // "setRadiusEquator"
-QT_MOC_LITERAL(16, 327, 14), // "setRadiusPolar"
-QT_MOC_LITERAL(17, 342, 13), // "RadiusEquator"
-QT_MOC_LITERAL(18, 356, 11) // "RadiusPolar"
+QT_MOC_LITERAL(8, 122, 16), // "setRadiusEquator"
+QT_MOC_LITERAL(9, 139, 14), // "setRadiusPolar"
+QT_MOC_LITERAL(10, 154, 13), // "RadiusEquator"
+QT_MOC_LITERAL(11, 168, 11) // "RadiusPolar"
 
     },
     "osg::QReflect_EllipsoidModel\0"
     "RadiusEquatorChanged\0\0RadiusPolarChanged\0"
     "updateModel\0isWGS84\0getRadiusEquator\0"
-    "getRadiusPolar\0computeCoordinateFrame\0"
-    "osg::QReflect_Matrixd*\0"
-    "computeLocalToWorldTransformFromLatLongHeight\0"
-    "computeLocalToWorldTransformFromXYZ\0"
-    "convertLatLongHeightToXYZ\0double&\0"
-    "convertXYZToLatLongHeight\0setRadiusEquator\0"
+    "getRadiusPolar\0setRadiusEquator\0"
     "setRadiusPolar\0RadiusEquator\0RadiusPolar"
 };
 #undef QT_MOC_LITERAL
@@ -69,31 +57,26 @@ static const uint qt_meta_data_osg__QReflect_EllipsoidModel[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      13,   14, // methods
-       2,  146, // properties
+       8,   14, // methods
+       2,   70, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        2,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,   79,    2, 0x06 /* Public */,
-       3,    1,   82,    2, 0x06 /* Public */,
+       1,    1,   54,    2, 0x06 /* Public */,
+       3,    1,   57,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       4,    0,   85,    2, 0x0a /* Public */,
+       4,    0,   60,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       5,    0,   86,    2, 0x02 /* Public */,
-       6,    0,   87,    2, 0x02 /* Public */,
-       7,    0,   88,    2, 0x02 /* Public */,
-       8,    3,   89,    2, 0x02 /* Public */,
-      10,    4,   96,    2, 0x02 /* Public */,
-      11,    4,  105,    2, 0x02 /* Public */,
-      12,    6,  114,    2, 0x02 /* Public */,
-      14,    6,  127,    2, 0x02 /* Public */,
-      15,    1,  140,    2, 0x02 /* Public */,
-      16,    1,  143,    2, 0x02 /* Public */,
+       5,    0,   61,    2, 0x02 /* Public */,
+       6,    0,   62,    2, 0x02 /* Public */,
+       7,    0,   63,    2, 0x02 /* Public */,
+       8,    1,   64,    2, 0x02 /* Public */,
+       9,    1,   67,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Double,    2,
@@ -106,17 +89,12 @@ static const uint qt_meta_data_osg__QReflect_EllipsoidModel[] = {
     QMetaType::Bool,
     QMetaType::Double,
     QMetaType::Double,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, 0x80000000 | 9,    2,    2,    2,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, 0x80000000 | 9,    2,    2,    2,    2,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, 0x80000000 | 9,    2,    2,    2,    2,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, 0x80000000 | 13, 0x80000000 | 13, 0x80000000 | 13,    2,    2,    2,    2,    2,    2,
-    QMetaType::Void, QMetaType::Double, QMetaType::Double, QMetaType::Double, 0x80000000 | 13, 0x80000000 | 13, 0x80000000 | 13,    2,    2,    2,    2,    2,    2,
     QMetaType::Void, QMetaType::Double,    2,
     QMetaType::Void, QMetaType::Double,    2,
 
  // properties: name, type, flags
-      17, QMetaType::Double, 0x00495103,
-      18, QMetaType::Double, 0x00495103,
+      10, QMetaType::Double, 0x00495103,
+      11, QMetaType::Double, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -140,13 +118,8 @@ void osg::QReflect_EllipsoidModel::qt_static_metacall(QObject *_o, QMetaObject::
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
         case 5: { double _r = _t->getRadiusPolar();
             if (_a[0]) *reinterpret_cast< double*>(_a[0]) = _r; }  break;
-        case 6: _t->computeCoordinateFrame((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[3]))); break;
-        case 7: _t->computeLocalToWorldTransformFromLatLongHeight((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[4]))); break;
-        case 8: _t->computeLocalToWorldTransformFromXYZ((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< osg::QReflect_Matrixd*(*)>(_a[4]))); break;
-        case 9: _t->convertLatLongHeightToXYZ((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6]))); break;
-        case 10: _t->convertXYZToLatLongHeight((*reinterpret_cast< double(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2])),(*reinterpret_cast< double(*)>(_a[3])),(*reinterpret_cast< double(*)>(_a[4])),(*reinterpret_cast< double(*)>(_a[5])),(*reinterpret_cast< double(*)>(_a[6]))); break;
-        case 11: _t->setRadiusEquator((*reinterpret_cast< const double(*)>(_a[1]))); break;
-        case 12: _t->setRadiusPolar((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 6: _t->setRadiusEquator((*reinterpret_cast< const double(*)>(_a[1]))); break;
+        case 7: _t->setRadiusPolar((*reinterpret_cast< const double(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -214,13 +187,13 @@ int osg::QReflect_EllipsoidModel::qt_metacall(QMetaObject::Call _c, int _id, voi
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 13)
+        if (_id < 8)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 13;
+        _id -= 8;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 13)
+        if (_id < 8)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 13;
+        _id -= 8;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

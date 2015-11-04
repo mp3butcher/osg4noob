@@ -26,6 +26,26 @@
 #include <osg/ShaderComposer>
 #include <osg/ShaderComposer_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_State::getAttribLocation(const  QString &p0)const{
+return _model->getAttribLocation(std::string(p0.toStdString()));
+
+}
+ GLint  osg::QReflect_State::getMaxTextureCoords()const{
+return _model->getMaxTextureCoords();
+
+}
+ GLint  osg::QReflect_State::getMaxTextureUnits()const{
+return _model->getMaxTextureUnits();
+
+}
+ GLint  osg::QReflect_State::getUniformLocation( unsigned int p0)const{
+return _model->getUniformLocation(p0);
+
+}
+ GLint  osg::QReflect_State::getUniformLocation(const  QString &p0)const{
+return _model->getUniformLocation(std::string(p0.toStdString()));
+
+}
  bool  osg::QReflect_State::applyAttribute(osg::QReflect_StateAttribute *p0){
 return _model->applyAttribute(p0->_model);
 
@@ -144,10 +164,6 @@ return _model->getStateSetStackSize();
 }
  void osg::QReflect_State::bindVertexBufferObject(osg::QReflect_GLBufferObject *p0){
  _model->bindVertexBufferObject(p0->_model);
-
-}
- void osg::QReflect_State::captureCurrentState(osg::QReflect_StateSet *p0)const{
- _model->captureCurrentState(*p0->_model);
 
 }
  void osg::QReflect_State::decrementDynamicObjectCount(){

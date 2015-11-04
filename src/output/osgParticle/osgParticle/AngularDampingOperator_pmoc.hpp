@@ -27,11 +27,11 @@ AngularDampingOperator * _model;
 QReflect_AngularDampingOperator(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_AngularDampingOperator( );
 //AngularDampingOperator
+// void  getCutoff( float & , float &);
+// void  getDamping( float & , float & , float &);
 //const  osg::Vec3 & getDamping();
 Q_INVOKABLE const float  getCutoffHigh()const;
 Q_INVOKABLE const float  getCutoffLow()const;
-Q_INVOKABLE void  getCutoff( float & , float &)const;
-Q_INVOKABLE void  getDamping( float & , float & , float &)const;
 Q_INVOKABLE void  operate(osgParticle::QReflect_Particle * , double );
 Q_INVOKABLE void  setCutoff( float  , float );
 Q_INVOKABLE void  setDamping( float  , float  , float );

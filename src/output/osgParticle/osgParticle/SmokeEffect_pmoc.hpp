@@ -5,10 +5,10 @@
 #include <osgParticle/SmokeEffect_pmoc.hpp>
 #include <QObject>
 namespace osgParticle{ 
-class QReflect_Emitter;
+class QReflect_Program;
 			} ;
 namespace osgParticle{ 
-class QReflect_Program;
+class QReflect_Emitter;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/SmokeEffect>

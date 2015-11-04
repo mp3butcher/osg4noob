@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'PagedLOD_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'PagedLOD_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_PagedLOD_t {
-    QByteArrayData data[51];
-    char stringdata0[1096];
+    QByteArrayData data[49];
+    char stringdata0[1060];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -67,19 +67,17 @@ QT_MOC_LITERAL(34, 722, 20), // "setMinimumExpiryTime"
 QT_MOC_LITERAL(35, 743, 17), // "setPriorityOffset"
 QT_MOC_LITERAL(36, 761, 16), // "setPriorityScale"
 QT_MOC_LITERAL(37, 778, 12), // "setTimeStamp"
-QT_MOC_LITERAL(38, 791, 8), // "traverse"
-QT_MOC_LITERAL(39, 800, 26), // "osg::QReflect_NodeVisitor*"
-QT_MOC_LITERAL(40, 827, 31), // "pmoc_reverse_setDatabaseOptions"
-QT_MOC_LITERAL(41, 859, 3), // "par"
-QT_MOC_LITERAL(42, 863, 18), // "setDatabaseOptions"
-QT_MOC_LITERAL(43, 882, 15), // "setDatabasePath"
-QT_MOC_LITERAL(44, 898, 32), // "setDisableExternalChildrenPaging"
-QT_MOC_LITERAL(45, 931, 29), // "setFrameNumberOfLastTraversal"
-QT_MOC_LITERAL(46, 961, 33), // "setNumChildrenThatCannotBeExp..."
-QT_MOC_LITERAL(47, 995, 12), // "DatabasePath"
-QT_MOC_LITERAL(48, 1008, 29), // "DisableExternalChildrenPaging"
-QT_MOC_LITERAL(49, 1038, 26), // "FrameNumberOfLastTraversal"
-QT_MOC_LITERAL(50, 1065, 30) // "NumChildrenThatCannotBeExpired"
+QT_MOC_LITERAL(38, 791, 31), // "pmoc_reverse_setDatabaseOptions"
+QT_MOC_LITERAL(39, 823, 3), // "par"
+QT_MOC_LITERAL(40, 827, 18), // "setDatabaseOptions"
+QT_MOC_LITERAL(41, 846, 15), // "setDatabasePath"
+QT_MOC_LITERAL(42, 862, 32), // "setDisableExternalChildrenPaging"
+QT_MOC_LITERAL(43, 895, 29), // "setFrameNumberOfLastTraversal"
+QT_MOC_LITERAL(44, 925, 33), // "setNumChildrenThatCannotBeExp..."
+QT_MOC_LITERAL(45, 959, 12), // "DatabasePath"
+QT_MOC_LITERAL(46, 972, 29), // "DisableExternalChildrenPaging"
+QT_MOC_LITERAL(47, 1002, 26), // "FrameNumberOfLastTraversal"
+QT_MOC_LITERAL(48, 1029, 30) // "NumChildrenThatCannotBeExpired"
 
     },
     "osg::QReflect_PagedLOD\0DatabaseOptionsChanged\0"
@@ -104,9 +102,8 @@ QT_MOC_LITERAL(50, 1065, 30) // "NumChildrenThatCannotBeExpired"
     "setFileName\0setFrameNumber\0"
     "setMinimumExpiryFrames\0setMinimumExpiryTime\0"
     "setPriorityOffset\0setPriorityScale\0"
-    "setTimeStamp\0traverse\0osg::QReflect_NodeVisitor*\0"
-    "pmoc_reverse_setDatabaseOptions\0par\0"
-    "setDatabaseOptions\0setDatabasePath\0"
+    "setTimeStamp\0pmoc_reverse_setDatabaseOptions\0"
+    "par\0setDatabaseOptions\0setDatabasePath\0"
     "setDisableExternalChildrenPaging\0"
     "setFrameNumberOfLastTraversal\0"
     "setNumChildrenThatCannotBeExpired\0"
@@ -122,61 +119,60 @@ static const uint qt_meta_data_osg__QReflect_PagedLOD[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      43,   14, // methods
-       4,  360, // properties
+      42,   14, // methods
+       4,  352, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        5,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  229,    2, 0x06 /* Public */,
-       4,    1,  232,    2, 0x06 /* Public */,
-       5,    1,  235,    2, 0x06 /* Public */,
-       6,    1,  238,    2, 0x06 /* Public */,
-       7,    1,  241,    2, 0x06 /* Public */,
+       1,    1,  224,    2, 0x06 /* Public */,
+       4,    1,  227,    2, 0x06 /* Public */,
+       5,    1,  230,    2, 0x06 /* Public */,
+       6,    1,  233,    2, 0x06 /* Public */,
+       7,    1,  236,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    0,  244,    2, 0x0a /* Public */,
+       8,    0,  239,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       9,    6,  245,    2, 0x02 /* Public */,
-       9,    3,  258,    2, 0x02 /* Public */,
-       9,    1,  265,    2, 0x02 /* Public */,
-      11,    2,  268,    2, 0x02 /* Public */,
-      12,    1,  273,    2, 0x02 /* Public */,
-      13,    1,  276,    2, 0x02 /* Public */,
-      14,    1,  279,    2, 0x02 /* Public */,
-      15,    1,  282,    2, 0x02 /* Public */,
-      16,    0,  285,    2, 0x02 /* Public */,
-      18,    1,  286,    2, 0x02 /* Public */,
-      19,    0,  289,    2, 0x02 /* Public */,
-      20,    0,  290,    2, 0x02 /* Public */,
-      21,    0,  291,    2, 0x02 /* Public */,
-      22,    0,  292,    2, 0x02 /* Public */,
-      23,    0,  293,    2, 0x02 /* Public */,
-      24,    0,  294,    2, 0x02 /* Public */,
-      25,    0,  295,    2, 0x02 /* Public */,
-      26,    1,  296,    2, 0x02 /* Public */,
-      27,    0,  299,    2, 0x02 /* Public */,
-      28,    0,  300,    2, 0x02 /* Public */,
-      29,    0,  301,    2, 0x02 /* Public */,
-      30,    0,  302,    2, 0x02 /* Public */,
-      31,    2,  303,    2, 0x02 /* Public */,
-      32,    2,  308,    2, 0x02 /* Public */,
-      33,    2,  313,    2, 0x02 /* Public */,
-      34,    2,  318,    2, 0x02 /* Public */,
-      35,    2,  323,    2, 0x02 /* Public */,
-      36,    2,  328,    2, 0x02 /* Public */,
-      37,    2,  333,    2, 0x02 /* Public */,
-      38,    1,  338,    2, 0x02 /* Public */,
-      40,    1,  341,    2, 0x02 /* Public */,
-      40,    0,  344,    2, 0x22 /* Public | MethodCloned */,
-      42,    1,  345,    2, 0x02 /* Public */,
-      43,    1,  348,    2, 0x02 /* Public */,
-      44,    1,  351,    2, 0x02 /* Public */,
-      45,    1,  354,    2, 0x02 /* Public */,
-      46,    1,  357,    2, 0x02 /* Public */,
+       9,    6,  240,    2, 0x02 /* Public */,
+       9,    3,  253,    2, 0x02 /* Public */,
+       9,    1,  260,    2, 0x02 /* Public */,
+      11,    2,  263,    2, 0x02 /* Public */,
+      12,    1,  268,    2, 0x02 /* Public */,
+      13,    1,  271,    2, 0x02 /* Public */,
+      14,    1,  274,    2, 0x02 /* Public */,
+      15,    1,  277,    2, 0x02 /* Public */,
+      16,    0,  280,    2, 0x02 /* Public */,
+      18,    1,  281,    2, 0x02 /* Public */,
+      19,    0,  284,    2, 0x02 /* Public */,
+      20,    0,  285,    2, 0x02 /* Public */,
+      21,    0,  286,    2, 0x02 /* Public */,
+      22,    0,  287,    2, 0x02 /* Public */,
+      23,    0,  288,    2, 0x02 /* Public */,
+      24,    0,  289,    2, 0x02 /* Public */,
+      25,    0,  290,    2, 0x02 /* Public */,
+      26,    1,  291,    2, 0x02 /* Public */,
+      27,    0,  294,    2, 0x02 /* Public */,
+      28,    0,  295,    2, 0x02 /* Public */,
+      29,    0,  296,    2, 0x02 /* Public */,
+      30,    0,  297,    2, 0x02 /* Public */,
+      31,    2,  298,    2, 0x02 /* Public */,
+      32,    2,  303,    2, 0x02 /* Public */,
+      33,    2,  308,    2, 0x02 /* Public */,
+      34,    2,  313,    2, 0x02 /* Public */,
+      35,    2,  318,    2, 0x02 /* Public */,
+      36,    2,  323,    2, 0x02 /* Public */,
+      37,    2,  328,    2, 0x02 /* Public */,
+      38,    1,  333,    2, 0x02 /* Public */,
+      38,    0,  336,    2, 0x22 /* Public | MethodCloned */,
+      40,    1,  337,    2, 0x02 /* Public */,
+      41,    1,  340,    2, 0x02 /* Public */,
+      42,    1,  343,    2, 0x02 /* Public */,
+      43,    1,  346,    2, 0x02 /* Public */,
+      44,    1,  349,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    2,
@@ -218,20 +214,19 @@ static const uint qt_meta_data_osg__QReflect_PagedLOD[] = {
     QMetaType::Void, QMetaType::UInt, QMetaType::Float,    2,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::Float,    2,    2,
     QMetaType::Void, QMetaType::UInt, QMetaType::Double,    2,    2,
-    QMetaType::Void, 0x80000000 | 39,    2,
-    QMetaType::Void, 0x80000000 | 17,   41,
+    QMetaType::Void, 0x80000000 | 17,   39,
     QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 17,   41,
+    QMetaType::Void, 0x80000000 | 17,   39,
     QMetaType::Void, QMetaType::QString,    2,
     QMetaType::Void, QMetaType::Bool,    2,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::UInt,    2,
 
  // properties: name, type, flags
-      47, QMetaType::QString, 0x00495103,
-      48, QMetaType::Bool, 0x00495103,
-      49, QMetaType::UInt, 0x00495103,
-      50, QMetaType::UInt, 0x00495103,
+      45, QMetaType::QString, 0x00495103,
+      46, QMetaType::Bool, 0x00495103,
+      47, QMetaType::UInt, 0x00495103,
+      48, QMetaType::UInt, 0x00495103,
 
  // properties: notify_signal_id
        1,
@@ -305,14 +300,13 @@ void osg::QReflect_PagedLOD::qt_static_metacall(QObject *_o, QMetaObject::Call _
         case 32: _t->setPriorityOffset((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2]))); break;
         case 33: _t->setPriorityScale((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< float(*)>(_a[2]))); break;
         case 34: _t->setTimeStamp((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< double(*)>(_a[2]))); break;
-        case 35: _t->traverse((*reinterpret_cast< osg::QReflect_NodeVisitor*(*)>(_a[1]))); break;
-        case 36: _t->pmoc_reverse_setDatabaseOptions((*reinterpret_cast< osg::QReflect_Referenced*(*)>(_a[1]))); break;
-        case 37: _t->pmoc_reverse_setDatabaseOptions(); break;
-        case 38: _t->setDatabaseOptions((*reinterpret_cast< osg::QReflect_Referenced*(*)>(_a[1]))); break;
-        case 39: _t->setDatabasePath((*reinterpret_cast< const QString(*)>(_a[1]))); break;
-        case 40: _t->setDisableExternalChildrenPaging((*reinterpret_cast< const bool(*)>(_a[1]))); break;
-        case 41: _t->setFrameNumberOfLastTraversal((*reinterpret_cast< const uint(*)>(_a[1]))); break;
-        case 42: _t->setNumChildrenThatCannotBeExpired((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 35: _t->pmoc_reverse_setDatabaseOptions((*reinterpret_cast< osg::QReflect_Referenced*(*)>(_a[1]))); break;
+        case 36: _t->pmoc_reverse_setDatabaseOptions(); break;
+        case 37: _t->setDatabaseOptions((*reinterpret_cast< osg::QReflect_Referenced*(*)>(_a[1]))); break;
+        case 38: _t->setDatabasePath((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 39: _t->setDisableExternalChildrenPaging((*reinterpret_cast< const bool(*)>(_a[1]))); break;
+        case 40: _t->setFrameNumberOfLastTraversal((*reinterpret_cast< const uint(*)>(_a[1]))); break;
+        case 41: _t->setNumChildrenThatCannotBeExpired((*reinterpret_cast< const uint(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -402,13 +396,13 @@ int osg::QReflect_PagedLOD::qt_metacall(QMetaObject::Call _c, int _id, void **_a
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 43)
+        if (_id < 42)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 43;
+        _id -= 42;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 43)
+        if (_id < 42)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 43;
+        _id -= 42;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty

@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'FrameBufferObject_pmoc.hpp'
 **
-** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.1)
+** Created by: The Qt Meta Object Compiler version 67 (Qt 5.5.0)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -12,15 +12,15 @@
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'FrameBufferObject_pmoc.hpp' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 67
-#error "This file was generated using the moc from 5.5.1. It"
+#error "This file was generated using the moc from 5.5.0. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 struct qt_meta_stringdata_osg__QReflect_GLFrameBufferObjectManager_t {
-    QByteArrayData data[3];
-    char stringdata0[54];
+    QByteArrayData data[5];
+    char stringdata0[76];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -31,11 +31,13 @@ static const qt_meta_stringdata_osg__QReflect_GLFrameBufferObjectManager_t qt_me
     {
 QT_MOC_LITERAL(0, 0, 40), // "osg::QReflect_GLFrameBufferOb..."
 QT_MOC_LITERAL(1, 41, 11), // "updateModel"
-QT_MOC_LITERAL(2, 53, 0) // ""
+QT_MOC_LITERAL(2, 53, 0), // ""
+QT_MOC_LITERAL(3, 54, 14), // "deleteGLObject"
+QT_MOC_LITERAL(4, 69, 6) // "GLuint"
 
     },
     "osg::QReflect_GLFrameBufferObjectManager\0"
-    "updateModel\0"
+    "updateModel\0\0deleteGLObject\0GLuint"
 };
 #undef QT_MOC_LITERAL
 
@@ -45,7 +47,7 @@ static const uint qt_meta_data_osg__QReflect_GLFrameBufferObjectManager[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -53,10 +55,16 @@ static const uint qt_meta_data_osg__QReflect_GLFrameBufferObjectManager[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+       1,    0,   24,    2, 0x0a /* Public */,
+
+ // methods: name, argc, parameters, tag, flags
+       3,    1,   25,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
+
+ // methods: parameters
+    QMetaType::Void, 0x80000000 | 4,    2,
 
        0        // eod
 };
@@ -68,10 +76,10 @@ void osg::QReflect_GLFrameBufferObjectManager::qt_static_metacall(QObject *_o, Q
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->updateModel(); break;
+        case 1: _t->deleteGLObject((*reinterpret_cast< GLuint(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject osg::QReflect_GLFrameBufferObjectManager::staticMetaObject = {
@@ -99,19 +107,19 @@ int osg::QReflect_GLFrameBufferObjectManager::qt_metacall(QMetaObject::Call _c, 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_FrameBufferAttachment_t {
-    QByteArrayData data[17];
-    char stringdata0[352];
+    QByteArrayData data[14];
+    char stringdata0[258];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -133,10 +141,7 @@ QT_MOC_LITERAL(9, 164, 15), // "getTextureLevel"
 QT_MOC_LITERAL(10, 180, 15), // "getRenderBuffer"
 QT_MOC_LITERAL(11, 196, 27), // "osg::QReflect_RenderBuffer*"
 QT_MOC_LITERAL(12, 224, 10), // "getTexture"
-QT_MOC_LITERAL(13, 235, 22), // "osg::QReflect_Texture*"
-QT_MOC_LITERAL(14, 258, 44), // "createRequiredTexturesAndAppl..."
-QT_MOC_LITERAL(15, 303, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(16, 324, 27) // "osg::QReflect_GLExtensions*"
+QT_MOC_LITERAL(13, 235, 22) // "osg::QReflect_Texture*"
 
     },
     "osg::QReflect_FrameBufferAttachment\0"
@@ -145,9 +150,7 @@ QT_MOC_LITERAL(16, 324, 27) // "osg::QReflect_GLExtensions*"
     "getCubeMapFace\0getTexture3DZOffset\0"
     "getTextureArrayLayer\0getTextureLevel\0"
     "getRenderBuffer\0osg::QReflect_RenderBuffer*\0"
-    "getTexture\0osg::QReflect_Texture*\0"
-    "createRequiredTexturesAndApplyGenerateMipMap\0"
-    "osg::QReflect_State*\0osg::QReflect_GLExtensions*"
+    "getTexture\0osg::QReflect_Texture*"
 };
 #undef QT_MOC_LITERAL
 
@@ -157,7 +160,7 @@ static const uint qt_meta_data_osg__QReflect_FrameBufferAttachment[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      12,   14, // methods
+      11,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -165,20 +168,19 @@ static const uint qt_meta_data_osg__QReflect_FrameBufferAttachment[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   74,    2, 0x0a /* Public */,
+       1,    0,   69,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    0,   75,    2, 0x02 /* Public */,
-       4,    1,   76,    2, 0x02 /* Public */,
-       6,    0,   79,    2, 0x02 /* Public */,
-       7,    0,   80,    2, 0x02 /* Public */,
-       8,    0,   81,    2, 0x02 /* Public */,
-       9,    0,   82,    2, 0x02 /* Public */,
-      10,    0,   83,    2, 0x02 /* Public */,
-      10,    0,   84,    2, 0x02 /* Public */,
-      12,    0,   85,    2, 0x02 /* Public */,
-      12,    0,   86,    2, 0x02 /* Public */,
-      14,    2,   87,    2, 0x02 /* Public */,
+       3,    0,   70,    2, 0x02 /* Public */,
+       4,    1,   71,    2, 0x02 /* Public */,
+       6,    0,   74,    2, 0x02 /* Public */,
+       7,    0,   75,    2, 0x02 /* Public */,
+       8,    0,   76,    2, 0x02 /* Public */,
+       9,    0,   77,    2, 0x02 /* Public */,
+      10,    0,   78,    2, 0x02 /* Public */,
+      10,    0,   79,    2, 0x02 /* Public */,
+      12,    0,   80,    2, 0x02 /* Public */,
+      12,    0,   81,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
@@ -194,7 +196,6 @@ static const uint qt_meta_data_osg__QReflect_FrameBufferAttachment[] = {
     0x80000000 | 11,
     0x80000000 | 13,
     0x80000000 | 13,
-    QMetaType::Void, 0x80000000 | 15, 0x80000000 | 16,    2,    2,
 
        0        // eod
 };
@@ -226,7 +227,6 @@ void osg::QReflect_FrameBufferAttachment::qt_static_metacall(QObject *_o, QMetaO
             if (_a[0]) *reinterpret_cast< osg::QReflect_Texture**>(_a[0]) = _r; }  break;
         case 10: { osg::QReflect_Texture* _r = _t->getTexture();
             if (_a[0]) *reinterpret_cast< osg::QReflect_Texture**>(_a[0]) = _r; }  break;
-        case 11: _t->createRequiredTexturesAndApplyGenerateMipMap((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_GLExtensions*(*)>(_a[2]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
@@ -268,19 +268,19 @@ int osg::QReflect_FrameBufferAttachment::qt_metacall(QMetaObject::Call _c, int _
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 12)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 11;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 12)
+        if (_id < 11)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 12;
+        _id -= 11;
     }
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_RenderBuffer_t {
-    QByteArrayData data[27];
-    char stringdata0[374];
+    QByteArrayData data[29];
+    char stringdata0[393];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -296,35 +296,37 @@ QT_MOC_LITERAL(3, 48, 13), // "HeightChanged"
 QT_MOC_LITERAL(4, 62, 14), // "SamplesChanged"
 QT_MOC_LITERAL(5, 77, 12), // "WidthChanged"
 QT_MOC_LITERAL(6, 90, 11), // "updateModel"
-QT_MOC_LITERAL(7, 102, 7), // "compare"
-QT_MOC_LITERAL(8, 110, 27), // "osg::QReflect_RenderBuffer*"
-QT_MOC_LITERAL(9, 138, 13), // "getMaxSamples"
-QT_MOC_LITERAL(10, 152, 27), // "osg::QReflect_GLExtensions*"
-QT_MOC_LITERAL(11, 180, 15), // "getColorSamples"
-QT_MOC_LITERAL(12, 196, 9), // "getHeight"
-QT_MOC_LITERAL(13, 206, 10), // "getSamples"
-QT_MOC_LITERAL(14, 217, 8), // "getWidth"
-QT_MOC_LITERAL(15, 226, 16), // "releaseGLObjects"
-QT_MOC_LITERAL(16, 243, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(17, 264, 21), // "resizeGLObjectBuffers"
-QT_MOC_LITERAL(18, 286, 7), // "setSize"
-QT_MOC_LITERAL(19, 294, 15), // "setColorSamples"
-QT_MOC_LITERAL(20, 310, 9), // "setHeight"
-QT_MOC_LITERAL(21, 320, 10), // "setSamples"
-QT_MOC_LITERAL(22, 331, 8), // "setWidth"
-QT_MOC_LITERAL(23, 340, 12), // "ColorSamples"
-QT_MOC_LITERAL(24, 353, 6), // "Height"
-QT_MOC_LITERAL(25, 360, 7), // "Samples"
-QT_MOC_LITERAL(26, 368, 5) // "Width"
+QT_MOC_LITERAL(7, 102, 11), // "getObjectID"
+QT_MOC_LITERAL(8, 114, 6), // "GLuint"
+QT_MOC_LITERAL(9, 121, 27), // "osg::QReflect_GLExtensions*"
+QT_MOC_LITERAL(10, 149, 7), // "compare"
+QT_MOC_LITERAL(11, 157, 27), // "osg::QReflect_RenderBuffer*"
+QT_MOC_LITERAL(12, 185, 13), // "getMaxSamples"
+QT_MOC_LITERAL(13, 199, 15), // "getColorSamples"
+QT_MOC_LITERAL(14, 215, 9), // "getHeight"
+QT_MOC_LITERAL(15, 225, 10), // "getSamples"
+QT_MOC_LITERAL(16, 236, 8), // "getWidth"
+QT_MOC_LITERAL(17, 245, 16), // "releaseGLObjects"
+QT_MOC_LITERAL(18, 262, 20), // "osg::QReflect_State*"
+QT_MOC_LITERAL(19, 283, 21), // "resizeGLObjectBuffers"
+QT_MOC_LITERAL(20, 305, 7), // "setSize"
+QT_MOC_LITERAL(21, 313, 15), // "setColorSamples"
+QT_MOC_LITERAL(22, 329, 9), // "setHeight"
+QT_MOC_LITERAL(23, 339, 10), // "setSamples"
+QT_MOC_LITERAL(24, 350, 8), // "setWidth"
+QT_MOC_LITERAL(25, 359, 12), // "ColorSamples"
+QT_MOC_LITERAL(26, 372, 6), // "Height"
+QT_MOC_LITERAL(27, 379, 7), // "Samples"
+QT_MOC_LITERAL(28, 387, 5) // "Width"
 
     },
     "osg::QReflect_RenderBuffer\0"
     "ColorSamplesChanged\0\0HeightChanged\0"
     "SamplesChanged\0WidthChanged\0updateModel\0"
+    "getObjectID\0GLuint\0osg::QReflect_GLExtensions*\0"
     "compare\0osg::QReflect_RenderBuffer*\0"
-    "getMaxSamples\0osg::QReflect_GLExtensions*\0"
-    "getColorSamples\0getHeight\0getSamples\0"
-    "getWidth\0releaseGLObjects\0"
+    "getMaxSamples\0getColorSamples\0getHeight\0"
+    "getSamples\0getWidth\0releaseGLObjects\0"
     "osg::QReflect_State*\0resizeGLObjectBuffers\0"
     "setSize\0setColorSamples\0setHeight\0"
     "setSamples\0setWidth\0ColorSamples\0"
@@ -338,36 +340,37 @@ static const uint qt_meta_data_osg__QReflect_RenderBuffer[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-      18,   14, // methods
-       4,  152, // properties
+      19,   14, // methods
+       4,  162, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
        4,       // signalCount
 
  // signals: name, argc, parameters, tag, flags
-       1,    1,  104,    2, 0x06 /* Public */,
-       3,    1,  107,    2, 0x06 /* Public */,
-       4,    1,  110,    2, 0x06 /* Public */,
-       5,    1,  113,    2, 0x06 /* Public */,
+       1,    1,  109,    2, 0x06 /* Public */,
+       3,    1,  112,    2, 0x06 /* Public */,
+       4,    1,  115,    2, 0x06 /* Public */,
+       5,    1,  118,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       6,    0,  116,    2, 0x0a /* Public */,
+       6,    0,  121,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       7,    1,  117,    2, 0x02 /* Public */,
-       9,    2,  120,    2, 0x02 /* Public */,
-      11,    0,  125,    2, 0x02 /* Public */,
-      12,    0,  126,    2, 0x02 /* Public */,
-      13,    0,  127,    2, 0x02 /* Public */,
-      14,    0,  128,    2, 0x02 /* Public */,
-      15,    1,  129,    2, 0x02 /* Public */,
-      17,    1,  132,    2, 0x02 /* Public */,
-      18,    2,  135,    2, 0x02 /* Public */,
-      19,    1,  140,    2, 0x02 /* Public */,
-      20,    1,  143,    2, 0x02 /* Public */,
-      21,    1,  146,    2, 0x02 /* Public */,
-      22,    1,  149,    2, 0x02 /* Public */,
+       7,    2,  122,    2, 0x02 /* Public */,
+      10,    1,  127,    2, 0x02 /* Public */,
+      12,    2,  130,    2, 0x02 /* Public */,
+      13,    0,  135,    2, 0x02 /* Public */,
+      14,    0,  136,    2, 0x02 /* Public */,
+      15,    0,  137,    2, 0x02 /* Public */,
+      16,    0,  138,    2, 0x02 /* Public */,
+      17,    1,  139,    2, 0x02 /* Public */,
+      19,    1,  142,    2, 0x02 /* Public */,
+      20,    2,  145,    2, 0x02 /* Public */,
+      21,    1,  150,    2, 0x02 /* Public */,
+      22,    1,  153,    2, 0x02 /* Public */,
+      23,    1,  156,    2, 0x02 /* Public */,
+      24,    1,  159,    2, 0x02 /* Public */,
 
  // signals: parameters
     QMetaType::Void, QMetaType::Int,    2,
@@ -379,13 +382,14 @@ static const uint qt_meta_data_osg__QReflect_RenderBuffer[] = {
     QMetaType::Void,
 
  // methods: parameters
-    QMetaType::Int, 0x80000000 | 8,    2,
-    QMetaType::Int, QMetaType::UInt, 0x80000000 | 10,    2,    2,
+    0x80000000 | 8, QMetaType::UInt, 0x80000000 | 9,    2,    2,
+    QMetaType::Int, 0x80000000 | 11,    2,
+    QMetaType::Int, QMetaType::UInt, 0x80000000 | 9,    2,    2,
     QMetaType::Int,
     QMetaType::Int,
     QMetaType::Int,
     QMetaType::Int,
-    QMetaType::Void, 0x80000000 | 16,    2,
+    QMetaType::Void, 0x80000000 | 18,    2,
     QMetaType::Void, QMetaType::UInt,    2,
     QMetaType::Void, QMetaType::Int, QMetaType::Int,    2,    2,
     QMetaType::Void, QMetaType::Int,    2,
@@ -394,10 +398,10 @@ static const uint qt_meta_data_osg__QReflect_RenderBuffer[] = {
     QMetaType::Void, QMetaType::Int,    2,
 
  // properties: name, type, flags
-      23, QMetaType::Int, 0x00495103,
-      24, QMetaType::Int, 0x00495103,
       25, QMetaType::Int, 0x00495103,
       26, QMetaType::Int, 0x00495103,
+      27, QMetaType::Int, 0x00495103,
+      28, QMetaType::Int, 0x00495103,
 
  // properties: notify_signal_id
        0,
@@ -419,31 +423,33 @@ void osg::QReflect_RenderBuffer::qt_static_metacall(QObject *_o, QMetaObject::Ca
         case 2: _t->SamplesChanged((*reinterpret_cast< const int(*)>(_a[1]))); break;
         case 3: _t->WidthChanged((*reinterpret_cast< const int(*)>(_a[1]))); break;
         case 4: _t->updateModel(); break;
-        case 5: { int _r = _t->compare((*reinterpret_cast< osg::QReflect_RenderBuffer*(*)>(_a[1])));
+        case 5: { GLuint _r = _t->getObjectID((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_GLExtensions*(*)>(_a[2])));
+            if (_a[0]) *reinterpret_cast< GLuint*>(_a[0]) = _r; }  break;
+        case 6: { int _r = _t->compare((*reinterpret_cast< osg::QReflect_RenderBuffer*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 6: { int _r = _t->getMaxSamples((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_GLExtensions*(*)>(_a[2])));
+        case 7: { int _r = _t->getMaxSamples((*reinterpret_cast< uint(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_GLExtensions*(*)>(_a[2])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 7: { int _r = _t->getColorSamples();
+        case 8: { int _r = _t->getColorSamples();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 8: { int _r = _t->getHeight();
+        case 9: { int _r = _t->getHeight();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 9: { int _r = _t->getSamples();
+        case 10: { int _r = _t->getSamples();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 10: { int _r = _t->getWidth();
+        case 11: { int _r = _t->getWidth();
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 11: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 12: _t->resizeGLObjectBuffers((*reinterpret_cast< uint(*)>(_a[1]))); break;
-        case 13: _t->setSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
-        case 14: _t->setColorSamples((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 15: _t->setHeight((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 16: _t->setSamples((*reinterpret_cast< const int(*)>(_a[1]))); break;
-        case 17: _t->setWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 12: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
+        case 13: _t->resizeGLObjectBuffers((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 14: _t->setSize((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2]))); break;
+        case 15: _t->setColorSamples((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 16: _t->setHeight((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 17: _t->setSamples((*reinterpret_cast< const int(*)>(_a[1]))); break;
+        case 18: _t->setWidth((*reinterpret_cast< const int(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 5:
+        case 6:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -532,13 +538,13 @@ int osg::QReflect_RenderBuffer::qt_metacall(QMetaObject::Call _c, int _id, void 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 18)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 19;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 18)
+        if (_id < 19)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 18;
+        _id -= 19;
     }
 #ifndef QT_NO_PROPERTIES
    else if (_c == QMetaObject::ReadProperty || _c == QMetaObject::WriteProperty
@@ -588,8 +594,8 @@ void osg::QReflect_RenderBuffer::WidthChanged(const int & _t1)
     QMetaObject::activate(this, &staticMetaObject, 3, _a);
 }
 struct qt_meta_stringdata_osg__QReflect_GLRenderBufferManager_t {
-    QByteArrayData data[3];
-    char stringdata0[49];
+    QByteArrayData data[5];
+    char stringdata0[71];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -600,11 +606,13 @@ static const qt_meta_stringdata_osg__QReflect_GLRenderBufferManager_t qt_meta_st
     {
 QT_MOC_LITERAL(0, 0, 35), // "osg::QReflect_GLRenderBufferM..."
 QT_MOC_LITERAL(1, 36, 11), // "updateModel"
-QT_MOC_LITERAL(2, 48, 0) // ""
+QT_MOC_LITERAL(2, 48, 0), // ""
+QT_MOC_LITERAL(3, 49, 14), // "deleteGLObject"
+QT_MOC_LITERAL(4, 64, 6) // "GLuint"
 
     },
     "osg::QReflect_GLRenderBufferManager\0"
-    "updateModel\0"
+    "updateModel\0\0deleteGLObject\0GLuint"
 };
 #undef QT_MOC_LITERAL
 
@@ -614,7 +622,7 @@ static const uint qt_meta_data_osg__QReflect_GLRenderBufferManager[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -622,10 +630,16 @@ static const uint qt_meta_data_osg__QReflect_GLRenderBufferManager[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   19,    2, 0x0a /* Public */,
+       1,    0,   24,    2, 0x0a /* Public */,
+
+ // methods: name, argc, parameters, tag, flags
+       3,    1,   25,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
+
+ // methods: parameters
+    QMetaType::Void, 0x80000000 | 4,    2,
 
        0        // eod
 };
@@ -637,10 +651,10 @@ void osg::QReflect_GLRenderBufferManager::qt_static_metacall(QObject *_o, QMetaO
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->updateModel(); break;
+        case 1: _t->deleteGLObject((*reinterpret_cast< GLuint(*)>(_a[1]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 const QMetaObject osg::QReflect_GLRenderBufferManager::staticMetaObject = {
@@ -668,19 +682,19 @@ int osg::QReflect_GLRenderBufferManager::qt_metacall(QMetaObject::Call _c, int _
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }
 struct qt_meta_stringdata_osg__QReflect_FrameBufferObject_t {
     QByteArrayData data[16];
-    char stringdata0[302];
+    char stringdata0[269];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -692,30 +706,29 @@ static const qt_meta_stringdata_osg__QReflect_FrameBufferObject_t qt_meta_string
 QT_MOC_LITERAL(0, 0, 31), // "osg::QReflect_FrameBufferObject"
 QT_MOC_LITERAL(1, 32, 11), // "updateModel"
 QT_MOC_LITERAL(2, 44, 0), // ""
-QT_MOC_LITERAL(3, 45, 27), // "hasMultipleRenderingTargets"
-QT_MOC_LITERAL(4, 73, 13), // "isMultisample"
-QT_MOC_LITERAL(5, 87, 7), // "compare"
-QT_MOC_LITERAL(6, 95, 29), // "osg::QReflect_StateAttribute*"
-QT_MOC_LITERAL(7, 125, 5), // "apply"
-QT_MOC_LITERAL(8, 131, 20), // "osg::QReflect_State*"
-QT_MOC_LITERAL(9, 152, 43), // "osg::QReflect_FrameBufferObje..."
-QT_MOC_LITERAL(10, 196, 16), // "releaseGLObjects"
-QT_MOC_LITERAL(11, 213, 21), // "resizeGLObjectBuffers"
-QT_MOC_LITERAL(12, 235, 10), // "BindTarget"
-QT_MOC_LITERAL(13, 246, 16), // "READ_FRAMEBUFFER"
-QT_MOC_LITERAL(14, 263, 16), // "DRAW_FRAMEBUFFER"
-QT_MOC_LITERAL(15, 280, 21) // "READ_DRAW_FRAMEBUFFER"
+QT_MOC_LITERAL(3, 45, 9), // "getHandle"
+QT_MOC_LITERAL(4, 55, 6), // "GLuint"
+QT_MOC_LITERAL(5, 62, 27), // "hasMultipleRenderingTargets"
+QT_MOC_LITERAL(6, 90, 13), // "isMultisample"
+QT_MOC_LITERAL(7, 104, 7), // "compare"
+QT_MOC_LITERAL(8, 112, 29), // "osg::QReflect_StateAttribute*"
+QT_MOC_LITERAL(9, 142, 16), // "releaseGLObjects"
+QT_MOC_LITERAL(10, 159, 20), // "osg::QReflect_State*"
+QT_MOC_LITERAL(11, 180, 21), // "resizeGLObjectBuffers"
+QT_MOC_LITERAL(12, 202, 10), // "BindTarget"
+QT_MOC_LITERAL(13, 213, 16), // "READ_FRAMEBUFFER"
+QT_MOC_LITERAL(14, 230, 16), // "DRAW_FRAMEBUFFER"
+QT_MOC_LITERAL(15, 247, 21) // "READ_DRAW_FRAMEBUFFER"
 
     },
     "osg::QReflect_FrameBufferObject\0"
-    "updateModel\0\0hasMultipleRenderingTargets\0"
-    "isMultisample\0compare\0"
-    "osg::QReflect_StateAttribute*\0apply\0"
-    "osg::QReflect_State*\0"
-    "osg::QReflect_FrameBufferObject::BindTarget\0"
-    "releaseGLObjects\0resizeGLObjectBuffers\0"
-    "BindTarget\0READ_FRAMEBUFFER\0"
-    "DRAW_FRAMEBUFFER\0READ_DRAW_FRAMEBUFFER"
+    "updateModel\0\0getHandle\0GLuint\0"
+    "hasMultipleRenderingTargets\0isMultisample\0"
+    "compare\0osg::QReflect_StateAttribute*\0"
+    "releaseGLObjects\0osg::QReflect_State*\0"
+    "resizeGLObjectBuffers\0BindTarget\0"
+    "READ_FRAMEBUFFER\0DRAW_FRAMEBUFFER\0"
+    "READ_DRAW_FRAMEBUFFER"
 };
 #undef QT_MOC_LITERAL
 
@@ -725,39 +738,37 @@ static const uint qt_meta_data_osg__QReflect_FrameBufferObject[] = {
        7,       // revision
        0,       // classname
        0,    0, // classinfo
-       8,   14, // methods
+       7,   14, // methods
        0,    0, // properties
-       1,   74, // enums/sets
+       1,   64, // enums/sets
        0,    0, // constructors
        0,       // flags
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   54,    2, 0x0a /* Public */,
+       1,    0,   49,    2, 0x0a /* Public */,
 
  // methods: name, argc, parameters, tag, flags
-       3,    0,   55,    2, 0x02 /* Public */,
-       4,    0,   56,    2, 0x02 /* Public */,
-       5,    1,   57,    2, 0x02 /* Public */,
-       7,    2,   60,    2, 0x02 /* Public */,
-       7,    1,   65,    2, 0x02 /* Public */,
-      10,    1,   68,    2, 0x02 /* Public */,
-      11,    1,   71,    2, 0x02 /* Public */,
+       3,    1,   50,    2, 0x02 /* Public */,
+       5,    0,   53,    2, 0x02 /* Public */,
+       6,    0,   54,    2, 0x02 /* Public */,
+       7,    1,   55,    2, 0x02 /* Public */,
+       9,    1,   58,    2, 0x02 /* Public */,
+      11,    1,   61,    2, 0x02 /* Public */,
 
  // slots: parameters
     QMetaType::Void,
 
  // methods: parameters
+    0x80000000 | 4, QMetaType::UInt,    2,
     QMetaType::Bool,
     QMetaType::Bool,
-    QMetaType::Int, 0x80000000 | 6,    2,
-    QMetaType::Void, 0x80000000 | 8, 0x80000000 | 9,    2,    2,
-    QMetaType::Void, 0x80000000 | 8,    2,
-    QMetaType::Void, 0x80000000 | 8,    2,
+    QMetaType::Int, 0x80000000 | 8,    2,
+    QMetaType::Void, 0x80000000 | 10,    2,
     QMetaType::Void, QMetaType::UInt,    2,
 
  // enums: name, flags, count, data
-      12, 0x0,    3,   78,
+      12, 0x0,    3,   68,
 
  // enum data: key, value
       13, uint(osg::QReflect_FrameBufferObject::READ_FRAMEBUFFER),
@@ -774,16 +785,16 @@ void osg::QReflect_FrameBufferObject::qt_static_metacall(QObject *_o, QMetaObjec
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->updateModel(); break;
-        case 1: { bool _r = _t->hasMultipleRenderingTargets();
+        case 1: { GLuint _r = _t->getHandle((*reinterpret_cast< uint(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< GLuint*>(_a[0]) = _r; }  break;
+        case 2: { bool _r = _t->hasMultipleRenderingTargets();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 2: { bool _r = _t->isMultisample();
+        case 3: { bool _r = _t->isMultisample();
             if (_a[0]) *reinterpret_cast< bool*>(_a[0]) = _r; }  break;
-        case 3: { int _r = _t->compare((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
+        case 4: { int _r = _t->compare((*reinterpret_cast< osg::QReflect_StateAttribute*(*)>(_a[1])));
             if (_a[0]) *reinterpret_cast< int*>(_a[0]) = _r; }  break;
-        case 4: _t->apply((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1])),(*reinterpret_cast< osg::QReflect_FrameBufferObject::BindTarget(*)>(_a[2]))); break;
-        case 5: _t->apply((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 6: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
-        case 7: _t->resizeGLObjectBuffers((*reinterpret_cast< uint(*)>(_a[1]))); break;
+        case 5: _t->releaseGLObjects((*reinterpret_cast< osg::QReflect_State*(*)>(_a[1]))); break;
+        case 6: _t->resizeGLObjectBuffers((*reinterpret_cast< uint(*)>(_a[1]))); break;
         default: ;
         }
     }
@@ -814,13 +825,13 @@ int osg::QReflect_FrameBufferObject::qt_metacall(QMetaObject::Call _c, int _id, 
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 8)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 8;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 8)
+        if (_id < 7)
             *reinterpret_cast<int*>(_a[0]) = -1;
-        _id -= 8;
+        _id -= 7;
     }
     return _id;
 }

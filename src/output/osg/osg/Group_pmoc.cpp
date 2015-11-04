@@ -6,7 +6,6 @@
 #include <osg/Group_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 #include <osg/Node>
 using namespace pmoc;
@@ -48,10 +47,6 @@ return _model->getNumChildren();
 }
  void osg::QReflect_Group::setThreadSafeRefUnref( bool p0){
  _model->setThreadSafeRefUnref(p0);
-
-}
- void osg::QReflect_Group::traverse(osg::QReflect_NodeVisitor *p0){
- _model->traverse(*p0->_model);
 
 }
 osg::QReflect_Group*osg::QReflect_Group::asGroup()const{

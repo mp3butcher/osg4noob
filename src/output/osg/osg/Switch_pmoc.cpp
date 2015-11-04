@@ -6,7 +6,6 @@
 #include <osg/Switch_pmoc.hpp>
 #include <customCode/osg/Switch_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
-#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_Switch::addChild(osg::QReflect_Node *p0 , bool p1){
@@ -55,10 +54,6 @@ return _model->setSingleChildOn(p0);
 }
  void osg::QReflect_Switch::setValue( unsigned int p0 , bool p1){
  _model->setValue(p0 ,p1);
-
-}
- void osg::QReflect_Switch::traverse(osg::QReflect_NodeVisitor *p0){
- _model->traverse(*p0->_model);
 
 }
 const bool osg::QReflect_Switch::getNewChildDefaultValue()const{return _model->getNewChildDefaultValue();}

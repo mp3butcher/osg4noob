@@ -8,7 +8,6 @@
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
-#include <customCode/osg/State_pmoc.hpp>
 #include <osg/Image>
 #include <osg/Image_pmoc.hpp>
 using namespace pmoc;
@@ -30,14 +29,6 @@ return _model->getNumImages();
 }
  unsigned int&  osg::QReflect_TextureBuffer::getModifiedCount( unsigned int p0)const{
 return _model->getModifiedCount(p0);
-
-}
- void osg::QReflect_TextureBuffer::allocateMipmap(osg::QReflect_State *p0)const{
- _model->allocateMipmap(*p0->_model);
-
-}
- void osg::QReflect_TextureBuffer::apply(osg::QReflect_State *p0)const{
- _model->apply(*p0->_model);
 
 }
  void osg::QReflect_TextureBuffer::setImage( unsigned int p0 ,osg::QReflect_Image *p1){

@@ -1,9 +1,8 @@
--ID:/SRC/osg4noobGIT/src/output/osg/../src
--ID:/SRC/osgTRUNKSVN/include
--ID:/SRC/osg4noobGIT/src/output
--ID:/SRC/osg4noobGIT/src/inputinclude
+-I/home/xeul/osg4noobGIT/src/output/osg/../src
+-I/home/xeul/SRC/OSGSVN/include
+-I/home/xeul/osg4noobGIT/src/output
+-I/home/xeul/osg4noobGIT/src/inputinclude
 -DosgPMOC_LIBRARY
--DWIN32
 -o
-D:/SRC/osg4noobGIT/src/output/osg/customCode/osg/moc_CullFace_pmoc.cpp
-D:/SRC/osg4noobGIT/src/output/osg/customCode/osg/CullFace_pmoc.hpp
+/home/xeul/osg4noobGIT/src/output/osg/customCode/osg/moc_CullFace_pmoc.cpp
+/home/xeul/osg4noobGIT/src/output/osg/customCode/osg/CullFace_pmoc.hpp

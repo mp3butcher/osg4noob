@@ -8,8 +8,11 @@
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_DrawArrayLengths::getFirst()const{
+return _model->getFirst();
+
+}
  bool  osg::QReflect_DrawArrayLengths::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -26,16 +29,12 @@ return _model->getNumPrimitives();
 return _model->index(p0);
 
 }
- void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
  void osg::QReflect_DrawArrayLengths::offsetIndices( int p0){
  _model->offsetIndices(p0);
+
+}
+ void osg::QReflect_DrawArrayLengths::setFirst( GLint p0){
+ _model->setFirst(p0);
 
 }
 const  char*  osg::QReflect_DrawArrayLengths::className()const{
@@ -125,8 +124,11 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
+ GLint  osg::QReflect_DrawArrays::getFirst()const{
+return _model->getFirst();
+
+}
  bool  osg::QReflect_DrawArrays::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -139,16 +141,12 @@ return _model->getNumIndices();
 return _model->index(p0);
 
 }
- void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
  void osg::QReflect_DrawArrays::offsetIndices( int p0){
  _model->offsetIndices(p0);
+
+}
+ void osg::QReflect_DrawArrays::setFirst( GLint p0){
+ _model->setFirst(p0);
 
 }
 const  char*  osg::QReflect_DrawArrays::className()const{
@@ -327,7 +325,6 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_DrawElementsUByte::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
@@ -351,14 +348,6 @@ return _model->getTotalDataSize();
 }
  unsigned int  osg::QReflect_DrawElementsUByte::index( unsigned int p0)const{
 return _model->index(p0);
-
-}
- void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
- _model->accept(*p0->_model);
 
 }
  void osg::QReflect_DrawElementsUByte::addElement( unsigned int p0){
@@ -468,7 +457,6 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_DrawElementsUInt::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
@@ -492,14 +480,6 @@ return _model->getTotalDataSize();
 }
  unsigned int  osg::QReflect_DrawElementsUInt::index( unsigned int p0)const{
 return _model->index(p0);
-
-}
- void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
- _model->accept(*p0->_model);
 
 }
  void osg::QReflect_DrawElementsUInt::addElement( unsigned int p0){
@@ -609,7 +589,6 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_DrawElementsUShort::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
@@ -633,14 +612,6 @@ return _model->getTotalDataSize();
 }
  unsigned int  osg::QReflect_DrawElementsUShort::index( unsigned int p0)const{
 return _model->index(p0);
-
-}
- void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveFunctor *p0)const{
- _model->accept(*p0->_model);
-
-}
- void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
- _model->accept(*p0->_model);
 
 }
  void osg::QReflect_DrawElementsUShort::addElement( unsigned int p0){

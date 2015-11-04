@@ -7,8 +7,6 @@
 #include <customCode/osg/CollectOccludersVisitor_pmoc.hpp>
 #include <customCode/osg/CullStack_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
-#include <customCode/osg/Node_pmoc.hpp>
-#include <customCode/osg/Transform_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 using namespace pmoc;
  float  osg::QReflect_CollectOccludersVisitor::getDistanceFromEyePoint(osg::QReflect_Vec3f *p0 , bool p1)const{
@@ -21,14 +19,6 @@ return _model->getDistanceToEyePoint(*p0->_model ,p1);
 }
  float  osg::QReflect_CollectOccludersVisitor::getDistanceToViewPoint(osg::QReflect_Vec3f *p0 , bool p1)const{
 return _model->getDistanceToViewPoint(*p0->_model ,p1);
-
-}
- void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Node *p0){
- _model->apply(*p0->_model);
-
-}
- void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Transform *p0){
- _model->apply(*p0->_model);
 
 }
  void osg::QReflect_CollectOccludersVisitor::removeOccludedOccluders(){
