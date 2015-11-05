@@ -1,6 +1,7 @@
 # osg4noob
 #### osg graphical editor
-This is a test case of using PMOC on OpenSceneGraph Libraries 
+This is a test case of using PMOC on OpenSceneGraph Libraries.
+
 In order to edit qmls at runtime (using qtcreator) setup environment variable PMOC_NOCACHE (to disable qml caching)
 
 | Dependencies |
