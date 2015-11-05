@@ -21,10 +21,11 @@ It generates stubs and  skeletons of  Qt Components to describe the logic of you
 -------------
 |Native object boxing (put native object in QT boxes)|
 |javascript/QML method wrapping|
+|hierarchical QML composition pattern|
 |Nodal logic ( via config file:copy/paste+fx ambiguities leverage)||
 |Pointer life cycle ( via config file,ex: handle ref_pointer/normalpointer)|
-|Multiple inheritance via delegation|
-|seams to handle virtual inheritance|
+|Multiple inheritance via delegation(seams to handle virtual inheritance)|
+
 
 |pmoc limitations:|
 -------------
