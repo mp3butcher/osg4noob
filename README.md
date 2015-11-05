@@ -1,5 +1,5 @@
 # osg4noob
-### osg graphical editor
+#### osg graphical editor
 This is a test case of using PMOC on OpenSceneGraph Libraries 
 
 | Dependencies |
@@ -9,11 +9,11 @@ This is a test case of using PMOC on OpenSceneGraph Libraries
 | Qscintilla |
 | MSVC2013 x64 or x86 |
 
-BEWARE:
+#### BEWARE:
 closed lib and dll (msvc2013 and linux gcc644.9.2) are in the lib directory:
 copy the good one in bin in order to make it work
 
-### PMOC infos:
+#### PMOC infos:
 pmoc aims toward C++ runtime graphical manipulation through QML and javascript.
 It generates stubs and  skeletons of  Qt Components to describe the logic of your libraries in a common graphical environment.
 
@@ -32,6 +32,6 @@ It generates stubs and  skeletons of  Qt Components to describe the logic of you
 |no macro parsing|
 |template are not handled|
 
-### PMOC win32 trial version + metalibs for MSVC2013 & Linux64 gcc4.9.2
+#### PMOC win32 trial version + metalibs for MSVC2013 & Linux64 gcc4.9.2
 https://github.com/mp3butcher/osg4noob/blob/master/pmoc-beta-libbuiltQt5.5-msvc2013-trial.zip?raw=true
 
