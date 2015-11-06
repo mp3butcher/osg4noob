@@ -21,9 +21,9 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 
 #### PMOC workflow:
 1. Use pmoc on your headers
-2. Build an editor for the targetted libraries
-3. Customized generated components (C++)
-4. Skin components in the editor at runtime (QML+javascript method wrapping)
+2. Build a generic QtQuick development environment (editor) for the targetted libraries
+3. Customized (if needed) generated components/boxes (C++)
+4. Skin components/boxes in the editor at runtime (QML+javascript method wrapping)
 5. Reuse boxes in your own products
 
 #### PMOC pro
