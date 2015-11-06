@@ -26,7 +26,7 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 4. Skin components/boxes in the editor at runtime (QML+javascript method wrapping)
 5. Reuse boxes in your own products
 
-###PMOC How to use the stuff 
+###PMOC MetaLibrary: How to use the stuff 
 (need some design improvement...:/)
 - PMOCSAFEADDOBJECT(INOBJECTREF,OUTPMOCINSTANCE) : inject native in pmoc system
 - PMOCINSTANCE.model->createQQModel(&PMOCINSTANCE) : embed instance in the associated manipulation box (no graphics)
