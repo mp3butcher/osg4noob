@@ -8,7 +8,17 @@
 #include <customCode/osg/Referenced_pmoc.hpp>
 #include <customCode/osg/LineSegment_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
+#include <customCode/osg/Vec3d_pmoc.hpp>
+#include <customCode/osg/Vec3f_pmoc.hpp>
 using namespace pmoc;
+ bool  osg::QReflect_LineSegment::intersect(osg::QReflect_Vec3d *p0 ,osg::QReflect_Vec3d *p1 ,osg::QReflect_Vec3d *p2 , double &p3){
+return _model->intersect(*p0->_model ,*p1->_model ,*p2->_model ,p3);
+
+}
+ bool  osg::QReflect_LineSegment::intersect(osg::QReflect_Vec3f *p0 ,osg::QReflect_Vec3f *p1 ,osg::QReflect_Vec3f *p2 , float &p3){
+return _model->intersect(*p0->_model ,*p1->_model ,*p2->_model ,p3);
+
+}
  bool  osg::QReflect_LineSegment::valid()const{
 return _model->valid();
 

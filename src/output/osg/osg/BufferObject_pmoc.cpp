@@ -207,6 +207,14 @@ return ret;}
 #include <customCode/osg/Object_pmoc.hpp>
 #include <osg/BufferObject>
 using namespace pmoc;
+ GLenum  osg::QReflect_BufferObject::getTarget()const{
+return _model->getTarget();
+
+}
+ GLenum  osg::QReflect_BufferObject::getUsage()const{
+return _model->getUsage();
+
+}
  bool  osg::QReflect_BufferObject::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -241,6 +249,14 @@ return _model->getNumBufferData();
 }
  void osg::QReflect_BufferObject::setGLBufferObject( unsigned int p0 ,osg::QReflect_GLBufferObject *p1){
  _model->setGLBufferObject(p0 ,p1->_model);
+
+}
+ void osg::QReflect_BufferObject::setTarget( GLenum p0){
+ _model->setTarget(p0);
+
+}
+ void osg::QReflect_BufferObject::setUsage( GLenum p0){
+ _model->setUsage(p0);
 
 }
 const  char*  osg::QReflect_BufferObject::className()const{
@@ -343,6 +359,10 @@ return ret;}
 #include <osg/BufferObject_pmoc.hpp>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_BufferObjectProfile::setProfile( GLenum p0 , GLenum p1 , unsigned int p2){
+ _model->setProfile(p0 ,p1 ,p2);
+
+}
 
 ///DefaultConstructor////////////////
 osg::QReflect_BufferObjectProfile::QReflect_BufferObjectProfile(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
@@ -656,6 +676,10 @@ return _model->getNumberGenerated();
  _model->flushAllDeletedGLObjects();
 
 }
+ void osg::QReflect_GLBufferObjectManager::flushDeletedGLObjects( double p0 , double &p1){
+ _model->flushDeletedGLObjects(p0 ,p1);
+
+}
  void osg::QReflect_GLBufferObjectManager::handlePendingOrphandedGLBufferObjects(){
  _model->handlePendingOrphandedGLBufferObjects();
 
@@ -736,6 +760,10 @@ using namespace pmoc;
 return _model->checkConsistency();
 
 }
+ bool  osg::QReflect_GLBufferObjectSet::makeSpace( unsigned int &p0){
+return _model->makeSpace(p0);
+
+}
  unsigned int  osg::QReflect_GLBufferObjectSet::computeNumGLBufferObjectsInList()const{
 return _model->computeNumGLBufferObjectsInList();
 
@@ -774,6 +802,10 @@ return _model->size();
 }
  void osg::QReflect_GLBufferObjectSet::flushAllDeletedGLBufferObjects(){
  _model->flushAllDeletedGLBufferObjects();
+
+}
+ void osg::QReflect_GLBufferObjectSet::flushDeletedGLBufferObjects( double p0 , double &p1){
+ _model->flushDeletedGLBufferObjects(p0 ,p1);
 
 }
  void osg::QReflect_GLBufferObjectSet::handlePendingOrphandedGLBufferObjects(){

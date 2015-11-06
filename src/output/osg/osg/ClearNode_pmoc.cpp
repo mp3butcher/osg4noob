@@ -8,8 +8,16 @@
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
+ GLbitfield  osg::QReflect_ClearNode::getClearMask()const{
+return _model->getClearMask();
+
+}
  void osg::QReflect_ClearNode::setClearColor(osg::QReflect_Vec4f *p0){
  _model->setClearColor(*p0->_model);
+
+}
+ void osg::QReflect_ClearNode::setClearMask( GLbitfield p0){
+ _model->setClearMask(p0);
 
 }
 const bool osg::QReflect_ClearNode::getRequiresClear()const{return _model->getRequiresClear();}

@@ -4,6 +4,12 @@
 #include <osg/Transform_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
+namespace osg{ 
+class QReflect_Matrixd;
+			} ;
+namespace osg{ 
 class QReflect_Transform;
 			} ;
 #include <osg/Transform>
@@ -34,10 +40,10 @@ virtual ~QReflect_Transform( );
 //virtual  BoundingSphere  computeBound();
 //virtual  MatrixTransform * asMatrixTransform();
 //virtual  PositionAttitudeTransform * asPositionAttitudeTransform();
-//virtual  bool  computeLocalToWorldMatrix( Matrix & , NodeVisitor *);
-//virtual  bool  computeWorldToLocalMatrix( Matrix & , NodeVisitor *);
 //virtual const  MatrixTransform * asMatrixTransform();
 //virtual const  PositionAttitudeTransform * asPositionAttitudeTransform();
+Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
 Q_INVOKABLE osg::QReflect_Transform*  asTransform();
 Q_INVOKABLE osg::QReflect_Transform*  asTransform()const;
 Q_INVOKABLE osg::QReflect_Transform::ReferenceFrame  getReferenceFrame()const;

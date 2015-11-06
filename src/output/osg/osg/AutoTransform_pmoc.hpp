@@ -10,10 +10,16 @@ namespace osg{
 class QReflect_CopyOp;
 			} ;
 namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
+namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osg{ 
 class QReflect_Vec3d;
+			} ;
+namespace osg{ 
+class QReflect_Matrixd;
 			} ;
 namespace osg{ 
 class QReflect_Quat;
@@ -48,15 +54,14 @@ QReflect_AutoTransform(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_AutoTransform( );
 //AutoTransform
 //virtual  BoundingSphere  computeBound();
-//virtual  bool  computeLocalToWorldMatrix( Matrix & , NodeVisitor *);
-//virtual  bool  computeWorldToLocalMatrix( Matrix & , NodeVisitor *);
-//virtual  void  accept( NodeVisitor &);
 //const  Quat & getRotation();
 //const  Vec3 & getAxis();
 //const  Vec3 & getNormal();
 //const  Vec3d & getPivotPoint();
 //const  Vec3d & getPosition();
 //const  Vec3d & getScale();
+Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
@@ -70,6 +75,7 @@ Q_INVOKABLE osg::QReflect_AutoTransform*  asAutoTransform()const;
 Q_INVOKABLE osg::QReflect_AutoTransform::AutoRotateMode  getAutoRotateMode()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
+Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void  setAutoRotateMode(osg::QReflect_AutoTransform::AutoRotateMode );
 Q_INVOKABLE void  setAxis(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setNormal(osg::QReflect_Vec3f *);

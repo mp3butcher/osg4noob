@@ -22,14 +22,14 @@ ClampColor * _model;
 QReflect_ClampColor(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ClampColor( );
 //ClampColor
-// GLenum  getClampFragmentColor();
-// GLenum  getClampReadColor();
-// GLenum  getClampVertexColor();
 //virtual  void  apply( State &);
-// void  setClampFragmentColor( GLenum );
-// void  setClampReadColor( GLenum );
-// void  setClampVertexColor( GLenum );
+Q_INVOKABLE  GLenum  getClampFragmentColor()const;
+Q_INVOKABLE  GLenum  getClampReadColor()const;
+Q_INVOKABLE  GLenum  getClampVertexColor()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE void  setClampFragmentColor( GLenum );
+Q_INVOKABLE void  setClampReadColor( GLenum );
+Q_INVOKABLE void  setClampVertexColor( GLenum );
 public slots:
 virtual void updateModel();
  

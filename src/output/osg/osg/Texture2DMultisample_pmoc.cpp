@@ -8,7 +8,16 @@
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_Texture2DMultisample::getTextureTarget()const{
+return _model->getTextureTarget();
+
+}
+ GLsizei  osg::QReflect_Texture2DMultisample::getNumSamples()const{
+return _model->getNumSamples();
+
+}
  int  osg::QReflect_Texture2DMultisample::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
@@ -19,6 +28,14 @@ return _model->getTextureDepth();
 }
  unsigned int  osg::QReflect_Texture2DMultisample::getNumImages()const{
 return _model->getNumImages();
+
+}
+ void osg::QReflect_Texture2DMultisample::allocateMipmap(osg::QReflect_State *p0)const{
+ _model->allocateMipmap(*p0->_model);
+
+}
+ void osg::QReflect_Texture2DMultisample::apply(osg::QReflect_State *p0)const{
+ _model->apply(*p0->_model);
 
 }
  void osg::QReflect_Texture2DMultisample::setImage( unsigned int p0 ,osg::QReflect_Image *p1){

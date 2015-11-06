@@ -22,13 +22,13 @@ LineStipple * _model;
 QReflect_LineStipple(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LineStipple( );
 //LineStipple
-// GLushort  getPattern();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
 //virtual  void  apply( State &);
-// void  setPattern( GLushort );
 Q_INVOKABLE  GLint  getFactor()const;
+Q_INVOKABLE  GLushort  getPattern()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE void  setFactor( GLint );
+Q_INVOKABLE void  setPattern( GLushort );
 public slots:
 virtual void updateModel();
  

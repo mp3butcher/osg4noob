@@ -23,11 +23,11 @@ ClearNode * _model;
 QReflect_ClearNode(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ClearNode( );
 //ClearNode
-// GLbitfield  getClearMask();
-// void  setClearMask( GLbitfield );
 //const  Vec4 & getClearColor();
+Q_INVOKABLE  GLbitfield  getClearMask()const;
 Q_INVOKABLE const bool  getRequiresClear()const;
 Q_INVOKABLE void  setClearColor(osg::QReflect_Vec4f *);
+Q_INVOKABLE void  setClearMask( GLbitfield );
 Q_INVOKABLE void setRequiresClear(const bool &);
 Q_PROPERTY(bool RequiresClear  READ getRequiresClear WRITE setRequiresClear NOTIFY RequiresClearChanged)
 signals: void RequiresClearChanged(const bool&);

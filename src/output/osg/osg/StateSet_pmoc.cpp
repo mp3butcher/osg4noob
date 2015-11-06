@@ -32,6 +32,10 @@ return _model->useRenderBinDetails();
 return _model->compare(*p0->_model ,p1);
 
 }
+ unsigned int  osg::QReflect_StateSet::getMode( GLenum p0)const{
+return _model->getMode(p0);
+
+}
  unsigned int  osg::QReflect_StateSet::getNumChildrenRequiringEventTraversal()const{
 return _model->getNumChildrenRequiringEventTraversal();
 
@@ -50,6 +54,10 @@ return _model->getNumTextureAttributeLists();
 }
  unsigned int  osg::QReflect_StateSet::getNumTextureModeLists()const{
 return _model->getNumTextureModeLists();
+
+}
+ unsigned int  osg::QReflect_StateSet::getTextureMode( unsigned int p0 , GLenum p1)const{
+return _model->getTextureMode(p0 ,p1);
 
 }
  void osg::QReflect_StateSet::addUniform(osg::QReflect_Uniform *p0 , unsigned int p1){
@@ -88,12 +96,20 @@ return _model->getNumTextureModeLists();
  _model->removeDefine(std::string(p0.toStdString()));
 
 }
+ void osg::QReflect_StateSet::removeMode( GLenum p0){
+ _model->removeMode(p0);
+
+}
  void osg::QReflect_StateSet::removeTextureAttribute( unsigned int p0 ,osg::QReflect_StateAttribute *p1){
  _model->removeTextureAttribute(p0 ,p1->_model);
 
 }
  void osg::QReflect_StateSet::removeTextureAttribute( unsigned int p0 ,osg::QReflect_StateAttribute::Type p1){
  _model->removeTextureAttribute(p0 ,static_cast<osg::StateAttribute::Type>(p1));
+
+}
+ void osg::QReflect_StateSet::removeTextureMode( unsigned int p0 , GLenum p1){
+ _model->removeTextureMode(p0 ,p1);
 
 }
  void osg::QReflect_StateSet::removeUniform(const  QString &p0){
@@ -136,6 +152,10 @@ return _model->getNumTextureModeLists();
  _model->setGlobalDefaults();
 
 }
+ void osg::QReflect_StateSet::setMode( GLenum p0 , unsigned int p1){
+ _model->setMode(p0 ,p1);
+
+}
  void osg::QReflect_StateSet::setRenderBinDetails( int p0 ,const  QString &p1 ,osg::QReflect_StateSet::RenderBinMode p2){
  _model->setRenderBinDetails(p0 ,std::string(p1.toStdString()) ,static_cast<osg::StateSet::RenderBinMode>(p2));
 
@@ -154,6 +174,10 @@ return _model->getNumTextureModeLists();
 }
  void osg::QReflect_StateSet::setTextureAttributeAndModes( unsigned int p0 ,osg::QReflect_StateAttribute *p1 , unsigned int p2){
  _model->setTextureAttributeAndModes(p0 ,p1->_model ,p2);
+
+}
+ void osg::QReflect_StateSet::setTextureMode( unsigned int p0 , GLenum p1 , unsigned int p2){
+ _model->setTextureMode(p0 ,p1 ,p2);
 
 }
  void osg::QReflect_StateSet::setThreadSafeRefUnref( bool p0){

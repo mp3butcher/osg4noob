@@ -10,6 +10,14 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_Hint::getMode()const{
+return _model->getMode();
+
+}
+ GLenum  osg::QReflect_Hint::getTarget()const{
+return _model->getTarget();
+
+}
  bool  osg::QReflect_Hint::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -20,6 +28,14 @@ return _model->compare(*p0->_model);
 }
  unsigned int  osg::QReflect_Hint::getMember()const{
 return _model->getMember();
+
+}
+ void osg::QReflect_Hint::setMode( GLenum p0){
+ _model->setMode(p0);
+
+}
+ void osg::QReflect_Hint::setTarget( GLenum p0){
+ _model->setTarget(p0);
 
 }
 const  char*  osg::QReflect_Hint::className()const{

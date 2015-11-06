@@ -10,6 +10,9 @@ class QReflect_Drawable;
 namespace osg{ 
 class QReflect_Geode;
 			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
+			} ;
 #include <osg/Geode>
 #include <osg/Geode>
 
@@ -33,7 +36,6 @@ QReflect_Geode(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Geode( );
 //Geode
 //virtual  BoundingSphere  computeBound();
-// void  compileDrawables( RenderInfo &);
 //const  BoundingBox & getBoundingBox();
 Q_INVOKABLE  bool  containsDrawable(osg::QReflect_Drawable *)const;
 Q_INVOKABLE  bool  removeDrawables( unsigned int  , unsigned int );
@@ -45,6 +47,7 @@ Q_INVOKABLE osg::QReflect_Drawable*  getDrawable( unsigned int );
 Q_INVOKABLE osg::QReflect_Drawable*  getDrawable( unsigned int )const;
 Q_INVOKABLE osg::QReflect_Geode*  asGeode();
 Q_INVOKABLE osg::QReflect_Geode*  asGeode()const;
+Q_INVOKABLE void  compileDrawables(osg::QReflect_RenderInfo *);
 virtual Q_INVOKABLE void   addDrawable( osg::QReflect_Drawable *par);//{return new osg::QReflect_Drawable(_model->getDrawable());}
 virtual Q_INVOKABLE void pmoc_reverse_addDrawable( osg::QReflect_Drawable *par);//{_model->setDrawable(par->_model);emit DrawableCollectionChanged(par);}
 signals: void DrawableCollectionChanged();

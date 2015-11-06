@@ -16,6 +16,9 @@ class QReflect_Image;
 namespace osg{ 
 class QReflect_CopyOp;
 			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
+			} ;
 #include <osg/DrawPixels>
 #include <osg/DrawPixels>
 
@@ -35,8 +38,6 @@ virtual ~QReflect_DrawPixels( );
 //DrawPixels
 //virtual  BoundingBox  computeBoundingBox();
 // osg::Vec3 & getPosition();
-//virtual  void  drawImplementation( RenderInfo &);
-// void  getSubImageDimensions( unsigned int & , unsigned int & , unsigned int & , unsigned int &);
 //const  osg::Vec3 & getPosition();
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  osg::QReflect_Image * getImage()const;
@@ -45,6 +46,8 @@ Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE const bool  getUseSubImage()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
+Q_INVOKABLE void  getSubImageDimensions( unsigned int & , unsigned int & , unsigned int & , unsigned int &)const;
 Q_INVOKABLE void  setPosition(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setSubImageDimensions( unsigned int  , unsigned int  , unsigned int  , unsigned int );
 Q_INVOKABLE void pmoc_reverse_setImage( osg::QReflect_Image *par=0);

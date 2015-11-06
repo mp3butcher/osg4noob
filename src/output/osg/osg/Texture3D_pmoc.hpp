@@ -8,6 +8,9 @@ class QReflect_Image;
 namespace osg{ 
 class QReflect_StateAttribute;
 			} ;
+namespace osg{ 
+class QReflect_State;
+			} ;
 #include <osg/Texture3D>
 #include <osg/Texture3D>
 
@@ -25,13 +28,10 @@ Texture3D * _model;
 QReflect_Texture3D(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Texture3D( );
 //Texture3D
-//virtual  GLenum  getTextureTarget();
 // SubloadCallback * getSubloadCallback();
-//virtual  void  apply( State &);
-// void  copyTexSubImage3D( State & , int  , int  , int  , int  , int  , int  , int );
-// void  getTextureSize( int & , int & , int &);
 // void  setSubloadCallback( SubloadCallback *);
 //const  SubloadCallback * getSubloadCallback();
+Q_INVOKABLE  GLenum  getTextureTarget()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE  osg::QReflect_Image * getImage()const;
 Q_INVOKABLE  unsigned int  getNumImages()const;
@@ -39,6 +39,9 @@ Q_INVOKABLE  unsigned int&  getModifiedCount( unsigned int )const;
 Q_INVOKABLE const unsigned int  getNumMipmapLevels()const;
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int );
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int )const;
+Q_INVOKABLE void  apply(osg::QReflect_State *)const;
+Q_INVOKABLE void  copyTexSubImage3D(osg::QReflect_State * , int  , int  , int  , int  , int  , int  , int );
+Q_INVOKABLE void  getTextureSize( int & , int & , int &)const;
 Q_INVOKABLE void  setImage( unsigned int  ,osg::QReflect_Image *);
 Q_INVOKABLE void  setTextureSize( int  , int  , int )const;
 Q_INVOKABLE void pmoc_reverse_setImage( osg::QReflect_Image *par=0);

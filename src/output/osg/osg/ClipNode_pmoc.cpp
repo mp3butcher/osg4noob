@@ -7,6 +7,7 @@
 #include <customCode/osg/ClipNode_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/ClipPlane_pmoc.hpp>
+#include <customCode/osg/StateSet_pmoc.hpp>
 #include <osg/ClipPlane>
 using namespace pmoc;
  bool  osg::QReflect_ClipNode::removeClipPlane( unsigned int p0){
@@ -23,6 +24,10 @@ return _model->getNumClipPlanes();
 }
  void osg::QReflect_ClipNode::setReferenceFrame(osg::QReflect_ClipNode::ReferenceFrame p0){
  _model->setReferenceFrame(static_cast<osg::ClipNode::ReferenceFrame>(p0));
+
+}
+ void osg::QReflect_ClipNode::setStateSetModes(osg::QReflect_StateSet *p0 , unsigned int p1)const{
+ _model->setStateSetModes(*p0->_model ,p1);
 
 }
 osg::QReflect_ClipNode::ReferenceFrame  osg::QReflect_ClipNode::getReferenceFrame()const{

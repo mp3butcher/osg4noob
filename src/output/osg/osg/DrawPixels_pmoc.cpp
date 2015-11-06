@@ -9,12 +9,21 @@
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <osg/Image>
 #include <osg/Image_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_DrawPixels::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
+
+}
+ void osg::QReflect_DrawPixels::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawImplementation(*p0->_model);
+
+}
+ void osg::QReflect_DrawPixels::getSubImageDimensions( unsigned int &p0 , unsigned int &p1 , unsigned int &p2 , unsigned int &p3)const{
+ _model->getSubImageDimensions(p0 ,p1 ,p2 ,p3);
 
 }
  void osg::QReflect_DrawPixels::setPosition(osg::QReflect_Vec3f *p0){

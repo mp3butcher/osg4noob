@@ -28,12 +28,11 @@ GLBufferObjectSet * _model;
 QReflect_GLBufferObjectSet(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_GLBufferObjectSet( );
 //GLBufferObjectSet
-// bool  makeSpace( unsigned int &);
 // osg::ref_ptr<GLBufferObject>  takeFromOrphans( BufferObject *);
 // osg::ref_ptr<GLBufferObject>  takeOrGenerate( BufferObject *);
-// void  flushDeletedGLBufferObjects( double  , double &);
 //const  BufferObjectProfile & getProfile();
 Q_INVOKABLE  bool  checkConsistency()const;
+Q_INVOKABLE  bool  makeSpace( unsigned int &);
 Q_INVOKABLE  unsigned int  computeNumGLBufferObjectsInList()const;
 Q_INVOKABLE  unsigned int  getNumOfGLBufferObjects()const;
 Q_INVOKABLE  unsigned int  getNumOrphans()const;
@@ -45,6 +44,7 @@ Q_INVOKABLE void  deleteAllGLBufferObjects();
 Q_INVOKABLE void  discardAllDeletedGLBufferObjects();
 Q_INVOKABLE void  discardAllGLBufferObjects();
 Q_INVOKABLE void  flushAllDeletedGLBufferObjects();
+Q_INVOKABLE void  flushDeletedGLBufferObjects( double  , double &);
 Q_INVOKABLE void  handlePendingOrphandedGLBufferObjects();
 Q_INVOKABLE void  moveToBack(osg::QReflect_GLBufferObject *);
 Q_INVOKABLE void  moveToSet(osg::QReflect_GLBufferObject * ,osg::QReflect_GLBufferObjectSet *);
@@ -175,12 +175,10 @@ QReflect_BufferObject(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BufferObject( );
 //BufferObject
 // BufferObjectProfile & getProfile();
-// GLenum  getTarget();
-// GLenum  getUsage();
 // void  releaseGLObjects( State *);
-// void  setTarget( GLenum );
-// void  setUsage( GLenum );
 //const  BufferObjectProfile & getProfile();
+Q_INVOKABLE  GLenum  getTarget()const;
+Q_INVOKABLE  GLenum  getUsage()const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  unsigned int  computeRequiredBufferSize()const;
 Q_INVOKABLE  unsigned int  getNumBufferData()const;
@@ -198,6 +196,8 @@ Q_INVOKABLE void  removeBufferData( unsigned int );
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
 Q_INVOKABLE void  setBufferData( unsigned int  ,osg::QReflect_BufferData *);
 Q_INVOKABLE void  setGLBufferObject( unsigned int  ,osg::QReflect_GLBufferObject *);
+Q_INVOKABLE void  setTarget( GLenum );
+Q_INVOKABLE void  setUsage( GLenum );
 Q_INVOKABLE void pmoc_reverse_addBufferData( osg::QReflect_BufferData *par);//{_model->setBufferData(par->_model);emit BufferDataCollectionChanged(par);}
 Q_INVOKABLE void setCopyDataAndReleaseGLBufferObject(const bool &);
 Q_PROPERTY(bool CopyDataAndReleaseGLBufferObject  READ getCopyDataAndReleaseGLBufferObject WRITE setCopyDataAndReleaseGLBufferObject NOTIFY CopyDataAndReleaseGLBufferObjectChanged)
@@ -430,7 +430,6 @@ QReflect_GLBufferObjectManager(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_GLBufferObjectManager( );
 //GLBufferObjectManager
 // osg::ref_ptr<GLBufferObject>  generateGLBufferObject(const  osg::BufferObject *);
-// void  flushDeletedGLObjects( double  , double &);
 // void  recomputeStats( std::ostream &);
 // void  reportStats( std::ostream &);
 Q_INVOKABLE  bool  hasSpace( unsigned int )const;
@@ -452,6 +451,7 @@ Q_INVOKABLE void  deleteAllGLObjects();
 Q_INVOKABLE void  discardAllDeletedGLObjects();
 Q_INVOKABLE void  discardAllGLObjects();
 Q_INVOKABLE void  flushAllDeletedGLObjects();
+Q_INVOKABLE void  flushDeletedGLObjects( double  , double &);
 Q_INVOKABLE void  handlePendingOrphandedGLBufferObjects();
 Q_INVOKABLE void  newFrame(osg::QReflect_FrameStamp *);
 Q_INVOKABLE void  resetStats();
@@ -559,7 +559,7 @@ virtual ~QReflect_BufferObjectProfile( );
 // BufferObjectProfile & operator=(const  BufferObjectProfile &);
 // bool  operator<(const  BufferObjectProfile &);
 // bool  operator==(const  BufferObjectProfile &);
-// void  setProfile( GLenum  , GLenum  , unsigned int );
+Q_INVOKABLE void  setProfile( GLenum  , GLenum  , unsigned int );
 public slots:
 virtual void updateModel();
  

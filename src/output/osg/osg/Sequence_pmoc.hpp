@@ -6,6 +6,9 @@
 namespace osg{ 
 class QReflect_Node;
 			} ;
+namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
 #include <osg/Sequence>
 #include <osg/Sequence>
 
@@ -43,10 +46,8 @@ Sequence * _model;
 QReflect_Sequence(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Sequence( );
 //Sequence
-// void  getDuration( float & , int &);
 // void  getInterval( LoopMode & , int & , int &);
 // void  setTimeList(const  std::vector<double> &);
-//virtual  void  traverse( NodeVisitor &);
 //const  std::vector<double> & getTimeList();
 Q_INVOKABLE  bool  addChild(osg::QReflect_Node * , double );
 Q_INVOKABLE  bool  insertChild( unsigned int  ,osg::QReflect_Node * , double );
@@ -65,11 +66,13 @@ Q_INVOKABLE const int  getNumRepeats()const;
 Q_INVOKABLE const int  getValue()const;
 Q_INVOKABLE osg::QReflect_Sequence::LoopMode  getLoopMode()const;
 Q_INVOKABLE osg::QReflect_Sequence::SequenceMode  getMode()const;
+Q_INVOKABLE void  getDuration( float & , int &)const;
 Q_INVOKABLE void  setDuration( float  , int );
 Q_INVOKABLE void  setInterval(osg::QReflect_Sequence::LoopMode  , int  , int );
 Q_INVOKABLE void  setLoopMode(osg::QReflect_Sequence::LoopMode );
 Q_INVOKABLE void  setMode(osg::QReflect_Sequence::SequenceMode );
 Q_INVOKABLE void  setTime( unsigned int  , double );
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void setBegin(const int &);
 Q_INVOKABLE void setClearOnStop(const bool &);
 Q_INVOKABLE void setDefaultTime(const double &);

@@ -17,6 +17,22 @@
 #include <osg/BufferObject>
 #include <osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_Image::computeFormatDataType( GLenum p0){
+return _model->computeFormatDataType(p0);
+
+}
+ GLenum  osg::QReflect_Image::computePixelFormat( GLenum p0){
+return _model->computePixelFormat(p0);
+
+}
+ GLenum  osg::QReflect_Image::getDataType()const{
+return _model->getDataType();
+
+}
+ GLenum  osg::QReflect_Image::getPixelFormat()const{
+return _model->getPixelFormat();
+
+}
  GLint  osg::QReflect_Image::getInternalTextureFormat()const{
 return _model->getInternalTextureFormat();
 
@@ -35,6 +51,10 @@ return _model->isImageTranslucent();
 }
  bool  osg::QReflect_Image::isMipmap()const{
 return _model->isMipmap();
+
+}
+ bool  osg::QReflect_Image::isPackedType( GLenum p0){
+return _model->isPackedType(p0);
 
 }
  bool  osg::QReflect_Image::isSameKindAs(osg::QReflect_Object *p0)const{
@@ -89,6 +109,26 @@ return _model->s();
 return _model->t();
 
 }
+ unsigned int  osg::QReflect_Image::computeBlockSize( GLenum p0 , GLenum p1){
+return _model->computeBlockSize(p0 ,p1);
+
+}
+ unsigned int  osg::QReflect_Image::computeImageSizeInBytes( int p0 , int p1 , int p2 , GLenum p3 , GLenum p4 , int p5 , int p6 , int p7){
+return _model->computeImageSizeInBytes(p0 ,p1 ,p2 ,p3 ,p4 ,p5 ,p6 ,p7);
+
+}
+ unsigned int  osg::QReflect_Image::computeNumComponents( GLenum p0){
+return _model->computeNumComponents(p0);
+
+}
+ unsigned int  osg::QReflect_Image::computePixelSizeInBits( GLenum p0 , GLenum p1){
+return _model->computePixelSizeInBits(p0 ,p1);
+
+}
+ unsigned int  osg::QReflect_Image::computeRowWidthInBytes( int p0 , GLenum p1 , GLenum p2 , int p3){
+return _model->computeRowWidthInBytes(p0 ,p1 ,p2 ,p3);
+
+}
  unsigned int  osg::QReflect_Image::getImageSizeInBytes()const{
 return _model->getImageSizeInBytes();
 
@@ -129,6 +169,10 @@ return _model->getTotalSizeInBytes();
 return _model->getTotalSizeInBytesIncludingMipmaps();
 
 }
+ void osg::QReflect_Image::allocateImage( int p0 , int p1 , int p2 , GLenum p3 , GLenum p4 , int p5){
+ _model->allocateImage(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
  void osg::QReflect_Image::copySubImage( int p0 , int p1 , int p2 ,osg::QReflect_Image *p3){
  _model->copySubImage(p0 ,p1 ,p2 ,p3->_model);
 
@@ -147,6 +191,18 @@ return _model->getTotalSizeInBytesIncludingMipmaps();
 }
  void osg::QReflect_Image::flipVertical(){
  _model->flipVertical();
+
+}
+ void osg::QReflect_Image::readImageFromCurrentTexture( unsigned int p0 , bool p1 , GLenum p2 , unsigned int p3){
+ _model->readImageFromCurrentTexture(p0 ,p1 ,p2 ,p3);
+
+}
+ void osg::QReflect_Image::readPixels( int p0 , int p1 , int p2 , int p3 , GLenum p4 , GLenum p5 , int p6){
+ _model->readPixels(p0 ,p1 ,p2 ,p3 ,p4 ,p5 ,p6);
+
+}
+ void osg::QReflect_Image::scaleImage( int p0 , int p1 , int p2 , GLenum p3){
+ _model->scaleImage(p0 ,p1 ,p2 ,p3);
 
 }
  void osg::QReflect_Image::scaleImage( int p0 , int p1 , int p2){
@@ -169,6 +225,10 @@ return _model->getTotalSizeInBytesIncludingMipmaps();
  _model->setColor(*p0->_model ,*p1->_model);
 
 }
+ void osg::QReflect_Image::setDataType( GLenum p0){
+ _model->setDataType(p0);
+
+}
  void osg::QReflect_Image::setFrameLastRendered(osg::QReflect_FrameStamp *p0){
  _model->setFrameLastRendered(p0->_model);
 
@@ -181,8 +241,20 @@ return _model->getTotalSizeInBytesIncludingMipmaps();
  _model->setOrigin(static_cast<osg::Image::Origin>(p0));
 
 }
+ void osg::QReflect_Image::setPixelFormat( GLenum p0){
+ _model->setPixelFormat(p0);
+
+}
  void osg::QReflect_Image::setWriteHint(osg::QReflect_Image::WriteHint p0){
  _model->setWriteHint(static_cast<osg::Image::WriteHint>(p0));
+
+}
+ void osg::QReflect_Image::swap(osg::QReflect_Image *p0){
+ _model->swap(*p0->_model);
+
+}
+const  GLvoid*  osg::QReflect_Image::getDataPointer()const{
+return _model->getDataPointer();
 
 }
 const  char*  osg::QReflect_Image::className()const{

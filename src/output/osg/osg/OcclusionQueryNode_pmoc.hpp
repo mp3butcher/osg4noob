@@ -53,6 +53,12 @@ namespace osg{
 class QReflect_State;
 			} ;
 namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
+namespace osg{ 
+class QReflect_Camera;
+			} ;
+namespace osg{ 
 class QReflect_QueryGeometry;
 			} ;
 #include <osg/OcclusionQueryNode>
@@ -72,12 +78,9 @@ OcclusionQueryNode * _model;
 QReflect_OcclusionQueryNode(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_OcclusionQueryNode( );
 //OcclusionQueryNode
-//virtual  bool  getPassed(const  osg::Camera * , osg::NodeVisitor &);
 //virtual  osg::BoundingSphere  computeBound();
-// void  flushDeletedQueryObjects( unsigned int  , double  , double &);
-// void  traverseDebug( osg::NodeVisitor &);
-// void  traverseQuery(const  osg::Camera * , osg::NodeVisitor &);
 Q_INVOKABLE  bool  getPassed()const;
+Q_INVOKABLE  bool  getPassed(osg::QReflect_Camera * ,osg::QReflect_NodeVisitor *);
 Q_INVOKABLE  osg::QReflect_StateSet * getDebugStateSet()const;
 Q_INVOKABLE  osg::QReflect_StateSet * getQueryStateSet()const;
 Q_INVOKABLE const bool  getDebugDisplay()const;
@@ -87,7 +90,10 @@ Q_INVOKABLE const unsigned int  getVisibilityThreshold()const;
 Q_INVOKABLE osg::QReflect_QueryGeometry*  getQueryGeometry();
 Q_INVOKABLE osg::QReflect_QueryGeometry*  getQueryGeometry()const;
 Q_INVOKABLE void  discardDeletedQueryObjects( unsigned int );
+Q_INVOKABLE void  flushDeletedQueryObjects( unsigned int  , double  , double &);
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
+Q_INVOKABLE void  traverseDebug(osg::QReflect_NodeVisitor *);
+Q_INVOKABLE void  traverseQuery(osg::QReflect_Camera * ,osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void pmoc_reverse_setDebugStateSet( osg::QReflect_StateSet *par=0);
 Q_INVOKABLE void pmoc_reverse_setQueryStateSet( osg::QReflect_StateSet *par=0);
 Q_INVOKABLE void setDebugDisplay(const bool &);
@@ -143,6 +149,9 @@ class QReflect_State;
 namespace osg{ 
 class QReflect_Camera;
 			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
+			} ;
 #include <osg/OcclusionQueryNode>
 #include <osg/OcclusionQueryNode>
 
@@ -160,11 +169,11 @@ QueryGeometry * _model;
 QReflect_QueryGeometry(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_QueryGeometry( );
 //QueryGeometry
-//virtual  void  drawImplementation( osg::RenderInfo &);
-// void  flushDeletedQueryObjects( unsigned int  , double  , double &);
 Q_INVOKABLE  unsigned int  getNumPixels(osg::QReflect_Camera *);
 Q_INVOKABLE void  deleteQueryObject( unsigned int  , GLuint );
 Q_INVOKABLE void  discardDeletedQueryObjects( unsigned int );
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
+Q_INVOKABLE void  flushDeletedQueryObjects( unsigned int  , double  , double &);
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
 Q_INVOKABLE void  reset();
 public slots:

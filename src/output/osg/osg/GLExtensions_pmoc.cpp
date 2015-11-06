@@ -12,6 +12,14 @@ using namespace pmoc;
 return _model->getCurrentProgram();
 
 }
+ bool  osg::QReflect_GLExtensions::getAttribLocation(const  char *p0 , GLuint &p1)const{
+return _model->getAttribLocation(p0 ,p1);
+
+}
+ bool  osg::QReflect_GLExtensions::getFragDataLocation(const  char *p0 , GLuint &p1)const{
+return _model->getFragDataLocation(p0 ,p1);
+
+}
  bool  osg::QReflect_GLExtensions::isBindImageTextureSupported()const{
 return _model->isBindImageTextureSupported();
 
@@ -30,6 +38,10 @@ return _model->isCompressedTexSubImage2DSupported();
 }
  bool  osg::QReflect_GLExtensions::isCompressedTexSubImage3DSupported()const{
 return _model->isCompressedTexSubImage3DSupported();
+
+}
+ bool  osg::QReflect_GLExtensions::isNonPowerOfTwoTextureSupported( GLenum p0)const{
+return _model->isNonPowerOfTwoTextureSupported(p0);
 
 }
  bool  osg::QReflect_GLExtensions::isRenderbufferMultisampleCoverageSupported()const{

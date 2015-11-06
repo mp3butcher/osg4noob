@@ -6,6 +6,8 @@
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
+#include <customCode/osg/GLExtensions_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_FrameBufferAttachment::isMultisample()const{
 return _model->isMultisample();
@@ -29,6 +31,14 @@ return _model->getTextureArrayLayer();
 }
  unsigned int  osg::QReflect_FrameBufferAttachment::getTextureLevel()const{
 return _model->getTextureLevel();
+
+}
+ void osg::QReflect_FrameBufferAttachment::attach(osg::QReflect_State *p0 , GLenum p1 , GLenum p2 ,osg::QReflect_GLExtensions *p3)const{
+ _model->attach(*p0->_model ,p1 ,p2 ,p3->_model);
+
+}
+ void osg::QReflect_FrameBufferAttachment::createRequiredTexturesAndApplyGenerateMipMap(osg::QReflect_State *p0 ,osg::QReflect_GLExtensions *p1)const{
+ _model->createRequiredTexturesAndApplyGenerateMipMap(*p0->_model ,p1->_model);
 
 }
 osg::QReflect_RenderBuffer*osg::QReflect_FrameBufferAttachment::getRenderBuffer()const{
@@ -117,6 +127,14 @@ return _model->isMultisample();
 }
  int  osg::QReflect_FrameBufferObject::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
+
+}
+ void osg::QReflect_FrameBufferObject::apply(osg::QReflect_State *p0 ,osg::QReflect_FrameBufferObject::BindTarget p1)const{
+ _model->apply(*p0->_model ,static_cast<osg::FrameBufferObject::BindTarget>(p1));
+
+}
+ void osg::QReflect_FrameBufferObject::apply(osg::QReflect_State *p0)const{
+ _model->apply(*p0->_model);
 
 }
  void osg::QReflect_FrameBufferObject::releaseGLObjects(osg::QReflect_State *p0)const{
@@ -308,6 +326,10 @@ return ret;}
 #include <customCode/osg/GLExtensions_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_RenderBuffer::getInternalFormat()const{
+return _model->getInternalFormat();
+
+}
  GLuint  osg::QReflect_RenderBuffer::getObjectID( unsigned int p0 ,osg::QReflect_GLExtensions *p1)const{
 return _model->getObjectID(p0 ,p1->_model);
 
@@ -326,6 +348,10 @@ return _model->getMaxSamples(p0 ,p1->_model);
 }
  void osg::QReflect_RenderBuffer::resizeGLObjectBuffers( unsigned int p0){
  _model->resizeGLObjectBuffers(p0);
+
+}
+ void osg::QReflect_RenderBuffer::setInternalFormat( GLenum p0){
+ _model->setInternalFormat(p0);
 
 }
  void osg::QReflect_RenderBuffer::setSize( int p0 , int p1){

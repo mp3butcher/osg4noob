@@ -41,23 +41,23 @@ BlendFunc * _model;
 QReflect_BlendFunc(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BlendFunc( );
 //BlendFunc
-// GLenum  getDestination();
-// GLenum  getDestinationAlpha();
-// GLenum  getDestinationRGB();
-// GLenum  getSource();
-// GLenum  getSourceAlpha();
-// GLenum  getSourceRGB();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
 //virtual  void  apply( State &);
-// void  setDestination( GLenum );
-// void  setDestinationAlpha( GLenum );
-// void  setDestinationRGB( GLenum );
-// void  setFunction( GLenum  , GLenum );
-// void  setFunction( GLenum  , GLenum  , GLenum  , GLenum );
-// void  setSource( GLenum );
-// void  setSourceAlpha( GLenum );
-// void  setSourceRGB( GLenum );
+Q_INVOKABLE  GLenum  getDestination()const;
+Q_INVOKABLE  GLenum  getDestinationAlpha()const;
+Q_INVOKABLE  GLenum  getDestinationRGB()const;
+Q_INVOKABLE  GLenum  getSource()const;
+Q_INVOKABLE  GLenum  getSourceAlpha()const;
+Q_INVOKABLE  GLenum  getSourceRGB()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE void  setDestination( GLenum );
+Q_INVOKABLE void  setDestinationAlpha( GLenum );
+Q_INVOKABLE void  setDestinationRGB( GLenum );
+Q_INVOKABLE void  setFunction( GLenum  , GLenum  , GLenum  , GLenum );
+Q_INVOKABLE void  setFunction( GLenum  , GLenum );
+Q_INVOKABLE void  setSource( GLenum );
+Q_INVOKABLE void  setSourceAlpha( GLenum );
+Q_INVOKABLE void  setSourceRGB( GLenum );
 public slots:
 virtual void updateModel();
  

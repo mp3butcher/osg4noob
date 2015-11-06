@@ -7,6 +7,9 @@ namespace osg{
 class QReflect_Node;
 			} ;
 namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
+namespace osg{ 
 class QReflect_Group;
 			} ;
 #include <osg/Group>
@@ -33,7 +36,6 @@ virtual ~QReflect_Group( );
 //Group
 //virtual  BoundingSphere  computeBound();
 //virtual  void  releaseGLObjects( osg::State *);
-//virtual  void  traverse( NodeVisitor &);
 Q_INVOKABLE  bool  containsNode(osg::QReflect_Node *)const;
 Q_INVOKABLE  bool  insertChild( unsigned int  ,osg::QReflect_Node *);
 Q_INVOKABLE  bool  removeChild( unsigned int  , unsigned int );
@@ -48,6 +50,7 @@ Q_INVOKABLE osg::QReflect_Node*  getChild( unsigned int );
 Q_INVOKABLE osg::QReflect_Node*  getChild( unsigned int )const;
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
 Q_INVOKABLE void  setThreadSafeRefUnref( bool );
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 virtual Q_INVOKABLE void   addChild( osg::QReflect_Node *par);//{return new osg::QReflect_Node(_model->getChild());}
 virtual Q_INVOKABLE void pmoc_reverse_addChild( osg::QReflect_Node *par);//{_model->setChild(par->_model);emit ChildCollectionChanged(par);}
 signals: void ChildCollectionChanged();

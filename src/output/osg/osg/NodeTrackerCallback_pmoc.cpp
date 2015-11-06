@@ -15,6 +15,10 @@ using namespace pmoc;
  _model->setTrackNodePath(*p0->_model);
 
 }
+ void osg::QReflect_NodeTrackerCallback::update(osg::QReflect_Node *p0){
+ _model->update(*p0->_model);
+
+}
 osg::QReflect_Node * osg::QReflect_NodeTrackerCallback::getTrackNode()const{
 PMOCSAFEADDOBJECT(*_model->getTrackNode(),inst);
 return inst.isValid()?((osg::QReflect_Node * )inst.model->createQQModel(&inst)):NULL;

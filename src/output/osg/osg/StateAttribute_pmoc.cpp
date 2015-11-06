@@ -8,7 +8,7 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Callback_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <osg/Shader_pmoc.hpp>
+#include <customCode/osg/Shader_pmoc.hpp>
 #include <osg/Callback>
 #include <osg/Callback_pmoc.hpp>
 #include <osg/Shader>

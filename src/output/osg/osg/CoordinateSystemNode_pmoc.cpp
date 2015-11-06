@@ -98,9 +98,30 @@ return ret;}
 #include <osg/CoordinateSystemNode_pmoc.hpp>
 #include <customCode/osg/CoordinateSystemNode_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/Matrixd_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_EllipsoidModel::isWGS84()const{
 return _model->isWGS84();
+
+}
+ void osg::QReflect_EllipsoidModel::computeCoordinateFrame( double p0 , double p1 ,osg::QReflect_Matrixd *p2)const{
+ _model->computeCoordinateFrame(p0 ,p1 ,*p2->_model);
+
+}
+ void osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromLatLongHeight( double p0 , double p1 , double p2 ,osg::QReflect_Matrixd *p3)const{
+ _model->computeLocalToWorldTransformFromLatLongHeight(p0 ,p1 ,p2 ,*p3->_model);
+
+}
+ void osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromXYZ( double p0 , double p1 , double p2 ,osg::QReflect_Matrixd *p3)const{
+ _model->computeLocalToWorldTransformFromXYZ(p0 ,p1 ,p2 ,*p3->_model);
+
+}
+ void osg::QReflect_EllipsoidModel::convertLatLongHeightToXYZ( double p0 , double p1 , double p2 , double &p3 , double &p4 , double &p5)const{
+ _model->convertLatLongHeightToXYZ(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
+ void osg::QReflect_EllipsoidModel::convertXYZToLatLongHeight( double p0 , double p1 , double p2 , double &p3 , double &p4 , double &p5)const{
+ _model->convertXYZToLatLongHeight(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
 
 }
 const double osg::QReflect_EllipsoidModel::getRadiusEquator()const{return _model->getRadiusEquator();}

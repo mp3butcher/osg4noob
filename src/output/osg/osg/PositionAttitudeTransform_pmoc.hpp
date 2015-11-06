@@ -7,7 +7,13 @@ namespace osg{
 class QReflect_PositionAttitudeTransform;
 			} ;
 namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
+namespace osg{ 
 class QReflect_Vec3d;
+			} ;
+namespace osg{ 
+class QReflect_Matrixd;
 			} ;
 namespace osg{ 
 class QReflect_Quat;
@@ -29,12 +35,12 @@ PositionAttitudeTransform * _model;
 QReflect_PositionAttitudeTransform(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_PositionAttitudeTransform( );
 //PositionAttitudeTransform
-//virtual  bool  computeLocalToWorldMatrix( Matrix & , NodeVisitor *);
-//virtual  bool  computeWorldToLocalMatrix( Matrix & , NodeVisitor *);
 //const  Quat & getAttitude();
 //const  Vec3d & getPivotPoint();
 //const  Vec3d & getPosition();
 //const  Vec3d & getScale();
+Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
 Q_INVOKABLE osg::QReflect_PositionAttitudeTransform*  asPositionAttitudeTransform();
 Q_INVOKABLE osg::QReflect_PositionAttitudeTransform*  asPositionAttitudeTransform()const;
 Q_INVOKABLE void  setAttitude(osg::QReflect_Quat *);

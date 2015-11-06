@@ -11,6 +11,7 @@
 #include <customCode/osg/Light_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/Stats_pmoc.hpp>
+#include <customCode/osg/View_pmoc.hpp>
 #include <osg/Camera>
 #include <osg/Camera_pmoc.hpp>
 #include <osg/FrameStamp>
@@ -42,6 +43,10 @@ return _model->getNumSlaves();
 }
  void osg::QReflect_View::setLightingMode(osg::QReflect_View::LightingMode p0){
  _model->setLightingMode(static_cast<osg::View::LightingMode>(p0));
+
+}
+ void osg::QReflect_View::take(osg::QReflect_View *p0){
+ _model->take(*p0->_model);
 
 }
  void osg::QReflect_View::updateSlaves(){

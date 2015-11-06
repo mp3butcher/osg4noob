@@ -12,6 +12,14 @@ using namespace pmoc;
 return _model->compare(*p0->_model);
 
 }
+ void osg::QReflect_PolygonStipple::setMask(const  GLubyte *p0){
+ _model->setMask(p0);
+
+}
+const  GLubyte*  osg::QReflect_PolygonStipple::getMask()const{
+return _model->getMask();
+
+}
 
 ///DefaultConstructor////////////////
 osg::QReflect_PolygonStipple::QReflect_PolygonStipple(Instance *i,QObject* parent):QQModel(i,parent),_model(0){

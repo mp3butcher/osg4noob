@@ -3,6 +3,12 @@
 #include <osg/LineSegment_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_Vec3f;
+			} ;
+namespace osg{ 
+class QReflect_Vec3d;
+			} ;
+namespace osg{ 
 class QReflect_Matrixd;
 			} ;
 namespace osg{ 
@@ -28,8 +34,6 @@ virtual ~QReflect_LineSegment( );
 // LineSegment & operator=(const  LineSegment &);
 // bool  intersect(const  BoundingBox &);
 // bool  intersect(const  BoundingSphere &);
-// bool  intersect(const  Vec3d & ,const  Vec3d & ,const  Vec3d & , double &);
-// bool  intersect(const  Vec3f & ,const  Vec3f & ,const  Vec3f & , float &);
 // bool  intersectAndComputeRatios(const  BoundingBox & , double & , double &);
 // bool  intersectAndComputeRatios(const  BoundingBox & , float & , float &);
 // bool  intersectAndComputeRatios(const  BoundingSphere & , double & , double &);
@@ -39,6 +43,8 @@ virtual ~QReflect_LineSegment( );
 // void  set(const  vec_type & ,const  vec_type &);
 //const  vec_type & end();
 //const  vec_type & start();
+Q_INVOKABLE  bool  intersect(osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * , double &);
+Q_INVOKABLE  bool  intersect(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * , float &);
 Q_INVOKABLE  bool  valid()const;
 Q_INVOKABLE void  mult(osg::QReflect_LineSegment * ,osg::QReflect_Matrixd *);
 Q_INVOKABLE void  mult(osg::QReflect_Matrixd * ,osg::QReflect_LineSegment *);

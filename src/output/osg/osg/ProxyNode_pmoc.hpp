@@ -9,6 +9,9 @@ class QReflect_Node;
 namespace osg{ 
 class QReflect_Referenced;
 			} ;
+namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
 #include <osg/ProxyNode>
 #include <osg/ProxyNode>
 
@@ -46,7 +49,6 @@ virtual ~QReflect_ProxyNode( );
 // value_type  getRadius();
 // void  setCenter(const  vec_type &);
 // void  setRadius( value_type );
-//virtual  void  traverse( NodeVisitor &);
 //const  osg::ref_ptr<osg::Referenced> & getDatabaseRequest( unsigned int );
 //const  vec_type & getCenter();
 Q_INVOKABLE  bool  addChild(osg::QReflect_Node * ,const  QString &);
@@ -61,6 +63,7 @@ Q_INVOKABLE osg::QReflect_ProxyNode::LoadingExternalReferenceMode  getLoadingExt
 Q_INVOKABLE void  setCenterMode(osg::QReflect_ProxyNode::CenterMode );
 Q_INVOKABLE void  setFileName( unsigned int  ,const  QString &);
 Q_INVOKABLE void  setLoadingExternalReferenceMode(osg::QReflect_ProxyNode::LoadingExternalReferenceMode );
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void pmoc_reverse_setDatabaseOptions( osg::QReflect_Referenced *par=0);
 Q_INVOKABLE void setDatabaseOptions( osg::QReflect_Referenced *par);
 Q_INVOKABLE void setDatabasePath(const QString &);

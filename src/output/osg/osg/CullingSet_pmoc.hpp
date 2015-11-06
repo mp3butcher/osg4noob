@@ -10,7 +10,16 @@ namespace osg{
 class QReflect_Vec3f;
 			} ;
 namespace osg{ 
+class QReflect_StateSet;
+			} ;
+namespace osg{ 
 class QReflect_Matrixd;
+			} ;
+namespace osg{ 
+class QReflect_Polytope;
+			} ;
+namespace osg{ 
+class QReflect_ShadowVolumeOccluder;
 			} ;
 namespace osg{ 
 class QReflect_CullingSet;
@@ -56,24 +65,24 @@ virtual ~QReflect_CullingSet( );
 // float  clampedPixelSize(const  BoundingSphere &);
 // float  pixelSize(const  BoundingSphere &);
 // osg::Vec4  computePixelSizeVector(const  Viewport & ,const  Matrix & ,const  Matrix &);
-// void  addOccluder( ShadowVolumeOccluder &);
-// void  addStateFrustum( StateSet * , Polytope &);
 // void  disableAndPushOccludersCurrentMask( NodePath &);
 // void  getStateFrustumList( StateFrustumList &);
 // void  popOccludersCurrentMask( NodePath &);
-// void  setFrustum( Polytope &);
 //const  Polytope & getFrustum();
 //const  Vec4 & getPixelSizeVector();
 Q_INVOKABLE  float  clampedPixelSize(osg::QReflect_Vec3f * , float )const;
 Q_INVOKABLE  float  pixelSize(osg::QReflect_Vec3f * , float )const;
 Q_INVOKABLE  int  getCullingMask()const;
 Q_INVOKABLE const float  getSmallFeatureCullingPixelSize()const;
+Q_INVOKABLE void  addOccluder(osg::QReflect_ShadowVolumeOccluder *);
+Q_INVOKABLE void  addStateFrustum(osg::QReflect_StateSet * ,osg::QReflect_Polytope *);
 Q_INVOKABLE void  popCurrentMask();
 Q_INVOKABLE void  pushCurrentMask();
 Q_INVOKABLE void  resetCullingMask();
 Q_INVOKABLE void  set(osg::QReflect_CullingSet * ,osg::QReflect_Matrixd * ,osg::QReflect_Vec4f *);
 Q_INVOKABLE void  set(osg::QReflect_CullingSet *);
 Q_INVOKABLE void  setCullingMask( int );
+Q_INVOKABLE void  setFrustum(osg::QReflect_Polytope *);
 Q_INVOKABLE void  setPixelSizeVector(osg::QReflect_Vec4f *);
 Q_INVOKABLE void setSmallFeatureCullingPixelSize(const float &);
 Q_PROPERTY(float SmallFeatureCullingPixelSize  READ getSmallFeatureCullingPixelSize WRITE setSmallFeatureCullingPixelSize NOTIFY SmallFeatureCullingPixelSizeChanged)

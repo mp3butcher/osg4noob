@@ -7,7 +7,16 @@
 #include <customCode/osg/MatrixTransform_pmoc.hpp>
 #include <customCode/osg/Transform_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 using namespace pmoc;
+ bool  osg::QReflect_MatrixTransform::computeLocalToWorldMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+return _model->computeLocalToWorldMatrix(*p0->_model ,p1->_model);
+
+}
+ bool  osg::QReflect_MatrixTransform::computeWorldToLocalMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+return _model->computeWorldToLocalMatrix(*p0->_model ,p1->_model);
+
+}
  void osg::QReflect_MatrixTransform::postMult(osg::QReflect_Matrixd *p0){
  _model->postMult(*p0->_model);
 

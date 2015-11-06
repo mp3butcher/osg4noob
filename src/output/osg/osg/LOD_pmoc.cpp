@@ -6,6 +6,7 @@
 #include <osg/LOD_pmoc.hpp>
 #include <customCode/osg/LOD_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 using namespace pmoc;
  bool  osg::QReflect_LOD::addChild(osg::QReflect_Node *p0 , float p1 , float p2){
@@ -42,6 +43,10 @@ return _model->getNumRanges();
 }
  void osg::QReflect_LOD::setRangeMode(osg::QReflect_LOD::RangeMode p0){
  _model->setRangeMode(static_cast<osg::LOD::RangeMode>(p0));
+
+}
+ void osg::QReflect_LOD::traverse(osg::QReflect_NodeVisitor *p0){
+ _model->traverse(*p0->_model);
 
 }
 osg::QReflect_LOD::CenterMode  osg::QReflect_LOD::getCenterMode()const{

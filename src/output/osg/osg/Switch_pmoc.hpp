@@ -7,6 +7,9 @@ namespace osg{
 class QReflect_Node;
 			} ;
 namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
+namespace osg{ 
 class QReflect_Switch;
 			} ;
 #include <osg/Switch>
@@ -28,7 +31,6 @@ virtual ~QReflect_Switch( );
 //Switch
 //virtual  BoundingSphere  computeBound();
 // void  setValueList(const  ValueList &);
-//virtual  void  traverse( NodeVisitor &);
 //const  ValueList & getValueList();
 Q_INVOKABLE  bool  addChild(osg::QReflect_Node * , bool );
 Q_INVOKABLE  bool  addChild(osg::QReflect_Node *);
@@ -45,6 +47,7 @@ Q_INVOKABLE osg::QReflect_Switch*  asSwitch();
 Q_INVOKABLE osg::QReflect_Switch*  asSwitch()const;
 Q_INVOKABLE void  setChildValue(osg::QReflect_Node * , bool );
 Q_INVOKABLE void  setValue( unsigned int  , bool );
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void setNewChildDefaultValue(const bool &);
 Q_PROPERTY(bool NewChildDefaultValue  READ getNewChildDefaultValue WRITE setNewChildDefaultValue NOTIFY NewChildDefaultValueChanged)
 signals: void NewChildDefaultValueChanged(const bool&);

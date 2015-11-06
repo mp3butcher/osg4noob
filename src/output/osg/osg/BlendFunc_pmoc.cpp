@@ -8,8 +8,64 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_BlendFunc::getDestination()const{
+return _model->getDestination();
+
+}
+ GLenum  osg::QReflect_BlendFunc::getDestinationAlpha()const{
+return _model->getDestinationAlpha();
+
+}
+ GLenum  osg::QReflect_BlendFunc::getDestinationRGB()const{
+return _model->getDestinationRGB();
+
+}
+ GLenum  osg::QReflect_BlendFunc::getSource()const{
+return _model->getSource();
+
+}
+ GLenum  osg::QReflect_BlendFunc::getSourceAlpha()const{
+return _model->getSourceAlpha();
+
+}
+ GLenum  osg::QReflect_BlendFunc::getSourceRGB()const{
+return _model->getSourceRGB();
+
+}
  int  osg::QReflect_BlendFunc::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
+
+}
+ void osg::QReflect_BlendFunc::setDestination( GLenum p0){
+ _model->setDestination(p0);
+
+}
+ void osg::QReflect_BlendFunc::setDestinationAlpha( GLenum p0){
+ _model->setDestinationAlpha(p0);
+
+}
+ void osg::QReflect_BlendFunc::setDestinationRGB( GLenum p0){
+ _model->setDestinationRGB(p0);
+
+}
+ void osg::QReflect_BlendFunc::setFunction( GLenum p0 , GLenum p1 , GLenum p2 , GLenum p3){
+ _model->setFunction(p0 ,p1 ,p2 ,p3);
+
+}
+ void osg::QReflect_BlendFunc::setFunction( GLenum p0 , GLenum p1){
+ _model->setFunction(p0 ,p1);
+
+}
+ void osg::QReflect_BlendFunc::setSource( GLenum p0){
+ _model->setSource(p0);
+
+}
+ void osg::QReflect_BlendFunc::setSourceAlpha( GLenum p0){
+ _model->setSourceAlpha(p0);
+
+}
+ void osg::QReflect_BlendFunc::setSourceRGB( GLenum p0){
+ _model->setSourceRGB(p0);
 
 }
 

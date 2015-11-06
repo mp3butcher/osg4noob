@@ -9,6 +9,7 @@
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/ShapeDrawable_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 #include <osg/ShapeDrawable>
@@ -20,6 +21,14 @@ return _model->isSameKindAs(p0->_model);
 }
  bool  osg::QReflect_ShapeDrawable::supports(osg::QReflect_PrimitiveFunctor *p0)const{
 return _model->supports(*p0->_model);
+
+}
+ void osg::QReflect_ShapeDrawable::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_ShapeDrawable::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawImplementation(*p0->_model);
 
 }
  void osg::QReflect_ShapeDrawable::setColor(osg::QReflect_Vec4f *p0){

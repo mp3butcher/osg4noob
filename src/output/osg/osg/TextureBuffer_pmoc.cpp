@@ -8,9 +8,18 @@
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 #include <osg/Image>
 #include <osg/Image_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_TextureBuffer::getTextureTarget()const{
+return _model->getTextureTarget();
+
+}
+ GLenum  osg::QReflect_TextureBuffer::getUsageHint()const{
+return _model->getUsageHint();
+
+}
  int  osg::QReflect_TextureBuffer::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
@@ -31,8 +40,28 @@ return _model->getNumImages();
 return _model->getModifiedCount(p0);
 
 }
+ void osg::QReflect_TextureBuffer::allocateMipmap(osg::QReflect_State *p0)const{
+ _model->allocateMipmap(*p0->_model);
+
+}
+ void osg::QReflect_TextureBuffer::apply(osg::QReflect_State *p0)const{
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_TextureBuffer::bindBufferAs( unsigned int p0 , GLenum p1){
+ _model->bindBufferAs(p0 ,p1);
+
+}
  void osg::QReflect_TextureBuffer::setImage( unsigned int p0 ,osg::QReflect_Image *p1){
  _model->setImage(p0 ,p1->_model);
+
+}
+ void osg::QReflect_TextureBuffer::setUsageHint( GLenum p0){
+ _model->setUsageHint(p0);
+
+}
+ void osg::QReflect_TextureBuffer::unbindBufferAs( unsigned int p0 , GLenum p1){
+ _model->unbindBufferAs(p0 ,p1);
 
 }
 const int osg::QReflect_TextureBuffer::getTextureWidth()const{return _model->getTextureWidth();}

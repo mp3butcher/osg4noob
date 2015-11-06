@@ -5,6 +5,9 @@
 #include <osg/KdTree_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_Geometry;
+			} ;
+namespace osg{ 
 class QReflect_KdTreeBuilder;
 			} ;
 #include <osg/KdTree>
@@ -24,8 +27,8 @@ KdTreeBuilder * _model;
 QReflect_KdTreeBuilder(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_KdTreeBuilder( );
 //KdTreeBuilder
-// void  apply( Geometry &);
 Q_INVOKABLE osg::QReflect_KdTreeBuilder*  clone();
+Q_INVOKABLE void  apply(osg::QReflect_Geometry *);
 public slots:
 virtual void updateModel();
  

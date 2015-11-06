@@ -50,8 +50,20 @@ return _model->getUniformLocation(std::string(p0.toStdString()));
 return _model->applyAttribute(p0->_model);
 
 }
+ bool  osg::QReflect_State::applyMode( GLenum p0 , bool p1){
+return _model->applyMode(p0 ,p1);
+
+}
  bool  osg::QReflect_State::applyTextureAttribute( unsigned int p0 ,osg::QReflect_StateAttribute *p1){
 return _model->applyTextureAttribute(p0 ,p1->_model);
+
+}
+ bool  osg::QReflect_State::applyTextureMode( unsigned int p0 , GLenum p1 , bool p2){
+return _model->applyTextureMode(p0 ,p1 ,p2);
+
+}
+ bool  osg::QReflect_State::checkGLErrors( GLenum p0)const{
+return _model->checkGLErrors(p0);
 
 }
  bool  osg::QReflect_State::checkGLErrors(const  char *p0)const{
@@ -64,6 +76,26 @@ return _model->checkGLErrors(p0->_model);
 }
  bool  osg::QReflect_State::getAbortRendering()const{
 return _model->getAbortRendering();
+
+}
+ bool  osg::QReflect_State::getGlobalDefaultModeValue( GLenum p0){
+return _model->getGlobalDefaultModeValue(p0);
+
+}
+ bool  osg::QReflect_State::getGlobalDefaultTextureModeValue( unsigned int p0 , GLenum p1){
+return _model->getGlobalDefaultTextureModeValue(p0 ,p1);
+
+}
+ bool  osg::QReflect_State::getLastAppliedMode( GLenum p0)const{
+return _model->getLastAppliedMode(p0);
+
+}
+ bool  osg::QReflect_State::getLastAppliedTextureMode( unsigned int p0 , GLenum p1)const{
+return _model->getLastAppliedTextureMode(p0 ,p1);
+
+}
+ bool  osg::QReflect_State::getModeValidity( GLenum p0){
+return _model->getModeValidity(p0);
 
 }
  bool  osg::QReflect_State::isFogCoordSupported()const{
@@ -166,6 +198,10 @@ return _model->getStateSetStackSize();
  _model->bindVertexBufferObject(p0->_model);
 
 }
+ void osg::QReflect_State::captureCurrentState(osg::QReflect_StateSet *p0)const{
+ _model->captureCurrentState(*p0->_model);
+
+}
  void osg::QReflect_State::decrementDynamicObjectCount(){
  _model->decrementDynamicObjectCount();
 
@@ -258,8 +294,20 @@ return _model->getStateSetStackSize();
  _model->disableVertexPointer();
 
 }
+ void osg::QReflect_State::drawQuads( GLint p0 , GLsizei p1 , GLsizei p2){
+ _model->drawQuads(p0 ,p1 ,p2);
+
+}
  void osg::QReflect_State::frameCompleted(){
  _model->frameCompleted();
+
+}
+ void osg::QReflect_State::glDrawArraysInstanced( GLenum p0 , GLint p1 , GLsizei p2 , GLsizei p3){
+ _model->glDrawArraysInstanced(p0 ,p1 ,p2 ,p3);
+
+}
+ void osg::QReflect_State::glDrawElementsInstanced( GLenum p0 , GLsizei p1 , GLenum p2 ,const  GLvoid *p3 , GLsizei p4){
+ _model->glDrawElementsInstanced(p0 ,p1 ,p2 ,p3 ,p4);
 
 }
  void osg::QReflect_State::haveAppliedAttribute(osg::QReflect_StateAttribute *p0){
@@ -270,12 +318,28 @@ return _model->getStateSetStackSize();
  _model->haveAppliedAttribute(static_cast<osg::StateAttribute::Type>(p0) ,p1);
 
 }
+ void osg::QReflect_State::haveAppliedMode( GLenum p0 , unsigned int p1){
+ _model->haveAppliedMode(p0 ,p1);
+
+}
+ void osg::QReflect_State::haveAppliedMode( GLenum p0){
+ _model->haveAppliedMode(p0);
+
+}
  void osg::QReflect_State::haveAppliedTextureAttribute( unsigned int p0 ,osg::QReflect_StateAttribute *p1){
  _model->haveAppliedTextureAttribute(p0 ,p1->_model);
 
 }
  void osg::QReflect_State::haveAppliedTextureAttribute( unsigned int p0 ,osg::QReflect_StateAttribute::Type p1 , unsigned int p2){
  _model->haveAppliedTextureAttribute(p0 ,static_cast<osg::StateAttribute::Type>(p1) ,p2);
+
+}
+ void osg::QReflect_State::haveAppliedTextureMode( unsigned int p0 , GLenum p1 , unsigned int p2){
+ _model->haveAppliedTextureMode(p0 ,p1 ,p2);
+
+}
+ void osg::QReflect_State::haveAppliedTextureMode( unsigned int p0 , GLenum p1){
+ _model->haveAppliedTextureMode(p0 ,p1);
 
 }
  void osg::QReflect_State::initializeExtensionProcs(){
@@ -334,6 +398,10 @@ return _model->getStateSetStackSize();
  _model->setColorAlias(*p0->_model);
 
 }
+ void osg::QReflect_State::setColorPointer( GLint p0 , GLenum p1 , GLsizei p2 ,const  GLvoid *p3 , GLboolean p4){
+ _model->setColorPointer(p0 ,p1 ,p2 ,p3 ,p4);
+
+}
  void osg::QReflect_State::setColorPointer(osg::QReflect_Array *p0){
  _model->setColorPointer(p0->_model);
 
@@ -358,6 +426,10 @@ return _model->getStateSetStackSize();
  _model->setFogCoordAlias(*p0->_model);
 
 }
+ void osg::QReflect_State::setFogCoordPointer( GLenum p0 , GLsizei p1 ,const  GLvoid *p2 , GLboolean p3){
+ _model->setFogCoordPointer(p0 ,p1 ,p2 ,p3);
+
+}
  void osg::QReflect_State::setFogCoordPointer(osg::QReflect_Array *p0){
  _model->setFogCoordPointer(p0->_model);
 
@@ -366,16 +438,36 @@ return _model->getStateSetStackSize();
  _model->setGlobalDefaultAttribute(p0->_model);
 
 }
+ void osg::QReflect_State::setGlobalDefaultModeValue( GLenum p0 , bool p1){
+ _model->setGlobalDefaultModeValue(p0 ,p1);
+
+}
  void osg::QReflect_State::setGlobalDefaultTextureAttribute( unsigned int p0 ,osg::QReflect_StateAttribute *p1){
  _model->setGlobalDefaultTextureAttribute(p0 ,p1->_model);
+
+}
+ void osg::QReflect_State::setGlobalDefaultTextureModeValue( unsigned int p0 , GLenum p1 , bool p2){
+ _model->setGlobalDefaultTextureModeValue(p0 ,p1 ,p2);
 
 }
  void osg::QReflect_State::setInitialViewMatrix(osg::QReflect_RefMatrixd *p0){
  _model->setInitialViewMatrix(p0->_model);
 
 }
+ void osg::QReflect_State::setInterleavedArrays( GLenum p0 , GLsizei p1 ,const  GLvoid *p2){
+ _model->setInterleavedArrays(p0 ,p1 ,p2);
+
+}
+ void osg::QReflect_State::setModeValidity( GLenum p0 , bool p1){
+ _model->setModeValidity(p0 ,p1);
+
+}
  void osg::QReflect_State::setNormalAlias(osg::QReflect_VertexAttribAlias *p0){
  _model->setNormalAlias(*p0->_model);
+
+}
+ void osg::QReflect_State::setNormalPointer( GLenum p0 , GLsizei p1 ,const  GLvoid *p2 , GLboolean p3){
+ _model->setNormalPointer(p0 ,p1 ,p2 ,p3);
 
 }
  void osg::QReflect_State::setNormalPointer(osg::QReflect_Array *p0){
@@ -386,8 +478,16 @@ return _model->getStateSetStackSize();
  _model->setSecondaryColorAlias(*p0->_model);
 
 }
+ void osg::QReflect_State::setSecondaryColorPointer( GLint p0 , GLenum p1 , GLsizei p2 ,const  GLvoid *p3 , GLboolean p4){
+ _model->setSecondaryColorPointer(p0 ,p1 ,p2 ,p3 ,p4);
+
+}
  void osg::QReflect_State::setSecondaryColorPointer(osg::QReflect_Array *p0){
  _model->setSecondaryColorPointer(p0->_model);
+
+}
+ void osg::QReflect_State::setTexCoordPointer( unsigned int p0 , GLint p1 , GLenum p2 , GLsizei p3 ,const  GLvoid *p4 , GLboolean p5){
+ _model->setTexCoordPointer(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
 
 }
  void osg::QReflect_State::setTexCoordPointer( unsigned int p0 ,osg::QReflect_Array *p1){
@@ -398,16 +498,32 @@ return _model->getStateSetStackSize();
  _model->setVertexAlias(*p0->_model);
 
 }
+ void osg::QReflect_State::setVertexAttribIPointer( unsigned int p0 , GLint p1 , GLenum p2 , GLsizei p3 ,const  GLvoid *p4){
+ _model->setVertexAttribIPointer(p0 ,p1 ,p2 ,p3 ,p4);
+
+}
  void osg::QReflect_State::setVertexAttribIPointer( unsigned int p0 ,osg::QReflect_Array *p1){
  _model->setVertexAttribIPointer(p0 ,p1->_model);
+
+}
+ void osg::QReflect_State::setVertexAttribLPointer( unsigned int p0 , GLint p1 , GLenum p2 , GLsizei p3 ,const  GLvoid *p4){
+ _model->setVertexAttribLPointer(p0 ,p1 ,p2 ,p3 ,p4);
 
 }
  void osg::QReflect_State::setVertexAttribLPointer( unsigned int p0 ,osg::QReflect_Array *p1){
  _model->setVertexAttribLPointer(p0 ,p1->_model);
 
 }
+ void osg::QReflect_State::setVertexAttribPointer( unsigned int p0 , GLint p1 , GLenum p2 , GLboolean p3 , GLsizei p4 ,const  GLvoid *p5){
+ _model->setVertexAttribPointer(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
  void osg::QReflect_State::setVertexAttribPointer( unsigned int p0 ,osg::QReflect_Array *p1){
  _model->setVertexAttribPointer(p0 ,p1->_model);
+
+}
+ void osg::QReflect_State::setVertexPointer( GLint p0 , GLenum p1 , GLsizei p2 ,const  GLvoid *p3 , GLboolean p4){
+ _model->setVertexPointer(p0 ,p1 ,p2 ,p3 ,p4);
 
 }
  void osg::QReflect_State::setVertexPointer(osg::QReflect_Array *p0){

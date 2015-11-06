@@ -8,6 +8,9 @@ class QReflect_Image;
 namespace osg{ 
 class QReflect_StateAttribute;
 			} ;
+namespace osg{ 
+class QReflect_State;
+			} ;
 #include <osg/TextureBuffer>
 #include <osg/TextureBuffer>
 
@@ -25,13 +28,8 @@ TextureBuffer * _model;
 QReflect_TextureBuffer(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TextureBuffer( );
 //TextureBuffer
-//virtual  GLenum  getTextureTarget();
-// GLenum  getUsageHint();
-//virtual  void  allocateMipmap( State &);
-//virtual  void  apply( State &);
-// void  bindBufferAs( unsigned int  , GLenum );
-// void  setUsageHint( GLenum );
-// void  unbindBufferAs( unsigned int  , GLenum );
+Q_INVOKABLE  GLenum  getTextureTarget()const;
+Q_INVOKABLE  GLenum  getUsageHint()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE  int  getTextureDepth()const;
 Q_INVOKABLE  int  getTextureHeight()const;
@@ -40,7 +38,12 @@ Q_INVOKABLE  unsigned int  getNumImages()const;
 Q_INVOKABLE  unsigned int&  getModifiedCount( unsigned int )const;
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int );
 Q_INVOKABLE osg::QReflect_Image*  getImage( unsigned int )const;
+Q_INVOKABLE void  allocateMipmap(osg::QReflect_State *)const;
+Q_INVOKABLE void  apply(osg::QReflect_State *)const;
+Q_INVOKABLE void  bindBufferAs( unsigned int  , GLenum );
 Q_INVOKABLE void  setImage( unsigned int  ,osg::QReflect_Image *);
+Q_INVOKABLE void  setUsageHint( GLenum );
+Q_INVOKABLE void  unbindBufferAs( unsigned int  , GLenum );
 Q_INVOKABLE void pmoc_reverse_setImage( osg::QReflect_Image *par=0);
 Q_INVOKABLE void setImage( osg::QReflect_Image *par);
 Q_PROPERTY(int TextureWidth  READ getTextureWidth WRITE setTextureWidth NOTIFY TextureWidthChanged)

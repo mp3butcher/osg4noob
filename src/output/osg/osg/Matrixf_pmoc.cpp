@@ -10,6 +10,30 @@
 #include <customCode/osg/Vec3d_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 using namespace pmoc;
+ bool  osg::QReflect_Matrixf::getFrustum( double &p0 , double &p1 , double &p2 , double &p3 , double &p4 , double &p5)const{
+return _model->getFrustum(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
+ bool  osg::QReflect_Matrixf::getFrustum( float &p0 , float &p1 , float &p2 , float &p3 , float &p4 , float &p5)const{
+return _model->getFrustum(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
+ bool  osg::QReflect_Matrixf::getOrtho( double &p0 , double &p1 , double &p2 , double &p3 , double &p4 , double &p5)const{
+return _model->getOrtho(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
+ bool  osg::QReflect_Matrixf::getOrtho( float &p0 , float &p1 , float &p2 , float &p3 , float &p4 , float &p5)const{
+return _model->getOrtho(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
+ bool  osg::QReflect_Matrixf::getPerspective( double &p0 , double &p1 , double &p2 , double &p3)const{
+return _model->getPerspective(p0 ,p1 ,p2 ,p3);
+
+}
+ bool  osg::QReflect_Matrixf::getPerspective( float &p0 , float &p1 , float &p2 , float &p3)const{
+return _model->getPerspective(p0 ,p1 ,p2 ,p3);
+
+}
  bool  osg::QReflect_Matrixf::invert(osg::QReflect_Matrixf *p0){
 return _model->invert(*p0->_model);
 
@@ -40,6 +64,26 @@ return _model->ptr();
 }
  int  osg::QReflect_Matrixf::compare(osg::QReflect_Matrixf *p0)const{
 return _model->compare(*p0->_model);
+
+}
+ void osg::QReflect_Matrixf::decompose(osg::QReflect_Vec3d *p0 ,osg::QReflect_Quat *p1 ,osg::QReflect_Vec3d *p2 ,osg::QReflect_Quat *p3)const{
+ _model->decompose(*p0->_model ,*p1->_model ,*p2->_model ,*p3->_model);
+
+}
+ void osg::QReflect_Matrixf::decompose(osg::QReflect_Vec3f *p0 ,osg::QReflect_Quat *p1 ,osg::QReflect_Vec3f *p2 ,osg::QReflect_Quat *p3)const{
+ _model->decompose(*p0->_model ,*p1->_model ,*p2->_model ,*p3->_model);
+
+}
+ void osg::QReflect_Matrixf::get(osg::QReflect_Quat *p0)const{
+ _model->get(*p0->_model);
+
+}
+ void osg::QReflect_Matrixf::getLookAt(osg::QReflect_Vec3d *p0 ,osg::QReflect_Vec3d *p1 ,osg::QReflect_Vec3d *p2 , float p3)const{
+ _model->getLookAt(*p0->_model ,*p1->_model ,*p2->_model ,p3);
+
+}
+ void osg::QReflect_Matrixf::getLookAt(osg::QReflect_Vec3f *p0 ,osg::QReflect_Vec3f *p1 ,osg::QReflect_Vec3f *p2 , float p3)const{
+ _model->getLookAt(*p0->_model ,*p1->_model ,*p2->_model ,p3);
 
 }
  void osg::QReflect_Matrixf::makeFrustum( double p0 , double p1 , double p2 , double p3 , double p4 , double p5){

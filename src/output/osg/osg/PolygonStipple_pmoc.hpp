@@ -24,9 +24,9 @@ virtual ~QReflect_PolygonStipple( );
 //PolygonStipple
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
 //virtual  void  apply( State &);
-// void  setMask(const  GLubyte *);
-//const  GLubyte * getMask();
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE const  GLubyte*  getMask()const;
+Q_INVOKABLE void  setMask(const  GLubyte *);
 public slots:
 virtual void updateModel();
  

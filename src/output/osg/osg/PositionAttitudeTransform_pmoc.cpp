@@ -6,9 +6,19 @@
 #include <osg/PositionAttitudeTransform_pmoc.hpp>
 #include <customCode/osg/PositionAttitudeTransform_pmoc.hpp>
 #include <customCode/osg/Transform_pmoc.hpp>
+#include <customCode/osg/Matrixd_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Quat_pmoc.hpp>
 #include <customCode/osg/Vec3d_pmoc.hpp>
 using namespace pmoc;
+ bool  osg::QReflect_PositionAttitudeTransform::computeLocalToWorldMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+return _model->computeLocalToWorldMatrix(*p0->_model ,p1->_model);
+
+}
+ bool  osg::QReflect_PositionAttitudeTransform::computeWorldToLocalMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+return _model->computeWorldToLocalMatrix(*p0->_model ,p1->_model);
+
+}
  void osg::QReflect_PositionAttitudeTransform::setAttitude(osg::QReflect_Quat *p0){
  _model->setAttitude(*p0->_model);
 

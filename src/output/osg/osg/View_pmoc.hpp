@@ -18,6 +18,9 @@ class QReflect_Camera;
 namespace osg{ 
 class QReflect_Stats;
 			} ;
+namespace osg{ 
+class QReflect_View;
+			} ;
 #include <osg/View>
 #include <osg/View>
 
@@ -45,7 +48,6 @@ virtual ~QReflect_View( );
 //View
 // Slave * findSlaveForCamera( osg::Camera *);
 // Slave & getSlave( unsigned int );
-//virtual  void  take( View &);
 //const  Slave & getSlave( unsigned int );
 Q_INVOKABLE  bool  addSlave(osg::QReflect_Camera * , bool );
 Q_INVOKABLE  bool  addSlave(osg::QReflect_Camera * ,osg::QReflect_Matrixd * ,osg::QReflect_Matrixd * , bool );
@@ -58,6 +60,7 @@ Q_INVOKABLE  unsigned int  findSlaveIndexForCamera(osg::QReflect_Camera *)const;
 Q_INVOKABLE  unsigned int  getNumSlaves()const;
 Q_INVOKABLE osg::QReflect_View::LightingMode  getLightingMode()const;
 Q_INVOKABLE void  setLightingMode(osg::QReflect_View::LightingMode );
+Q_INVOKABLE void  take(osg::QReflect_View *);
 Q_INVOKABLE void  updateSlaves();
 Q_INVOKABLE void pmoc_reverse_setCamera( osg::QReflect_Camera *par=0);
 Q_INVOKABLE void pmoc_reverse_setFrameStamp( osg::QReflect_FrameStamp *par=0);

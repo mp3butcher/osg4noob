@@ -8,8 +8,32 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_ClampColor::getClampFragmentColor()const{
+return _model->getClampFragmentColor();
+
+}
+ GLenum  osg::QReflect_ClampColor::getClampReadColor()const{
+return _model->getClampReadColor();
+
+}
+ GLenum  osg::QReflect_ClampColor::getClampVertexColor()const{
+return _model->getClampVertexColor();
+
+}
  int  osg::QReflect_ClampColor::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
+
+}
+ void osg::QReflect_ClampColor::setClampFragmentColor( GLenum p0){
+ _model->setClampFragmentColor(p0);
+
+}
+ void osg::QReflect_ClampColor::setClampReadColor( GLenum p0){
+ _model->setClampReadColor(p0);
+
+}
+ void osg::QReflect_ClampColor::setClampVertexColor( GLenum p0){
+ _model->setClampVertexColor(p0);
 
 }
 

@@ -22,9 +22,9 @@ BufferIndexBinding * _model;
 QReflect_BufferIndexBinding(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BufferIndexBinding( );
 //BufferIndexBinding
-// GLenum  getTarget();
 //virtual  unsigned   getMember();
 //virtual  void  apply( State &);
+Q_INVOKABLE  GLenum  getTarget()const;
 Q_INVOKABLE  GLuint  getIndex()const;
 Q_INVOKABLE  int  getOffset()const;
 Q_INVOKABLE  int  getSize()const;

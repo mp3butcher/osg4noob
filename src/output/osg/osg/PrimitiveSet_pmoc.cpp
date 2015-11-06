@@ -8,6 +8,7 @@
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
  GLint  osg::QReflect_DrawArrayLengths::getFirst()const{
 return _model->getFirst();
@@ -27,6 +28,14 @@ return _model->getNumPrimitives();
 }
  unsigned int  osg::QReflect_DrawArrayLengths::index( unsigned int p0)const{
 return _model->index(p0);
+
+}
+ void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ _model->accept(*p0->_model);
 
 }
  void osg::QReflect_DrawArrayLengths::offsetIndices( int p0){
@@ -124,9 +133,14 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
  GLint  osg::QReflect_DrawArrays::getFirst()const{
 return _model->getFirst();
+
+}
+ GLsizei  osg::QReflect_DrawArrays::getCount()const{
+return _model->getCount();
 
 }
  bool  osg::QReflect_DrawArrays::isSameKindAs(osg::QReflect_Object *p0)const{
@@ -141,8 +155,24 @@ return _model->getNumIndices();
 return _model->index(p0);
 
 }
+ void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
  void osg::QReflect_DrawArrays::offsetIndices( int p0){
  _model->offsetIndices(p0);
+
+}
+ void osg::QReflect_DrawArrays::set( GLenum p0 , GLint p1 , GLsizei p2){
+ _model->set(p0 ,p1 ,p2);
+
+}
+ void osg::QReflect_DrawArrays::setCount( GLsizei p0){
+ _model->setCount(p0);
 
 }
  void osg::QReflect_DrawArrays::setFirst( GLint p0){
@@ -325,7 +355,12 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_DrawElementsUByte::getDataType(){
+return _model->getDataType();
+
+}
  bool  osg::QReflect_DrawElementsUByte::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -350,6 +385,14 @@ return _model->getTotalDataSize();
 return _model->index(p0);
 
 }
+ void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
  void osg::QReflect_DrawElementsUByte::addElement( unsigned int p0){
  _model->addElement(p0);
 
@@ -368,6 +411,10 @@ return _model->index(p0);
 }
  void osg::QReflect_DrawElementsUByte::setElement( unsigned int p0 , unsigned int p1){
  _model->setElement(p0 ,p1);
+
+}
+const  GLvoid*  osg::QReflect_DrawElementsUByte::getDataPointer()const{
+return _model->getDataPointer();
 
 }
 const  char*  osg::QReflect_DrawElementsUByte::className()const{
@@ -457,7 +504,12 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_DrawElementsUInt::getDataType(){
+return _model->getDataType();
+
+}
  bool  osg::QReflect_DrawElementsUInt::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -482,6 +534,14 @@ return _model->getTotalDataSize();
 return _model->index(p0);
 
 }
+ void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
  void osg::QReflect_DrawElementsUInt::addElement( unsigned int p0){
  _model->addElement(p0);
 
@@ -500,6 +560,10 @@ return _model->index(p0);
 }
  void osg::QReflect_DrawElementsUInt::setElement( unsigned int p0 , unsigned int p1){
  _model->setElement(p0 ,p1);
+
+}
+const  GLvoid*  osg::QReflect_DrawElementsUInt::getDataPointer()const{
+return _model->getDataPointer();
 
 }
 const  char*  osg::QReflect_DrawElementsUInt::className()const{
@@ -589,7 +653,12 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_DrawElementsUShort::getDataType(){
+return _model->getDataType();
+
+}
  bool  osg::QReflect_DrawElementsUShort::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -614,6 +683,14 @@ return _model->getTotalDataSize();
 return _model->index(p0);
 
 }
+ void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
  void osg::QReflect_DrawElementsUShort::addElement( unsigned int p0){
  _model->addElement(p0);
 
@@ -632,6 +709,10 @@ return _model->index(p0);
 }
  void osg::QReflect_DrawElementsUShort::setElement( unsigned int p0 , unsigned int p1){
  _model->setElement(p0 ,p1);
+
+}
+const  GLvoid*  osg::QReflect_DrawElementsUShort::getDataPointer()const{
+return _model->getDataPointer();
 
 }
 const  char*  osg::QReflect_DrawElementsUShort::className()const{
@@ -829,6 +910,10 @@ return ret;}
 #include <customCode/osg/BufferObject_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_PrimitiveSet::getMode()const{
+return _model->getMode();
+
+}
  bool  osg::QReflect_PrimitiveSet::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
 
@@ -847,6 +932,14 @@ return _model->getTotalDataSize();
 }
  void osg::QReflect_PrimitiveSet::computeRange()const{
  _model->computeRange();
+
+}
+ void osg::QReflect_PrimitiveSet::setMode( GLenum p0){
+ _model->setMode(p0);
+
+}
+const  GLvoid*  osg::QReflect_PrimitiveSet::getDataPointer()const{
+return _model->getDataPointer();
 
 }
 const  char*  osg::QReflect_PrimitiveSet::className()const{

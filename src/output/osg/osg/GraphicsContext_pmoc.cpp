@@ -18,6 +18,10 @@
 #include <osg/State>
 #include <osg/State_pmoc.hpp>
 using namespace pmoc;
+ GLbitfield  osg::QReflect_GraphicsContext::getClearMask()const{
+return _model->getClearMask();
+
+}
  GLuint  osg::QReflect_GraphicsContext::getDefaultFboId()const{
 return _model->getDefaultFboId();
 
@@ -62,6 +66,10 @@ return _model->createNewContextID();
 return _model->getMaxContextID();
 
 }
+ void osg::QReflect_GraphicsContext::bindPBufferToTexture( GLenum p0){
+ _model->bindPBufferToTexture(p0);
+
+}
  void osg::QReflect_GraphicsContext::clear(){
  _model->clear();
 
@@ -104,6 +112,10 @@ return _model->getMaxContextID();
 }
  void osg::QReflect_GraphicsContext::setClearColor(osg::QReflect_Vec4f *p0){
  _model->setClearColor(*p0->_model);
+
+}
+ void osg::QReflect_GraphicsContext::setClearMask( GLbitfield p0){
+ _model->setClearMask(p0);
 
 }
  void osg::QReflect_GraphicsContext::setCompileContext( unsigned int p0 ,osg::QReflect_GraphicsContext *p1){

@@ -22,10 +22,10 @@ Capability * _model;
 QReflect_Capability(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Capability( );
 //Capability
-// GLenum  getCapability();
 //virtual  Type  getType();
-// void  setCapability( GLenum );
+Q_INVOKABLE  GLenum  getCapability()const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE void  setCapability( GLenum );
 public slots:
 virtual void updateModel();
  

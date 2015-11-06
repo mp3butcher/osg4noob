@@ -6,6 +6,9 @@
 namespace osg{ 
 class QReflect_Node;
 			} ;
+namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
 #include <osg/LOD>
 #include <osg/LOD>
 
@@ -42,7 +45,6 @@ virtual ~QReflect_LOD( );
 // void  setCenter(const  vec_type &);
 // void  setRadius( value_type );
 // void  setRangeList(const  RangeList &);
-//virtual  void  traverse( NodeVisitor &);
 //const  RangeList & getRangeList();
 //const  vec_type & getCenter();
 Q_INVOKABLE  bool  addChild(osg::QReflect_Node * , float  , float );
@@ -56,6 +58,7 @@ Q_INVOKABLE osg::QReflect_LOD::RangeMode  getRangeMode()const;
 Q_INVOKABLE void  setCenterMode(osg::QReflect_LOD::CenterMode );
 Q_INVOKABLE void  setRange( unsigned int  , float  , float );
 Q_INVOKABLE void  setRangeMode(osg::QReflect_LOD::RangeMode );
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 public slots:
 virtual void updateModel();
  

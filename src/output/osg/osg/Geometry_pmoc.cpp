@@ -10,6 +10,10 @@
 #include <osg/Array>
 #include <osg/Array_pmoc.hpp>
 using namespace pmoc;
+ GLboolean  deprecated_osg::QReflect_Geometry::getVertexAttribNormalize( unsigned int p0)const{
+return _model->getVertexAttribNormalize(p0);
+
+}
  void deprecated_osg::QReflect_Geometry::setColorBinding(deprecated_osg::QReflect_Geometry::AttributeBinding p0){
  _model->setColorBinding(static_cast<deprecated_osg::Geometry::AttributeBinding>(p0));
 
@@ -36,6 +40,10 @@ using namespace pmoc;
 }
  void deprecated_osg::QReflect_Geometry::setVertexAttribIndices( unsigned int p0 ,osg::QReflect_IndexArray *p1){
  _model->setVertexAttribIndices(p0 ,p1->_model);
+
+}
+ void deprecated_osg::QReflect_Geometry::setVertexAttribNormalize( unsigned int p0 , GLboolean p1){
+ _model->setVertexAttribNormalize(p0 ,p1);
 
 }
 deprecated_osg::QReflect_Geometry::AttributeBinding  deprecated_osg::QReflect_Geometry::getColorBinding()const{
@@ -193,10 +201,15 @@ return ret;}
 #include <customCode/osg/Drawable_pmoc.hpp>
 #include <customCode/osg/Array_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <osg/Array>
 #include <osg/Array_pmoc.hpp>
 using namespace pmoc;
+ GLboolean  osg::QReflect_Geometry::getVertexAttribNormalize( unsigned int p0)const{
+return _model->getVertexAttribNormalize(p0);
+
+}
  bool  osg::QReflect_Geometry::addPrimitiveSet(osg::QReflect_PrimitiveSet *p0){
 return _model->addPrimitiveSet(p0->_model);
 
@@ -257,8 +270,32 @@ return _model->getNumVertexAttribArrays();
 return _model->getPrimitiveSetIndex(p0->_model);
 
 }
+ void osg::QReflect_Geometry::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_Geometry::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_Geometry::compileGLObjects(osg::QReflect_RenderInfo *p0)const{
+ _model->compileGLObjects(*p0->_model);
+
+}
  void osg::QReflect_Geometry::dirtyDisplayList(){
  _model->dirtyDisplayList();
+
+}
+ void osg::QReflect_Geometry::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawImplementation(*p0->_model);
+
+}
+ void osg::QReflect_Geometry::drawPrimitivesImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawPrimitivesImplementation(*p0->_model);
+
+}
+ void osg::QReflect_Geometry::drawVertexArraysImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawVertexArraysImplementation(*p0->_model);
 
 }
  void osg::QReflect_Geometry::duplicateSharedArrays(){
@@ -307,6 +344,10 @@ return _model->getPrimitiveSetIndex(p0->_model);
 }
  void osg::QReflect_Geometry::setVertexAttribBinding( unsigned int p0 ,osg::QReflect_Geometry::AttributeBinding p1){
  _model->setVertexAttribBinding(p0 ,static_cast<osg::Geometry::AttributeBinding>(p1));
+
+}
+ void osg::QReflect_Geometry::setVertexAttribNormalize( unsigned int p0 , GLboolean p1){
+ _model->setVertexAttribNormalize(p0 ,p1);
 
 }
 osg::QReflect_Array * osg::QReflect_Geometry::getColorArray()const{

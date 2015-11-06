@@ -12,12 +12,20 @@ using namespace pmoc;
 return _model->getFactor();
 
 }
+ GLushort  osg::QReflect_LineStipple::getPattern()const{
+return _model->getPattern();
+
+}
  int  osg::QReflect_LineStipple::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
 }
  void osg::QReflect_LineStipple::setFactor( GLint p0){
  _model->setFactor(p0);
+
+}
+ void osg::QReflect_LineStipple::setPattern( GLushort p0){
+ _model->setPattern(p0);
 
 }
 

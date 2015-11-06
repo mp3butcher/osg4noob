@@ -8,7 +8,7 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
-#include <osg/Shader_pmoc.hpp>
+#include <customCode/osg/Shader_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/Uniform_pmoc.hpp>
 using namespace pmoc;

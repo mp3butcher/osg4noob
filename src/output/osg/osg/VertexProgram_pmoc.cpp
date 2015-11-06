@@ -6,6 +6,7 @@
 #include <osg/VertexProgram_pmoc.hpp>
 #include <customCode/osg/VertexProgram_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
@@ -23,6 +24,10 @@ return _model->compare(*p0->_model);
 }
  void osg::QReflect_VertexProgram::resizeGLObjectBuffers( unsigned int p0){
  _model->resizeGLObjectBuffers(p0);
+
+}
+ void osg::QReflect_VertexProgram::setMatrix(const  GLenum p0 ,osg::QReflect_Matrixd *p1){
+ _model->setMatrix(p0 ,*p1->_model);
 
 }
  void osg::QReflect_VertexProgram::setProgramLocalParameter(const  GLuint p0 ,osg::QReflect_Vec4f *p1){

@@ -6,6 +6,9 @@
 namespace osg{ 
 class QReflect_Light;
 			} ;
+namespace osg{ 
+class QReflect_StateSet;
+			} ;
 #include <osg/LightSource>
 #include <osg/LightSource>
 
@@ -31,11 +34,11 @@ QReflect_LightSource(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LightSource( );
 //LightSource
 //virtual  BoundingSphere  computeBound();
-// void  setStateSetModes( StateSet & , StateAttribute::GLModeValue );
 Q_INVOKABLE  osg::QReflect_Light * getLight()const;
 Q_INVOKABLE osg::QReflect_LightSource::ReferenceFrame  getReferenceFrame()const;
 Q_INVOKABLE void  setLocalStateSetModes( unsigned int );
 Q_INVOKABLE void  setReferenceFrame(osg::QReflect_LightSource::ReferenceFrame );
+Q_INVOKABLE void  setStateSetModes(osg::QReflect_StateSet * , unsigned int )const;
 Q_INVOKABLE void  setThreadSafeRefUnref( bool );
 Q_INVOKABLE void pmoc_reverse_setLight( osg::QReflect_Light *par=0);
 Q_INVOKABLE void setLight( osg::QReflect_Light *par);

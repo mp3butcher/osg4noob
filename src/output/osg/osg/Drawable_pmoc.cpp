@@ -151,6 +151,7 @@ return ret;}
 #include <customCode/osg/Drawable_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/Shape_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <osg/Shape>
@@ -176,6 +177,18 @@ return _model->supports(*p0->_model);
 return _model->getGLObjectSizeHint();
 
 }
+ void osg::QReflect_Drawable::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_Drawable::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ _model->accept(*p0->_model);
+
+}
+ void osg::QReflect_Drawable::compileGLObjects(osg::QReflect_RenderInfo *p0)const{
+ _model->compileGLObjects(*p0->_model);
+
+}
  void osg::QReflect_Drawable::computeDataVariance(){
  _model->computeDataVariance();
 
@@ -186,6 +199,14 @@ return _model->getGLObjectSizeHint();
 }
  void osg::QReflect_Drawable::dirtyDisplayList(){
  _model->dirtyDisplayList();
+
+}
+ void osg::QReflect_Drawable::draw(osg::QReflect_RenderInfo *p0)const{
+ _model->draw(*p0->_model);
+
+}
+ void osg::QReflect_Drawable::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawImplementation(*p0->_model);
 
 }
  void osg::QReflect_Drawable::releaseGLObjects(osg::QReflect_State *p0)const{

@@ -28,6 +28,9 @@ class QReflect_PrimitiveIndexFunctor;
 namespace osg{ 
 class QReflect_Geometry;
 			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
+			} ;
 #include <osg/Geometry>
 #include <osg/Geometry>
 
@@ -56,7 +59,6 @@ virtual ~QReflect_Geometry( );
 //Geometry
 // ArrayList & getTexCoordArrayList();
 // ArrayList & getVertexAttribArrayList();
-// GLboolean  getVertexAttribNormalize( unsigned int );
 // PrimitiveSetList & getPrimitiveSetList();
 // bool  getArrayList( ArrayList &);
 // bool  getDrawElementsList( DrawElementsList &);
@@ -64,12 +66,6 @@ virtual ~QReflect_Geometry( );
 //virtual  bool  supports(const  Drawable::ConstAttributeFunctor &);
 //virtual  void  accept( Drawable::AttributeFunctor &);
 //virtual  void  accept( Drawable::ConstAttributeFunctor &);
-//virtual  void  accept( PrimitiveFunctor &);
-//virtual  void  accept( PrimitiveIndexFunctor &);
-//virtual  void  compileGLObjects( RenderInfo &);
-//virtual  void  drawImplementation( RenderInfo &);
-// void  drawPrimitivesImplementation( RenderInfo &);
-// void  drawVertexArraysImplementation( RenderInfo &);
 // void  setColorArray( Array * , osg::Array::Binding );
 // void  setFogCoordArray( Array * , osg::Array::Binding );
 // void  setNormalArray( Array * , osg::Array::Binding );
@@ -79,10 +75,10 @@ virtual ~QReflect_Geometry( );
 // void  setTexCoordArrayList(const  ArrayList &);
 // void  setVertexAttribArray( unsigned int  , Array * , osg::Array::Binding );
 // void  setVertexAttribArrayList(const  ArrayList &);
-// void  setVertexAttribNormalize( unsigned int  , GLboolean );
 //const  ArrayList & getTexCoordArrayList();
 //const  ArrayList & getVertexAttribArrayList();
 //const  PrimitiveSetList & getPrimitiveSetList();
+Q_INVOKABLE  GLboolean  getVertexAttribNormalize( unsigned int )const;
 Q_INVOKABLE  bool  addPrimitiveSet(osg::QReflect_PrimitiveSet *);
 Q_INVOKABLE  bool  checkForDeprecatedData();
 Q_INVOKABLE  bool  containsDeprecatedData()const;
@@ -118,7 +114,13 @@ Q_INVOKABLE osg::QReflect_Geometry::AttributeBinding  getVertexAttribBinding( un
 Q_INVOKABLE osg::QReflect_PrimitiveSet*  getPrimitiveSet( unsigned int );
 Q_INVOKABLE osg::QReflect_PrimitiveSet*  getPrimitiveSet( unsigned int )const;
 Q_INVOKABLE osg::QReflect_VertexBufferObject*  getOrCreateVertexBufferObject();
+Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
+Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
+Q_INVOKABLE void  compileGLObjects(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  dirtyDisplayList();
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
+Q_INVOKABLE void  drawPrimitivesImplementation(osg::QReflect_RenderInfo *)const;
+Q_INVOKABLE void  drawVertexArraysImplementation(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  duplicateSharedArrays();
 Q_INVOKABLE void  fixDeprecatedData();
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
@@ -131,6 +133,7 @@ Q_INVOKABLE void  setTexCoordArray( unsigned int  ,osg::QReflect_Array *);
 Q_INVOKABLE void  setUseVertexBufferObjects( bool );
 Q_INVOKABLE void  setVertexAttribArray( unsigned int  ,osg::QReflect_Array *);
 Q_INVOKABLE void  setVertexAttribBinding( unsigned int  ,osg::QReflect_Geometry::AttributeBinding );
+Q_INVOKABLE void  setVertexAttribNormalize( unsigned int  , GLboolean );
 Q_INVOKABLE void pmoc_reverse_setColorArray( osg::QReflect_Array *par=0);
 Q_INVOKABLE void pmoc_reverse_setFogCoordArray( osg::QReflect_Array *par=0);
 Q_INVOKABLE void pmoc_reverse_setNormalArray( osg::QReflect_Array *par=0);
@@ -207,8 +210,7 @@ Geometry * _model;
 QReflect_Geometry(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Geometry( );
 //Geometry
-// GLboolean  getVertexAttribNormalize( unsigned int );
-// void  setVertexAttribNormalize( unsigned int  , GLboolean );
+Q_INVOKABLE  GLboolean  getVertexAttribNormalize( unsigned int )const;
 Q_INVOKABLE  osg::QReflect_IndexArray * getColorIndices()const;
 Q_INVOKABLE  osg::QReflect_IndexArray * getFogCoordIndices()const;
 Q_INVOKABLE  osg::QReflect_IndexArray * getNormalIndices()const;
@@ -228,6 +230,7 @@ Q_INVOKABLE void  setSecondaryColorBinding(deprecated_osg::QReflect_Geometry::At
 Q_INVOKABLE void  setTexCoordIndices( unsigned int  ,osg::QReflect_IndexArray *);
 Q_INVOKABLE void  setVertexAttribBinding( unsigned int  ,deprecated_osg::QReflect_Geometry::AttributeBinding );
 Q_INVOKABLE void  setVertexAttribIndices( unsigned int  ,osg::QReflect_IndexArray *);
+Q_INVOKABLE void  setVertexAttribNormalize( unsigned int  , GLboolean );
 Q_INVOKABLE void pmoc_reverse_setColorIndices( osg::QReflect_IndexArray *par=0);
 Q_INVOKABLE void pmoc_reverse_setFogCoordIndices( osg::QReflect_IndexArray *par=0);
 Q_INVOKABLE void pmoc_reverse_setNormalIndices( osg::QReflect_IndexArray *par=0);

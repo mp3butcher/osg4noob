@@ -7,11 +7,16 @@
 #include <customCode/osg/Billboard_pmoc.hpp>
 #include <customCode/osg/Geode_pmoc.hpp>
 #include <customCode/osg/Drawable_pmoc.hpp>
+#include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <osg/Drawable>
 using namespace pmoc;
  bool  osg::QReflect_Billboard::addDrawable(osg::QReflect_Drawable *p0 ,osg::QReflect_Vec3f *p1){
 return _model->addDrawable(p0->_model ,*p1->_model);
+
+}
+ bool  osg::QReflect_Billboard::computeMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_Vec3f *p1 ,osg::QReflect_Vec3f *p2)const{
+return _model->computeMatrix(*p0->_model ,*p1->_model ,*p2->_model);
 
 }
  void osg::QReflect_Billboard::setAxis(osg::QReflect_Vec3f *p0){

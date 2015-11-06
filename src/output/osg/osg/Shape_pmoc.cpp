@@ -956,7 +956,52 @@ return ret;}
 #include <QtQml/QQmlEngine>
 #include <osg/Shape_pmoc.hpp>
 #include <customCode/osg/Shape_pmoc.hpp>
+#include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_Box *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_Capsule *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_CompositeShape *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_Cone *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_ConvexHull *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_Cylinder *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_HeightField *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_InfinitePlane *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_Shape *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_Sphere *p0){
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ShapeVisitor::apply(osg::QReflect_TriangleMesh *p0){
+ _model->apply(*p0->_model);
+
+}
 
 ///DefaultConstructor////////////////
 osg::QReflect_ShapeVisitor::QReflect_ShapeVisitor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){

@@ -28,12 +28,10 @@ Hint * _model;
 QReflect_Hint(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Hint( );
 //Hint
-// GLenum  getMode();
-// GLenum  getTarget();
 //virtual  Type  getType();
 //virtual  void  apply( State &);
-// void  setMode( GLenum );
-// void  setTarget( GLenum );
+Q_INVOKABLE  GLenum  getMode()const;
+Q_INVOKABLE  GLenum  getTarget()const;
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE  unsigned int  getMember()const;
@@ -41,6 +39,8 @@ Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
+Q_INVOKABLE void  setMode( GLenum );
+Q_INVOKABLE void  setTarget( GLenum );
 public slots:
 virtual void updateModel();
  

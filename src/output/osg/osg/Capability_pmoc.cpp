@@ -8,8 +8,16 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_Capability::getCapability()const{
+return _model->getCapability();
+
+}
  int  osg::QReflect_Capability::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
+
+}
+ void osg::QReflect_Capability::setCapability( GLenum p0){
+ _model->setCapability(p0);
 
 }
 

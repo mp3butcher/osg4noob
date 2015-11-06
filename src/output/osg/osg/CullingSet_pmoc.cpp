@@ -8,6 +8,9 @@
 #include <customCode/osg/Referenced_pmoc.hpp>
 #include <customCode/osg/CullingSet_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
+#include <customCode/osg/Polytope_pmoc.hpp>
+#include <customCode/osg/ShadowVolumeOccluder_pmoc.hpp>
+#include <customCode/osg/StateSet_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
@@ -21,6 +24,14 @@ return _model->pixelSize(*p0->_model ,p1);
 }
  int  osg::QReflect_CullingSet::getCullingMask()const{
 return _model->getCullingMask();
+
+}
+ void osg::QReflect_CullingSet::addOccluder(osg::QReflect_ShadowVolumeOccluder *p0){
+ _model->addOccluder(*p0->_model);
+
+}
+ void osg::QReflect_CullingSet::addStateFrustum(osg::QReflect_StateSet *p0 ,osg::QReflect_Polytope *p1){
+ _model->addStateFrustum(p0->_model ,*p1->_model);
 
 }
  void osg::QReflect_CullingSet::popCurrentMask(){
@@ -45,6 +56,10 @@ return _model->getCullingMask();
 }
  void osg::QReflect_CullingSet::setCullingMask( int p0){
  _model->setCullingMask(p0);
+
+}
+ void osg::QReflect_CullingSet::setFrustum(osg::QReflect_Polytope *p0){
+ _model->setFrustum(*p0->_model);
 
 }
  void osg::QReflect_CullingSet::setPixelSizeVector(osg::QReflect_Vec4f *p0){

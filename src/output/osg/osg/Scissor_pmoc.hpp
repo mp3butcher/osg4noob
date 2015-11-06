@@ -24,7 +24,6 @@ virtual ~QReflect_Scissor( );
 //Scissor
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
 //virtual  void  apply( State &);
-// void  getScissor( int & , int & , int & , int &);
 Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE  int  height()const;
 Q_INVOKABLE  int  width()const;
@@ -34,6 +33,7 @@ Q_INVOKABLE  int&  height();
 Q_INVOKABLE  int&  width();
 Q_INVOKABLE  int&  x();
 Q_INVOKABLE  int&  y();
+Q_INVOKABLE void  getScissor( int & , int & , int & , int &)const;
 Q_INVOKABLE void  setScissor( int  , int  , int  , int );
 public slots:
 virtual void updateModel();

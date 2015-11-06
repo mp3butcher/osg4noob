@@ -8,9 +8,14 @@
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 #include <osg/Image>
 #include <osg/Image_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_Texture1D::getTextureTarget()const{
+return _model->getTextureTarget();
+
+}
  int  osg::QReflect_Texture1D::compare(osg::QReflect_StateAttribute *p0)const{
 return _model->compare(*p0->_model);
 
@@ -29,6 +34,18 @@ return _model->getNumImages();
 }
  unsigned int&  osg::QReflect_Texture1D::getModifiedCount( unsigned int p0)const{
 return _model->getModifiedCount(p0);
+
+}
+ void osg::QReflect_Texture1D::apply(osg::QReflect_State *p0)const{
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_Texture1D::copyTexImage1D(osg::QReflect_State *p0 , int p1 , int p2 , int p3){
+ _model->copyTexImage1D(*p0->_model ,p1 ,p2 ,p3);
+
+}
+ void osg::QReflect_Texture1D::copyTexSubImage1D(osg::QReflect_State *p0 , int p1 , int p2 , int p3 , int p4){
+ _model->copyTexSubImage1D(*p0->_model ,p1 ,p2 ,p3 ,p4);
 
 }
  void osg::QReflect_Texture1D::setImage( unsigned int p0 ,osg::QReflect_Image *p1){

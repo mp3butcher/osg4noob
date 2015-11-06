@@ -29,6 +29,9 @@ class QReflect_Shape;
 namespace osg{ 
 class QReflect_PrimitiveIndexFunctor;
 			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
+			} ;
 #include <osg/Drawable>
 #include <osg/Drawable>
 
@@ -76,11 +79,6 @@ virtual ~QReflect_Drawable( );
 //virtual  bool  supports(const  ConstAttributeFunctor &);
 //virtual  void  accept( AttributeFunctor &);
 //virtual  void  accept( ConstAttributeFunctor &);
-//virtual  void  accept( PrimitiveFunctor &);
-//virtual  void  accept( PrimitiveIndexFunctor &);
-//virtual  void  compileGLObjects( RenderInfo &);
-// void  draw( RenderInfo &);
-//virtual  void  drawImplementation( RenderInfo &);
 // void  setComputeBoundingBoxCallback( ComputeBoundingBoxCallback *);
 //virtual  void  setDrawCallback( DrawCallback *);
 // void  setInitialBound(const  osg::BoundingBox &);
@@ -101,9 +99,14 @@ Q_INVOKABLE const bool  getUseVertexBufferObjects()const;
 Q_INVOKABLE const unsigned int  getMinimumNumberOfDisplayListsToRetainInCache()const;
 Q_INVOKABLE osg::QReflect_Drawable*  asDrawable();
 Q_INVOKABLE osg::QReflect_Drawable*  asDrawable()const;
+Q_INVOKABLE void  accept(osg::QReflect_PrimitiveFunctor *)const;
+Q_INVOKABLE void  accept(osg::QReflect_PrimitiveIndexFunctor *)const;
+Q_INVOKABLE void  compileGLObjects(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  computeDataVariance();
 Q_INVOKABLE void  deleteDisplayList( unsigned int  , GLuint  , unsigned int );
 Q_INVOKABLE void  dirtyDisplayList();
+Q_INVOKABLE void  draw(osg::QReflect_RenderInfo *)const;
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
 Q_INVOKABLE void  setThreadSafeRefUnref( bool );

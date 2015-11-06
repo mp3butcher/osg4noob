@@ -9,6 +9,9 @@ class QReflect_Node;
 namespace osg{ 
 class QReflect_Referenced;
 			} ;
+namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
 #include <osg/PagedLOD>
 #include <osg/PagedLOD>
 
@@ -29,7 +32,6 @@ virtual ~QReflect_PagedLOD( );
 //virtual  bool  removeExpiredChildren( double  , unsigned int  , NodeList &);
 // osg::ref_ptr<osg::Referenced> & getDatabaseRequest( unsigned int );
 // unsigned   getFrameNumber( unsigned int );
-//virtual  void  traverse( NodeVisitor &);
 //const  osg::ref_ptr<osg::Referenced> & getDatabaseRequest( unsigned int );
 Q_INVOKABLE  bool  addChild(osg::QReflect_Node * , float  , float  ,const  QString & , float  , float );
 Q_INVOKABLE  bool  addChild(osg::QReflect_Node * , float  , float );
@@ -60,6 +62,7 @@ Q_INVOKABLE void  setMinimumExpiryTime( unsigned int  , double );
 Q_INVOKABLE void  setPriorityOffset( unsigned int  , float );
 Q_INVOKABLE void  setPriorityScale( unsigned int  , float );
 Q_INVOKABLE void  setTimeStamp( unsigned int  , double );
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void pmoc_reverse_setDatabaseOptions( osg::QReflect_Referenced *par=0);
 Q_INVOKABLE void setDatabaseOptions( osg::QReflect_Referenced *par);
 Q_INVOKABLE void setDatabasePath(const QString &);

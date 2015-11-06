@@ -2,6 +2,39 @@
 #define  osg_Shape_pmocHPP 1
 #include <osg/Shape_pmoc.hpp>
 #include <QObject>
+namespace osg{ 
+class QReflect_Shape;
+			} ;
+namespace osg{ 
+class QReflect_Sphere;
+			} ;
+namespace osg{ 
+class QReflect_Box;
+			} ;
+namespace osg{ 
+class QReflect_Cone;
+			} ;
+namespace osg{ 
+class QReflect_Cylinder;
+			} ;
+namespace osg{ 
+class QReflect_Capsule;
+			} ;
+namespace osg{ 
+class QReflect_InfinitePlane;
+			} ;
+namespace osg{ 
+class QReflect_TriangleMesh;
+			} ;
+namespace osg{ 
+class QReflect_ConvexHull;
+			} ;
+namespace osg{ 
+class QReflect_HeightField;
+			} ;
+namespace osg{ 
+class QReflect_CompositeShape;
+			} ;
 #include <osg/Shape>
 
 #include <MetaQQuickClass.h>
@@ -17,17 +50,17 @@ ShapeVisitor * _model;
 QReflect_ShapeVisitor(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ShapeVisitor( );
 //ShapeVisitor
-//virtual  void  apply( Box &);
-//virtual  void  apply( Capsule &);
-//virtual  void  apply( CompositeShape &);
-//virtual  void  apply( Cone &);
-//virtual  void  apply( ConvexHull &);
-//virtual  void  apply( Cylinder &);
-//virtual  void  apply( HeightField &);
-//virtual  void  apply( InfinitePlane &);
-//virtual  void  apply( Shape &);
-//virtual  void  apply( Sphere &);
-//virtual  void  apply( TriangleMesh &);
+Q_INVOKABLE void  apply(osg::QReflect_Box *);
+Q_INVOKABLE void  apply(osg::QReflect_Capsule *);
+Q_INVOKABLE void  apply(osg::QReflect_CompositeShape *);
+Q_INVOKABLE void  apply(osg::QReflect_Cone *);
+Q_INVOKABLE void  apply(osg::QReflect_ConvexHull *);
+Q_INVOKABLE void  apply(osg::QReflect_Cylinder *);
+Q_INVOKABLE void  apply(osg::QReflect_HeightField *);
+Q_INVOKABLE void  apply(osg::QReflect_InfinitePlane *);
+Q_INVOKABLE void  apply(osg::QReflect_Shape *);
+Q_INVOKABLE void  apply(osg::QReflect_Sphere *);
+Q_INVOKABLE void  apply(osg::QReflect_TriangleMesh *);
 public slots:
 virtual void updateModel();
  

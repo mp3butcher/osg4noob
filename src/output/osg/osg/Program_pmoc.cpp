@@ -6,10 +6,18 @@
 #include <osg/Program_pmoc.hpp>
 #include <customCode/osg/Program_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
-#include <osg/Shader_pmoc.hpp>
+#include <customCode/osg/Shader_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <osg/Shader>
 using namespace pmoc;
+ GLenum  osg::QReflect_Program::getTransformFeedBackMode()const{
+return _model->getTransformFeedBackMode();
+
+}
+ GLint  osg::QReflect_Program::getParameter( GLenum p0)const{
+return _model->getParameter(p0);
+
+}
  bool  osg::QReflect_Program::isFixedFunction()const{
 return _model->isFixedFunction();
 
@@ -46,6 +54,10 @@ return _model->getNumTransformFeedBackVaryings();
  _model->dirtyProgram();
 
 }
+ void osg::QReflect_Program::getComputeGroups( GLint &p0 , GLint &p1 , GLint &p2)const{
+ _model->getComputeGroups(p0 ,p1 ,p2);
+
+}
  void osg::QReflect_Program::removeBindAttribLocation(const  QString &p0){
  _model->removeBindAttribLocation(std::string(p0.toStdString()));
 
@@ -70,8 +82,16 @@ return _model->getNumTransformFeedBackVaryings();
  _model->setComputeGroups(p0 ,p1 ,p2);
 
 }
+ void osg::QReflect_Program::setParameter( GLenum p0 , GLint p1){
+ _model->setParameter(p0 ,p1);
+
+}
  void osg::QReflect_Program::setThreadSafeRefUnref( bool p0){
  _model->setThreadSafeRefUnref(p0);
+
+}
+ void osg::QReflect_Program::setTransformFeedBackMode( GLenum p0){
+ _model->setTransformFeedBackMode(p0);
 
 }
 QString  osg::QReflect_Program::getTransformFeedBackVarying( unsigned int p0)const{

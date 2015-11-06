@@ -7,13 +7,27 @@
 #include <customCode/osg/AutoTransform_pmoc.hpp>
 #include <customCode/osg/Transform_pmoc.hpp>
 #include <customCode/osg/CopyOp_pmoc.hpp>
+#include <customCode/osg/Matrixd_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Quat_pmoc.hpp>
 #include <customCode/osg/Vec3d_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 using namespace pmoc;
+ bool  osg::QReflect_AutoTransform::computeLocalToWorldMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+return _model->computeLocalToWorldMatrix(*p0->_model ,p1->_model);
+
+}
+ bool  osg::QReflect_AutoTransform::computeWorldToLocalMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+return _model->computeWorldToLocalMatrix(*p0->_model ,p1->_model);
+
+}
  bool  osg::QReflect_AutoTransform::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
+
+}
+ void osg::QReflect_AutoTransform::accept(osg::QReflect_NodeVisitor *p0){
+ _model->accept(*p0->_model);
 
 }
  void osg::QReflect_AutoTransform::setAutoRotateMode(osg::QReflect_AutoTransform::AutoRotateMode p0){

@@ -8,6 +8,9 @@ class QReflect_StateAttribute;
 namespace osg{ 
 class QReflect_Vec4f;
 			} ;
+namespace osg{ 
+class QReflect_Matrixd;
+			} ;
 #include <osg/VertexProgram>
 #include <osg/VertexProgram>
 
@@ -33,7 +36,6 @@ virtual ~QReflect_VertexProgram( );
 //virtual  void  releaseGLObjects( State *);
 // void  setLocalParameters(const  LocalParamList &);
 // void  setMatrices(const  MatrixList &);
-// void  setMatrix(const  GLenum  ,const  Matrix &);
 //const  LocalParamList & getLocalParameters();
 //const  MatrixList & getMatrices();
 Q_INVOKABLE  GLuint&  getVertexProgramID( unsigned int )const;
@@ -41,6 +43,7 @@ Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
 Q_INVOKABLE const QString  getVertexProgram()const;
 Q_INVOKABLE void  dirtyVertexProgramObject();
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
+Q_INVOKABLE void  setMatrix(const  GLenum  ,osg::QReflect_Matrixd *);
 Q_INVOKABLE void  setProgramLocalParameter(const  GLuint  ,osg::QReflect_Vec4f *);
 Q_INVOKABLE void  setVertexProgram(const  char *);
 Q_INVOKABLE void setVertexProgram(const QString &);

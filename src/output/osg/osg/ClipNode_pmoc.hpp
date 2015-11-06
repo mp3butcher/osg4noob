@@ -4,6 +4,9 @@
 #include <osg/ClipNode_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_StateSet;
+			} ;
+namespace osg{ 
 class QReflect_ClipPlane;
 			} ;
 #include <osg/ClipNode>
@@ -39,7 +42,6 @@ virtual ~QReflect_ClipNode( );
 // ClipPlaneList & getClipPlaneList();
 // void  createClipBox(const  BoundingBox & , unsigned int );
 // void  setClipPlaneList(const  ClipPlaneList &);
-// void  setStateSetModes( StateSet & , StateAttribute::GLModeValue );
 //const  ClipPlaneList & getClipPlaneList();
 Q_INVOKABLE  bool  removeClipPlane( unsigned int );
 Q_INVOKABLE  unsigned int  getNumClipPlanes()const;
@@ -49,6 +51,7 @@ Q_INVOKABLE osg::QReflect_ClipPlane*  getClipPlane( unsigned int )const;
 Q_INVOKABLE void   addClipPlane( osg::QReflect_ClipPlane *par);//{return new osg::QReflect_ClipPlane(_model->getClipPlane());}
 Q_INVOKABLE void  setLocalStateSetModes( unsigned int );
 Q_INVOKABLE void  setReferenceFrame(osg::QReflect_ClipNode::ReferenceFrame );
+Q_INVOKABLE void  setStateSetModes(osg::QReflect_StateSet * , unsigned int )const;
 Q_INVOKABLE void pmoc_reverse_addClipPlane( osg::QReflect_ClipPlane *par);//{_model->setClipPlane(par->_model);emit ClipPlaneCollectionChanged(par);}
 signals: void ClipPlaneCollectionChanged();
 public:

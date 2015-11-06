@@ -6,9 +6,23 @@
 #include <osg/ComputeBoundsVisitor_pmoc.hpp>
 #include <customCode/osg/ComputeBoundsVisitor_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
+#include <customCode/osg/Matrixd_pmoc.hpp>
+#include <customCode/osg/Polytope_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_ComputeBoundsVisitor::getBase(osg::QReflect_Polytope *p0 , float p1)const{
+ _model->getBase(*p0->_model ,p1);
+
+}
+ void osg::QReflect_ComputeBoundsVisitor::getPolytope(osg::QReflect_Polytope *p0 , float p1)const{
+ _model->getPolytope(*p0->_model ,p1);
+
+}
  void osg::QReflect_ComputeBoundsVisitor::popMatrix(){
  _model->popMatrix();
+
+}
+ void osg::QReflect_ComputeBoundsVisitor::pushMatrix(osg::QReflect_Matrixd *p0){
+ _model->pushMatrix(*p0->_model);
 
 }
  void osg::QReflect_ComputeBoundsVisitor::reset(){

@@ -6,6 +6,7 @@
 #include <osg/ProxyNode_pmoc.hpp>
 #include <customCode/osg/ProxyNode_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 #include <customCode/osg/Referenced_pmoc.hpp>
 #include <osg/Referenced>
@@ -37,6 +38,10 @@ return _model->getNumFileNames();
 }
  void osg::QReflect_ProxyNode::setLoadingExternalReferenceMode(osg::QReflect_ProxyNode::LoadingExternalReferenceMode p0){
  _model->setLoadingExternalReferenceMode(static_cast<osg::ProxyNode::LoadingExternalReferenceMode>(p0));
+
+}
+ void osg::QReflect_ProxyNode::traverse(osg::QReflect_NodeVisitor *p0){
+ _model->traverse(*p0->_model);
 
 }
 QString  osg::QReflect_ProxyNode::getFileName( unsigned int p0)const{

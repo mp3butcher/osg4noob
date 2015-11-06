@@ -7,6 +7,7 @@
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/GraphicsContext_pmoc.hpp>
+#include <customCode/osg/Image_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <customCode/osg/Vec4d_pmoc.hpp>
@@ -14,6 +15,14 @@
 #include <osg/GraphicsContext>
 #include <osg/GraphicsContext_pmoc.hpp>
 using namespace pmoc;
+ GLenum  osg::QReflect_Texture::getSourceFormat()const{
+return _model->getSourceFormat();
+
+}
+ GLenum  osg::QReflect_Texture::getSourceType()const{
+return _model->getSourceType();
+
+}
  GLint  osg::QReflect_Texture::getBorderWidth()const{
 return _model->getBorderWidth();
 
@@ -62,12 +71,32 @@ return _model->getTextureParameterDirty(p0);
  _model->allocateMipmapLevels();
 
 }
+ void osg::QReflect_Texture::applyTexImage2D_load(osg::QReflect_State *p0 , GLenum p1 ,osg::QReflect_Image *p2 , GLsizei p3 , GLsizei p4 , GLsizei p5)const{
+ _model->applyTexImage2D_load(*p0->_model ,p1 ,p2->_model ,p3 ,p4 ,p5);
+
+}
+ void osg::QReflect_Texture::applyTexImage2D_subload(osg::QReflect_State *p0 , GLenum p1 ,osg::QReflect_Image *p2 , GLsizei p3 , GLsizei p4 , GLint p5 , GLsizei p6)const{
+ _model->applyTexImage2D_subload(*p0->_model ,p1 ,p2->_model ,p3 ,p4 ,p5 ,p6);
+
+}
+ void osg::QReflect_Texture::bindToImageUnit( unsigned int p0 , GLenum p1 , GLenum p2 , int p3 , bool p4 , int p5){
+ _model->bindToImageUnit(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
+
+}
+ void osg::QReflect_Texture::compileGLObjects(osg::QReflect_State *p0)const{
+ _model->compileGLObjects(*p0->_model);
+
+}
  void osg::QReflect_Texture::dirtyTextureObject(){
  _model->dirtyTextureObject();
 
 }
  void osg::QReflect_Texture::dirtyTextureParameters(){
  _model->dirtyTextureParameters();
+
+}
+ void osg::QReflect_Texture::getCompressedSize( GLenum p0 , GLint p1 , GLint p2 , GLint p3 , GLint &p4 , GLint &p5){
+ _model->getCompressedSize(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
 
 }
  void osg::QReflect_Texture::releaseGLObjects(osg::QReflect_State *p0)const{
@@ -104,6 +133,14 @@ return _model->getTextureParameterDirty(p0);
 }
  void osg::QReflect_Texture::setShadowTextureMode(osg::QReflect_Texture::ShadowTextureMode p0){
  _model->setShadowTextureMode(static_cast<osg::Texture::ShadowTextureMode>(p0));
+
+}
+ void osg::QReflect_Texture::setSourceFormat( GLenum p0){
+ _model->setSourceFormat(p0);
+
+}
+ void osg::QReflect_Texture::setSourceType( GLenum p0){
+ _model->setSourceType(p0);
 
 }
  void osg::QReflect_Texture::setSwizzle(osg::QReflect_Vec4i *p0){
@@ -298,6 +335,10 @@ return _model->getNumberGenerated();
  _model->flushAllDeletedGLObjects();
 
 }
+ void osg::QReflect_TextureObjectManager::flushDeletedGLObjects( double p0 , double &p1){
+ _model->flushDeletedGLObjects(p0 ,p1);
+
+}
  void osg::QReflect_TextureObjectManager::handlePendingOrphandedTextureObjects(){
  _model->handlePendingOrphandedTextureObjects();
 
@@ -373,6 +414,10 @@ using namespace pmoc;
 return _model->checkConsistency();
 
 }
+ bool  osg::QReflect_TextureObjectSet::makeSpace( unsigned int &p0){
+return _model->makeSpace(p0);
+
+}
  unsigned int  osg::QReflect_TextureObjectSet::computeNumTextureObjectsInList()const{
 return _model->computeNumTextureObjectsInList();
 
@@ -407,6 +452,10 @@ return _model->size();
 }
  void osg::QReflect_TextureObjectSet::flushAllDeletedTextureObjects(){
  _model->flushAllDeletedTextureObjects();
+
+}
+ void osg::QReflect_TextureObjectSet::flushDeletedTextureObjects( double p0 , double &p1){
+ _model->flushDeletedTextureObjects(p0 ,p1);
 
 }
  void osg::QReflect_TextureObjectSet::handlePendingOrphandedTextureObjects(){
