@@ -14,7 +14,7 @@ In order to edit qmls at runtime (using qtcreator) setup environment variable PM
 #### BEWARE:
 closed lib and dll (msvc2013 and linux gcc644.9.2) are in the lib directory:
 copy the good one in bin in order to make it work
-
+(may i free the sources? mmh, perhaps..)
 #### PMOC infos:
 pmoc aims toward C++ runtime graphical manipulation through QML and javascript.
 It generates stubs and  skeletons of Qt Components to describe the logic of your libraries in a common graphical environment. Further, once customized, components can easily be reused in your own QtQuick application.
@@ -43,7 +43,7 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 #### PMOC cons
 - QtQuick only
 - Not multiview (only one QtQuick view per model)
-- miss some wrapping when classes are forward declared (should evolve to global even if it'd break the pipeline)
+- miss some wrapping when classes are forward declared (should move back to global even if it'd break the pipeline)
 
 |pmoc features:|
 -------------
