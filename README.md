@@ -31,19 +31,19 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 - PMOCSAFEADDOBJECT(INOBJECTREF,OUTPMOCINSTANCE) : inject native in pmoc system
 - PMOCINSTANCE.model->createQQModel(&PMOCINSTANCE) : embed instance in the associated manipulation box (no graphics)
 - PMOCINSTANCE.model->getGuiComponent(QQuickView*,PMOCINSTANCE,PARENTITEM=0,RELATIONNAME="") : embed instance in the associated manipulation box and return qtquick item node (and set relation with its parent for us in editor mainly).
-- see PMOCINSTANCE.model MetaQQuickClass for further methods
+- see PMOCINSTANCE.model (MetaQQuickClass) for further methods
 
 
 #### PMOC pros
 - Keep your libraries Qt free
 - Load Qt plugin only when required
 - Interact easily with native objects at runtime
-- Pipeline
+- Pipelined
 
 #### PMOC cons
 - QtQuick only
 - Not multiview (only one QtQuick view per model)
-- miss some wrapping when classes are forward declared
+- miss some wrapping when classes are forward declared (should evolve to global even if it'd break the pipeline)
 
 |pmoc features:|
 -------------
