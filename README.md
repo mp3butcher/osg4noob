@@ -17,23 +17,41 @@ copy the good one in bin in order to make it work
 
 #### PMOC infos:
 pmoc aims toward C++ runtime graphical manipulation through QML and javascript.
-It generates stubs and  skeletons of  Qt Components to describe the logic of your libraries in a common graphical environment.
+It generates stubs and  skeletons of Qt Components to describe the logic of your libraries in a common graphical environment. Further, once customized, components can easily be reused in your own QtQuick application.
+
+#### PMOC workflow:
+1. Use pmoc on your headers
+2. Build an editor for the targetted libraries
+3. Customized generated components (C++)
+4. Skin components in the editor at runtime (QML+javascript method wrapping)
+5. Reuse boxes in your own products
+
+#### PMOC pro
+- Keep your libraries Qt free
+- Load Qt plugin only when required
+- Interact easily with native objects at runtime
+- Pipeline
+
+#### PMOC cons
+- QtQuick only
+- Not multiview (only one QtQuick view per model)
+- miss some wrapping when classes are forward declared
 
 |pmoc features:|
 -------------
-|Native object boxing (put native object in QT boxes)|
-|javascript/QML method wrapping|
-|hierarchical QML composition pattern|
+|Native object boxing (put native objects in QT boxes)|
+|Javascript/QML method wrapping|
+|Hierarchical QML composition pattern|
 |Nodal logic ( via config file:copy/paste+fx ambiguities leverage)||
 |Pointer life cycle ( via config file,ex: handle ref_pointer/normalpointer)|
 |Multiple inheritance via delegation(seams to handle virtual inheritance)|
 
-
 |pmoc limitations:|
 -------------
-|no polymorphism in javascript|
-|no macro parsing|
-|template are not handled|
+|No polymorphism in javascript|
+|No macro parsing (work on copies if you're using in headers)|
+|Templates, operators are not handled|
+|Static and namespace functions not handled yet|
 
 #### PMOC win32 trial version + metalibs for MSVC2013 & Linux64 gcc4.9.2
 https://github.com/mp3butcher/osg4noob/blob/master/pmoc-beta-libbuiltQt5.5-msvc2013-trial.zip?raw=true
