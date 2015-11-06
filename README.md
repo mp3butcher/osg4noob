@@ -26,13 +26,15 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 4. Skin components/boxes in the editor at runtime (QML+javascript method wrapping)
 5. Reuse boxes in your own products
 
-###PMOC How to use the stuff (need some refactoring)
+###PMOC How to use the stuff 
+(need some design improvement...:/)
 - PMOCSAFEADDOBJECT(INOBJECTREF,OUTPMOCINSTANCE) : inject native in pmoc system
+- PMOCINSTANCE.model->createQQModel(&PMOCINSTANCE)) : embed instance in the associated manipulation box (no graphics)
 - QQUICKCOMPONENT(INPMOCINSTANCE,OUTQQUICKITEM) : embed instance in the associated manipulation box and output qtquick item node.
-- see PMOCINSTANCE._model MetaQQuickClass for further methods
+- see PMOCINSTANCE.model MetaQQuickClass for further methods
 
 
-#### PMOC pro
+#### PMOC pros
 - Keep your libraries Qt free
 - Load Qt plugin only when required
 - Interact easily with native objects at runtime
