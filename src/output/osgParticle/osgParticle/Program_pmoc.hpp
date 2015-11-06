@@ -7,6 +7,9 @@
 namespace osg{ 
 class QReflect_Object;
 			} ;
+namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/Program>
 #include <osgParticle/Program>
@@ -24,10 +27,10 @@ Program * _model;
 QReflect_Program(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Program( );
 //Program
-//virtual  void  accept( osg::NodeVisitor &);
 Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
+Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
 public slots:
 virtual void updateModel();
  

@@ -7,8 +7,14 @@
 namespace osg{ 
 class QReflect_Vec3f;
 			} ;
+namespace osg{ 
+class QReflect_NodeVisitor;
+			} ;
 namespace osgParticle{ 
 class QReflect_Particle;
+			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/ParticleSystem>
@@ -50,9 +56,7 @@ virtual ~QReflect_ParticleSystem( );
 // Particle & getDefaultParticleTemplate();
 // ReadWriterMutex * getReadWriteMutex();
 //virtual  osg::BoundingBox  computeBoundingBox();
-//virtual  void  drawImplementation( osg::RenderInfo &);
 // void  setDefaultBoundingBox(const  osg::BoundingBox &);
-//virtual  void  update( double  , osg::NodeVisitor &);
 //const  Particle & getDefaultParticleTemplate();
 //const  osg::BoundingBox & getDefaultBoundingBox();
 //const  osg::Vec3 & getAlignVectorX();
@@ -77,6 +81,7 @@ Q_INVOKABLE osgParticle::QReflect_ParticleSystem::Alignment  getParticleAlignmen
 Q_INVOKABLE osgParticle::QReflect_ParticleSystem::ParticleScaleReferenceFrame  getParticleScaleReferenceFrame()const;
 Q_INVOKABLE osgParticle::QReflect_ParticleSystem::SortMode  getSortMode()const;
 Q_INVOKABLE void  destroyParticle( int );
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  reuseParticle( int );
 Q_INVOKABLE void  setAlignVectorX(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setAlignVectorY(osg::QReflect_Vec3f *);
@@ -87,6 +92,7 @@ Q_INVOKABLE void  setDefaultParticleTemplate(osgParticle::QReflect_Particle *);
 Q_INVOKABLE void  setParticleAlignment(osgParticle::QReflect_ParticleSystem::Alignment );
 Q_INVOKABLE void  setParticleScaleReferenceFrame(osgParticle::QReflect_ParticleSystem::ParticleScaleReferenceFrame );
 Q_INVOKABLE void  setSortMode(osgParticle::QReflect_ParticleSystem::SortMode );
+Q_INVOKABLE void  update( double  ,osg::QReflect_NodeVisitor *);
 Q_INVOKABLE void setDoublePassRendering(const bool &);
 Q_INVOKABLE void setFreezeOnCull(const bool &);
 Q_INVOKABLE void setFrozen(const bool &);

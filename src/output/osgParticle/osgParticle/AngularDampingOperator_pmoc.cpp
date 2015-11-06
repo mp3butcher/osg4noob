@@ -10,6 +10,14 @@
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
+ void osgParticle::QReflect_AngularDampingOperator::getCutoff( float &p0 , float &p1)const{
+ _model->getCutoff(p0 ,p1);
+
+}
+ void osgParticle::QReflect_AngularDampingOperator::getDamping( float &p0 , float &p1 , float &p2)const{
+ _model->getDamping(p0 ,p1 ,p2);
+
+}
  void osgParticle::QReflect_AngularDampingOperator::operate(osgParticle::QReflect_Particle *p0 , double p1){
  _model->operate(p0->_model ,p1);
 

@@ -19,6 +19,9 @@ class QReflect_Matrixd;
 namespace osg{ 
 class QReflect_GLBeginEndAdapter;
 			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
+			} ;
 #include <osgParticle/Particle>
 
 #include<osgParticle/Particle_pmoc.hpp>
@@ -46,7 +49,6 @@ QReflect_Particle(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Particle( );
 //Particle
 // bool  operator<(const  Particle &);
-// void  render( osg::RenderInfo & ,const  osg::Vec3 & ,const  osg::Vec3 &);
 // void  setAlphaRange(const  rangef &);
 // void  setColorRange(const  rangev4 &);
 // void  setSizeRange(const  rangef &);
@@ -91,6 +93,7 @@ Q_INVOKABLE void  beginRender(osg::QReflect_GLBeginEndAdapter *)const;
 Q_INVOKABLE void  endRender(osg::QReflect_GLBeginEndAdapter *)const;
 Q_INVOKABLE void  kill();
 Q_INVOKABLE void  render(osg::QReflect_GLBeginEndAdapter * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * , float )const;
+Q_INVOKABLE void  render(osg::QReflect_RenderInfo * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *)const;
 Q_INVOKABLE void  setAngle(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setAngularVelocity(osg::QReflect_Vec3f *);
 Q_INVOKABLE void  setPosition(osg::QReflect_Vec3f *);

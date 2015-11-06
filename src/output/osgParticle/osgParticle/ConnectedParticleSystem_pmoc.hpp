@@ -7,6 +7,9 @@
 namespace osgParticle{ 
 class QReflect_Particle;
 			} ;
+namespace osg{ 
+class QReflect_RenderInfo;
+			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/ConnectedParticleSystem>
 #include <osgParticle/ConnectedParticleSystem>
@@ -24,11 +27,11 @@ ConnectedParticleSystem * _model;
 QReflect_ConnectedParticleSystem(pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ConnectedParticleSystem( );
 //ConnectedParticleSystem
-//virtual  void  drawImplementation( osg::RenderInfo &);
 Q_INVOKABLE const unsigned int  getMaxNumberOfParticlesToSkip()const;
 Q_INVOKABLE osgParticle::QReflect_Particle*  createParticle(osgParticle::QReflect_Particle *);
 Q_INVOKABLE osgParticle::QReflect_Particle*  getStartParticle();
 Q_INVOKABLE osgParticle::QReflect_Particle*  getStartParticle()const;
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
 Q_INVOKABLE void  reuseParticle( int );
 Q_INVOKABLE void setMaxNumberOfParticlesToSkip(const unsigned int &);
 Q_PROPERTY(unsigned int MaxNumberOfParticlesToSkip  READ getMaxNumberOfParticlesToSkip WRITE setMaxNumberOfParticlesToSkip NOTIFY MaxNumberOfParticlesToSkipChanged)

@@ -7,10 +7,15 @@
 #include <osgParticle/Program_pmoc.hpp>
 #include <customCode/osgParticle/Program_pmoc.hpp>
 #include <customCode/osgParticle/ParticleProcessor_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 using namespace pmoc;
  bool  osgParticle::QReflect_Program::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
+
+}
+ void osgParticle::QReflect_Program::accept(osg::QReflect_NodeVisitor *p0){
+ _model->accept(*p0->_model);
 
 }
 const  char*  osgParticle::QReflect_Program::className()const{

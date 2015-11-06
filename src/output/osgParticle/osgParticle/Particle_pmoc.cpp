@@ -9,6 +9,7 @@
 #include <customCode/osg/Drawable_pmoc.hpp>
 #include <customCode/osg/GLBeginEndAdapter_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
+#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osgParticle/Interpolator_pmoc.hpp>
 #include <osg/Drawable>
@@ -90,6 +91,10 @@ return _model->getTileT();
 }
  void osgParticle::QReflect_Particle::render(osg::QReflect_GLBeginEndAdapter *p0 ,osg::QReflect_Vec3f *p1 ,osg::QReflect_Vec3f *p2 ,osg::QReflect_Vec3f *p3 , float p4)const{
  _model->render(p0->_model ,*p1->_model ,*p2->_model ,*p3->_model ,p4);
+
+}
+ void osgParticle::QReflect_Particle::render(osg::QReflect_RenderInfo *p0 ,osg::QReflect_Vec3f *p1 ,osg::QReflect_Vec3f *p2)const{
+ _model->render(*p0->_model ,*p1->_model ,*p2->_model);
 
 }
  void osgParticle::QReflect_Particle::setAngle(osg::QReflect_Vec3f *p0){

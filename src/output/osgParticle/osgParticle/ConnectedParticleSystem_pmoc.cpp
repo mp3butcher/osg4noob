@@ -7,8 +7,13 @@
 #include <osgParticle/ConnectedParticleSystem_pmoc.hpp>
 #include <customCode/osgParticle/ConnectedParticleSystem_pmoc.hpp>
 #include <customCode/osgParticle/ParticleSystem_pmoc.hpp>
+#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
+ void osgParticle::QReflect_ConnectedParticleSystem::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawImplementation(*p0->_model);
+
+}
  void osgParticle::QReflect_ConnectedParticleSystem::reuseParticle( int p0){
  _model->reuseParticle(p0);
 

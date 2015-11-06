@@ -7,11 +7,16 @@
 #include <osgParticle/Emitter_pmoc.hpp>
 #include <customCode/osgParticle/Emitter_pmoc.hpp>
 #include <customCode/osgParticle/ParticleProcessor_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
  bool  osgParticle::QReflect_Emitter::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
+
+}
+ void osgParticle::QReflect_Emitter::accept(osg::QReflect_NodeVisitor *p0){
+ _model->accept(*p0->_model);
 
 }
  void osgParticle::QReflect_Emitter::setParticleTemplate(osgParticle::QReflect_Particle *p0){

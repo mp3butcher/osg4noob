@@ -7,6 +7,8 @@
 #include <osgParticle/ParticleSystem_pmoc.hpp>
 #include <customCode/osgParticle/ParticleSystem_pmoc.hpp>
 #include <customCode/osg/Drawable_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
+#include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
@@ -36,6 +38,10 @@ return _model->getLastFrameNumber();
 }
  void osgParticle::QReflect_ParticleSystem::destroyParticle( int p0){
  _model->destroyParticle(p0);
+
+}
+ void osgParticle::QReflect_ParticleSystem::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ _model->drawImplementation(*p0->_model);
 
 }
  void osgParticle::QReflect_ParticleSystem::reuseParticle( int p0){
@@ -76,6 +82,10 @@ return _model->getLastFrameNumber();
 }
  void osgParticle::QReflect_ParticleSystem::setSortMode(osgParticle::QReflect_ParticleSystem::SortMode p0){
  _model->setSortMode(static_cast<osgParticle::ParticleSystem::SortMode>(p0));
+
+}
+ void osgParticle::QReflect_ParticleSystem::update( double p0 ,osg::QReflect_NodeVisitor *p1){
+ _model->update(p0 ,*p1->_model);
 
 }
 const bool osgParticle::QReflect_ParticleSystem::getDoublePassRendering()const{return _model->getDoublePassRendering();}

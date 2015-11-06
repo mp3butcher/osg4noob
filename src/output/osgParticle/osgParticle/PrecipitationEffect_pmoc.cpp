@@ -9,6 +9,7 @@
 #include <customCode/osgParticle/PrecipitationEffect_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 #include <customCode/osg/Fog_pmoc.hpp>
+#include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
@@ -17,6 +18,10 @@
 using namespace pmoc;
  bool  osgParticle::QReflect_PrecipitationEffect::isSameKindAs(osg::QReflect_Object *p0)const{
 return _model->isSameKindAs(p0->_model);
+
+}
+ void osgParticle::QReflect_PrecipitationEffect::accept(osg::QReflect_NodeVisitor *p0){
+ _model->accept(*p0->_model);
 
 }
  void osgParticle::QReflect_PrecipitationEffect::rain( float p0){
@@ -41,6 +46,10 @@ return _model->isSameKindAs(p0->_model);
 }
  void osgParticle::QReflect_PrecipitationEffect::snow( float p0){
  _model->snow(p0);
+
+}
+ void osgParticle::QReflect_PrecipitationEffect::traverse(osg::QReflect_NodeVisitor *p0){
+ _model->traverse(*p0->_model);
 
 }
 const  char*  osgParticle::QReflect_PrecipitationEffect::className()const{
