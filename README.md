@@ -43,7 +43,7 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 #### PMOC cons
 - QtQuick only
 - Not multiview (only one QtQuick view per model)
-- miss some wrapping when classes are forward declared (should evolve to global even if it'd break the pipeline)
+- miss some wrapping when classes are forward declared (should move back to global even if it'd break the pipeline)
 
 |pmoc features:|
 -------------
