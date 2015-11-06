@@ -29,8 +29,8 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 ###PMOC How to use the stuff 
 (need some design improvement...:/)
 - PMOCSAFEADDOBJECT(INOBJECTREF,OUTPMOCINSTANCE) : inject native in pmoc system
-- PMOCINSTANCE.model->createQQModel(&PMOCINSTANCE)) : embed instance in the associated manipulation box (no graphics)
-- QQUICKCOMPONENT(INPMOCINSTANCE,OUTQQUICKITEM) : embed instance in the associated manipulation box and output qtquick item node.
+- PMOCINSTANCE.model->createQQModel(&PMOCINSTANCE) : embed instance in the associated manipulation box (no graphics)
+- PMOCINSTANCE.model->getGuiComponent(QQuickView*,PMOCINSTANCE,PARENTITEM=0,RELATIONNAME="") : embed instance in the associated manipulation box and return qtquick item node (and set relation with its parent for us in editor mainly).
 - see PMOCINSTANCE.model MetaQQuickClass for further methods
 
 
