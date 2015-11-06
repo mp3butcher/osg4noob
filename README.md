@@ -21,7 +21,7 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 
 #### PMOC workflow:
 1. Use pmoc on your headers
-2. Build a generic QtQuick development environment (editor) for the targetted libraries
+2. Build a generic QtQuick development environment (editor) fitted for your targetted libraries
 3. Customized (if needed) generated components/boxes (C++)
 4. Skin components/boxes in the editor at runtime (QML+javascript method wrapping)
 5. Reuse boxes in your own products
@@ -42,7 +42,7 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 |Native object boxing (put native objects in QT boxes)|
 |Javascript/QML method wrapping|
 |Hierarchical QML composition pattern|
-|Nodal logic ( via config file:copy/paste+fx ambiguities leverage)||
+|Nodal logic ( generates "Actions" :copy/paste+fx ambiguities leverage)||
 |Pointer life cycle ( via config file,ex: handle ref_pointer/normalpointer)|
 |Multiple inheritance via delegation(seams to handle virtual inheritance)|
 
