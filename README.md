@@ -29,6 +29,7 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 ###PMOC How to use the stuff (need some refactoring)
 - PMOCSAFEADDOBJECT(INOBJECTREF,OUTPMOCINSTANCE) : inject native in pmoc system
 - QQUICKCOMPONENT(INPMOCINSTANCE,OUTQQUICKITEM) : embed instance in the associated manipulation box and output qtquick item node.
+- see PMOCINSTANCE._model MetaQQuickClass for further methods
 
 
 #### PMOC pro
