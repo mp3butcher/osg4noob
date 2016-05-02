@@ -2,18 +2,18 @@
 #define METAQQUICKCLASS_PMOC_H 1
 #include "Export.h"
 
-
 #include <typeinfo>
 #include <set>
 #include <string>
 
 #include <QObject>
-#include <QtQuick/QQuickView>
-#include <QtQuick/QQuickItem>
-
 #include <QHash>
-
 #include <QStringList>
+#include <QtQml>
+
+class QQuickView;
+class QQuickItem;
+class QQmlComponent;
 
 ///max num of multiple inheritance
 #define PMOC_MAXINHERITANCECLASS 4
@@ -38,7 +38,7 @@ public:
 
     ~Instance();
     ///Dynamic Cast
-    inline bool isValid()
+    inline bool isValid()const
     {
         return ptr != 0 && model!=0;
     }
@@ -74,9 +74,9 @@ protected:
     QString _do;
     QString _undo;
     QString _get;
-const QMetaObject* _metaobject;
+    const QMetaObject* _metaobject;
 public:
-    Action():_do(""),_undo(""),_get(""){};
+    Action():_do(""),_undo(""),_get("") {};
     Action( const QString &doname,const QString &undoname,const QString &getname)
     {
         Action();
@@ -85,7 +85,7 @@ public:
         _get=getname;
     }
 
-   // void setup(const QMetaObject*metaobj,const QString &doname,const QString &undoname);
+    // void setup(const QMetaObject*metaobj,const QString &doname,const QString &undoname);
     bool operator <(const Action &o)const
     {
         if(_undo<o._undo)return true;
@@ -115,13 +115,124 @@ typedef std::set<Action> Actions;
 
 
 class UIEditor;///QQUICK OBJECT INTERFACE
-class QQModel;
+//class QQModel;
+class MetaQQuickClass;
+class METAQQUICKINTERFACE_PMOC_EXPORT QQModel:public QObject
+{
+    Q_OBJECT
+    Q_PROPERTY(QStringList undoActions READ getUndoActions NOTIFY undoActionsChanged)
+    Q_PROPERTY(QStringList doActions READ getDoActions NOTIFY doActionsChanged)
+    Q_PROPERTY(QStringList getActions READ getgetActions NOTIFY getActionsChanged)
+
+    friend class MetaQQuickClass;
+protected:
+//private:
+    QQuickItem *_view;
+
+    ///formless pointer
+    Instance _instance;
+
+public:
+    ///retrieve the formless pointer
+    inline const Instance & getInstance()const{return _instance;}
+
+    ///public cause setted by MetaClass subclasses...
+    QQModel * _parentboxes[PMOC_MAXINHERITANCECLASS]; ///parent boxes for upcast
+
+
+    ///cast to another type
+    ///return 0 on fail or illegal cast
+    Q_INVOKABLE pmoc::QQModel*  cast(QString casttype);
+
+
+    ///used to force js ownership when created via injection
+    /// TODO: Find a cleaner way
+    Q_INVOKABLE QQModel *getthis()
+    {
+        return this;
+    }
+
+    Q_INVOKABLE QQuickItem *getQuickItem()
+    {
+        return _view;
+    }
+
+    ///return QQModel of the parents classes or Null if index is to high
+    Q_INVOKABLE virtual QQModel * getParentBox(int index)
+    {
+        return _parentboxes[index<getNumParentBox()-1?index:getNumParentBox()-1];
+    }
+    ///return the count of inherited classes
+    Q_INVOKABLE virtual unsigned int getNumParentBox()=0;
+
+    ///constructor
+    QQModel(const Instance *i=0,QObject* parent = 0);
+    ///copy constructor
+    QQModel(const QQModel& o) ;
+    ///destructor
+    virtual ~QQModel()  ;
+
+    virtual Q_INVOKABLE  QQuickItem *connect2View(QQuickItem*i);
+    ///set properties for the contextual menu
+    void link2ContextMenu(QQuickItem* );
+    ///generate the disambiguation menu for a parameter of type paramtype
+    ///inv indicate weither if s 4  "metanodes" add or removal purpose
+    void generateDisambiguationPossibilities(pmoc::MetaQQuickClass*paramtype,SetPossibilities& posses,bool inv=false);
+    void generatePossibilities( SetPossibilities& posses);
+
+    const Actions& getActions()const;
+    const QStringList getDoActions()const
+    {
+        QStringList l;
+        for(Actions::const_iterator it=getActions().begin(); it!=getActions().end(); it++)
+            l.append((*it).getDoMethod());
+        return l;
+    }
+    const QStringList getUndoActions()const
+    {
+        QStringList l;
+        for(Actions::const_iterator it=getActions().begin(); it!=getActions().end(); it++)
+            l.append((*it).getUndoMethod());
+        return l;
+    }
+    const QStringList getgetActions()const
+    {
+        QStringList l;
+        for(Actions::const_iterator it=getActions().begin(); it!=getActions().end(); it++)
+            l.append((*it).getGetMethod());
+        return l;
+    }
+
+public slots:
+///check for instance unicity (kill view if same QQmodel has same instance as this)
+    //virtual void checkInstance(QQModel*);
+    QString getUniqueID()const;
+    virtual void updateModel()=0;
+signals:
+    void modelChanged();
+    void doActionsChanged(QStringList);
+    void undoActionsChanged(QStringList);
+    void getActionsChanged(QStringList);
+
+};
+//dont know how to help user get back his original type
+//perhaps
+/*template <class T,const char * s> class BACK{
+
+	T * operator () (const Instance & i){
+		if(i.model->id()==std::string(s))
+			return reinterpret_cast<T>(i.ptr);
+		else 	return 0;
+
+	}
+}; need runtime mem so prefer macro:)*/
+
 class METAQQUICKINTERFACE_PMOC_EXPORT MetaQQuickClass // :public QObject
 {
-   // Q_OBJECT
+    // Q_OBJECT
 
-friend QQModel;
-    friend UIEditor;///TODO make createQQModel public
+  //  friend class QQModel;
+//    friend class UIEditor;///TODO make createQQModel public
     QQmlComponent *contextMenuComponent;///contextmenu cache
 protected:
     std::set<Action> _actions;
@@ -140,13 +251,16 @@ protected:
 ///Hierachic QuickItem (testing)
 
 ///init stuffing
-void init();
+    void init();
 public:
-   inline MetaQQuickClass() {init();}
-   inline MetaQQuickClass(ID n)
+    inline MetaQQuickClass()
     {
-       init();
-       _id = n;
+        init();
+    }
+    inline MetaQQuickClass(ID n)
+    {
+        init();
+        _id = n;
     }
     ~MetaQQuickClass();
 
@@ -171,32 +285,32 @@ public:
         return false;
     }
     //Q_INVOKABLE int getNumParent()const{return _parents.size();}
-  //  Q_INVOKABLE MetaQQuickClass* getParent(unsigned int i)const{std::set<MetaQQuickClass*>::iterator it=_parents.begin();for(int x=0;x<i;x++)it++; return *(it);}
+    //  Q_INVOKABLE MetaQQuickClass* getParent(unsigned int i)const{std::set<MetaQQuickClass*>::iterator it=_parents.begin();for(int x=0;x<i;x++)it++; return *(it);}
 
 
-    virtual QQModel* createQQModel(Instance*i)=0;
+    virtual QQModel* createQQModel(const Instance*i)=0;
     virtual Instance createInstance()=0;
-    inline QQModel *getQQModel4QQuickView(Instance win)
+    inline QQModel *getQQModel4QQuickView(const Instance &win)
     {
         return _classqmodelregister[win];
     }
-    inline QQuickItem* getQQuickItem4QQuickView(Instance win)
+    inline QQuickItem* getQQuickItem4QQuickView(const Instance &win)
     {
         return _classviewregister[win];
     }
 
-    inline void setQQModel4QQuickView(Instance i, QQModel*m)
+    inline void setQQModel4QQuickView(const Instance& i, QQModel*m)
     {
         _classqmodelregister[i]=m;
     }
-    inline void setQQuickItem4QQuickView(Instance i,QQuickItem*m)
+    inline void setQQuickItem4QQuickView(const Instance &i,QQuickItem*m)
     {
         _classviewregister[i]=m;
     }
 ///create a QML Component for Instance I
 ///win is the Context owner
 ///parent is the parent component (if undef set it as the win->rootObject())
-    QQuickItem * getGuiComponent(QQuickView *win,Instance &i,QQuickItem*parent=0, std::string relationname="");
+    QQuickItem * getGuiComponent(QQuickView *win,const Instance &i,QQuickItem*parent=0, std::string relationname="");
     QQuickItem * getGuiComponent(QQuickView *win,QQModel *qmod,QQuickItem*parent=0, std::string relationname="");
     ///return string containing required QML imports statements
 
@@ -288,81 +402,9 @@ public :
 
 
 };
-class METAQQUICKINTERFACE_PMOC_EXPORT QQModel:public QObject
-{Q_OBJECT
-Q_PROPERTY(QStringList undoActions READ getUndoActions NOTIFY undoActionsChanged)
-Q_PROPERTY(QStringList doActions READ getDoActions NOTIFY doActionsChanged)
-Q_PROPERTY(QStringList getActions READ getgetActions NOTIFY getActionsChanged)
-
-friend class MetaQQuickClass;
-public:
-    Q_INVOKABLE QQuickItem *getQuickItem()
-    {
-        return _view;
-    }
-    Q_INVOKABLE QQModel *getthis()
-    {
-        return this;
-    }
-    Q_INVOKABLE virtual QQModel * getParentBox(int i){return _parentboxes[i<getNumParentBox()-1?i:getNumParentBox()-1];}
-    Q_INVOKABLE virtual unsigned int getNumParentBox()=0;
-
-    ///managed :tag instances whose lifecycle is managed by CPPContext
-    //carefull to the crash if you operate on a managed=false after its deletion
-    //	QQInstance(MetaQQuickClass*c, void*m, bool managed = true) :ptr(m), model(c), ismanaged(managed){};
-//QQuickView*qmlcontextview,
-
-    QQModel(Instance *i=0,QObject* parent = 0);
-    QQModel(const QQModel& o) ;
-    virtual ~QQModel()  ;
-    QQuickItem *_view;
-QQModel * _parentboxes[PMOC_MAXINHERITANCECLASS]; ///parent boxes for upcast
-
-    ///deforming mirrors for this instance
-    ///use to retrieve meta after throwing it in Qt meta model via signals
-    Instance _instance;
-
-   Q_INVOKABLE  QQuickItem *connect2View(QQuickItem*i);
-    ///set properties for the contextual menu
-     void link2ContextMenu(QQuickItem* );
-  ///generate the disambiguation menu for a parameter of type paramtype
-    ///inv indicate weither if s 4  "metanodes" add or removal purpose
-     void generateDisambiguationPossibilities(pmoc::MetaQQuickClass*paramtype,SetPossibilities& posses,bool inv=false);
-     void generatePossibilities( SetPossibilities& posses);
-
-    const Actions& getActions()const;
-    const QStringList getDoActions()const{QStringList l;for(Actions::const_iterator it=getActions().begin();it!=getActions().end();it++)
-    l.append((*it).getDoMethod());return l;}
-   const QStringList getUndoActions()const{QStringList l;for(Actions::const_iterator it=getActions().begin();it!=getActions().end();it++)
-    l.append((*it).getUndoMethod());return l;}
-       const QStringList getgetActions()const{QStringList l;for(Actions::const_iterator it=getActions().begin();it!=getActions().end();it++)
-    l.append((*it).getGetMethod());return l;}
-
-public slots:
-///check for instance unicity (kill view if same QQmodel has same instance as this)
-    //virtual void checkInstance(QQModel*);
-    QString getUniqueID()const;
-    virtual void updateModel()=0;
-signals:
-    void modelChanged();
-    void doActionsChanged(QStringList);
-    void undoActionsChanged(QStringList);
-    void getActionsChanged(QStringList);
-
-};
-//dont know how to help user get back his original type
-//perhaps
-/*template <class T,const char * s> class BACK{
-
-	T * operator () (const Instance & i){
-		if(i.model->id()==std::string(s))
-			return reinterpret_cast<T>(i.ptr);
-		else 	return 0;
-
-	}
-}; need runtime mem so prefer macro:)*/
 
 }
+
 QML_DECLARE_INTERFACE(pmoc::QQModel)
 //Q_DECLARE_METATYPE(pmoc::QQModel)
 
