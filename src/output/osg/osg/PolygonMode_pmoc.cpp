@@ -1,5 +1,6 @@
 #include <osg/PolygonMode>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,26 +8,38 @@
 #include <customCode/osg/PolygonMode_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_PolygonMode::getFrontAndBack()const{
+ bool  osg::QReflect_PolygonMode:: getFrontAndBack()const{
+//params checking
 return _model->getFrontAndBack();
 
 }
- int  osg::QReflect_PolygonMode::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_PolygonMode:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PolygonMode::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_PolygonMode::setMode(osg::QReflect_PolygonMode::Face p0 ,osg::QReflect_PolygonMode::Mode p1){
+ void osg::QReflect_PolygonMode::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PolygonMode::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_PolygonMode::setMode(osg::QReflect_PolygonMode::Face  p0 ,osg::QReflect_PolygonMode::Mode  p1){
+//params checking
  _model->setMode(static_cast<osg::PolygonMode::Face>(p0) ,static_cast<osg::PolygonMode::Mode>(p1));
 
 }
-osg::QReflect_PolygonMode::Mode  osg::QReflect_PolygonMode::getMode(osg::QReflect_PolygonMode::Face p0)const{
+osg::QReflect_PolygonMode::Mode  osg::QReflect_PolygonMode::getMode(osg::QReflect_PolygonMode::Face  p0)const{
+//params checking
 osg::QReflect_PolygonMode::Mode ret=static_cast<osg::QReflect_PolygonMode::Mode>( _model->getMode(static_cast<osg::PolygonMode::Face>(p0)));return  ret;
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_PolygonMode::QReflect_PolygonMode(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_PolygonMode::QReflect_PolygonMode(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::PolygonMode*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -54,9 +67,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_PolygonMode::MetaQReflect_PolygonMode():MetaQQuickClass( "osg::PolygonMode"){
-_typeid=&typeid(osg::PolygonMode );           qRegisterMetaType<QMLPolygonMode>();
-qmlRegisterType<QReflect_PolygonMode>("pmoc.osg",1,0,"QReflect_PolygonMode");
-           qmlRegisterType<QMLPolygonMode>("pmoc.osg",1,0,"QMLPolygonMode");
+_typeid=&typeid(osg::PolygonMode );
+           qRegisterMetaType<osg::QMLPolygonMode>();
+           qRegisterMetaType<osg::QMLPolygonMode*>("pmoc.osg.QMLPolygonMode");
+qmlRegisterType<osg::QReflect_PolygonMode>("pmoc.osg",1,0,"QReflect_PolygonMode");
+           qmlRegisterType<osg::QMLPolygonMode>("pmoc.osg",1,0,"QMLPolygonMode");
 };
 const std::string osg::MetaQReflect_PolygonMode::Imports() const{
  return std::string("");
@@ -65,7 +80,7 @@ const std::string osg::MetaQReflect_PolygonMode::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_PolygonMode::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_PolygonMode::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_PolygonMode::createQQModel(Instance*i){ //return new MetaQReflect_PolygonMode_QModel(i);}
+QQModel* osg::MetaQReflect_PolygonMode::createQQModel(const Instance*i){ //return new MetaQReflect_PolygonMode_QModel(i);}
 QMLPolygonMode *ret =new QMLPolygonMode(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -87,5 +102,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_PolygonMode_pmoc.cpp"
 #endif
+
+
 
 

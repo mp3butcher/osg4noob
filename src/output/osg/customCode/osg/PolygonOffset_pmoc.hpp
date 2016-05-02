@@ -13,7 +13,7 @@ class  QMLPolygonOffset: public QReflect_PolygonOffset
 {
 Q_OBJECT
 public:
-QMLPolygonOffset(pmoc::Instance *i=0,QObject* parent=0);
+QMLPolygonOffset(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

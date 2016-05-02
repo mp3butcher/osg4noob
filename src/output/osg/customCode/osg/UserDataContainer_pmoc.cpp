@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/UserDataContainer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDefaultUserDataContainer::QMLDefaultUserDataContainer(pmoc::Instance *i,QObject* parent):QReflect_DefaultUserDataContainer(i,parent){
+osg::QMLDefaultUserDataContainer::QMLDefaultUserDataContainer(const pmoc::Instance *i,QObject* parent):QReflect_DefaultUserDataContainer(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDefaultUserDataContainer::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLDefaultUserDataContainer::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/UserDataContainer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLUserDataContainer::QMLUserDataContainer(pmoc::Instance *i,QObject* parent):QReflect_UserDataContainer(i,parent){
+osg::QMLUserDataContainer::QMLUserDataContainer(const pmoc::Instance *i,QObject* parent):QReflect_UserDataContainer(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLUserDataContainer::connect2View(QQuickItem*i){

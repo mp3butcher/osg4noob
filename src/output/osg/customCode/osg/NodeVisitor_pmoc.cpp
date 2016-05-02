@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLNodeAcceptOp::QMLNodeAcceptOp(pmoc::Instance *i,QObject* parent):QReflect_NodeAcceptOp(i,parent){
+osg::QMLNodeAcceptOp::QMLNodeAcceptOp(const pmoc::Instance *i,QObject* parent):QReflect_NodeAcceptOp(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLNodeAcceptOp::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLNodeAcceptOp::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLNodeVisitor::QMLNodeVisitor(pmoc::Instance *i,QObject* parent):QReflect_NodeVisitor(i,parent){
+osg::QMLNodeVisitor::QMLNodeVisitor(const pmoc::Instance *i,QObject* parent):QReflect_NodeVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLNodeVisitor::connect2View(QQuickItem*i){

@@ -12,7 +12,7 @@ class  QMLApplicationUsageProxy: public QReflect_ApplicationUsageProxy
 {
 Q_OBJECT
 public:
-QMLApplicationUsageProxy(pmoc::Instance *i=0,QObject* parent=0);
+QMLApplicationUsageProxy(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -33,7 +33,7 @@ class  QMLApplicationUsage: public QReflect_ApplicationUsage
 {
 Q_OBJECT
 public:
-QMLApplicationUsage(pmoc::Instance *i=0,QObject* parent=0);
+QMLApplicationUsage(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

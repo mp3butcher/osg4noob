@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/Counter_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLCounter::QMLCounter(pmoc::Instance *i,QObject* parent):QReflect_Counter(i,parent){
+osgParticle::QMLCounter::QMLCounter(const pmoc::Instance *i,QObject* parent):QReflect_Counter(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLCounter::connect2View(QQuickItem*i){

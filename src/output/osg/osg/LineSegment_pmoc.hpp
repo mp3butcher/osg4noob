@@ -1,5 +1,7 @@
 #ifndef osg_LineSegment_pmocHPP
 #define  osg_LineSegment_pmocHPP 1
+
+
 #include <osg/LineSegment_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -28,7 +30,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 LineSegment * _model;
-QReflect_LineSegment(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_LineSegment(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LineSegment( );
 //LineSegment
 // LineSegment & operator=(const  LineSegment &);
@@ -43,11 +45,11 @@ virtual ~QReflect_LineSegment( );
 // void  set(const  vec_type & ,const  vec_type &);
 //const  vec_type & end();
 //const  vec_type & start();
-Q_INVOKABLE  bool  intersect(osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * , double &);
-Q_INVOKABLE  bool  intersect(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * , float &);
+Q_INVOKABLE  bool  intersect(osg::QReflect_Vec3d *v1 ,osg::QReflect_Vec3d *v2 ,osg::QReflect_Vec3d *v3 , double &ratioFromStartToEnd);
+Q_INVOKABLE  bool  intersect(osg::QReflect_Vec3f *v1 ,osg::QReflect_Vec3f *v2 ,osg::QReflect_Vec3f *v3 , float &ratioFromStartToEnd);
 Q_INVOKABLE  bool  valid()const;
-Q_INVOKABLE void  mult(osg::QReflect_LineSegment * ,osg::QReflect_Matrixd *);
-Q_INVOKABLE void  mult(osg::QReflect_Matrixd * ,osg::QReflect_LineSegment *);
+Q_INVOKABLE void  mult(osg::QReflect_LineSegment *seg ,osg::QReflect_Matrixd *m);
+Q_INVOKABLE void  mult(osg::QReflect_Matrixd *m ,osg::QReflect_LineSegment *seg);
 public slots:
 virtual void updateModel();
  
@@ -60,7 +62,7 @@ public:
 MetaQReflect_LineSegment();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -71,6 +73,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_LineSegment_pmocHPP
 

@@ -5,6 +5,8 @@
 
 #include <osg/MatrixTransform_pmoc.hpp>
 #include <QObject>
+
+#include <QColor>
 #include <osg/MatrixTransform>
 
 #include <osg/Transform_pmoc.hpp>
@@ -35,7 +37,7 @@ public:
     QColor getrotation()const;
 
 public:
-QMLMatrixTransform(pmoc::Instance *i=0,QObject* parent=0);
+QMLMatrixTransform(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

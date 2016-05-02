@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/Emitter_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLEmitter::QMLEmitter(pmoc::Instance *i,QObject* parent):QReflect_Emitter(i,parent){
+osgParticle::QMLEmitter::QMLEmitter(const pmoc::Instance *i,QObject* parent):QReflect_Emitter(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLEmitter::connect2View(QQuickItem*i){

@@ -12,7 +12,7 @@ class  QMLDeleteHandler: public QReflect_DeleteHandler
 {
 Q_OBJECT
 public:
-QMLDeleteHandler(pmoc::Instance *i=0,QObject* parent=0);
+QMLDeleteHandler(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -1,6 +1,7 @@
 #ifndef osg_ObserverNodePath_pmocHPP
 #define  osg_ObserverNodePath_pmocHPP 1
 
+
 #include <osg/ObserverNodePath_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -18,7 +19,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 ObserverNodePath * _model;
-QReflect_ObserverNodePath(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ObserverNodePath(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ObserverNodePath( );
 //ObserverNodePath
 // ObserverNodePath & operator=(const  ObserverNodePath &);
@@ -28,7 +29,7 @@ virtual ~QReflect_ObserverNodePath( );
 // void  setNodePath(const  osg::RefNodePath &);
 Q_INVOKABLE  bool  empty()const;
 Q_INVOKABLE void  clearNodePath();
-Q_INVOKABLE void  setNodePathTo(osg::QReflect_Node *);
+Q_INVOKABLE void  setNodePathTo(osg::QReflect_Node *node);
 public slots:
 virtual void updateModel();
  
@@ -41,7 +42,7 @@ public:
 MetaQReflect_ObserverNodePath();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -52,6 +53,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ObserverNodePath_pmocHPP
 

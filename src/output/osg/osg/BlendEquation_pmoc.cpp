@@ -1,5 +1,6 @@
 #include <osg/BlendEquation>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,38 +8,56 @@
 #include <customCode/osg/BlendEquation_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_BlendEquation::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_BlendEquation:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_BlendEquation::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_BlendEquation::setEquation(osg::QReflect_BlendEquation::Equation p0){
+ void osg::QReflect_BlendEquation::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_BlendEquation::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_BlendEquation::setEquation(osg::QReflect_BlendEquation::Equation  p0){
+//params checking
  _model->setEquation(static_cast<osg::BlendEquation::Equation>(p0));
+emit EquationChanged();
 
 }
- void osg::QReflect_BlendEquation::setEquationAlpha(osg::QReflect_BlendEquation::Equation p0){
+ void osg::QReflect_BlendEquation::setEquationAlpha(osg::QReflect_BlendEquation::Equation  p0){
+//params checking
  _model->setEquationAlpha(static_cast<osg::BlendEquation::Equation>(p0));
+emit EquationAlphaChanged();
 
 }
- void osg::QReflect_BlendEquation::setEquationRGB(osg::QReflect_BlendEquation::Equation p0){
+ void osg::QReflect_BlendEquation::setEquationRGB(osg::QReflect_BlendEquation::Equation  p0){
+//params checking
  _model->setEquationRGB(static_cast<osg::BlendEquation::Equation>(p0));
+emit EquationRGBChanged();
 
 }
 osg::QReflect_BlendEquation::Equation  osg::QReflect_BlendEquation::getEquation()const{
+//params checking
 osg::QReflect_BlendEquation::Equation ret=static_cast<osg::QReflect_BlendEquation::Equation>( _model->getEquation());return  ret;
 
 }
 osg::QReflect_BlendEquation::Equation  osg::QReflect_BlendEquation::getEquationAlpha()const{
+//params checking
 osg::QReflect_BlendEquation::Equation ret=static_cast<osg::QReflect_BlendEquation::Equation>( _model->getEquationAlpha());return  ret;
 
 }
 osg::QReflect_BlendEquation::Equation  osg::QReflect_BlendEquation::getEquationRGB()const{
+//params checking
 osg::QReflect_BlendEquation::Equation ret=static_cast<osg::QReflect_BlendEquation::Equation>( _model->getEquationRGB());return  ret;
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_BlendEquation::QReflect_BlendEquation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_BlendEquation::QReflect_BlendEquation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::BlendEquation*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -66,9 +85,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_BlendEquation::MetaQReflect_BlendEquation():MetaQQuickClass( "osg::BlendEquation"){
-_typeid=&typeid(osg::BlendEquation );           qRegisterMetaType<QMLBlendEquation>();
-qmlRegisterType<QReflect_BlendEquation>("pmoc.osg",1,0,"QReflect_BlendEquation");
-           qmlRegisterType<QMLBlendEquation>("pmoc.osg",1,0,"QMLBlendEquation");
+_typeid=&typeid(osg::BlendEquation );
+           qRegisterMetaType<osg::QMLBlendEquation>();
+           qRegisterMetaType<osg::QMLBlendEquation*>("pmoc.osg.QMLBlendEquation");
+qmlRegisterType<osg::QReflect_BlendEquation>("pmoc.osg",1,0,"QReflect_BlendEquation");
+           qmlRegisterType<osg::QMLBlendEquation>("pmoc.osg",1,0,"QMLBlendEquation");
 };
 const std::string osg::MetaQReflect_BlendEquation::Imports() const{
  return std::string("");
@@ -77,7 +98,7 @@ const std::string osg::MetaQReflect_BlendEquation::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_BlendEquation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_BlendEquation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_BlendEquation::createQQModel(Instance*i){ //return new MetaQReflect_BlendEquation_QModel(i);}
+QQModel* osg::MetaQReflect_BlendEquation::createQQModel(const Instance*i){ //return new MetaQReflect_BlendEquation_QModel(i);}
 QMLBlendEquation *ret =new QMLBlendEquation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -99,5 +120,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_BlendEquation_pmoc.cpp"
 #endif
+
+
 
 

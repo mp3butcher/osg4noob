@@ -42,13 +42,13 @@ FocusScope {
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -56,7 +56,7 @@ FocusScope {
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
@@ -73,7 +73,7 @@ FocusScope {
                 else {
                     console.log("selected")
                     main.focus = true
-                    globalEditor.setOperand(main.qmodel)
+                    pmocjs.setOperand(main.qmodel)
                 }
             }
         /////////////////////////////////END CLASSIC//////////////////////////////////////////////

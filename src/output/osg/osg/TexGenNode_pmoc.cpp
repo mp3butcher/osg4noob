@@ -1,5 +1,6 @@
 #include <osg/TexGenNode>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,36 +8,54 @@
 #include <customCode/osg/TexGenNode_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/TexGen_pmoc.hpp>
-#include <osg/TexGen>
-#include <osg/TexGen_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_TexGenNode::setReferenceFrame(osg::QReflect_TexGenNode::ReferenceFrame p0){
- _model->setReferenceFrame(static_cast<osg::TexGenNode::ReferenceFrame>(p0));
+ unsigned int  osg::QReflect_TexGenNode:: getTextureUnit()const{
+//params checking
+return _model->getTextureUnit();
 
 }
- void osg::QReflect_TexGenNode::setThreadSafeRefUnref( bool p0){
+ void osg::QReflect_TexGenNode::setReferenceFrame(osg::QReflect_TexGenNode::ReferenceFrame  p0){
+//params checking
+ _model->setReferenceFrame(static_cast<osg::TexGenNode::ReferenceFrame>(p0));
+emit ReferenceFrameChanged();
+
+}
+ void osg::QReflect_TexGenNode::setTexGen(osg::QReflect_TexGen  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TexGenNode::setTexGen : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setTexGen(p0->_model);
+emit TexGenChanged();
+
+}
+ void osg::QReflect_TexGenNode::setTextureUnit( unsigned int  p0){
+//params checking
+ _model->setTextureUnit(p0);
+emit TextureUnitChanged();
+
+}
+ void osg::QReflect_TexGenNode::setThreadSafeRefUnref( bool  p0){
+//params checking
  _model->setThreadSafeRefUnref(p0);
 
 }
-const unsigned int osg::QReflect_TexGenNode::getTextureUnit()const{return _model->getTextureUnit();}
-osg::QReflect_TexGen * osg::QReflect_TexGenNode::getTexGen()const{
+osg::QReflect_TexGen*osg::QReflect_TexGenNode::getTexGen()const{
+//params checking
+PMOCSAFEADDOBJECT(*_model->getTexGen(),inst);
+return inst.isValid()?((osg::QReflect_TexGen * )inst.model->createQQModel(&inst)):NULL;
+}
+osg::QReflect_TexGen*osg::QReflect_TexGenNode::getTexGen(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getTexGen(),inst);
 return inst.isValid()?((osg::QReflect_TexGen * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_TexGenNode::ReferenceFrame  osg::QReflect_TexGenNode::getReferenceFrame()const{
+//params checking
 osg::QReflect_TexGenNode::ReferenceFrame ret=static_cast<osg::QReflect_TexGenNode::ReferenceFrame>( _model->getReferenceFrame());return  ret;
 
 }
-void  osg::QReflect_TexGenNode::setTextureUnit(const unsigned int &par){_model->setTextureUnit(par);emit TextureUnitChanged(par);}
-void osg::QReflect_TexGenNode::pmoc_reverse_setTexGen( osg::QReflect_TexGen *par){_model->setTexGen(NULL);
-emit TexGenChanged(NULL);
-}
-void osg::QReflect_TexGenNode::setTexGen( osg::QReflect_TexGen *par){_model->setTexGen(par->_model);
-emit TexGenChanged(par);
-}
 
 ///DefaultConstructor////////////////
-osg::QReflect_TexGenNode::QReflect_TexGenNode(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TexGenNode::QReflect_TexGenNode(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TexGenNode*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -64,10 +83,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TexGenNode::MetaQReflect_TexGenNode():MetaQQuickClass( "osg::TexGenNode"){
-_typeid=&typeid(osg::TexGenNode );           qRegisterMetaType<QMLTexGenNode>();
-qmlRegisterType<QReflect_TexGenNode>("pmoc.osg",1,0,"QReflect_TexGenNode");
-           qmlRegisterType<QMLTexGenNode>("pmoc.osg",1,0,"QMLTexGenNode");
-       PMOCACTION("getTexGen","setTexGen","unsetTexGen");
+_typeid=&typeid(osg::TexGenNode );
+           qRegisterMetaType<osg::QMLTexGenNode>();
+           qRegisterMetaType<osg::QMLTexGenNode*>("pmoc.osg.QMLTexGenNode");
+qmlRegisterType<osg::QReflect_TexGenNode>("pmoc.osg",1,0,"QReflect_TexGenNode");
+           qmlRegisterType<osg::QMLTexGenNode>("pmoc.osg",1,0,"QMLTexGenNode");
 };
 const std::string osg::MetaQReflect_TexGenNode::Imports() const{
  return std::string("");
@@ -76,7 +96,7 @@ const std::string osg::MetaQReflect_TexGenNode::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TexGenNode::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TexGenNode::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TexGenNode::createQQModel(Instance*i){ //return new MetaQReflect_TexGenNode_QModel(i);}
+QQModel* osg::MetaQReflect_TexGenNode::createQQModel(const Instance*i){ //return new MetaQReflect_TexGenNode_QModel(i);}
 QMLTexGenNode *ret =new QMLTexGenNode(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -98,6 +118,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_TexGenNode_pmoc.cpp"
 #endif
+
 
 
 

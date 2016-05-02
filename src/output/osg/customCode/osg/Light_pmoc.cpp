@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Light_pmoc.hpp>
 using namespace pmoc;
-osg::QMLLight::QMLLight(pmoc::Instance *i,QObject* parent):QReflect_Light(i,parent)
+osg::QMLLight::QMLLight(const pmoc::Instance *i,QObject* parent):QReflect_Light(i,parent)
 {
 //custom initializations
 }

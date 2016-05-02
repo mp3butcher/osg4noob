@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FrameStamp_pmoc.hpp>
 using namespace pmoc;
-osg::QMLFrameStamp::QMLFrameStamp(pmoc::Instance *i,QObject* parent):QReflect_FrameStamp(i,parent){
+osg::QMLFrameStamp::QMLFrameStamp(const pmoc::Instance *i,QObject* parent):QReflect_FrameStamp(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLFrameStamp::connect2View(QQuickItem*i){

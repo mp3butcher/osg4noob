@@ -13,7 +13,7 @@ class  QMLLineSegment: public QReflect_LineSegment
 {
 Q_OBJECT
 public:
-QMLLineSegment(pmoc::Instance *i=0,QObject* parent=0);
+QMLLineSegment(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

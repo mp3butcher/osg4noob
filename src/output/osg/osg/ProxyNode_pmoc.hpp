@@ -1,6 +1,7 @@
 #ifndef osg_ProxyNode_pmocHPP
 #define  osg_ProxyNode_pmocHPP 1
 
+
 #include <osg/ProxyNode_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -41,7 +42,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ProxyNode * _model;
-QReflect_ProxyNode(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ProxyNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ProxyNode( );
 //ProxyNode
 //virtual  BoundingSphere  computeBound();
@@ -51,26 +52,33 @@ virtual ~QReflect_ProxyNode( );
 // void  setRadius( value_type );
 //const  osg::ref_ptr<osg::Referenced> & getDatabaseRequest( unsigned int );
 //const  vec_type & getCenter();
-Q_INVOKABLE  bool  addChild(osg::QReflect_Node * ,const  QString &);
-Q_INVOKABLE  bool  addChild(osg::QReflect_Node *);
-Q_INVOKABLE  bool  removeChildren( unsigned int  , unsigned int );
-Q_INVOKABLE  osg::QReflect_Referenced * getDatabaseOptions()const;
+Q_INVOKABLE  bool  addChild(osg::QReflect_Node *child ,const  QString &filename);
+Q_INVOKABLE  bool  addChild(osg::QReflect_Node *child);
+Q_INVOKABLE  bool  removeChildren( unsigned int pos , unsigned int numChildrenToRemove);
 Q_INVOKABLE  unsigned int  getNumFileNames()const;
-Q_INVOKABLE QString  getFileName( unsigned int )const;
-Q_INVOKABLE const QString  getDatabasePath()const;
+Q_INVOKABLE QString  getDatabasePath()const;
+Q_INVOKABLE QString  getFileName( unsigned int childNo)const;
 Q_INVOKABLE osg::QReflect_ProxyNode::CenterMode  getCenterMode()const;
 Q_INVOKABLE osg::QReflect_ProxyNode::LoadingExternalReferenceMode  getLoadingExternalReferenceMode()const;
-Q_INVOKABLE void  setCenterMode(osg::QReflect_ProxyNode::CenterMode );
-Q_INVOKABLE void  setFileName( unsigned int  ,const  QString &);
-Q_INVOKABLE void  setLoadingExternalReferenceMode(osg::QReflect_ProxyNode::LoadingExternalReferenceMode );
-Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
-Q_INVOKABLE void pmoc_reverse_setDatabaseOptions( osg::QReflect_Referenced *par=0);
-Q_INVOKABLE void setDatabaseOptions( osg::QReflect_Referenced *par);
-Q_INVOKABLE void setDatabasePath(const QString &);
-Q_PROPERTY(QString DatabasePath  READ getDatabasePath WRITE setDatabasePath NOTIFY DatabasePathChanged)
-signals: void DatabaseOptionsChanged(const osg::QReflect_Referenced*);
+Q_INVOKABLE osg::QReflect_Referenced*  getDatabaseOptions();
+Q_INVOKABLE osg::QReflect_Referenced*  getDatabaseOptions()const;
+Q_INVOKABLE void  setCenterMode(osg::QReflect_ProxyNode::CenterMode mode);
+Q_INVOKABLE void  setDatabaseOptions(osg::QReflect_Referenced *options);
+Q_INVOKABLE void  setDatabasePath(const  QString &path);
+Q_INVOKABLE void  setFileName( unsigned int childNo ,const  QString &filename);
+Q_INVOKABLE void  setLoadingExternalReferenceMode(osg::QReflect_ProxyNode::LoadingExternalReferenceMode mode);
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *nv);
+Q_PROPERTY(QString  DatabasePath  READ getDatabasePath WRITE setDatabasePath NOTIFY DatabasePathChanged)
+Q_PROPERTY(osg::QReflect_ProxyNode::CenterMode  CenterMode  READ getCenterMode WRITE setCenterMode NOTIFY CenterModeChanged)
+Q_PROPERTY(osg::QReflect_ProxyNode::LoadingExternalReferenceMode  LoadingExternalReferenceMode  READ getLoadingExternalReferenceMode WRITE setLoadingExternalReferenceMode NOTIFY LoadingExternalReferenceModeChanged)
+Q_PROPERTY(osg::QReflect_Referenced * DatabaseOptions  READ getDatabaseOptions WRITE setDatabaseOptions NOTIFY DatabaseOptionsChanged)
+signals: void CenterModeChanged();
 public:
-signals: void DatabasePathChanged(const QString&);
+signals: void DatabaseOptionsChanged();
+public:
+signals: void DatabasePathChanged();
+public:
+signals: void LoadingExternalReferenceModeChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -84,7 +92,7 @@ public:
 MetaQReflect_ProxyNode();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -95,6 +103,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ProxyNode_pmocHPP
 

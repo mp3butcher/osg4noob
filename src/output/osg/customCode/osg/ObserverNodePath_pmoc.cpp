@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ObserverNodePath_pmoc.hpp>
 using namespace pmoc;
-osg::QMLObserverNodePath::QMLObserverNodePath(pmoc::Instance *i,QObject* parent):QReflect_ObserverNodePath(i,parent){
+osg::QMLObserverNodePath::QMLObserverNodePath(const pmoc::Instance *i,QObject* parent):QReflect_ObserverNodePath(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLObserverNodePath::connect2View(QQuickItem*i){

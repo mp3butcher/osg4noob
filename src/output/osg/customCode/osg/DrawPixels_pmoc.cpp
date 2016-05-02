@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/DrawPixels_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawPixels::QMLDrawPixels(pmoc::Instance *i,QObject* parent):QReflect_DrawPixels(i,parent){
+osg::QMLDrawPixels::QMLDrawPixels(const pmoc::Instance *i,QObject* parent):QReflect_DrawPixels(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawPixels::connect2View(QQuickItem*i){

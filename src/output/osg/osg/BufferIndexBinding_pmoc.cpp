@@ -1,5 +1,6 @@
 #include <osg/BufferIndexBinding>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,13 +9,15 @@
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_AtomicCounterBufferBinding::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_AtomicCounterBufferBinding:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_AtomicCounterBufferBinding::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_AtomicCounterBufferBinding::QReflect_AtomicCounterBufferBinding(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_AtomicCounterBufferBinding::QReflect_AtomicCounterBufferBinding(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::AtomicCounterBufferBinding*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -42,9 +45,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_AtomicCounterBufferBinding::MetaQReflect_AtomicCounterBufferBinding():MetaQQuickClass( "osg::AtomicCounterBufferBinding"){
-_typeid=&typeid(osg::AtomicCounterBufferBinding );           qRegisterMetaType<QMLAtomicCounterBufferBinding>();
-qmlRegisterType<QReflect_AtomicCounterBufferBinding>("pmoc.osg",1,0,"QReflect_AtomicCounterBufferBinding");
-           qmlRegisterType<QMLAtomicCounterBufferBinding>("pmoc.osg",1,0,"QMLAtomicCounterBufferBinding");
+_typeid=&typeid(osg::AtomicCounterBufferBinding );
+           qRegisterMetaType<osg::QMLAtomicCounterBufferBinding>();
+           qRegisterMetaType<osg::QMLAtomicCounterBufferBinding*>("pmoc.osg.QMLAtomicCounterBufferBinding");
+qmlRegisterType<osg::QReflect_AtomicCounterBufferBinding>("pmoc.osg",1,0,"QReflect_AtomicCounterBufferBinding");
+           qmlRegisterType<osg::QMLAtomicCounterBufferBinding>("pmoc.osg",1,0,"QMLAtomicCounterBufferBinding");
 };
 const std::string osg::MetaQReflect_AtomicCounterBufferBinding::Imports() const{
  return std::string("");
@@ -53,7 +58,7 @@ const std::string osg::MetaQReflect_AtomicCounterBufferBinding::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_AtomicCounterBufferBinding::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_AtomicCounterBufferBinding::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_AtomicCounterBufferBinding::createQQModel(Instance*i){ //return new MetaQReflect_AtomicCounterBufferBinding_QModel(i);}
+QQModel* osg::MetaQReflect_AtomicCounterBufferBinding::createQQModel(const Instance*i){ //return new MetaQReflect_AtomicCounterBufferBinding_QModel(i);}
 QMLAtomicCounterBufferBinding *ret =new QMLAtomicCounterBufferBinding(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -82,46 +87,61 @@ return ret;}
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/BufferObject_pmoc.hpp>
-#include <osg/BufferObject>
-#include <osg/BufferObject_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_BufferIndexBinding::getTarget()const{
+ GLenum  osg::QReflect_BufferIndexBinding:: getTarget()const{
+//params checking
 return _model->getTarget();
 
 }
- GLuint  osg::QReflect_BufferIndexBinding::getIndex()const{
+ GLuint  osg::QReflect_BufferIndexBinding:: getIndex()const{
+//params checking
 return _model->getIndex();
 
 }
- int  osg::QReflect_BufferIndexBinding::getOffset()const{
+ int  osg::QReflect_BufferIndexBinding:: getOffset()const{
+//params checking
 return _model->getOffset();
 
 }
- int  osg::QReflect_BufferIndexBinding::getSize()const{
+ int  osg::QReflect_BufferIndexBinding:: getSize()const{
+//params checking
 return _model->getSize();
 
 }
- void osg::QReflect_BufferIndexBinding::setOffset( int p0){
+ void osg::QReflect_BufferIndexBinding::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_BufferIndexBinding::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_BufferIndexBinding::setBufferObject(osg::QReflect_BufferObject  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_BufferIndexBinding::setBufferObject : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setBufferObject(p0->_model);
+emit BufferObjectChanged();
+
+}
+ void osg::QReflect_BufferIndexBinding::setOffset( int  p0){
+//params checking
  _model->setOffset(p0);
+emit OffsetChanged();
 
 }
- void osg::QReflect_BufferIndexBinding::setSize( int p0){
+ void osg::QReflect_BufferIndexBinding::setSize( int  p0){
+//params checking
  _model->setSize(p0);
+emit SizeChanged();
 
 }
-osg::QReflect_BufferObject * osg::QReflect_BufferIndexBinding::getBufferObject()const{
+osg::QReflect_BufferObject*osg::QReflect_BufferIndexBinding::getBufferObject()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getBufferObject(),inst);
 return inst.isValid()?((osg::QReflect_BufferObject * )inst.model->createQQModel(&inst)):NULL;
 }
-void osg::QReflect_BufferIndexBinding::pmoc_reverse_setBufferObject( osg::QReflect_BufferObject *par){_model->setBufferObject(NULL);
-emit BufferObjectChanged(NULL);
-}
-void osg::QReflect_BufferIndexBinding::setBufferObject( osg::QReflect_BufferObject *par){_model->setBufferObject(par->_model);
-emit BufferObjectChanged(par);
-}
 
 ///DefaultConstructor////////////////
-osg::QReflect_BufferIndexBinding::QReflect_BufferIndexBinding(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_BufferIndexBinding::QReflect_BufferIndexBinding(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::BufferIndexBinding*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -146,10 +166,11 @@ std::cerr<<"osg::BufferIndexBinding is not instanciable"<<std::endl;return Insta
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_BufferIndexBinding::MetaQReflect_BufferIndexBinding():MetaQQuickClass( "osg::BufferIndexBinding"){
-_typeid=&typeid(osg::BufferIndexBinding );           qRegisterMetaType<QMLBufferIndexBinding>();
-qmlRegisterType<QReflect_BufferIndexBinding>("pmoc.osg",1,0,"QReflect_BufferIndexBinding");
-           qmlRegisterType<QMLBufferIndexBinding>("pmoc.osg",1,0,"QMLBufferIndexBinding");
-       PMOCACTION("getBufferObject","setBufferObject","unsetBufferObject");
+_typeid=&typeid(osg::BufferIndexBinding );
+           qRegisterMetaType<osg::QMLBufferIndexBinding>();
+           qRegisterMetaType<osg::QMLBufferIndexBinding*>("pmoc.osg.QMLBufferIndexBinding");
+qmlRegisterType<osg::QReflect_BufferIndexBinding>("pmoc.osg",1,0,"QReflect_BufferIndexBinding");
+           qmlRegisterType<osg::QMLBufferIndexBinding>("pmoc.osg",1,0,"QMLBufferIndexBinding");
 };
 const std::string osg::MetaQReflect_BufferIndexBinding::Imports() const{
  return std::string("");
@@ -158,7 +179,7 @@ const std::string osg::MetaQReflect_BufferIndexBinding::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_BufferIndexBinding::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_BufferIndexBinding::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_BufferIndexBinding::createQQModel(Instance*i){ //return new MetaQReflect_BufferIndexBinding_QModel(i);}
+QQModel* osg::MetaQReflect_BufferIndexBinding::createQQModel(const Instance*i){ //return new MetaQReflect_BufferIndexBinding_QModel(i);}
 QMLBufferIndexBinding *ret =new QMLBufferIndexBinding(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -188,13 +209,15 @@ return ret;}
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_ShaderStorageBufferBinding::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_ShaderStorageBufferBinding:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ShaderStorageBufferBinding::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_ShaderStorageBufferBinding::QReflect_ShaderStorageBufferBinding(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ShaderStorageBufferBinding::QReflect_ShaderStorageBufferBinding(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ShaderStorageBufferBinding*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -222,9 +245,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ShaderStorageBufferBinding::MetaQReflect_ShaderStorageBufferBinding():MetaQQuickClass( "osg::ShaderStorageBufferBinding"){
-_typeid=&typeid(osg::ShaderStorageBufferBinding );           qRegisterMetaType<QMLShaderStorageBufferBinding>();
-qmlRegisterType<QReflect_ShaderStorageBufferBinding>("pmoc.osg",1,0,"QReflect_ShaderStorageBufferBinding");
-           qmlRegisterType<QMLShaderStorageBufferBinding>("pmoc.osg",1,0,"QMLShaderStorageBufferBinding");
+_typeid=&typeid(osg::ShaderStorageBufferBinding );
+           qRegisterMetaType<osg::QMLShaderStorageBufferBinding>();
+           qRegisterMetaType<osg::QMLShaderStorageBufferBinding*>("pmoc.osg.QMLShaderStorageBufferBinding");
+qmlRegisterType<osg::QReflect_ShaderStorageBufferBinding>("pmoc.osg",1,0,"QReflect_ShaderStorageBufferBinding");
+           qmlRegisterType<osg::QMLShaderStorageBufferBinding>("pmoc.osg",1,0,"QMLShaderStorageBufferBinding");
 };
 const std::string osg::MetaQReflect_ShaderStorageBufferBinding::Imports() const{
  return std::string("");
@@ -233,7 +258,7 @@ const std::string osg::MetaQReflect_ShaderStorageBufferBinding::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ShaderStorageBufferBinding::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ShaderStorageBufferBinding::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ShaderStorageBufferBinding::createQQModel(Instance*i){ //return new MetaQReflect_ShaderStorageBufferBinding_QModel(i);}
+QQModel* osg::MetaQReflect_ShaderStorageBufferBinding::createQQModel(const Instance*i){ //return new MetaQReflect_ShaderStorageBufferBinding_QModel(i);}
 QMLShaderStorageBufferBinding *ret =new QMLShaderStorageBufferBinding(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -263,13 +288,15 @@ return ret;}
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_TransformFeedbackBufferBinding::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_TransformFeedbackBufferBinding:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TransformFeedbackBufferBinding::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_TransformFeedbackBufferBinding::QReflect_TransformFeedbackBufferBinding(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TransformFeedbackBufferBinding::QReflect_TransformFeedbackBufferBinding(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TransformFeedbackBufferBinding*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -297,9 +324,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TransformFeedbackBufferBinding::MetaQReflect_TransformFeedbackBufferBinding():MetaQQuickClass( "osg::TransformFeedbackBufferBinding"){
-_typeid=&typeid(osg::TransformFeedbackBufferBinding );           qRegisterMetaType<QMLTransformFeedbackBufferBinding>();
-qmlRegisterType<QReflect_TransformFeedbackBufferBinding>("pmoc.osg",1,0,"QReflect_TransformFeedbackBufferBinding");
-           qmlRegisterType<QMLTransformFeedbackBufferBinding>("pmoc.osg",1,0,"QMLTransformFeedbackBufferBinding");
+_typeid=&typeid(osg::TransformFeedbackBufferBinding );
+           qRegisterMetaType<osg::QMLTransformFeedbackBufferBinding>();
+           qRegisterMetaType<osg::QMLTransformFeedbackBufferBinding*>("pmoc.osg.QMLTransformFeedbackBufferBinding");
+qmlRegisterType<osg::QReflect_TransformFeedbackBufferBinding>("pmoc.osg",1,0,"QReflect_TransformFeedbackBufferBinding");
+           qmlRegisterType<osg::QMLTransformFeedbackBufferBinding>("pmoc.osg",1,0,"QMLTransformFeedbackBufferBinding");
 };
 const std::string osg::MetaQReflect_TransformFeedbackBufferBinding::Imports() const{
  return std::string("");
@@ -308,7 +337,7 @@ const std::string osg::MetaQReflect_TransformFeedbackBufferBinding::Imports() co
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TransformFeedbackBufferBinding::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TransformFeedbackBufferBinding::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TransformFeedbackBufferBinding::createQQModel(Instance*i){ //return new MetaQReflect_TransformFeedbackBufferBinding_QModel(i);}
+QQModel* osg::MetaQReflect_TransformFeedbackBufferBinding::createQQModel(const Instance*i){ //return new MetaQReflect_TransformFeedbackBufferBinding_QModel(i);}
 QMLTransformFeedbackBufferBinding *ret =new QMLTransformFeedbackBufferBinding(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -338,13 +367,15 @@ return ret;}
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_UniformBufferBinding::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_UniformBufferBinding:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_UniformBufferBinding::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_UniformBufferBinding::QReflect_UniformBufferBinding(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_UniformBufferBinding::QReflect_UniformBufferBinding(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::UniformBufferBinding*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -372,9 +403,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_UniformBufferBinding::MetaQReflect_UniformBufferBinding():MetaQQuickClass( "osg::UniformBufferBinding"){
-_typeid=&typeid(osg::UniformBufferBinding );           qRegisterMetaType<QMLUniformBufferBinding>();
-qmlRegisterType<QReflect_UniformBufferBinding>("pmoc.osg",1,0,"QReflect_UniformBufferBinding");
-           qmlRegisterType<QMLUniformBufferBinding>("pmoc.osg",1,0,"QMLUniformBufferBinding");
+_typeid=&typeid(osg::UniformBufferBinding );
+           qRegisterMetaType<osg::QMLUniformBufferBinding>();
+           qRegisterMetaType<osg::QMLUniformBufferBinding*>("pmoc.osg.QMLUniformBufferBinding");
+qmlRegisterType<osg::QReflect_UniformBufferBinding>("pmoc.osg",1,0,"QReflect_UniformBufferBinding");
+           qmlRegisterType<osg::QMLUniformBufferBinding>("pmoc.osg",1,0,"QMLUniformBufferBinding");
 };
 const std::string osg::MetaQReflect_UniformBufferBinding::Imports() const{
  return std::string("");
@@ -383,7 +416,7 @@ const std::string osg::MetaQReflect_UniformBufferBinding::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_UniformBufferBinding::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_UniformBufferBinding::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_UniformBufferBinding::createQQModel(Instance*i){ //return new MetaQReflect_UniformBufferBinding_QModel(i);}
+QQModel* osg::MetaQReflect_UniformBufferBinding::createQQModel(const Instance*i){ //return new MetaQReflect_UniformBufferBinding_QModel(i);}
 QMLUniformBufferBinding *ret =new QMLUniformBufferBinding(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -405,5 +438,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_BufferIndexBinding_pmoc.cpp"
 #endif
+
+
 
 

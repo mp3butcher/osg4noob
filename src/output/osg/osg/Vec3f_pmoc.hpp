@@ -1,5 +1,7 @@
 #ifndef osg_Vec3f_pmocHPP
 #define  osg_Vec3f_pmocHPP 1
+
+
 #include <osg/Vec3f_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -17,19 +19,13 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 Vec3f * _model;
-QReflect_Vec3f(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Vec3f(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Vec3f( );
 //Vec3f
 // Vec3f & operator*=( value_type );
 // Vec3f & operator+=(const  Vec3f &);
 // Vec3f & operator-=(const  Vec3f &);
 // Vec3f & operator/=( value_type );
-// bool  operator!=(const  Vec3f &);
-// bool  operator<(const  Vec3f &);
-// bool  operator==(const  Vec3f &);
-// value_type  operator*(const  Vec3f &);
-// value_type  operator[]( int );
-// value_type & operator[]( int );
 //const  Vec3f  operator*( value_type );
 //const  Vec3f  operator+(const  Vec3f &);
 //const  Vec3f  operator-();
@@ -37,20 +33,26 @@ virtual ~QReflect_Vec3f( );
 //const  Vec3f  operator/( value_type );
 //const  Vec3f  operator^(const  Vec3f &);
 Q_INVOKABLE  bool  isNaN()const;
+Q_INVOKABLE  bool  operator!=(osg::QReflect_Vec3f &v)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_Vec3f &v)const;
+Q_INVOKABLE  bool  operator==(osg::QReflect_Vec3f &v)const;
 Q_INVOKABLE  bool  valid()const;
 Q_INVOKABLE  float  length()const;
 Q_INVOKABLE  float  length2()const;
 Q_INVOKABLE  float  normalize();
+Q_INVOKABLE  float  operator*(osg::QReflect_Vec3f &rhs)const;
+Q_INVOKABLE  float  operator[]( int i)const;
 Q_INVOKABLE  float  x()const;
 Q_INVOKABLE  float  y()const;
 Q_INVOKABLE  float  z()const;
+Q_INVOKABLE  float&  operator[]( int i);
 Q_INVOKABLE  float&  x();
 Q_INVOKABLE  float&  y();
 Q_INVOKABLE  float&  z();
 Q_INVOKABLE  float*  ptr();
 Q_INVOKABLE const  float*  ptr()const;
-Q_INVOKABLE void  set( float  , float  , float );
-Q_INVOKABLE void  set(osg::QReflect_Vec3f *);
+Q_INVOKABLE void  set( float x , float y , float z);
+Q_INVOKABLE void  set(osg::QReflect_Vec3f *rhs);
 public slots:
 virtual void updateModel();
  
@@ -63,7 +65,7 @@ public:
 MetaQReflect_Vec3f();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -74,6 +76,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Vec3f_pmocHPP
 

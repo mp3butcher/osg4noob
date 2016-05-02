@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PolygonOffset_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPolygonOffset::QMLPolygonOffset(pmoc::Instance *i,QObject* parent):QReflect_PolygonOffset(i,parent){
+osg::QMLPolygonOffset::QMLPolygonOffset(const pmoc::Instance *i,QObject* parent):QReflect_PolygonOffset(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPolygonOffset::connect2View(QQuickItem*i){

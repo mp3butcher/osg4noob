@@ -1,6 +1,7 @@
 #ifndef osg_Node_customHPP
 #define  osg_Node_customHPP 1
 
+#include <osg/Switch_pmoc.hpp>
 //includes
 
 #include <QObject>
@@ -30,7 +31,7 @@ public:
 signals:
     void nodeMaskChanged(QString);
 public:
-    QMLNode(pmoc::Instance *i=0,QObject* parent=0);
+    QMLNode(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
     virtual void  updateModel();

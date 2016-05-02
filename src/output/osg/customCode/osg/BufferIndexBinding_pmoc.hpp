@@ -18,7 +18,7 @@ class  QMLBufferIndexBinding: public QReflect_BufferIndexBinding
 {
 Q_OBJECT
 public:
-QMLBufferIndexBinding(pmoc::Instance *i=0,QObject* parent=0);
+QMLBufferIndexBinding(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -39,7 +39,7 @@ class  QMLTransformFeedbackBufferBinding: public QReflect_TransformFeedbackBuffe
 {
 Q_OBJECT
 public:
-QMLTransformFeedbackBufferBinding(pmoc::Instance *i=0,QObject* parent=0);
+QMLTransformFeedbackBufferBinding(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -60,7 +60,7 @@ class  QMLAtomicCounterBufferBinding: public QReflect_AtomicCounterBufferBinding
 {
 Q_OBJECT
 public:
-QMLAtomicCounterBufferBinding(pmoc::Instance *i=0,QObject* parent=0);
+QMLAtomicCounterBufferBinding(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -81,7 +81,7 @@ class  QMLUniformBufferBinding: public QReflect_UniformBufferBinding
 {
 Q_OBJECT
 public:
-QMLUniformBufferBinding(pmoc::Instance *i=0,QObject* parent=0);
+QMLUniformBufferBinding(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -102,7 +102,7 @@ class  QMLShaderStorageBufferBinding: public QReflect_ShaderStorageBufferBinding
 {
 Q_OBJECT
 public:
-QMLShaderStorageBufferBinding(pmoc::Instance *i=0,QObject* parent=0);
+QMLShaderStorageBufferBinding(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

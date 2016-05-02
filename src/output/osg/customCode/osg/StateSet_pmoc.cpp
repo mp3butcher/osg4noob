@@ -2,6 +2,8 @@
 #include <iostream>
 #include <sstream>
 //includes
+#include <QtGui/qopengl.h>
+#include <QQuickItem>
 #include <customCode/osg/StateSet_pmoc.hpp>
 #include <customCode/osg/Texture2D_pmoc.hpp>
 #include <customCode/osg/Texture1D_pmoc.hpp>
@@ -15,13 +17,50 @@ using namespace std;
 
 using namespace pmoc;
 
-///All possible Modes
-#define ALLCASES        CASEMODE(GL_DEPTH_TEST)\
-                        CASEMODE(GL_LIGHTING)\
-                        CASEMODE(GL_COLOR_LOGIC_OP)\
-                        CASEMODE(GL_BLEND)\
+///All possible Modes                         CASEMODE( GL_CLIP_DISTANCE )
+#define ALLCASES                        CASEMODE(GL_LIGHTING)\
                         CASEMODE(GL_ALPHA_TEST)\
-                        CASEMODE(GL_STENCIL_TEST)
+                         CASEMODE( GL_BLEND)\
+  CASEMODE(GL_COLOR_LOGIC_OP)\
+  CASEMODE(GL_CULL_FACE)\
+  CASEMODE(GL_DEBUG_OUTPUT)\
+  CASEMODE(GL_DEBUG_OUTPUT_SYNCHRONOUS)\
+  CASEMODE(GL_DEPTH_CLAMP)\
+ CASEMODE(GL_DEPTH_TEST)\
+  CASEMODE(GL_DITHER)\
+  CASEMODE(GL_FRAMEBUFFER_SRGB)\
+  CASEMODE(GL_LINE_SMOOTH)\
+  CASEMODE(GL_MULTISAMPLE)\
+  CASEMODE(GL_POLYGON_OFFSET_FILL)\
+  CASEMODE(GL_POLYGON_OFFSET_LINE)\
+  CASEMODE(GL_POLYGON_OFFSET_POINT)\
+  CASEMODE(GL_POLYGON_SMOOTH)\
+  CASEMODE(GL_PRIMITIVE_RESTART)\
+  CASEMODE(GL_PRIMITIVE_RESTART_FIXED_INDEX)\
+  CASEMODE(GL_RASTERIZER_DISCARD)\
+  CASEMODE(GL_SAMPLE_ALPHA_TO_COVERAGE)\
+  CASEMODE(GL_SAMPLE_ALPHA_TO_ONE)\
+  CASEMODE(GL_SAMPLE_COVERAGE)\
+  CASEMODE(GL_SAMPLE_SHADING)\
+  CASEMODE(GL_SAMPLE_MASK)\
+  CASEMODE(GL_SCISSOR_TEST)\
+  CASEMODE(GL_STENCIL_TEST)\
+  CASEMODE(GL_TEXTURE_CUBE_MAP_SEAMLESS)\
+  CASEMODE(GL_PROGRAM_POINT_SIZE)\
+  \
+CASEMODE(  GL_COLOR_MATERIAL)\
+ CASEMODE( GL_AUTO_NORMAL)\
+  CASEMODE(GL_FOG)\
+  CASEMODE(GL_LINE_STIPPLE)\
+  CASEMODE(GL_NORMALIZE)\
+  CASEMODE(GL_POINT_SMOOTH)\
+CASEMODE(GL_POLYGON_STIPPLE )\
+CASEMODE(GL_TEXTURE_1D 		)\
+CASEMODE(GL_TEXTURE_2D 		)\
+CASEMODE(GL_TEXTURE_GEN_Q 		)\
+CASEMODE(GL_TEXTURE_GEN_R 	)\
+CASEMODE(GL_TEXTURE_GEN_S 		)\
+CASEMODE(GL_TEXTURE_GEN_T 	)
 
 void osg::QMLStateSet::setMode(QString mode,bool status,bool override)
 {
@@ -118,7 +157,7 @@ int osg::QMLStateSet::getTextureUnit(QQModel*mod)
 
     }
 }
-osg::QMLStateSet::QMLStateSet(pmoc::Instance *i,QObject* parent):QReflect_StateSet(i,parent)
+osg::QMLStateSet::QMLStateSet(const pmoc::Instance *i,QObject* parent):QReflect_StateSet(i,parent)
 {
 //custom initializations
 

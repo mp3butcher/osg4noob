@@ -45,7 +45,7 @@ target:main
                 drag.target: main
                 drag.axis: Drag.XandYAxis
                 onClicked: if (mouse.button == Qt.LeftButton)
-                               globalEditor.setOperand(main.qmodel)
+                               pmocjs.setOperand(main.qmodel)
 
 
                 /////CLASSIC PART TO END//////////////////////////////////////////////////////////////////////

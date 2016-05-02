@@ -1,5 +1,6 @@
 #include <osg/LOD>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,57 +10,74 @@
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_LOD::addChild(osg::QReflect_Node *p0 , float p1 , float p2){
+ bool  osg::QReflect_LOD:: addChild(osg::QReflect_Node  *p0 , float  p1 , float  p2){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LOD::addChild : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->addChild(p0->_model ,p1 ,p2);
 
 }
- bool  osg::QReflect_LOD::addChild(osg::QReflect_Node *p0){
+ bool  osg::QReflect_LOD:: addChild(osg::QReflect_Node  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LOD::addChild : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->addChild(p0->_model);
 
 }
- bool  osg::QReflect_LOD::removeChildren( unsigned int p0 , unsigned int p1){
+ bool  osg::QReflect_LOD:: removeChildren( unsigned int  p0 , unsigned int  p1){
+//params checking
 return _model->removeChildren(p0 ,p1);
 
 }
- float  osg::QReflect_LOD::getMaxRange( unsigned int p0)const{
+ float  osg::QReflect_LOD:: getMaxRange( unsigned int  p0)const{
+//params checking
 return _model->getMaxRange(p0);
 
 }
- float  osg::QReflect_LOD::getMinRange( unsigned int p0)const{
+ float  osg::QReflect_LOD:: getMinRange( unsigned int  p0)const{
+//params checking
 return _model->getMinRange(p0);
 
 }
- unsigned int  osg::QReflect_LOD::getNumRanges()const{
+ unsigned int  osg::QReflect_LOD:: getNumRanges()const{
+//params checking
 return _model->getNumRanges();
 
 }
- void osg::QReflect_LOD::setCenterMode(osg::QReflect_LOD::CenterMode p0){
+ void osg::QReflect_LOD::setCenterMode(osg::QReflect_LOD::CenterMode  p0){
+//params checking
  _model->setCenterMode(static_cast<osg::LOD::CenterMode>(p0));
+emit CenterModeChanged();
 
 }
- void osg::QReflect_LOD::setRange( unsigned int p0 , float p1 , float p2){
+ void osg::QReflect_LOD::setRange( unsigned int  p0 , float  p1 , float  p2){
+//params checking
  _model->setRange(p0 ,p1 ,p2);
 
 }
- void osg::QReflect_LOD::setRangeMode(osg::QReflect_LOD::RangeMode p0){
+ void osg::QReflect_LOD::setRangeMode(osg::QReflect_LOD::RangeMode  p0){
+//params checking
  _model->setRangeMode(static_cast<osg::LOD::RangeMode>(p0));
+emit RangeModeChanged();
 
 }
- void osg::QReflect_LOD::traverse(osg::QReflect_NodeVisitor *p0){
+ void osg::QReflect_LOD::traverse(osg::QReflect_NodeVisitor  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LOD::traverse : parameter n.0 is NULL\n"<<endl;return;}
  _model->traverse(*p0->_model);
 
 }
 osg::QReflect_LOD::CenterMode  osg::QReflect_LOD::getCenterMode()const{
+//params checking
 osg::QReflect_LOD::CenterMode ret=static_cast<osg::QReflect_LOD::CenterMode>( _model->getCenterMode());return  ret;
 
 }
 osg::QReflect_LOD::RangeMode  osg::QReflect_LOD::getRangeMode()const{
+//params checking
 osg::QReflect_LOD::RangeMode ret=static_cast<osg::QReflect_LOD::RangeMode>( _model->getRangeMode());return  ret;
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_LOD::QReflect_LOD(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_LOD::QReflect_LOD(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::LOD*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -87,9 +105,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_LOD::MetaQReflect_LOD():MetaQQuickClass( "osg::LOD"){
-_typeid=&typeid(osg::LOD );           qRegisterMetaType<QMLLOD>();
-qmlRegisterType<QReflect_LOD>("pmoc.osg",1,0,"QReflect_LOD");
-           qmlRegisterType<QMLLOD>("pmoc.osg",1,0,"QMLLOD");
+_typeid=&typeid(osg::LOD );
+           qRegisterMetaType<osg::QMLLOD>();
+           qRegisterMetaType<osg::QMLLOD*>("pmoc.osg.QMLLOD");
+qmlRegisterType<osg::QReflect_LOD>("pmoc.osg",1,0,"QReflect_LOD");
+           qmlRegisterType<osg::QMLLOD>("pmoc.osg",1,0,"QMLLOD");
 };
 const std::string osg::MetaQReflect_LOD::Imports() const{
  return std::string("");
@@ -98,7 +118,7 @@ const std::string osg::MetaQReflect_LOD::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_LOD::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_LOD::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_LOD::createQQModel(Instance*i){ //return new MetaQReflect_LOD_QModel(i);}
+QQModel* osg::MetaQReflect_LOD::createQQModel(const Instance*i){ //return new MetaQReflect_LOD_QModel(i);}
 QMLLOD *ret =new QMLLOD(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -120,6 +140,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_LOD_pmoc.cpp"
 #endif
+
 
 
 

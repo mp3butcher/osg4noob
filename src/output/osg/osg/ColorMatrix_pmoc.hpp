@@ -1,9 +1,14 @@
 #ifndef osg_ColorMatrix_pmocHPP
 #define  osg_ColorMatrix_pmocHPP 1
+
+
 #include <osg/ColorMatrix_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
@@ -22,14 +27,14 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ColorMatrix * _model;
-QReflect_ColorMatrix(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ColorMatrix(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ColorMatrix( );
 //ColorMatrix
 // Matrix & getMatrix();
-//virtual  void  apply( State &);
 //const  Matrix & getMatrix();
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE void  setMatrix(osg::QReflect_Matrixd *);
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setMatrix(osg::QReflect_Matrixd *matrix);
 public slots:
 virtual void updateModel();
  
@@ -42,7 +47,7 @@ public:
 MetaQReflect_ColorMatrix();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -53,6 +58,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ColorMatrix_pmocHPP
 

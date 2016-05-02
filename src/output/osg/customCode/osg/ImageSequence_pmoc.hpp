@@ -18,7 +18,7 @@ class  QMLImageSequence: public QReflect_ImageSequence
 {
 Q_OBJECT
 public:
-QMLImageSequence(pmoc::Instance *i=0,QObject* parent=0);
+QMLImageSequence(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

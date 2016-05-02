@@ -15,7 +15,7 @@ class  QMLDomainOperator: public QReflect_DomainOperator
 {
 Q_OBJECT
 public:
-QMLDomainOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLDomainOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

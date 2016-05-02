@@ -11,7 +11,7 @@ using namespace std;
  std::cerr<<"StaticFun"<<std::endl;
  }
 
-osg::QMLCamera::QMLCamera(pmoc::Instance *i,QObject* parent):QReflect_Camera(i,parent)
+osg::QMLCamera::QMLCamera(const pmoc::Instance *i,QObject* parent):QReflect_Camera(i,parent)
 {
 //custom initializations
     qmlRegisterType<pmoc::StateAttribListModel>();
@@ -326,7 +326,7 @@ void  osg::QMLCamera::updateModel()
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Camera_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCameraRenderOrderSortOp::QMLCameraRenderOrderSortOp(pmoc::Instance *i,QObject* parent):QReflect_CameraRenderOrderSortOp(i,parent)
+osg::QMLCameraRenderOrderSortOp::QMLCameraRenderOrderSortOp(const pmoc::Instance *i,QObject* parent):QReflect_CameraRenderOrderSortOp(i,parent)
 {
 //custom initializations
 }

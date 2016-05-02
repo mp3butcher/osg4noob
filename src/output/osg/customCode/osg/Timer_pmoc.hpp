@@ -12,7 +12,7 @@ class  QMLTimer: public QReflect_Timer
 {
 Q_OBJECT
 public:
-QMLTimer(pmoc::Instance *i=0,QObject* parent=0);
+QMLTimer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -32,7 +32,7 @@ class  QMLElapsedTime: public QReflect_ElapsedTime
 {
 Q_OBJECT
 public:
-QMLElapsedTime(pmoc::Instance *i=0,QObject* parent=0);
+QMLElapsedTime(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -12,7 +12,7 @@ class  QMLObserver: public QReflect_Observer
 {
 Q_OBJECT
 public:
-QMLObserver(pmoc::Instance *i=0,QObject* parent=0);
+QMLObserver(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -33,7 +33,7 @@ class  QMLObserverSet: public QReflect_ObserverSet
 {
 Q_OBJECT
 public:
-QMLObserverSet(pmoc::Instance *i=0,QObject* parent=0);
+QMLObserverSet(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

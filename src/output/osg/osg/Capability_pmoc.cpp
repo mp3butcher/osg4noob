@@ -1,5 +1,6 @@
 #include <osg/Capability>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,21 +9,26 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_Capability::getCapability()const{
+ GLenum  osg::QReflect_Capability:: getCapability()const{
+//params checking
 return _model->getCapability();
 
 }
- int  osg::QReflect_Capability::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_Capability:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Capability::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_Capability::setCapability( GLenum p0){
+ void osg::QReflect_Capability::setCapability( GLenum  p0){
+//params checking
  _model->setCapability(p0);
+emit CapabilityChanged();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Capability::QReflect_Capability(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Capability::QReflect_Capability(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Capability*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -50,9 +56,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Capability::MetaQReflect_Capability():MetaQQuickClass( "osg::Capability"){
-_typeid=&typeid(osg::Capability );           qRegisterMetaType<QMLCapability>();
-qmlRegisterType<QReflect_Capability>("pmoc.osg",1,0,"QReflect_Capability");
-           qmlRegisterType<QMLCapability>("pmoc.osg",1,0,"QMLCapability");
+_typeid=&typeid(osg::Capability );
+           qRegisterMetaType<osg::QMLCapability>();
+           qRegisterMetaType<osg::QMLCapability*>("pmoc.osg.QMLCapability");
+qmlRegisterType<osg::QReflect_Capability>("pmoc.osg",1,0,"QReflect_Capability");
+           qmlRegisterType<osg::QMLCapability>("pmoc.osg",1,0,"QMLCapability");
 };
 const std::string osg::MetaQReflect_Capability::Imports() const{
  return std::string("");
@@ -61,7 +69,7 @@ const std::string osg::MetaQReflect_Capability::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Capability::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Capability::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Capability::createQQModel(Instance*i){ //return new MetaQReflect_Capability_QModel(i);}
+QQModel* osg::MetaQReflect_Capability::createQQModel(const Instance*i){ //return new MetaQReflect_Capability_QModel(i);}
 QMLCapability *ret =new QMLCapability(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -91,19 +99,31 @@ return ret;}
 #include <customCode/osg/Capability_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_Capabilityi::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_Capabilityi:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Capabilityi::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- unsigned int  osg::QReflect_Capabilityi::getMember()const{
+ unsigned int  osg::QReflect_Capabilityi:: getIndex()const{
+//params checking
+return _model->getIndex();
+
+}
+ unsigned int  osg::QReflect_Capabilityi:: getMember()const{
+//params checking
 return _model->getMember();
 
 }
-const unsigned int osg::QReflect_Capabilityi::getIndex()const{return _model->getIndex();}
-void  osg::QReflect_Capabilityi::setIndex(const unsigned int &par){_model->setIndex(par);emit IndexChanged(par);}
+ void osg::QReflect_Capabilityi::setIndex( unsigned int  p0){
+//params checking
+ _model->setIndex(p0);
+emit IndexChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Capabilityi::QReflect_Capabilityi(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Capabilityi::QReflect_Capabilityi(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Capabilityi*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -131,9 +151,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Capabilityi::MetaQReflect_Capabilityi():MetaQQuickClass( "osg::Capabilityi"){
-_typeid=&typeid(osg::Capabilityi );           qRegisterMetaType<QMLCapabilityi>();
-qmlRegisterType<QReflect_Capabilityi>("pmoc.osg",1,0,"QReflect_Capabilityi");
-           qmlRegisterType<QMLCapabilityi>("pmoc.osg",1,0,"QMLCapabilityi");
+_typeid=&typeid(osg::Capabilityi );
+           qRegisterMetaType<osg::QMLCapabilityi>();
+           qRegisterMetaType<osg::QMLCapabilityi*>("pmoc.osg.QMLCapabilityi");
+qmlRegisterType<osg::QReflect_Capabilityi>("pmoc.osg",1,0,"QReflect_Capabilityi");
+           qmlRegisterType<osg::QMLCapabilityi>("pmoc.osg",1,0,"QMLCapabilityi");
 };
 const std::string osg::MetaQReflect_Capabilityi::Imports() const{
  return std::string("");
@@ -142,7 +164,7 @@ const std::string osg::MetaQReflect_Capabilityi::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Capabilityi::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Capabilityi::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Capabilityi::createQQModel(Instance*i){ //return new MetaQReflect_Capabilityi_QModel(i);}
+QQModel* osg::MetaQReflect_Capabilityi::createQQModel(const Instance*i){ //return new MetaQReflect_Capabilityi_QModel(i);}
 QMLCapabilityi *ret =new QMLCapabilityi(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -170,10 +192,17 @@ return ret;}
 #include <osg/Capability_pmoc.hpp>
 #include <customCode/osg/Capability_pmoc.hpp>
 #include <customCode/osg/Capability_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_Disablei::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Disablei::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Disablei::QReflect_Disablei(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Disablei::QReflect_Disablei(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Disablei*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -201,9 +230,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Disablei::MetaQReflect_Disablei():MetaQQuickClass( "osg::Disablei"){
-_typeid=&typeid(osg::Disablei );           qRegisterMetaType<QMLDisablei>();
-qmlRegisterType<QReflect_Disablei>("pmoc.osg",1,0,"QReflect_Disablei");
-           qmlRegisterType<QMLDisablei>("pmoc.osg",1,0,"QMLDisablei");
+_typeid=&typeid(osg::Disablei );
+           qRegisterMetaType<osg::QMLDisablei>();
+           qRegisterMetaType<osg::QMLDisablei*>("pmoc.osg.QMLDisablei");
+qmlRegisterType<osg::QReflect_Disablei>("pmoc.osg",1,0,"QReflect_Disablei");
+           qmlRegisterType<osg::QMLDisablei>("pmoc.osg",1,0,"QMLDisablei");
 };
 const std::string osg::MetaQReflect_Disablei::Imports() const{
  return std::string("");
@@ -212,7 +243,7 @@ const std::string osg::MetaQReflect_Disablei::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Disablei::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Disablei::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Disablei::createQQModel(Instance*i){ //return new MetaQReflect_Disablei_QModel(i);}
+QQModel* osg::MetaQReflect_Disablei::createQQModel(const Instance*i){ //return new MetaQReflect_Disablei_QModel(i);}
 QMLDisablei *ret =new QMLDisablei(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -240,10 +271,17 @@ return ret;}
 #include <osg/Capability_pmoc.hpp>
 #include <customCode/osg/Capability_pmoc.hpp>
 #include <customCode/osg/Capability_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_Enablei::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Enablei::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Enablei::QReflect_Enablei(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Enablei::QReflect_Enablei(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Enablei*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -271,9 +309,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Enablei::MetaQReflect_Enablei():MetaQQuickClass( "osg::Enablei"){
-_typeid=&typeid(osg::Enablei );           qRegisterMetaType<QMLEnablei>();
-qmlRegisterType<QReflect_Enablei>("pmoc.osg",1,0,"QReflect_Enablei");
-           qmlRegisterType<QMLEnablei>("pmoc.osg",1,0,"QMLEnablei");
+_typeid=&typeid(osg::Enablei );
+           qRegisterMetaType<osg::QMLEnablei>();
+           qRegisterMetaType<osg::QMLEnablei*>("pmoc.osg.QMLEnablei");
+qmlRegisterType<osg::QReflect_Enablei>("pmoc.osg",1,0,"QReflect_Enablei");
+           qmlRegisterType<osg::QMLEnablei>("pmoc.osg",1,0,"QMLEnablei");
 };
 const std::string osg::MetaQReflect_Enablei::Imports() const{
  return std::string("");
@@ -282,7 +322,7 @@ const std::string osg::MetaQReflect_Enablei::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Enablei::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Enablei::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Enablei::createQQModel(Instance*i){ //return new MetaQReflect_Enablei_QModel(i);}
+QQModel* osg::MetaQReflect_Enablei::createQQModel(const Instance*i){ //return new MetaQReflect_Enablei_QModel(i);}
 QMLEnablei *ret =new QMLEnablei(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -304,5 +344,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Capability_pmoc.cpp"
 #endif
+
+
 
 

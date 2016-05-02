@@ -1,9 +1,14 @@
 #ifndef osg_LineStipple_pmocHPP
 #define  osg_LineStipple_pmocHPP 1
+
+
 #include <osg/LineStipple_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/LineStipple>
 #include <osg/LineStipple>
@@ -19,16 +24,22 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 LineStipple * _model;
-QReflect_LineStipple(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_LineStipple(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LineStipple( );
 //LineStipple
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
 Q_INVOKABLE  GLint  getFactor()const;
 Q_INVOKABLE  GLushort  getPattern()const;
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE void  setFactor( GLint );
-Q_INVOKABLE void  setPattern( GLushort );
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setFactor( GLint factor);
+Q_INVOKABLE void  setPattern( GLushort pattern);
+Q_PROPERTY(GLint  Factor  READ getFactor WRITE setFactor NOTIFY FactorChanged)
+Q_PROPERTY(GLushort  Pattern  READ getPattern WRITE setPattern NOTIFY PatternChanged)
+signals: void FactorChanged();
+public:
+signals: void PatternChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -41,7 +52,7 @@ public:
 MetaQReflect_LineStipple();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -52,6 +63,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_LineStipple_pmocHPP
 

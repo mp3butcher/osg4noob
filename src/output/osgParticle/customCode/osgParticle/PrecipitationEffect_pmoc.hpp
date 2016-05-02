@@ -22,7 +22,7 @@ Q_OBJECT
 Q_PROPERTY(int precipitationType READ precipitationType WRITE precipitationType NOTIFY precipitationTypeChanged)
 Q_PROPERTY(float precipitationAmount READ precipitationAmount WRITE precipitationAmount NOTIFY precipitationAmountChanged)
 public:
-QMLPrecipitationEffect(pmoc::Instance *i=0,QObject* parent=0);
+QMLPrecipitationEffect(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 int precipitationType()const{
 #ifdef MYPROPOSITION

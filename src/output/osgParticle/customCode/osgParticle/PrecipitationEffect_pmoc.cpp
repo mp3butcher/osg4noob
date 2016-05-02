@@ -5,7 +5,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/PrecipitationEffect_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLPrecipitationEffect::QMLPrecipitationEffect(pmoc::Instance *i,QObject* parent):QReflect_PrecipitationEffect(i,parent){
+osgParticle::QMLPrecipitationEffect::QMLPrecipitationEffect(const pmoc::Instance *i,QObject* parent):QReflect_PrecipitationEffect(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLPrecipitationEffect::connect2View(QQuickItem*i){

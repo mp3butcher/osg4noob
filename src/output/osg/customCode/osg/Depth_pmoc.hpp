@@ -13,7 +13,7 @@ class  QMLDepth: public QReflect_Depth
 {
 Q_OBJECT
 public:
-QMLDepth(pmoc::Instance *i=0,QObject* parent=0);
+QMLDepth(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

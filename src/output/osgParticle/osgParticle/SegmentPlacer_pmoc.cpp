@@ -1,6 +1,7 @@
 #include <osgParticle/SegmentPlacer>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -10,37 +11,49 @@
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- float  osgParticle::QReflect_SegmentPlacer::volume()const{
+ float  osgParticle::QReflect_SegmentPlacer:: volume()const{
+//params checking
 return _model->volume();
 
 }
- void osgParticle::QReflect_SegmentPlacer::place(osgParticle::QReflect_Particle *p0)const{
+ void osgParticle::QReflect_SegmentPlacer::place(osgParticle::QReflect_Particle  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_SegmentPlacer::place : parameter n.0 is NULL\n"<<endl;return;}
  _model->place(p0->_model);
 
 }
- void osgParticle::QReflect_SegmentPlacer::setSegment(osg::QReflect_Vec3f *p0 ,osg::QReflect_Vec3f *p1){
+ void osgParticle::QReflect_SegmentPlacer::setSegment(osg::QReflect_Vec3f  *p0 ,osg::QReflect_Vec3f  *p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_SegmentPlacer::setSegment : parameter n.0 is NULL\n"<<endl;return;}
+if(! p1) {std::cerr<<"PMOC: osgParticle::QReflect_SegmentPlacer::setSegment : parameter n.1 is NULL\n"<<endl;return;}
  _model->setSegment(*p0->_model ,*p1->_model);
 
 }
- void osgParticle::QReflect_SegmentPlacer::setVertexA( float p0 , float p1 , float p2){
+ void osgParticle::QReflect_SegmentPlacer::setVertexA( float  p0 , float  p1 , float  p2){
+//params checking
  _model->setVertexA(p0 ,p1 ,p2);
 
 }
- void osgParticle::QReflect_SegmentPlacer::setVertexA(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_SegmentPlacer::setVertexA(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_SegmentPlacer::setVertexA : parameter n.0 is NULL\n"<<endl;return;}
  _model->setVertexA(*p0->_model);
 
 }
- void osgParticle::QReflect_SegmentPlacer::setVertexB( float p0 , float p1 , float p2){
+ void osgParticle::QReflect_SegmentPlacer::setVertexB( float  p0 , float  p1 , float  p2){
+//params checking
  _model->setVertexB(p0 ,p1 ,p2);
 
 }
- void osgParticle::QReflect_SegmentPlacer::setVertexB(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_SegmentPlacer::setVertexB(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_SegmentPlacer::setVertexB : parameter n.0 is NULL\n"<<endl;return;}
  _model->setVertexB(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_SegmentPlacer::QReflect_SegmentPlacer(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_SegmentPlacer::QReflect_SegmentPlacer(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::SegmentPlacer*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -68,9 +81,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_SegmentPlacer::MetaQReflect_SegmentPlacer():MetaQQuickClass( "osgParticle::SegmentPlacer"){
-_typeid=&typeid(osgParticle::SegmentPlacer );           qRegisterMetaType<QMLSegmentPlacer>();
-qmlRegisterType<QReflect_SegmentPlacer>("pmoc.osgParticle",1,0,"QReflect_SegmentPlacer");
-           qmlRegisterType<QMLSegmentPlacer>("pmoc.osgParticle",1,0,"QMLSegmentPlacer");
+_typeid=&typeid(osgParticle::SegmentPlacer );
+           qRegisterMetaType<osgParticle::QMLSegmentPlacer>();
+           qRegisterMetaType<osgParticle::QMLSegmentPlacer*>("pmoc.osgParticle.QMLSegmentPlacer");
+qmlRegisterType<osgParticle::QReflect_SegmentPlacer>("pmoc.osgParticle",1,0,"QReflect_SegmentPlacer");
+           qmlRegisterType<osgParticle::QMLSegmentPlacer>("pmoc.osgParticle",1,0,"QMLSegmentPlacer");
 };
 const std::string osgParticle::MetaQReflect_SegmentPlacer::Imports() const{
  return std::string("");
@@ -79,7 +94,7 @@ const std::string osgParticle::MetaQReflect_SegmentPlacer::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_SegmentPlacer::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_SegmentPlacer::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_SegmentPlacer::createQQModel(Instance*i){ //return new MetaQReflect_SegmentPlacer_QModel(i);}
+QQModel* osgParticle::MetaQReflect_SegmentPlacer::createQQModel(const Instance*i){ //return new MetaQReflect_SegmentPlacer_QModel(i);}
 QMLSegmentPlacer *ret =new QMLSegmentPlacer(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

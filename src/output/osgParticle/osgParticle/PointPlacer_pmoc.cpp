@@ -1,6 +1,7 @@
 #include <osgParticle/PointPlacer>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,13 +10,15 @@
 #include <customCode/osgParticle/CenteredPlacer_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_PointPlacer::place(osgParticle::QReflect_Particle *p0)const{
+ void osgParticle::QReflect_PointPlacer::place(osgParticle::QReflect_Particle  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_PointPlacer::place : parameter n.0 is NULL\n"<<endl;return;}
  _model->place(p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_PointPlacer::QReflect_PointPlacer(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_PointPlacer::QReflect_PointPlacer(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::PointPlacer*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -43,9 +46,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_PointPlacer::MetaQReflect_PointPlacer():MetaQQuickClass( "osgParticle::PointPlacer"){
-_typeid=&typeid(osgParticle::PointPlacer );           qRegisterMetaType<QMLPointPlacer>();
-qmlRegisterType<QReflect_PointPlacer>("pmoc.osgParticle",1,0,"QReflect_PointPlacer");
-           qmlRegisterType<QMLPointPlacer>("pmoc.osgParticle",1,0,"QMLPointPlacer");
+_typeid=&typeid(osgParticle::PointPlacer );
+           qRegisterMetaType<osgParticle::QMLPointPlacer>();
+           qRegisterMetaType<osgParticle::QMLPointPlacer*>("pmoc.osgParticle.QMLPointPlacer");
+qmlRegisterType<osgParticle::QReflect_PointPlacer>("pmoc.osgParticle",1,0,"QReflect_PointPlacer");
+           qmlRegisterType<osgParticle::QMLPointPlacer>("pmoc.osgParticle",1,0,"QMLPointPlacer");
 };
 const std::string osgParticle::MetaQReflect_PointPlacer::Imports() const{
  return std::string("");
@@ -54,7 +59,7 @@ const std::string osgParticle::MetaQReflect_PointPlacer::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_PointPlacer::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_PointPlacer::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_PointPlacer::createQQModel(Instance*i){ //return new MetaQReflect_PointPlacer_QModel(i);}
+QQModel* osgParticle::MetaQReflect_PointPlacer::createQQModel(const Instance*i){ //return new MetaQReflect_PointPlacer_QModel(i);}
 QMLPointPlacer *ret =new QMLPointPlacer(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

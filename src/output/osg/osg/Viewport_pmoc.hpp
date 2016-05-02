@@ -1,9 +1,14 @@
 #ifndef osg_Viewport_pmocHPP
 #define  osg_Viewport_pmocHPP 1
+
+
 #include <osg/Viewport_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/Viewport>
 #include <osg/Viewport>
@@ -19,11 +24,10 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Viewport * _model;
-QReflect_Viewport(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Viewport(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Viewport( );
 //Viewport
 // Viewport & operator=(const  Viewport &);
-//virtual  void  apply( State &);
 //const  osg::Matrix  computeWindowMatrix();
 Q_INVOKABLE  bool  valid()const;
 Q_INVOKABLE  double  aspectRatio()const;
@@ -35,8 +39,9 @@ Q_INVOKABLE  double&  height();
 Q_INVOKABLE  double&  width();
 Q_INVOKABLE  double&  x();
 Q_INVOKABLE  double&  y();
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE void  setViewport( double  , double  , double  , double );
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setViewport( double x , double y , double width , double height);
 public slots:
 virtual void updateModel();
  
@@ -49,7 +54,7 @@ public:
 MetaQReflect_Viewport();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -60,6 +65,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Viewport_pmocHPP
 

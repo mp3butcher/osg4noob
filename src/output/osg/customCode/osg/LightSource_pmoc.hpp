@@ -19,7 +19,7 @@ class  QMLLightSource: public QReflect_LightSource
 {
 Q_OBJECT
 public:
-QMLLightSource(pmoc::Instance *i=0,QObject* parent=0);
+QMLLightSource(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -1,6 +1,7 @@
 #include <osgParticle/SectorPlacer>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,25 +10,30 @@
 #include <customCode/osgParticle/CenteredPlacer_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- float  osgParticle::QReflect_SectorPlacer::volume()const{
+ float  osgParticle::QReflect_SectorPlacer:: volume()const{
+//params checking
 return _model->volume();
 
 }
- void osgParticle::QReflect_SectorPlacer::place(osgParticle::QReflect_Particle *p0)const{
+ void osgParticle::QReflect_SectorPlacer::place(osgParticle::QReflect_Particle  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_SectorPlacer::place : parameter n.0 is NULL\n"<<endl;return;}
  _model->place(p0->_model);
 
 }
- void osgParticle::QReflect_SectorPlacer::setPhiRange( float p0 , float p1){
+ void osgParticle::QReflect_SectorPlacer::setPhiRange( float  p0 , float  p1){
+//params checking
  _model->setPhiRange(p0 ,p1);
 
 }
- void osgParticle::QReflect_SectorPlacer::setRadiusRange( float p0 , float p1){
+ void osgParticle::QReflect_SectorPlacer::setRadiusRange( float  p0 , float  p1){
+//params checking
  _model->setRadiusRange(p0 ,p1);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_SectorPlacer::QReflect_SectorPlacer(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_SectorPlacer::QReflect_SectorPlacer(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::SectorPlacer*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -55,9 +61,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_SectorPlacer::MetaQReflect_SectorPlacer():MetaQQuickClass( "osgParticle::SectorPlacer"){
-_typeid=&typeid(osgParticle::SectorPlacer );           qRegisterMetaType<QMLSectorPlacer>();
-qmlRegisterType<QReflect_SectorPlacer>("pmoc.osgParticle",1,0,"QReflect_SectorPlacer");
-           qmlRegisterType<QMLSectorPlacer>("pmoc.osgParticle",1,0,"QMLSectorPlacer");
+_typeid=&typeid(osgParticle::SectorPlacer );
+           qRegisterMetaType<osgParticle::QMLSectorPlacer>();
+           qRegisterMetaType<osgParticle::QMLSectorPlacer*>("pmoc.osgParticle.QMLSectorPlacer");
+qmlRegisterType<osgParticle::QReflect_SectorPlacer>("pmoc.osgParticle",1,0,"QReflect_SectorPlacer");
+           qmlRegisterType<osgParticle::QMLSectorPlacer>("pmoc.osgParticle",1,0,"QMLSectorPlacer");
 };
 const std::string osgParticle::MetaQReflect_SectorPlacer::Imports() const{
  return std::string("");
@@ -66,7 +74,7 @@ const std::string osgParticle::MetaQReflect_SectorPlacer::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_SectorPlacer::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_SectorPlacer::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_SectorPlacer::createQQModel(Instance*i){ //return new MetaQReflect_SectorPlacer_QModel(i);}
+QQModel* osgParticle::MetaQReflect_SectorPlacer::createQQModel(const Instance*i){ //return new MetaQReflect_SectorPlacer_QModel(i);}
 QMLSectorPlacer *ret =new QMLSectorPlacer(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

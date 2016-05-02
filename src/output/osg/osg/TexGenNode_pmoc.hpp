@@ -1,6 +1,7 @@
 #ifndef osg_TexGenNode_pmocHPP
 #define  osg_TexGenNode_pmocHPP 1
 
+
 #include <osg/TexGenNode_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -27,21 +28,25 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 TexGenNode * _model;
-QReflect_TexGenNode(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_TexGenNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TexGenNode( );
 //TexGenNode
-Q_INVOKABLE  osg::QReflect_TexGen * getTexGen()const;
-Q_INVOKABLE const unsigned int  getTextureUnit()const;
+Q_INVOKABLE  unsigned int  getTextureUnit()const;
+Q_INVOKABLE osg::QReflect_TexGen*  getTexGen();
+Q_INVOKABLE osg::QReflect_TexGen*  getTexGen()const;
 Q_INVOKABLE osg::QReflect_TexGenNode::ReferenceFrame  getReferenceFrame()const;
-Q_INVOKABLE void  setReferenceFrame(osg::QReflect_TexGenNode::ReferenceFrame );
-Q_INVOKABLE void  setThreadSafeRefUnref( bool );
-Q_INVOKABLE void pmoc_reverse_setTexGen( osg::QReflect_TexGen *par=0);
-Q_INVOKABLE void setTexGen( osg::QReflect_TexGen *par);
-Q_INVOKABLE void setTextureUnit(const unsigned int &);
-Q_PROPERTY(unsigned int TextureUnit  READ getTextureUnit WRITE setTextureUnit NOTIFY TextureUnitChanged)
-signals: void TexGenChanged(const osg::QReflect_TexGen*);
+Q_INVOKABLE void  setReferenceFrame(osg::QReflect_TexGenNode::ReferenceFrame rf);
+Q_INVOKABLE void  setTexGen(osg::QReflect_TexGen *texgen);
+Q_INVOKABLE void  setTextureUnit( unsigned int textureUnit);
+Q_INVOKABLE void  setThreadSafeRefUnref( bool threadSafe);
+Q_PROPERTY(osg::QReflect_TexGen * TexGen  READ getTexGen WRITE setTexGen NOTIFY TexGenChanged)
+Q_PROPERTY(osg::QReflect_TexGenNode::ReferenceFrame  ReferenceFrame  READ getReferenceFrame WRITE setReferenceFrame NOTIFY ReferenceFrameChanged)
+Q_PROPERTY(unsigned int  TextureUnit  READ getTextureUnit WRITE setTextureUnit NOTIFY TextureUnitChanged)
+signals: void ReferenceFrameChanged();
 public:
-signals: void TextureUnitChanged(const unsigned int&);
+signals: void TexGenChanged();
+public:
+signals: void TextureUnitChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -55,7 +60,7 @@ public:
 MetaQReflect_TexGenNode();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -66,6 +71,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_TexGenNode_pmocHPP
 

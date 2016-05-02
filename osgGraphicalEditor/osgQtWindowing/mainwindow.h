@@ -143,6 +143,7 @@ void createDockScintilla();
                 * QQcurcallback[100];//max callback==100
 
     QsciScintilla* _javascriptInjector ;
+    //static QTextEdit * _logWidget;
     QProcess _compileprocess;/*to recompile plugin
 process.start("make", QStringList() << plugin);*/
     std::list<std::string> _pluginsStringList;
@@ -167,7 +168,7 @@ process.start("make", QStringList() << plugin);*/
     //QDockWidget * _dock;
 //	osgOctreeVolume* _ink;
 public slots:
-void checkInjectorLexic();
+void checkInjectorLexic(int line,int col);
 void injectJavascript();
     Q_INVOKABLE void reparseTreeView();
     Q_INVOKABLE void recompilePlugins();
@@ -181,30 +182,30 @@ void injectJavascript();
 
     void selectedStatus(pmoc::QQModel*m)
     {
-        std::string msg=m->_instance.model->id()+std::string(" selected");
+        std::string msg=m->getInstance().model->id()+std::string(" selected");
         statusBar()->showMessage(msg.c_str(), 2000);
     }
     void copiedStatus(pmoc::QQModel*m)
     {
-        std::string msg=m->_instance.model->id()+std::string(" copied");
+        std::string msg=m->getInstance().model->id()+std::string(" copied");
         statusBar()->showMessage(msg.c_str(), 2000);
     }
 
     void cuttedStatus(pmoc::QQModel*m)
     {
-        std::string msg=std::string("child of")+m->_instance.model->id()+std::string(" cutted");
+        std::string msg=std::string("child of")+m->getInstance().model->id()+std::string(" cutted");
         statusBar()->showMessage(msg.c_str(), 2000);
     }
 
     void pastedStatus(pmoc::QQModel*m)
     {
-        std::string msg=m->_instance.model->id()+std::string(" pasted");
+        std::string msg=m->getInstance().model->id()+std::string(" pasted");
         statusBar()->showMessage(msg.c_str(), 2000);
     }
 
     void deletedStatus(pmoc::QQModel*m)
     {
-        std::string msg=m->_instance.model->id()+std::string(" deleted");
+        std::string msg=m->getInstance().model->id()+std::string(" deleted");
         statusBar()->showMessage(msg.c_str(), 2000);
     }
 

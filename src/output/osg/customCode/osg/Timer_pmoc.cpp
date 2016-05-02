@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Timer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLElapsedTime::QMLElapsedTime(pmoc::Instance *i,QObject* parent):QReflect_ElapsedTime(i,parent){
+osg::QMLElapsedTime::QMLElapsedTime(const pmoc::Instance *i,QObject* parent):QReflect_ElapsedTime(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLElapsedTime::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLElapsedTime::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Timer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTimer::QMLTimer(pmoc::Instance *i,QObject* parent):QReflect_Timer(i,parent){
+osg::QMLTimer::QMLTimer(const pmoc::Instance *i,QObject* parent):QReflect_Timer(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTimer::connect2View(QQuickItem*i){

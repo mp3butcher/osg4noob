@@ -13,7 +13,7 @@ class  QMLMultisample: public QReflect_Multisample
 {
 Q_OBJECT
 public:
-QMLMultisample(pmoc::Instance *i=0,QObject* parent=0);
+QMLMultisample(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

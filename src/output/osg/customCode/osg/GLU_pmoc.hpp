@@ -12,7 +12,7 @@ class  QMLPixelStorageModes: public QReflect_PixelStorageModes
 {
 Q_OBJECT
 public:
-QMLPixelStorageModes(pmoc::Instance *i=0,QObject* parent=0);
+QMLPixelStorageModes(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

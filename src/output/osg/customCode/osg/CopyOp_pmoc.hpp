@@ -12,7 +12,7 @@ class  QMLCopyOp: public QReflect_CopyOp
 {
 Q_OBJECT
 public:
-QMLCopyOp(pmoc::Instance *i=0,QObject* parent=0);
+QMLCopyOp(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

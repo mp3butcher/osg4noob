@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/FireEffect_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLFireEffect::QMLFireEffect(pmoc::Instance *i,QObject* parent):QReflect_FireEffect(i,parent){
+osgParticle::QMLFireEffect::QMLFireEffect(const pmoc::Instance *i,QObject* parent):QReflect_FireEffect(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLFireEffect::connect2View(QQuickItem*i){

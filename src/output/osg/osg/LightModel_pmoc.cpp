@@ -1,5 +1,6 @@
 #include <osg/LightModel>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,31 +8,63 @@
 #include <customCode/osg/LightModel_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_LightModel::compare(osg::QReflect_StateAttribute *p0)const{
+ bool  osg::QReflect_LightModel:: getLocalViewer()const{
+//params checking
+return _model->getLocalViewer();
+
+}
+ bool  osg::QReflect_LightModel:: getTwoSided()const{
+//params checking
+return _model->getTwoSided();
+
+}
+ int  osg::QReflect_LightModel:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LightModel::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_LightModel::setAmbientIntensity(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_LightModel::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LightModel::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_LightModel::setAmbientIntensity(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LightModel::setAmbientIntensity : parameter n.0 is NULL\n"<<endl;return;}
  _model->setAmbientIntensity(*p0->_model);
 
 }
- void osg::QReflect_LightModel::setColorControl(osg::QReflect_LightModel::ColorControl p0){
+ void osg::QReflect_LightModel::setColorControl(osg::QReflect_LightModel::ColorControl  p0){
+//params checking
  _model->setColorControl(static_cast<osg::LightModel::ColorControl>(p0));
+emit ColorControlChanged();
 
 }
-const bool osg::QReflect_LightModel::getLocalViewer()const{return _model->getLocalViewer();}
-const bool osg::QReflect_LightModel::getTwoSided()const{return _model->getTwoSided();}
+ void osg::QReflect_LightModel::setLocalViewer( bool  p0){
+//params checking
+ _model->setLocalViewer(p0);
+emit LocalViewerChanged();
+
+}
+ void osg::QReflect_LightModel::setTwoSided( bool  p0){
+//params checking
+ _model->setTwoSided(p0);
+emit TwoSidedChanged();
+
+}
 osg::QReflect_LightModel::ColorControl  osg::QReflect_LightModel::getColorControl()const{
+//params checking
 osg::QReflect_LightModel::ColorControl ret=static_cast<osg::QReflect_LightModel::ColorControl>( _model->getColorControl());return  ret;
 
 }
-void  osg::QReflect_LightModel::setLocalViewer(const bool &par){_model->setLocalViewer(par);emit LocalViewerChanged(par);}
-void  osg::QReflect_LightModel::setTwoSided(const bool &par){_model->setTwoSided(par);emit TwoSidedChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_LightModel::QReflect_LightModel(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_LightModel::QReflect_LightModel(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::LightModel*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -59,9 +92,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_LightModel::MetaQReflect_LightModel():MetaQQuickClass( "osg::LightModel"){
-_typeid=&typeid(osg::LightModel );           qRegisterMetaType<QMLLightModel>();
-qmlRegisterType<QReflect_LightModel>("pmoc.osg",1,0,"QReflect_LightModel");
-           qmlRegisterType<QMLLightModel>("pmoc.osg",1,0,"QMLLightModel");
+_typeid=&typeid(osg::LightModel );
+           qRegisterMetaType<osg::QMLLightModel>();
+           qRegisterMetaType<osg::QMLLightModel*>("pmoc.osg.QMLLightModel");
+qmlRegisterType<osg::QReflect_LightModel>("pmoc.osg",1,0,"QReflect_LightModel");
+           qmlRegisterType<osg::QMLLightModel>("pmoc.osg",1,0,"QMLLightModel");
 };
 const std::string osg::MetaQReflect_LightModel::Imports() const{
  return std::string("");
@@ -70,7 +105,7 @@ const std::string osg::MetaQReflect_LightModel::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_LightModel::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_LightModel::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_LightModel::createQQModel(Instance*i){ //return new MetaQReflect_LightModel_QModel(i);}
+QQModel* osg::MetaQReflect_LightModel::createQQModel(const Instance*i){ //return new MetaQReflect_LightModel_QModel(i);}
 QMLLightModel *ret =new QMLLightModel(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -92,5 +127,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_LightModel_pmoc.cpp"
 #endif
+
+
 
 

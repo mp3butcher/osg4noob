@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ApplicationUsage_pmoc.hpp>
 using namespace pmoc;
-osg::QMLApplicationUsage::QMLApplicationUsage(pmoc::Instance *i,QObject* parent):QReflect_ApplicationUsage(i,parent){
+osg::QMLApplicationUsage::QMLApplicationUsage(const pmoc::Instance *i,QObject* parent):QReflect_ApplicationUsage(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLApplicationUsage::connect2View(QQuickItem*i){
@@ -28,7 +28,7 @@ void  osg::QMLApplicationUsage::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ApplicationUsage_pmoc.hpp>
 using namespace pmoc;
-osg::QMLApplicationUsageProxy::QMLApplicationUsageProxy(pmoc::Instance *i,QObject* parent):QReflect_ApplicationUsageProxy(i,parent){
+osg::QMLApplicationUsageProxy::QMLApplicationUsageProxy(const pmoc::Instance *i,QObject* parent):QReflect_ApplicationUsageProxy(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLApplicationUsageProxy::connect2View(QQuickItem*i){

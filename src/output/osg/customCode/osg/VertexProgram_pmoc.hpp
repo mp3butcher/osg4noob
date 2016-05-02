@@ -13,7 +13,7 @@ class  QMLVertexProgram: public QReflect_VertexProgram
 {
 Q_OBJECT
 public:
-QMLVertexProgram(pmoc::Instance *i=0,QObject* parent=0);
+QMLVertexProgram(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

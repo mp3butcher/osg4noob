@@ -1,40 +1,49 @@
 #include <osgParticle/SmokeTrailEffect>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osgParticle/SmokeTrailEffect_pmoc.hpp>
 #include <customCode/osgParticle/SmokeTrailEffect_pmoc.hpp>
 #include <customCode/osgParticle/ParticleEffect_pmoc.hpp>
+#include <customCode/osgParticle/Emitter_pmoc.hpp>
+#include <customCode/osgParticle/Program_pmoc.hpp>
 using namespace pmoc;
  void osgParticle::QReflect_SmokeTrailEffect::setDefaults(){
+//params checking
  _model->setDefaults();
 
 }
  void osgParticle::QReflect_SmokeTrailEffect::setUpEmitterAndProgram(){
+//params checking
  _model->setUpEmitterAndProgram();
 
 }
 osgParticle::QReflect_Emitter*osgParticle::QReflect_SmokeTrailEffect::getEmitter()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getEmitter(),inst);
 return inst.isValid()?((osgParticle::QReflect_Emitter * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Emitter*osgParticle::QReflect_SmokeTrailEffect::getEmitter(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getEmitter(),inst);
 return inst.isValid()?((osgParticle::QReflect_Emitter * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Program*osgParticle::QReflect_SmokeTrailEffect::getProgram()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getProgram(),inst);
 return inst.isValid()?((osgParticle::QReflect_Program * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Program*osgParticle::QReflect_SmokeTrailEffect::getProgram(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getProgram(),inst);
 return inst.isValid()?((osgParticle::QReflect_Program * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_SmokeTrailEffect::QReflect_SmokeTrailEffect(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_SmokeTrailEffect::QReflect_SmokeTrailEffect(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::SmokeTrailEffect*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -62,9 +71,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_SmokeTrailEffect::MetaQReflect_SmokeTrailEffect():MetaQQuickClass( "osgParticle::SmokeTrailEffect"){
-_typeid=&typeid(osgParticle::SmokeTrailEffect );           qRegisterMetaType<QMLSmokeTrailEffect>();
-qmlRegisterType<QReflect_SmokeTrailEffect>("pmoc.osgParticle",1,0,"QReflect_SmokeTrailEffect");
-           qmlRegisterType<QMLSmokeTrailEffect>("pmoc.osgParticle",1,0,"QMLSmokeTrailEffect");
+_typeid=&typeid(osgParticle::SmokeTrailEffect );
+           qRegisterMetaType<osgParticle::QMLSmokeTrailEffect>();
+           qRegisterMetaType<osgParticle::QMLSmokeTrailEffect*>("pmoc.osgParticle.QMLSmokeTrailEffect");
+qmlRegisterType<osgParticle::QReflect_SmokeTrailEffect>("pmoc.osgParticle",1,0,"QReflect_SmokeTrailEffect");
+           qmlRegisterType<osgParticle::QMLSmokeTrailEffect>("pmoc.osgParticle",1,0,"QMLSmokeTrailEffect");
 };
 const std::string osgParticle::MetaQReflect_SmokeTrailEffect::Imports() const{
  return std::string("");
@@ -73,7 +84,7 @@ const std::string osgParticle::MetaQReflect_SmokeTrailEffect::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_SmokeTrailEffect::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_SmokeTrailEffect::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_SmokeTrailEffect::createQQModel(Instance*i){ //return new MetaQReflect_SmokeTrailEffect_QModel(i);}
+QQModel* osgParticle::MetaQReflect_SmokeTrailEffect::createQQModel(const Instance*i){ //return new MetaQReflect_SmokeTrailEffect_QModel(i);}
 QMLSmokeTrailEffect *ret =new QMLSmokeTrailEffect(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

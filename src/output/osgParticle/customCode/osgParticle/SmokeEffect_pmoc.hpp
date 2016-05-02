@@ -15,7 +15,7 @@ class  QMLSmokeEffect: public QReflect_SmokeEffect
 {
 Q_OBJECT
 public:
-QMLSmokeEffect(pmoc::Instance *i=0,QObject* parent=0);
+QMLSmokeEffect(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

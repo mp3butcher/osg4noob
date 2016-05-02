@@ -1,10 +1,14 @@
 #ifndef osg_ShadowVolumeOccluder_pmocHPP
 #define  osg_ShadowVolumeOccluder_pmocHPP 1
 
+
 #include <osg/ShadowVolumeOccluder_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_Matrixd;
+			} ;
+namespace osg{ 
+class QReflect_ShadowVolumeOccluder;
 			} ;
 #include <osg/ShadowVolumeOccluder>
 
@@ -18,7 +22,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 ShadowVolumeOccluder * _model;
-QReflect_ShadowVolumeOccluder(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ShadowVolumeOccluder(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ShadowVolumeOccluder( );
 //ShadowVolumeOccluder
 // HoleList & getHoleList();
@@ -28,17 +32,17 @@ virtual ~QReflect_ShadowVolumeOccluder( );
 // bool  contains(const  BoundingBox &);
 // bool  contains(const  BoundingSphere &);
 // bool  contains(const  std::vector<Vec3> &);
-// bool  operator<(const  ShadowVolumeOccluder &);
 // void  setNodePath( NodePath &);
 //const  HoleList & getHoleList();
 //const  NodePath & getNodePath();
 //const  Polytope & getOccluder();
-Q_INVOKABLE  bool  matchProjectionMatrix(osg::QReflect_Matrixd *)const;
+Q_INVOKABLE  bool  matchProjectionMatrix(osg::QReflect_Matrixd *matrix)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_ShadowVolumeOccluder &svo)const;
 Q_INVOKABLE  float  getVolume()const;
 Q_INVOKABLE void  disableResultMasks();
 Q_INVOKABLE void  popCurrentMask();
 Q_INVOKABLE void  pushCurrentMask();
-Q_INVOKABLE void  transformProvidingInverse(osg::QReflect_Matrixd *);
+Q_INVOKABLE void  transformProvidingInverse(osg::QReflect_Matrixd *matrix);
 public slots:
 virtual void updateModel();
  
@@ -51,7 +55,7 @@ public:
 MetaQReflect_ShadowVolumeOccluder();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -62,6 +66,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ShadowVolumeOccluder_pmocHPP
 

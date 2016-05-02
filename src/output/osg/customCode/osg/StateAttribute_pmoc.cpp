@@ -1,10 +1,12 @@
 #include <osg/StateAttribute>
 //includes
 #include <MetaQQuickLibraryRegistry.h>
+
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateSet_pmoc.hpp>
+#include <QQuickItem>
 using namespace pmoc;
-osg::QMLStateAttribute::QMLStateAttribute(pmoc::Instance *i,QObject* parent):QReflect_StateAttribute(i,parent)
+osg::QMLStateAttribute::QMLStateAttribute(const pmoc::Instance *i,QObject* parent):QReflect_StateAttribute(i,parent)
 {
 //custom initializations
 }

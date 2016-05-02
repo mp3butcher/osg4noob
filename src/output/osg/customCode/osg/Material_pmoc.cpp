@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Material_pmoc.hpp>
 using namespace pmoc;
-osg::QMLMaterial::QMLMaterial(pmoc::Instance *i,QObject* parent):QReflect_Material(i,parent){
+osg::QMLMaterial::QMLMaterial(const pmoc::Instance *i,QObject* parent):QReflect_Material(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLMaterial::connect2View(QQuickItem*i){

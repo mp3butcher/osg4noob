@@ -44,13 +44,13 @@ FocusScope {
                 if ((event.key == Qt.Key_C)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("copy")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     event.accepted = true
                 }
                 if ((event.key == Qt.Key_X)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("cut")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     subjectrequired(
                                 ) //send a signal (this should be connected with parent (a osg::group or subclass)
                     event.accepted = true
@@ -58,7 +58,7 @@ FocusScope {
                 if ((event.key == Qt.Key_V)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("paste")
-                    globalEditor.realPaste()
+                    pmocjs.realPaste()
                     event.accepted = true
                 }
             }
@@ -73,7 +73,7 @@ FocusScope {
                 drag.target: main
                 drag.axis: Drag.XandYAxis
                 onClicked: if (mouse.button != Qt.RightButton)
-                               globalEditor.setOperand(main.qmodel)
+                               pmocjs.setOperand(main.qmodel)
 
 
                 /////CLASSIC PART TO END
@@ -138,8 +138,9 @@ FocusScope {
 
                                                 //soft way to maintain child preview
                                                 console.log(parent.m_iIndex)
-                                                main.attributeselected(
-                                                            parent.m_iIndex)
+
+                                                obj.osg_StateSet.  popStateAttribute(parent.m_iIndex)
+                                               // main.attributeselected(parent.m_iIndex)
                                             }
                                             Grid {
                                                 columns: 2
@@ -180,8 +181,8 @@ FocusScope {
 
                                                 //soft way to maintain child preview
                                                 console.log(parent.m_iIndex)
-                                                main.texattributeselected(
-                                                            parent.m_iIndex)
+                                                obj.osg_StateSet.  popTextureStateAttribute(parent.m_iIndex)
+                                             //   main.texattributeselected(parent.m_iIndex)
                                             }
                                             Grid {
                                                 columns: 2
@@ -223,8 +224,9 @@ FocusScope {
 
                                                 //soft way to maintain child preview
                                                 console.log(parent.m_iIndex)
-                                                main.uniformselected(
-                                                            parent.m_iIndex)
+
+                                                obj.osg_StateSet.  popUniform(parent.m_iIndex)
+                                                //main.uniformselected( parent.m_iIndex)
                                             }
                                             Grid {
                                                 columns: 2
@@ -290,6 +292,7 @@ FocusScope {
 
                                                 //soft way to maintain child preview
                                                 console.log(parent.m_iIndex)
+                                                obj.osg_StateSet.  popUniform(parent.m_iIndex)
                                                 main.uniformselected(
                                                             parent.m_iIndex)
                                             }

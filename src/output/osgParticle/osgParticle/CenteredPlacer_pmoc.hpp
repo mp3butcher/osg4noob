@@ -1,5 +1,7 @@
 #ifndef osgParticle_CenteredPlacer_pmocHPP
 #define  osgParticle_CenteredPlacer_pmocHPP 1
+
+
 #include <osgParticle/CenteredPlacer_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -22,15 +24,15 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 CenteredPlacer * _model;
-QReflect_CenteredPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CenteredPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CenteredPlacer( );
 //CenteredPlacer
 //const  osg::Vec3 & getCenter();
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE void  setCenter( float  , float  , float );
-Q_INVOKABLE void  setCenter(osg::QReflect_Vec3f *);
+Q_INVOKABLE void  setCenter( float x , float y , float z);
+Q_INVOKABLE void  setCenter(osg::QReflect_Vec3f *v);
 public slots:
 virtual void updateModel();
  
@@ -41,7 +43,7 @@ protected:
 MetaQReflect_CenteredPlacer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -52,6 +54,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_CenteredPlacer_pmocHPP

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/SmokeEffect_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLSmokeEffect::QMLSmokeEffect(pmoc::Instance *i,QObject* parent):QReflect_SmokeEffect(i,parent){
+osgParticle::QMLSmokeEffect::QMLSmokeEffect(const pmoc::Instance *i,QObject* parent):QReflect_SmokeEffect(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLSmokeEffect::connect2View(QQuickItem*i){

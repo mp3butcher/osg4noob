@@ -1,10 +1,10 @@
 #include <osgParticle/SegmentPlacer>
 //includes
-
+#include <QQuickItem>
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/SegmentPlacer_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLSegmentPlacer::QMLSegmentPlacer(pmoc::Instance *i,QObject* parent):QReflect_SegmentPlacer(i,parent){
+osgParticle::QMLSegmentPlacer::QMLSegmentPlacer(const pmoc::Instance *i,QObject* parent):QReflect_SegmentPlacer(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLSegmentPlacer::connect2View(QQuickItem*i){

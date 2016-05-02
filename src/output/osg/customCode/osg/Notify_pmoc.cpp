@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Notify_pmoc.hpp>
 using namespace pmoc;
-osg::QMLNotifyHandler::QMLNotifyHandler(pmoc::Instance *i,QObject* parent):QReflect_NotifyHandler(i,parent){
+osg::QMLNotifyHandler::QMLNotifyHandler(const pmoc::Instance *i,QObject* parent):QReflect_NotifyHandler(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLNotifyHandler::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLNotifyHandler::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Notify_pmoc.hpp>
 using namespace pmoc;
-osg::QMLStandardNotifyHandler::QMLStandardNotifyHandler(pmoc::Instance *i,QObject* parent):QReflect_StandardNotifyHandler(i,parent){
+osg::QMLStandardNotifyHandler::QMLStandardNotifyHandler(const pmoc::Instance *i,QObject* parent):QReflect_StandardNotifyHandler(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLStandardNotifyHandler::connect2View(QQuickItem*i){

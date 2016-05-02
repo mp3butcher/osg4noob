@@ -1,9 +1,10 @@
 #include <osg/ScriptEngine>
 //includes
+#include <QQuickItem>
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ScriptEngine_pmoc.hpp>
 using namespace pmoc;
-osg::QMLScript::QMLScript(pmoc::Instance *i,QObject* parent):QReflect_Script(i,parent)
+osg::QMLScript::QMLScript(const pmoc::Instance *i,QObject* parent):QReflect_Script(i,parent)
 {
     qsci=new QsciScintilla();
     lex=new QsciLexerCPP ();
@@ -42,7 +43,7 @@ void  osg::QMLScript::updateModel()
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ScriptEngine_pmoc.hpp>
 using namespace pmoc;
-osg::QMLScriptEngine::QMLScriptEngine(pmoc::Instance *i,QObject* parent):QReflect_ScriptEngine(i,parent)
+osg::QMLScriptEngine::QMLScriptEngine(const pmoc::Instance *i,QObject* parent):QReflect_ScriptEngine(i,parent)
 {
 //custom initializations
 
@@ -71,7 +72,7 @@ void  osg::QMLScriptEngine::updateModel()
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ScriptEngine_pmoc.hpp>
 using namespace pmoc;
-osg::QMLScriptNodeCallback::QMLScriptNodeCallback(pmoc::Instance *i,QObject* parent):QReflect_ScriptNodeCallback(i,parent)
+osg::QMLScriptNodeCallback::QMLScriptNodeCallback(const pmoc::Instance *i,QObject* parent):QReflect_ScriptNodeCallback(i,parent)
 {
 //custom initializations
 qsci=new QsciScintilla();

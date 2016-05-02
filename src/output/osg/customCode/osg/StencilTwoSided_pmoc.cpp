@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/StencilTwoSided_pmoc.hpp>
 using namespace pmoc;
-osg::QMLStencilTwoSided::QMLStencilTwoSided(pmoc::Instance *i,QObject* parent):QReflect_StencilTwoSided(i,parent){
+osg::QMLStencilTwoSided::QMLStencilTwoSided(const pmoc::Instance *i,QObject* parent):QReflect_StencilTwoSided(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLStencilTwoSided::connect2View(QQuickItem*i){

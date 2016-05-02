@@ -30,7 +30,7 @@ class  QMLDrawable: public QReflect_Drawable
 {
 Q_OBJECT
 public:
-QMLDrawable(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawable(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -51,7 +51,7 @@ class  QMLConstAttributeFunctorArrayVisitor: public QReflect_ConstAttributeFunct
 {
 Q_OBJECT
 public:
-QMLConstAttributeFunctorArrayVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLConstAttributeFunctorArrayVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -74,7 +74,7 @@ class  QMLAttributeFunctorArrayVisitor: public QReflect_AttributeFunctorArrayVis
 {
 Q_OBJECT
 public:
-QMLAttributeFunctorArrayVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLAttributeFunctorArrayVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

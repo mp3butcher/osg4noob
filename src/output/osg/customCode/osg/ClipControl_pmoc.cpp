@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ClipControl_pmoc.hpp>
 using namespace pmoc;
-osg::QMLClipControl::QMLClipControl(pmoc::Instance *i,QObject* parent):QReflect_ClipControl(i,parent){
+osg::QMLClipControl::QMLClipControl(const pmoc::Instance *i,QObject* parent):QReflect_ClipControl(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLClipControl::connect2View(QQuickItem*i){

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/AngularDampingOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLAngularDampingOperator::QMLAngularDampingOperator(pmoc::Instance *i,QObject* parent):QReflect_AngularDampingOperator(i,parent){
+osgParticle::QMLAngularDampingOperator::QMLAngularDampingOperator(const pmoc::Instance *i,QObject* parent):QReflect_AngularDampingOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLAngularDampingOperator::connect2View(QQuickItem*i){

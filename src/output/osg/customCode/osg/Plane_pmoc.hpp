@@ -12,7 +12,7 @@ class  QMLPlane: public QReflect_Plane
 {
 Q_OBJECT
 public:
-QMLPlane(pmoc::Instance *i=0,QObject* parent=0);
+QMLPlane(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

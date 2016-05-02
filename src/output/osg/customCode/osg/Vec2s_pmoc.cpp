@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Vec2s_pmoc.hpp>
 using namespace pmoc;
-osg::QMLVec2s::QMLVec2s(pmoc::Instance *i,QObject* parent):QReflect_Vec2s(i,parent){
+osg::QMLVec2s::QMLVec2s(const pmoc::Instance *i,QObject* parent):QReflect_Vec2s(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLVec2s::connect2View(QQuickItem*i){

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/ConstantRateCounter_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLConstantRateCounter::QMLConstantRateCounter(pmoc::Instance *i,QObject* parent):QReflect_ConstantRateCounter(i,parent){
+osgParticle::QMLConstantRateCounter::QMLConstantRateCounter(const pmoc::Instance *i,QObject* parent):QReflect_ConstantRateCounter(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLConstantRateCounter::connect2View(QQuickItem*i){

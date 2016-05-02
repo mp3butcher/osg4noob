@@ -1,9 +1,14 @@
 #ifndef osg_Multisample_pmocHPP
 #define  osg_Multisample_pmocHPP 1
+
+
 #include <osg/Multisample_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/Multisample>
 #include <osg/Multisample>
@@ -27,23 +32,26 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Multisample * _model;
-QReflect_Multisample(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Multisample(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Multisample( );
 //Multisample
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE const bool  getInvert()const;
-Q_INVOKABLE const float  getCoverage()const;
+Q_INVOKABLE  bool  getInvert()const;
+Q_INVOKABLE  float  getCoverage()const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_Multisample::Mode  getHint()const;
-Q_INVOKABLE void  setHint(osg::QReflect_Multisample::Mode );
-Q_INVOKABLE void  setSampleCoverage( float  , bool );
-Q_INVOKABLE void setCoverage(const float &);
-Q_INVOKABLE void setInvert(const bool &);
-Q_PROPERTY(bool Invert  READ getInvert WRITE setInvert NOTIFY InvertChanged)
-Q_PROPERTY(float Coverage  READ getCoverage WRITE setCoverage NOTIFY CoverageChanged)
-signals: void CoverageChanged(const float&);
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setCoverage( float coverage);
+Q_INVOKABLE void  setHint(osg::QReflect_Multisample::Mode mode);
+Q_INVOKABLE void  setInvert( bool invert);
+Q_INVOKABLE void  setSampleCoverage( float coverage , bool invert);
+Q_PROPERTY(bool  Invert  READ getInvert WRITE setInvert NOTIFY InvertChanged)
+Q_PROPERTY(float  Coverage  READ getCoverage WRITE setCoverage NOTIFY CoverageChanged)
+Q_PROPERTY(osg::QReflect_Multisample::Mode  Hint  READ getHint WRITE setHint NOTIFY HintChanged)
+signals: void CoverageChanged();
 public:
-signals: void InvertChanged(const bool&);
+signals: void HintChanged();
+public:
+signals: void InvertChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -57,7 +65,7 @@ public:
 MetaQReflect_Multisample();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -68,6 +76,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Multisample_pmocHPP
 

@@ -1,5 +1,6 @@
 #include <osg/PrimitiveRestartIndex>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,16 +8,34 @@
 #include <customCode/osg/PrimitiveRestartIndex_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_PrimitiveRestartIndex::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_PrimitiveRestartIndex:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PrimitiveRestartIndex::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
-const unsigned int osg::QReflect_PrimitiveRestartIndex::getRestartIndex()const{return _model->getRestartIndex();}
-void  osg::QReflect_PrimitiveRestartIndex::setRestartIndex(const unsigned int &par){_model->setRestartIndex(par);emit RestartIndexChanged(par);}
+ unsigned int  osg::QReflect_PrimitiveRestartIndex:: getRestartIndex()const{
+//params checking
+return _model->getRestartIndex();
+
+}
+ void osg::QReflect_PrimitiveRestartIndex::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PrimitiveRestartIndex::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_PrimitiveRestartIndex::setRestartIndex( unsigned int  p0){
+//params checking
+ _model->setRestartIndex(p0);
+emit RestartIndexChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_PrimitiveRestartIndex::QReflect_PrimitiveRestartIndex(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_PrimitiveRestartIndex::QReflect_PrimitiveRestartIndex(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::PrimitiveRestartIndex*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -44,9 +63,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_PrimitiveRestartIndex::MetaQReflect_PrimitiveRestartIndex():MetaQQuickClass( "osg::PrimitiveRestartIndex"){
-_typeid=&typeid(osg::PrimitiveRestartIndex );           qRegisterMetaType<QMLPrimitiveRestartIndex>();
-qmlRegisterType<QReflect_PrimitiveRestartIndex>("pmoc.osg",1,0,"QReflect_PrimitiveRestartIndex");
-           qmlRegisterType<QMLPrimitiveRestartIndex>("pmoc.osg",1,0,"QMLPrimitiveRestartIndex");
+_typeid=&typeid(osg::PrimitiveRestartIndex );
+           qRegisterMetaType<osg::QMLPrimitiveRestartIndex>();
+           qRegisterMetaType<osg::QMLPrimitiveRestartIndex*>("pmoc.osg.QMLPrimitiveRestartIndex");
+qmlRegisterType<osg::QReflect_PrimitiveRestartIndex>("pmoc.osg",1,0,"QReflect_PrimitiveRestartIndex");
+           qmlRegisterType<osg::QMLPrimitiveRestartIndex>("pmoc.osg",1,0,"QMLPrimitiveRestartIndex");
 };
 const std::string osg::MetaQReflect_PrimitiveRestartIndex::Imports() const{
  return std::string("");
@@ -55,7 +76,7 @@ const std::string osg::MetaQReflect_PrimitiveRestartIndex::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_PrimitiveRestartIndex::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_PrimitiveRestartIndex::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_PrimitiveRestartIndex::createQQModel(Instance*i){ //return new MetaQReflect_PrimitiveRestartIndex_QModel(i);}
+QQModel* osg::MetaQReflect_PrimitiveRestartIndex::createQQModel(const Instance*i){ //return new MetaQReflect_PrimitiveRestartIndex_QModel(i);}
 QMLPrimitiveRestartIndex *ret =new QMLPrimitiveRestartIndex(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -77,5 +98,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_PrimitiveRestartIndex_pmoc.cpp"
 #endif
+
+
 
 

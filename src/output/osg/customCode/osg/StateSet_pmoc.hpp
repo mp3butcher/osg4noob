@@ -25,7 +25,7 @@ class  QMLStateSet: public QReflect_StateSet
 {
     Q_OBJECT
 public:
-    QMLStateSet(pmoc::Instance *i=0,QObject* parent=0);
+    QMLStateSet(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
     virtual void updateModel();
 

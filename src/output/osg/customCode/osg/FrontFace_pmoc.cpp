@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FrontFace_pmoc.hpp>
 using namespace pmoc;
-osg::QMLFrontFace::QMLFrontFace(pmoc::Instance *i,QObject* parent):QReflect_FrontFace(i,parent){
+osg::QMLFrontFace::QMLFrontFace(const pmoc::Instance *i,QObject* parent):QReflect_FrontFace(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLFrontFace::connect2View(QQuickItem*i){

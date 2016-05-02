@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsContext_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGraphicsContext::QMLGraphicsContext(pmoc::Instance *i,QObject* parent):QReflect_GraphicsContext(i,parent){
+osg::QMLGraphicsContext::QMLGraphicsContext(const pmoc::Instance *i,QObject* parent):QReflect_GraphicsContext(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGraphicsContext::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLGraphicsContext::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsContext_pmoc.hpp>
 using namespace pmoc;
-osg::QMLSyncSwapBuffersCallback::QMLSyncSwapBuffersCallback(pmoc::Instance *i,QObject* parent):QReflect_SyncSwapBuffersCallback(i,parent){
+osg::QMLSyncSwapBuffersCallback::QMLSyncSwapBuffersCallback(const pmoc::Instance *i,QObject* parent):QReflect_SyncSwapBuffersCallback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLSyncSwapBuffersCallback::connect2View(QQuickItem*i){

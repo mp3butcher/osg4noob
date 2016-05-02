@@ -1,5 +1,6 @@
 #include <osg/LineWidth>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,16 +8,34 @@
 #include <customCode/osg/LineWidth_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_LineWidth::compare(osg::QReflect_StateAttribute *p0)const{
+ float  osg::QReflect_LineWidth:: getWidth()const{
+//params checking
+return _model->getWidth();
+
+}
+ int  osg::QReflect_LineWidth:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LineWidth::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
-const float osg::QReflect_LineWidth::getWidth()const{return _model->getWidth();}
-void  osg::QReflect_LineWidth::setWidth(const float &par){_model->setWidth(par);emit WidthChanged(par);}
+ void osg::QReflect_LineWidth::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_LineWidth::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_LineWidth::setWidth( float  p0){
+//params checking
+ _model->setWidth(p0);
+emit WidthChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_LineWidth::QReflect_LineWidth(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_LineWidth::QReflect_LineWidth(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::LineWidth*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -44,9 +63,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_LineWidth::MetaQReflect_LineWidth():MetaQQuickClass( "osg::LineWidth"){
-_typeid=&typeid(osg::LineWidth );           qRegisterMetaType<QMLLineWidth>();
-qmlRegisterType<QReflect_LineWidth>("pmoc.osg",1,0,"QReflect_LineWidth");
-           qmlRegisterType<QMLLineWidth>("pmoc.osg",1,0,"QMLLineWidth");
+_typeid=&typeid(osg::LineWidth );
+           qRegisterMetaType<osg::QMLLineWidth>();
+           qRegisterMetaType<osg::QMLLineWidth*>("pmoc.osg.QMLLineWidth");
+qmlRegisterType<osg::QReflect_LineWidth>("pmoc.osg",1,0,"QReflect_LineWidth");
+           qmlRegisterType<osg::QMLLineWidth>("pmoc.osg",1,0,"QMLLineWidth");
 };
 const std::string osg::MetaQReflect_LineWidth::Imports() const{
  return std::string("");
@@ -55,7 +76,7 @@ const std::string osg::MetaQReflect_LineWidth::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_LineWidth::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_LineWidth::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_LineWidth::createQQModel(Instance*i){ //return new MetaQReflect_LineWidth_QModel(i);}
+QQModel* osg::MetaQReflect_LineWidth::createQQModel(const Instance*i){ //return new MetaQReflect_LineWidth_QModel(i);}
 QMLLineWidth *ret =new QMLLineWidth(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -77,5 +98,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_LineWidth_pmoc.cpp"
 #endif
+
+
 
 

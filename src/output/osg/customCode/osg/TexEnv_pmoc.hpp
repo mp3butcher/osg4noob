@@ -13,7 +13,7 @@ class  QMLTexEnv: public QReflect_TexEnv
 {
 Q_OBJECT
 public:
-QMLTexEnv(pmoc::Instance *i=0,QObject* parent=0);
+QMLTexEnv(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

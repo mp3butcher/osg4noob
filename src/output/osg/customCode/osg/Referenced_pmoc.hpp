@@ -15,7 +15,7 @@ class  QMLReferenced: public QReflect_Referenced
 {
 Q_OBJECT
 public:
-QMLReferenced(pmoc::Instance *i=0,QObject* parent=0);
+QMLReferenced(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

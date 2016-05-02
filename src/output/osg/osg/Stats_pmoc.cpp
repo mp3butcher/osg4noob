@@ -1,5 +1,6 @@
 #include <osg/Stats>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,47 +8,65 @@
 #include <customCode/osg/Stats_pmoc.hpp>
 #include <customCode/osg/Referenced_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_Stats::collectStats(const  QString &p0)const{
+ bool  osg::QReflect_Stats:: collectStats(const  QString  &p0)const{
+//params checking
 return _model->collectStats(std::string(p0.toStdString()));
 
 }
- bool  osg::QReflect_Stats::getAttribute( unsigned int p0 ,const  QString &p1 , double &p2)const{
+ bool  osg::QReflect_Stats:: getAttribute( unsigned int  p0 ,const  QString  &p1 , double  &p2)const{
+//params checking
 return _model->getAttribute(p0 ,std::string(p1.toStdString()) ,p2);
 
 }
- bool  osg::QReflect_Stats::getAveragedAttribute( unsigned int p0 , unsigned int p1 ,const  QString &p2 , double &p3 , bool p4)const{
+ bool  osg::QReflect_Stats:: getAveragedAttribute( unsigned int  p0 , unsigned int  p1 ,const  QString  &p2 , double  &p3 , bool  p4)const{
+//params checking
 return _model->getAveragedAttribute(p0 ,p1 ,std::string(p2.toStdString()) ,p3 ,p4);
 
 }
- bool  osg::QReflect_Stats::getAveragedAttribute(const  QString &p0 , double &p1 , bool p2)const{
+ bool  osg::QReflect_Stats:: getAveragedAttribute(const  QString  &p0 , double  &p1 , bool  p2)const{
+//params checking
 return _model->getAveragedAttribute(std::string(p0.toStdString()) ,p1 ,p2);
 
 }
- bool  osg::QReflect_Stats::setAttribute( unsigned int p0 ,const  QString &p1 , double p2){
+ bool  osg::QReflect_Stats:: setAttribute( unsigned int  p0 ,const  QString  &p1 , double  p2){
+//params checking
 return _model->setAttribute(p0 ,std::string(p1.toStdString()) ,p2);
 
 }
- unsigned int  osg::QReflect_Stats::getEarliestFrameNumber()const{
+ unsigned int  osg::QReflect_Stats:: getEarliestFrameNumber()const{
+//params checking
 return _model->getEarliestFrameNumber();
 
 }
- unsigned int  osg::QReflect_Stats::getLatestFrameNumber()const{
+ unsigned int  osg::QReflect_Stats:: getLatestFrameNumber()const{
+//params checking
 return _model->getLatestFrameNumber();
 
 }
- void osg::QReflect_Stats::allocate( unsigned int p0){
+ void osg::QReflect_Stats::allocate( unsigned int  p0){
+//params checking
  _model->allocate(p0);
 
 }
- void osg::QReflect_Stats::collectStats(const  QString &p0 , bool p1){
+ void osg::QReflect_Stats::collectStats(const  QString  &p0 , bool  p1){
+//params checking
  _model->collectStats(std::string(p0.toStdString()) ,p1);
 
 }
-const QString osg::QReflect_Stats::getName()const{return QString(_model->getName().c_str());}
-void osg::QReflect_Stats::setName(const QString &par){_model->setName(par.toStdString());emit NameChanged(par);}
+ void osg::QReflect_Stats::setName(const  QString  &p0){
+//params checking
+ _model->setName(std::string(p0.toStdString()));
+emit NameChanged();
+
+}
+QString  osg::QReflect_Stats::getName()const{
+//params checking
+QString ret(_model->getName().c_str());return ret;
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Stats::QReflect_Stats(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Stats::QReflect_Stats(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Stats*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -72,9 +91,11 @@ std::cerr<<"osg::Stats is not instanciable"<<std::endl;return Instance();
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Stats::MetaQReflect_Stats():MetaQQuickClass( "osg::Stats"){
-_typeid=&typeid(osg::Stats );           qRegisterMetaType<QMLStats>();
-qmlRegisterType<QReflect_Stats>("pmoc.osg",1,0,"QReflect_Stats");
-           qmlRegisterType<QMLStats>("pmoc.osg",1,0,"QMLStats");
+_typeid=&typeid(osg::Stats );
+           qRegisterMetaType<osg::QMLStats>();
+           qRegisterMetaType<osg::QMLStats*>("pmoc.osg.QMLStats");
+qmlRegisterType<osg::QReflect_Stats>("pmoc.osg",1,0,"QReflect_Stats");
+           qmlRegisterType<osg::QMLStats>("pmoc.osg",1,0,"QMLStats");
 };
 const std::string osg::MetaQReflect_Stats::Imports() const{
  return std::string("");
@@ -83,7 +104,7 @@ const std::string osg::MetaQReflect_Stats::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Stats::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Stats::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Stats::createQQModel(Instance*i){ //return new MetaQReflect_Stats_QModel(i);}
+QQModel* osg::MetaQReflect_Stats::createQQModel(const Instance*i){ //return new MetaQReflect_Stats_QModel(i);}
 QMLStats *ret =new QMLStats(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -105,5 +126,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Stats_pmoc.cpp"
 #endif
+
+
 
 

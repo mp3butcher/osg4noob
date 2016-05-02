@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 using namespace pmoc;
-osg::QMLMatrixd::QMLMatrixd(pmoc::Instance *i,QObject* parent):QReflect_Matrixd(i,parent){
+osg::QMLMatrixd::QMLMatrixd(const pmoc::Instance *i,QObject* parent):QReflect_Matrixd(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLMatrixd::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLMatrixd::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 using namespace pmoc;
-osg::QMLRefMatrixd::QMLRefMatrixd(pmoc::Instance *i,QObject* parent):QReflect_RefMatrixd(i,parent){
+osg::QMLRefMatrixd::QMLRefMatrixd(const pmoc::Instance *i,QObject* parent):QReflect_RefMatrixd(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLRefMatrixd::connect2View(QQuickItem*i){

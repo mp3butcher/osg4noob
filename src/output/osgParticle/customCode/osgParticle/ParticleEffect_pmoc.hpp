@@ -25,7 +25,7 @@ class  QMLParticleEffect: public QReflect_ParticleEffect
 {
 Q_OBJECT
 public:
-QMLParticleEffect(pmoc::Instance *i=0,QObject* parent=0);
+QMLParticleEffect(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

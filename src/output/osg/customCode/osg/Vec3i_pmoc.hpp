@@ -28,7 +28,7 @@ void y(int f){if(f!=y()){(*_model)[1]=f;emit yChanged(f);}}
 int z()const{return _model->z();}
 void z(int f){if(f!=z()){(*_model)[2]=f;emit zChanged(f);}}
 
-QMLVec3i(pmoc::Instance *i=0,QObject* parent=0);
+QMLVec3i(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

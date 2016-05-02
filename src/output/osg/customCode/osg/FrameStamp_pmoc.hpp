@@ -13,7 +13,7 @@ class  QMLFrameStamp: public QReflect_FrameStamp
 {
 Q_OBJECT
 public:
-QMLFrameStamp(pmoc::Instance *i=0,QObject* parent=0);
+QMLFrameStamp(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -13,7 +13,7 @@ class  QMLTextureCubeMap: public QReflect_TextureCubeMap
 {
 Q_OBJECT
 public:
-QMLTextureCubeMap(pmoc::Instance *i=0,QObject* parent=0);
+QMLTextureCubeMap(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

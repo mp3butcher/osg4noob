@@ -13,7 +13,7 @@ class  QMLHint: public QReflect_Hint
 {
 Q_OBJECT
 public:
-QMLHint(pmoc::Instance *i=0,QObject* parent=0);
+QMLHint(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

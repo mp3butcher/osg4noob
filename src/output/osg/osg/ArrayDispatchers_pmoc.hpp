@@ -1,12 +1,17 @@
 #ifndef osg_ArrayDispatchers_pmocHPP
 #define  osg_ArrayDispatchers_pmocHPP 1
+
+
 #include <osg/ArrayDispatchers_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_AttributeDispatch;
+class QReflect_Array;
 			} ;
 namespace osg{ 
-class QReflect_Array;
+class QReflect_State;
+			} ;
+namespace osg{ 
+class QReflect_AttributeDispatch;
 			} ;
 #include <osg/ArrayDispatchers>
 #include <osg/ArrayDispatchers>
@@ -22,32 +27,32 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ArrayDispatchers * _model;
-QReflect_ArrayDispatchers(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ArrayDispatchers(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ArrayDispatchers( );
 //ArrayDispatchers
-// void  setState( osg::State *);
-Q_INVOKABLE  bool  active( unsigned int )const;
-Q_INVOKABLE const bool  getUseVertexAttribAlias()const;
-Q_INVOKABLE osg::QReflect_AttributeDispatch*  colorDispatcher(osg::QReflect_Array *);
-Q_INVOKABLE osg::QReflect_AttributeDispatch*  fogCoordDispatcher(osg::QReflect_Array *);
-Q_INVOKABLE osg::QReflect_AttributeDispatch*  normalDispatcher(osg::QReflect_Array *);
-Q_INVOKABLE osg::QReflect_AttributeDispatch*  secondaryColorDispatcher(osg::QReflect_Array *);
-Q_INVOKABLE osg::QReflect_AttributeDispatch*  texCoordDispatcher( unsigned int  ,osg::QReflect_Array *);
-Q_INVOKABLE osg::QReflect_AttributeDispatch*  vertexAttribDispatcher( unsigned int  ,osg::QReflect_Array *);
-Q_INVOKABLE osg::QReflect_AttributeDispatch*  vertexDispatcher(osg::QReflect_Array *);
-Q_INVOKABLE void  activate( unsigned int  ,osg::QReflect_AttributeDispatch *);
-Q_INVOKABLE void  activateColorArray(osg::QReflect_Array *);
-Q_INVOKABLE void  activateFogCoordArray(osg::QReflect_Array *);
-Q_INVOKABLE void  activateNormalArray(osg::QReflect_Array *);
-Q_INVOKABLE void  activateSecondaryColorArray(osg::QReflect_Array *);
-Q_INVOKABLE void  activateTexCoordArray( unsigned int  ,osg::QReflect_Array *);
-Q_INVOKABLE void  activateVertexArray(osg::QReflect_Array *);
-Q_INVOKABLE void  activateVertexAttribArray( unsigned int  ,osg::QReflect_Array *);
-Q_INVOKABLE void  dispatch( unsigned int  , unsigned int );
+Q_INVOKABLE  bool  active( unsigned int binding)const;
+Q_INVOKABLE  bool  getUseVertexAttribAlias()const;
+Q_INVOKABLE osg::QReflect_AttributeDispatch*  colorDispatcher(osg::QReflect_Array *array);
+Q_INVOKABLE osg::QReflect_AttributeDispatch*  fogCoordDispatcher(osg::QReflect_Array *array);
+Q_INVOKABLE osg::QReflect_AttributeDispatch*  normalDispatcher(osg::QReflect_Array *array);
+Q_INVOKABLE osg::QReflect_AttributeDispatch*  secondaryColorDispatcher(osg::QReflect_Array *array);
+Q_INVOKABLE osg::QReflect_AttributeDispatch*  texCoordDispatcher( unsigned int unit ,osg::QReflect_Array *array);
+Q_INVOKABLE osg::QReflect_AttributeDispatch*  vertexAttribDispatcher( unsigned int unit ,osg::QReflect_Array *array);
+Q_INVOKABLE osg::QReflect_AttributeDispatch*  vertexDispatcher(osg::QReflect_Array *array);
+Q_INVOKABLE void  activate( unsigned int binding ,osg::QReflect_AttributeDispatch *at);
+Q_INVOKABLE void  activateColorArray(osg::QReflect_Array *array);
+Q_INVOKABLE void  activateFogCoordArray(osg::QReflect_Array *array);
+Q_INVOKABLE void  activateNormalArray(osg::QReflect_Array *array);
+Q_INVOKABLE void  activateSecondaryColorArray(osg::QReflect_Array *array);
+Q_INVOKABLE void  activateTexCoordArray( unsigned int unit ,osg::QReflect_Array *array);
+Q_INVOKABLE void  activateVertexArray(osg::QReflect_Array *array);
+Q_INVOKABLE void  activateVertexAttribArray( unsigned int unit ,osg::QReflect_Array *array);
+Q_INVOKABLE void  dispatch( unsigned int binding , unsigned int index);
 Q_INVOKABLE void  reset();
-Q_INVOKABLE void setUseVertexAttribAlias(const bool &);
-Q_PROPERTY(bool UseVertexAttribAlias  READ getUseVertexAttribAlias WRITE setUseVertexAttribAlias NOTIFY UseVertexAttribAliasChanged)
-signals: void UseVertexAttribAliasChanged(const bool&);
+Q_INVOKABLE void  setState(osg::QReflect_State *state);
+Q_INVOKABLE void  setUseVertexAttribAlias( bool flag);
+Q_PROPERTY(bool  UseVertexAttribAlias  READ getUseVertexAttribAlias WRITE setUseVertexAttribAlias NOTIFY UseVertexAttribAliasChanged)
+signals: void UseVertexAttribAliasChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -61,7 +66,7 @@ public:
 MetaQReflect_ArrayDispatchers();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -88,7 +93,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 struct AttributeDispatch * _model;
-QReflect_AttributeDispatch(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_AttributeDispatch(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_AttributeDispatch( );
 //AttributeDispatch
 public slots:
@@ -101,7 +106,7 @@ protected:
 MetaQReflect_AttributeDispatch();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -112,6 +117,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ArrayDispatchers_pmocHPP
 

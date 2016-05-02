@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Stats_pmoc.hpp>
 using namespace pmoc;
-osg::QMLStats::QMLStats(pmoc::Instance *i,QObject* parent):QReflect_Stats(i,parent){
+osg::QMLStats::QMLStats(const pmoc::Instance *i,QObject* parent):QReflect_Stats(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLStats::connect2View(QQuickItem*i){

@@ -27,19 +27,19 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Emitter * _model;
-QReflect_Emitter(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Emitter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Emitter( );
 //Emitter
 //const  Particle & getParticleTemplate();
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  getUseDefaultTemplate()const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE const bool  getUseDefaultTemplate()const;
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
-Q_INVOKABLE void  setParticleTemplate(osgParticle::QReflect_Particle *);
-Q_INVOKABLE void setUseDefaultTemplate(const bool &);
-Q_PROPERTY(bool UseDefaultTemplate  READ getUseDefaultTemplate WRITE setUseDefaultTemplate NOTIFY UseDefaultTemplateChanged)
-signals: void UseDefaultTemplateChanged(const bool&);
+Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *nv);
+Q_INVOKABLE void  setParticleTemplate(osgParticle::QReflect_Particle *p);
+Q_INVOKABLE void  setUseDefaultTemplate( bool v);
+Q_PROPERTY(bool  UseDefaultTemplate  READ getUseDefaultTemplate WRITE setUseDefaultTemplate NOTIFY UseDefaultTemplateChanged)
+signals: void UseDefaultTemplateChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -51,7 +51,7 @@ protected:
 MetaQReflect_Emitter();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -62,6 +62,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_Emitter_pmocHPP

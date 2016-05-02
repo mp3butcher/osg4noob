@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/VertexAttribDivisor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLVertexAttribDivisor::QMLVertexAttribDivisor(pmoc::Instance *i,QObject* parent):QReflect_VertexAttribDivisor(i,parent){
+osg::QMLVertexAttribDivisor::QMLVertexAttribDivisor(const pmoc::Instance *i,QObject* parent):QReflect_VertexAttribDivisor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLVertexAttribDivisor::connect2View(QQuickItem*i){

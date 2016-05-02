@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CoordinateSystemNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCoordinateSystemNode::QMLCoordinateSystemNode(pmoc::Instance *i,QObject* parent):QReflect_CoordinateSystemNode(i,parent){
+osg::QMLCoordinateSystemNode::QMLCoordinateSystemNode(const pmoc::Instance *i,QObject* parent):QReflect_CoordinateSystemNode(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCoordinateSystemNode::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLCoordinateSystemNode::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CoordinateSystemNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLEllipsoidModel::QMLEllipsoidModel(pmoc::Instance *i,QObject* parent):QReflect_EllipsoidModel(i,parent){
+osg::QMLEllipsoidModel::QMLEllipsoidModel(const pmoc::Instance *i,QObject* parent):QReflect_EllipsoidModel(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLEllipsoidModel::connect2View(QQuickItem*i){

@@ -1,9 +1,14 @@
 #ifndef osg_BlendEquation_pmocHPP
 #define  osg_BlendEquation_pmocHPP 1
+
+
 #include <osg/BlendEquation_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/BlendEquation>
 #include <osg/BlendEquation>
@@ -32,18 +37,27 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 BlendEquation * _model;
-QReflect_BlendEquation(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_BlendEquation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BlendEquation( );
 //BlendEquation
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_BlendEquation::Equation  getEquation()const;
 Q_INVOKABLE osg::QReflect_BlendEquation::Equation  getEquationAlpha()const;
 Q_INVOKABLE osg::QReflect_BlendEquation::Equation  getEquationRGB()const;
-Q_INVOKABLE void  setEquation(osg::QReflect_BlendEquation::Equation );
-Q_INVOKABLE void  setEquationAlpha(osg::QReflect_BlendEquation::Equation );
-Q_INVOKABLE void  setEquationRGB(osg::QReflect_BlendEquation::Equation );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setEquation(osg::QReflect_BlendEquation::Equation equation);
+Q_INVOKABLE void  setEquationAlpha(osg::QReflect_BlendEquation::Equation equation);
+Q_INVOKABLE void  setEquationRGB(osg::QReflect_BlendEquation::Equation equation);
+Q_PROPERTY(osg::QReflect_BlendEquation::Equation  Equation  READ getEquation WRITE setEquation NOTIFY EquationChanged)
+Q_PROPERTY(osg::QReflect_BlendEquation::Equation  EquationAlpha  READ getEquationAlpha WRITE setEquationAlpha NOTIFY EquationAlphaChanged)
+Q_PROPERTY(osg::QReflect_BlendEquation::Equation  EquationRGB  READ getEquationRGB WRITE setEquationRGB NOTIFY EquationRGBChanged)
+signals: void EquationAlphaChanged();
+public:
+signals: void EquationChanged();
+public:
+signals: void EquationRGBChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -56,7 +70,7 @@ public:
 MetaQReflect_BlendEquation();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -67,6 +81,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_BlendEquation_pmocHPP
 

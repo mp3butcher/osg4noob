@@ -1,5 +1,6 @@
 #include <osg/CollectOccludersVisitor>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,51 +8,120 @@
 #include <customCode/osg/CollectOccludersVisitor_pmoc.hpp>
 #include <customCode/osg/CullStack_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
+#include <customCode/osg/LOD_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
+#include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/OccluderNode_pmoc.hpp>
+#include <customCode/osg/Projection_pmoc.hpp>
+#include <customCode/osg/Switch_pmoc.hpp>
 #include <customCode/osg/Transform_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 using namespace pmoc;
- float  osg::QReflect_CollectOccludersVisitor::getDistanceFromEyePoint(osg::QReflect_Vec3f *p0 , bool p1)const{
+ bool  osg::QReflect_CollectOccludersVisitor:: getCreateDrawablesOnOccludeNodes()const{
+//params checking
+return _model->getCreateDrawablesOnOccludeNodes();
+
+}
+ float  osg::QReflect_CollectOccludersVisitor:: getDistanceFromEyePoint(osg::QReflect_Vec3f  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::getDistanceFromEyePoint : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->getDistanceFromEyePoint(*p0->_model ,p1);
 
 }
- float  osg::QReflect_CollectOccludersVisitor::getDistanceToEyePoint(osg::QReflect_Vec3f *p0 , bool p1)const{
+ float  osg::QReflect_CollectOccludersVisitor:: getDistanceToEyePoint(osg::QReflect_Vec3f  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::getDistanceToEyePoint : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->getDistanceToEyePoint(*p0->_model ,p1);
 
 }
- float  osg::QReflect_CollectOccludersVisitor::getDistanceToViewPoint(osg::QReflect_Vec3f *p0 , bool p1)const{
+ float  osg::QReflect_CollectOccludersVisitor:: getDistanceToViewPoint(osg::QReflect_Vec3f  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::getDistanceToViewPoint : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->getDistanceToViewPoint(*p0->_model ,p1);
 
 }
- void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Node *p0){
+ float  osg::QReflect_CollectOccludersVisitor:: getMinimumShadowOccluderVolume()const{
+//params checking
+return _model->getMinimumShadowOccluderVolume();
+
+}
+ unsigned int  osg::QReflect_CollectOccludersVisitor:: getMaximumNumberOfActiveOccluders()const{
+//params checking
+return _model->getMaximumNumberOfActiveOccluders();
+
+}
+ void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_LOD  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::apply : parameter n.0 is NULL\n"<<endl;return;}
  _model->apply(*p0->_model);
 
 }
- void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Transform *p0){
+ void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Node  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_OccluderNode  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Projection  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Switch  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_CollectOccludersVisitor::apply(osg::QReflect_Transform  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CollectOccludersVisitor::apply : parameter n.0 is NULL\n"<<endl;return;}
  _model->apply(*p0->_model);
 
 }
  void osg::QReflect_CollectOccludersVisitor::removeOccludedOccluders(){
+//params checking
  _model->removeOccludedOccluders();
 
 }
  void osg::QReflect_CollectOccludersVisitor::reset(){
+//params checking
  _model->reset();
 
 }
-const bool osg::QReflect_CollectOccludersVisitor::getCreateDrawablesOnOccludeNodes()const{return _model->getCreateDrawablesOnOccludeNodes();}
-const float osg::QReflect_CollectOccludersVisitor::getMinimumShadowOccluderVolume()const{return _model->getMinimumShadowOccluderVolume();}
-const unsigned int osg::QReflect_CollectOccludersVisitor::getMaximumNumberOfActiveOccluders()const{return _model->getMaximumNumberOfActiveOccluders();}
+ void osg::QReflect_CollectOccludersVisitor::setCreateDrawablesOnOccludeNodes( bool  p0){
+//params checking
+ _model->setCreateDrawablesOnOccludeNodes(p0);
+emit CreateDrawablesOnOccludeNodesChanged();
+
+}
+ void osg::QReflect_CollectOccludersVisitor::setMaximumNumberOfActiveOccluders( unsigned int  p0){
+//params checking
+ _model->setMaximumNumberOfActiveOccluders(p0);
+emit MaximumNumberOfActiveOccludersChanged();
+
+}
+ void osg::QReflect_CollectOccludersVisitor::setMinimumShadowOccluderVolume( float  p0){
+//params checking
+ _model->setMinimumShadowOccluderVolume(p0);
+emit MinimumShadowOccluderVolumeChanged();
+
+}
 osg::QReflect_Object*osg::QReflect_CollectOccludersVisitor::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
-void  osg::QReflect_CollectOccludersVisitor::setCreateDrawablesOnOccludeNodes(const bool &par){_model->setCreateDrawablesOnOccludeNodes(par);emit CreateDrawablesOnOccludeNodesChanged(par);}
-void  osg::QReflect_CollectOccludersVisitor::setMaximumNumberOfActiveOccluders(const unsigned int &par){_model->setMaximumNumberOfActiveOccluders(par);emit MaximumNumberOfActiveOccludersChanged(par);}
-void  osg::QReflect_CollectOccludersVisitor::setMinimumShadowOccluderVolume(const float &par){_model->setMinimumShadowOccluderVolume(par);emit MinimumShadowOccluderVolumeChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_CollectOccludersVisitor::QReflect_CollectOccludersVisitor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_CollectOccludersVisitor::QReflect_CollectOccludersVisitor(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =dynamic_cast<osg::CollectOccludersVisitor*>(reinterpret_cast<osg::Referenced*>(i->ptr));
  if(!_model)  _model =dynamic_cast<osg::CollectOccludersVisitor*>(reinterpret_cast<osg::Object*>(i->ptr));
  if(!_model)  _model =dynamic_cast<osg::CollectOccludersVisitor*>(reinterpret_cast<osg::CullSettings*>(i->ptr));
@@ -88,9 +158,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_CollectOccludersVisitor::MetaQReflect_CollectOccludersVisitor():MetaQQuickClass( "osg::CollectOccludersVisitor"){
-_typeid=&typeid(osg::CollectOccludersVisitor );           qRegisterMetaType<QMLCollectOccludersVisitor>();
-qmlRegisterType<QReflect_CollectOccludersVisitor>("pmoc.osg",1,0,"QReflect_CollectOccludersVisitor");
-           qmlRegisterType<QMLCollectOccludersVisitor>("pmoc.osg",1,0,"QMLCollectOccludersVisitor");
+_typeid=&typeid(osg::CollectOccludersVisitor );
+           qRegisterMetaType<osg::QMLCollectOccludersVisitor>();
+           qRegisterMetaType<osg::QMLCollectOccludersVisitor*>("pmoc.osg.QMLCollectOccludersVisitor");
+qmlRegisterType<osg::QReflect_CollectOccludersVisitor>("pmoc.osg",1,0,"QReflect_CollectOccludersVisitor");
+           qmlRegisterType<osg::QMLCollectOccludersVisitor>("pmoc.osg",1,0,"QMLCollectOccludersVisitor");
 };
 const std::string osg::MetaQReflect_CollectOccludersVisitor::Imports() const{
  return std::string("");
@@ -99,7 +171,7 @@ const std::string osg::MetaQReflect_CollectOccludersVisitor::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_CollectOccludersVisitor::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_CollectOccludersVisitor::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_CollectOccludersVisitor::createQQModel(Instance*i){ //return new MetaQReflect_CollectOccludersVisitor_QModel(i);}
+QQModel* osg::MetaQReflect_CollectOccludersVisitor::createQQModel(const Instance*i){ //return new MetaQReflect_CollectOccludersVisitor_QModel(i);}
 QMLCollectOccludersVisitor *ret =new QMLCollectOccludersVisitor(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -132,6 +204,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_CollectOccludersVisitor_pmoc.cpp"
 #endif
+
 
 
 

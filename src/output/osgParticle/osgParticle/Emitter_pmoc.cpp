@@ -1,6 +1,7 @@
 #include <osgParticle/Emitter>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -11,31 +12,48 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- bool  osgParticle::QReflect_Emitter::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osgParticle::QReflect_Emitter:: getUseDefaultTemplate()const{
+//params checking
+return _model->getUseDefaultTemplate();
+
+}
+ bool  osgParticle::QReflect_Emitter:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_Emitter::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- void osgParticle::QReflect_Emitter::accept(osg::QReflect_NodeVisitor *p0){
+ void osgParticle::QReflect_Emitter::accept(osg::QReflect_NodeVisitor  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_Emitter::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osgParticle::QReflect_Emitter::setParticleTemplate(osgParticle::QReflect_Particle *p0){
+ void osgParticle::QReflect_Emitter::setParticleTemplate(osgParticle::QReflect_Particle  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_Emitter::setParticleTemplate : parameter n.0 is NULL\n"<<endl;return;}
  _model->setParticleTemplate(*p0->_model);
 
 }
-const  char*  osgParticle::QReflect_Emitter::className()const{
+ void osgParticle::QReflect_Emitter::setUseDefaultTemplate( bool  p0){
+//params checking
+ _model->setUseDefaultTemplate(p0);
+emit UseDefaultTemplateChanged();
+
+}
+const  char*  osgParticle::QReflect_Emitter:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osgParticle::QReflect_Emitter::libraryName()const{
+const  char*  osgParticle::QReflect_Emitter:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-const bool osgParticle::QReflect_Emitter::getUseDefaultTemplate()const{return _model->getUseDefaultTemplate();}
-void  osgParticle::QReflect_Emitter::setUseDefaultTemplate(const bool &par){_model->setUseDefaultTemplate(par);emit UseDefaultTemplateChanged(par);}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_Emitter::QReflect_Emitter(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_Emitter::QReflect_Emitter(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::Emitter*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -60,9 +78,11 @@ std::cerr<<"osgParticle::Emitter is not instanciable"<<std::endl;return Instance
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_Emitter::MetaQReflect_Emitter():MetaQQuickClass( "osgParticle::Emitter"){
-_typeid=&typeid(osgParticle::Emitter );           qRegisterMetaType<QMLEmitter>();
-qmlRegisterType<QReflect_Emitter>("pmoc.osgParticle",1,0,"QReflect_Emitter");
-           qmlRegisterType<QMLEmitter>("pmoc.osgParticle",1,0,"QMLEmitter");
+_typeid=&typeid(osgParticle::Emitter );
+           qRegisterMetaType<osgParticle::QMLEmitter>();
+           qRegisterMetaType<osgParticle::QMLEmitter*>("pmoc.osgParticle.QMLEmitter");
+qmlRegisterType<osgParticle::QReflect_Emitter>("pmoc.osgParticle",1,0,"QReflect_Emitter");
+           qmlRegisterType<osgParticle::QMLEmitter>("pmoc.osgParticle",1,0,"QMLEmitter");
 };
 const std::string osgParticle::MetaQReflect_Emitter::Imports() const{
  return std::string("");
@@ -71,7 +91,7 @@ const std::string osgParticle::MetaQReflect_Emitter::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_Emitter::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_Emitter::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_Emitter::createQQModel(Instance*i){ //return new MetaQReflect_Emitter_QModel(i);}
+QQModel* osgParticle::MetaQReflect_Emitter::createQQModel(const Instance*i){ //return new MetaQReflect_Emitter_QModel(i);}
 QMLEmitter *ret =new QMLEmitter(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

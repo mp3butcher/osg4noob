@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PatchParameter_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPatchParameter::QMLPatchParameter(pmoc::Instance *i,QObject* parent):QReflect_PatchParameter(i,parent){
+osg::QMLPatchParameter::QMLPatchParameter(const pmoc::Instance *i,QObject* parent):QReflect_PatchParameter(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPatchParameter::connect2View(QQuickItem*i){

@@ -30,7 +30,7 @@ class  QMLModularEmitter: public QReflect_ModularEmitter
 {
 Q_OBJECT
 public:
-QMLModularEmitter(pmoc::Instance *i=0,QObject* parent=0);
+QMLModularEmitter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

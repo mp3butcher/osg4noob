@@ -13,7 +13,7 @@ class  QMLBlendEquationi: public QReflect_BlendEquationi
 {
 Q_OBJECT
 public:
-QMLBlendEquationi(pmoc::Instance *i=0,QObject* parent=0);
+QMLBlendEquationi(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

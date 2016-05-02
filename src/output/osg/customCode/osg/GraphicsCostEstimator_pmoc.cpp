@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsCostEstimator_pmoc.hpp>
 using namespace pmoc;
-osg::QMLClampedLinearCostFunction1D::QMLClampedLinearCostFunction1D(pmoc::Instance *i,QObject* parent):QReflect_ClampedLinearCostFunction1D(i,parent){
+osg::QMLClampedLinearCostFunction1D::QMLClampedLinearCostFunction1D(const pmoc::Instance *i,QObject* parent):QReflect_ClampedLinearCostFunction1D(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLClampedLinearCostFunction1D::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLClampedLinearCostFunction1D::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsCostEstimator_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGeometryCostEstimator::QMLGeometryCostEstimator(pmoc::Instance *i,QObject* parent):QReflect_GeometryCostEstimator(i,parent){
+osg::QMLGeometryCostEstimator::QMLGeometryCostEstimator(const pmoc::Instance *i,QObject* parent):QReflect_GeometryCostEstimator(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGeometryCostEstimator::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLGeometryCostEstimator::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsCostEstimator_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGraphicsCostEstimator::QMLGraphicsCostEstimator(pmoc::Instance *i,QObject* parent):QReflect_GraphicsCostEstimator(i,parent){
+osg::QMLGraphicsCostEstimator::QMLGraphicsCostEstimator(const pmoc::Instance *i,QObject* parent):QReflect_GraphicsCostEstimator(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGraphicsCostEstimator::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLGraphicsCostEstimator::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsCostEstimator_pmoc.hpp>
 using namespace pmoc;
-osg::QMLProgramCostEstimator::QMLProgramCostEstimator(pmoc::Instance *i,QObject* parent):QReflect_ProgramCostEstimator(i,parent){
+osg::QMLProgramCostEstimator::QMLProgramCostEstimator(const pmoc::Instance *i,QObject* parent):QReflect_ProgramCostEstimator(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLProgramCostEstimator::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLProgramCostEstimator::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsCostEstimator_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTextureCostEstimator::QMLTextureCostEstimator(pmoc::Instance *i,QObject* parent):QReflect_TextureCostEstimator(i,parent){
+osg::QMLTextureCostEstimator::QMLTextureCostEstimator(const pmoc::Instance *i,QObject* parent):QReflect_TextureCostEstimator(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTextureCostEstimator::connect2View(QQuickItem*i){

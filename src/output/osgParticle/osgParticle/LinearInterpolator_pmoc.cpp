@@ -1,6 +1,7 @@
 #include <osgParticle/LinearInterpolator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,13 +9,14 @@
 #include <customCode/osgParticle/LinearInterpolator_pmoc.hpp>
 #include <customCode/osgParticle/Interpolator_pmoc.hpp>
 using namespace pmoc;
- float  osgParticle::QReflect_LinearInterpolator::interpolate( float p0 , float p1 , float p2)const{
+ float  osgParticle::QReflect_LinearInterpolator:: interpolate( float  p0 , float  p1 , float  p2)const{
+//params checking
 return _model->interpolate(p0 ,p1 ,p2);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_LinearInterpolator::QReflect_LinearInterpolator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_LinearInterpolator::QReflect_LinearInterpolator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::LinearInterpolator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -42,9 +44,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_LinearInterpolator::MetaQReflect_LinearInterpolator():MetaQQuickClass( "osgParticle::LinearInterpolator"){
-_typeid=&typeid(osgParticle::LinearInterpolator );           qRegisterMetaType<QMLLinearInterpolator>();
-qmlRegisterType<QReflect_LinearInterpolator>("pmoc.osgParticle",1,0,"QReflect_LinearInterpolator");
-           qmlRegisterType<QMLLinearInterpolator>("pmoc.osgParticle",1,0,"QMLLinearInterpolator");
+_typeid=&typeid(osgParticle::LinearInterpolator );
+           qRegisterMetaType<osgParticle::QMLLinearInterpolator>();
+           qRegisterMetaType<osgParticle::QMLLinearInterpolator*>("pmoc.osgParticle.QMLLinearInterpolator");
+qmlRegisterType<osgParticle::QReflect_LinearInterpolator>("pmoc.osgParticle",1,0,"QReflect_LinearInterpolator");
+           qmlRegisterType<osgParticle::QMLLinearInterpolator>("pmoc.osgParticle",1,0,"QMLLinearInterpolator");
 };
 const std::string osgParticle::MetaQReflect_LinearInterpolator::Imports() const{
  return std::string("");
@@ -53,7 +57,7 @@ const std::string osgParticle::MetaQReflect_LinearInterpolator::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_LinearInterpolator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_LinearInterpolator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_LinearInterpolator::createQQModel(Instance*i){ //return new MetaQReflect_LinearInterpolator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_LinearInterpolator::createQQModel(const Instance*i){ //return new MetaQReflect_LinearInterpolator_QModel(i);}
 QMLLinearInterpolator *ret =new QMLLinearInterpolator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -75,5 +79,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_LinearInterpolator_pmoc.cpp"
 #endif
+
+
 
 

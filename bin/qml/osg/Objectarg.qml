@@ -35,13 +35,13 @@ FocusScope {
                 if ((event.key == Qt.Key_C)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("copy")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     event.accepted = true
                 }
                 if ((event.key == Qt.Key_X)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("cut")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     subjectrequired(
                                 ) //send a signal (this should be connected with parent (a osg::group or subclass)
                     event.accepted = true
@@ -49,7 +49,7 @@ FocusScope {
                 if ((event.key == Qt.Key_V)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("paste")
-                    globalEditor.realPaste()
+                    pmocjs.realPaste()
                     event.accepted = true
                 }
             }
@@ -79,7 +79,7 @@ objectName:'pmocmousearea'
 		   else{
 		            console.log("selected")
 		            main.focus = true
-		            globalEditor.setOperand(main.qmodel)
+		            pmocjs.setOperand(main.qmodel)
 			}
 
                 }
@@ -92,15 +92,15 @@ objectName:'pmocmousearea'
                         text: 'Copy'
                         shortcut: "Ctrl+C"
                         onTriggered: {
-                            globalEditor.setCopyOperand(main.qmodel)
+                            pmocjs.setCopyOperand(main.qmodel)
                         }
                     }
                     MenuItem {
                         text: 'Cut'
                         shortcut: "Ctrl+X"
                         onTriggered: {
-                            globalEditor.setCopyOperand(main.qmodel)
-                            globalEditor.setCutSubject(main.parent.qmodel)
+                            pmocjs.setCopyOperand(main.qmodel)
+                            pmocjs.setCutSubject(main.parent.qmodel)
 
                             subjectrequired()
                         }
@@ -109,8 +109,8 @@ objectName:'pmocmousearea'
                         text: 'Paste'
                         shortcut: "Ctrl+V"
                         onTriggered: {
-                            globalEditor.realPaste(main.qmodel)
-globalEditor.popQQModelUi(globalEditor.getCopyOperand(),
+                            pmocjs.realPaste(main.qmodel)
+pmocjs.popQQModelUi(pmocjs.getCopyOperand(),
 main.qmodel.getQuickItem()
 )
  main.qmodel.modelChanged()
@@ -121,10 +121,10 @@ main.qmodel.getQuickItem()
                         shortcut: "Suppr"
                         onTriggered: {
 
-                            globalEditor.setCopyOperand(main.qmodel)
-                            globalEditor.setCutSubject(main.parent.qmodel)
-globalEditor.isCutAction=false
-                            globalEditor.realRemoval()
+                            pmocjs.setCopyOperand(main.qmodel)
+                            pmocjs.setCutSubject(main.parent.qmodel)
+pmocjs.isCutAction=false
+                            pmocjs.realRemoval()
                             subjectrequired()
  //main.parent.qmodel.modelChanged()
 			    main.parent=null;
@@ -151,9 +151,9 @@ globalEditor.isCutAction=false
                         /*onCompleted called befor property setting..have to emit a fake parentChanged signal*/
                         onParentChanged: {
 
-                            globalEditor.osg_ObjectCallback_removed.connect(
+                            pmocjs.osg_ObjectCallback_removed.connect(
                                         obj.osg_Object.callbacksChanged)
-                            //                    globalEditor.osg_ObjectCallback_added.connect(                                obj.osg_Object.callbacksChanged)
+                            //                    pmocjs.osg_ObjectCallback_added.connect(                                obj.osg_Object.callbacksChanged)
                         }
                         //height: 250
                         //implicit_height: 250
@@ -163,7 +163,7 @@ Button{
 text:'fisfok' 
  anchors.fill:parent
 menu:maintoolbar.m_Add_a_Child
-onClicked: globalEditor.menu.parent=obj;
+onClicked: pmocjs.menu.parent=obj;
 }*/
 
                         GroupBox {//x:10

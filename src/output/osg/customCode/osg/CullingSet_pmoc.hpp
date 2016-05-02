@@ -19,7 +19,7 @@ class  QMLCullingSet: public QReflect_CullingSet
 {
 Q_OBJECT
 public:
-QMLCullingSet(pmoc::Instance *i=0,QObject* parent=0);
+QMLCullingSet(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -1,5 +1,7 @@
 #include <osg/Image>
+#include <QtGui/qopengl.h>
 //includes
+#include <QQuickItem>
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Image_pmoc.hpp>
 
@@ -85,7 +87,7 @@ _model->setFileName(s.toStdString());
         }
     }
 }
-osg::QMLImage::QMLImage(pmoc::Instance *i,QObject* parent):QReflect_Image(i,parent)
+osg::QMLImage::QMLImage(const pmoc::Instance *i,QObject* parent):QReflect_Image(i,parent)
 {
 //custom initializations
 }

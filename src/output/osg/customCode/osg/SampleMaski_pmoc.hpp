@@ -13,7 +13,7 @@ class  QMLSampleMaski: public QReflect_SampleMaski
 {
 Q_OBJECT
 public:
-QMLSampleMaski(pmoc::Instance *i=0,QObject* parent=0);
+QMLSampleMaski(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

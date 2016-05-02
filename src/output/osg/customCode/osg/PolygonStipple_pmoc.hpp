@@ -13,7 +13,7 @@ class  QMLPolygonStipple: public QReflect_PolygonStipple
 {
 Q_OBJECT
 public:
-QMLPolygonStipple(pmoc::Instance *i=0,QObject* parent=0);
+QMLPolygonStipple(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

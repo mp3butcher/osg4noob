@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/LineWidth_pmoc.hpp>
 using namespace pmoc;
-osg::QMLLineWidth::QMLLineWidth(pmoc::Instance *i,QObject* parent):QReflect_LineWidth(i,parent){
+osg::QMLLineWidth::QMLLineWidth(const pmoc::Instance *i,QObject* parent):QReflect_LineWidth(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLLineWidth::connect2View(QQuickItem*i){

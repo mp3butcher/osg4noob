@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ProxyNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLProxyNode::QMLProxyNode(pmoc::Instance *i,QObject* parent):QReflect_ProxyNode(i,parent){
+osg::QMLProxyNode::QMLProxyNode(const pmoc::Instance *i,QObject* parent):QReflect_ProxyNode(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLProxyNode::connect2View(QQuickItem*i){

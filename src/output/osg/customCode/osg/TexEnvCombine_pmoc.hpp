@@ -13,7 +13,7 @@ class  QMLTexEnvCombine: public QReflect_TexEnvCombine
 {
 Q_OBJECT
 public:
-QMLTexEnvCombine(pmoc::Instance *i=0,QObject* parent=0);
+QMLTexEnvCombine(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -13,7 +13,7 @@ class  QMLVariableRateCounter: public QReflect_VariableRateCounter
 {
 Q_OBJECT
 public:
-QMLVariableRateCounter(pmoc::Instance *i=0,QObject* parent=0);
+QMLVariableRateCounter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

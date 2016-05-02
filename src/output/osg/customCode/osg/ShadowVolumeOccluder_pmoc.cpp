@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ShadowVolumeOccluder_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShadowVolumeOccluder::QMLShadowVolumeOccluder(pmoc::Instance *i,QObject* parent):QReflect_ShadowVolumeOccluder(i,parent){
+osg::QMLShadowVolumeOccluder::QMLShadowVolumeOccluder(const pmoc::Instance *i,QObject* parent):QReflect_ShadowVolumeOccluder(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShadowVolumeOccluder::connect2View(QQuickItem*i){

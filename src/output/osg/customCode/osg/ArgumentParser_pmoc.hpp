@@ -17,7 +17,7 @@ class  QMLArgumentParser: public QReflect_ArgumentParser
 {
 Q_OBJECT
 public:
-QMLArgumentParser(pmoc::Instance *i=0,QObject* parent=0);
+QMLArgumentParser(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

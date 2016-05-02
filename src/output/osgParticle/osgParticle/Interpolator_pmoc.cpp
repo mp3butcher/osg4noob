@@ -1,6 +1,7 @@
 #include <osgParticle/Interpolator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,21 +10,25 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 using namespace pmoc;
- bool  osgParticle::QReflect_Interpolator::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osgParticle::QReflect_Interpolator:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_Interpolator::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
-const  char*  osgParticle::QReflect_Interpolator::className()const{
+const  char*  osgParticle::QReflect_Interpolator:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osgParticle::QReflect_Interpolator::libraryName()const{
+const  char*  osgParticle::QReflect_Interpolator:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_Interpolator::QReflect_Interpolator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_Interpolator::QReflect_Interpolator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::Interpolator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -48,9 +53,11 @@ std::cerr<<"osgParticle::Interpolator is not instanciable"<<std::endl;return Ins
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_Interpolator::MetaQReflect_Interpolator():MetaQQuickClass( "osgParticle::Interpolator"){
-_typeid=&typeid(osgParticle::Interpolator );           qRegisterMetaType<QMLInterpolator>();
-qmlRegisterType<QReflect_Interpolator>("pmoc.osgParticle",1,0,"QReflect_Interpolator");
-           qmlRegisterType<QMLInterpolator>("pmoc.osgParticle",1,0,"QMLInterpolator");
+_typeid=&typeid(osgParticle::Interpolator );
+           qRegisterMetaType<osgParticle::QMLInterpolator>();
+           qRegisterMetaType<osgParticle::QMLInterpolator*>("pmoc.osgParticle.QMLInterpolator");
+qmlRegisterType<osgParticle::QReflect_Interpolator>("pmoc.osgParticle",1,0,"QReflect_Interpolator");
+           qmlRegisterType<osgParticle::QMLInterpolator>("pmoc.osgParticle",1,0,"QMLInterpolator");
 };
 const std::string osgParticle::MetaQReflect_Interpolator::Imports() const{
  return std::string("");
@@ -59,7 +66,7 @@ const std::string osgParticle::MetaQReflect_Interpolator::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_Interpolator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_Interpolator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_Interpolator::createQQModel(Instance*i){ //return new MetaQReflect_Interpolator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_Interpolator::createQQModel(const Instance*i){ //return new MetaQReflect_Interpolator_QModel(i);}
 QMLInterpolator *ret =new QMLInterpolator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -81,5 +88,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Interpolator_pmoc.cpp"
 #endif
+
+
 
 

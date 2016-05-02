@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAtomicCounterBufferBinding::QMLAtomicCounterBufferBinding(pmoc::Instance *i,QObject* parent):QReflect_AtomicCounterBufferBinding(i,parent){
+osg::QMLAtomicCounterBufferBinding::QMLAtomicCounterBufferBinding(const pmoc::Instance *i,QObject* parent):QReflect_AtomicCounterBufferBinding(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAtomicCounterBufferBinding::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLAtomicCounterBufferBinding::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBufferIndexBinding::QMLBufferIndexBinding(pmoc::Instance *i,QObject* parent):QReflect_BufferIndexBinding(i,parent){
+osg::QMLBufferIndexBinding::QMLBufferIndexBinding(const pmoc::Instance *i,QObject* parent):QReflect_BufferIndexBinding(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBufferIndexBinding::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLBufferIndexBinding::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShaderStorageBufferBinding::QMLShaderStorageBufferBinding(pmoc::Instance *i,QObject* parent):QReflect_ShaderStorageBufferBinding(i,parent){
+osg::QMLShaderStorageBufferBinding::QMLShaderStorageBufferBinding(const pmoc::Instance *i,QObject* parent):QReflect_ShaderStorageBufferBinding(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShaderStorageBufferBinding::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLShaderStorageBufferBinding::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTransformFeedbackBufferBinding::QMLTransformFeedbackBufferBinding(pmoc::Instance *i,QObject* parent):QReflect_TransformFeedbackBufferBinding(i,parent){
+osg::QMLTransformFeedbackBufferBinding::QMLTransformFeedbackBufferBinding(const pmoc::Instance *i,QObject* parent):QReflect_TransformFeedbackBufferBinding(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTransformFeedbackBufferBinding::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLTransformFeedbackBufferBinding::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferIndexBinding_pmoc.hpp>
 using namespace pmoc;
-osg::QMLUniformBufferBinding::QMLUniformBufferBinding(pmoc::Instance *i,QObject* parent):QReflect_UniformBufferBinding(i,parent){
+osg::QMLUniformBufferBinding::QMLUniformBufferBinding(const pmoc::Instance *i,QObject* parent):QReflect_UniformBufferBinding(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLUniformBufferBinding::connect2View(QQuickItem*i){

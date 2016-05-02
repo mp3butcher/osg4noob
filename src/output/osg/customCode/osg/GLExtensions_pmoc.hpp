@@ -13,7 +13,7 @@ class  QMLGLExtensions: public QReflect_GLExtensions
 {
 Q_OBJECT
 public:
-QMLGLExtensions(pmoc::Instance *i=0,QObject* parent=0);
+QMLGLExtensions(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

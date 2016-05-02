@@ -1,6 +1,7 @@
 #ifndef osg_ClipNode_pmocHPP
 #define  osg_ClipNode_pmocHPP 1
 
+
 #include <osg/ClipNode_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -14,11 +15,6 @@ class QReflect_ClipPlane;
 
 #include <osg/ref_ptr>
 #include<osg/ClipNode_pmoc.hpp>
-namespace osg{
-class QReflect_ClipPlane; 
-}
-
-
 #include <MetaQQuickClass.h>
 namespace osg{
 class QReflect_ClipNode: public pmoc::QQModel
@@ -35,7 +31,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ClipNode * _model;
-QReflect_ClipNode(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ClipNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ClipNode( );
 //ClipNode
 //virtual  BoundingSphere  computeBound();
@@ -43,17 +39,20 @@ virtual ~QReflect_ClipNode( );
 // void  createClipBox(const  BoundingBox & , unsigned int );
 // void  setClipPlaneList(const  ClipPlaneList &);
 //const  ClipPlaneList & getClipPlaneList();
-Q_INVOKABLE  bool  removeClipPlane( unsigned int );
+Q_INVOKABLE  bool  addClipPlane(osg::QReflect_ClipPlane *clipplane);
+Q_INVOKABLE  bool  removeClipPlane( unsigned int pos);
+Q_INVOKABLE  bool  removeClipPlane(osg::QReflect_ClipPlane *clipplane);
 Q_INVOKABLE  unsigned int  getNumClipPlanes()const;
 Q_INVOKABLE osg::QReflect_ClipNode::ReferenceFrame  getReferenceFrame()const;
-Q_INVOKABLE osg::QReflect_ClipPlane*  getClipPlane( unsigned int );
-Q_INVOKABLE osg::QReflect_ClipPlane*  getClipPlane( unsigned int )const;
-Q_INVOKABLE void   addClipPlane( osg::QReflect_ClipPlane *par);//{return new osg::QReflect_ClipPlane(_model->getClipPlane());}
+Q_INVOKABLE osg::QReflect_ClipPlane*  getClipPlane( unsigned int pos);
+Q_INVOKABLE osg::QReflect_ClipPlane*  getClipPlane( unsigned int pos)const;
 Q_INVOKABLE void  setLocalStateSetModes( unsigned int );
-Q_INVOKABLE void  setReferenceFrame(osg::QReflect_ClipNode::ReferenceFrame );
+Q_INVOKABLE void  setReferenceFrame(osg::QReflect_ClipNode::ReferenceFrame rf);
 Q_INVOKABLE void  setStateSetModes(osg::QReflect_StateSet * , unsigned int )const;
-Q_INVOKABLE void pmoc_reverse_addClipPlane( osg::QReflect_ClipPlane *par);//{_model->setClipPlane(par->_model);emit ClipPlaneCollectionChanged(par);}
+Q_PROPERTY(osg::QReflect_ClipNode::ReferenceFrame  ReferenceFrame  READ getReferenceFrame WRITE setReferenceFrame NOTIFY ReferenceFrameChanged)
 signals: void ClipPlaneCollectionChanged();
+public:
+signals: void ReferenceFrameChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -67,7 +66,7 @@ public:
 MetaQReflect_ClipNode();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -78,6 +77,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ClipNode_pmocHPP
 

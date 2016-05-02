@@ -13,7 +13,7 @@ class  QMLCounter: public QReflect_Counter
 {
 Q_OBJECT
 public:
-QMLCounter(pmoc::Instance *i=0,QObject* parent=0);
+QMLCounter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

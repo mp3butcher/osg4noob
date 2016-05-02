@@ -15,7 +15,7 @@ class  QMLProgram: public QReflect_Program
 {
 Q_OBJECT
 public:
-QMLProgram(pmoc::Instance *i=0,QObject* parent=0);
+QMLProgram(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -1,5 +1,6 @@
 #include <osg/VertexAttribDivisor>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,42 +10,77 @@
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_VertexAttribDivisor::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_VertexAttribDivisor:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_VertexAttribDivisor::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- int  osg::QReflect_VertexAttribDivisor::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_VertexAttribDivisor:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_VertexAttribDivisor::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- unsigned int  osg::QReflect_VertexAttribDivisor::getMember()const{
+ unsigned int  osg::QReflect_VertexAttribDivisor:: getDivisor()const{
+//params checking
+return _model->getDivisor();
+
+}
+ unsigned int  osg::QReflect_VertexAttribDivisor:: getIndex()const{
+//params checking
+return _model->getIndex();
+
+}
+ unsigned int  osg::QReflect_VertexAttribDivisor:: getMember()const{
+//params checking
 return _model->getMember();
 
 }
-const  char*  osg::QReflect_VertexAttribDivisor::className()const{
+ void osg::QReflect_VertexAttribDivisor::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_VertexAttribDivisor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_VertexAttribDivisor::setDivisor( unsigned int  p0){
+//params checking
+ _model->setDivisor(p0);
+emit DivisorChanged();
+
+}
+ void osg::QReflect_VertexAttribDivisor::setIndex( unsigned int  p0){
+//params checking
+ _model->setIndex(p0);
+emit IndexChanged();
+
+}
+const  char*  osg::QReflect_VertexAttribDivisor:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_VertexAttribDivisor::libraryName()const{
+const  char*  osg::QReflect_VertexAttribDivisor:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-const unsigned int osg::QReflect_VertexAttribDivisor::getDivisor()const{return _model->getDivisor();}
-const unsigned int osg::QReflect_VertexAttribDivisor::getIndex()const{return _model->getIndex();}
-osg::QReflect_Object*osg::QReflect_VertexAttribDivisor::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_VertexAttribDivisor::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_VertexAttribDivisor::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_VertexAttribDivisor::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
-void  osg::QReflect_VertexAttribDivisor::setDivisor(const unsigned int &par){_model->setDivisor(par);emit DivisorChanged(par);}
-void  osg::QReflect_VertexAttribDivisor::setIndex(const unsigned int &par){_model->setIndex(par);emit IndexChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_VertexAttribDivisor::QReflect_VertexAttribDivisor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_VertexAttribDivisor::QReflect_VertexAttribDivisor(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::VertexAttribDivisor*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -72,9 +108,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_VertexAttribDivisor::MetaQReflect_VertexAttribDivisor():MetaQQuickClass( "osg::VertexAttribDivisor"){
-_typeid=&typeid(osg::VertexAttribDivisor );           qRegisterMetaType<QMLVertexAttribDivisor>();
-qmlRegisterType<QReflect_VertexAttribDivisor>("pmoc.osg",1,0,"QReflect_VertexAttribDivisor");
-           qmlRegisterType<QMLVertexAttribDivisor>("pmoc.osg",1,0,"QMLVertexAttribDivisor");
+_typeid=&typeid(osg::VertexAttribDivisor );
+           qRegisterMetaType<osg::QMLVertexAttribDivisor>();
+           qRegisterMetaType<osg::QMLVertexAttribDivisor*>("pmoc.osg.QMLVertexAttribDivisor");
+qmlRegisterType<osg::QReflect_VertexAttribDivisor>("pmoc.osg",1,0,"QReflect_VertexAttribDivisor");
+           qmlRegisterType<osg::QMLVertexAttribDivisor>("pmoc.osg",1,0,"QMLVertexAttribDivisor");
 };
 const std::string osg::MetaQReflect_VertexAttribDivisor::Imports() const{
  return std::string("");
@@ -83,7 +121,7 @@ const std::string osg::MetaQReflect_VertexAttribDivisor::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_VertexAttribDivisor::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_VertexAttribDivisor::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_VertexAttribDivisor::createQQModel(Instance*i){ //return new MetaQReflect_VertexAttribDivisor_QModel(i);}
+QQModel* osg::MetaQReflect_VertexAttribDivisor::createQQModel(const Instance*i){ //return new MetaQReflect_VertexAttribDivisor_QModel(i);}
 QMLVertexAttribDivisor *ret =new QMLVertexAttribDivisor(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -105,5 +143,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_VertexAttribDivisor_pmoc.cpp"
 #endif
+
+
 
 

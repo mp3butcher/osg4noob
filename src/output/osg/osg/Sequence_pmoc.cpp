@@ -1,5 +1,6 @@
 #include <osg/Sequence>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,96 +9,204 @@
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
-#include <osg/Node>
 using namespace pmoc;
- bool  osg::QReflect_Sequence::addChild(osg::QReflect_Node *p0 , double p1){
+ bool  osg::QReflect_Sequence:: addChild(osg::QReflect_Node  *p0 , double  p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Sequence::addChild : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->addChild(p0->_model ,p1);
 
 }
- bool  osg::QReflect_Sequence::insertChild( unsigned int p0 ,osg::QReflect_Node *p1 , double p2){
+ bool  osg::QReflect_Sequence:: addChild(osg::QReflect_Node  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Sequence::addChild : parameter n.0 is NULL\n"<<endl;return -1;}
+emit ChildCollectionChanged();
+return _model->addChild(p0->_model);
+
+}
+ bool  osg::QReflect_Sequence:: getClearOnStop()const{
+//params checking
+return _model->getClearOnStop();
+
+}
+ bool  osg::QReflect_Sequence:: getSync()const{
+//params checking
+return _model->getSync();
+
+}
+ bool  osg::QReflect_Sequence:: insertChild( unsigned int  p0 ,osg::QReflect_Node  *p1 , double  p2){
+//params checking
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_Sequence::insertChild : parameter n.1 is NULL\n"<<endl;return -1;}
 return _model->insertChild(p0 ,p1->_model ,p2);
 
 }
- bool  osg::QReflect_Sequence::insertChild( unsigned int p0 ,osg::QReflect_Node *p1){
+ bool  osg::QReflect_Sequence:: insertChild( unsigned int  p0 ,osg::QReflect_Node  *p1){
+//params checking
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_Sequence::insertChild : parameter n.1 is NULL\n"<<endl;return -1;}
 return _model->insertChild(p0 ,p1->_model);
 
 }
- bool  osg::QReflect_Sequence::removeChildren( unsigned int p0 , unsigned int p1){
+ bool  osg::QReflect_Sequence:: removeChild(osg::QReflect_Node  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Sequence::removeChild : parameter n.0 is NULL\n"<<endl;return -1;}
+emit ChildCollectionChanged();
+return _model->removeChild(p0->_model);
+
+}
+ bool  osg::QReflect_Sequence:: removeChildren( unsigned int  p0 , unsigned int  p1){
+//params checking
 return _model->removeChildren(p0 ,p1);
 
 }
- double  osg::QReflect_Sequence::getTime( unsigned int p0)const{
+ double  osg::QReflect_Sequence:: getDefaultTime()const{
+//params checking
+return _model->getDefaultTime();
+
+}
+ double  osg::QReflect_Sequence:: getLastFrameTime()const{
+//params checking
+return _model->getLastFrameTime();
+
+}
+ double  osg::QReflect_Sequence:: getTime( unsigned int  p0)const{
+//params checking
 return _model->getTime(p0);
 
 }
- unsigned int  osg::QReflect_Sequence::getNumFrames()const{
+ float  osg::QReflect_Sequence:: getSpeed()const{
+//params checking
+return _model->getSpeed();
+
+}
+ int  osg::QReflect_Sequence:: getBegin()const{
+//params checking
+return _model->getBegin();
+
+}
+ int  osg::QReflect_Sequence:: getEnd()const{
+//params checking
+return _model->getEnd();
+
+}
+ int  osg::QReflect_Sequence:: getNumRepeats()const{
+//params checking
+return _model->getNumRepeats();
+
+}
+ int  osg::QReflect_Sequence:: getValue()const{
+//params checking
+return _model->getValue();
+
+}
+ unsigned int  osg::QReflect_Sequence:: getNumFrames()const{
+//params checking
 return _model->getNumFrames();
 
 }
- void osg::QReflect_Sequence::getDuration( float &p0 , int &p1)const{
+ void osg::QReflect_Sequence::getDuration( float  &p0 , int  &p1)const{
+//params checking
  _model->getDuration(p0 ,p1);
 
 }
- void osg::QReflect_Sequence::setDuration( float p0 , int p1){
+ void osg::QReflect_Sequence::setBegin( int  p0){
+//params checking
+ _model->setBegin(p0);
+emit BeginChanged();
+
+}
+ void osg::QReflect_Sequence::setClearOnStop( bool  p0){
+//params checking
+ _model->setClearOnStop(p0);
+emit ClearOnStopChanged();
+
+}
+ void osg::QReflect_Sequence::setDefaultTime( double  p0){
+//params checking
+ _model->setDefaultTime(p0);
+emit DefaultTimeChanged();
+
+}
+ void osg::QReflect_Sequence::setDuration( float  p0 , int  p1){
+//params checking
  _model->setDuration(p0 ,p1);
 
 }
- void osg::QReflect_Sequence::setInterval(osg::QReflect_Sequence::LoopMode p0 , int p1 , int p2){
+ void osg::QReflect_Sequence::setEnd( int  p0){
+//params checking
+ _model->setEnd(p0);
+emit EndChanged();
+
+}
+ void osg::QReflect_Sequence::setInterval(osg::QReflect_Sequence::LoopMode  p0 , int  p1 , int  p2){
+//params checking
  _model->setInterval(static_cast<osg::Sequence::LoopMode>(p0) ,p1 ,p2);
 
 }
- void osg::QReflect_Sequence::setLoopMode(osg::QReflect_Sequence::LoopMode p0){
+ void osg::QReflect_Sequence::setLastFrameTime( double  p0){
+//params checking
+ _model->setLastFrameTime(p0);
+emit LastFrameTimeChanged();
+
+}
+ void osg::QReflect_Sequence::setLoopMode(osg::QReflect_Sequence::LoopMode  p0){
+//params checking
  _model->setLoopMode(static_cast<osg::Sequence::LoopMode>(p0));
+emit LoopModeChanged();
 
 }
- void osg::QReflect_Sequence::setMode(osg::QReflect_Sequence::SequenceMode p0){
+ void osg::QReflect_Sequence::setMode(osg::QReflect_Sequence::SequenceMode  p0){
+//params checking
  _model->setMode(static_cast<osg::Sequence::SequenceMode>(p0));
+emit ModeChanged();
 
 }
- void osg::QReflect_Sequence::setTime( unsigned int p0 , double p1){
+ void osg::QReflect_Sequence::setNumRepeats( int  p0){
+//params checking
+ _model->setNumRepeats(p0);
+emit NumRepeatsChanged();
+
+}
+ void osg::QReflect_Sequence::setSpeed( float  p0){
+//params checking
+ _model->setSpeed(p0);
+emit SpeedChanged();
+
+}
+ void osg::QReflect_Sequence::setSync( bool  p0){
+//params checking
+ _model->setSync(p0);
+emit SyncChanged();
+
+}
+ void osg::QReflect_Sequence::setTime( unsigned int  p0 , double  p1){
+//params checking
  _model->setTime(p0 ,p1);
 
 }
- void osg::QReflect_Sequence::traverse(osg::QReflect_NodeVisitor *p0){
+ void osg::QReflect_Sequence::setValue( int  p0){
+//params checking
+ _model->setValue(p0);
+emit ValueChanged();
+
+}
+ void osg::QReflect_Sequence::traverse(osg::QReflect_NodeVisitor  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Sequence::traverse : parameter n.0 is NULL\n"<<endl;return;}
  _model->traverse(*p0->_model);
 
 }
-const bool osg::QReflect_Sequence::getClearOnStop()const{return _model->getClearOnStop();}
-const bool osg::QReflect_Sequence::getSync()const{return _model->getSync();}
-const double osg::QReflect_Sequence::getDefaultTime()const{return _model->getDefaultTime();}
-const double osg::QReflect_Sequence::getLastFrameTime()const{return _model->getLastFrameTime();}
-const float osg::QReflect_Sequence::getSpeed()const{return _model->getSpeed();}
-const int osg::QReflect_Sequence::getBegin()const{return _model->getBegin();}
-const int osg::QReflect_Sequence::getEnd()const{return _model->getEnd();}
-const int osg::QReflect_Sequence::getNumRepeats()const{return _model->getNumRepeats();}
-const int osg::QReflect_Sequence::getValue()const{return _model->getValue();}
 osg::QReflect_Sequence::LoopMode  osg::QReflect_Sequence::getLoopMode()const{
+//params checking
 osg::QReflect_Sequence::LoopMode ret=static_cast<osg::QReflect_Sequence::LoopMode>( _model->getLoopMode());return  ret;
 
 }
 osg::QReflect_Sequence::SequenceMode  osg::QReflect_Sequence::getMode()const{
+//params checking
 osg::QReflect_Sequence::SequenceMode ret=static_cast<osg::QReflect_Sequence::SequenceMode>( _model->getMode());return  ret;
 
 }
-void   osg::QReflect_Sequence::addChild( osg::QReflect_Node *par){
-_model->addChild(par->_model);
-}
-void   osg::QReflect_Sequence::pmoc_reverse_addChild( osg::QReflect_Node *par){
-_model->removeChild(par->_model);
-emit ChildCollectionChanged();
-}
-void  osg::QReflect_Sequence::setBegin(const int &par){_model->setBegin(par);emit BeginChanged(par);}
-void  osg::QReflect_Sequence::setClearOnStop(const bool &par){_model->setClearOnStop(par);emit ClearOnStopChanged(par);}
-void  osg::QReflect_Sequence::setDefaultTime(const double &par){_model->setDefaultTime(par);emit DefaultTimeChanged(par);}
-void  osg::QReflect_Sequence::setEnd(const int &par){_model->setEnd(par);emit EndChanged(par);}
-void  osg::QReflect_Sequence::setLastFrameTime(const double &par){_model->setLastFrameTime(par);emit LastFrameTimeChanged(par);}
-void  osg::QReflect_Sequence::setNumRepeats(const int &par){_model->setNumRepeats(par);emit NumRepeatsChanged(par);}
-void  osg::QReflect_Sequence::setSpeed(const float &par){_model->setSpeed(par);emit SpeedChanged(par);}
-void  osg::QReflect_Sequence::setSync(const bool &par){_model->setSync(par);emit SyncChanged(par);}
-void  osg::QReflect_Sequence::setValue(const int &par){_model->setValue(par);emit ValueChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Sequence::QReflect_Sequence(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Sequence::QReflect_Sequence(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Sequence*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -125,10 +234,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Sequence::MetaQReflect_Sequence():MetaQQuickClass( "osg::Sequence"){
-_typeid=&typeid(osg::Sequence );           qRegisterMetaType<QMLSequence>();
-qmlRegisterType<QReflect_Sequence>("pmoc.osg",1,0,"QReflect_Sequence");
-           qmlRegisterType<QMLSequence>("pmoc.osg",1,0,"QMLSequence");
-       PMOCACTION("getChild","addChild","removeChild");
+_typeid=&typeid(osg::Sequence );
+           qRegisterMetaType<osg::QMLSequence>();
+           qRegisterMetaType<osg::QMLSequence*>("pmoc.osg.QMLSequence");
+qmlRegisterType<osg::QReflect_Sequence>("pmoc.osg",1,0,"QReflect_Sequence");
+           qmlRegisterType<osg::QMLSequence>("pmoc.osg",1,0,"QMLSequence");
 };
 const std::string osg::MetaQReflect_Sequence::Imports() const{
  return std::string("");
@@ -137,7 +247,7 @@ const std::string osg::MetaQReflect_Sequence::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Sequence::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Sequence::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Sequence::createQQModel(Instance*i){ //return new MetaQReflect_Sequence_QModel(i);}
+QQModel* osg::MetaQReflect_Sequence::createQQModel(const Instance*i){ //return new MetaQReflect_Sequence_QModel(i);}
 QMLSequence *ret =new QMLSequence(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -159,6 +269,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Sequence_pmoc.cpp"
 #endif
+
 
 
 

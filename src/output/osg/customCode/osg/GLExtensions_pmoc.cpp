@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GLExtensions_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGLExtensions::QMLGLExtensions(pmoc::Instance *i,QObject* parent):QReflect_GLExtensions(i,parent){
+osg::QMLGLExtensions::QMLGLExtensions(const pmoc::Instance *i,QObject* parent):QReflect_GLExtensions(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGLExtensions::connect2View(QQuickItem*i){

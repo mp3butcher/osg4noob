@@ -36,13 +36,13 @@ FocusScope {
                 if ((event.key == Qt.Key_C)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("copy")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     event.accepted = true
                 }
                 if ((event.key == Qt.Key_X)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("cut")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     subjectrequired(
                                 ) //send a signal (this should be connected with parent (a osg::group or subclass)
                     event.accepted = true
@@ -50,7 +50,7 @@ FocusScope {
                 if ((event.key == Qt.Key_V)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("paste")
-                    globalEditor.realPaste()
+                    pmocjs.realPaste()
                     event.accepted = true
                 }
             }
@@ -80,7 +80,7 @@ objectName:'pmocmousearea'
 		   else{
 		            console.log("selected")
 		            main.focus = true
-		            globalEditor.setOperand(main.qmodel)
+		            pmocjs.setOperand(main.qmodel)
 			}
 
                 }
@@ -93,15 +93,15 @@ objectName:'pmocmousearea'
                         text: 'Copy'
                         shortcut: "Ctrl+C"
                         onTriggered: {
-                            globalEditor.setCopyOperand(main.qmodel)
+                            pmocjs.setCopyOperand(main.qmodel)
                         }
                     }
                     MenuItem {
                         text: 'Cut'
                         shortcut: "Ctrl+X"
                         onTriggered: {
-                            globalEditor.setCopyOperand(main.qmodel)
-                            globalEditor.setCutSubject(main.parent.qmodel)
+                            pmocjs.setCopyOperand(main.qmodel)
+                            pmocjs.setCutSubject(main.parent.qmodel)
 
                             subjectrequired()
                         }
@@ -110,8 +110,8 @@ objectName:'pmocmousearea'
                         text: 'Paste'
                         shortcut: "Ctrl+V"
                         onTriggered: {
-                            globalEditor.realPaste(main.qmodel)
-globalEditor.popQQModelUi(globalEditor.getCopyOperand(),
+                            pmocjs.realPaste(main.qmodel)
+pmocjs.popQQModelUi(pmocjs.getCopyOperand(),
 main.qmodel.getQuickItem()
 )
  main.qmodel.modelChanged()
@@ -122,10 +122,10 @@ main.qmodel.getQuickItem()
                         shortcut: "Suppr"
                         onTriggered: {
 
-                            globalEditor.setCopyOperand(main.qmodel)
-                            globalEditor.setCutSubject(main.parent.qmodel)
-globalEditor.isCutAction=false
-                            globalEditor.realRemoval()
+                            pmocjs.setCopyOperand(main.qmodel)
+                            pmocjs.setCutSubject(main.parent.qmodel)
+pmocjs.isCutAction=false
+                            pmocjs.realRemoval()
                             subjectrequired()
  //main.parent.qmodel.modelChanged()
 			    main.parent=null;
@@ -153,12 +153,12 @@ objectName: "osg_GeodeQQQ"
 property var osg_Geode;//: osg_Geode //QQModel 
  onParentChanged:   if(parent!=null){  
 console.log("Geode  connect"); 
-globalEditor.osg_Drawable_removed.connect(classmain.osg_Geode.updateview);
-globalEditor.osg_Drawable_added.connect(classmain.osg_Geode.updateview);
+pmocjs.osg_Drawable_removed.connect(classmain.osg_Geode.updateview);
+pmocjs.osg_Drawable_added.connect(classmain.osg_Geode.updateview);
 }else{
 console.log("Geode disconnect");
-globalEditor.osg_Drawable_removed.disconnect(classmain.osg_Geode.updateview);
-globalEditor.osg_Drawable_added.disconnect(classmain.osg_Geode.updateview);
+pmocjs.osg_Drawable_removed.disconnect(classmain.osg_Geode.updateview);
+pmocjs.osg_Drawable_added.disconnect(classmain.osg_Geode.updateview);
 console.log("Geode disconnected");
 }
   

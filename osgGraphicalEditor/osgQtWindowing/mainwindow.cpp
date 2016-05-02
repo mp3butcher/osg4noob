@@ -1,13 +1,34 @@
 //#define USEOSGAUDIO 1
+//#define USEGL2
+//#define BUILD_BEFORE_RUN
 #include "mainwindow.h"
 #define PMOC_OSGDB_OPTIONS_STRING ""
-#define MAKEFILEDIR "/home/xeul/SRC/PMOC"
 //"WriteImageHint=UseExternal"
 #include "../ui_mainwindow.h"
 #include <colorcomponentsplugin/colorcomponents.h>
-
+#include <string>
+std::string  myreplace(std::string f, std::string pattern, std::string replace)
+{
+    std::vector< std::string > tstrings;
+    std:: string fp = f;
+    int posend = fp.find(pattern);
+    while (posend >= 0)
+    {
+        std::string s = fp.substr(0, posend);
+        tstrings.push_back(s);
+        fp = fp.substr(posend + pattern.size(), fp.size());
+        posend = fp.find(pattern);
+    }
+    if (!fp.empty())tstrings.push_back(fp);
+    std::string out;
+    for (std::vector< std::string >::iterator i = tstrings.begin(); i != --tstrings.end(); i++)
+        out += (*i) + replace;
+    return out + tstrings.back();
+}
 #include <MetaQQuickLibraryRegistry.h>
 #include <QTextEdit>
+
+#include "qdebugstream.h"
 #include <QQmlContext>
 #include <QStatusBar>
 //#include <MetaLibraryRegistry.h>
@@ -59,6 +80,7 @@
 #include <QtWidgets/QShortcut>
 #include <QtGui/qopenglcontext.h>
 #include <QOpenGLFunctions_3_1>
+#include <QOpenGLFunctions_2_0>
 #include <qtimer.h>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QVBoxLayout>
@@ -222,7 +244,7 @@ public:
     }
     void setSelected(osg::Node*g)
     {
-    ATOMICNODE *ge =dynamic_cast<ATOMICNODE*>(g);
+        ATOMICNODE *ge =dynamic_cast<ATOMICNODE*>(g);
 
         if(ge&&ge->getName()!="SelectionBox")
         {
@@ -301,20 +323,20 @@ ATOMICNODE *PickHandler::createWireBox(ATOMICNODE* geode)
 
     //create an empty bounding box
     osg::BoundingBoxf bb;
- //   bb.expandBy(osg::Vec3f(0.01,0.01,0.01));
+//   bb.expandBy(osg::Vec3f(0.01,0.01,0.01));
 
     //if we have a geode, expand by the drawables bounding box, else use the bounding sphere
     //geode = osg.NodeToGeode(node)
     bool expand=false;
 #ifndef OSG34
-if (geode)
+    if (geode)
     {
         cout<< "geode found"  <<endl;
         for(int  i=0; i<geode->getNumDrawables(); i++)
         {
             osg::Drawable *dwb = geode->getDrawable(i);
             ///HACK FOR BOUND RECOMPUTATINON!!!!
-          dwb->  dirtyBound ();
+            dwb->  dirtyBound ();
             bb.expandBy(dwb->getBoundingBox());
             expand=true;
         }
@@ -324,54 +346,55 @@ if (geode)
 
     osg::Vec3 center = geode->getBound().center();
 #else
- //geode->  dirtyBound ();
- osg::Vec3 center = geode->getBound().center();
-bb.expandBy(geode->getBoundingBox());
-expand=true;
+//geode->  dirtyBound ();
+    osg::Vec3 center = geode->getBound().center();
+    bb.expandBy(geode->getBoundingBox());
+    expand=true;
 #endif
     ///create a geode for the wirebox
     osg::ref_ptr<ATOMICNODE> wbgeode = new ATOMICNODE();
 
 
-if(expand){///create a drawablw box with the right position and size
-    float     lx = bb._max.x() - bb._min.x();
-    float ly = bb._max.y() - bb._min.y();
-    float lz = bb._max.z() - bb._min.z();
-   // center=osg::Vec3(bb._min.x()+lx/2,bb._min.y()+ly/2,bb._min.z()+lz/2);
-    osg::ref_ptr<  osg::Box> box = new osg::Box(center, lx, ly, lz);
-    box->setHalfLengths(osg::Vec3(lx/2,ly/2,lz/2));
-    osg::ref_ptr<osg::ShapeDrawable>  shape = new osg::ShapeDrawable(box);
-    //shape.setColor(osg.Vec4(1.0, 0.0, 0.0, 1.0))
+    if(expand) ///create a drawablw box with the right position and size
+    {
+        float     lx = bb._max.x() - bb._min.x();
+        float ly = bb._max.y() - bb._min.y();
+        float lz = bb._max.z() - bb._min.z();
+        // center=osg::Vec3(bb._min.x()+lx/2,bb._min.y()+ly/2,bb._min.z()+lz/2);
+        osg::ref_ptr<  osg::Box> box = new osg::Box(center, lx, ly, lz);
+        box->setHalfLengths(osg::Vec3(lx/2,ly/2,lz/2));
+        osg::ref_ptr<osg::ShapeDrawable>  shape = new osg::ShapeDrawable(box);
+        //shape.setColor(osg.Vec4(1.0, 0.0, 0.0, 1.0))
 
-    ///#add the drawable to the wirebox geode
-  #ifndef OSG34
-    wbgeode->addDrawable(shape);
+        ///#add the drawable to the wirebox geode
+#ifndef OSG34
+        wbgeode->addDrawable(shape);
 #else
-wbgeode=shape.get();
+        wbgeode=shape.get();
 #endif
- wbgeode->setName("SelectionBox");
-    ///create a stateset for the wirebox
-    osg::ref_ptr<osg::StateSet >stateset =new osg::StateSet();// wbgeode->getOrCreateStateSet();
-    wbgeode->setStateSet(stateset);
+        wbgeode->setName("SelectionBox");
+        ///create a stateset for the wirebox
+        osg::ref_ptr<osg::StateSet >stateset =new osg::StateSet();// wbgeode->getOrCreateStateSet();
+        wbgeode->setStateSet(stateset);
 //    stateset.thisown = 0
 
-    ///create a polygonmode state attribute
-    osg::ref_ptr<osg::PolygonMode> polyModeObj = new osg::PolygonMode();
-    polyModeObj->setMode(osg::PolygonMode::FRONT_AND_BACK, osg::PolygonMode::LINE);
-    stateset->setAttribute(polyModeObj);
+        ///create a polygonmode state attribute
+        osg::ref_ptr<osg::PolygonMode> polyModeObj = new osg::PolygonMode();
+        polyModeObj->setMode(osg::PolygonMode::FRONT_AND_BACK, osg::PolygonMode::LINE);
+        stateset->setAttribute(polyModeObj);
 
-    ///create a linewidth state attribute
-    osg::ref_ptr<osg::LineWidth> lw = new osg::LineWidth();
-    lw->setWidth(2.0);
-    stateset->setAttribute(lw);
+        ///create a linewidth state attribute
+        osg::ref_ptr<osg::LineWidth> lw = new osg::LineWidth();
+        lw->setWidth(2.0);
+        stateset->setAttribute(lw);
 
-    stateset->setAttribute(_selmat);
+        stateset->setAttribute(_selmat);
 
 
-    ///for pointer in [stateset, box, polyModeObj, lw, shape]:
-    ///    pointer.thisown = False
+        ///for pointer in [stateset, box, polyModeObj, lw, shape]:
+        ///    pointer.thisown = False
 
-    ///return the wirebox geode
+        ///return the wirebox geode
     }
     cout<<"returning geode"<<endl;
 
@@ -414,7 +437,7 @@ void PickHandler::pick(osgViewer::View* view, const osgGA::GUIEventAdapter& ea)
 #ifdef POLYTOPEPICKER
     float x = ea.getX()/float(viewport->width()- viewport->x() );//*0.5+0.5;
     float y = ea.getY()/float(viewport->height()- viewport->y() );//*0.5+0.5;
-    std::cerr<<"pickat"<< x<<" "<<y<<endl;
+    //std::cerr<<"pickat"<< x<<" "<<y<<endl;
 
     double mx = viewport->x() + (int)((double )viewport->width()*(ea.getXnormalized()*0.5+0.5));
     double my = viewport->y() + (int)((double )viewport->height()*(ea.getYnormalized()*0.5+0.5));
@@ -449,22 +472,24 @@ void PickHandler::pick(osgViewer::View* view, const osgGA::GUIEventAdapter& ea)
                 std::cout<< idx<<endl;
                 cout<<nodePath[ idx ]->getName()<<endl;
                 cout<<nodePath[ idx ]->className()<<endl;
-                #ifndef OSG34
+#ifndef OSG34
                 ATOMICNODE* ge =
                     dynamic_cast<ATOMICNODE*>(
                         nodePath[ idx ] );
 #else
-osg::Group * gr=nodePath[ idx ]->asGroup();
- osg::Group* ge =0;
-if(gr){
+                osg::Group * gr=nodePath[ idx ]->asGroup();
+                osg::Group* ge =0;
+                if(gr)
+                {
 
 
-for(int i=0;i<gr->getNumChildren();i++){
+                    for(int i=0; i<gr->getNumChildren(); i++)
+                    {
 
-if(gr->getChild(i)==  picker->getFirstIntersection().drawable.get())
-ge=gr;
-}
-}
+                        if(gr->getChild(i)==  picker->getFirstIntersection().drawable.get())
+                            ge=gr;
+                    }
+                }
 ///ge is drawable parent group
 
 #endif
@@ -490,16 +515,16 @@ ge=gr;
                                 gr->removeChild(  wirebox);
                         }
                     }
-                 #ifndef OSG34
-                 _selectedNode = ge;
+#ifndef OSG34
+                    _selectedNode = ge;
 
                     // setselcted
 
-      wirebox=createWireBox(ge);
-      #else
-           _selectedNode = picker->getFirstIntersection().drawable.get();
+                    wirebox=createWireBox(ge);
+#else
+                    _selectedNode = picker->getFirstIntersection().drawable.get();
                     wirebox=createWireBox(picker->getFirstIntersection().drawable.get());
-                    #endif
+#endif
 
                     // boxgr->addChild(box);
                     for(int i=0; i<_selectedNode->getNumParents(); i++)
@@ -511,17 +536,18 @@ ge=gr;
                     /*     removeBoxes();
                     setSelected(ge);*/
 
-if(_selectedNode->getName().empty()){
+                    if(_selectedNode->getName().empty())
+                    {
 ///not named case : pop ze item
-pmoc::Instance ins=PMOCADDOBJECT(*_selectedNode.get());
+                        pmoc::Instance ins=PMOCADDOBJECT(*_selectedNode.get());
 
-emit _uieditor->qmodselected(ins.model->createQQModel(&ins),_uieditor->_win->rootObject());
+                        emit _uieditor->qmodselected(ins.model->createQQModel(&ins),_uieditor->_win->rootObject());
 //ins.model->getGuiComponent((QQuickView*)_uieditor->_win->rootObject()->window(),ins,_uieditor->_win->rootObject());
 
 
-}
-else emit _uieditor->nodeselected(QString(_selectedNode->getName().c_str()));
-                  //  _uieditor->setNodeModel(QString(ge->getName().c_str()));
+                    }
+                    else emit _uieditor->nodeselected(QString(_selectedNode->getName().c_str()));
+                    //  _uieditor->setNodeModel(QString(ge->getName().c_str()));
                     return;
                 }
 
@@ -663,9 +689,10 @@ public:
 
     }
 };*/
-void setupView(osgViewer::View *_osgview){
+void setupView(osgViewer::View *_osgview)
+{
     osgGA::FirstPersonManipulator * orb=new 	myFirstPersonManipulator;
-      // set up the camera manipulators.
+    // set up the camera manipulators.
     {
         osg::ref_ptr<osgGA::KeySwitchMatrixManipulator> keyswitchManipulator = new osgGA::KeySwitchMatrixManipulator;
 
@@ -687,7 +714,7 @@ void setupView(osgViewer::View *_osgview){
     //_osgview->setCameraManipulator( orb );
 
 
-  //  _osgview->addEventHandler(new osgViewer::ThreadingHandler);
+    //  _osgview->addEventHandler(new osgViewer::ThreadingHandler);
 
     // add the window size toggle handler
     _osgview->addEventHandler(new osgViewer::WindowSizeHandler);
@@ -707,7 +734,7 @@ void setupView(osgViewer::View *_osgview){
     _osgview->addEventHandler(new osgViewer::ScreenCaptureHandler);
 
     _osgview->addEventHandler(new osgViewer::WindowSizeHandler);
-    }
+}
 void MainWindow::reparseTreeView()
 {
     _TreeNode.resetTreeViewModel();
@@ -719,6 +746,7 @@ void MainWindow::recompilePlugins()
     loadPlugins(false);
 
 #ifndef WIN32
+#ifdef BUILD_BEFORE_RUN
     QMessageBox dial;
     dial.setGeometry(0,0,200,100);
     dial.setText(QString(_compileprocess.exitCode()));
@@ -793,6 +821,7 @@ void MainWindow::recompilePlugins()
     }
 ///reloadPlugins
 #endif
+#endif
     loadPlugins();
 }
 void MainWindow::loadPlugins(bool load)
@@ -812,9 +841,9 @@ void MainWindow::loadPlugins(bool load)
     else
     {
 ///unload
-        /*
+        //    pmoc::MetaLibraryRegistry::instance()->closeAllLibraries();
         pmoc::MetaQQuickLibraryRegistry::instance()->closeAllLibraries();
-        pmoc::MetaQQuickLibraryRegistry::instance(true);*/
+        pmoc::MetaQQuickLibraryRegistry::instance(true);
     }
 
 }
@@ -822,16 +851,16 @@ void MainWindow::loadPlugins(bool load)
 void MainWindow::popQuickitem(QQModel*q,QQuickItem*p)
 {
     if(QQcurnode)pmoc::fakedelete(QQcurnode);//->setParentItem(0);
-  QQcurnode=0;
-   QQcurnode= _generatedEditor->popQQModelUi(q,p);
+    QQcurnode=0;
+    QQcurnode= _generatedEditor->popQQModelUi(q,p);
 
-    }
+}
 void MainWindow::newFile()
 {
     if(QQcurnode)pmoc::fakedelete(QQcurnode);//->setParentItem(0);
     QQcurnode=0;
     //osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->
-  //  osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->realize();
+//    osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->realize();
     _osgview->setSceneData(0);
 #ifdef USEOSGAUDIO
 
@@ -859,7 +888,7 @@ void MainWindow::newFile()
 #endif
 #ifndef WIN32
 
-   rootnode->getOrCreateUserDataContainer()->addUserObject(osgDB::readFile<osg::ScriptEngine>("ScriptEngine.lua"));
+    rootnode->getOrCreateUserDataContainer()->addUserObject(osgDB::readFile<osg::ScriptEngine>("ScriptEngine.lua"));
 #endif
     _osgview->setSceneData(rootnode);
     /*#tre=TreeNodeDataObject("ROOT",0)
@@ -874,13 +903,15 @@ void MainWindow::newFile()
 
 
 
-class GCHacker:public osg::NodeVisitor{
-osg::GraphicsContext*_gc;
+class GCHacker:public osg::NodeVisitor
+{
+    osg::GraphicsContext*_gc;
 public:
-GCHacker(osg::GraphicsContext*gc):NodeVisitor(osg::NodeVisitor::TRAVERSE_ALL_CHILDREN),_gc(gc){}
-        virtual void apply(osg::Camera& geometry){
-      geometry.setGraphicsContext(_gc);
-        }
+    GCHacker(osg::GraphicsContext*gc):NodeVisitor(osg::NodeVisitor::TRAVERSE_ALL_CHILDREN),_gc(gc) {}
+    virtual void apply(osg::Camera& geometry)
+    {
+        geometry.setGraphicsContext(_gc);
+    }
 
 
 
@@ -891,9 +922,9 @@ void MainWindow::loadFile(const QString& file)
 {
     if(QQcurnode)pmoc::fakedelete(QQcurnode);//->setParentItem(0);
     QQcurnode=0;
-   // _osgview->setSceneData(0);
+    // _osgview->setSceneData(0);
 
-   // osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->realize();
+    // osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->realize();
 #ifdef USEOSGAUDIO
     if (osgAudio::SoundManager::instance()->initialized())
         osgAudio::SoundManager::instance()->stopAllSources();
@@ -922,15 +953,16 @@ void MainWindow::loadFile(const QString& file)
 
     //opt->setObjectCacheHint(osgDB::Options::CACHE_ALL);
     opt->setObjectCacheHint( osgDB::ReaderWriter::Options::CACHE_NONE );
-osg::ref_ptr<osg::Object> obj=osgDB::readObjectFile(file.toStdString(),opt);
+    osg::ref_ptr<osg::Object> obj=osgDB::readObjectFile(file.toStdString(),opt);
     osg::ref_ptr<osg::Node> n=dynamic_cast<osg::Node*>(obj.get());
     if(n)
     {
-     osg::GraphicsContext * gc=_osgview->getCamera()->getGraphicsContext();
-     if(gc){
-    GCHacker v( _osgview->getCamera()->getGraphicsContext() );
-    n->accept(v);
-    }
+        osg::GraphicsContext * gc=_osgview->getCamera()->getGraphicsContext();
+        if(gc)
+        {
+            GCHacker v( _osgview->getCamera()->getGraphicsContext() );
+            n->accept(v);
+        }
         osg::Group *rootnode=n->asGroup();
         if(rootnode)
         {
@@ -965,41 +997,42 @@ osg::ref_ptr<osg::Object> obj=osgDB::readObjectFile(file.toStdString(),opt);
 
 
 #ifndef WIN32
-    rootnode->getOrCreateUserDataContainer()->addUserObject(osgDB::readFile<osg::ScriptEngine>("ScriptEngine.lua"));
+            rootnode->getOrCreateUserDataContainer()->addUserObject(osgDB::readFile<osg::ScriptEngine>("ScriptEngine.lua"));
 #endif
             _osgview->setSceneData(rootnode);
 
-            if(!rootnode&&dynamic_cast<osgViewer::View*>(obj.get())){
-           /* osgDB::writeObjectFile(*_osgview,"fuck.osgb");
+            if(!rootnode&&dynamic_cast<osgViewer::View*>(obj.get()))
+            {
+                /* osgDB::writeObjectFile(*_osgview,"fuck.osgb");
 
-           osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->removeView(_osgview);
-           _osgview= dynamic_cast<osgViewer::View*>(osgDB::readObjectFile("fuck.osgb"));*/
-            osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->removeView(_osgview);
-           _osgview=dynamic_cast<osgViewer::View*>(obj.get());
+                osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->removeView(_osgview);
+                _osgview= dynamic_cast<osgViewer::View*>(osgDB::readObjectFile("fuck.osgb"));*/
+                osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->removeView(_osgview);
+                _osgview=dynamic_cast<osgViewer::View*>(obj.get());
 
-          // _osgview->setThreadingModel(osgViewer::ViewerBase::SingleThreaded);
- GCHacker v( gc );
-    _osgview->getSceneData()->accept(v);
-           osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->addView(_osgview);
+                // _osgview->setThreadingModel(osgViewer::ViewerBase::SingleThreaded);
+                GCHacker v( gc );
+                _osgview->getSceneData()->accept(v);
+                osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->addView(_osgview);
 
-           osgQtQuick::OSGViewport* qtv=_win->rootObject()->findChild<osgQtQuick::OSGViewport*>("fullview");
-qtv->hackview(_osgview);
-_win->setManagedview(_osgview);
-setupView(_osgview);
-_osgpicker=new PickHandler(this);
-    _osgview->addEventHandler(_osgpicker);
-emit qtv->windowChanged(_win);
-          //  osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->realize();
-            /*#tre=TreeNodeDataObject("ROOT",0)
-            #recursive parse scenegraph node:scenedata,root NodeListModel and return the Global QModel
+                osgQtQuick::OSGViewport* qtv=_win->rootObject()->findChild<osgQtQuick::OSGViewport*>("fullview");
+                qtv->hackview(_osgview);
+                _win->setManagedview(_osgview);
+                setupView(_osgview);
+                _osgpicker=new PickHandler(this);
+                _osgview->addEventHandler(_osgpicker);
+                emit qtv->windowChanged(_win);
+                //    osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->realize();
+                /*#tre=TreeNodeDataObject("ROOT",0)
+                #recursive parse scenegraph node:scenedata,root NodeListModel and return the Global QModel
 
-            self.win.OSGQTFramer.setbtWorld(None)*/
-}
+                self.win.OSGQTFramer.setbtWorld(None)*/
+            }
             reparseTreeView();
 
 
-PMOCSAFEADDVIRTUALOBJECT(*_osgview,inst,osg::View);
-  PMOCGETMETACLASS(inst.model->id())->getGuiComponent(_win,inst,_UIrootItem);
+            PMOCSAFEADDVIRTUALOBJECT(*_osgview,inst,osg::View);
+            PMOCGETMETACLASS(inst.model->id())->getGuiComponent(_win,inst,_UIrootItem);
 
 
             /*
@@ -1158,98 +1191,99 @@ void MainWindow::setNodeModel(const QString&nodename)
         }
 
 
-FindNamedNodeVisitor nv(nodename.toStdString());
+        FindNamedNodeVisitor nv(nodename.toStdString());
         _osgview->getSceneData()->accept(nv);
-     //   _result=nv._foundNodes;
+        //   _result=nv._foundNodes;
         if(!nodename.toStdString().empty()&&!nv._foundNodes.empty())
         {
             _osgpicker->removeBoxes();
             //for(    std::list<osg::Node*>::iterator it=_result.begin();it!=_result.end();it++)
             _osgpicker->setSelected((*nv._foundNodes.begin()) );
-      /*   }
+            /*   }
 
 
-        _findNamedNodeCallback=new findNamedNodeCallback(nodename.toStdString(),_osgview->getSceneData(),this,this->_osgpicker);
+              _findNamedNodeCallback=new findNamedNodeCallback(nodename.toStdString(),_osgview->getSceneData(),this,this->_osgpicker);
 
 
-        connect(_findNamedNodeCallback.get(),SIGNAL(namedNodesFound()), this,SLOT(setNodeModelStep2()));
-        _osgview->getSceneData()->addUpdateCallback(_findNamedNodeCallback);
+              connect(_findNamedNodeCallback.get(),SIGNAL(namedNodesFound()), this,SLOT(setNodeModelStep2()));
+              _osgview->getSceneData()->addUpdateCallback(_findNamedNodeCallback);
 
-    }
-}
-
-
-void MainWindow::setNodeModelStep2()
-{
-
-    _osgview->getSceneData()->removeUpdateCallback(_findNamedNodeCallback);
-    osg::Node* n=_findNamedNodeCallback->_result.empty()?0:_findNamedNodeCallback->_result.front();*/
-    osg::Node*n=nv._foundNodes.empty()?0:nv._foundNodes.front();
-    if(nodename.toStdString().empty())
-        n=_osgpicker->_selectedNode;
-    //for(vector<Node*>::iterator nit=_findNamedNodeCallback->_result.begin();nit!=_findNamedNodeCallback->_result.end();nit++){
-    //n=nit;
-    /*check if UIEDitor menu class*/
-    if(n )
-    {
-    QList<QQuickItem*> children=_win->rootObject()->childItems();
-    for(int i=2; i<children.count(); i++) ///DIRTY FLUS
-    {
-children[i]->deleteLater();
-}
-        cerr<<" named node found"<<endl;
-        /*   if(n->asGeode()&& n->getName()!="SelectionBox") { _osgpicker->removeBoxes();
-         _osgpicker->setSelected(n->asGeode());}*/
-        osg::Group *gr=n->asGroup();
-        if(gr)
-        {
-            for(QList<TreeNodeDataObject*>::iterator selectedqnode=_selectedqnodes.begin(); selectedqnode!=_selectedqnodes.end(); selectedqnode++) //if(!_selectedqnodes.empty())
-            {
-                if((*selectedqnode)->_subnodes->_parentTreeNode)
-                    cout<<"(*selectedqnode)->_subnodes->_parentTreeNode)"<<(*selectedqnode)->_subnodes->_parentTreeNode->_name.toStdString()<<endl;
-                if((*selectedqnode)->_subnodes->rowCount()!=gr->getNumChildren())
-                {
-                    // cout<<(*selectedqnode)->_subnodes->rowCount()<<"!="<<gr->getNumChildren()<<endl;
-                    (*selectedqnode)->_subnodes->resetTreeViewModel();
-                    for(int i=0; i<gr->getNumChildren(); i++)
-                        parseScene(gr->getChild(i),(*selectedqnode)->_level+1,(*selectedqnode)->_level+5,(*selectedqnode)->_subnodes);
-                }
             }
-        }
-        // Instance inst=PMOCADDOBJECT(gr);
-        /*         MetaQQuickClass * cl=MetaQQuickLibraryRegistry::instance()->getMetaClassByTypeInfo(typeid(*n));
-          Instance inst=pmoc::Instance(cl ,(void*)(&n),false);
-          QQModel* qmodel =QQUICKMETACLASS(inst.model->id())->createQQModel(&inst);
-          _generatedEditor->setQModel_selected(qmodel)   ;
-         _generatedEditor->setosg_Group_cur_selected(gr);
+            }
 
-                _generatedEditor->setosg_Node_cur_selected(n);
-                _generatedEditor->setosg_StateSet_cur_selected(n->getStateSet());*/
-        _findNamedNodeCallback=0;
+
+            void MainWindow::setNodeModelStep2()
+            {
+
+            _osgview->getSceneData()->removeUpdateCallback(_findNamedNodeCallback);
+            osg::Node* n=_findNamedNodeCallback->_result.empty()?0:_findNamedNodeCallback->_result.front();*/
+            osg::Node*n=nv._foundNodes.empty()?0:nv._foundNodes.front();
+            if(nodename.toStdString().empty())
+                n=_osgpicker->_selectedNode;
+            //for(vector<Node*>::iterator nit=_findNamedNodeCallback->_result.begin();nit!=_findNamedNodeCallback->_result.end();nit++){
+            //n=nit;
+            /*check if UIEDitor menu class*/
+            if(n )
+            {
+                QList<QQuickItem*> children=_win->rootObject()->childItems();
+                for(int i=2; i<children.count(); i++) ///DIRTY FLUS
+                {
+                    children[i]->deleteLater();
+                }
+               // cerr<<" named node found"<<endl;
+                /*   if(n->asGeode()&& n->getName()!="SelectionBox") { _osgpicker->removeBoxes();
+                 _osgpicker->setSelected(n->asGeode());}*/
+                osg::Group *gr=n->asGroup();
+                if(gr)
+                {
+                    for(QList<TreeNodeDataObject*>::iterator selectedqnode=_selectedqnodes.begin(); selectedqnode!=_selectedqnodes.end(); selectedqnode++) //if(!_selectedqnodes.empty())
+                    {
+                        if((*selectedqnode)->_subnodes->_parentTreeNode)
+                            cout<<"(*selectedqnode)->_subnodes->_parentTreeNode)"<<(*selectedqnode)->_subnodes->_parentTreeNode->_name.toStdString()<<endl;
+                        if((*selectedqnode)->_subnodes->rowCount()!=gr->getNumChildren())
+                        {
+                            // cout<<(*selectedqnode)->_subnodes->rowCount()<<"!="<<gr->getNumChildren()<<endl;
+                            (*selectedqnode)->_subnodes->resetTreeViewModel();
+                            for(int i=0; i<gr->getNumChildren(); i++)
+                                parseScene(gr->getChild(i),(*selectedqnode)->_level+1,(*selectedqnode)->_level+5,(*selectedqnode)->_subnodes);
+                        }
+                    }
+                }
+                // Instance inst=PMOCADDOBJECT(gr);
+                /*         MetaQQuickClass * cl=MetaQQuickLibraryRegistry::instance()->getMetaClassByTypeInfo(typeid(*n));
+                  Instance inst=pmoc::Instance(cl ,(void*)(&n),false);
+                  QQModel* qmodel =QQUICKMETACLASS(inst.model->id())->createQQModel(&inst);
+                  _generatedEditor->setQModel_selected(qmodel)   ;
+                 _generatedEditor->setosg_Group_cur_selected(gr);
+
+                        _generatedEditor->setosg_Node_cur_selected(n);
+                        _generatedEditor->setosg_StateSet_cur_selected(n->getStateSet());*/
+                _findNamedNodeCallback=0;
 ///NODES
-        {
-            if(QQcurnode)pmoc::fakedelete(QQcurnode);//->setParentItem(0);
-            QQcurnode=0;
-       //     #define STR(str) #str
+                {
+                    if(QQcurnode)pmoc::fakedelete(QQcurnode);//->setParentItem(0);
+                    QQcurnode=0;
+                    //     #define STR(str) #str
 //#define STRING(str) STR(str)
 
 
-  PMOCSAFEADDVIRTUALOBJECT( *n,inst,osg::Node);
-            pmoc::MetaQQuickClass * cl=PMOCGETMETACLASS(inst.model->id());
-            QQcurnode   =       PMOCGETMETACLASS(inst.model->id())->getGuiComponent(_win,inst,_UIrootItem);
+                    PMOCSAFEADDVIRTUALOBJECT( *n,inst,osg::Node);
+                    pmoc::MetaQQuickClass * cl=PMOCGETMETACLASS(inst.model->id());
+                    QQcurnode   =       PMOCGETMETACLASS(inst.model->id())->getGuiComponent(_win,inst,_UIrootItem);
 
-            ///reconnect with generated uieditor
-            ///    connect(QQcurnode,SIGNAL(subjectrequired()),this,SLOT( ) )
+                    ///reconnect with generated uieditor
+                    ///    connect(QQcurnode,SIGNAL(subjectrequired()),this,SLOT( ) )
 
-            pmoc::MetaQQuickClass * classs= PMOCGETMETACLASS(inst.model->id());
-            QQModel *mod=classs->getQQModel4QQuickView(inst);
-            //_UIrootItem->setProperty("qmodel",QVariant<QQModel>)
-            emit treeNodeSelected(mod);
+                    pmoc::MetaQQuickClass * classs= PMOCGETMETACLASS(inst.model->id());
+                    QQModel *mod=classs->getQQModel4QQuickView(inst);
+                    //_UIrootItem->setProperty("qmodel",QVariant<QQModel>)
+                    emit treeNodeSelected(mod);
 
+                }
+
+
+            }
         }
-
-
-        }}
         /*
         ///STATESETS
         {
@@ -1359,7 +1393,7 @@ void MainWindow::newNodeadded(pmoc::QQModel*m)
 
 
 
-    osg::Node * n=   reinterpret_cast<osg::Node*>(this->_generatedEditor->cur_operand->_instance.ptr);//qqn->getModel();
+    osg::Node * n=   reinterpret_cast<osg::Node*>(this->_generatedEditor->cur_operand->getInstance().ptr);//qqn->getModel();
     if(n->getName().empty())
         n->setName(generateID(n));
 
@@ -1377,54 +1411,91 @@ void MainWindow::newNodeadded(pmoc::QQModel*m)
 
 
 }
+static QPlainTextEdit*  _logWidget;
+void logWidgetMessageOutput(QtMsgType Type, const QMessageLogContext& Context, const QString &Message)
+{
+  //  OutputDebugString(reinterpret_cast<const wchar_t *>(Message.utf16()));
+    _logWidget->appendPlainText(Message );
+}
+void myMessageOutput(QtMsgType type,// const char *msg)
+const QMessageLogContext& Context, const QString &msg)
+ {
+     //in this function, you can write the message to any stream!
+     switch (type) {
+     case QtDebugMsg:
+           std::cerr<<"Debug: "<< msg.toStdString()<< std::endl;
+         break;
+     case QtWarningMsg:
+           std::cerr<<"Warning: "<< msg.toStdString()<< std::endl;
+         break;
+     case QtCriticalMsg:
+           std::cerr<<"Critical: "<< msg.toStdString()<< std::endl;
+         break;
+     case QtFatalMsg:
+      std::cerr<<"Fatal: "<< msg.toStdString()<< std::endl;
+         abort();
+         default:   std::cerr<< msg.toStdString()<< std::endl;
+     }
+ }
 
 void MainWindow::createDockScintilla()
 {
     QDockWidget *dock = new QDockWidget(tr("JavaScript Interactor"), this);
 //    dock->setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
-QWidget * stuff=new QWidget(dock);
-QLayout * stufflayout=new QVBoxLayout(stuff);
-stuff->setLayout(stufflayout);
-  //stuff->  setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
-  _javascriptInjector = new QsciScintilla(stuff);
- QStringList sep;
- sep.append(".");
+    QWidget * stuff=new QWidget(dock);
+    QLayout * stufflayout=new QVBoxLayout(stuff);
+    stuff->setLayout(stufflayout);
+    //stuff->  setSizePolicy(QSizePolicy::Maximum,QSizePolicy::Maximum);
+ _logWidget=new QPlainTextEdit(stuff);
+    _logWidget->setReadOnly(true);
+  //  _logWidget->setText(QString("%1").arg(Qt::LogText));
+   //   qInstallMessageHandler(myMessageOutput);
+ //_logWidget->setTextFormat(Qt::LogText);
+
+       QDebugStream* qerr=new QDebugStream(std::cerr, _logWidget);
+
+    _javascriptInjector = new QsciScintilla(stuff);
+    QStringList sep;
+    sep.append(".");
 // _javascriptInjector->setAutoCompletionWordSeparators(sep);
 
     _javascriptInjector->setLexer(_generatedEditor->getLexer());
-     _javascriptInjector->setAutoCompletionSource(QsciScintilla::AcsAPIs);
- //    _javascriptInjector->autoCompleteFromAPIs();
- //_javascriptInjector->setAutoCompletionFillupsEnabled(false);
- //_javascriptInjector->setAutoCompletionReplaceWord(true);
+    _javascriptInjector->setAutoCompletionSource(QsciScintilla::AcsAPIs);
+//    _javascriptInjector->autoCompleteFromAPIs();
+//_javascriptInjector->setAutoCompletionFillupsEnabled(false);
+//_javascriptInjector->setAutoCompletionReplaceWord(true);
 
     //_javascriptInjector->setAutoCompletionThreshold(1);
-_javascriptInjector->setAutoIndent(true);
-	_javascriptInjector->setBraceMatching(QsciScintilla::BraceMatch::SloppyBraceMatch);
+    _javascriptInjector->setAutoIndent(true);
+    _javascriptInjector->setBraceMatching(QsciScintilla::BraceMatch::SloppyBraceMatch);
 
-	_javascriptInjector->setCallTipsStyle(QsciScintilla::CallTipsStyle::CallTipsContext);
+    _javascriptInjector->setCallTipsStyle(QsciScintilla::CallTipsStyle::CallTipsContext);
 
-	_javascriptInjector->setAutoCompletionShowSingle(false);
+    _javascriptInjector->setAutoCompletionShowSingle(false);
 
-	_javascriptInjector->autoCompletionFillupsEnabled();
-	_javascriptInjector->autoCompletionReplaceWord();
-	_javascriptInjector->annotationDisplay();
- 	QShortcut* shortcut_ctrl_space = new QShortcut(QKeySequence("Ctrl+Space"),_javascriptInjector);
+    _javascriptInjector->autoCompletionFillupsEnabled();
+    _javascriptInjector->autoCompletionReplaceWord();
+    _javascriptInjector->annotationDisplay();
+    QShortcut* shortcut_ctrl_space = new QShortcut(QKeySequence("Ctrl+Space"),_javascriptInjector);
     connect(shortcut_ctrl_space, SIGNAL(activated()), _javascriptInjector,SLOT(autoCompleteFromAll()));
 
 
-      _javascriptInjector->setText("<imports>\n/**Important: pmoc components are not polymorphics!!\t\t\t\t\t\t\t\t**/\n"
-      "/**Use globalEditor.brutalCast(obj,stringtype) in order to fullfill original methods prototypes\t\t**/\n"
-      "/**Ex: var newgroup=globalEditor.createInstance(\"osg::Group\");    ///create a new instance\t**/\n"
-      "/**    var grAsNode=globalEditor.brutalCast(newgroup,\"osg::Node\");///upcasting\t\t\t**/\n"
-      "/**    self.osg_Group.addChild(grAsNode);                           ///Hard method call\t\t\t\t**/\n"
-      "/**    self.osg_Group.modelChanged();                               ///update view according new state\t**/\nimport pmoc.osg 1.0\n</imports>\n<script>\n"
-      ""
-      "</script>");
-stufflayout->addWidget(_javascriptInjector);
-QPushButton * button=new QPushButton(stuff);
-button->setText("Inject current selected");
-stufflayout->addWidget(button);
- // stuff->  setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
+    _javascriptInjector->setText("<imports>\n/**Important: pmoc components are not polymorphics!!\t\t\t\t\t\t\t\t**/\n"
+                                 "/**Use obj.cast(stringtype) in order to fullfill original methods prototypes\t\t**/\n"
+                                 "/**Ex: var newgroup=pmocjs.createInstance(\"osg::Group\");    ///create a new instance\t**/\n"
+                                 "/**    self.osg_Group.addChild(newgroup.cast(\"osg::Node\"));       ///upcasting required for method call\t\t\t\t**/\n"
+                          //     "/**    self.osg_Group.modelChanged();                               ///update view according new state\t**/\n"
+                          "import pmoc.osg 1.0\n</imports>\n<script>\n"
+                                 ""
+                                 "</script>");
+    stufflayout->addWidget(_javascriptInjector);
+    QPushButton * button=new QPushButton(stuff);
+    button->setText("Inject current selected");
+    stufflayout->addWidget(button);
+
+      stufflayout->addWidget(_logWidget);
+
+// stuff->  setSizePolicy(QSizePolicy::Expanding,QSizePolicy::Expanding);
     dock->setWidget(stuff);
     addDockWidget(Qt::BottomDockWidgetArea, dock);
     /*viewMenu->addAction(dock->toggleViewAction());
@@ -1449,27 +1520,53 @@ stufflayout->addWidget(button);
                "the complete amount has been received."
             << "You made an overpayment (more than $5). Do you wish to "
                "buy more items, or should we return the excess to you?");*/
-  //  dock->setWidget(paragraphsList);
-  //  addDockWidget(Qt::RightDockWidgetArea, dock);
+    //  dock->setWidget(paragraphsList);
+    //  addDockWidget(Qt::RightDockWidgetArea, dock);
 //    viewMenu->addAction(dock->toggleViewAction());
 
 
-
-    connect(_javascriptInjector, SIGNAL(currentTextChanged(QString)),
-            this, SLOT(checkInjectorLexic()));
+    connect(_javascriptInjector, SIGNAL(cursorPositionChanged(int,int)),
+            this, SLOT(checkInjectorLexic(int,int)));
     connect(button, SIGNAL(clicked()),
             this, SLOT(injectJavascript()));
-   // connect(paragraphsList, SIGNAL(currentTextChanged(QString)),            this, SLOT(addParagraph(QString)));
+    // connect(paragraphsList, SIGNAL(currentTextChanged(QString)),            this, SLOT(addParagraph(QString)));
 }
-void MainWindow::checkInjectorLexic(){
+void MainWindow::checkInjectorLexic( int line ,int col )
+{
+///retrieve line
+    char * fok=new char [1024];
+    _javascriptInjector->SendScintilla(QsciScintillaBase::SCI_GETLINE,line,fok);
+    fok[col]='\0';
+    string linecontent(fok);
+    delete fok;
 
+///check the lex
+    string::iterator lexit=linecontent.begin()+col;
+    string::iterator lexend=lexit;
+    while(*lexit!=' '&&lexit!= linecontent.begin())
+        lexit--;
+    if(lexit!= linecontent.begin() && lexit<linecontent.begin()+col)lexit++;///in order to remove space
+//cerr<<linecontent<<endl;
 
-_generatedEditor->injectJavaScriptInSelected(_javascriptInjector->text());
+    if(lexit<lexend)//!linecontent.empty()&&!myreplace(linecontent," ","").empty())
+    {
+
+        if(lexit>linecontent.begin() &&lexit!=linecontent.end())
+            linecontent.erase(  linecontent.begin(),lexit );
+        ///linecontent is the last typed word
+        //cerr<<linecontent<<endl;
+        ///so check Metatype with this name
+        linecontent=myreplace(linecontent," ","");
+        _generatedEditor->checkMetaType(QString(linecontent.c_str()));
+    }
+//_generatedEditor->injectJavaScriptInSelected(_javascriptInjector->text());
+
 }
-void MainWindow::injectJavascript(){
+void MainWindow::injectJavascript()
+{
 
 
-_generatedEditor->injectJavaScriptInSelected(_javascriptInjector->text());
+    _generatedEditor->injectJavaScriptInSelected(_javascriptInjector->text());
 }
 MainWindow::MainWindow(const string &conffile,QWidget *parent) :
     BaseQWindow()//,    ui(new Ui::MainWindow)
@@ -1489,7 +1586,7 @@ MainWindow::MainWindow(const string &conffile,QWidget *parent) :
     cCurrentPath[sizeof(cCurrentPath) - 1] = '\0';
     std::string curdir(cCurrentPath);
     cout<<(curdir+"/osg4noob.rcc").c_str()<<endl;
-QResource::registerResource((curdir+"/osg4noob.rcc").c_str());
+    QResource::registerResource((curdir+"/osg4noob.rcc").c_str());
     path.push_back( curdir);
     osgDB::setDataFilePathList(path);
 
@@ -1539,12 +1636,18 @@ QResource::registerResource((curdir+"/osg4noob.rcc").c_str());
     // Make the context current on this window
     m_context->makeCurrent(_win );
     QOpenGLVersionProfile profil;
-    profil.setVersion(3,1);
+#ifndef USEGL2
+    profil.setVersion(3, 1);
+
     // Obtain a functions object and resolve all entry points
     // m_funcs is declared as: QOpenGLFunctions_4_3_Core* m_funcs
     //   QOpenGLVersionProfile::;
     QOpenGLFunctions_3_1 *  m_funcs = m_context->versionFunctions<QOpenGLFunctions_3_1>();//versionFunctions(profil);
-    if ( !m_funcs )
+#else
+    profil.setVersion(2, 0);
+    QOpenGLFunctions_2_0 *  m_funcs = m_context->versionFunctions<QOpenGLFunctions_2_0>();//versionFunctions(profil);
+#endif
+    if (!m_funcs)
     {
         qWarning( "Could not obtain OpenGL versions object" );
         exit( 1 );
@@ -1567,12 +1670,12 @@ QResource::registerResource((curdir+"/osg4noob.rcc").c_str());
     list<string> plugins;///osg not required to specifybecause of dependencies but add it for runtime plugin recompilation
     //plugins.push_back("bullet");
     plugins.push_back("osg");
-  /*plugins.push_back("osgUtil");
-    plugins.push_back("osgParticle");
-    plugins.push_back("osgShadow");
-    plugins.push_back("osgGA");
-    plugins.push_back("osgAnimation");
-    plugins.push_back("osgCal");*/
+    /*plugins.push_back("osgUtil");
+      plugins.push_back("osgParticle");
+      plugins.push_back("osgShadow");
+      plugins.push_back("osgGA");
+      plugins.push_back("osgAnimation");
+      plugins.push_back("osgCal");*/
 
     /*plugins.push_back("osgCal");
 
@@ -1590,7 +1693,7 @@ QResource::registerResource((curdir+"/osg4noob.rcc").c_str());
     plugins.push_back("osgbLinearMath");*/
 
 
-    _makefilePath=MAKEFILEDIR;
+    _makefilePath="/home/pascal/SRC/osgCastWizard2/";
     _compileprocess.setWorkingDirectory(this->_makefilePath);
     this->setPluginToLoad(plugins);
     recompilePlugins();
@@ -1668,8 +1771,8 @@ QResource::registerResource((curdir+"/osg4noob.rcc").c_str());
     }*/
     ///CUSTOMIZE THE VIEW
     //osg::ref_ptr<osgViewer::View > nview;//=new osgViewer::View();
-      osgUtil::   RenderBin::setDefaultRenderBinSortMode(   osgUtil:: RenderBin::  SORT_BY_STATE);//TRAVERSAL_ORDER );
-  //  osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->getView(0)->getR
+    osgUtil::   RenderBin::setDefaultRenderBinSortMode(   osgUtil:: RenderBin::  SORT_BY_STATE);//TRAVERSAL_ORDER );
+    //  osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->getView(0)->getR
     _osgview=osgQtQuick::QuickWindowViewer::instance(_win)->compositeViewer()->getView(0);
 
 
@@ -1689,19 +1792,19 @@ QResource::registerResource((curdir+"/osg4noob.rcc").c_str());
      Instance inst=PMOCADDOBJECT( *_generatedEditor->osg_Group_cur_selected);
      QQUICKMETACLASS(inst.model->id())->getGuiComponent(_win,inst,_UIrootItem);*/
 
-  _win->setManagedview(_osgview);
+    _win->setManagedview(_osgview);
     _osgpicker=new PickHandler(this);
 
 
     _osgview->addEventHandler(_osgpicker);
-  setupView(_osgview);
+    setupView(_osgview);
 
 #if 0
     connect(ui->actionExit,SIGNAL(triggered()),this,SLOT(Quit( )));
 #endif
     //this->setGeometry(0,0,200,400);
     //move(500,500);
-this->setWindowTitle("osg4noob");
+    this->setWindowTitle("osg4noob");
 
 
     /* _textEdit = new QsciScintilla; // инитилизируем редактор
@@ -1749,7 +1852,10 @@ this->setWindowTitle("osg4noob");
     // _win->setVisible(true);
 
     QQuickItem* uied=_win->rootObject() ->findChild<QQuickItem*>("menu",Qt::FindChildrenRecursively);
-//QMenu * fok=uied ->findChild<QMenu*>("osg_Node",Qt::FindChildrenRecursively);
+    show();
+    resize(width, height);
+
+    //QMenu * fok=uied ->findChild<QMenu*>("osg_Node",Qt::FindChildrenRecursively);
 //fok->setEnabled(false);
     //	win->showFullScreen ();
 }

@@ -1,5 +1,7 @@
 #ifndef osg_Quat_pmocHPP
 #define  osg_Quat_pmocHPP 1
+
+
 #include <osg/Quat_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -9,13 +11,19 @@ namespace osg{
 class QReflect_Vec3f;
 			} ;
 namespace osg{ 
-class QReflect_Vec4d;
-			} ;
-namespace osg{ 
 class QReflect_Vec3d;
 			} ;
 namespace osg{ 
+class QReflect_Matrixf;
+			} ;
+namespace osg{ 
+class QReflect_Matrixd;
+			} ;
+namespace osg{ 
 class QReflect_Quat;
+			} ;
+namespace osg{ 
+class QReflect_Vec4d;
 			} ;
 #include <osg/Quat>
 
@@ -29,7 +37,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 Quat * _model;
-QReflect_Quat(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Quat(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Quat( );
 //Quat
 // Quat  conj();
@@ -45,15 +53,6 @@ virtual ~QReflect_Quat( );
 // Vec3d  operator*(const  Vec3d &);
 // Vec3f  operator*(const  Vec3f &);
 // Vec4d  asVec4();
-// bool  operator!=(const  Quat &);
-// bool  operator<(const  Quat &);
-// bool  operator==(const  Quat &);
-// value_type  operator[]( int );
-// value_type & operator[]( int );
-// void  get( Matrixd &);
-// void  get( Matrixf &);
-// void  set(const  Matrixd &);
-// void  set(const  Matrixf &);
 //const  Quat  inverse();
 //const  Quat  operator*( value_type );
 //const  Quat  operator*(const  Quat &);
@@ -61,32 +60,41 @@ virtual ~QReflect_Quat( );
 //const  Quat  operator-();
 //const  Quat  operator-(const  Quat &);
 //const  Quat  operator/(const  Quat &);
+Q_INVOKABLE  bool  operator!=(osg::QReflect_Quat &v)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_Quat &v)const;
+Q_INVOKABLE  bool  operator==(osg::QReflect_Quat &v)const;
 Q_INVOKABLE  bool  zeroRotation()const;
 Q_INVOKABLE  double  length()const;
 Q_INVOKABLE  double  length2()const;
+Q_INVOKABLE  double  operator[]( int i)const;
 Q_INVOKABLE  double  w()const;
 Q_INVOKABLE  double  x()const;
 Q_INVOKABLE  double  y()const;
 Q_INVOKABLE  double  z()const;
+Q_INVOKABLE  double&  operator[]( int i);
 Q_INVOKABLE  double&  w();
 Q_INVOKABLE  double&  x();
 Q_INVOKABLE  double&  y();
 Q_INVOKABLE  double&  z();
-Q_INVOKABLE void  getRotate( double & , double & , double & , double &)const;
-Q_INVOKABLE void  getRotate( double & ,osg::QReflect_Vec3d *)const;
-Q_INVOKABLE void  getRotate( double & ,osg::QReflect_Vec3f *)const;
-Q_INVOKABLE void  makeRotate( double  , double  , double  , double );
-Q_INVOKABLE void  makeRotate( double  ,osg::QReflect_Vec3d * , double  ,osg::QReflect_Vec3d * , double  ,osg::QReflect_Vec3d *);
-Q_INVOKABLE void  makeRotate( double  ,osg::QReflect_Vec3d *);
-Q_INVOKABLE void  makeRotate( double  ,osg::QReflect_Vec3f * , double  ,osg::QReflect_Vec3f * , double  ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  makeRotate( double  ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  makeRotate(osg::QReflect_Vec3d * ,osg::QReflect_Vec3d *);
-Q_INVOKABLE void  makeRotate(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  makeRotate_original(osg::QReflect_Vec3d * ,osg::QReflect_Vec3d *);
-Q_INVOKABLE void  set( double  , double  , double  , double );
-Q_INVOKABLE void  set(osg::QReflect_Vec4d *);
-Q_INVOKABLE void  set(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  slerp( double  ,osg::QReflect_Quat * ,osg::QReflect_Quat *);
+Q_INVOKABLE void  get(osg::QReflect_Matrixd *matrix)const;
+Q_INVOKABLE void  get(osg::QReflect_Matrixf *matrix)const;
+Q_INVOKABLE void  getRotate( double &angle , double &x , double &y , double &z)const;
+Q_INVOKABLE void  getRotate( double &angle ,osg::QReflect_Vec3d *vec)const;
+Q_INVOKABLE void  getRotate( double &angle ,osg::QReflect_Vec3f *vec)const;
+Q_INVOKABLE void  makeRotate( double angle , double x , double y , double z);
+Q_INVOKABLE void  makeRotate( double angle ,osg::QReflect_Vec3d *vec);
+Q_INVOKABLE void  makeRotate( double angle ,osg::QReflect_Vec3f *vec);
+Q_INVOKABLE void  makeRotate( double angle1 ,osg::QReflect_Vec3d *axis1 , double angle2 ,osg::QReflect_Vec3d *axis2 , double angle3 ,osg::QReflect_Vec3d *axis3);
+Q_INVOKABLE void  makeRotate( double angle1 ,osg::QReflect_Vec3f *axis1 , double angle2 ,osg::QReflect_Vec3f *axis2 , double angle3 ,osg::QReflect_Vec3f *axis3);
+Q_INVOKABLE void  makeRotate(osg::QReflect_Vec3d *vec1 ,osg::QReflect_Vec3d *vec2);
+Q_INVOKABLE void  makeRotate(osg::QReflect_Vec3f *vec1 ,osg::QReflect_Vec3f *vec2);
+Q_INVOKABLE void  makeRotate_original(osg::QReflect_Vec3d *vec1 ,osg::QReflect_Vec3d *vec2);
+Q_INVOKABLE void  set( double x , double y , double z , double w);
+Q_INVOKABLE void  set(osg::QReflect_Matrixd *matrix);
+Q_INVOKABLE void  set(osg::QReflect_Matrixf *matrix);
+Q_INVOKABLE void  set(osg::QReflect_Vec4d *v);
+Q_INVOKABLE void  set(osg::QReflect_Vec4f *v);
+Q_INVOKABLE void  slerp( double t ,osg::QReflect_Quat *from ,osg::QReflect_Quat *to);
 public slots:
 virtual void updateModel();
  
@@ -99,7 +107,7 @@ public:
 MetaQReflect_Quat();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -110,6 +118,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Quat_pmocHPP
 

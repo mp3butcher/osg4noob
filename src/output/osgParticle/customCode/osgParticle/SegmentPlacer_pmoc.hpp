@@ -15,7 +15,7 @@ class  QMLSegmentPlacer: public QReflect_SegmentPlacer
 {
 Q_OBJECT
 public:
-QMLSegmentPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QMLSegmentPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

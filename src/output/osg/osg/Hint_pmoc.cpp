@@ -1,5 +1,6 @@
 #include <osg/Hint>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,54 +10,77 @@
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_Hint::getMode()const{
+ GLenum  osg::QReflect_Hint:: getMode()const{
+//params checking
 return _model->getMode();
 
 }
- GLenum  osg::QReflect_Hint::getTarget()const{
+ GLenum  osg::QReflect_Hint:: getTarget()const{
+//params checking
 return _model->getTarget();
 
 }
- bool  osg::QReflect_Hint::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_Hint:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Hint::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- int  osg::QReflect_Hint::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_Hint:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Hint::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- unsigned int  osg::QReflect_Hint::getMember()const{
+ unsigned int  osg::QReflect_Hint:: getMember()const{
+//params checking
 return _model->getMember();
 
 }
- void osg::QReflect_Hint::setMode( GLenum p0){
+ void osg::QReflect_Hint::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Hint::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_Hint::setMode( GLenum  p0){
+//params checking
  _model->setMode(p0);
+emit ModeChanged();
 
 }
- void osg::QReflect_Hint::setTarget( GLenum p0){
+ void osg::QReflect_Hint::setTarget( GLenum  p0){
+//params checking
  _model->setTarget(p0);
+emit TargetChanged();
 
 }
-const  char*  osg::QReflect_Hint::className()const{
+const  char*  osg::QReflect_Hint:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_Hint::libraryName()const{
+const  char*  osg::QReflect_Hint:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-osg::QReflect_Object*osg::QReflect_Hint::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_Hint::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Hint::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_Hint::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Hint::QReflect_Hint(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Hint::QReflect_Hint(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Hint*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -84,9 +108,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Hint::MetaQReflect_Hint():MetaQQuickClass( "osg::Hint"){
-_typeid=&typeid(osg::Hint );           qRegisterMetaType<QMLHint>();
-qmlRegisterType<QReflect_Hint>("pmoc.osg",1,0,"QReflect_Hint");
-           qmlRegisterType<QMLHint>("pmoc.osg",1,0,"QMLHint");
+_typeid=&typeid(osg::Hint );
+           qRegisterMetaType<osg::QMLHint>();
+           qRegisterMetaType<osg::QMLHint*>("pmoc.osg.QMLHint");
+qmlRegisterType<osg::QReflect_Hint>("pmoc.osg",1,0,"QReflect_Hint");
+           qmlRegisterType<osg::QMLHint>("pmoc.osg",1,0,"QMLHint");
 };
 const std::string osg::MetaQReflect_Hint::Imports() const{
  return std::string("");
@@ -95,7 +121,7 @@ const std::string osg::MetaQReflect_Hint::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Hint::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Hint::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Hint::createQQModel(Instance*i){ //return new MetaQReflect_Hint_QModel(i);}
+QQModel* osg::MetaQReflect_Hint::createQQModel(const Instance*i){ //return new MetaQReflect_Hint_QModel(i);}
 QMLHint *ret =new QMLHint(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -117,5 +143,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Hint_pmoc.cpp"
 #endif
+
+
 
 

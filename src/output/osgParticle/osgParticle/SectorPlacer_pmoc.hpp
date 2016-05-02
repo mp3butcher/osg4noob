@@ -21,7 +21,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 SectorPlacer * _model;
-QReflect_SectorPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_SectorPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_SectorPlacer( );
 //SectorPlacer
 // osg::Vec3  getControlPosition();
@@ -30,9 +30,9 @@ virtual ~QReflect_SectorPlacer( );
 //const  rangef & getPhiRange();
 //const  rangef & getRadiusRange();
 Q_INVOKABLE  float  volume()const;
-Q_INVOKABLE void  place(osgParticle::QReflect_Particle *)const;
-Q_INVOKABLE void  setPhiRange( float  , float );
-Q_INVOKABLE void  setRadiusRange( float  , float );
+Q_INVOKABLE void  place(osgParticle::QReflect_Particle *P)const;
+Q_INVOKABLE void  setPhiRange( float r1 , float r2);
+Q_INVOKABLE void  setRadiusRange( float r1 , float r2);
 public slots:
 virtual void updateModel();
  
@@ -45,7 +45,7 @@ public:
 MetaQReflect_SectorPlacer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -56,6 +56,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_SectorPlacer_pmocHPP

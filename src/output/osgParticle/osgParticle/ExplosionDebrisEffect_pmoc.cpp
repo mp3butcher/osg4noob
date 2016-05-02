@@ -1,40 +1,49 @@
 #include <osgParticle/ExplosionDebrisEffect>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osgParticle/ExplosionDebrisEffect_pmoc.hpp>
 #include <customCode/osgParticle/ExplosionDebrisEffect_pmoc.hpp>
 #include <customCode/osgParticle/ParticleEffect_pmoc.hpp>
+#include <customCode/osgParticle/Emitter_pmoc.hpp>
+#include <customCode/osgParticle/Program_pmoc.hpp>
 using namespace pmoc;
  void osgParticle::QReflect_ExplosionDebrisEffect::setDefaults(){
+//params checking
  _model->setDefaults();
 
 }
  void osgParticle::QReflect_ExplosionDebrisEffect::setUpEmitterAndProgram(){
+//params checking
  _model->setUpEmitterAndProgram();
 
 }
 osgParticle::QReflect_Emitter*osgParticle::QReflect_ExplosionDebrisEffect::getEmitter()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getEmitter(),inst);
 return inst.isValid()?((osgParticle::QReflect_Emitter * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Emitter*osgParticle::QReflect_ExplosionDebrisEffect::getEmitter(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getEmitter(),inst);
 return inst.isValid()?((osgParticle::QReflect_Emitter * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Program*osgParticle::QReflect_ExplosionDebrisEffect::getProgram()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getProgram(),inst);
 return inst.isValid()?((osgParticle::QReflect_Program * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Program*osgParticle::QReflect_ExplosionDebrisEffect::getProgram(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getProgram(),inst);
 return inst.isValid()?((osgParticle::QReflect_Program * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_ExplosionDebrisEffect::QReflect_ExplosionDebrisEffect(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_ExplosionDebrisEffect::QReflect_ExplosionDebrisEffect(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::ExplosionDebrisEffect*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -62,9 +71,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_ExplosionDebrisEffect::MetaQReflect_ExplosionDebrisEffect():MetaQQuickClass( "osgParticle::ExplosionDebrisEffect"){
-_typeid=&typeid(osgParticle::ExplosionDebrisEffect );           qRegisterMetaType<QMLExplosionDebrisEffect>();
-qmlRegisterType<QReflect_ExplosionDebrisEffect>("pmoc.osgParticle",1,0,"QReflect_ExplosionDebrisEffect");
-           qmlRegisterType<QMLExplosionDebrisEffect>("pmoc.osgParticle",1,0,"QMLExplosionDebrisEffect");
+_typeid=&typeid(osgParticle::ExplosionDebrisEffect );
+           qRegisterMetaType<osgParticle::QMLExplosionDebrisEffect>();
+           qRegisterMetaType<osgParticle::QMLExplosionDebrisEffect*>("pmoc.osgParticle.QMLExplosionDebrisEffect");
+qmlRegisterType<osgParticle::QReflect_ExplosionDebrisEffect>("pmoc.osgParticle",1,0,"QReflect_ExplosionDebrisEffect");
+           qmlRegisterType<osgParticle::QMLExplosionDebrisEffect>("pmoc.osgParticle",1,0,"QMLExplosionDebrisEffect");
 };
 const std::string osgParticle::MetaQReflect_ExplosionDebrisEffect::Imports() const{
  return std::string("");
@@ -73,7 +84,7 @@ const std::string osgParticle::MetaQReflect_ExplosionDebrisEffect::Imports() con
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_ExplosionDebrisEffect::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_ExplosionDebrisEffect::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_ExplosionDebrisEffect::createQQModel(Instance*i){ //return new MetaQReflect_ExplosionDebrisEffect_QModel(i);}
+QQModel* osgParticle::MetaQReflect_ExplosionDebrisEffect::createQQModel(const Instance*i){ //return new MetaQReflect_ExplosionDebrisEffect_QModel(i);}
 QMLExplosionDebrisEffect *ret =new QMLExplosionDebrisEffect(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

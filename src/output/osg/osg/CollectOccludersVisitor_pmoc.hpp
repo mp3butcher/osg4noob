@@ -1,6 +1,7 @@
 #ifndef osg_CollectOccludersVisitor_pmocHPP
 #define  osg_CollectOccludersVisitor_pmocHPP 1
 
+
 #include <osg/CollectOccludersVisitor_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -14,6 +15,18 @@ class QReflect_Vec3f;
 			} ;
 namespace osg{ 
 class QReflect_Transform;
+			} ;
+namespace osg{ 
+class QReflect_Switch;
+			} ;
+namespace osg{ 
+class QReflect_LOD;
+			} ;
+namespace osg{ 
+class QReflect_OccluderNode;
+			} ;
+namespace osg{ 
+class QReflect_Projection;
 			} ;
 #include <osg/CollectOccludersVisitor>
 #include <osg/CollectOccludersVisitor>
@@ -29,38 +42,38 @@ virtual unsigned int getNumParentBox(){return 2;}
 
 /// inheritance simulated via composition
 CollectOccludersVisitor * _model;
-QReflect_CollectOccludersVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CollectOccludersVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CollectOccludersVisitor( );
 //CollectOccludersVisitor
 // ShadowVolumeOccluderSet & getCollectedOccluderSet();
-//virtual  void  apply( osg::LOD &);
-//virtual  void  apply( osg::OccluderNode &);
-//virtual  void  apply( osg::Projection &);
-//virtual  void  apply( osg::Switch &);
 // void  setCollectedOccluderSet(const  ShadowVolumeOccluderSet &);
 //const  ShadowVolumeOccluderSet & getCollectedOccluderSet();
-Q_INVOKABLE  float  getDistanceFromEyePoint(osg::QReflect_Vec3f * , bool )const;
-Q_INVOKABLE  float  getDistanceToEyePoint(osg::QReflect_Vec3f * , bool )const;
-Q_INVOKABLE  float  getDistanceToViewPoint(osg::QReflect_Vec3f * , bool )const;
-Q_INVOKABLE const bool  getCreateDrawablesOnOccludeNodes()const;
-Q_INVOKABLE const float  getMinimumShadowOccluderVolume()const;
-Q_INVOKABLE const unsigned int  getMaximumNumberOfActiveOccluders()const;
+Q_INVOKABLE  bool  getCreateDrawablesOnOccludeNodes()const;
+Q_INVOKABLE  float  getDistanceFromEyePoint(osg::QReflect_Vec3f *pos , bool withLODScale)const;
+Q_INVOKABLE  float  getDistanceToEyePoint(osg::QReflect_Vec3f *pos , bool withLODScale)const;
+Q_INVOKABLE  float  getDistanceToViewPoint(osg::QReflect_Vec3f *pos , bool withLODScale)const;
+Q_INVOKABLE  float  getMinimumShadowOccluderVolume()const;
+Q_INVOKABLE  unsigned int  getMaximumNumberOfActiveOccluders()const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
+Q_INVOKABLE void  apply(osg::QReflect_LOD *node);
 Q_INVOKABLE void  apply(osg::QReflect_Node *);
-Q_INVOKABLE void  apply(osg::QReflect_Transform *);
+Q_INVOKABLE void  apply(osg::QReflect_OccluderNode *node);
+Q_INVOKABLE void  apply(osg::QReflect_Projection *node);
+Q_INVOKABLE void  apply(osg::QReflect_Switch *node);
+Q_INVOKABLE void  apply(osg::QReflect_Transform *node);
 Q_INVOKABLE void  removeOccludedOccluders();
 Q_INVOKABLE void  reset();
-Q_INVOKABLE void setCreateDrawablesOnOccludeNodes(const bool &);
-Q_INVOKABLE void setMaximumNumberOfActiveOccluders(const unsigned int &);
-Q_INVOKABLE void setMinimumShadowOccluderVolume(const float &);
-Q_PROPERTY(bool CreateDrawablesOnOccludeNodes  READ getCreateDrawablesOnOccludeNodes WRITE setCreateDrawablesOnOccludeNodes NOTIFY CreateDrawablesOnOccludeNodesChanged)
-Q_PROPERTY(float MinimumShadowOccluderVolume  READ getMinimumShadowOccluderVolume WRITE setMinimumShadowOccluderVolume NOTIFY MinimumShadowOccluderVolumeChanged)
-Q_PROPERTY(unsigned int MaximumNumberOfActiveOccluders  READ getMaximumNumberOfActiveOccluders WRITE setMaximumNumberOfActiveOccluders NOTIFY MaximumNumberOfActiveOccludersChanged)
-signals: void CreateDrawablesOnOccludeNodesChanged(const bool&);
+Q_INVOKABLE void  setCreateDrawablesOnOccludeNodes( bool flag);
+Q_INVOKABLE void  setMaximumNumberOfActiveOccluders( unsigned int num);
+Q_INVOKABLE void  setMinimumShadowOccluderVolume( float vol);
+Q_PROPERTY(bool  CreateDrawablesOnOccludeNodes  READ getCreateDrawablesOnOccludeNodes WRITE setCreateDrawablesOnOccludeNodes NOTIFY CreateDrawablesOnOccludeNodesChanged)
+Q_PROPERTY(float  MinimumShadowOccluderVolume  READ getMinimumShadowOccluderVolume WRITE setMinimumShadowOccluderVolume NOTIFY MinimumShadowOccluderVolumeChanged)
+Q_PROPERTY(unsigned int  MaximumNumberOfActiveOccluders  READ getMaximumNumberOfActiveOccluders WRITE setMaximumNumberOfActiveOccluders NOTIFY MaximumNumberOfActiveOccludersChanged)
+signals: void CreateDrawablesOnOccludeNodesChanged();
 public:
-signals: void MaximumNumberOfActiveOccludersChanged(const unsigned int&);
+signals: void MaximumNumberOfActiveOccludersChanged();
 public:
-signals: void MinimumShadowOccluderVolumeChanged(const float&);
+signals: void MinimumShadowOccluderVolumeChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -74,7 +87,7 @@ public:
 MetaQReflect_CollectOccludersVisitor();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -85,6 +98,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_CollectOccludersVisitor_pmocHPP
 

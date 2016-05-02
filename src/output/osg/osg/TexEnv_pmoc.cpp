@@ -1,5 +1,6 @@
 #include <osg/TexEnv>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,31 +8,46 @@
 #include <customCode/osg/TexEnv_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_TexEnv::isTextureAttribute()const{
+ bool  osg::QReflect_TexEnv:: isTextureAttribute()const{
+//params checking
 return _model->isTextureAttribute();
 
 }
- int  osg::QReflect_TexEnv::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_TexEnv:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TexEnv::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_TexEnv::setColor(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_TexEnv::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TexEnv::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_TexEnv::setColor(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TexEnv::setColor : parameter n.0 is NULL\n"<<endl;return;}
  _model->setColor(*p0->_model);
 
 }
- void osg::QReflect_TexEnv::setMode(osg::QReflect_TexEnv::Mode p0){
+ void osg::QReflect_TexEnv::setMode(osg::QReflect_TexEnv::Mode  p0){
+//params checking
  _model->setMode(static_cast<osg::TexEnv::Mode>(p0));
+emit ModeChanged();
 
 }
 osg::QReflect_TexEnv::Mode  osg::QReflect_TexEnv::getMode()const{
+//params checking
 osg::QReflect_TexEnv::Mode ret=static_cast<osg::QReflect_TexEnv::Mode>( _model->getMode());return  ret;
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_TexEnv::QReflect_TexEnv(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TexEnv::QReflect_TexEnv(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TexEnv*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -59,9 +75,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TexEnv::MetaQReflect_TexEnv():MetaQQuickClass( "osg::TexEnv"){
-_typeid=&typeid(osg::TexEnv );           qRegisterMetaType<QMLTexEnv>();
-qmlRegisterType<QReflect_TexEnv>("pmoc.osg",1,0,"QReflect_TexEnv");
-           qmlRegisterType<QMLTexEnv>("pmoc.osg",1,0,"QMLTexEnv");
+_typeid=&typeid(osg::TexEnv );
+           qRegisterMetaType<osg::QMLTexEnv>();
+           qRegisterMetaType<osg::QMLTexEnv*>("pmoc.osg.QMLTexEnv");
+qmlRegisterType<osg::QReflect_TexEnv>("pmoc.osg",1,0,"QReflect_TexEnv");
+           qmlRegisterType<osg::QMLTexEnv>("pmoc.osg",1,0,"QMLTexEnv");
 };
 const std::string osg::MetaQReflect_TexEnv::Imports() const{
  return std::string("");
@@ -70,7 +88,7 @@ const std::string osg::MetaQReflect_TexEnv::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TexEnv::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TexEnv::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TexEnv::createQQModel(Instance*i){ //return new MetaQReflect_TexEnv_QModel(i);}
+QQModel* osg::MetaQReflect_TexEnv::createQQModel(const Instance*i){ //return new MetaQReflect_TexEnv_QModel(i);}
 QMLTexEnv *ret =new QMLTexEnv(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -92,5 +110,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_TexEnv_pmoc.cpp"
 #endif
+
+
 
 

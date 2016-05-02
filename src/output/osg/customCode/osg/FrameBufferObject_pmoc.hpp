@@ -8,12 +8,12 @@
 #include <osg/FrameBufferObject>
 
 #include <osg/FrameBufferObject_pmoc.hpp>
-namespace osg{
+/*namespace osg{
 class  QMLGLRenderBufferManager: public QReflect_GLRenderBufferManager
 {
 Q_OBJECT
 public:
-QMLGLRenderBufferManager(pmoc::Instance *i=0,QObject* parent=0);
+QMLGLRenderBufferManager(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -22,7 +22,7 @@ public slots:
 class   MetaQMLGLRenderBufferManager :public MetaQReflect_GLRenderBufferManager{};
 
 }
-  Q_DECLARE_METATYPE(osg::QMLGLRenderBufferManager)
+  Q_DECLARE_METATYPE(osg::QMLGLRenderBufferManager)*/
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <QObject>
 #include <osg/FrameBufferObject>
@@ -33,7 +33,7 @@ class  QMLFrameBufferAttachment: public QReflect_FrameBufferAttachment
 {
 Q_OBJECT
 public:
-QMLFrameBufferAttachment(pmoc::Instance *i=0,QObject* parent=0);
+QMLFrameBufferAttachment(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -54,7 +54,7 @@ class  QMLRenderBuffer: public QReflect_RenderBuffer
 {
 Q_OBJECT
 public:
-QMLRenderBuffer(pmoc::Instance *i=0,QObject* parent=0);
+QMLRenderBuffer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -69,12 +69,12 @@ class   MetaQMLRenderBuffer :public MetaQReflect_RenderBuffer{};
 #include <osg/FrameBufferObject>
 
 #include <osg/FrameBufferObject_pmoc.hpp>
-namespace osg{
+/*namespace osg{
 class  QMLGLFrameBufferObjectManager: public QReflect_GLFrameBufferObjectManager
 {
 Q_OBJECT
 public:
-QMLGLFrameBufferObjectManager(pmoc::Instance *i=0,QObject* parent=0);
+QMLGLFrameBufferObjectManager(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -83,7 +83,7 @@ public slots:
 class   MetaQMLGLFrameBufferObjectManager :public MetaQReflect_GLFrameBufferObjectManager{};
 
 }
-  Q_DECLARE_METATYPE(osg::QMLGLFrameBufferObjectManager)
+  Q_DECLARE_METATYPE(osg::QMLGLFrameBufferObjectManager)*/
 #include <osg/FrameBufferObject_pmoc.hpp>
 #include <QObject>
 #include <osg/FrameBufferObject>
@@ -95,7 +95,7 @@ class  QMLFrameBufferObject: public QReflect_FrameBufferObject
 {
 Q_OBJECT
 public:
-QMLFrameBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLFrameBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

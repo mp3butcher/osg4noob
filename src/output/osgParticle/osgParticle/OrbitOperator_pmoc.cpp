@@ -1,6 +1,7 @@
 #include <osgParticle/OrbitOperator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -11,27 +12,60 @@
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 #include <customCode/osgParticle/Program_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_OrbitOperator::beginOperate(osgParticle::QReflect_Program *p0){
+ float  osgParticle::QReflect_OrbitOperator:: getEpsilon()const{
+//params checking
+return _model->getEpsilon();
+
+}
+ float  osgParticle::QReflect_OrbitOperator:: getMagnitude()const{
+//params checking
+return _model->getMagnitude();
+
+}
+ float  osgParticle::QReflect_OrbitOperator:: getMaxRadius()const{
+//params checking
+return _model->getMaxRadius();
+
+}
+ void osgParticle::QReflect_OrbitOperator::beginOperate(osgParticle::QReflect_Program  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_OrbitOperator::beginOperate : parameter n.0 is NULL\n"<<endl;return;}
  _model->beginOperate(p0->_model);
 
 }
- void osgParticle::QReflect_OrbitOperator::operate(osgParticle::QReflect_Particle *p0 , double p1){
+ void osgParticle::QReflect_OrbitOperator::operate(osgParticle::QReflect_Particle  *p0 , double  p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_OrbitOperator::operate : parameter n.0 is NULL\n"<<endl;return;}
  _model->operate(p0->_model ,p1);
 
 }
- void osgParticle::QReflect_OrbitOperator::setCenter(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_OrbitOperator::setCenter(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_OrbitOperator::setCenter : parameter n.0 is NULL\n"<<endl;return;}
  _model->setCenter(*p0->_model);
 
 }
-const float osgParticle::QReflect_OrbitOperator::getEpsilon()const{return _model->getEpsilon();}
-const float osgParticle::QReflect_OrbitOperator::getMagnitude()const{return _model->getMagnitude();}
-const float osgParticle::QReflect_OrbitOperator::getMaxRadius()const{return _model->getMaxRadius();}
-void  osgParticle::QReflect_OrbitOperator::setEpsilon(const float &par){_model->setEpsilon(par);emit EpsilonChanged(par);}
-void  osgParticle::QReflect_OrbitOperator::setMagnitude(const float &par){_model->setMagnitude(par);emit MagnitudeChanged(par);}
-void  osgParticle::QReflect_OrbitOperator::setMaxRadius(const float &par){_model->setMaxRadius(par);emit MaxRadiusChanged(par);}
+ void osgParticle::QReflect_OrbitOperator::setEpsilon( float  p0){
+//params checking
+ _model->setEpsilon(p0);
+emit EpsilonChanged();
+
+}
+ void osgParticle::QReflect_OrbitOperator::setMagnitude( float  p0){
+//params checking
+ _model->setMagnitude(p0);
+emit MagnitudeChanged();
+
+}
+ void osgParticle::QReflect_OrbitOperator::setMaxRadius( float  p0){
+//params checking
+ _model->setMaxRadius(p0);
+emit MaxRadiusChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_OrbitOperator::QReflect_OrbitOperator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_OrbitOperator::QReflect_OrbitOperator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::OrbitOperator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -59,9 +93,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_OrbitOperator::MetaQReflect_OrbitOperator():MetaQQuickClass( "osgParticle::OrbitOperator"){
-_typeid=&typeid(osgParticle::OrbitOperator );           qRegisterMetaType<QMLOrbitOperator>();
-qmlRegisterType<QReflect_OrbitOperator>("pmoc.osgParticle",1,0,"QReflect_OrbitOperator");
-           qmlRegisterType<QMLOrbitOperator>("pmoc.osgParticle",1,0,"QMLOrbitOperator");
+_typeid=&typeid(osgParticle::OrbitOperator );
+           qRegisterMetaType<osgParticle::QMLOrbitOperator>();
+           qRegisterMetaType<osgParticle::QMLOrbitOperator*>("pmoc.osgParticle.QMLOrbitOperator");
+qmlRegisterType<osgParticle::QReflect_OrbitOperator>("pmoc.osgParticle",1,0,"QReflect_OrbitOperator");
+           qmlRegisterType<osgParticle::QMLOrbitOperator>("pmoc.osgParticle",1,0,"QMLOrbitOperator");
 };
 const std::string osgParticle::MetaQReflect_OrbitOperator::Imports() const{
  return std::string("");
@@ -70,7 +106,7 @@ const std::string osgParticle::MetaQReflect_OrbitOperator::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_OrbitOperator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_OrbitOperator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_OrbitOperator::createQQModel(Instance*i){ //return new MetaQReflect_OrbitOperator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_OrbitOperator::createQQModel(const Instance*i){ //return new MetaQReflect_OrbitOperator_QModel(i);}
 QMLOrbitOperator *ret =new QMLOrbitOperator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

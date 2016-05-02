@@ -11,7 +11,7 @@
  BaseQWindow::BaseQWindow()
  {
      setAttribute(Qt::WA_DeleteOnClose);
-	  
+
      textEdit = new QTextEdit;
      setCentralWidget(textEdit);
 

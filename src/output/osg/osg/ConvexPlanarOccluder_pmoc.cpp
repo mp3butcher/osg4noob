@@ -1,5 +1,6 @@
 #include <osg/ConvexPlanarOccluder>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,17 +9,21 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/ConvexPlanarPolygon_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_ConvexPlanarOccluder::addHole(osg::QReflect_ConvexPlanarPolygon *p0){
+ void osg::QReflect_ConvexPlanarOccluder::addHole(osg::QReflect_ConvexPlanarPolygon  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ConvexPlanarOccluder::addHole : parameter n.0 is NULL\n"<<endl;return;}
  _model->addHole(*p0->_model);
 
 }
- void osg::QReflect_ConvexPlanarOccluder::setOccluder(osg::QReflect_ConvexPlanarPolygon *p0){
+ void osg::QReflect_ConvexPlanarOccluder::setOccluder(osg::QReflect_ConvexPlanarPolygon  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ConvexPlanarOccluder::setOccluder : parameter n.0 is NULL\n"<<endl;return;}
  _model->setOccluder(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_ConvexPlanarOccluder::QReflect_ConvexPlanarOccluder(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ConvexPlanarOccluder::QReflect_ConvexPlanarOccluder(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ConvexPlanarOccluder*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -46,9 +51,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ConvexPlanarOccluder::MetaQReflect_ConvexPlanarOccluder():MetaQQuickClass( "osg::ConvexPlanarOccluder"){
-_typeid=&typeid(osg::ConvexPlanarOccluder );           qRegisterMetaType<QMLConvexPlanarOccluder>();
-qmlRegisterType<QReflect_ConvexPlanarOccluder>("pmoc.osg",1,0,"QReflect_ConvexPlanarOccluder");
-           qmlRegisterType<QMLConvexPlanarOccluder>("pmoc.osg",1,0,"QMLConvexPlanarOccluder");
+_typeid=&typeid(osg::ConvexPlanarOccluder );
+           qRegisterMetaType<osg::QMLConvexPlanarOccluder>();
+           qRegisterMetaType<osg::QMLConvexPlanarOccluder*>("pmoc.osg.QMLConvexPlanarOccluder");
+qmlRegisterType<osg::QReflect_ConvexPlanarOccluder>("pmoc.osg",1,0,"QReflect_ConvexPlanarOccluder");
+           qmlRegisterType<osg::QMLConvexPlanarOccluder>("pmoc.osg",1,0,"QMLConvexPlanarOccluder");
 };
 const std::string osg::MetaQReflect_ConvexPlanarOccluder::Imports() const{
  return std::string("");
@@ -57,7 +64,7 @@ const std::string osg::MetaQReflect_ConvexPlanarOccluder::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ConvexPlanarOccluder::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ConvexPlanarOccluder::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ConvexPlanarOccluder::createQQModel(Instance*i){ //return new MetaQReflect_ConvexPlanarOccluder_QModel(i);}
+QQModel* osg::MetaQReflect_ConvexPlanarOccluder::createQQModel(const Instance*i){ //return new MetaQReflect_ConvexPlanarOccluder_QModel(i);}
 QMLConvexPlanarOccluder *ret =new QMLConvexPlanarOccluder(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -79,5 +86,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ConvexPlanarOccluder_pmoc.cpp"
 #endif
+
+
 
 

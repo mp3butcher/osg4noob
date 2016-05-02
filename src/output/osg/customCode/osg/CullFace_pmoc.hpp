@@ -13,7 +13,7 @@ class  QMLCullFace: public QReflect_CullFace
 {
 Q_OBJECT
 public:
-QMLCullFace(pmoc::Instance *i=0,QObject* parent=0);
+QMLCullFace(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

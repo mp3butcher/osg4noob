@@ -55,7 +55,7 @@ void osg::QMLTexGen::mode(int m)
 
 }
 
-osg::QMLTexGen::QMLTexGen(pmoc::Instance *i,QObject* parent):QReflect_TexGen(i,parent)
+osg::QMLTexGen::QMLTexGen(const pmoc::Instance *i,QObject* parent):QReflect_TexGen(i,parent)
 {
 //custom initializations
 }

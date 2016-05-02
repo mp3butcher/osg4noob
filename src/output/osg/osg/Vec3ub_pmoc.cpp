@@ -1,5 +1,6 @@
 #include <osg/Vec3ub>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,13 +8,30 @@
 #include <customCode/osg/Vec3ub_pmoc.hpp>
 #include <customCode/osg/Vec3ub_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_Vec3ub::set(osg::QReflect_Vec3ub *p0){
+ bool  osg::QReflect_Vec3ub:: operator!=(osg::QReflect_Vec3ub  &p0)const{
+//params checking
+return _model->operator!=(*p0._model);
+
+}
+ bool  osg::QReflect_Vec3ub:: operator<(osg::QReflect_Vec3ub  &p0)const{
+//params checking
+return _model->operator<(*p0._model);
+
+}
+ bool  osg::QReflect_Vec3ub:: operator==(osg::QReflect_Vec3ub  &p0)const{
+//params checking
+return _model->operator==(*p0._model);
+
+}
+ void osg::QReflect_Vec3ub::set(osg::QReflect_Vec3ub  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Vec3ub::set : parameter n.0 is NULL\n"<<endl;return;}
  _model->set(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Vec3ub::QReflect_Vec3ub(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Vec3ub::QReflect_Vec3ub(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Vec3ub*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -36,9 +54,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Vec3ub::MetaQReflect_Vec3ub():MetaQQuickClass( "osg::Vec3ub"){
-_typeid=&typeid(osg::Vec3ub );           qRegisterMetaType<QMLVec3ub>();
-qmlRegisterType<QReflect_Vec3ub>("pmoc.osg",1,0,"QReflect_Vec3ub");
-           qmlRegisterType<QMLVec3ub>("pmoc.osg",1,0,"QMLVec3ub");
+_typeid=&typeid(osg::Vec3ub );
+           qRegisterMetaType<osg::QMLVec3ub>();
+           qRegisterMetaType<osg::QMLVec3ub*>("pmoc.osg.QMLVec3ub");
+qmlRegisterType<osg::QReflect_Vec3ub>("pmoc.osg",1,0,"QReflect_Vec3ub");
+           qmlRegisterType<osg::QMLVec3ub>("pmoc.osg",1,0,"QMLVec3ub");
 };
 const std::string osg::MetaQReflect_Vec3ub::Imports() const{
  return std::string("");
@@ -47,7 +67,7 @@ const std::string osg::MetaQReflect_Vec3ub::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Vec3ub::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Vec3ub::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Vec3ub::createQQModel(Instance*i){ //return new MetaQReflect_Vec3ub_QModel(i);}
+QQModel* osg::MetaQReflect_Vec3ub::createQQModel(const Instance*i){ //return new MetaQReflect_Vec3ub_QModel(i);}
 QMLVec3ub *ret =new QMLVec3ub(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -58,5 +78,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Vec3ub_pmoc.cpp"
 #endif
+
+
 
 

@@ -1,6 +1,7 @@
 #ifndef osg_CameraView_pmocHPP
 #define  osg_CameraView_pmocHPP 1
 
+
 #include <osg/CameraView_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -37,26 +38,29 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 CameraView * _model;
-QReflect_CameraView(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CameraView(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CameraView( );
 //CameraView
 //const  Quat & getAttitude();
 //const  Vec3d & getPosition();
-Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE const double  getFieldOfView()const;
-Q_INVOKABLE const double  getFocalLength()const;
+Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *nv)const;
+Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *nv)const;
+Q_INVOKABLE  double  getFieldOfView()const;
+Q_INVOKABLE  double  getFocalLength()const;
 Q_INVOKABLE osg::QReflect_CameraView::FieldOfViewMode  getFieldOfViewMode()const;
-Q_INVOKABLE void  setAttitude(osg::QReflect_Quat *);
-Q_INVOKABLE void  setFieldOfViewMode(osg::QReflect_CameraView::FieldOfViewMode );
-Q_INVOKABLE void  setPosition(osg::QReflect_Vec3d *);
-Q_INVOKABLE void setFieldOfView(const double &);
-Q_INVOKABLE void setFocalLength(const double &);
-Q_PROPERTY(double FieldOfView  READ getFieldOfView WRITE setFieldOfView NOTIFY FieldOfViewChanged)
-Q_PROPERTY(double FocalLength  READ getFocalLength WRITE setFocalLength NOTIFY FocalLengthChanged)
-signals: void FieldOfViewChanged(const double&);
+Q_INVOKABLE void  setAttitude(osg::QReflect_Quat *quat);
+Q_INVOKABLE void  setFieldOfView( double fieldOfView);
+Q_INVOKABLE void  setFieldOfViewMode(osg::QReflect_CameraView::FieldOfViewMode mode);
+Q_INVOKABLE void  setFocalLength( double focalLength);
+Q_INVOKABLE void  setPosition(osg::QReflect_Vec3d *pos);
+Q_PROPERTY(double  FieldOfView  READ getFieldOfView WRITE setFieldOfView NOTIFY FieldOfViewChanged)
+Q_PROPERTY(double  FocalLength  READ getFocalLength WRITE setFocalLength NOTIFY FocalLengthChanged)
+Q_PROPERTY(osg::QReflect_CameraView::FieldOfViewMode  FieldOfViewMode  READ getFieldOfViewMode WRITE setFieldOfViewMode NOTIFY FieldOfViewModeChanged)
+signals: void FieldOfViewChanged();
 public:
-signals: void FocalLengthChanged(const double&);
+signals: void FieldOfViewModeChanged();
+public:
+signals: void FocalLengthChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -70,7 +74,7 @@ public:
 MetaQReflect_CameraView();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -81,6 +85,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_CameraView_pmocHPP
 

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TransferFunction_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTransferFunction::QMLTransferFunction(pmoc::Instance *i,QObject* parent):QReflect_TransferFunction(i,parent){
+osg::QMLTransferFunction::QMLTransferFunction(const pmoc::Instance *i,QObject* parent):QReflect_TransferFunction(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTransferFunction::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLTransferFunction::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TransferFunction_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTransferFunction1D::QMLTransferFunction1D(pmoc::Instance *i,QObject* parent):QReflect_TransferFunction1D(i,parent){
+osg::QMLTransferFunction1D::QMLTransferFunction1D(const pmoc::Instance *i,QObject* parent):QReflect_TransferFunction1D(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTransferFunction1D::connect2View(QQuickItem*i){

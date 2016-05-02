@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Capability_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCapability::QMLCapability(pmoc::Instance *i,QObject* parent):QReflect_Capability(i,parent){
+osg::QMLCapability::QMLCapability(const pmoc::Instance *i,QObject* parent):QReflect_Capability(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCapability::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLCapability::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Capability_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCapabilityi::QMLCapabilityi(pmoc::Instance *i,QObject* parent):QReflect_Capabilityi(i,parent){
+osg::QMLCapabilityi::QMLCapabilityi(const pmoc::Instance *i,QObject* parent):QReflect_Capabilityi(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCapabilityi::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLCapabilityi::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Capability_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDisablei::QMLDisablei(pmoc::Instance *i,QObject* parent):QReflect_Disablei(i,parent){
+osg::QMLDisablei::QMLDisablei(const pmoc::Instance *i,QObject* parent):QReflect_Disablei(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDisablei::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLDisablei::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Capability_pmoc.hpp>
 using namespace pmoc;
-osg::QMLEnablei::QMLEnablei(pmoc::Instance *i,QObject* parent):QReflect_Enablei(i,parent){
+osg::QMLEnablei::QMLEnablei(const pmoc::Instance *i,QObject* parent):QReflect_Enablei(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLEnablei::connect2View(QQuickItem*i){

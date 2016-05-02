@@ -26,7 +26,7 @@ void y(unsigned int f){if(f!=y()){(*_model)[1]=f;emit yChanged(f);}}
 
 
 
-QMLVec2ui(pmoc::Instance *i=0,QObject* parent=0);
+QMLVec2ui(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

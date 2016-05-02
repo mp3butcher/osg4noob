@@ -1,9 +1,14 @@
 #ifndef osg_Fog_pmocHPP
 #define  osg_Fog_pmocHPP 1
+
+
 #include <osg/Fog_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_Vec4f;
@@ -36,37 +41,43 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Fog * _model;
-QReflect_Fog(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Fog(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Fog( );
 //Fog
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
 //const  Vec4 & getColor();
 Q_INVOKABLE  GLint  getFogCoordinateSource()const;
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE const bool  getUseRadialFog()const;
-Q_INVOKABLE const float  getDensity()const;
-Q_INVOKABLE const float  getEnd()const;
-Q_INVOKABLE const float  getStart()const;
+Q_INVOKABLE  bool  getUseRadialFog()const;
+Q_INVOKABLE  float  getDensity()const;
+Q_INVOKABLE  float  getEnd()const;
+Q_INVOKABLE  float  getStart()const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_Fog::Mode  getMode()const;
-Q_INVOKABLE void  setColor(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  setFogCoordinateSource( GLint );
-Q_INVOKABLE void  setMode(osg::QReflect_Fog::Mode );
-Q_INVOKABLE void setDensity(const float &);
-Q_INVOKABLE void setEnd(const float &);
-Q_INVOKABLE void setStart(const float &);
-Q_INVOKABLE void setUseRadialFog(const bool &);
-Q_PROPERTY(bool UseRadialFog  READ getUseRadialFog WRITE setUseRadialFog NOTIFY UseRadialFogChanged)
-Q_PROPERTY(float Density  READ getDensity WRITE setDensity NOTIFY DensityChanged)
-Q_PROPERTY(float End  READ getEnd WRITE setEnd NOTIFY EndChanged)
-Q_PROPERTY(float Start  READ getStart WRITE setStart NOTIFY StartChanged)
-signals: void DensityChanged(const float&);
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setColor(osg::QReflect_Vec4f *color);
+Q_INVOKABLE void  setDensity( float density);
+Q_INVOKABLE void  setEnd( float end);
+Q_INVOKABLE void  setFogCoordinateSource( GLint source);
+Q_INVOKABLE void  setMode(osg::QReflect_Fog::Mode mode);
+Q_INVOKABLE void  setStart( float start);
+Q_INVOKABLE void  setUseRadialFog( bool useRadialFog);
+Q_PROPERTY(GLint  FogCoordinateSource  READ getFogCoordinateSource WRITE setFogCoordinateSource NOTIFY FogCoordinateSourceChanged)
+Q_PROPERTY(bool  UseRadialFog  READ getUseRadialFog WRITE setUseRadialFog NOTIFY UseRadialFogChanged)
+Q_PROPERTY(float  Density  READ getDensity WRITE setDensity NOTIFY DensityChanged)
+Q_PROPERTY(float  End  READ getEnd WRITE setEnd NOTIFY EndChanged)
+Q_PROPERTY(float  Start  READ getStart WRITE setStart NOTIFY StartChanged)
+Q_PROPERTY(osg::QReflect_Fog::Mode  Mode  READ getMode WRITE setMode NOTIFY ModeChanged)
+signals: void DensityChanged();
 public:
-signals: void EndChanged(const float&);
+signals: void EndChanged();
 public:
-signals: void StartChanged(const float&);
+signals: void FogCoordinateSourceChanged();
 public:
-signals: void UseRadialFogChanged(const bool&);
+signals: void ModeChanged();
+public:
+signals: void StartChanged();
+public:
+signals: void UseRadialFogChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -80,7 +91,7 @@ public:
 MetaQReflect_Fog();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -91,6 +102,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Fog_pmocHPP
 

@@ -1,5 +1,6 @@
 #include <osg/FrontFace>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,22 +8,34 @@
 #include <customCode/osg/FrontFace_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_FrontFace::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_FrontFace:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_FrontFace::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_FrontFace::setMode(osg::QReflect_FrontFace::Mode p0){
+ void osg::QReflect_FrontFace::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_FrontFace::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_FrontFace::setMode(osg::QReflect_FrontFace::Mode  p0){
+//params checking
  _model->setMode(static_cast<osg::FrontFace::Mode>(p0));
+emit ModeChanged();
 
 }
 osg::QReflect_FrontFace::Mode  osg::QReflect_FrontFace::getMode()const{
+//params checking
 osg::QReflect_FrontFace::Mode ret=static_cast<osg::QReflect_FrontFace::Mode>( _model->getMode());return  ret;
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_FrontFace::QReflect_FrontFace(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_FrontFace::QReflect_FrontFace(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::FrontFace*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -50,9 +63,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_FrontFace::MetaQReflect_FrontFace():MetaQQuickClass( "osg::FrontFace"){
-_typeid=&typeid(osg::FrontFace );           qRegisterMetaType<QMLFrontFace>();
-qmlRegisterType<QReflect_FrontFace>("pmoc.osg",1,0,"QReflect_FrontFace");
-           qmlRegisterType<QMLFrontFace>("pmoc.osg",1,0,"QMLFrontFace");
+_typeid=&typeid(osg::FrontFace );
+           qRegisterMetaType<osg::QMLFrontFace>();
+           qRegisterMetaType<osg::QMLFrontFace*>("pmoc.osg.QMLFrontFace");
+qmlRegisterType<osg::QReflect_FrontFace>("pmoc.osg",1,0,"QReflect_FrontFace");
+           qmlRegisterType<osg::QMLFrontFace>("pmoc.osg",1,0,"QMLFrontFace");
 };
 const std::string osg::MetaQReflect_FrontFace::Imports() const{
  return std::string("");
@@ -61,7 +76,7 @@ const std::string osg::MetaQReflect_FrontFace::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_FrontFace::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_FrontFace::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_FrontFace::createQQModel(Instance*i){ //return new MetaQReflect_FrontFace_QModel(i);}
+QQModel* osg::MetaQReflect_FrontFace::createQQModel(const Instance*i){ //return new MetaQReflect_FrontFace_QModel(i);}
 QMLFrontFace *ret =new QMLFrontFace(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -83,5 +98,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_FrontFace_pmoc.cpp"
 #endif
+
+
 
 

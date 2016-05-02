@@ -13,7 +13,7 @@ class  QMLGraphicsOperation: public QReflect_GraphicsOperation
 {
 Q_OBJECT
 public:
-QMLGraphicsOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLGraphicsOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -33,7 +33,7 @@ class  QMLEndOfDynamicDrawBlock: public QReflect_EndOfDynamicDrawBlock
 {
 Q_OBJECT
 public:
-QMLEndOfDynamicDrawBlock(pmoc::Instance *i=0,QObject* parent=0);
+QMLEndOfDynamicDrawBlock(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -53,7 +53,7 @@ class  QMLBlockAndFlushOperation: public QReflect_BlockAndFlushOperation
 {
 Q_OBJECT
 public:
-QMLBlockAndFlushOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLBlockAndFlushOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -74,7 +74,7 @@ class  QMLSwapBuffersOperation: public QReflect_SwapBuffersOperation
 {
 Q_OBJECT
 public:
-QMLSwapBuffersOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLSwapBuffersOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -95,7 +95,7 @@ class  QMLRunOperations: public QReflect_RunOperations
 {
 Q_OBJECT
 public:
-QMLRunOperations(pmoc::Instance *i=0,QObject* parent=0);
+QMLRunOperations(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -116,7 +116,7 @@ class  QMLGraphicsThread: public QReflect_GraphicsThread
 {
 Q_OBJECT
 public:
-QMLGraphicsThread(pmoc::Instance *i=0,QObject* parent=0);
+QMLGraphicsThread(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -137,7 +137,7 @@ class  QMLFlushDeletedGLObjectsOperation: public QReflect_FlushDeletedGLObjectsO
 {
 Q_OBJECT
 public:
-QMLFlushDeletedGLObjectsOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLFlushDeletedGLObjectsOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -157,7 +157,7 @@ class  QMLBarrierOperation: public QReflect_BarrierOperation
 {
 Q_OBJECT
 public:
-QMLBarrierOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLBarrierOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -179,7 +179,7 @@ class  QMLReleaseContext_Block_MakeCurrentOperation: public QReflect_ReleaseCont
 {
 Q_OBJECT
 public:
-QMLReleaseContext_Block_MakeCurrentOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLReleaseContext_Block_MakeCurrentOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

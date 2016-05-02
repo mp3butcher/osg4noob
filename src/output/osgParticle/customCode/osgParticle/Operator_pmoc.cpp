@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/Operator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLOperator::QMLOperator(pmoc::Instance *i,QObject* parent):QReflect_Operator(i,parent){
+osgParticle::QMLOperator::QMLOperator(const pmoc::Instance *i,QObject* parent):QReflect_Operator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLOperator::connect2View(QQuickItem*i){

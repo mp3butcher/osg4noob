@@ -24,7 +24,7 @@ class  QMLNodeTrackerCallback: public QReflect_NodeTrackerCallback
 {
 Q_OBJECT
 public:
-QMLNodeTrackerCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLNodeTrackerCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

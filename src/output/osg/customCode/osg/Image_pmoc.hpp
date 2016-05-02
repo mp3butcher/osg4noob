@@ -69,7 +69,7 @@ public:
     Q_INVOKABLE void writeToFile(QString filename,QString options="");
 
 public:
-    QMLImage(pmoc::Instance *i=0,QObject* parent=0);
+    QMLImage(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 
     inline QString getqtimage()const

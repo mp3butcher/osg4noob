@@ -15,7 +15,7 @@ class  QMLPointPlacer: public QReflect_PointPlacer
 {
 Q_OBJECT
 public:
-QMLPointPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QMLPointPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

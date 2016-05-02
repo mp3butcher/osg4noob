@@ -1,7 +1,18 @@
 #ifndef osg_Referenced_pmocHPP
 #define  osg_Referenced_pmocHPP 1
+
+
 #include <osg/Referenced_pmoc.hpp>
 #include <QObject>
+namespace osg{ 
+class QReflect_DeleteHandler;
+			} ;
+namespace osg{ 
+class QReflect_Observer;
+			} ;
+namespace osg{ 
+class QReflect_ObserverSet;
+			} ;
 #include <osg/Referenced>
 #include <osg/Referenced>
 
@@ -16,31 +27,34 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 Referenced * _model;
-QReflect_Referenced(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Referenced(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Referenced( );
 //Referenced
-// DeleteHandler * getDeleteHandler();
-// ObserverSet * getObserverSet();
-// ObserverSet * getOrCreateObserverSet();
 // OpenThreads::Mutex * getGlobalReferencedMutex();
 // OpenThreads::Mutex * getRefMutex();
 // Referenced & operator=(const  Referenced &);
-// void  addObserver( Observer *);
-// void  removeObserver( Observer *);
-// void  setDeleteHandler( DeleteHandler *);
+Q_INVOKABLE  bool  getThreadSafeRefUnref()const;
+Q_INVOKABLE  bool  getThreadSafeReferenceCounting();
 Q_INVOKABLE  int  ref()const;
 Q_INVOKABLE  int  referenceCount()const;
 Q_INVOKABLE  int  unref()const;
 Q_INVOKABLE  int  unref_nodelete()const;
-Q_INVOKABLE const bool  getThreadSafeRefUnref()const;
-Q_INVOKABLE const bool  getThreadSafeReferenceCounting()const;
-Q_INVOKABLE void setThreadSafeRefUnref(const bool &);
-Q_INVOKABLE void setThreadSafeReferenceCounting(const bool &);
-Q_PROPERTY(bool ThreadSafeRefUnref  READ getThreadSafeRefUnref WRITE setThreadSafeRefUnref NOTIFY ThreadSafeRefUnrefChanged)
-Q_PROPERTY(bool ThreadSafeReferenceCounting  READ getThreadSafeReferenceCounting WRITE setThreadSafeReferenceCounting NOTIFY ThreadSafeReferenceCountingChanged)
-signals: void ThreadSafeRefUnrefChanged(const bool&);
+Q_INVOKABLE osg::QReflect_DeleteHandler*  getDeleteHandler();
+Q_INVOKABLE osg::QReflect_ObserverSet*  getObserverSet()const;
+Q_INVOKABLE osg::QReflect_ObserverSet*  getOrCreateObserverSet()const;
+Q_INVOKABLE void  addObserver(osg::QReflect_Observer *observer)const;
+Q_INVOKABLE void  removeObserver(osg::QReflect_Observer *observer)const;
+Q_INVOKABLE void  setDeleteHandler(osg::QReflect_DeleteHandler *handler);
+Q_INVOKABLE void  setThreadSafeRefUnref( bool threadSafe);
+Q_INVOKABLE void  setThreadSafeReferenceCounting( bool enableThreadSafeReferenceCounting);
+Q_PROPERTY(bool  ThreadSafeRefUnref  READ getThreadSafeRefUnref WRITE setThreadSafeRefUnref NOTIFY ThreadSafeRefUnrefChanged)
+Q_PROPERTY(bool  ThreadSafeReferenceCounting  READ getThreadSafeReferenceCounting WRITE setThreadSafeReferenceCounting NOTIFY ThreadSafeReferenceCountingChanged)
+Q_PROPERTY(osg::QReflect_DeleteHandler * DeleteHandler  READ getDeleteHandler WRITE setDeleteHandler NOTIFY DeleteHandlerChanged)
+signals: void DeleteHandlerChanged();
 public:
-signals: void ThreadSafeReferenceCountingChanged(const bool&);
+signals: void ThreadSafeRefUnrefChanged();
+public:
+signals: void ThreadSafeReferenceCountingChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -54,7 +68,7 @@ public:
 MetaQReflect_Referenced();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -65,6 +79,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Referenced_pmocHPP
 

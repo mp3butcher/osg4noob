@@ -15,7 +15,7 @@ class  QMLScriptEngine: public QReflect_ScriptEngine
 {
     Q_OBJECT
 public:
-    QMLScriptEngine(pmoc::Instance *i=0,QObject* parent=0);
+    QMLScriptEngine(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
     virtual void  updateModel();
@@ -56,7 +56,7 @@ Q_PROPERTY(QString Language  READ Language WRITE Language NOTIFY LanguageChanged
     void LanguageChanged(QString);
 
 public:
-    QMLScript(pmoc::Instance *i=0,QObject* parent=0);
+    QMLScript(const pmoc::Instance *i=0,QObject* parent=0);
       ~QMLScript();
     virtual QQuickItem * connect2View(QQuickItem*);
       QsciScintilla *qsci;
@@ -89,7 +89,7 @@ class  QMLScriptNodeCallback: public QReflect_ScriptNodeCallback
     Q_OBJECT
 public:   QsciScintilla *qsci;
     QsciLexerCPP *lex;
-    QMLScriptNodeCallback(pmoc::Instance *i=0,QObject* parent=0);
+    QMLScriptNodeCallback(const pmoc::Instance *i=0,QObject* parent=0);
     ~QMLScriptNodeCallback( );
     virtual QQuickItem * connect2View(QQuickItem*);
 public slots:

@@ -27,13 +27,13 @@ FocusScope {
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -41,13 +41,13 @@ FocusScope {
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
 
         ///////////END CLASSIC PREAMBULE///////////////////////////////////////////////////
-        ///testhack Component.onCompleted:{console.log(geode.qmodel);globalEditor.setOperand(geode.qmodel);}
+        ///testhack Component.onCompleted:{console.log(geode.qmodel);pmocjs.setOperand(geode.qmodel);}
 
         //style
         width: childrenRect.width
@@ -70,7 +70,7 @@ FocusScope {
             onClicked: {
                 console.log("selected")
                 main.focus = true
-                globalEditor.setOperand(main.qmodel)
+                pmocjs.setOperand(main.qmodel)
             }
             onPressAndHold: uaContextMenu.popup()
             Menu {
@@ -80,15 +80,15 @@ FocusScope {
                     text: 'Copy'
                     shortcut: "Ctrl+C"
                     onTriggered: {
-                        globalEditor.setCopyOperand(main.qmodel)
+                        pmocjs.setCopyOperand(main.qmodel)
                     }
                 }
                 MenuItem {
                     text: 'Cut'
                     shortcut: "Ctrl+X"
                     onTriggered: {
-                        globalEditor.setCopyOperand(main.qmodel)
-                        globalEditor.setCutSubject(main.parent.qmodel)
+                        pmocjs.setCopyOperand(main.qmodel)
+                        pmocjs.setCutSubject(main.parent.qmodel)
                         subjectrequired()
                     }
                 }
@@ -96,16 +96,16 @@ FocusScope {
                     text: 'Paste'
                     shortcut: "Ctrl+V"
                     onTriggered: {
-                        globalEditor.realPaste(main.qmodel)
+                        pmocjs.realPaste(main.qmodel)
                     }
                 }
                 MenuItem {
                     text: 'Remove'
                     shortcut: "Suppr"
                     onTriggered: {
-                        globalEditor.setCopyOperand(main.qmodel)
-                        globalEditor.setCutSubject(main.parent.qmodel)
-                        globalEditor.realRemoval()
+                        pmocjs.setCopyOperand(main.qmodel)
+                        pmocjs.setCutSubject(main.parent.qmodel)
+                        pmocjs.realRemoval()
                         subjectrequired()
                     }
                 }
@@ -122,15 +122,15 @@ FocusScope {
                 property var osg_Group
                 onParentChanged: if (parent != null) {
                                      console.log("osgGroup connect")
-                                     globalEditor.osg_Node_removed.connect(
+                                     pmocjs.osg_Node_removed.connect(
                                                  classmain.osg_Group.childAdded)
-                                     globalEditor.osg_Node_added.connect(
+                                     pmocjs.osg_Node_added.connect(
                                                  classmain.osg_Group.childAdded)
                                  } else {
                                      console.log("osgGroup disconnect")
-                                     globalEditor.osg_Node_removed.disconnect(
+                                     pmocjs.osg_Node_removed.disconnect(
                                                  classmain.osg_Group.childAdded)
-                                     globalEditor.osg_Node_added.disconnect(
+                                     pmocjs.osg_Node_added.disconnect(
                                                  classmain.osg_Group.childAdded)
                                      console.log("osgGroup disconnected")
                                  }
@@ -156,7 +156,7 @@ width:layout.width
                             id: fileDialog
                             title: "Please choose a file"
                             onAccepted: {
-                                globalEditor.osg_Node_added.connect(
+                                pmocjs.osg_Node_added.connect(
                                             classmain.osg_Group.childAdded)
                                 console.log("You chose: " + fileDialog.fileUrls)
                                 classmain.osg_Group.addChildFromFile(
@@ -172,9 +172,9 @@ width:layout.width
 
                     /*onCompleted called befor property setting
                                                                     Component.onCompleted:
-                                                                                                                                                        globalEditor.osg_Node_added.connect( classmain.osg_Group.childAdded)*/
+                                                                                                                                                        pmocjs.osg_Node_added.connect( classmain.osg_Group.childAdded)*/
 
-                    //onChildrenChanged:  globalEditor.osg_Node_added.connect(   classmain.osg_Group.childAdded)
+                    //onChildrenChanged:  pmocjs.osg_Node_added.connect(   classmain.osg_Group.childAdded)
                     //width: childrenRect.width
                     //  height: childrenRect.height
                     //  width: parent.width-10

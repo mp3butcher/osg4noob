@@ -1,15 +1,23 @@
 #include <osg/ShaderComposer>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osg/ShaderComposer_pmoc.hpp>
 #include <customCode/osg/ShaderComposer_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_ShaderComposer::releaseGLObjects(osg::QReflect_State  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ShaderComposer::releaseGLObjects : parameter n.0 is NULL\n"<<endl;return;}
+ _model->releaseGLObjects(p0->_model);
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_ShaderComposer::QReflect_ShaderComposer(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ShaderComposer::QReflect_ShaderComposer(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ShaderComposer*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -37,9 +45,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ShaderComposer::MetaQReflect_ShaderComposer():MetaQQuickClass( "osg::ShaderComposer"){
-_typeid=&typeid(osg::ShaderComposer );           qRegisterMetaType<QMLShaderComposer>();
-qmlRegisterType<QReflect_ShaderComposer>("pmoc.osg",1,0,"QReflect_ShaderComposer");
-           qmlRegisterType<QMLShaderComposer>("pmoc.osg",1,0,"QMLShaderComposer");
+_typeid=&typeid(osg::ShaderComposer );
+           qRegisterMetaType<osg::QMLShaderComposer>();
+           qRegisterMetaType<osg::QMLShaderComposer*>("pmoc.osg.QMLShaderComposer");
+qmlRegisterType<osg::QReflect_ShaderComposer>("pmoc.osg",1,0,"QReflect_ShaderComposer");
+           qmlRegisterType<osg::QMLShaderComposer>("pmoc.osg",1,0,"QMLShaderComposer");
 };
 const std::string osg::MetaQReflect_ShaderComposer::Imports() const{
  return std::string("");
@@ -48,7 +58,7 @@ const std::string osg::MetaQReflect_ShaderComposer::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ShaderComposer::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ShaderComposer::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ShaderComposer::createQQModel(Instance*i){ //return new MetaQReflect_ShaderComposer_QModel(i);}
+QQModel* osg::MetaQReflect_ShaderComposer::createQQModel(const Instance*i){ //return new MetaQReflect_ShaderComposer_QModel(i);}
 QMLShaderComposer *ret =new QMLShaderComposer(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -70,5 +80,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ShaderComposer_pmoc.cpp"
 #endif
+
+
 
 

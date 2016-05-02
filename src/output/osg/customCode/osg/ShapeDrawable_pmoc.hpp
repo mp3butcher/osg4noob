@@ -15,7 +15,7 @@ class  QMLTessellationHints: public QReflect_TessellationHints
 {
 Q_OBJECT
 public:
-QMLTessellationHints(pmoc::Instance *i=0,QObject* parent=0);
+QMLTessellationHints(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -41,7 +41,7 @@ class  QMLShapeDrawable: public QReflect_ShapeDrawable
 {
 Q_OBJECT
 public:
-QMLShapeDrawable(pmoc::Instance *i=0,QObject* parent=0);
+QMLShapeDrawable(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

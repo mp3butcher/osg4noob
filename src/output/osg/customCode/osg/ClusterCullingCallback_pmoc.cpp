@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ClusterCullingCallback_pmoc.hpp>
 using namespace pmoc;
-osg::QMLClusterCullingCallback::QMLClusterCullingCallback(pmoc::Instance *i,QObject* parent):QReflect_ClusterCullingCallback(i,parent){
+osg::QMLClusterCullingCallback::QMLClusterCullingCallback(const pmoc::Instance *i,QObject* parent):QReflect_ClusterCullingCallback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLClusterCullingCallback::connect2View(QQuickItem*i){

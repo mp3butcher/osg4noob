@@ -1,5 +1,6 @@
 #include <osg/CullFace>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,22 +8,34 @@
 #include <customCode/osg/CullFace_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_CullFace::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_CullFace:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CullFace::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_CullFace::setMode(osg::QReflect_CullFace::Mode p0){
+ void osg::QReflect_CullFace::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CullFace::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_CullFace::setMode(osg::QReflect_CullFace::Mode  p0){
+//params checking
  _model->setMode(static_cast<osg::CullFace::Mode>(p0));
+emit ModeChanged();
 
 }
 osg::QReflect_CullFace::Mode  osg::QReflect_CullFace::getMode()const{
+//params checking
 osg::QReflect_CullFace::Mode ret=static_cast<osg::QReflect_CullFace::Mode>( _model->getMode());return  ret;
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_CullFace::QReflect_CullFace(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_CullFace::QReflect_CullFace(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::CullFace*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -50,9 +63,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_CullFace::MetaQReflect_CullFace():MetaQQuickClass( "osg::CullFace"){
-_typeid=&typeid(osg::CullFace );           qRegisterMetaType<QMLCullFace>();
-qmlRegisterType<QReflect_CullFace>("pmoc.osg",1,0,"QReflect_CullFace");
-           qmlRegisterType<QMLCullFace>("pmoc.osg",1,0,"QMLCullFace");
+_typeid=&typeid(osg::CullFace );
+           qRegisterMetaType<osg::QMLCullFace>();
+           qRegisterMetaType<osg::QMLCullFace*>("pmoc.osg.QMLCullFace");
+qmlRegisterType<osg::QReflect_CullFace>("pmoc.osg",1,0,"QReflect_CullFace");
+           qmlRegisterType<osg::QMLCullFace>("pmoc.osg",1,0,"QMLCullFace");
 };
 const std::string osg::MetaQReflect_CullFace::Imports() const{
  return std::string("");
@@ -61,7 +76,7 @@ const std::string osg::MetaQReflect_CullFace::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_CullFace::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_CullFace::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_CullFace::createQQModel(Instance*i){ //return new MetaQReflect_CullFace_QModel(i);}
+QQModel* osg::MetaQReflect_CullFace::createQQModel(const Instance*i){ //return new MetaQReflect_CullFace_QModel(i);}
 QMLCullFace *ret =new QMLCullFace(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -83,5 +98,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_CullFace_pmoc.cpp"
 #endif
+
+
 
 

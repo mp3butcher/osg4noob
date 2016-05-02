@@ -1,5 +1,7 @@
 #ifndef osg_Vec2i_pmocHPP
 #define  osg_Vec2i_pmocHPP 1
+
+
 #include <osg/Vec2i_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -17,7 +19,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 Vec2i * _model;
-QReflect_Vec2i(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Vec2i(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Vec2i( );
 //Vec2i
 // Vec2i  operator*( value_type );
@@ -27,23 +29,23 @@ virtual ~QReflect_Vec2i( );
 // Vec2i  operator-( value_type );
 // Vec2i  operator-(const  Vec2i &);
 // Vec2i  operator/( value_type );
-// bool  operator!=(const  Vec2i &);
-// bool  operator<(const  Vec2i &);
-// bool  operator==(const  Vec2i &);
-// value_type  operator[]( int );
-// value_type & operator[]( int );
+Q_INVOKABLE  bool  operator!=(osg::QReflect_Vec2i &v)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_Vec2i &v)const;
+Q_INVOKABLE  bool  operator==(osg::QReflect_Vec2i &v)const;
 Q_INVOKABLE  int  g()const;
+Q_INVOKABLE  int  operator[]( int i)const;
 Q_INVOKABLE  int  r()const;
 Q_INVOKABLE  int  x()const;
 Q_INVOKABLE  int  y()const;
 Q_INVOKABLE  int&  g();
+Q_INVOKABLE  int&  operator[]( int i);
 Q_INVOKABLE  int&  r();
 Q_INVOKABLE  int&  x();
 Q_INVOKABLE  int&  y();
 Q_INVOKABLE  int*  ptr();
 Q_INVOKABLE const  int*  ptr()const;
-Q_INVOKABLE void  set( int  , int );
-Q_INVOKABLE void  set(osg::QReflect_Vec2i *);
+Q_INVOKABLE void  set( int x , int y);
+Q_INVOKABLE void  set(osg::QReflect_Vec2i *rhs);
 public slots:
 virtual void updateModel();
  
@@ -56,7 +58,7 @@ public:
 MetaQReflect_Vec2i();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -67,6 +69,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Vec2i_pmocHPP
 

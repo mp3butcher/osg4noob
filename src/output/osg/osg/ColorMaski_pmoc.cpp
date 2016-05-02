@@ -1,5 +1,6 @@
 #include <osg/ColorMaski>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,20 +8,39 @@
 #include <customCode/osg/ColorMaski_pmoc.hpp>
 #include <customCode/osg/ColorMask_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_ColorMaski::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_ColorMaski:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ColorMaski::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- unsigned int  osg::QReflect_ColorMaski::getMember()const{
+ unsigned int  osg::QReflect_ColorMaski:: getIndex()const{
+//params checking
+return _model->getIndex();
+
+}
+ unsigned int  osg::QReflect_ColorMaski:: getMember()const{
+//params checking
 return _model->getMember();
 
 }
-const unsigned int osg::QReflect_ColorMaski::getIndex()const{return _model->getIndex();}
-void  osg::QReflect_ColorMaski::setIndex(const unsigned int &par){_model->setIndex(par);emit IndexChanged(par);}
+ void osg::QReflect_ColorMaski::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ColorMaski::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ColorMaski::setIndex( unsigned int  p0){
+//params checking
+ _model->setIndex(p0);
+emit IndexChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_ColorMaski::QReflect_ColorMaski(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ColorMaski::QReflect_ColorMaski(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ColorMaski*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -48,9 +68,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ColorMaski::MetaQReflect_ColorMaski():MetaQQuickClass( "osg::ColorMaski"){
-_typeid=&typeid(osg::ColorMaski );           qRegisterMetaType<QMLColorMaski>();
-qmlRegisterType<QReflect_ColorMaski>("pmoc.osg",1,0,"QReflect_ColorMaski");
-           qmlRegisterType<QMLColorMaski>("pmoc.osg",1,0,"QMLColorMaski");
+_typeid=&typeid(osg::ColorMaski );
+           qRegisterMetaType<osg::QMLColorMaski>();
+           qRegisterMetaType<osg::QMLColorMaski*>("pmoc.osg.QMLColorMaski");
+qmlRegisterType<osg::QReflect_ColorMaski>("pmoc.osg",1,0,"QReflect_ColorMaski");
+           qmlRegisterType<osg::QMLColorMaski>("pmoc.osg",1,0,"QMLColorMaski");
 };
 const std::string osg::MetaQReflect_ColorMaski::Imports() const{
  return std::string("");
@@ -59,7 +81,7 @@ const std::string osg::MetaQReflect_ColorMaski::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ColorMaski::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ColorMaski::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ColorMaski::createQQModel(Instance*i){ //return new MetaQReflect_ColorMaski_QModel(i);}
+QQModel* osg::MetaQReflect_ColorMaski::createQQModel(const Instance*i){ //return new MetaQReflect_ColorMaski_QModel(i);}
 QMLColorMaski *ret =new QMLColorMaski(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -81,5 +103,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ColorMaski_pmoc.cpp"
 #endif
+
+
 
 

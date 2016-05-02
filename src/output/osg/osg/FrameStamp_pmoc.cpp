@@ -1,5 +1,6 @@
 #include <osg/FrameStamp>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,15 +8,42 @@
 #include <customCode/osg/FrameStamp_pmoc.hpp>
 #include <customCode/osg/Referenced_pmoc.hpp>
 using namespace pmoc;
-const double osg::QReflect_FrameStamp::getReferenceTime()const{return _model->getReferenceTime();}
-const double osg::QReflect_FrameStamp::getSimulationTime()const{return _model->getSimulationTime();}
-const unsigned int osg::QReflect_FrameStamp::getFrameNumber()const{return _model->getFrameNumber();}
-void  osg::QReflect_FrameStamp::setFrameNumber(const unsigned int &par){_model->setFrameNumber(par);emit FrameNumberChanged(par);}
-void  osg::QReflect_FrameStamp::setReferenceTime(const double &par){_model->setReferenceTime(par);emit ReferenceTimeChanged(par);}
-void  osg::QReflect_FrameStamp::setSimulationTime(const double &par){_model->setSimulationTime(par);emit SimulationTimeChanged(par);}
+ double  osg::QReflect_FrameStamp:: getReferenceTime()const{
+//params checking
+return _model->getReferenceTime();
+
+}
+ double  osg::QReflect_FrameStamp:: getSimulationTime()const{
+//params checking
+return _model->getSimulationTime();
+
+}
+ unsigned int  osg::QReflect_FrameStamp:: getFrameNumber()const{
+//params checking
+return _model->getFrameNumber();
+
+}
+ void osg::QReflect_FrameStamp::setFrameNumber( unsigned int  p0){
+//params checking
+ _model->setFrameNumber(p0);
+emit FrameNumberChanged();
+
+}
+ void osg::QReflect_FrameStamp::setReferenceTime( double  p0){
+//params checking
+ _model->setReferenceTime(p0);
+emit ReferenceTimeChanged();
+
+}
+ void osg::QReflect_FrameStamp::setSimulationTime( double  p0){
+//params checking
+ _model->setSimulationTime(p0);
+emit SimulationTimeChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_FrameStamp::QReflect_FrameStamp(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_FrameStamp::QReflect_FrameStamp(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::FrameStamp*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -43,9 +71,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_FrameStamp::MetaQReflect_FrameStamp():MetaQQuickClass( "osg::FrameStamp"){
-_typeid=&typeid(osg::FrameStamp );           qRegisterMetaType<QMLFrameStamp>();
-qmlRegisterType<QReflect_FrameStamp>("pmoc.osg",1,0,"QReflect_FrameStamp");
-           qmlRegisterType<QMLFrameStamp>("pmoc.osg",1,0,"QMLFrameStamp");
+_typeid=&typeid(osg::FrameStamp );
+           qRegisterMetaType<osg::QMLFrameStamp>();
+           qRegisterMetaType<osg::QMLFrameStamp*>("pmoc.osg.QMLFrameStamp");
+qmlRegisterType<osg::QReflect_FrameStamp>("pmoc.osg",1,0,"QReflect_FrameStamp");
+           qmlRegisterType<osg::QMLFrameStamp>("pmoc.osg",1,0,"QMLFrameStamp");
 };
 const std::string osg::MetaQReflect_FrameStamp::Imports() const{
  return std::string("");
@@ -54,7 +84,7 @@ const std::string osg::MetaQReflect_FrameStamp::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_FrameStamp::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_FrameStamp::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_FrameStamp::createQQModel(Instance*i){ //return new MetaQReflect_FrameStamp_QModel(i);}
+QQModel* osg::MetaQReflect_FrameStamp::createQQModel(const Instance*i){ //return new MetaQReflect_FrameStamp_QModel(i);}
 QMLFrameStamp *ret =new QMLFrameStamp(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -76,5 +106,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_FrameStamp_pmoc.cpp"
 #endif
+
+
 
 

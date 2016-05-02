@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/KdTree_pmoc.hpp>
 using namespace pmoc;
-osg::QMLKdTree::QMLKdTree(pmoc::Instance *i,QObject* parent):QReflect_KdTree(i,parent){
+osg::QMLKdTree::QMLKdTree(const pmoc::Instance *i,QObject* parent):QReflect_KdTree(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLKdTree::connect2View(QQuickItem*i){
@@ -30,7 +30,7 @@ void  osg::QMLKdTree::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/KdTree_pmoc.hpp>
 using namespace pmoc;
-osg::QMLKdTreeBuilder::QMLKdTreeBuilder(pmoc::Instance *i,QObject* parent):QReflect_KdTreeBuilder(i,parent){
+osg::QMLKdTreeBuilder::QMLKdTreeBuilder(const pmoc::Instance *i,QObject* parent):QReflect_KdTreeBuilder(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLKdTreeBuilder::connect2View(QQuickItem*i){

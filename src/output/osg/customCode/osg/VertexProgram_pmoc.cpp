@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/VertexProgram_pmoc.hpp>
 using namespace pmoc;
-osg::QMLVertexProgram::QMLVertexProgram(pmoc::Instance *i,QObject* parent):QReflect_VertexProgram(i,parent){
+osg::QMLVertexProgram::QMLVertexProgram(const pmoc::Instance *i,QObject* parent):QReflect_VertexProgram(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLVertexProgram::connect2View(QQuickItem*i){

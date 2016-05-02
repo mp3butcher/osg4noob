@@ -24,7 +24,7 @@ class  QMLAutoTransform: public QReflect_AutoTransform
 {
 Q_OBJECT
 public:
-QMLAutoTransform(pmoc::Instance *i=0,QObject* parent=0);
+QMLAutoTransform(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -1,5 +1,7 @@
 #ifndef osg_ConvexPlanarPolygon_pmocHPP
 #define  osg_ConvexPlanarPolygon_pmocHPP 1
+
+
 #include <osg/ConvexPlanarPolygon_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -17,13 +19,13 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 ConvexPlanarPolygon * _model;
-QReflect_ConvexPlanarPolygon(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ConvexPlanarPolygon(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ConvexPlanarPolygon( );
 //ConvexPlanarPolygon
 // VertexList & getVertexList();
 // void  setVertexList(const  VertexList &);
 //const  VertexList & getVertexList();
-Q_INVOKABLE void  add(osg::QReflect_Vec3f *);
+Q_INVOKABLE void  add(osg::QReflect_Vec3f *v);
 public slots:
 virtual void updateModel();
  
@@ -36,7 +38,7 @@ public:
 MetaQReflect_ConvexPlanarPolygon();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -47,6 +49,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ConvexPlanarPolygon_pmocHPP
 

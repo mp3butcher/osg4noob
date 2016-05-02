@@ -13,7 +13,7 @@ class  QMLStencil: public QReflect_Stencil
 {
 Q_OBJECT
 public:
-QMLStencil(pmoc::Instance *i=0,QObject* parent=0);
+QMLStencil(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

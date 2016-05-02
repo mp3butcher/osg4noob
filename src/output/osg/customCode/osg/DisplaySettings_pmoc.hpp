@@ -13,7 +13,7 @@ class  QMLDisplaySettings: public QReflect_DisplaySettings
 {
 Q_OBJECT
 public:
-QMLDisplaySettings(pmoc::Instance *i=0,QObject* parent=0);
+QMLDisplaySettings(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

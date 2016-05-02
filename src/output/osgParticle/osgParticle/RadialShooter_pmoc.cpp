@@ -1,6 +1,7 @@
 #include <osgParticle/RadialShooter>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -10,29 +11,37 @@
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_RadialShooter::setInitialRotationalSpeedRange(osg::QReflect_Vec3f *p0 ,osg::QReflect_Vec3f *p1){
+ void osgParticle::QReflect_RadialShooter::setInitialRotationalSpeedRange(osg::QReflect_Vec3f  *p0 ,osg::QReflect_Vec3f  *p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_RadialShooter::setInitialRotationalSpeedRange : parameter n.0 is NULL\n"<<endl;return;}
+if(! p1) {std::cerr<<"PMOC: osgParticle::QReflect_RadialShooter::setInitialRotationalSpeedRange : parameter n.1 is NULL\n"<<endl;return;}
  _model->setInitialRotationalSpeedRange(*p0->_model ,*p1->_model);
 
 }
- void osgParticle::QReflect_RadialShooter::setInitialSpeedRange( float p0 , float p1){
+ void osgParticle::QReflect_RadialShooter::setInitialSpeedRange( float  p0 , float  p1){
+//params checking
  _model->setInitialSpeedRange(p0 ,p1);
 
 }
- void osgParticle::QReflect_RadialShooter::setPhiRange( float p0 , float p1){
+ void osgParticle::QReflect_RadialShooter::setPhiRange( float  p0 , float  p1){
+//params checking
  _model->setPhiRange(p0 ,p1);
 
 }
- void osgParticle::QReflect_RadialShooter::setThetaRange( float p0 , float p1){
+ void osgParticle::QReflect_RadialShooter::setThetaRange( float  p0 , float  p1){
+//params checking
  _model->setThetaRange(p0 ,p1);
 
 }
- void osgParticle::QReflect_RadialShooter::shoot(osgParticle::QReflect_Particle *p0)const{
+ void osgParticle::QReflect_RadialShooter::shoot(osgParticle::QReflect_Particle  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_RadialShooter::shoot : parameter n.0 is NULL\n"<<endl;return;}
  _model->shoot(p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_RadialShooter::QReflect_RadialShooter(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_RadialShooter::QReflect_RadialShooter(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::RadialShooter*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -60,9 +69,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_RadialShooter::MetaQReflect_RadialShooter():MetaQQuickClass( "osgParticle::RadialShooter"){
-_typeid=&typeid(osgParticle::RadialShooter );           qRegisterMetaType<QMLRadialShooter>();
-qmlRegisterType<QReflect_RadialShooter>("pmoc.osgParticle",1,0,"QReflect_RadialShooter");
-           qmlRegisterType<QMLRadialShooter>("pmoc.osgParticle",1,0,"QMLRadialShooter");
+_typeid=&typeid(osgParticle::RadialShooter );
+           qRegisterMetaType<osgParticle::QMLRadialShooter>();
+           qRegisterMetaType<osgParticle::QMLRadialShooter*>("pmoc.osgParticle.QMLRadialShooter");
+qmlRegisterType<osgParticle::QReflect_RadialShooter>("pmoc.osgParticle",1,0,"QReflect_RadialShooter");
+           qmlRegisterType<osgParticle::QMLRadialShooter>("pmoc.osgParticle",1,0,"QMLRadialShooter");
 };
 const std::string osgParticle::MetaQReflect_RadialShooter::Imports() const{
  return std::string("");
@@ -71,7 +82,7 @@ const std::string osgParticle::MetaQReflect_RadialShooter::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_RadialShooter::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_RadialShooter::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_RadialShooter::createQQModel(Instance*i){ //return new MetaQReflect_RadialShooter_QModel(i);}
+QQModel* osgParticle::MetaQReflect_RadialShooter::createQQModel(const Instance*i){ //return new MetaQReflect_RadialShooter_QModel(i);}
 QMLRadialShooter *ret =new QMLRadialShooter(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

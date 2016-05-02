@@ -1,6 +1,7 @@
 #include <osgParticle/AccelOperator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -11,25 +12,32 @@
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 #include <customCode/osgParticle/Program_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_AccelOperator::beginOperate(osgParticle::QReflect_Program *p0){
+ void osgParticle::QReflect_AccelOperator::beginOperate(osgParticle::QReflect_Program  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_AccelOperator::beginOperate : parameter n.0 is NULL\n"<<endl;return;}
  _model->beginOperate(p0->_model);
 
 }
- void osgParticle::QReflect_AccelOperator::operate(osgParticle::QReflect_Particle *p0 , double p1){
+ void osgParticle::QReflect_AccelOperator::operate(osgParticle::QReflect_Particle  *p0 , double  p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_AccelOperator::operate : parameter n.0 is NULL\n"<<endl;return;}
  _model->operate(p0->_model ,p1);
 
 }
- void osgParticle::QReflect_AccelOperator::setAcceleration(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_AccelOperator::setAcceleration(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_AccelOperator::setAcceleration : parameter n.0 is NULL\n"<<endl;return;}
  _model->setAcceleration(*p0->_model);
 
 }
- void osgParticle::QReflect_AccelOperator::setToGravity( float p0){
+ void osgParticle::QReflect_AccelOperator::setToGravity( float  p0){
+//params checking
  _model->setToGravity(p0);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_AccelOperator::QReflect_AccelOperator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_AccelOperator::QReflect_AccelOperator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::AccelOperator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -57,9 +65,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_AccelOperator::MetaQReflect_AccelOperator():MetaQQuickClass( "osgParticle::AccelOperator"){
-_typeid=&typeid(osgParticle::AccelOperator );           qRegisterMetaType<QMLAccelOperator>();
-qmlRegisterType<QReflect_AccelOperator>("pmoc.osgParticle",1,0,"QReflect_AccelOperator");
-           qmlRegisterType<QMLAccelOperator>("pmoc.osgParticle",1,0,"QMLAccelOperator");
+_typeid=&typeid(osgParticle::AccelOperator );
+           qRegisterMetaType<osgParticle::QMLAccelOperator>();
+           qRegisterMetaType<osgParticle::QMLAccelOperator*>("pmoc.osgParticle.QMLAccelOperator");
+qmlRegisterType<osgParticle::QReflect_AccelOperator>("pmoc.osgParticle",1,0,"QReflect_AccelOperator");
+           qmlRegisterType<osgParticle::QMLAccelOperator>("pmoc.osgParticle",1,0,"QMLAccelOperator");
 };
 const std::string osgParticle::MetaQReflect_AccelOperator::Imports() const{
  return std::string("");
@@ -68,7 +78,7 @@ const std::string osgParticle::MetaQReflect_AccelOperator::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_AccelOperator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_AccelOperator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_AccelOperator::createQQModel(Instance*i){ //return new MetaQReflect_AccelOperator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_AccelOperator::createQQModel(const Instance*i){ //return new MetaQReflect_AccelOperator_QModel(i);}
 QMLAccelOperator *ret =new QMLAccelOperator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TexEnvFilter_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTexEnvFilter::QMLTexEnvFilter(pmoc::Instance *i,QObject* parent):QReflect_TexEnvFilter(i,parent){
+osg::QMLTexEnvFilter::QMLTexEnvFilter(const pmoc::Instance *i,QObject* parent):QReflect_TexEnvFilter(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexEnvFilter::connect2View(QQuickItem*i){

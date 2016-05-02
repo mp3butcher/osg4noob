@@ -1,23 +1,27 @@
 #include <osg/TransferFunction>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osg/TransferFunction_pmoc.hpp>
 #include <customCode/osg/TransferFunction_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/Image_pmoc.hpp>
 using namespace pmoc;
 osg::QReflect_Image*osg::QReflect_TransferFunction::getImage()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getImage(),inst);
 return inst.isValid()?((osg::QReflect_Image * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Image*osg::QReflect_TransferFunction::getImage(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getImage(),inst);
 return inst.isValid()?((osg::QReflect_Image * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_TransferFunction::QReflect_TransferFunction(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TransferFunction::QReflect_TransferFunction(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TransferFunction*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -45,9 +49,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TransferFunction::MetaQReflect_TransferFunction():MetaQQuickClass( "osg::TransferFunction"){
-_typeid=&typeid(osg::TransferFunction );           qRegisterMetaType<QMLTransferFunction>();
-qmlRegisterType<QReflect_TransferFunction>("pmoc.osg",1,0,"QReflect_TransferFunction");
-           qmlRegisterType<QMLTransferFunction>("pmoc.osg",1,0,"QMLTransferFunction");
+_typeid=&typeid(osg::TransferFunction );
+           qRegisterMetaType<osg::QMLTransferFunction>();
+           qRegisterMetaType<osg::QMLTransferFunction*>("pmoc.osg.QMLTransferFunction");
+qmlRegisterType<osg::QReflect_TransferFunction>("pmoc.osg",1,0,"QReflect_TransferFunction");
+           qmlRegisterType<osg::QMLTransferFunction>("pmoc.osg",1,0,"QMLTransferFunction");
 };
 const std::string osg::MetaQReflect_TransferFunction::Imports() const{
  return std::string("");
@@ -56,7 +62,7 @@ const std::string osg::MetaQReflect_TransferFunction::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TransferFunction::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TransferFunction::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TransferFunction::createQQModel(Instance*i){ //return new MetaQReflect_TransferFunction_QModel(i);}
+QQModel* osg::MetaQReflect_TransferFunction::createQQModel(const Instance*i){ //return new MetaQReflect_TransferFunction_QModel(i);}
 QMLTransferFunction *ret =new QMLTransferFunction(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -86,37 +92,46 @@ return ret;}
 #include <customCode/osg/TransferFunction_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
- float  osg::QReflect_TransferFunction1D::getMaximum()const{
+ float  osg::QReflect_TransferFunction1D:: getMaximum()const{
+//params checking
 return _model->getMaximum();
 
 }
- float  osg::QReflect_TransferFunction1D::getMinimum()const{
+ float  osg::QReflect_TransferFunction1D:: getMinimum()const{
+//params checking
 return _model->getMinimum();
 
 }
- unsigned int  osg::QReflect_TransferFunction1D::getNumberImageCells()const{
+ unsigned int  osg::QReflect_TransferFunction1D:: getNumberImageCells()const{
+//params checking
 return _model->getNumberImageCells();
 
 }
- void osg::QReflect_TransferFunction1D::allocate( unsigned int p0){
+ void osg::QReflect_TransferFunction1D::allocate( unsigned int  p0){
+//params checking
  _model->allocate(p0);
 
 }
- void osg::QReflect_TransferFunction1D::clear(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_TransferFunction1D::clear(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TransferFunction1D::clear : parameter n.0 is NULL\n"<<endl;return;}
  _model->clear(*p0->_model);
 
 }
- void osg::QReflect_TransferFunction1D::setColor( float p0 ,osg::QReflect_Vec4f *p1 , bool p2){
+ void osg::QReflect_TransferFunction1D::setColor( float  p0 ,osg::QReflect_Vec4f  *p1 , bool  p2){
+//params checking
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_TransferFunction1D::setColor : parameter n.1 is NULL\n"<<endl;return;}
  _model->setColor(p0 ,*p1->_model ,p2);
 
 }
  void osg::QReflect_TransferFunction1D::updateImage(){
+//params checking
  _model->updateImage();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_TransferFunction1D::QReflect_TransferFunction1D(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TransferFunction1D::QReflect_TransferFunction1D(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TransferFunction1D*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -144,9 +159,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TransferFunction1D::MetaQReflect_TransferFunction1D():MetaQQuickClass( "osg::TransferFunction1D"){
-_typeid=&typeid(osg::TransferFunction1D );           qRegisterMetaType<QMLTransferFunction1D>();
-qmlRegisterType<QReflect_TransferFunction1D>("pmoc.osg",1,0,"QReflect_TransferFunction1D");
-           qmlRegisterType<QMLTransferFunction1D>("pmoc.osg",1,0,"QMLTransferFunction1D");
+_typeid=&typeid(osg::TransferFunction1D );
+           qRegisterMetaType<osg::QMLTransferFunction1D>();
+           qRegisterMetaType<osg::QMLTransferFunction1D*>("pmoc.osg.QMLTransferFunction1D");
+qmlRegisterType<osg::QReflect_TransferFunction1D>("pmoc.osg",1,0,"QReflect_TransferFunction1D");
+           qmlRegisterType<osg::QMLTransferFunction1D>("pmoc.osg",1,0,"QMLTransferFunction1D");
 };
 const std::string osg::MetaQReflect_TransferFunction1D::Imports() const{
  return std::string("");
@@ -155,7 +172,7 @@ const std::string osg::MetaQReflect_TransferFunction1D::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TransferFunction1D::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TransferFunction1D::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TransferFunction1D::createQQModel(Instance*i){ //return new MetaQReflect_TransferFunction1D_QModel(i);}
+QQModel* osg::MetaQReflect_TransferFunction1D::createQQModel(const Instance*i){ //return new MetaQReflect_TransferFunction1D_QModel(i);}
 QMLTransferFunction1D *ret =new QMLTransferFunction1D(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -177,5 +194,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_TransferFunction_pmoc.cpp"
 #endif
+
+
 
 

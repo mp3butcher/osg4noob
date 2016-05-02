@@ -13,7 +13,7 @@ class  QMLPoint: public QReflect_Point
 {
 Q_OBJECT
 public:
-QMLPoint(pmoc::Instance *i=0,QObject* parent=0);
+QMLPoint(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/BounceOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLBounceOperator::QMLBounceOperator(pmoc::Instance *i,QObject* parent):QReflect_BounceOperator(i,parent){
+osgParticle::QMLBounceOperator::QMLBounceOperator(const pmoc::Instance *i,QObject* parent):QReflect_BounceOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLBounceOperator::connect2View(QQuickItem*i){

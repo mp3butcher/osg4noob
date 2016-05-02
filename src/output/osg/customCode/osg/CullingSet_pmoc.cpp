@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CullingSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCullingSet::QMLCullingSet(pmoc::Instance *i,QObject* parent):QReflect_CullingSet(i,parent){
+osg::QMLCullingSet::QMLCullingSet(const pmoc::Instance *i,QObject* parent):QReflect_CullingSet(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCullingSet::connect2View(QQuickItem*i){

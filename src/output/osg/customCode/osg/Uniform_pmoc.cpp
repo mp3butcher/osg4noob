@@ -210,7 +210,7 @@ int osg::QMLUniform::type()
     return -1;
     return curindex;
 }
-osg::QMLUniform::QMLUniform(pmoc::Instance *i,QObject* parent):QReflect_Uniform(i,parent)
+osg::QMLUniform::QMLUniform(const pmoc::Instance *i,QObject* parent):QReflect_Uniform(i,parent)
 {
 //custom initializations
 

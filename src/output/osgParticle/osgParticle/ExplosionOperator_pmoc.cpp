@@ -1,6 +1,7 @@
 #include <osgParticle/ExplosionOperator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -11,29 +12,71 @@
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 #include <customCode/osgParticle/Program_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_ExplosionOperator::beginOperate(osgParticle::QReflect_Program *p0){
+ float  osgParticle::QReflect_ExplosionOperator:: getEpsilon()const{
+//params checking
+return _model->getEpsilon();
+
+}
+ float  osgParticle::QReflect_ExplosionOperator:: getMagnitude()const{
+//params checking
+return _model->getMagnitude();
+
+}
+ float  osgParticle::QReflect_ExplosionOperator:: getRadius()const{
+//params checking
+return _model->getRadius();
+
+}
+ float  osgParticle::QReflect_ExplosionOperator:: getSigma()const{
+//params checking
+return _model->getSigma();
+
+}
+ void osgParticle::QReflect_ExplosionOperator::beginOperate(osgParticle::QReflect_Program  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ExplosionOperator::beginOperate : parameter n.0 is NULL\n"<<endl;return;}
  _model->beginOperate(p0->_model);
 
 }
- void osgParticle::QReflect_ExplosionOperator::operate(osgParticle::QReflect_Particle *p0 , double p1){
+ void osgParticle::QReflect_ExplosionOperator::operate(osgParticle::QReflect_Particle  *p0 , double  p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ExplosionOperator::operate : parameter n.0 is NULL\n"<<endl;return;}
  _model->operate(p0->_model ,p1);
 
 }
- void osgParticle::QReflect_ExplosionOperator::setCenter(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_ExplosionOperator::setCenter(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ExplosionOperator::setCenter : parameter n.0 is NULL\n"<<endl;return;}
  _model->setCenter(*p0->_model);
 
 }
-const float osgParticle::QReflect_ExplosionOperator::getEpsilon()const{return _model->getEpsilon();}
-const float osgParticle::QReflect_ExplosionOperator::getMagnitude()const{return _model->getMagnitude();}
-const float osgParticle::QReflect_ExplosionOperator::getRadius()const{return _model->getRadius();}
-const float osgParticle::QReflect_ExplosionOperator::getSigma()const{return _model->getSigma();}
-void  osgParticle::QReflect_ExplosionOperator::setEpsilon(const float &par){_model->setEpsilon(par);emit EpsilonChanged(par);}
-void  osgParticle::QReflect_ExplosionOperator::setMagnitude(const float &par){_model->setMagnitude(par);emit MagnitudeChanged(par);}
-void  osgParticle::QReflect_ExplosionOperator::setRadius(const float &par){_model->setRadius(par);emit RadiusChanged(par);}
-void  osgParticle::QReflect_ExplosionOperator::setSigma(const float &par){_model->setSigma(par);emit SigmaChanged(par);}
+ void osgParticle::QReflect_ExplosionOperator::setEpsilon( float  p0){
+//params checking
+ _model->setEpsilon(p0);
+emit EpsilonChanged();
+
+}
+ void osgParticle::QReflect_ExplosionOperator::setMagnitude( float  p0){
+//params checking
+ _model->setMagnitude(p0);
+emit MagnitudeChanged();
+
+}
+ void osgParticle::QReflect_ExplosionOperator::setRadius( float  p0){
+//params checking
+ _model->setRadius(p0);
+emit RadiusChanged();
+
+}
+ void osgParticle::QReflect_ExplosionOperator::setSigma( float  p0){
+//params checking
+ _model->setSigma(p0);
+emit SigmaChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_ExplosionOperator::QReflect_ExplosionOperator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_ExplosionOperator::QReflect_ExplosionOperator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::ExplosionOperator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -61,9 +104,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_ExplosionOperator::MetaQReflect_ExplosionOperator():MetaQQuickClass( "osgParticle::ExplosionOperator"){
-_typeid=&typeid(osgParticle::ExplosionOperator );           qRegisterMetaType<QMLExplosionOperator>();
-qmlRegisterType<QReflect_ExplosionOperator>("pmoc.osgParticle",1,0,"QReflect_ExplosionOperator");
-           qmlRegisterType<QMLExplosionOperator>("pmoc.osgParticle",1,0,"QMLExplosionOperator");
+_typeid=&typeid(osgParticle::ExplosionOperator );
+           qRegisterMetaType<osgParticle::QMLExplosionOperator>();
+           qRegisterMetaType<osgParticle::QMLExplosionOperator*>("pmoc.osgParticle.QMLExplosionOperator");
+qmlRegisterType<osgParticle::QReflect_ExplosionOperator>("pmoc.osgParticle",1,0,"QReflect_ExplosionOperator");
+           qmlRegisterType<osgParticle::QMLExplosionOperator>("pmoc.osgParticle",1,0,"QMLExplosionOperator");
 };
 const std::string osgParticle::MetaQReflect_ExplosionOperator::Imports() const{
  return std::string("");
@@ -72,7 +117,7 @@ const std::string osgParticle::MetaQReflect_ExplosionOperator::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_ExplosionOperator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_ExplosionOperator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_ExplosionOperator::createQQModel(Instance*i){ //return new MetaQReflect_ExplosionOperator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_ExplosionOperator::createQQModel(const Instance*i){ //return new MetaQReflect_ExplosionOperator_QModel(i);}
 QMLExplosionOperator *ret =new QMLExplosionOperator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

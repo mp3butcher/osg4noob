@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ValueObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLValueObject::QMLValueObject(pmoc::Instance *i,QObject* parent):QReflect_ValueObject(i,parent){
+osg::QMLValueObject::QMLValueObject(const pmoc::Instance *i,QObject* parent):QReflect_ValueObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLValueObject::connect2View(QQuickItem*i){

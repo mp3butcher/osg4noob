@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ArrayDispatchers_pmoc.hpp>
 using namespace pmoc;
-osg::QMLArrayDispatchers::QMLArrayDispatchers(pmoc::Instance *i,QObject* parent):QReflect_ArrayDispatchers(i,parent){
+osg::QMLArrayDispatchers::QMLArrayDispatchers(const pmoc::Instance *i,QObject* parent):QReflect_ArrayDispatchers(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLArrayDispatchers::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLArrayDispatchers::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ArrayDispatchers_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAttributeDispatch::QMLAttributeDispatch(pmoc::Instance *i,QObject* parent):QReflect_AttributeDispatch(i,parent){
+osg::QMLAttributeDispatch::QMLAttributeDispatch(const pmoc::Instance *i,QObject* parent):QReflect_AttributeDispatch(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAttributeDispatch::connect2View(QQuickItem*i){

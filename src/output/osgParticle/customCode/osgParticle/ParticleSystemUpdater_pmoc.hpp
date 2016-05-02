@@ -15,7 +15,7 @@ class  QMLParticleSystemUpdater: public QReflect_ParticleSystemUpdater
 {
 Q_OBJECT
 public:
-QMLParticleSystemUpdater(pmoc::Instance *i=0,QObject* parent=0);
+QMLParticleSystemUpdater(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

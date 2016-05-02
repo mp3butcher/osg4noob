@@ -1,10 +1,17 @@
 #ifndef osg_ComputeBoundsVisitor_pmocHPP
 #define  osg_ComputeBoundsVisitor_pmocHPP 1
 
+
 #include <osg/ComputeBoundsVisitor_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
+class QReflect_Drawable;
+			} ;
+namespace osg{ 
 class QReflect_Matrixd;
+			} ;
+namespace osg{ 
+class QReflect_Transform;
 			} ;
 namespace osg{ 
 class QReflect_Polytope;
@@ -23,18 +30,18 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ComputeBoundsVisitor * _model;
-QReflect_ComputeBoundsVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ComputeBoundsVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ComputeBoundsVisitor( );
 //ComputeBoundsVisitor
 // osg::BoundingBox & getBoundingBox();
-// void  apply( osg::Drawable &);
-// void  apply( osg::Transform &);
 // void  applyBoundingBox(const  osg::BoundingBox &);
 //const  MatrixStack & getMatrixStack();
-Q_INVOKABLE void  getBase(osg::QReflect_Polytope * , float )const;
-Q_INVOKABLE void  getPolytope(osg::QReflect_Polytope * , float )const;
+Q_INVOKABLE void  apply(osg::QReflect_Drawable *drawable);
+Q_INVOKABLE void  apply(osg::QReflect_Transform *transform);
+Q_INVOKABLE void  getBase(osg::QReflect_Polytope *polytope , float margin)const;
+Q_INVOKABLE void  getPolytope(osg::QReflect_Polytope *polytope , float margin)const;
 Q_INVOKABLE void  popMatrix();
-Q_INVOKABLE void  pushMatrix(osg::QReflect_Matrixd *);
+Q_INVOKABLE void  pushMatrix(osg::QReflect_Matrixd *matrix);
 Q_INVOKABLE void  reset();
 public slots:
 virtual void updateModel();
@@ -48,7 +55,7 @@ public:
 MetaQReflect_ComputeBoundsVisitor();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -59,6 +66,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ComputeBoundsVisitor_pmocHPP
 

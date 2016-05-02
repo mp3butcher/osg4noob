@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/AutoTransform_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAutoTransform::QMLAutoTransform(pmoc::Instance *i,QObject* parent):QReflect_AutoTransform(i,parent){
+osg::QMLAutoTransform::QMLAutoTransform(const pmoc::Instance *i,QObject* parent):QReflect_AutoTransform(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAutoTransform::connect2View(QQuickItem*i){

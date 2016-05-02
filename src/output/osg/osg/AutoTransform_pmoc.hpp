@@ -1,6 +1,7 @@
 #ifndef osg_AutoTransform_pmocHPP
 #define  osg_AutoTransform_pmocHPP 1
 
+
 #include <osg/AutoTransform_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -50,7 +51,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 AutoTransform * _model;
-QReflect_AutoTransform(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_AutoTransform(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_AutoTransform( );
 //AutoTransform
 //virtual  BoundingSphere  computeBound();
@@ -60,49 +61,52 @@ virtual ~QReflect_AutoTransform( );
 //const  Vec3d & getPivotPoint();
 //const  Vec3d & getPosition();
 //const  Vec3d & getScale();
-Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *nv)const;
+Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *nv)const;
+Q_INVOKABLE  bool  getAutoScaleToScreen()const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
+Q_INVOKABLE  double  getMaximumScale()const;
+Q_INVOKABLE  double  getMinimumScale()const;
+Q_INVOKABLE  float  getAutoScaleTransitionWidthRatio()const;
+Q_INVOKABLE  float  getAutoUpdateEyeMovementTolerance()const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE const bool  getAutoScaleToScreen()const;
-Q_INVOKABLE const double  getMaximumScale()const;
-Q_INVOKABLE const double  getMinimumScale()const;
-Q_INVOKABLE const float  getAutoScaleTransitionWidthRatio()const;
-Q_INVOKABLE const float  getAutoUpdateEyeMovementTolerance()const;
 Q_INVOKABLE osg::QReflect_AutoTransform*  asAutoTransform();
 Q_INVOKABLE osg::QReflect_AutoTransform*  asAutoTransform()const;
 Q_INVOKABLE osg::QReflect_AutoTransform::AutoRotateMode  getAutoRotateMode()const;
-Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
+Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *copyop)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
-Q_INVOKABLE void  setAutoRotateMode(osg::QReflect_AutoTransform::AutoRotateMode );
-Q_INVOKABLE void  setAxis(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setNormal(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setPivotPoint(osg::QReflect_Vec3d *);
-Q_INVOKABLE void  setPosition(osg::QReflect_Vec3d *);
-Q_INVOKABLE void  setRotation(osg::QReflect_Quat *);
-Q_INVOKABLE void  setScale( double );
-Q_INVOKABLE void  setScale(osg::QReflect_Vec3d *);
-Q_INVOKABLE void setAutoScaleToScreen(const bool &);
-Q_INVOKABLE void setAutoScaleTransitionWidthRatio(const float &);
-Q_INVOKABLE void setAutoUpdateEyeMovementTolerance(const float &);
-Q_INVOKABLE void setMaximumScale(const double &);
-Q_INVOKABLE void setMinimumScale(const double &);
-Q_PROPERTY(bool AutoScaleToScreen  READ getAutoScaleToScreen WRITE setAutoScaleToScreen NOTIFY AutoScaleToScreenChanged)
-Q_PROPERTY(double MaximumScale  READ getMaximumScale WRITE setMaximumScale NOTIFY MaximumScaleChanged)
-Q_PROPERTY(double MinimumScale  READ getMinimumScale WRITE setMinimumScale NOTIFY MinimumScaleChanged)
-Q_PROPERTY(float AutoScaleTransitionWidthRatio  READ getAutoScaleTransitionWidthRatio WRITE setAutoScaleTransitionWidthRatio NOTIFY AutoScaleTransitionWidthRatioChanged)
-Q_PROPERTY(float AutoUpdateEyeMovementTolerance  READ getAutoUpdateEyeMovementTolerance WRITE setAutoUpdateEyeMovementTolerance NOTIFY AutoUpdateEyeMovementToleranceChanged)
-signals: void AutoScaleToScreenChanged(const bool&);
+Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *nv);
+Q_INVOKABLE void  setAutoRotateMode(osg::QReflect_AutoTransform::AutoRotateMode mode);
+Q_INVOKABLE void  setAutoScaleToScreen( bool autoScaleToScreen);
+Q_INVOKABLE void  setAutoScaleTransitionWidthRatio( float ratio);
+Q_INVOKABLE void  setAutoUpdateEyeMovementTolerance( float tolerance);
+Q_INVOKABLE void  setAxis(osg::QReflect_Vec3f *axis);
+Q_INVOKABLE void  setMaximumScale( double maximumScale);
+Q_INVOKABLE void  setMinimumScale( double minimumScale);
+Q_INVOKABLE void  setNormal(osg::QReflect_Vec3f *normal);
+Q_INVOKABLE void  setPivotPoint(osg::QReflect_Vec3d *pivot);
+Q_INVOKABLE void  setPosition(osg::QReflect_Vec3d *pos);
+Q_INVOKABLE void  setRotation(osg::QReflect_Quat *quat);
+Q_INVOKABLE void  setScale( double scale);
+Q_INVOKABLE void  setScale(osg::QReflect_Vec3d *scale);
+Q_PROPERTY(bool  AutoScaleToScreen  READ getAutoScaleToScreen WRITE setAutoScaleToScreen NOTIFY AutoScaleToScreenChanged)
+Q_PROPERTY(double  MaximumScale  READ getMaximumScale WRITE setMaximumScale NOTIFY MaximumScaleChanged)
+Q_PROPERTY(double  MinimumScale  READ getMinimumScale WRITE setMinimumScale NOTIFY MinimumScaleChanged)
+Q_PROPERTY(float  AutoScaleTransitionWidthRatio  READ getAutoScaleTransitionWidthRatio WRITE setAutoScaleTransitionWidthRatio NOTIFY AutoScaleTransitionWidthRatioChanged)
+Q_PROPERTY(float  AutoUpdateEyeMovementTolerance  READ getAutoUpdateEyeMovementTolerance WRITE setAutoUpdateEyeMovementTolerance NOTIFY AutoUpdateEyeMovementToleranceChanged)
+Q_PROPERTY(osg::QReflect_AutoTransform::AutoRotateMode  AutoRotateMode  READ getAutoRotateMode WRITE setAutoRotateMode NOTIFY AutoRotateModeChanged)
+signals: void AutoRotateModeChanged();
 public:
-signals: void AutoScaleTransitionWidthRatioChanged(const float&);
+signals: void AutoScaleToScreenChanged();
 public:
-signals: void AutoUpdateEyeMovementToleranceChanged(const float&);
+signals: void AutoScaleTransitionWidthRatioChanged();
 public:
-signals: void MaximumScaleChanged(const double&);
+signals: void AutoUpdateEyeMovementToleranceChanged();
 public:
-signals: void MinimumScaleChanged(const double&);
+signals: void MaximumScaleChanged();
+public:
+signals: void MinimumScaleChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -116,7 +120,7 @@ public:
 MetaQReflect_AutoTransform();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -127,6 +131,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_AutoTransform_pmocHPP
 

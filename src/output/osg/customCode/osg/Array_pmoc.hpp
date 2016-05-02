@@ -12,7 +12,7 @@ class  QMLValueVisitor: public QReflect_ValueVisitor
 {
 Q_OBJECT
 public:
-QMLValueVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLValueVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -32,7 +32,7 @@ class  QMLConstValueVisitor: public QReflect_ConstValueVisitor
 {
 Q_OBJECT
 public:
-QMLConstValueVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLConstValueVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -52,7 +52,7 @@ class  QMLArrayVisitor: public QReflect_ArrayVisitor
 {
 Q_OBJECT
 public:
-QMLArrayVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLArrayVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -77,7 +77,7 @@ class  QMLArray: public QReflect_Array
 {
 Q_OBJECT
 public:
-QMLArray(pmoc::Instance *i=0,QObject* parent=0);
+QMLArray(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -97,7 +97,7 @@ class  QMLConstArrayVisitor: public QReflect_ConstArrayVisitor
 {
 Q_OBJECT
 public:
-QMLConstArrayVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLConstArrayVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -118,7 +118,7 @@ class  QMLIndexArray: public QReflect_IndexArray
 {
 Q_OBJECT
 public:
-QMLIndexArray(pmoc::Instance *i=0,QObject* parent=0);
+QMLIndexArray(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ArgumentParser_pmoc.hpp>
 using namespace pmoc;
-osg::QMLArgumentParser::QMLArgumentParser(pmoc::Instance *i,QObject* parent):QReflect_ArgumentParser(i,parent){
+osg::QMLArgumentParser::QMLArgumentParser(const pmoc::Instance *i,QObject* parent):QReflect_ArgumentParser(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLArgumentParser::connect2View(QQuickItem*i){

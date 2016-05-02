@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/AccelOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLAccelOperator::QMLAccelOperator(pmoc::Instance *i,QObject* parent):QReflect_AccelOperator(i,parent){
+osgParticle::QMLAccelOperator::QMLAccelOperator(const pmoc::Instance *i,QObject* parent):QReflect_AccelOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLAccelOperator::connect2View(QQuickItem*i){

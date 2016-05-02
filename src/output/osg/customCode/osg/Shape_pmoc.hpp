@@ -12,7 +12,7 @@ class  QMLShapeVisitor: public QReflect_ShapeVisitor
 {
 Q_OBJECT
 public:
-QMLShapeVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLShapeVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -33,7 +33,7 @@ class  QMLShape: public QReflect_Shape
 {
 Q_OBJECT
 public:
-QMLShape(pmoc::Instance *i=0,QObject* parent=0);
+QMLShape(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -55,7 +55,7 @@ class  QMLInfinitePlane: public QReflect_InfinitePlane
 {
 Q_OBJECT
 public:
-QMLInfinitePlane(pmoc::Instance *i=0,QObject* parent=0);
+QMLInfinitePlane(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -81,7 +81,7 @@ class  QMLHeightField: public QReflect_HeightField
 {
 Q_OBJECT
 public:
-QMLHeightField(pmoc::Instance *i=0,QObject* parent=0);
+QMLHeightField(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -107,7 +107,7 @@ class  QMLCylinder: public QReflect_Cylinder
 {
 Q_OBJECT
 public:
-QMLCylinder(pmoc::Instance *i=0,QObject* parent=0);
+QMLCylinder(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -127,7 +127,7 @@ class  QMLConstShapeVisitor: public QReflect_ConstShapeVisitor
 {
 Q_OBJECT
 public:
-QMLConstShapeVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLConstShapeVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -152,7 +152,7 @@ class  QMLCompositeShape: public QReflect_CompositeShape
 {
 Q_OBJECT
 public:
-QMLCompositeShape(pmoc::Instance *i=0,QObject* parent=0);
+QMLCompositeShape(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -178,7 +178,7 @@ class  QMLBox: public QReflect_Box
 {
 Q_OBJECT
 public:
-QMLBox(pmoc::Instance *i=0,QObject* parent=0);
+QMLBox(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -199,7 +199,7 @@ class  QMLSphere: public QReflect_Sphere
 {
 Q_OBJECT
 public:
-QMLSphere(pmoc::Instance *i=0,QObject* parent=0);
+QMLSphere(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -225,7 +225,7 @@ class  QMLCone: public QReflect_Cone
 {
 Q_OBJECT
 public:
-QMLCone(pmoc::Instance *i=0,QObject* parent=0);
+QMLCone(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -251,7 +251,7 @@ class  QMLTriangleMesh: public QReflect_TriangleMesh
 {
 Q_OBJECT
 public:
-QMLTriangleMesh(pmoc::Instance *i=0,QObject* parent=0);
+QMLTriangleMesh(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -272,7 +272,7 @@ class  QMLConvexHull: public QReflect_ConvexHull
 {
 Q_OBJECT
 public:
-QMLConvexHull(pmoc::Instance *i=0,QObject* parent=0);
+QMLConvexHull(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -298,7 +298,7 @@ class  QMLCapsule: public QReflect_Capsule
 {
 Q_OBJECT
 public:
-QMLCapsule(pmoc::Instance *i=0,QObject* parent=0);
+QMLCapsule(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

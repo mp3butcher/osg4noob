@@ -32,7 +32,7 @@ void z(float f){if(f!=z()){(*_model)[2]=f;emit zChanged(f);}}
 float w()const{return _model->w();}
 void w(float f){if(f!=w()){(*_model)[3]=f;emit wChanged(f);}}
 
-QMLVec4d(pmoc::Instance *i=0,QObject* parent=0);
+QMLVec4d(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

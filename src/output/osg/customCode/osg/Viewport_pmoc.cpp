@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Viewport_pmoc.hpp>
 using namespace pmoc;
-osg::QMLViewport::QMLViewport(pmoc::Instance *i,QObject* parent):QReflect_Viewport(i,parent){
+osg::QMLViewport::QMLViewport(const pmoc::Instance *i,QObject* parent):QReflect_Viewport(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLViewport::connect2View(QQuickItem*i){

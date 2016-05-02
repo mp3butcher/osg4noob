@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAtomicCounterBufferObject::QMLAtomicCounterBufferObject(pmoc::Instance *i,QObject* parent):QReflect_AtomicCounterBufferObject(i,parent){
+osg::QMLAtomicCounterBufferObject::QMLAtomicCounterBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_AtomicCounterBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAtomicCounterBufferObject::connect2View(QQuickItem*i){
@@ -28,7 +28,7 @@ void  osg::QMLAtomicCounterBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBufferData::QMLBufferData(pmoc::Instance *i,QObject* parent):QReflect_BufferData(i,parent){
+osg::QMLBufferData::QMLBufferData(const pmoc::Instance *i,QObject* parent):QReflect_BufferData(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBufferData::connect2View(QQuickItem*i){
@@ -53,7 +53,7 @@ void  osg::QMLBufferData::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBufferObject::QMLBufferObject(pmoc::Instance *i,QObject* parent):QReflect_BufferObject(i,parent){
+osg::QMLBufferObject::QMLBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_BufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBufferObject::connect2View(QQuickItem*i){
@@ -78,7 +78,7 @@ void  osg::QMLBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBufferObjectProfile::QMLBufferObjectProfile(pmoc::Instance *i,QObject* parent):QReflect_BufferObjectProfile(i,parent){
+osg::QMLBufferObjectProfile::QMLBufferObjectProfile(const pmoc::Instance *i,QObject* parent):QReflect_BufferObjectProfile(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBufferObjectProfile::connect2View(QQuickItem*i){
@@ -103,7 +103,7 @@ void  osg::QMLBufferObjectProfile::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLElementBufferObject::QMLElementBufferObject(pmoc::Instance *i,QObject* parent):QReflect_ElementBufferObject(i,parent){
+osg::QMLElementBufferObject::QMLElementBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_ElementBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLElementBufferObject::connect2View(QQuickItem*i){
@@ -128,7 +128,7 @@ void  osg::QMLElementBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGLBufferObject::QMLGLBufferObject(pmoc::Instance *i,QObject* parent):QReflect_GLBufferObject(i,parent){
+osg::QMLGLBufferObject::QMLGLBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_GLBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGLBufferObject::connect2View(QQuickItem*i){
@@ -153,7 +153,7 @@ void  osg::QMLGLBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGLBufferObjectManager::QMLGLBufferObjectManager(pmoc::Instance *i,QObject* parent):QReflect_GLBufferObjectManager(i,parent){
+osg::QMLGLBufferObjectManager::QMLGLBufferObjectManager(const pmoc::Instance *i,QObject* parent):QReflect_GLBufferObjectManager(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGLBufferObjectManager::connect2View(QQuickItem*i){
@@ -178,7 +178,7 @@ void  osg::QMLGLBufferObjectManager::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGLBufferObjectSet::QMLGLBufferObjectSet(pmoc::Instance *i,QObject* parent):QReflect_GLBufferObjectSet(i,parent){
+osg::QMLGLBufferObjectSet::QMLGLBufferObjectSet(const pmoc::Instance *i,QObject* parent):QReflect_GLBufferObjectSet(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGLBufferObjectSet::connect2View(QQuickItem*i){
@@ -211,7 +211,7 @@ using namespace pmoc;
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPixelBufferObject::QMLPixelBufferObject(pmoc::Instance *i,QObject* parent):QReflect_PixelBufferObject(i,parent){
+osg::QMLPixelBufferObject::QMLPixelBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_PixelBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPixelBufferObject::connect2View(QQuickItem*i){
@@ -236,7 +236,7 @@ void  osg::QMLPixelBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPixelDataBufferObject::QMLPixelDataBufferObject(pmoc::Instance *i,QObject* parent):QReflect_PixelDataBufferObject(i,parent){
+osg::QMLPixelDataBufferObject::QMLPixelDataBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_PixelDataBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPixelDataBufferObject::connect2View(QQuickItem*i){
@@ -261,7 +261,7 @@ void  osg::QMLPixelDataBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShaderStorageBufferObject::QMLShaderStorageBufferObject(pmoc::Instance *i,QObject* parent):QReflect_ShaderStorageBufferObject(i,parent){
+osg::QMLShaderStorageBufferObject::QMLShaderStorageBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_ShaderStorageBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShaderStorageBufferObject::connect2View(QQuickItem*i){
@@ -286,7 +286,7 @@ void  osg::QMLShaderStorageBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLUniformBufferObject::QMLUniformBufferObject(pmoc::Instance *i,QObject* parent):QReflect_UniformBufferObject(i,parent){
+osg::QMLUniformBufferObject::QMLUniformBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_UniformBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLUniformBufferObject::connect2View(QQuickItem*i){
@@ -311,7 +311,7 @@ void  osg::QMLUniformBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLVertexBufferObject::QMLVertexBufferObject(pmoc::Instance *i,QObject* parent):QReflect_VertexBufferObject(i,parent){
+osg::QMLVertexBufferObject::QMLVertexBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_VertexBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLVertexBufferObject::connect2View(QQuickItem*i){

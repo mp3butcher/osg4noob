@@ -12,7 +12,7 @@ class  QMLConvexPlanarPolygon: public QReflect_ConvexPlanarPolygon
 {
 Q_OBJECT
 public:
-QMLConvexPlanarPolygon(pmoc::Instance *i=0,QObject* parent=0);
+QMLConvexPlanarPolygon(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

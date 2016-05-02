@@ -15,7 +15,7 @@ class  QMLTestResult: public QReflect_TestResult
 {
 Q_OBJECT
 public:
-QMLTestResult(pmoc::Instance *i=0,QObject* parent=0);
+QMLTestResult(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -41,7 +41,7 @@ class  QMLOcclusionQueryNode: public QReflect_OcclusionQueryNode
 {
 Q_OBJECT
 public:
-QMLOcclusionQueryNode(pmoc::Instance *i=0,QObject* parent=0);
+QMLOcclusionQueryNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -62,7 +62,7 @@ class  QMLQueryGeometry: public QReflect_QueryGeometry
 {
 Q_OBJECT
 public:
-QMLQueryGeometry(pmoc::Instance *i=0,QObject* parent=0);
+QMLQueryGeometry(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ImageUtils_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCastAndScaleToFloatOperation::QMLCastAndScaleToFloatOperation(pmoc::Instance *i,QObject* parent):QReflect_CastAndScaleToFloatOperation(i,parent){
+osg::QMLCastAndScaleToFloatOperation::QMLCastAndScaleToFloatOperation(const pmoc::Instance *i,QObject* parent):QReflect_CastAndScaleToFloatOperation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCastAndScaleToFloatOperation::connect2View(QQuickItem*i){

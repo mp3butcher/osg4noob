@@ -10,7 +10,7 @@
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_KdTree::QReflect_KdTree(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_KdTree::QReflect_KdTree(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::KdTree*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -38,9 +38,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_KdTree::MetaQReflect_KdTree():MetaQQuickClass( "osg::KdTree"){
-_typeid=&typeid(osg::KdTree );           qRegisterMetaType<QMLKdTree>();
-qmlRegisterType<QReflect_KdTree>("pmoc.osg",1,0,"QReflect_KdTree");
-           qmlRegisterType<QMLKdTree>("pmoc.osg",1,0,"QMLKdTree");
+_typeid=&typeid(osg::KdTree );
+           qRegisterMetaType<osg::QMLKdTree>();
+           qRegisterMetaType<osg::QMLKdTree*>("pmoc.osg.QMLKdTree");
+qmlRegisterType<osg::QReflect_KdTree>("pmoc.osg",1,0,"QReflect_KdTree");
+           qmlRegisterType<osg::QMLKdTree>("pmoc.osg",1,0,"QMLKdTree");
 };
 const std::string osg::MetaQReflect_KdTree::Imports() const{
  return std::string("");
@@ -49,7 +51,7 @@ const std::string osg::MetaQReflect_KdTree::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_KdTree::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_KdTree::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_KdTree::createQQModel(Instance*i){ //return new MetaQReflect_KdTree_QModel(i);}
+QQModel* osg::MetaQReflect_KdTree::createQQModel(const Instance*i){ //return new MetaQReflect_KdTree_QModel(i);}
 QMLKdTree *ret =new QMLKdTree(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -78,18 +80,22 @@ return ret;}
 #include <customCode/osg/KdTree_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
 #include <customCode/osg/Geometry_pmoc.hpp>
+#include <customCode/osg/KdTree_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_KdTreeBuilder::apply(osg::QReflect_Geometry *p0){
+ void osg::QReflect_KdTreeBuilder::apply(osg::QReflect_Geometry  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_KdTreeBuilder::apply : parameter n.0 is NULL\n"<<endl;return;}
  _model->apply(*p0->_model);
 
 }
 osg::QReflect_KdTreeBuilder*osg::QReflect_KdTreeBuilder::clone(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->clone(),inst);
 return inst.isValid()?((osg::QReflect_KdTreeBuilder * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_KdTreeBuilder::QReflect_KdTreeBuilder(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_KdTreeBuilder::QReflect_KdTreeBuilder(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =dynamic_cast<osg::KdTreeBuilder*>(reinterpret_cast<osg::Referenced*>(i->ptr));
  if(!_model)  _model =dynamic_cast<osg::KdTreeBuilder*>(reinterpret_cast<osg::Object*>(i->ptr));
  if(!_model)  _model =reinterpret_cast<osg::KdTreeBuilder*>(i->ptr);
@@ -119,9 +125,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_KdTreeBuilder::MetaQReflect_KdTreeBuilder():MetaQQuickClass( "osg::KdTreeBuilder"){
-_typeid=&typeid(osg::KdTreeBuilder );           qRegisterMetaType<QMLKdTreeBuilder>();
-qmlRegisterType<QReflect_KdTreeBuilder>("pmoc.osg",1,0,"QReflect_KdTreeBuilder");
-           qmlRegisterType<QMLKdTreeBuilder>("pmoc.osg",1,0,"QMLKdTreeBuilder");
+_typeid=&typeid(osg::KdTreeBuilder );
+           qRegisterMetaType<osg::QMLKdTreeBuilder>();
+           qRegisterMetaType<osg::QMLKdTreeBuilder*>("pmoc.osg.QMLKdTreeBuilder");
+qmlRegisterType<osg::QReflect_KdTreeBuilder>("pmoc.osg",1,0,"QReflect_KdTreeBuilder");
+           qmlRegisterType<osg::QMLKdTreeBuilder>("pmoc.osg",1,0,"QMLKdTreeBuilder");
 };
 const std::string osg::MetaQReflect_KdTreeBuilder::Imports() const{
  return std::string("");
@@ -130,7 +138,7 @@ const std::string osg::MetaQReflect_KdTreeBuilder::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_KdTreeBuilder::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_KdTreeBuilder::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_KdTreeBuilder::createQQModel(Instance*i){ //return new MetaQReflect_KdTreeBuilder_QModel(i);}
+QQModel* osg::MetaQReflect_KdTreeBuilder::createQQModel(const Instance*i){ //return new MetaQReflect_KdTreeBuilder_QModel(i);}
 QMLKdTreeBuilder *ret =new QMLKdTreeBuilder(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

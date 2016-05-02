@@ -15,7 +15,7 @@ class  QMLConnectedParticleSystem: public QReflect_ConnectedParticleSystem
 {
 Q_OBJECT
 public:
-QMLConnectedParticleSystem(pmoc::Instance *i=0,QObject* parent=0);
+QMLConnectedParticleSystem(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OperationThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLOperation::QMLOperation(pmoc::Instance *i,QObject* parent):QReflect_Operation(i,parent){
+osg::QMLOperation::QMLOperation(const pmoc::Instance *i,QObject* parent):QReflect_Operation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLOperation::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLOperation::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OperationThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLOperationQueue::QMLOperationQueue(pmoc::Instance *i,QObject* parent):QReflect_OperationQueue(i,parent){
+osg::QMLOperationQueue::QMLOperationQueue(const pmoc::Instance *i,QObject* parent):QReflect_OperationQueue(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLOperationQueue::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLOperationQueue::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OperationThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLOperationThread::QMLOperationThread(pmoc::Instance *i,QObject* parent):QReflect_OperationThread(i,parent){
+osg::QMLOperationThread::QMLOperationThread(const pmoc::Instance *i,QObject* parent):QReflect_OperationThread(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLOperationThread::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLOperationThread::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OperationThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLRefBlock::QMLRefBlock(pmoc::Instance *i,QObject* parent):QReflect_RefBlock(i,parent){
+osg::QMLRefBlock::QMLRefBlock(const pmoc::Instance *i,QObject* parent):QReflect_RefBlock(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLRefBlock::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLRefBlock::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OperationThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLRefBlockCount::QMLRefBlockCount(pmoc::Instance *i,QObject* parent):QReflect_RefBlockCount(i,parent){
+osg::QMLRefBlockCount::QMLRefBlockCount(const pmoc::Instance *i,QObject* parent):QReflect_RefBlockCount(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLRefBlockCount::connect2View(QQuickItem*i){

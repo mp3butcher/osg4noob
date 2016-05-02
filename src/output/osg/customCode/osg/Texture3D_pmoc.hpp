@@ -15,7 +15,7 @@ class  QMLTexture3D: public QReflect_Texture3D
     Q_OBJECT
 public:
     Q_PROPERTY(QUrl filename READ getfilename WRITE setfilename NOTIFY filenameChanged)
-    QMLTexture3D(pmoc::Instance *i=0,QObject* parent=0);
+    QMLTexture3D(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
     QUrl getfilename()const;
 

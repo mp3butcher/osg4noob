@@ -1,6 +1,7 @@
 #include <osgParticle/Shooter>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,21 +10,25 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 using namespace pmoc;
- bool  osgParticle::QReflect_Shooter::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osgParticle::QReflect_Shooter:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_Shooter::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
-const  char*  osgParticle::QReflect_Shooter::className()const{
+const  char*  osgParticle::QReflect_Shooter:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osgParticle::QReflect_Shooter::libraryName()const{
+const  char*  osgParticle::QReflect_Shooter:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_Shooter::QReflect_Shooter(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_Shooter::QReflect_Shooter(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::Shooter*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -48,9 +53,11 @@ std::cerr<<"osgParticle::Shooter is not instanciable"<<std::endl;return Instance
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_Shooter::MetaQReflect_Shooter():MetaQQuickClass( "osgParticle::Shooter"){
-_typeid=&typeid(osgParticle::Shooter );           qRegisterMetaType<QMLShooter>();
-qmlRegisterType<QReflect_Shooter>("pmoc.osgParticle",1,0,"QReflect_Shooter");
-           qmlRegisterType<QMLShooter>("pmoc.osgParticle",1,0,"QMLShooter");
+_typeid=&typeid(osgParticle::Shooter );
+           qRegisterMetaType<osgParticle::QMLShooter>();
+           qRegisterMetaType<osgParticle::QMLShooter*>("pmoc.osgParticle.QMLShooter");
+qmlRegisterType<osgParticle::QReflect_Shooter>("pmoc.osgParticle",1,0,"QReflect_Shooter");
+           qmlRegisterType<osgParticle::QMLShooter>("pmoc.osgParticle",1,0,"QMLShooter");
 };
 const std::string osgParticle::MetaQReflect_Shooter::Imports() const{
  return std::string("");
@@ -59,7 +66,7 @@ const std::string osgParticle::MetaQReflect_Shooter::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_Shooter::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_Shooter::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_Shooter::createQQModel(Instance*i){ //return new MetaQReflect_Shooter_QModel(i);}
+QQModel* osgParticle::MetaQReflect_Shooter::createQQModel(const Instance*i){ //return new MetaQReflect_Shooter_QModel(i);}
 QMLShooter *ret =new QMLShooter(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -81,5 +88,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Shooter_pmoc.cpp"
 #endif
+
+
 
 

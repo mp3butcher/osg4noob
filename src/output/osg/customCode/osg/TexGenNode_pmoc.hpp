@@ -19,7 +19,7 @@ class  QMLTexGenNode: public QReflect_TexGenNode
 {
 Q_OBJECT
 public:
-QMLTexGenNode(pmoc::Instance *i=0,QObject* parent=0);
+QMLTexGenNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

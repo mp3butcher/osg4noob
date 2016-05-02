@@ -13,7 +13,7 @@ class  QMLFrontFace: public QReflect_FrontFace
 {
 Q_OBJECT
 public:
-QMLFrontFace(pmoc::Instance *i=0,QObject* parent=0);
+QMLFrontFace(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

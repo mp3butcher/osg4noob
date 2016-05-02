@@ -5,6 +5,7 @@
 #include <customCode/osg/StateSet_pmoc.hpp>
 #include <customCode/osg/Texture_pmoc.hpp>
 
+#include <QQuickItem>
 #include <QQmlProperty>
 #include <osgDB/FileUtils>
 #include <osgDB/FileNameUtils>
@@ -153,7 +154,7 @@ void osg::QMLTexture2D::setfilename(QUrl sss)
         }
     }
 }
-osg::QMLTexture2D::QMLTexture2D(pmoc::Instance *i,QObject* parent):QReflect_Texture2D(i,parent)
+osg::QMLTexture2D::QMLTexture2D(const pmoc::Instance *i,QObject* parent):QReflect_Texture2D(i,parent)
 {
 //custom initializations
 }

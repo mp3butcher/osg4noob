@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Billboard_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBillboard::QMLBillboard(pmoc::Instance *i,QObject* parent):QReflect_Billboard(i,parent){
+osg::QMLBillboard::QMLBillboard(const pmoc::Instance *i,QObject* parent):QReflect_Billboard(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBillboard::connect2View(QQuickItem*i){

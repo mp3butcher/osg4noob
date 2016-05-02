@@ -21,14 +21,14 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ModularProgram * _model;
-QReflect_ModularProgram(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ModularProgram(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ModularProgram( );
 //ModularProgram
 Q_INVOKABLE  int  numOperators()const;
-Q_INVOKABLE osgParticle::QReflect_Operator*  getOperator( int );
-Q_INVOKABLE osgParticle::QReflect_Operator*  getOperator( int )const;
-Q_INVOKABLE void  addOperator(osgParticle::QReflect_Operator *);
-Q_INVOKABLE void  removeOperator( int );
+Q_INVOKABLE osgParticle::QReflect_Operator*  getOperator( int i);
+Q_INVOKABLE osgParticle::QReflect_Operator*  getOperator( int i)const;
+Q_INVOKABLE void  addOperator(osgParticle::QReflect_Operator *o);
+Q_INVOKABLE void  removeOperator( int i);
 public slots:
 virtual void updateModel();
  
@@ -41,7 +41,7 @@ public:
 MetaQReflect_ModularProgram();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -52,6 +52,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_ModularProgram_pmocHPP

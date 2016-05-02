@@ -1,5 +1,6 @@
 #include <osg/ClampColor>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,38 +8,56 @@
 #include <customCode/osg/ClampColor_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_ClampColor::getClampFragmentColor()const{
+ GLenum  osg::QReflect_ClampColor:: getClampFragmentColor()const{
+//params checking
 return _model->getClampFragmentColor();
 
 }
- GLenum  osg::QReflect_ClampColor::getClampReadColor()const{
+ GLenum  osg::QReflect_ClampColor:: getClampReadColor()const{
+//params checking
 return _model->getClampReadColor();
 
 }
- GLenum  osg::QReflect_ClampColor::getClampVertexColor()const{
+ GLenum  osg::QReflect_ClampColor:: getClampVertexColor()const{
+//params checking
 return _model->getClampVertexColor();
 
 }
- int  osg::QReflect_ClampColor::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_ClampColor:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ClampColor::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_ClampColor::setClampFragmentColor( GLenum p0){
+ void osg::QReflect_ClampColor::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ClampColor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ClampColor::setClampFragmentColor( GLenum  p0){
+//params checking
  _model->setClampFragmentColor(p0);
+emit ClampFragmentColorChanged();
 
 }
- void osg::QReflect_ClampColor::setClampReadColor( GLenum p0){
+ void osg::QReflect_ClampColor::setClampReadColor( GLenum  p0){
+//params checking
  _model->setClampReadColor(p0);
+emit ClampReadColorChanged();
 
 }
- void osg::QReflect_ClampColor::setClampVertexColor( GLenum p0){
+ void osg::QReflect_ClampColor::setClampVertexColor( GLenum  p0){
+//params checking
  _model->setClampVertexColor(p0);
+emit ClampVertexColorChanged();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_ClampColor::QReflect_ClampColor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ClampColor::QReflect_ClampColor(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ClampColor*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -66,9 +85,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ClampColor::MetaQReflect_ClampColor():MetaQQuickClass( "osg::ClampColor"){
-_typeid=&typeid(osg::ClampColor );           qRegisterMetaType<QMLClampColor>();
-qmlRegisterType<QReflect_ClampColor>("pmoc.osg",1,0,"QReflect_ClampColor");
-           qmlRegisterType<QMLClampColor>("pmoc.osg",1,0,"QMLClampColor");
+_typeid=&typeid(osg::ClampColor );
+           qRegisterMetaType<osg::QMLClampColor>();
+           qRegisterMetaType<osg::QMLClampColor*>("pmoc.osg.QMLClampColor");
+qmlRegisterType<osg::QReflect_ClampColor>("pmoc.osg",1,0,"QReflect_ClampColor");
+           qmlRegisterType<osg::QMLClampColor>("pmoc.osg",1,0,"QMLClampColor");
 };
 const std::string osg::MetaQReflect_ClampColor::Imports() const{
  return std::string("");
@@ -77,7 +98,7 @@ const std::string osg::MetaQReflect_ClampColor::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ClampColor::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ClampColor::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ClampColor::createQQModel(Instance*i){ //return new MetaQReflect_ClampColor_QModel(i);}
+QQModel* osg::MetaQReflect_ClampColor::createQQModel(const Instance*i){ //return new MetaQReflect_ClampColor_QModel(i);}
 QMLClampColor *ret =new QMLClampColor(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -99,5 +120,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ClampColor_pmoc.cpp"
 #endif
+
+
 
 

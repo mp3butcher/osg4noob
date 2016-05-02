@@ -1,5 +1,7 @@
 #ifndef osgParticle_VariableRateCounter_pmocHPP
 #define  osgParticle_VariableRateCounter_pmocHPP 1
+
+
 #include <osgParticle/VariableRateCounter_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -19,15 +21,15 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 VariableRateCounter * _model;
-QReflect_VariableRateCounter(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_VariableRateCounter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_VariableRateCounter( );
 //VariableRateCounter
 // void  setRateRange(const  rangef &);
 //const  rangef & getRateRange();
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE void  setRateRange( float  , float );
+Q_INVOKABLE void  setRateRange( float minrange , float maxrange);
 public slots:
 virtual void updateModel();
  
@@ -38,7 +40,7 @@ protected:
 MetaQReflect_VariableRateCounter();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -49,6 +51,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_VariableRateCounter_pmocHPP

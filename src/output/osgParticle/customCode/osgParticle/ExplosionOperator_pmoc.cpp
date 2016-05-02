@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/ExplosionOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLExplosionOperator::QMLExplosionOperator(pmoc::Instance *i,QObject* parent):QReflect_ExplosionOperator(i,parent){
+osgParticle::QMLExplosionOperator::QMLExplosionOperator(const pmoc::Instance *i,QObject* parent):QReflect_ExplosionOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLExplosionOperator::connect2View(QQuickItem*i){

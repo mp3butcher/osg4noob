@@ -13,7 +13,7 @@ class  QMLLineWidth: public QReflect_LineWidth
 {
 Q_OBJECT
 public:
-QMLLineWidth(pmoc::Instance *i=0,QObject* parent=0);
+QMLLineWidth(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

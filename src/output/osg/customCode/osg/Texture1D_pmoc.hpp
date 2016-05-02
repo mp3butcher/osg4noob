@@ -13,7 +13,7 @@ class  QMLTexture1D: public QReflect_Texture1D
 {
 Q_OBJECT
 public:
-QMLTexture1D(pmoc::Instance *i=0,QObject* parent=0);
+QMLTexture1D(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

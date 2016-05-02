@@ -1,9 +1,14 @@
 #ifndef osg_CullFace_pmocHPP
 #define  osg_CullFace_pmocHPP 1
+
+
 #include <osg/CullFace_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/CullFace>
 #include <osg/CullFace>
@@ -27,14 +32,17 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 CullFace * _model;
-QReflect_CullFace(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CullFace(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CullFace( );
 //CullFace
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_CullFace::Mode  getMode()const;
-Q_INVOKABLE void  setMode(osg::QReflect_CullFace::Mode );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setMode(osg::QReflect_CullFace::Mode mode);
+Q_PROPERTY(osg::QReflect_CullFace::Mode  Mode  READ getMode WRITE setMode NOTIFY ModeChanged)
+signals: void ModeChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -47,7 +55,7 @@ public:
 MetaQReflect_CullFace();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -58,6 +66,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_CullFace_pmocHPP
 

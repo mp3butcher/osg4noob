@@ -18,7 +18,7 @@ class  QMLCallback: public QReflect_Callback
 {
 Q_OBJECT
 public:
-QMLCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -39,7 +39,7 @@ class  QMLStateAttributeCallback: public QReflect_StateAttributeCallback
 {
 Q_OBJECT
 public:
-QMLStateAttributeCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLStateAttributeCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -60,7 +60,7 @@ class  QMLNodeCallback: public QReflect_NodeCallback
 {
 Q_OBJECT
 public:
-QMLNodeCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLNodeCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -81,7 +81,7 @@ class  QMLUniformCallback: public QReflect_UniformCallback
 {
 Q_OBJECT
 public:
-QMLUniformCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLUniformCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -102,7 +102,7 @@ class  QMLCallbackObject: public QReflect_CallbackObject
 {
 Q_OBJECT
 public:
-QMLCallbackObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLCallbackObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

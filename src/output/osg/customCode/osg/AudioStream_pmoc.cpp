@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/AudioStream_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAudioSink::QMLAudioSink(pmoc::Instance *i,QObject* parent):QReflect_AudioSink(i,parent){
+osg::QMLAudioSink::QMLAudioSink(const pmoc::Instance *i,QObject* parent):QReflect_AudioSink(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAudioSink::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLAudioSink::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/AudioStream_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAudioStream::QMLAudioStream(pmoc::Instance *i,QObject* parent):QReflect_AudioStream(i,parent){
+osg::QMLAudioStream::QMLAudioStream(const pmoc::Instance *i,QObject* parent):QReflect_AudioStream(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAudioStream::connect2View(QQuickItem*i){

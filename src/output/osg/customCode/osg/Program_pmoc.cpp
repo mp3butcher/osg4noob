@@ -1,5 +1,7 @@
 #include <osg/Program>
 //includes
+
+#include <QQuickItem>
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Program_pmoc.hpp>
 #include <customCode/osg/Program_pmoc.hpp>
@@ -7,7 +9,7 @@
 using namespace pmoc;
 using namespace std;
 using namespace osg;
-osg::QMLProgram::QMLProgram(pmoc::Instance *i,QObject* parent):QReflect_Program(i,parent)
+osg::QMLProgram::QMLProgram(const pmoc::Instance *i,QObject* parent):QReflect_Program(i,parent)
 {
 //custom initializations
 

@@ -35,14 +35,20 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 SinkOperator * _model;
-QReflect_SinkOperator(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_SinkOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_SinkOperator( );
 //SinkOperator
 Q_INVOKABLE osgParticle::QReflect_SinkOperator::SinkStrategy  getSinkStrategy()const;
 Q_INVOKABLE osgParticle::QReflect_SinkOperator::SinkTarget  getSinkTarget()const;
-Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *);
-Q_INVOKABLE void  setSinkStrategy(osgParticle::QReflect_SinkOperator::SinkStrategy );
-Q_INVOKABLE void  setSinkTarget(osgParticle::QReflect_SinkOperator::SinkTarget );
+Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *prg);
+Q_INVOKABLE void  setSinkStrategy(osgParticle::QReflect_SinkOperator::SinkStrategy ss);
+Q_INVOKABLE void  setSinkTarget(osgParticle::QReflect_SinkOperator::SinkTarget so);
+Q_PROPERTY(osgParticle::QReflect_SinkOperator::SinkStrategy  SinkStrategy  READ getSinkStrategy WRITE setSinkStrategy NOTIFY SinkStrategyChanged)
+Q_PROPERTY(osgParticle::QReflect_SinkOperator::SinkTarget  SinkTarget  READ getSinkTarget WRITE setSinkTarget NOTIFY SinkTargetChanged)
+signals: void SinkStrategyChanged();
+public:
+signals: void SinkTargetChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -55,7 +61,7 @@ public:
 MetaQReflect_SinkOperator();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -66,6 +72,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_SinkOperator_pmocHPP

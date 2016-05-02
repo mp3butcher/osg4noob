@@ -1,9 +1,14 @@
 #ifndef osg_Scissor_pmocHPP
 #define  osg_Scissor_pmocHPP 1
+
+
 #include <osg/Scissor_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/Scissor>
 #include <osg/Scissor>
@@ -19,12 +24,11 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Scissor * _model;
-QReflect_Scissor(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Scissor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Scissor( );
 //Scissor
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE  int  height()const;
 Q_INVOKABLE  int  width()const;
 Q_INVOKABLE  int  x()const;
@@ -33,8 +37,9 @@ Q_INVOKABLE  int&  height();
 Q_INVOKABLE  int&  width();
 Q_INVOKABLE  int&  x();
 Q_INVOKABLE  int&  y();
-Q_INVOKABLE void  getScissor( int & , int & , int & , int &)const;
-Q_INVOKABLE void  setScissor( int  , int  , int  , int );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  getScissor( int &x , int &y , int &width , int &height)const;
+Q_INVOKABLE void  setScissor( int x , int y , int width , int height);
 public slots:
 virtual void updateModel();
  
@@ -47,7 +52,7 @@ public:
 MetaQReflect_Scissor();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -58,6 +63,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Scissor_pmocHPP
 

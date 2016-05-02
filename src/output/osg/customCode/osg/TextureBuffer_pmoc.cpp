@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TextureBuffer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTextureBuffer::QMLTextureBuffer(pmoc::Instance *i,QObject* parent):QReflect_TextureBuffer(i,parent){
+osg::QMLTextureBuffer::QMLTextureBuffer(const pmoc::Instance *i,QObject* parent):QReflect_TextureBuffer(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTextureBuffer::connect2View(QQuickItem*i){

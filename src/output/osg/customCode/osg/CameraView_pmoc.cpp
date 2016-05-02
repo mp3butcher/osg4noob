@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CameraView_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCameraView::QMLCameraView(pmoc::Instance *i,QObject* parent):QReflect_CameraView(i,parent){
+osg::QMLCameraView::QMLCameraView(const pmoc::Instance *i,QObject* parent):QReflect_CameraView(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCameraView::connect2View(QQuickItem*i){

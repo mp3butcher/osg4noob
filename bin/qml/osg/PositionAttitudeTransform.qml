@@ -58,7 +58,7 @@ FocusScope {
                 else {
                     console.log("selected")
                     main.focus = true
-                    globalEditor.setOperand(main.qmodel)
+                    pmocjs.setOperand(main.qmodel)
                 }
             }
 
@@ -79,9 +79,9 @@ property var osg_PositionAttitudeTransform //QQModel
 onOsg_PositionAttitudeTransformChanged:   {
     //inner pmoc component injection
     console.log('inner pmoc component injection')
-   globalEditor.popQQModelUi(osg_PositionAttitudeTransform.getPosition(),rowpos)
-   globalEditor.popQQModelUi(osg_PositionAttitudeTransform.getRotation(),rowrot)
-   globalEditor.popQQModelUi(osg_PositionAttitudeTransform.getScale(),rowscale)
+   pmocjs.popQQModelUi(osg_PositionAttitudeTransform.getPosition(),rowpos)
+   pmocjs.popQQModelUi(osg_PositionAttitudeTransform.getRotation(),rowrot)
+   pmocjs.popQQModelUi(osg_PositionAttitudeTransform.getScale(),rowscale)
 
 
 }

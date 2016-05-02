@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ComputeBoundsVisitor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLComputeBoundsVisitor::QMLComputeBoundsVisitor(pmoc::Instance *i,QObject* parent):QReflect_ComputeBoundsVisitor(i,parent){
+osg::QMLComputeBoundsVisitor::QMLComputeBoundsVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ComputeBoundsVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLComputeBoundsVisitor::connect2View(QQuickItem*i){

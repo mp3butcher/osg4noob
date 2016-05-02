@@ -138,15 +138,29 @@ signals:
 
 
 public slots:
+    ///introspect QObject for its methods and properties and add them the the api
     void check4newLex(pmoc::QQModel*);
+    ///check if parameter is a metatype name and add methods to the api if it does
+    void checkMetaType(QString);
     Q_INVOKABLE QQuickItem* connectQQModel2Ui( pmoc::QQModel* qmod,QQuickItem* view);
     Q_INVOKABLE QQuickItem* popQQModelUi( pmoc::QQModel* qmod,QQuickItem* parent=0,QString relationname="");
     Q_INVOKABLE QQuickItem* genUI4QQModel( pmoc::QQModel* qmod,QQuickItem* parent=0,QString relationname="");
 
     Q_INVOKABLE pmoc::QQModel* createInstance(QString instancetype );
 
-    Q_INVOKABLE pmoc::QQModel*  brutalCast(pmoc::QQModel* qmod,QString casttype);
+    //Q_INVOKABLE pmoc::QQModel*  cast(pmoc::QQModel* qmod,QString casttype);
     Q_INVOKABLE pmoc::MetaQQuickClass*  getClassByName(QString casttype);
+
+
+    ///Helper functions in order to avoid some work with Q_ENUMS
+    ///return an enum as a string list
+    Q_INVOKABLE const QStringList getEnumAsStringList(QObject*qmod,const QString& enumname) const ;
+    ///get the enum value from on its index in the stringlist
+    Q_INVOKABLE int getEnumFromIndexInStringList(QObject*qmod,const QString& enumname, const int &) const;
+    ///return the index in the stringlist from the enum value
+    Q_INVOKABLE int getIndexInStringListFromEnum(QObject*qmod,const QString& enumname, const int &) const;
+
+    ///Copy/paste buffer
 
     Q_INVOKABLE pmoc::QQModel* getSubject()
     {

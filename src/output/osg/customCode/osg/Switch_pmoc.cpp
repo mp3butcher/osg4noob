@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Switch_pmoc.hpp>
 using namespace pmoc;
-osg::QMLSwitch::QMLSwitch(pmoc::Instance *i,QObject* parent):QReflect_Switch(i,parent){
+osg::QMLSwitch::QMLSwitch(const pmoc::Instance *i,QObject* parent):QReflect_Switch(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLSwitch::connect2View(QQuickItem*i){

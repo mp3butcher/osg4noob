@@ -12,7 +12,7 @@ class  QMLPrimitiveIndexFunctor: public QReflect_PrimitiveIndexFunctor
 {
 Q_OBJECT
 public:
-QMLPrimitiveIndexFunctor(pmoc::Instance *i=0,QObject* parent=0);
+QMLPrimitiveIndexFunctor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -32,7 +32,7 @@ class  QMLPrimitiveFunctor: public QReflect_PrimitiveFunctor
 {
 Q_OBJECT
 public:
-QMLPrimitiveFunctor(pmoc::Instance *i=0,QObject* parent=0);
+QMLPrimitiveFunctor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -53,7 +53,7 @@ class  QMLPrimitiveSet: public QReflect_PrimitiveSet
 {
 Q_OBJECT
 public:
-QMLPrimitiveSet(pmoc::Instance *i=0,QObject* parent=0);
+QMLPrimitiveSet(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -79,7 +79,7 @@ class  QMLDrawElements: public QReflect_DrawElements
 {
 Q_OBJECT
 public:
-QMLDrawElements(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawElements(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -99,7 +99,7 @@ class  QMLDrawArrayLengths: public QReflect_DrawArrayLengths
 {
 Q_OBJECT
 public:
-QMLDrawArrayLengths(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawArrayLengths(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -119,7 +119,7 @@ class  QMLDrawElementsUShort: public QReflect_DrawElementsUShort
 {
 Q_OBJECT
 public:
-QMLDrawElementsUShort(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawElementsUShort(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -139,7 +139,7 @@ class  QMLDrawElementsUByte: public QReflect_DrawElementsUByte
 {
 Q_OBJECT
 public:
-QMLDrawElementsUByte(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawElementsUByte(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -159,7 +159,7 @@ class  QMLDrawElementsUInt: public QReflect_DrawElementsUInt
 {
 Q_OBJECT
 public:
-QMLDrawElementsUInt(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawElementsUInt(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -180,7 +180,7 @@ class  QMLDrawArrays: public QReflect_DrawArrays
 {
 Q_OBJECT
 public:
-QMLDrawArrays(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawArrays(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

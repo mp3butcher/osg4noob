@@ -21,7 +21,7 @@ void osg::QMLPagedLOD::addRange(QUrl filename,float mins,float maxs){
     cout<<"selected image file"<< s.toStdString()<<endl;
 }
 
-osg::QMLPagedLOD::QMLPagedLOD(pmoc::Instance *i,QObject* parent):QReflect_PagedLOD(i,parent){
+osg::QMLPagedLOD::QMLPagedLOD(const pmoc::Instance *i,QObject* parent):QReflect_PagedLOD(i,parent){
 //custom initializations
 
 }

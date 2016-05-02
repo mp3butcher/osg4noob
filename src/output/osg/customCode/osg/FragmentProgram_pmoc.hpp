@@ -13,7 +13,7 @@ class  QMLFragmentProgram: public QReflect_FragmentProgram
 {
 Q_OBJECT
 public:
-QMLFragmentProgram(pmoc::Instance *i=0,QObject* parent=0);
+QMLFragmentProgram(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

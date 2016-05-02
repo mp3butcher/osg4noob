@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PolygonStipple_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPolygonStipple::QMLPolygonStipple(pmoc::Instance *i,QObject* parent):QReflect_PolygonStipple(i,parent){
+osg::QMLPolygonStipple::QMLPolygonStipple(const pmoc::Instance *i,QObject* parent):QReflect_PolygonStipple(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPolygonStipple::connect2View(QQuickItem*i){

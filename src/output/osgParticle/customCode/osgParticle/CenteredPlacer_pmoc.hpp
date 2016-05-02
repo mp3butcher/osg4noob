@@ -31,7 +31,7 @@ class  QMLCenteredPlacer: public QReflect_CenteredPlacer
 
 
 public:
-    QMLCenteredPlacer(pmoc::Instance *i=0,QObject* parent=0);
+    QMLCenteredPlacer(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
     virtual void  updateModel();

@@ -15,7 +15,7 @@ class  QMLCullSettings: public QReflect_CullSettings
 Q_OBJECT
 Q_PROPERTY(int computeNearFarMode READ  computeNearFarMode WRITE computeNearFarMode NOTIFY computeNearFarModeChanged)
 public:
-QMLCullSettings(pmoc::Instance *i=0,QObject* parent=0);
+QMLCullSettings(const pmoc::Instance *i=0,QObject* parent=0);
 void computeNearFarMode(int);
 int computeNearFarMode()const;
 virtual QQuickItem * connect2View(QQuickItem*);

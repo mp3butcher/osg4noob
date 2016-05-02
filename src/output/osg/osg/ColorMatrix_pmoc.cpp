@@ -1,5 +1,6 @@
 #include <osg/ColorMatrix>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,18 +9,29 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_ColorMatrix::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_ColorMatrix:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ColorMatrix::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_ColorMatrix::setMatrix(osg::QReflect_Matrixd *p0){
+ void osg::QReflect_ColorMatrix::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ColorMatrix::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_ColorMatrix::setMatrix(osg::QReflect_Matrixd  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ColorMatrix::setMatrix : parameter n.0 is NULL\n"<<endl;return;}
  _model->setMatrix(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_ColorMatrix::QReflect_ColorMatrix(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ColorMatrix::QReflect_ColorMatrix(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ColorMatrix*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -47,9 +59,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ColorMatrix::MetaQReflect_ColorMatrix():MetaQQuickClass( "osg::ColorMatrix"){
-_typeid=&typeid(osg::ColorMatrix );           qRegisterMetaType<QMLColorMatrix>();
-qmlRegisterType<QReflect_ColorMatrix>("pmoc.osg",1,0,"QReflect_ColorMatrix");
-           qmlRegisterType<QMLColorMatrix>("pmoc.osg",1,0,"QMLColorMatrix");
+_typeid=&typeid(osg::ColorMatrix );
+           qRegisterMetaType<osg::QMLColorMatrix>();
+           qRegisterMetaType<osg::QMLColorMatrix*>("pmoc.osg.QMLColorMatrix");
+qmlRegisterType<osg::QReflect_ColorMatrix>("pmoc.osg",1,0,"QReflect_ColorMatrix");
+           qmlRegisterType<osg::QMLColorMatrix>("pmoc.osg",1,0,"QMLColorMatrix");
 };
 const std::string osg::MetaQReflect_ColorMatrix::Imports() const{
  return std::string("");
@@ -58,7 +72,7 @@ const std::string osg::MetaQReflect_ColorMatrix::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ColorMatrix::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ColorMatrix::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ColorMatrix::createQQModel(Instance*i){ //return new MetaQReflect_ColorMatrix_QModel(i);}
+QQModel* osg::MetaQReflect_ColorMatrix::createQQModel(const Instance*i){ //return new MetaQReflect_ColorMatrix_QModel(i);}
 QMLColorMatrix *ret =new QMLColorMatrix(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -80,5 +94,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ColorMatrix_pmoc.cpp"
 #endif
+
+
 
 

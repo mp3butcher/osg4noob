@@ -17,7 +17,7 @@ class  QMLMatrixd: public QReflect_Matrixd
 {
 Q_OBJECT
 public:
-QMLMatrixd(pmoc::Instance *i=0,QObject* parent=0);
+QMLMatrixd(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -39,7 +39,7 @@ class  QMLRefMatrixd: public QReflect_RefMatrixd
 {
 Q_OBJECT
 public:
-QMLRefMatrixd(pmoc::Instance *i=0,QObject* parent=0);
+QMLRefMatrixd(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

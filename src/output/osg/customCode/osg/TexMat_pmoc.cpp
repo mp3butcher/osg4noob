@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TexMat_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTexMat::QMLTexMat(pmoc::Instance *i,QObject* parent):QReflect_TexMat(i,parent){
+osg::QMLTexMat::QMLTexMat(const pmoc::Instance *i,QObject* parent):QReflect_TexMat(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexMat::connect2View(QQuickItem*i){

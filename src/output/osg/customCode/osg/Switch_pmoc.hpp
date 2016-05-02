@@ -14,7 +14,7 @@ class  QMLSwitch: public QReflect_Switch
 {
 Q_OBJECT
 public:
-QMLSwitch(pmoc::Instance *i=0,QObject* parent=0);
+QMLSwitch(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

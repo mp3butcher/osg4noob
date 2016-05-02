@@ -1,5 +1,6 @@
 #include <osg/OccluderNode>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,22 +8,27 @@
 #include <customCode/osg/OccluderNode_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/ConvexPlanarOccluder_pmoc.hpp>
-#include <osg/ConvexPlanarOccluder>
-#include <osg/ConvexPlanarOccluder_pmoc.hpp>
 using namespace pmoc;
-osg::QReflect_ConvexPlanarOccluder * osg::QReflect_OccluderNode::getOccluder()const{
+ void osg::QReflect_OccluderNode::setOccluder(osg::QReflect_ConvexPlanarOccluder  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_OccluderNode::setOccluder : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setOccluder(p0->_model);
+emit OccluderChanged();
+
+}
+osg::QReflect_ConvexPlanarOccluder*osg::QReflect_OccluderNode::getOccluder()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getOccluder(),inst);
 return inst.isValid()?((osg::QReflect_ConvexPlanarOccluder * )inst.model->createQQModel(&inst)):NULL;
 }
-void osg::QReflect_OccluderNode::pmoc_reverse_setOccluder( osg::QReflect_ConvexPlanarOccluder *par){_model->setOccluder(NULL);
-emit OccluderChanged(NULL);
-}
-void osg::QReflect_OccluderNode::setOccluder( osg::QReflect_ConvexPlanarOccluder *par){_model->setOccluder(par->_model);
-emit OccluderChanged(par);
+osg::QReflect_ConvexPlanarOccluder*osg::QReflect_OccluderNode::getOccluder(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getOccluder(),inst);
+return inst.isValid()?((osg::QReflect_ConvexPlanarOccluder * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_OccluderNode::QReflect_OccluderNode(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_OccluderNode::QReflect_OccluderNode(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::OccluderNode*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -50,10 +56,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_OccluderNode::MetaQReflect_OccluderNode():MetaQQuickClass( "osg::OccluderNode"){
-_typeid=&typeid(osg::OccluderNode );           qRegisterMetaType<QMLOccluderNode>();
-qmlRegisterType<QReflect_OccluderNode>("pmoc.osg",1,0,"QReflect_OccluderNode");
-           qmlRegisterType<QMLOccluderNode>("pmoc.osg",1,0,"QMLOccluderNode");
-       PMOCACTION("getOccluder","setOccluder","unsetOccluder");
+_typeid=&typeid(osg::OccluderNode );
+           qRegisterMetaType<osg::QMLOccluderNode>();
+           qRegisterMetaType<osg::QMLOccluderNode*>("pmoc.osg.QMLOccluderNode");
+qmlRegisterType<osg::QReflect_OccluderNode>("pmoc.osg",1,0,"QReflect_OccluderNode");
+           qmlRegisterType<osg::QMLOccluderNode>("pmoc.osg",1,0,"QMLOccluderNode");
 };
 const std::string osg::MetaQReflect_OccluderNode::Imports() const{
  return std::string("");
@@ -62,7 +69,7 @@ const std::string osg::MetaQReflect_OccluderNode::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_OccluderNode::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_OccluderNode::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_OccluderNode::createQQModel(Instance*i){ //return new MetaQReflect_OccluderNode_QModel(i);}
+QQModel* osg::MetaQReflect_OccluderNode::createQQModel(const Instance*i){ //return new MetaQReflect_OccluderNode_QModel(i);}
 QMLOccluderNode *ret =new QMLOccluderNode(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -84,6 +91,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_OccluderNode_pmoc.cpp"
 #endif
+
 
 
 

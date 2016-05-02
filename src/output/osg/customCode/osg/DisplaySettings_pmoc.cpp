@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/DisplaySettings_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDisplaySettings::QMLDisplaySettings(pmoc::Instance *i,QObject* parent):QReflect_DisplaySettings(i,parent){
+osg::QMLDisplaySettings::QMLDisplaySettings(const pmoc::Instance *i,QObject* parent):QReflect_DisplaySettings(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDisplaySettings::connect2View(QQuickItem*i){

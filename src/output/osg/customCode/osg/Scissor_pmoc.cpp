@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Scissor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLScissor::QMLScissor(pmoc::Instance *i,QObject* parent):QReflect_Scissor(i,parent){
+osg::QMLScissor::QMLScissor(const pmoc::Instance *i,QObject* parent):QReflect_Scissor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLScissor::connect2View(QQuickItem*i){

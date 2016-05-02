@@ -1,5 +1,7 @@
 #ifndef osg_GLExtensions_pmocHPP
 #define  osg_GLExtensions_pmocHPP 1
+
+
 #include <osg/GLExtensions_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -19,7 +21,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 GLExtensions * _model;
-QReflect_GLExtensions(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_GLExtensions(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_GLExtensions( );
 //GLExtensions
 // GLboolean  GLboolean( GL_APIENTRY * , GLuint );
@@ -306,19 +308,19 @@ virtual ~QReflect_GLExtensions( );
 // void  ;( GL_APIENTRY * , GLenum  , GLint  , GLint  , GLint  , GLint  , GLsizei  , GLsizei  , GLsizei  , GLenum  , GLsizei  ,const  GLvoid *);
 // void  ;( GL_APIENTRY * , GLenum  , GLint  , GLint  , GLint  , GLint  , GLsizei  , GLsizei  , GLsizei  , GLenum  , GLenum  ,const  GLvoid *);
 Q_INVOKABLE  GLuint  getCurrentProgram()const;
-Q_INVOKABLE  bool  getAttribLocation(const  char * , GLuint &)const;
-Q_INVOKABLE  bool  getFragDataLocation(const  char * , GLuint &)const;
+Q_INVOKABLE  bool  getAttribLocation(const  char *attribName , GLuint &slot)const;
+Q_INVOKABLE  bool  getFragDataLocation(const  char *fragDataName , GLuint &slot)const;
 Q_INVOKABLE  bool  isBindImageTextureSupported()const;
 Q_INVOKABLE  bool  isCompressedTexImage2DSupported()const;
 Q_INVOKABLE  bool  isCompressedTexImage3DSupported()const;
 Q_INVOKABLE  bool  isCompressedTexSubImage2DSupported()const;
 Q_INVOKABLE  bool  isCompressedTexSubImage3DSupported()const;
-Q_INVOKABLE  bool  isNonPowerOfTwoTextureSupported( GLenum )const;
+Q_INVOKABLE  bool  isNonPowerOfTwoTextureSupported( GLenum filter)const;
 Q_INVOKABLE  bool  isRenderbufferMultisampleCoverageSupported()const;
 Q_INVOKABLE  bool  isRenderbufferMultisampleSupported()const;
 Q_INVOKABLE  bool  isTexStorage2DSupported()const;
-Q_INVOKABLE osg::QReflect_GLExtensions*  Get( unsigned int  , bool );
-Q_INVOKABLE void  Set( unsigned int  ,osg::QReflect_GLExtensions *);
+Q_INVOKABLE osg::QReflect_GLExtensions*  Get( unsigned int contextID , bool createIfNotInitalized);
+Q_INVOKABLE void  Set( unsigned int contextID ,osg::QReflect_GLExtensions *extensions);
 public slots:
 virtual void updateModel();
  
@@ -329,7 +331,7 @@ protected:
 MetaQReflect_GLExtensions();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -340,6 +342,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_GLExtensions_pmocHPP
 

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/LightSource_pmoc.hpp>
 using namespace pmoc;
-osg::QMLLightSource::QMLLightSource(pmoc::Instance *i,QObject* parent):QReflect_LightSource(i,parent){
+osg::QMLLightSource::QMLLightSource(const pmoc::Instance *i,QObject* parent):QReflect_LightSource(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLLightSource::connect2View(QQuickItem*i){

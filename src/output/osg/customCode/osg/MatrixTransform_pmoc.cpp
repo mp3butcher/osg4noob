@@ -81,7 +81,7 @@ QVector3D osg::QMLMatrixTransform::getscale()const
     return _scale;
 }
 
-osg::QMLMatrixTransform::QMLMatrixTransform(pmoc::Instance *i,QObject* parent):QReflect_MatrixTransform(i,parent){
+osg::QMLMatrixTransform::QMLMatrixTransform(const pmoc::Instance *i,QObject* parent):QReflect_MatrixTransform(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLMatrixTransform::connect2View(QQuickItem*i){

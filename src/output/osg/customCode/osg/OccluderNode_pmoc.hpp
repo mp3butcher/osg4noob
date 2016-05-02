@@ -19,7 +19,7 @@ class  QMLOccluderNode: public QReflect_OccluderNode
 {
 Q_OBJECT
 public:
-QMLOccluderNode(pmoc::Instance *i=0,QObject* parent=0);
+QMLOccluderNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

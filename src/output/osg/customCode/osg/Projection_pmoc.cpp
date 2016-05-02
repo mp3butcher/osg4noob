@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Projection_pmoc.hpp>
 using namespace pmoc;
-osg::QMLProjection::QMLProjection(pmoc::Instance *i,QObject* parent):QReflect_Projection(i,parent){
+osg::QMLProjection::QMLProjection(const pmoc::Instance *i,QObject* parent):QReflect_Projection(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLProjection::connect2View(QQuickItem*i){

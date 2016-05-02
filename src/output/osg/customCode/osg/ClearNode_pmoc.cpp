@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ClearNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLClearNode::QMLClearNode(pmoc::Instance *i,QObject* parent):QReflect_ClearNode(i,parent){
+osg::QMLClearNode::QMLClearNode(const pmoc::Instance *i,QObject* parent):QReflect_ClearNode(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLClearNode::connect2View(QQuickItem*i){

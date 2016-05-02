@@ -50,7 +50,7 @@ public:
     QColor getrotation()const;
 
 public:
-QMLPositionAttitudeTransform(pmoc::Instance *i=0,QObject* parent=0);
+QMLPositionAttitudeTransform(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

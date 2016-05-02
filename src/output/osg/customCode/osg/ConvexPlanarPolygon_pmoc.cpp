@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ConvexPlanarPolygon_pmoc.hpp>
 using namespace pmoc;
-osg::QMLConvexPlanarPolygon::QMLConvexPlanarPolygon(pmoc::Instance *i,QObject* parent):QReflect_ConvexPlanarPolygon(i,parent){
+osg::QMLConvexPlanarPolygon::QMLConvexPlanarPolygon(const pmoc::Instance *i,QObject* parent):QReflect_ConvexPlanarPolygon(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLConvexPlanarPolygon::connect2View(QQuickItem*i){

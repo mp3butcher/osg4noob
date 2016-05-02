@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/ParticleSystemUpdater_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLParticleSystemUpdater::QMLParticleSystemUpdater(pmoc::Instance *i,QObject* parent):QReflect_ParticleSystemUpdater(i,parent){
+osgParticle::QMLParticleSystemUpdater::QMLParticleSystemUpdater(const pmoc::Instance *i,QObject* parent):QReflect_ParticleSystemUpdater(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLParticleSystemUpdater::connect2View(QQuickItem*i){

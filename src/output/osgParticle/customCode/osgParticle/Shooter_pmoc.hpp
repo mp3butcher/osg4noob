@@ -13,7 +13,7 @@ class  QMLShooter: public QReflect_Shooter
 {
 Q_OBJECT
 public:
-QMLShooter(pmoc::Instance *i=0,QObject* parent=0);
+QMLShooter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

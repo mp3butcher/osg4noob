@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ImageStream_pmoc.hpp>
 using namespace pmoc;
-osg::QMLImageStream::QMLImageStream(pmoc::Instance *i,QObject* parent):QReflect_ImageStream(i,parent){
+osg::QMLImageStream::QMLImageStream(const pmoc::Instance *i,QObject* parent):QReflect_ImageStream(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLImageStream::connect2View(QQuickItem*i){

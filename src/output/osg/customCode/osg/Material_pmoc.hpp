@@ -4,6 +4,7 @@
 //includes
 #include <osg/Material_pmoc.hpp>
 #include <QObject>
+#include <QColor>
 #include <osg/Material>
 
 #include <osg/StateAttribute_pmoc.hpp>
@@ -46,7 +47,7 @@ void shininessFChanged(float);
 public slots:
 virtual void updateModel();
 public:
-QMLMaterial(pmoc::Instance *i=0,QObject* parent=0);
+QMLMaterial(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 
  ///////FRONT ////////////////////////////////////////

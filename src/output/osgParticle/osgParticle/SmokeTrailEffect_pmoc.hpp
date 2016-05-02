@@ -24,7 +24,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 SmokeTrailEffect * _model;
-QReflect_SmokeTrailEffect(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_SmokeTrailEffect(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_SmokeTrailEffect( );
 //SmokeTrailEffect
 Q_INVOKABLE osgParticle::QReflect_Emitter*  getEmitter();
@@ -45,7 +45,7 @@ public:
 MetaQReflect_SmokeTrailEffect();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -56,6 +56,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_SmokeTrailEffect_pmocHPP

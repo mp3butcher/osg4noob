@@ -78,7 +78,7 @@ emit maxInitialSpeedChanged(v);
 
 
 public:
-QMLRadialShooter(pmoc::Instance *i=0,QObject* parent=0);
+QMLRadialShooter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/PointPlacer_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLPointPlacer::QMLPointPlacer(pmoc::Instance *i,QObject* parent):QReflect_PointPlacer(i,parent){
+osgParticle::QMLPointPlacer::QMLPointPlacer(const pmoc::Instance *i,QObject* parent):QReflect_PointPlacer(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLPointPlacer::connect2View(QQuickItem*i){

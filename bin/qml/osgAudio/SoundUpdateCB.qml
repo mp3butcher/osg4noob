@@ -23,18 +23,18 @@ Rectangle {
 	Keys.onPressed: {  console.log("Geom");
 	//edition action (cur QQModel should be operand or operand of a UIGenerator's MetaAction otherwise do nothing usefull)
         if ((event.key == Qt.Key_C) && (event.modifiers&Qt.ControlModifier)) {
-            console.log("copy");globalEditor.setCopyOperand(main.qmodel)
+            console.log("copy");pmocjs.setCopyOperand(main.qmodel)
             event.accepted = true;
         }
 	if ((event.key == Qt.Key_X) && (event.modifiers&Qt.ControlModifier)) {
             console.log("cut");
-            globalEditor.setCopyOperand(main.qmodel)
+            pmocjs.setCopyOperand(main.qmodel)
             subjectrequired();//send a signal (this should be connected with parent (a osg::group or subclass)
             event.accepted = true;
         }
 	if ((event.key == Qt.Key_V) && (event.modifiers&Qt.ControlModifier)) {
             console.log("paste");
-            globalEditor.realPaste()
+            pmocjs.realPaste()
             event.accepted = true;
         }
     }
@@ -58,25 +58,25 @@ MouseArea {
 		    drag.axis: Drag.XandYAxis
 	 onClicked: { console.log("selected");
 main.focus = true;
-globalEditor.setOperand(main.qmodel); }
+pmocjs.setOperand(main.qmodel); }
 onPressAndHold:uaContextMenu.popup()
  Menu
         {
             id: uaContextMenu
            
                 MenuItem { text:'Copy';shortcut:  "Ctrl+C";onTriggered:{
-		globalEditor.setCopyOperand(main.qmodel)
+		pmocjs.setCopyOperand(main.qmodel)
 		} } 
 		MenuItem { text:'Cut';shortcut:  "Ctrl+X";onTriggered:{
-		globalEditor.setCopyOperand(main.qmodel)
- globalEditor.setCutSubject(main.parent.qmodel);
+		pmocjs.setCopyOperand(main.qmodel)
+ pmocjs.setCutSubject(main.parent.qmodel);
 //   subjectrequired();
 } }
             MenuItem { text:'Paste';shortcut:  "Ctrl+V";onTriggered:{
-		globalEditor.realPaste(main.qmodel)
+		pmocjs.realPaste(main.qmodel)
 		} } 
             MenuItem { text:'Remove';shortcut:  "Suppr";onTriggered:{
-globalEditor.setCopyOperand(main.qmodel); globalEditor.setCutSubject(main.parent.qmodel);globalEditor.realRemoval()
+pmocjs.setCopyOperand(main.qmodel); pmocjs.setCutSubject(main.parent.qmodel);pmocjs.realRemoval()
 //   subjectrequired();
 
 		} } 

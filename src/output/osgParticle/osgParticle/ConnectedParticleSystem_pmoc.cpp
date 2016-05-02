@@ -1,6 +1,7 @@
 #include <osgParticle/ConnectedParticleSystem>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -10,31 +11,47 @@
 #include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_ConnectedParticleSystem::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ unsigned int  osgParticle::QReflect_ConnectedParticleSystem:: getMaxNumberOfParticlesToSkip(){
+//params checking
+return _model->getMaxNumberOfParticlesToSkip();
+
+}
+ void osgParticle::QReflect_ConnectedParticleSystem::drawImplementation(osg::QReflect_RenderInfo  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ConnectedParticleSystem::drawImplementation : parameter n.0 is NULL\n"<<endl;return;}
  _model->drawImplementation(*p0->_model);
 
 }
- void osgParticle::QReflect_ConnectedParticleSystem::reuseParticle( int p0){
+ void osgParticle::QReflect_ConnectedParticleSystem::reuseParticle( int  p0){
+//params checking
  _model->reuseParticle(p0);
 
 }
-const unsigned int osgParticle::QReflect_ConnectedParticleSystem::getMaxNumberOfParticlesToSkip()const{return _model->getMaxNumberOfParticlesToSkip();}
-osgParticle::QReflect_Particle*osgParticle::QReflect_ConnectedParticleSystem::createParticle(osgParticle::QReflect_Particle *p0){
+ void osgParticle::QReflect_ConnectedParticleSystem::setMaxNumberOfParticlesToSkip( unsigned int  p0){
+//params checking
+ _model->setMaxNumberOfParticlesToSkip(p0);
+emit MaxNumberOfParticlesToSkipChanged();
+
+}
+osgParticle::QReflect_Particle*osgParticle::QReflect_ConnectedParticleSystem::createParticle(osgParticle::QReflect_Particle  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ConnectedParticleSystem::createParticle : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->createParticle(p0->_model),inst);
 return inst.isValid()?((osgParticle::QReflect_Particle * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Particle*osgParticle::QReflect_ConnectedParticleSystem::getStartParticle()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getStartParticle(),inst);
 return inst.isValid()?((osgParticle::QReflect_Particle * )inst.model->createQQModel(&inst)):NULL;
 }
 osgParticle::QReflect_Particle*osgParticle::QReflect_ConnectedParticleSystem::getStartParticle(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getStartParticle(),inst);
 return inst.isValid()?((osgParticle::QReflect_Particle * )inst.model->createQQModel(&inst)):NULL;
 }
-void  osgParticle::QReflect_ConnectedParticleSystem::setMaxNumberOfParticlesToSkip(const unsigned int &par){_model->setMaxNumberOfParticlesToSkip(par);emit MaxNumberOfParticlesToSkipChanged(par);}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_ConnectedParticleSystem::QReflect_ConnectedParticleSystem(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_ConnectedParticleSystem::QReflect_ConnectedParticleSystem(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::ConnectedParticleSystem*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -62,9 +79,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_ConnectedParticleSystem::MetaQReflect_ConnectedParticleSystem():MetaQQuickClass( "osgParticle::ConnectedParticleSystem"){
-_typeid=&typeid(osgParticle::ConnectedParticleSystem );           qRegisterMetaType<QMLConnectedParticleSystem>();
-qmlRegisterType<QReflect_ConnectedParticleSystem>("pmoc.osgParticle",1,0,"QReflect_ConnectedParticleSystem");
-           qmlRegisterType<QMLConnectedParticleSystem>("pmoc.osgParticle",1,0,"QMLConnectedParticleSystem");
+_typeid=&typeid(osgParticle::ConnectedParticleSystem );
+           qRegisterMetaType<osgParticle::QMLConnectedParticleSystem>();
+           qRegisterMetaType<osgParticle::QMLConnectedParticleSystem*>("pmoc.osgParticle.QMLConnectedParticleSystem");
+qmlRegisterType<osgParticle::QReflect_ConnectedParticleSystem>("pmoc.osgParticle",1,0,"QReflect_ConnectedParticleSystem");
+           qmlRegisterType<osgParticle::QMLConnectedParticleSystem>("pmoc.osgParticle",1,0,"QMLConnectedParticleSystem");
 };
 const std::string osgParticle::MetaQReflect_ConnectedParticleSystem::Imports() const{
  return std::string("");
@@ -73,7 +92,7 @@ const std::string osgParticle::MetaQReflect_ConnectedParticleSystem::Imports() c
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_ConnectedParticleSystem::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_ConnectedParticleSystem::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_ConnectedParticleSystem::createQQModel(Instance*i){ //return new MetaQReflect_ConnectedParticleSystem_QModel(i);}
+QQModel* osgParticle::MetaQReflect_ConnectedParticleSystem::createQQModel(const Instance*i){ //return new MetaQReflect_ConnectedParticleSystem_QModel(i);}
 QMLConnectedParticleSystem *ret =new QMLConnectedParticleSystem(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

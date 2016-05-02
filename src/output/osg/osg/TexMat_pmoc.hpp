@@ -1,9 +1,14 @@
 #ifndef osg_TexMat_pmocHPP
 #define  osg_TexMat_pmocHPP 1
+
+
 #include <osg/TexMat_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
@@ -22,19 +27,19 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 TexMat * _model;
-QReflect_TexMat(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_TexMat(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TexMat( );
 //TexMat
 // Matrix & getMatrix();
-//virtual  void  apply( State &);
 //const  Matrix & getMatrix();
+Q_INVOKABLE  bool  getScaleByTextureRectangleSize()const;
 Q_INVOKABLE  bool  isTextureAttribute()const;
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE const bool  getScaleByTextureRectangleSize()const;
-Q_INVOKABLE void  setMatrix(osg::QReflect_Matrixd *);
-Q_INVOKABLE void setScaleByTextureRectangleSize(const bool &);
-Q_PROPERTY(bool ScaleByTextureRectangleSize  READ getScaleByTextureRectangleSize WRITE setScaleByTextureRectangleSize NOTIFY ScaleByTextureRectangleSizeChanged)
-signals: void ScaleByTextureRectangleSizeChanged(const bool&);
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setMatrix(osg::QReflect_Matrixd *matrix);
+Q_INVOKABLE void  setScaleByTextureRectangleSize( bool flag);
+Q_PROPERTY(bool  ScaleByTextureRectangleSize  READ getScaleByTextureRectangleSize WRITE setScaleByTextureRectangleSize NOTIFY ScaleByTextureRectangleSizeChanged)
+signals: void ScaleByTextureRectangleSizeChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -48,7 +53,7 @@ public:
 MetaQReflect_TexMat();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -59,6 +64,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_TexMat_pmocHPP
 

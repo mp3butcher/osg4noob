@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/CenteredPlacer_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLCenteredPlacer::QMLCenteredPlacer(pmoc::Instance *i,QObject* parent):QReflect_CenteredPlacer(i,parent){
+osgParticle::QMLCenteredPlacer::QMLCenteredPlacer(const pmoc::Instance *i,QObject* parent):QReflect_CenteredPlacer(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLCenteredPlacer::connect2View(QQuickItem*i){

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Texture1D_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTexture1D::QMLTexture1D(pmoc::Instance *i,QObject* parent):QReflect_Texture1D(i,parent){
+osg::QMLTexture1D::QMLTexture1D(const pmoc::Instance *i,QObject* parent):QReflect_Texture1D(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexture1D::connect2View(QQuickItem*i){

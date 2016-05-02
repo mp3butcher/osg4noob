@@ -56,7 +56,7 @@ void osg::QMLCullSettings::computeNearFarMode(int i)
     }
 }
 
-osg::QMLCullSettings::QMLCullSettings(pmoc::Instance *i,QObject* parent):QReflect_CullSettings(i,parent)
+osg::QMLCullSettings::QMLCullSettings(const pmoc::Instance *i,QObject* parent):QReflect_CullSettings(i,parent)
 {
 //custom initializations
 }

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OcclusionQueryNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLOcclusionQueryNode::QMLOcclusionQueryNode(pmoc::Instance *i,QObject* parent):QReflect_OcclusionQueryNode(i,parent){
+osg::QMLOcclusionQueryNode::QMLOcclusionQueryNode(const pmoc::Instance *i,QObject* parent):QReflect_OcclusionQueryNode(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLOcclusionQueryNode::connect2View(QQuickItem*i){
@@ -30,7 +30,7 @@ void  osg::QMLOcclusionQueryNode::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OcclusionQueryNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLQueryGeometry::QMLQueryGeometry(pmoc::Instance *i,QObject* parent):QReflect_QueryGeometry(i,parent){
+osg::QMLQueryGeometry::QMLQueryGeometry(const pmoc::Instance *i,QObject* parent):QReflect_QueryGeometry(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLQueryGeometry::connect2View(QQuickItem*i){
@@ -56,7 +56,7 @@ void  osg::QMLQueryGeometry::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OcclusionQueryNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTestResult::QMLTestResult(pmoc::Instance *i,QObject* parent):QReflect_TestResult(i,parent){
+osg::QMLTestResult::QMLTestResult(const pmoc::Instance *i,QObject* parent):QReflect_TestResult(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTestResult::connect2View(QQuickItem*i){

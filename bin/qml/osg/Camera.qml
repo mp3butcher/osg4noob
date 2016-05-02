@@ -44,14 +44,14 @@ FocusScope {
              objtest.parent = null
          var naming = "StateSet"
           gc ()
-            globalEditor.clearComponentCache()
+            pmocjs.clearComponentCache()
 
          var component = Qt.createComponent(Qt.resolvedUrl(naming + ".qml"))
          naming = "osg/StateSet"
 
          var qmlnaming = naming.replace("/", "_")+"QQQ"
          naming =naming.replace("/","::")
-         //var cl=globalEditor.getClassByName(naming)
+         //var cl=pmocjs.getClassByName(naming)
         // console.log(cl)
       if (component.status == Component.Ready) {
              objtest = component.createObject(main)
@@ -79,7 +79,7 @@ FocusScope {
              }* /
 
              //obj.setProperty
-             ///globalEditor.connect2view(qmod,obj)
+             ///pmocjs.connect2view(qmod,obj)
          } else
              console.log(component.errorString())
          component=null
@@ -102,13 +102,13 @@ FocusScope {
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -116,7 +116,7 @@ FocusScope {
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
@@ -132,7 +132,7 @@ FocusScope {
             drag.target: main
             drag.axis: Drag.XandYAxis
             onClicked: if (mouse.button != Qt.RightButton)
-                           globalEditor.setOperand(main.qmodel)
+                           pmocjs.setOperand(main.qmodel)
 
 
 
@@ -307,8 +307,8 @@ osg_Group=pmocmousearea.children[0].osg_Group;
                             var menu=pmocmousearea.children[pmocmousearea.children.length-1]
 
              //osg_Group.getNumChildren());
-                       /* var v4=globalEditor.createInstance('osg::Vec4f')
-                            var m4=globalEditor.createInstance('osg::Matrixf')
+                       /* var v4=pmocjs.createInstance('osg::Vec4f')
+                            var m4=pmocjs.createInstance('osg::Matrixf')
                            //
                              v4.x=1;v4.y=1;v4.z=0;v4.w=1;
                            obj.osg_Camera.setClearColor(v4);    obj.osg_Camera.setViewport(0,1024,0,1024);          //  obj.osg_Camera.getClearMask(1000);

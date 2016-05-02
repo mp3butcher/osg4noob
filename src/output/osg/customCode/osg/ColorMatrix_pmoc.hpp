@@ -13,7 +13,7 @@ class  QMLColorMatrix: public QReflect_ColorMatrix
 {
 Q_OBJECT
 public:
-QMLColorMatrix(pmoc::Instance *i=0,QObject* parent=0);
+QMLColorMatrix(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

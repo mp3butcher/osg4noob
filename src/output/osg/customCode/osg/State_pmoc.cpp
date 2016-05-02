@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
-osg::QMLState::QMLState(pmoc::Instance *i,QObject* parent):QReflect_State(i,parent){
+osg::QMLState::QMLState(const pmoc::Instance *i,QObject* parent):QReflect_State(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLState::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLState::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
-osg::QMLVertexAttribAlias::QMLVertexAttribAlias(pmoc::Instance *i,QObject* parent):QReflect_VertexAttribAlias(i,parent){
+osg::QMLVertexAttribAlias::QMLVertexAttribAlias(const pmoc::Instance *i,QObject* parent):QReflect_VertexAttribAlias(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLVertexAttribAlias::connect2View(QQuickItem*i){

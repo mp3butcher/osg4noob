@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Sequence_pmoc.hpp>
 using namespace pmoc;
-osg::QMLSequence::QMLSequence(pmoc::Instance *i,QObject* parent):QReflect_Sequence(i,parent){
+osg::QMLSequence::QMLSequence(const pmoc::Instance *i,QObject* parent):QReflect_Sequence(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLSequence::connect2View(QQuickItem*i){

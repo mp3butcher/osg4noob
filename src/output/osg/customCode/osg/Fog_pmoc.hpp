@@ -13,7 +13,7 @@ class  QMLFog: public QReflect_Fog
 {
 Q_OBJECT
 public:
-QMLFog(pmoc::Instance *i=0,QObject* parent=0);
+QMLFog(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

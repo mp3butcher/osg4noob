@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/SinkOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLSinkOperator::QMLSinkOperator(pmoc::Instance *i,QObject* parent):QReflect_SinkOperator(i,parent){
+osgParticle::QMLSinkOperator::QMLSinkOperator(const pmoc::Instance *i,QObject* parent):QReflect_SinkOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLSinkOperator::connect2View(QQuickItem*i){

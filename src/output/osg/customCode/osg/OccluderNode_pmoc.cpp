@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/OccluderNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLOccluderNode::QMLOccluderNode(pmoc::Instance *i,QObject* parent):QReflect_OccluderNode(i,parent){
+osg::QMLOccluderNode::QMLOccluderNode(const pmoc::Instance *i,QObject* parent):QReflect_OccluderNode(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLOccluderNode::connect2View(QQuickItem*i){

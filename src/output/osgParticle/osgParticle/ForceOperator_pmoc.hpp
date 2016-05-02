@@ -4,14 +4,14 @@
 
 #include <osgParticle/ForceOperator_pmoc.hpp>
 #include <QObject>
-namespace osgParticle{ 
-class QReflect_Program;
-			} ;
 namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osgParticle{ 
 class QReflect_Particle;
+			} ;
+namespace osgParticle{ 
+class QReflect_Program;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/ForceOperator>
@@ -27,13 +27,13 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ForceOperator * _model;
-QReflect_ForceOperator(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ForceOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ForceOperator( );
 //ForceOperator
 //const  osg::Vec3 & getForce();
-Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *);
-Q_INVOKABLE void  operate(osgParticle::QReflect_Particle * , double );
-Q_INVOKABLE void  setForce(osg::QReflect_Vec3f *);
+Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *prg);
+Q_INVOKABLE void  operate(osgParticle::QReflect_Particle *P , double dt);
+Q_INVOKABLE void  setForce(osg::QReflect_Vec3f *f);
 public slots:
 virtual void updateModel();
  
@@ -46,7 +46,7 @@ public:
 MetaQReflect_ForceOperator();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -57,6 +57,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_ForceOperator_pmocHPP

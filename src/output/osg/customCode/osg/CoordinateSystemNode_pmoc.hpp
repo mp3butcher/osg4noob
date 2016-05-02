@@ -19,7 +19,7 @@ class  QMLCoordinateSystemNode: public QReflect_CoordinateSystemNode
 {
 Q_OBJECT
 public:
-QMLCoordinateSystemNode(pmoc::Instance *i=0,QObject* parent=0);
+QMLCoordinateSystemNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -40,7 +40,7 @@ class  QMLEllipsoidModel: public QReflect_EllipsoidModel
 {
 Q_OBJECT
 public:
-QMLEllipsoidModel(pmoc::Instance *i=0,QObject* parent=0);
+QMLEllipsoidModel(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

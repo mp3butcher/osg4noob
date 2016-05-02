@@ -46,7 +46,7 @@ FocusScope {
                 drag.target: main
                 drag.axis: Drag.XandYAxis
                 onClicked: if (mouse.button == Qt.LeftButton)
-                               globalEditor.setOperand(main.qmodel)
+                               pmocjs.setOperand(main.qmodel)
 
                 /////CLASSIC PART TO END//////////////////////////////////////////////////////////////////////
                 Rectangle {
@@ -66,9 +66,9 @@ FocusScope {
                         /*onCompleted called befor property setting..have to emit a fake parentChanged signal*/
                         onParentChanged: {
 
-                            globalEditor.osg_NodeCallback_removed.connect(
+                            pmocjs.osg_NodeCallback_removed.connect(
                                         obj.osg_Node.callbacksChanged)
-                            //                    globalEditor.osg_NodeCallback_added.connect(                                obj.osg_Node.callbacksChanged)
+                            //                    pmocjs.osg_NodeCallback_added.connect(                                obj.osg_Node.callbacksChanged)
                         }
                         //height: 250
                         //implicit_height: 250
@@ -78,7 +78,7 @@ Button{
 text:'fisfok' 
  anchors.fill:parent
 menu:maintoolbar.m_Add_a_Child
-onClicked: globalEditor.menu.parent=obj;
+onClicked: pmocjs.menu.parent=obj;
 }*/
 
                         GroupBox {//x:10

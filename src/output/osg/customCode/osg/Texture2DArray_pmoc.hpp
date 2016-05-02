@@ -13,7 +13,7 @@ class  QMLTexture2DArray: public QReflect_Texture2DArray
 {
 Q_OBJECT
 public:
-QMLTexture2DArray(pmoc::Instance *i=0,QObject* parent=0);
+QMLTexture2DArray(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

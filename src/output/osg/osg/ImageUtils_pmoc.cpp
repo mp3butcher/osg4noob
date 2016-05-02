@@ -1,5 +1,6 @@
 #include <osg/ImageUtils>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,7 +9,7 @@
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_CastAndScaleToFloatOperation::QReflect_CastAndScaleToFloatOperation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_CastAndScaleToFloatOperation::QReflect_CastAndScaleToFloatOperation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::CastAndScaleToFloatOperation*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -28,9 +29,11 @@ std::cerr<<"osg::CastAndScaleToFloatOperation is not instanciable"<<std::endl;re
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_CastAndScaleToFloatOperation::MetaQReflect_CastAndScaleToFloatOperation():MetaQQuickClass( "osg::CastAndScaleToFloatOperation"){
-_typeid=&typeid(osg::CastAndScaleToFloatOperation );           qRegisterMetaType<QMLCastAndScaleToFloatOperation>();
-qmlRegisterType<QReflect_CastAndScaleToFloatOperation>("pmoc.osg",1,0,"QReflect_CastAndScaleToFloatOperation");
-           qmlRegisterType<QMLCastAndScaleToFloatOperation>("pmoc.osg",1,0,"QMLCastAndScaleToFloatOperation");
+_typeid=&typeid(osg::CastAndScaleToFloatOperation );
+           qRegisterMetaType<osg::QMLCastAndScaleToFloatOperation>();
+           qRegisterMetaType<osg::QMLCastAndScaleToFloatOperation*>("pmoc.osg.QMLCastAndScaleToFloatOperation");
+qmlRegisterType<osg::QReflect_CastAndScaleToFloatOperation>("pmoc.osg",1,0,"QReflect_CastAndScaleToFloatOperation");
+           qmlRegisterType<osg::QMLCastAndScaleToFloatOperation>("pmoc.osg",1,0,"QMLCastAndScaleToFloatOperation");
 };
 const std::string osg::MetaQReflect_CastAndScaleToFloatOperation::Imports() const{
  return std::string("");
@@ -39,7 +42,7 @@ const std::string osg::MetaQReflect_CastAndScaleToFloatOperation::Imports() cons
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_CastAndScaleToFloatOperation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_CastAndScaleToFloatOperation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_CastAndScaleToFloatOperation::createQQModel(Instance*i){ //return new MetaQReflect_CastAndScaleToFloatOperation_QModel(i);}
+QQModel* osg::MetaQReflect_CastAndScaleToFloatOperation::createQQModel(const Instance*i){ //return new MetaQReflect_CastAndScaleToFloatOperation_QModel(i);}
 QMLCastAndScaleToFloatOperation *ret =new QMLCastAndScaleToFloatOperation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -50,5 +53,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ImageUtils_pmoc.cpp"
 #endif
+
+
 
 

@@ -13,7 +13,7 @@ class  QMLAnimationPath: public QReflect_AnimationPath
 {
 Q_OBJECT
 public:
-QMLAnimationPath(pmoc::Instance *i=0,QObject* parent=0);
+QMLAnimationPath(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -44,7 +44,7 @@ class  QMLAnimationPathCallback: public QReflect_AnimationPathCallback
 {
 Q_OBJECT
 public:
-QMLAnimationPathCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLAnimationPathCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

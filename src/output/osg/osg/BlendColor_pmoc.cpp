@@ -1,5 +1,6 @@
 #include <osg/BlendColor>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,19 +8,30 @@
 #include <customCode/osg/BlendColor_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_BlendColor::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_BlendColor:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_BlendColor::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_BlendColor::setConstantColor(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_BlendColor::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_BlendColor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_BlendColor::setConstantColor(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_BlendColor::setConstantColor : parameter n.0 is NULL\n"<<endl;return;}
  _model->setConstantColor(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_BlendColor::QReflect_BlendColor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_BlendColor::QReflect_BlendColor(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::BlendColor*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -47,9 +59,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_BlendColor::MetaQReflect_BlendColor():MetaQQuickClass( "osg::BlendColor"){
-_typeid=&typeid(osg::BlendColor );           qRegisterMetaType<QMLBlendColor>();
-qmlRegisterType<QReflect_BlendColor>("pmoc.osg",1,0,"QReflect_BlendColor");
-           qmlRegisterType<QMLBlendColor>("pmoc.osg",1,0,"QMLBlendColor");
+_typeid=&typeid(osg::BlendColor );
+           qRegisterMetaType<osg::QMLBlendColor>();
+           qRegisterMetaType<osg::QMLBlendColor*>("pmoc.osg.QMLBlendColor");
+qmlRegisterType<osg::QReflect_BlendColor>("pmoc.osg",1,0,"QReflect_BlendColor");
+           qmlRegisterType<osg::QMLBlendColor>("pmoc.osg",1,0,"QMLBlendColor");
 };
 const std::string osg::MetaQReflect_BlendColor::Imports() const{
  return std::string("");
@@ -58,7 +72,7 @@ const std::string osg::MetaQReflect_BlendColor::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_BlendColor::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_BlendColor::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_BlendColor::createQQModel(Instance*i){ //return new MetaQReflect_BlendColor_QModel(i);}
+QQModel* osg::MetaQReflect_BlendColor::createQQModel(const Instance*i){ //return new MetaQReflect_BlendColor_QModel(i);}
 QMLBlendColor *ret =new QMLBlendColor(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -80,5 +94,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_BlendColor_pmoc.cpp"
 #endif
+
+
 
 

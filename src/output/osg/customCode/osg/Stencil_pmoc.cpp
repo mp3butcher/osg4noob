@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Stencil_pmoc.hpp>
 using namespace pmoc;
-osg::QMLStencil::QMLStencil(pmoc::Instance *i,QObject* parent):QReflect_Stencil(i,parent){
+osg::QMLStencil::QMLStencil(const pmoc::Instance *i,QObject* parent):QReflect_Stencil(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLStencil::connect2View(QQuickItem*i){

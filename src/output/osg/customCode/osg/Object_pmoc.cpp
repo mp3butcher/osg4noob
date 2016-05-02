@@ -2,7 +2,7 @@
 //includes
 #include <customCode/osg/Object_pmoc.hpp>
 #include <MetaQQuickLibraryRegistry.h>
-osg::QMLDummyObject::QMLDummyObject(pmoc::Instance *i,QObject* parent):QReflect_DummyObject(i,parent)
+osg::QMLDummyObject::QMLDummyObject(const pmoc::Instance *i,QObject* parent):QReflect_DummyObject(i,parent)
 {
 //custom initializations
 }
@@ -17,7 +17,7 @@ QQuickItem* osg::QMLDummyObject::connect2View(QQuickItem*i)
     return this->_view;
 }
 #include <customCode/osg/Object_pmoc.hpp>
-osg::QMLObject::QMLObject(pmoc::Instance *i,QObject* parent):QReflect_Object(i,parent)
+osg::QMLObject::QMLObject(const pmoc::Instance *i,QObject* parent):QReflect_Object(i,parent)
 {
 //custom initializations
 }

@@ -1,5 +1,7 @@
 #ifndef osg_Timer_pmocHPP
 #define  osg_Timer_pmocHPP 1
+
+
 #include <osg/Timer_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -17,7 +19,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 Timer * _model;
-QReflect_Timer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Timer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Timer( );
 //Timer
 // Timer_t  getStartTick();
@@ -46,7 +48,7 @@ public:
 MetaQReflect_Timer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -71,7 +73,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 ElapsedTime * _model;
-QReflect_ElapsedTime(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ElapsedTime(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ElapsedTime( );
 //ElapsedTime
 Q_INVOKABLE  double  elapsedTime()const;
@@ -92,7 +94,7 @@ public:
 MetaQReflect_ElapsedTime();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -103,6 +105,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Timer_pmocHPP
 

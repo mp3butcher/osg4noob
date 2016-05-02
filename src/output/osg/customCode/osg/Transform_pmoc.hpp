@@ -18,7 +18,7 @@ class  QMLTransform: public QReflect_Transform
 {
 Q_OBJECT
 public:
-QMLTransform(pmoc::Instance *i=0,QObject* parent=0);
+QMLTransform(const pmoc::Instance *i=0,QObject* parent=0);
 ~QMLTransform();
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:

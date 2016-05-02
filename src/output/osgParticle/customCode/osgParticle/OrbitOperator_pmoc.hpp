@@ -15,7 +15,7 @@ class  QMLOrbitOperator: public QReflect_OrbitOperator
 {
 Q_OBJECT
 public:
-QMLOrbitOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLOrbitOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

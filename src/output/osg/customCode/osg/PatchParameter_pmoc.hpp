@@ -13,7 +13,7 @@ class  QMLPatchParameter: public QReflect_PatchParameter
 {
 Q_OBJECT
 public:
-QMLPatchParameter(pmoc::Instance *i=0,QObject* parent=0);
+QMLPatchParameter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

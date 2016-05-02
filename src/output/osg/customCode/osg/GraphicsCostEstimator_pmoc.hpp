@@ -13,7 +13,7 @@ class  QMLGraphicsCostEstimator: public QReflect_GraphicsCostEstimator
 {
 Q_OBJECT
 public:
-QMLGraphicsCostEstimator(pmoc::Instance *i=0,QObject* parent=0);
+QMLGraphicsCostEstimator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -33,7 +33,7 @@ class  QMLClampedLinearCostFunction1D: public QReflect_ClampedLinearCostFunction
 {
 Q_OBJECT
 public:
-QMLClampedLinearCostFunction1D(pmoc::Instance *i=0,QObject* parent=0);
+QMLClampedLinearCostFunction1D(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -54,7 +54,7 @@ class  QMLGeometryCostEstimator: public QReflect_GeometryCostEstimator
 {
 Q_OBJECT
 public:
-QMLGeometryCostEstimator(pmoc::Instance *i=0,QObject* parent=0);
+QMLGeometryCostEstimator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -75,7 +75,7 @@ class  QMLTextureCostEstimator: public QReflect_TextureCostEstimator
 {
 Q_OBJECT
 public:
-QMLTextureCostEstimator(pmoc::Instance *i=0,QObject* parent=0);
+QMLTextureCostEstimator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -96,7 +96,7 @@ class  QMLProgramCostEstimator: public QReflect_ProgramCostEstimator
 {
 Q_OBJECT
 public:
-QMLProgramCostEstimator(pmoc::Instance *i=0,QObject* parent=0);
+QMLProgramCostEstimator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

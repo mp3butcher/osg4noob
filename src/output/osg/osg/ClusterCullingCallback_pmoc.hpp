@@ -5,7 +5,13 @@
 #include <osg/ClusterCullingCallback_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Vec3f;
+class QReflect_Object;
+			} ;
+namespace osg{ 
+class QReflect_Node;
+			} ;
+namespace osg{ 
+class QReflect_Drawable;
 			} ;
 namespace osg{ 
 class QReflect_State;
@@ -14,10 +20,7 @@ namespace osg{
 class QReflect_NodeVisitor;
 			} ;
 namespace osg{ 
-class QReflect_Object;
-			} ;
-namespace osg{ 
-class QReflect_Drawable;
+class QReflect_Vec3f;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
@@ -36,28 +39,28 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ClusterCullingCallback * _model;
-QReflect_ClusterCullingCallback(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ClusterCullingCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ClusterCullingCallback( );
 //ClusterCullingCallback
-//virtual  void  operator()( Node * , NodeVisitor *);
 //const  osg::Vec3 & getControlPoint();
 //const  osg::Vec3 & getNormal();
 Q_INVOKABLE  bool  cull(osg::QReflect_NodeVisitor * ,osg::QReflect_Drawable * ,osg::QReflect_State *)const;
-Q_INVOKABLE  bool  run(osg::QReflect_Object * ,osg::QReflect_Object *);
-Q_INVOKABLE const float  getDeviation()const;
-Q_INVOKABLE const float  getRadius()const;
-Q_INVOKABLE void  computeFrom(osg::QReflect_Drawable *);
-Q_INVOKABLE void  set(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * , float  , float );
-Q_INVOKABLE void  setControlPoint(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setNormal(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  transform(osg::QReflect_Matrixd *);
-Q_INVOKABLE void setDeviation(const float &);
-Q_INVOKABLE void setRadius(const float &);
-Q_PROPERTY(float Deviation  READ getDeviation WRITE setDeviation NOTIFY DeviationChanged)
-Q_PROPERTY(float Radius  READ getRadius WRITE setRadius NOTIFY RadiusChanged)
-signals: void DeviationChanged(const float&);
+Q_INVOKABLE  bool  run(osg::QReflect_Object *object ,osg::QReflect_Object *data);
+Q_INVOKABLE  float  getDeviation()const;
+Q_INVOKABLE  float  getRadius()const;
+Q_INVOKABLE void  computeFrom(osg::QReflect_Drawable *drawable);
+Q_INVOKABLE void  operator()(osg::QReflect_Node *node ,osg::QReflect_NodeVisitor *nv);
+Q_INVOKABLE void  set(osg::QReflect_Vec3f *controlPoint ,osg::QReflect_Vec3f *normal , float deviation , float radius);
+Q_INVOKABLE void  setControlPoint(osg::QReflect_Vec3f *controlPoint);
+Q_INVOKABLE void  setDeviation( float deviation);
+Q_INVOKABLE void  setNormal(osg::QReflect_Vec3f *normal);
+Q_INVOKABLE void  setRadius( float radius);
+Q_INVOKABLE void  transform(osg::QReflect_Matrixd *matrix);
+Q_PROPERTY(float  Deviation  READ getDeviation WRITE setDeviation NOTIFY DeviationChanged)
+Q_PROPERTY(float  Radius  READ getRadius WRITE setRadius NOTIFY RadiusChanged)
+signals: void DeviationChanged();
 public:
-signals: void RadiusChanged(const float&);
+signals: void RadiusChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -71,7 +74,7 @@ public:
 MetaQReflect_ClusterCullingCallback();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -82,6 +85,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ClusterCullingCallback_pmocHPP
 

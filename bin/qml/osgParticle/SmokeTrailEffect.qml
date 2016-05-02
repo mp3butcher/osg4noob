@@ -35,7 +35,7 @@ FocusScope {
                 drag.axis: Drag.XandYAxis
                 onClicked: {
                     if (mouse.button != Qt.RightButton) {
-                        globalEditor.setOperand(main.qmodel)
+                        pmocjs.setOperand(main.qmodel)
                     }
                 }
                 /////////////////////////////////END CLASSIC//////////////////////////////////////////////

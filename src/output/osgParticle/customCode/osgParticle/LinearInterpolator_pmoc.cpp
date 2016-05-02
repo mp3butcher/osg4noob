@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/LinearInterpolator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLLinearInterpolator::QMLLinearInterpolator(pmoc::Instance *i,QObject* parent):QReflect_LinearInterpolator(i,parent){
+osgParticle::QMLLinearInterpolator::QMLLinearInterpolator(const pmoc::Instance *i,QObject* parent):QReflect_LinearInterpolator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLLinearInterpolator::connect2View(QQuickItem*i){

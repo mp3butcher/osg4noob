@@ -36,13 +36,13 @@ FocusScope {
                 if ((event.key == Qt.Key_C)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("copy")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     event.accepted = true
                 }
                 if ((event.key == Qt.Key_X)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("cut")
-                    globalEditor.setCopyOperand(main.qmodel)
+                    pmocjs.setCopyOperand(main.qmodel)
                     subjectrequired(
                                 ) //send a signal (this should be connected with parent (a osg::group or subclass)
                     event.accepted = true
@@ -50,7 +50,7 @@ FocusScope {
                 if ((event.key == Qt.Key_V)
                         && (event.modifiers & Qt.ControlModifier)) {
                     console.log("paste")
-                    globalEditor.realPaste()
+                    pmocjs.realPaste()
                     event.accepted = true
                 }
             }
@@ -79,7 +79,7 @@ FocusScope {
                     else {
                         console.log("selected")
                         main.focus = true
-                        globalEditor.setOperand(main.qmodel)
+                        pmocjs.setOperand(main.qmodel)
                     }
                 }
                 // onPressAndHold: uaContextMenu.popup()
@@ -90,15 +90,15 @@ FocusScope {
                         text: 'Copy'
                         shortcut: "Ctrl+C"
                         onTriggered: {
-                            globalEditor.setCopyOperand(main.qmodel)
+                            pmocjs.setCopyOperand(main.qmodel)
                         }
                     }
                     MenuItem {
                         text: 'Cut'
                         shortcut: "Ctrl+X"
                         onTriggered: {
-                            globalEditor.setCopyOperand(main.qmodel)
-                            globalEditor.setCutSubject(main.parent.qmodel)
+                            pmocjs.setCopyOperand(main.qmodel)
+                            pmocjs.setCutSubject(main.parent.qmodel)
 
                             subjectrequired()
                         }
@@ -107,9 +107,9 @@ FocusScope {
                         text: 'Paste'
                         shortcut: "Ctrl+V"
                         onTriggered: {
-                            globalEditor.realPaste(main.qmodel)
-                            globalEditor.popQQModelUi(
-                                        globalEditor.getCopyOperand(),
+                            pmocjs.realPaste(main.qmodel)
+                            pmocjs.popQQModelUi(
+                                        pmocjs.getCopyOperand(),
                                         main.qmodel.getQuickItem())
                             main.qmodel.modelChanged()
                         }
@@ -119,10 +119,10 @@ FocusScope {
                         shortcut: "Suppr"
                         onTriggered: {
 
-                            globalEditor.setCopyOperand(main.qmodel)
-                            globalEditor.setCutSubject(main.parent.qmodel)
-                            globalEditor.isCutAction = false
-                            globalEditor.realRemoval()
+                            pmocjs.setCopyOperand(main.qmodel)
+                            pmocjs.setCutSubject(main.parent.qmodel)
+                            pmocjs.isCutAction = false
+                            pmocjs.realRemoval()
                             subjectrequired()
                             //main.parent.qmodel.modelChanged()
                             main.parent = null
@@ -145,10 +145,10 @@ FocusScope {
 
                             obj.osg_NodeVisitor.applyVisitor()
 
-                            //globalEditor.osg_Node_removed.connect(classmain.osg_Group.childrenChanged);
-                            //globalEditor.osg_Node_added.connect(classmain.osg_Group.childAdded);
-                            //  globalEditor.osg_NodeCallback_removed.connect( obj.osg_Node.callbacksChanged)
-                            //                    globalEditor.osg_NodeCallback_added.connect(                                obj.osg_Node.callbacksChanged)
+                            //pmocjs.osg_Node_removed.connect(classmain.osg_Group.childrenChanged);
+                            //pmocjs.osg_Node_added.connect(classmain.osg_Group.childAdded);
+                            //  pmocjs.osg_NodeCallback_removed.connect( obj.osg_Node.callbacksChanged)
+                            //                    pmocjs.osg_NodeCallback_added.connect(                                obj.osg_Node.callbacksChanged)
                         }
                         //height: 250
                         //implicit_height: 250

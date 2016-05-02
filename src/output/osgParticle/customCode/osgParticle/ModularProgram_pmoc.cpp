@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/ModularProgram_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLModularProgram::QMLModularProgram(pmoc::Instance *i,QObject* parent):QReflect_ModularProgram(i,parent){
+osgParticle::QMLModularProgram::QMLModularProgram(const pmoc::Instance *i,QObject* parent):QReflect_ModularProgram(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLModularProgram::connect2View(QQuickItem*i){

@@ -1,8 +1,12 @@
 #ifndef osg_CullSettings_pmocHPP
 #define  osg_CullSettings_pmocHPP 1
 
+
 #include <osg/CullSettings_pmoc.hpp>
 #include <QObject>
+namespace osg{ 
+class QReflect_ArgumentParser;
+			} ;
 namespace osg{ 
 class QReflect_CullSettings;
 			} ;
@@ -72,69 +76,90 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 CullSettings * _model;
-QReflect_CullSettings(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CullSettings(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CullSettings( );
 //CullSettings
 // ClampProjectionMatrixCallback * getClampProjectionMatrixCallback();
 // CullSettings & operator=(const  CullSettings &);
-// void  readCommandLine( ArgumentParser &);
 // void  setClampProjectionMatrixCallback( ClampProjectionMatrixCallback *);
 // void  write( std::ostream &);
 //const  ClampProjectionMatrixCallback * getClampProjectionMatrixCallback();
+Q_INVOKABLE  bool  getDepthSortImpostorSprites()const;
+Q_INVOKABLE  bool  getImpostorsActive()const;
+Q_INVOKABLE  double  getNearFarRatio()const;
+Q_INVOKABLE  float  getImpostorPixelErrorThreshold()const;
+Q_INVOKABLE  float  getLODScale()const;
+Q_INVOKABLE  float  getSmallFeatureCullingPixelSize()const;
 Q_INVOKABLE  int  getCullingMode()const;
 Q_INVOKABLE  int  getInheritanceMask()const;
+Q_INVOKABLE  int  getNumberOfFrameToKeepImpostorSprites()const;
 Q_INVOKABLE  unsigned int  getCullMask()const;
 Q_INVOKABLE  unsigned int  getCullMaskLeft()const;
 Q_INVOKABLE  unsigned int  getCullMaskRight()const;
-Q_INVOKABLE const bool  getDepthSortImpostorSprites()const;
-Q_INVOKABLE const bool  getImpostorsActive()const;
-Q_INVOKABLE const double  getNearFarRatio()const;
-Q_INVOKABLE const float  getImpostorPixelErrorThreshold()const;
-Q_INVOKABLE const float  getLODScale()const;
-Q_INVOKABLE const float  getSmallFeatureCullingPixelSize()const;
-Q_INVOKABLE const int  getNumberOfFrameToKeepImpostorSprites()const;
 Q_INVOKABLE osg::QReflect_CullSettings::ComputeNearFarMode  getComputeNearFarMode()const;
 Q_INVOKABLE osg::QReflect_CullSettings::InheritanceMaskActionOnAttributeSetting  getInheritanceMaskActionOnAttributeSetting()const;
-Q_INVOKABLE void  applyMaskAction( unsigned int );
-Q_INVOKABLE void  inheritCullSettings(osg::QReflect_CullSettings * , unsigned int );
-Q_INVOKABLE void  inheritCullSettings(osg::QReflect_CullSettings *);
+Q_INVOKABLE void  applyMaskAction( unsigned int maskBit);
+Q_INVOKABLE void  inheritCullSettings(osg::QReflect_CullSettings *settings , unsigned int inheritanceMask);
+Q_INVOKABLE void  inheritCullSettings(osg::QReflect_CullSettings *settings);
+Q_INVOKABLE void  readCommandLine(osg::QReflect_ArgumentParser *arguments);
 Q_INVOKABLE void  readEnvironmentalVariables();
-Q_INVOKABLE void  setComputeNearFarMode(osg::QReflect_CullSettings::ComputeNearFarMode );
-Q_INVOKABLE void  setCullMask( unsigned int );
-Q_INVOKABLE void  setCullMaskLeft( unsigned int );
-Q_INVOKABLE void  setCullMaskRight( unsigned int );
-Q_INVOKABLE void  setCullSettings(osg::QReflect_CullSettings *);
-Q_INVOKABLE void  setCullingMode( int );
+Q_INVOKABLE void  setComputeNearFarMode(osg::QReflect_CullSettings::ComputeNearFarMode cnfm);
+Q_INVOKABLE void  setCullMask( unsigned int nm);
+Q_INVOKABLE void  setCullMaskLeft( unsigned int nm);
+Q_INVOKABLE void  setCullMaskRight( unsigned int nm);
+Q_INVOKABLE void  setCullSettings(osg::QReflect_CullSettings *settings);
+Q_INVOKABLE void  setCullingMode( int mode);
 Q_INVOKABLE void  setDefaults();
-Q_INVOKABLE void  setInheritanceMask( int );
-Q_INVOKABLE void  setInheritanceMaskActionOnAttributeSetting(osg::QReflect_CullSettings::InheritanceMaskActionOnAttributeSetting );
-Q_INVOKABLE void setDepthSortImpostorSprites(const bool &);
-Q_INVOKABLE void setImpostorPixelErrorThreshold(const float &);
-Q_INVOKABLE void setImpostorsActive(const bool &);
-Q_INVOKABLE void setLODScale(const float &);
-Q_INVOKABLE void setNearFarRatio(const double &);
-Q_INVOKABLE void setNumberOfFrameToKeepImpostorSprites(const int &);
-Q_INVOKABLE void setSmallFeatureCullingPixelSize(const float &);
-Q_PROPERTY(bool DepthSortImpostorSprites  READ getDepthSortImpostorSprites WRITE setDepthSortImpostorSprites NOTIFY DepthSortImpostorSpritesChanged)
-Q_PROPERTY(bool ImpostorsActive  READ getImpostorsActive WRITE setImpostorsActive NOTIFY ImpostorsActiveChanged)
-Q_PROPERTY(double NearFarRatio  READ getNearFarRatio WRITE setNearFarRatio NOTIFY NearFarRatioChanged)
-Q_PROPERTY(float ImpostorPixelErrorThreshold  READ getImpostorPixelErrorThreshold WRITE setImpostorPixelErrorThreshold NOTIFY ImpostorPixelErrorThresholdChanged)
-Q_PROPERTY(float LODScale  READ getLODScale WRITE setLODScale NOTIFY LODScaleChanged)
-Q_PROPERTY(float SmallFeatureCullingPixelSize  READ getSmallFeatureCullingPixelSize WRITE setSmallFeatureCullingPixelSize NOTIFY SmallFeatureCullingPixelSizeChanged)
-Q_PROPERTY(int NumberOfFrameToKeepImpostorSprites  READ getNumberOfFrameToKeepImpostorSprites WRITE setNumberOfFrameToKeepImpostorSprites NOTIFY NumberOfFrameToKeepImpostorSpritesChanged)
-signals: void DepthSortImpostorSpritesChanged(const bool&);
+Q_INVOKABLE void  setDepthSortImpostorSprites( bool doDepthSort);
+Q_INVOKABLE void  setImpostorPixelErrorThreshold( float numPixels);
+Q_INVOKABLE void  setImpostorsActive( bool active);
+Q_INVOKABLE void  setInheritanceMask( int mask);
+Q_INVOKABLE void  setInheritanceMaskActionOnAttributeSetting(osg::QReflect_CullSettings::InheritanceMaskActionOnAttributeSetting action);
+Q_INVOKABLE void  setLODScale( float scale);
+Q_INVOKABLE void  setNearFarRatio( double ratio);
+Q_INVOKABLE void  setNumberOfFrameToKeepImpostorSprites( int numFrames);
+Q_INVOKABLE void  setSmallFeatureCullingPixelSize( float value);
+Q_PROPERTY(bool  DepthSortImpostorSprites  READ getDepthSortImpostorSprites WRITE setDepthSortImpostorSprites NOTIFY DepthSortImpostorSpritesChanged)
+Q_PROPERTY(bool  ImpostorsActive  READ getImpostorsActive WRITE setImpostorsActive NOTIFY ImpostorsActiveChanged)
+Q_PROPERTY(double  NearFarRatio  READ getNearFarRatio WRITE setNearFarRatio NOTIFY NearFarRatioChanged)
+Q_PROPERTY(float  ImpostorPixelErrorThreshold  READ getImpostorPixelErrorThreshold WRITE setImpostorPixelErrorThreshold NOTIFY ImpostorPixelErrorThresholdChanged)
+Q_PROPERTY(float  LODScale  READ getLODScale WRITE setLODScale NOTIFY LODScaleChanged)
+Q_PROPERTY(float  SmallFeatureCullingPixelSize  READ getSmallFeatureCullingPixelSize WRITE setSmallFeatureCullingPixelSize NOTIFY SmallFeatureCullingPixelSizeChanged)
+Q_PROPERTY(int  CullingMode  READ getCullingMode WRITE setCullingMode NOTIFY CullingModeChanged)
+Q_PROPERTY(int  InheritanceMask  READ getInheritanceMask WRITE setInheritanceMask NOTIFY InheritanceMaskChanged)
+Q_PROPERTY(int  NumberOfFrameToKeepImpostorSprites  READ getNumberOfFrameToKeepImpostorSprites WRITE setNumberOfFrameToKeepImpostorSprites NOTIFY NumberOfFrameToKeepImpostorSpritesChanged)
+Q_PROPERTY(osg::QReflect_CullSettings::ComputeNearFarMode  ComputeNearFarMode  READ getComputeNearFarMode WRITE setComputeNearFarMode NOTIFY ComputeNearFarModeChanged)
+Q_PROPERTY(osg::QReflect_CullSettings::InheritanceMaskActionOnAttributeSetting  InheritanceMaskActionOnAttributeSetting  READ getInheritanceMaskActionOnAttributeSetting WRITE setInheritanceMaskActionOnAttributeSetting NOTIFY InheritanceMaskActionOnAttributeSettingChanged)
+Q_PROPERTY(unsigned int  CullMask  READ getCullMask WRITE setCullMask NOTIFY CullMaskChanged)
+Q_PROPERTY(unsigned int  CullMaskLeft  READ getCullMaskLeft WRITE setCullMaskLeft NOTIFY CullMaskLeftChanged)
+Q_PROPERTY(unsigned int  CullMaskRight  READ getCullMaskRight WRITE setCullMaskRight NOTIFY CullMaskRightChanged)
+signals: void ComputeNearFarModeChanged();
 public:
-signals: void ImpostorPixelErrorThresholdChanged(const float&);
+signals: void CullMaskChanged();
 public:
-signals: void ImpostorsActiveChanged(const bool&);
+signals: void CullMaskLeftChanged();
 public:
-signals: void LODScaleChanged(const float&);
+signals: void CullMaskRightChanged();
 public:
-signals: void NearFarRatioChanged(const double&);
+signals: void CullingModeChanged();
 public:
-signals: void NumberOfFrameToKeepImpostorSpritesChanged(const int&);
+signals: void DepthSortImpostorSpritesChanged();
 public:
-signals: void SmallFeatureCullingPixelSizeChanged(const float&);
+signals: void ImpostorPixelErrorThresholdChanged();
+public:
+signals: void ImpostorsActiveChanged();
+public:
+signals: void InheritanceMaskActionOnAttributeSettingChanged();
+public:
+signals: void InheritanceMaskChanged();
+public:
+signals: void LODScaleChanged();
+public:
+signals: void NearFarRatioChanged();
+public:
+signals: void NumberOfFrameToKeepImpostorSpritesChanged();
+public:
+signals: void SmallFeatureCullingPixelSizeChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -148,7 +173,7 @@ public:
 MetaQReflect_CullSettings();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -159,6 +184,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_CullSettings_pmocHPP
 

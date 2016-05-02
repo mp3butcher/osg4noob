@@ -1,5 +1,6 @@
 #include <osg/Vec2s>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,57 +8,95 @@
 #include <customCode/osg/Vec2s_pmoc.hpp>
 #include <customCode/osg/Vec2s_pmoc.hpp>
 using namespace pmoc;
- short  osg::QReflect_Vec2s::g()const{
+ bool  osg::QReflect_Vec2s:: operator!=(osg::QReflect_Vec2s  &p0)const{
+//params checking
+return _model->operator!=(*p0._model);
+
+}
+ bool  osg::QReflect_Vec2s:: operator<(osg::QReflect_Vec2s  &p0)const{
+//params checking
+return _model->operator<(*p0._model);
+
+}
+ bool  osg::QReflect_Vec2s:: operator==(osg::QReflect_Vec2s  &p0)const{
+//params checking
+return _model->operator==(*p0._model);
+
+}
+ short  osg::QReflect_Vec2s:: g()const{
+//params checking
 return _model->g();
 
 }
- short  osg::QReflect_Vec2s::r()const{
+ short  osg::QReflect_Vec2s:: operator[]( int  p0)const{
+//params checking
+return _model->operator[](p0);
+
+}
+ short  osg::QReflect_Vec2s:: r()const{
+//params checking
 return _model->r();
 
 }
- short  osg::QReflect_Vec2s::x()const{
+ short  osg::QReflect_Vec2s:: x()const{
+//params checking
 return _model->x();
 
 }
- short  osg::QReflect_Vec2s::y()const{
+ short  osg::QReflect_Vec2s:: y()const{
+//params checking
 return _model->y();
 
 }
- short&  osg::QReflect_Vec2s::g(){
+ short&  osg::QReflect_Vec2s:: g(){
+//params checking
 return _model->g();
 
 }
- short&  osg::QReflect_Vec2s::r(){
+ short&  osg::QReflect_Vec2s:: operator[]( int  p0){
+//params checking
+return _model->operator[](p0);
+
+}
+ short&  osg::QReflect_Vec2s:: r(){
+//params checking
 return _model->r();
 
 }
- short&  osg::QReflect_Vec2s::x(){
+ short&  osg::QReflect_Vec2s:: x(){
+//params checking
 return _model->x();
 
 }
- short&  osg::QReflect_Vec2s::y(){
+ short&  osg::QReflect_Vec2s:: y(){
+//params checking
 return _model->y();
 
 }
- short*  osg::QReflect_Vec2s::ptr(){
+ short*  osg::QReflect_Vec2s:: ptr(){
+//params checking
 return _model->ptr();
 
 }
- void osg::QReflect_Vec2s::set( short p0 , short p1){
+ void osg::QReflect_Vec2s::set( short  p0 , short  p1){
+//params checking
  _model->set(p0 ,p1);
 
 }
- void osg::QReflect_Vec2s::set(osg::QReflect_Vec2s *p0){
+ void osg::QReflect_Vec2s::set(osg::QReflect_Vec2s  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Vec2s::set : parameter n.0 is NULL\n"<<endl;return;}
  _model->set(*p0->_model);
 
 }
-const  short*  osg::QReflect_Vec2s::ptr()const{
+const  short*  osg::QReflect_Vec2s:: ptr()const{
+//params checking
 return _model->ptr();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Vec2s::QReflect_Vec2s(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Vec2s::QReflect_Vec2s(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Vec2s*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -80,9 +119,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Vec2s::MetaQReflect_Vec2s():MetaQQuickClass( "osg::Vec2s"){
-_typeid=&typeid(osg::Vec2s );           qRegisterMetaType<QMLVec2s>();
-qmlRegisterType<QReflect_Vec2s>("pmoc.osg",1,0,"QReflect_Vec2s");
-           qmlRegisterType<QMLVec2s>("pmoc.osg",1,0,"QMLVec2s");
+_typeid=&typeid(osg::Vec2s );
+           qRegisterMetaType<osg::QMLVec2s>();
+           qRegisterMetaType<osg::QMLVec2s*>("pmoc.osg.QMLVec2s");
+qmlRegisterType<osg::QReflect_Vec2s>("pmoc.osg",1,0,"QReflect_Vec2s");
+           qmlRegisterType<osg::QMLVec2s>("pmoc.osg",1,0,"QMLVec2s");
 };
 const std::string osg::MetaQReflect_Vec2s::Imports() const{
  return std::string("");
@@ -91,7 +132,7 @@ const std::string osg::MetaQReflect_Vec2s::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Vec2s::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Vec2s::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Vec2s::createQQModel(Instance*i){ //return new MetaQReflect_Vec2s_QModel(i);}
+QQModel* osg::MetaQReflect_Vec2s::createQQModel(const Instance*i){ //return new MetaQReflect_Vec2s_QModel(i);}
 QMLVec2s *ret =new QMLVec2s(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -102,5 +143,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Vec2s_pmoc.cpp"
 #endif
+
+
 
 

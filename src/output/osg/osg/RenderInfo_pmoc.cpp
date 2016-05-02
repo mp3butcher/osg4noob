@@ -1,5 +1,6 @@
 #include <osg/RenderInfo>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,66 +10,87 @@
 #include <customCode/osg/Referenced_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 #include <customCode/osg/View_pmoc.hpp>
-#include <osg/Referenced>
-#include <osg/Referenced_pmoc.hpp>
-#include <osg/State>
-#include <osg/State_pmoc.hpp>
-#include <osg/View>
-#include <osg/View_pmoc.hpp>
 using namespace pmoc;
- unsigned int  osg::QReflect_RenderInfo::getContextID()const{
+ unsigned int  osg::QReflect_RenderInfo:: getContextID()const{
+//params checking
 return _model->getContextID();
 
 }
  void osg::QReflect_RenderInfo::popCamera(){
+//params checking
  _model->popCamera();
 
 }
  void osg::QReflect_RenderInfo::popRenderBin(){
+//params checking
  _model->popRenderBin();
 
 }
- void osg::QReflect_RenderInfo::pushCamera(osg::QReflect_Camera *p0){
+ void osg::QReflect_RenderInfo::pushCamera(osg::QReflect_Camera  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_RenderInfo::pushCamera : parameter n.0 is NULL\n"<<endl;return;}
  _model->pushCamera(p0->_model);
 
 }
+ void osg::QReflect_RenderInfo::setState(osg::QReflect_State  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_RenderInfo::setState : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setState(p0->_model);
+emit StateChanged();
+
+}
+ void osg::QReflect_RenderInfo::setUserData(osg::QReflect_Referenced  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_RenderInfo::setUserData : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setUserData(p0->_model);
+emit UserDataChanged();
+
+}
+ void osg::QReflect_RenderInfo::setView(osg::QReflect_View  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_RenderInfo::setView : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setView(p0->_model);
+emit ViewChanged();
+
+}
 osg::QReflect_Camera*osg::QReflect_RenderInfo::getCurrentCamera(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getCurrentCamera(),inst);
 return inst.isValid()?((osg::QReflect_Camera * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_Referenced * osg::QReflect_RenderInfo::getUserData()const{
+osg::QReflect_Referenced*osg::QReflect_RenderInfo::getUserData()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getUserData(),inst);
 return inst.isValid()?((osg::QReflect_Referenced * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_State * osg::QReflect_RenderInfo::getState()const{
+osg::QReflect_Referenced*osg::QReflect_RenderInfo::getUserData(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getUserData(),inst);
+return inst.isValid()?((osg::QReflect_Referenced * )inst.model->createQQModel(&inst)):NULL;
+}
+osg::QReflect_State*osg::QReflect_RenderInfo::getState()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getState(),inst);
 return inst.isValid()?((osg::QReflect_State * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_View * osg::QReflect_RenderInfo::getView()const{
+osg::QReflect_State*osg::QReflect_RenderInfo::getState(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getState(),inst);
+return inst.isValid()?((osg::QReflect_State * )inst.model->createQQModel(&inst)):NULL;
+}
+osg::QReflect_View*osg::QReflect_RenderInfo::getView()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getView(),inst);
 return inst.isValid()?((osg::QReflect_View * )inst.model->createQQModel(&inst)):NULL;
 }
-void osg::QReflect_RenderInfo::pmoc_reverse_setState( osg::QReflect_State *par){_model->setState(NULL);
-emit StateChanged(NULL);
-}
-void osg::QReflect_RenderInfo::pmoc_reverse_setUserData( osg::QReflect_Referenced *par){_model->setUserData(NULL);
-emit UserDataChanged(NULL);
-}
-void osg::QReflect_RenderInfo::pmoc_reverse_setView( osg::QReflect_View *par){_model->setView(NULL);
-emit ViewChanged(NULL);
-}
-void osg::QReflect_RenderInfo::setState( osg::QReflect_State *par){_model->setState(par->_model);
-emit StateChanged(par);
-}
-void osg::QReflect_RenderInfo::setUserData( osg::QReflect_Referenced *par){_model->setUserData(par->_model);
-emit UserDataChanged(par);
-}
-void osg::QReflect_RenderInfo::setView( osg::QReflect_View *par){_model->setView(par->_model);
-emit ViewChanged(par);
+osg::QReflect_View*osg::QReflect_RenderInfo::getView(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getView(),inst);
+return inst.isValid()?((osg::QReflect_View * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_RenderInfo::QReflect_RenderInfo(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_RenderInfo::QReflect_RenderInfo(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::RenderInfo*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -91,12 +113,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_RenderInfo::MetaQReflect_RenderInfo():MetaQQuickClass( "osg::RenderInfo"){
-_typeid=&typeid(osg::RenderInfo );           qRegisterMetaType<QMLRenderInfo>();
-qmlRegisterType<QReflect_RenderInfo>("pmoc.osg",1,0,"QReflect_RenderInfo");
-           qmlRegisterType<QMLRenderInfo>("pmoc.osg",1,0,"QMLRenderInfo");
-       PMOCACTION("getState","setState","unsetState");
-       PMOCACTION("getUserData","setUserData","unsetUserData");
-       PMOCACTION("getView","setView","unsetView");
+_typeid=&typeid(osg::RenderInfo );
+           qRegisterMetaType<osg::QMLRenderInfo>();
+           qRegisterMetaType<osg::QMLRenderInfo*>("pmoc.osg.QMLRenderInfo");
+qmlRegisterType<osg::QReflect_RenderInfo>("pmoc.osg",1,0,"QReflect_RenderInfo");
+           qmlRegisterType<osg::QMLRenderInfo>("pmoc.osg",1,0,"QMLRenderInfo");
 };
 const std::string osg::MetaQReflect_RenderInfo::Imports() const{
  return std::string("");
@@ -105,7 +126,7 @@ const std::string osg::MetaQReflect_RenderInfo::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_RenderInfo::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_RenderInfo::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_RenderInfo::createQQModel(Instance*i){ //return new MetaQReflect_RenderInfo_QModel(i);}
+QQModel* osg::MetaQReflect_RenderInfo::createQQModel(const Instance*i){ //return new MetaQReflect_RenderInfo_QModel(i);}
 QMLRenderInfo *ret =new QMLRenderInfo(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

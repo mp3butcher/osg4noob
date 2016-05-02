@@ -4,14 +4,14 @@
 
 #include <osgParticle/OrbitOperator_pmoc.hpp>
 #include <QObject>
-namespace osgParticle{ 
-class QReflect_Program;
-			} ;
 namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osgParticle{ 
 class QReflect_Particle;
+			} ;
+namespace osgParticle{ 
+class QReflect_Program;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/OrbitOperator>
@@ -27,27 +27,27 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 OrbitOperator * _model;
-QReflect_OrbitOperator(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_OrbitOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_OrbitOperator( );
 //OrbitOperator
 //const  osg::Vec3 & getCenter();
-Q_INVOKABLE const float  getEpsilon()const;
-Q_INVOKABLE const float  getMagnitude()const;
-Q_INVOKABLE const float  getMaxRadius()const;
-Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *);
-Q_INVOKABLE void  operate(osgParticle::QReflect_Particle * , double );
-Q_INVOKABLE void  setCenter(osg::QReflect_Vec3f *);
-Q_INVOKABLE void setEpsilon(const float &);
-Q_INVOKABLE void setMagnitude(const float &);
-Q_INVOKABLE void setMaxRadius(const float &);
-Q_PROPERTY(float Epsilon  READ getEpsilon WRITE setEpsilon NOTIFY EpsilonChanged)
-Q_PROPERTY(float Magnitude  READ getMagnitude WRITE setMagnitude NOTIFY MagnitudeChanged)
-Q_PROPERTY(float MaxRadius  READ getMaxRadius WRITE setMaxRadius NOTIFY MaxRadiusChanged)
-signals: void EpsilonChanged(const float&);
+Q_INVOKABLE  float  getEpsilon()const;
+Q_INVOKABLE  float  getMagnitude()const;
+Q_INVOKABLE  float  getMaxRadius()const;
+Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *prg);
+Q_INVOKABLE void  operate(osgParticle::QReflect_Particle *P , double dt);
+Q_INVOKABLE void  setCenter(osg::QReflect_Vec3f *c);
+Q_INVOKABLE void  setEpsilon( float eps);
+Q_INVOKABLE void  setMagnitude( float mag);
+Q_INVOKABLE void  setMaxRadius( float max);
+Q_PROPERTY(float  Epsilon  READ getEpsilon WRITE setEpsilon NOTIFY EpsilonChanged)
+Q_PROPERTY(float  Magnitude  READ getMagnitude WRITE setMagnitude NOTIFY MagnitudeChanged)
+Q_PROPERTY(float  MaxRadius  READ getMaxRadius WRITE setMaxRadius NOTIFY MaxRadiusChanged)
+signals: void EpsilonChanged();
 public:
-signals: void MagnitudeChanged(const float&);
+signals: void MagnitudeChanged();
 public:
-signals: void MaxRadiusChanged(const float&);
+signals: void MaxRadiusChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -61,7 +61,7 @@ public:
 MetaQReflect_OrbitOperator();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -72,6 +72,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_OrbitOperator_pmocHPP

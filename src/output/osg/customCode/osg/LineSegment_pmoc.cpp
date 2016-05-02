@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/LineSegment_pmoc.hpp>
 using namespace pmoc;
-osg::QMLLineSegment::QMLLineSegment(pmoc::Instance *i,QObject* parent):QReflect_LineSegment(i,parent){
+osg::QMLLineSegment::QMLLineSegment(const pmoc::Instance *i,QObject* parent):QReflect_LineSegment(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLLineSegment::connect2View(QQuickItem*i){

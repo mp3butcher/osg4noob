@@ -1,7 +1,54 @@
 #ifndef osg_CopyOp_pmocHPP
 #define  osg_CopyOp_pmocHPP 1
+
+
 #include <osg/CopyOp_pmoc.hpp>
 #include <QObject>
+namespace osg{ 
+class QReflect_Object;
+			} ;
+namespace osg{ 
+class QReflect_Image;
+			} ;
+namespace osg{ 
+class QReflect_Texture;
+			} ;
+namespace osg{ 
+class QReflect_StateSet;
+			} ;
+namespace osg{ 
+class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_StateAttributeCallback;
+			} ;
+namespace osg{ 
+class QReflect_Uniform;
+			} ;
+namespace osg{ 
+class QReflect_UniformCallback;
+			} ;
+namespace osg{ 
+class QReflect_Node;
+			} ;
+namespace osg{ 
+class QReflect_Drawable;
+			} ;
+namespace osg{ 
+class QReflect_Array;
+			} ;
+namespace osg{ 
+class QReflect_PrimitiveSet;
+			} ;
+namespace osg{ 
+class QReflect_Referenced;
+			} ;
+namespace osg{ 
+class QReflect_Shape;
+			} ;
+namespace osg{ 
+class QReflect_Callback;
+			} ;
 #include <osg/CopyOp>
 
 #include <MetaQQuickClass.h>
@@ -33,26 +80,29 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 CopyOp * _model;
-QReflect_CopyOp(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CopyOp(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CopyOp( );
 //CopyOp
-//virtual  Array * operator()(const  Array *);
-//virtual  Callback * operator()(const  Callback *);
-//virtual  Drawable * operator()(const  Drawable *);
-//virtual  Image * operator()(const  Image *);
-//virtual  Node * operator()(const  Node *);
-//virtual  Object * operator()(const  Object *);
-//virtual  PrimitiveSet * operator()(const  PrimitiveSet *);
-//virtual  Referenced * operator()(const  Referenced *);
-//virtual  Shape * operator()(const  Shape *);
-//virtual  StateAttribute * operator()(const  StateAttribute *);
-//virtual  StateAttributeCallback * operator()(const  StateAttributeCallback *);
-//virtual  StateSet * operator()(const  StateSet *);
-//virtual  Texture * operator()(const  Texture *);
-//virtual  Uniform * operator()(const  Uniform *);
-//virtual  UniformCallback * operator()(const  UniformCallback *);
 Q_INVOKABLE  unsigned int  getCopyFlags()const;
-Q_INVOKABLE void  setCopyFlags( unsigned int );
+Q_INVOKABLE osg::QReflect_Array*  operator()(osg::QReflect_Array *array)const;
+Q_INVOKABLE osg::QReflect_Callback*  operator()(osg::QReflect_Callback *nodecallback)const;
+Q_INVOKABLE osg::QReflect_Drawable*  operator()(osg::QReflect_Drawable *drawable)const;
+Q_INVOKABLE osg::QReflect_Image*  operator()(osg::QReflect_Image *image)const;
+Q_INVOKABLE osg::QReflect_Node*  operator()(osg::QReflect_Node *node)const;
+Q_INVOKABLE osg::QReflect_Object*  operator()(osg::QReflect_Object *obj)const;
+Q_INVOKABLE osg::QReflect_PrimitiveSet*  operator()(osg::QReflect_PrimitiveSet *primitives)const;
+Q_INVOKABLE osg::QReflect_Referenced*  operator()(osg::QReflect_Referenced *ref)const;
+Q_INVOKABLE osg::QReflect_Shape*  operator()(osg::QReflect_Shape *shape)const;
+Q_INVOKABLE osg::QReflect_StateAttribute*  operator()(osg::QReflect_StateAttribute *attr)const;
+Q_INVOKABLE osg::QReflect_StateAttributeCallback*  operator()(osg::QReflect_StateAttributeCallback *stateattributecallback)const;
+Q_INVOKABLE osg::QReflect_StateSet*  operator()(osg::QReflect_StateSet *stateset)const;
+Q_INVOKABLE osg::QReflect_Texture*  operator()(osg::QReflect_Texture *text)const;
+Q_INVOKABLE osg::QReflect_Uniform*  operator()(osg::QReflect_Uniform *shape)const;
+Q_INVOKABLE osg::QReflect_UniformCallback*  operator()(osg::QReflect_UniformCallback *uniformcallback)const;
+Q_INVOKABLE void  setCopyFlags( unsigned int flags);
+Q_PROPERTY(unsigned int  CopyFlags  READ getCopyFlags WRITE setCopyFlags NOTIFY CopyFlagsChanged)
+signals: void CopyFlagsChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -65,7 +115,7 @@ public:
 MetaQReflect_CopyOp();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -76,6 +126,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_CopyOp_pmocHPP
 

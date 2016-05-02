@@ -1,9 +1,14 @@
 #ifndef osg_BlendEquationi_pmocHPP
 #define  osg_BlendEquationi_pmocHPP 1
+
+
 #include <osg/BlendEquationi_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/BlendEquationi>
 #include <osg/BlendEquationi>
@@ -19,16 +24,16 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 BlendEquationi * _model;
-QReflect_BlendEquationi(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_BlendEquationi(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BlendEquationi( );
 //BlendEquationi
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE  unsigned int  getIndex()const;
 Q_INVOKABLE  unsigned int  getMember()const;
-Q_INVOKABLE const unsigned int  getIndex()const;
-Q_INVOKABLE void setIndex(const unsigned int &);
-Q_PROPERTY(unsigned int Index  READ getIndex WRITE setIndex NOTIFY IndexChanged)
-signals: void IndexChanged(const unsigned int&);
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setIndex( unsigned int buf);
+Q_PROPERTY(unsigned int  Index  READ getIndex WRITE setIndex NOTIFY IndexChanged)
+signals: void IndexChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -42,7 +47,7 @@ public:
 MetaQReflect_BlendEquationi();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -53,6 +58,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_BlendEquationi_pmocHPP
 

@@ -15,7 +15,7 @@ class  QMLKdTreeBuilder: public QReflect_KdTreeBuilder
 {
 Q_OBJECT
 public:
-QMLKdTreeBuilder(pmoc::Instance *i=0,QObject* parent=0);
+QMLKdTreeBuilder(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -36,7 +36,7 @@ class  QMLKdTree: public QReflect_KdTree
 {
 Q_OBJECT
 public:
-QMLKdTree(pmoc::Instance *i=0,QObject* parent=0);
+QMLKdTree(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

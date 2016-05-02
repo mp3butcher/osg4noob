@@ -31,7 +31,7 @@ public:
         return &_qdrawables;
     }
 
-    QMLGeode(pmoc::Instance *i=0,QObject* parent=0);
+    QMLGeode(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 
 public  slots:

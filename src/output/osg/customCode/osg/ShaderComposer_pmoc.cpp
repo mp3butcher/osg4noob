@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ShaderComposer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShaderComposer::QMLShaderComposer(pmoc::Instance *i,QObject* parent):QReflect_ShaderComposer(i,parent){
+osg::QMLShaderComposer::QMLShaderComposer(const pmoc::Instance *i,QObject* parent):QReflect_ShaderComposer(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShaderComposer::connect2View(QQuickItem*i){

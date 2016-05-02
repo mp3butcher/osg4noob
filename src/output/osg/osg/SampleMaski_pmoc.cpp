@@ -1,5 +1,6 @@
 #include <osg/SampleMaski>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,22 +8,33 @@
 #include <customCode/osg/SampleMaski_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_SampleMaski::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_SampleMaski:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_SampleMaski::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- unsigned int  osg::QReflect_SampleMaski::getMask( unsigned int p0)const{
+ unsigned int  osg::QReflect_SampleMaski:: getMask( unsigned int  p0)const{
+//params checking
 return _model->getMask(p0);
 
 }
- void osg::QReflect_SampleMaski::setMask( unsigned int p0 , unsigned int p1){
+ void osg::QReflect_SampleMaski::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_SampleMaski::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_SampleMaski::setMask( unsigned int  p0 , unsigned int  p1){
+//params checking
  _model->setMask(p0 ,p1);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_SampleMaski::QReflect_SampleMaski(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_SampleMaski::QReflect_SampleMaski(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::SampleMaski*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -50,9 +62,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_SampleMaski::MetaQReflect_SampleMaski():MetaQQuickClass( "osg::SampleMaski"){
-_typeid=&typeid(osg::SampleMaski );           qRegisterMetaType<QMLSampleMaski>();
-qmlRegisterType<QReflect_SampleMaski>("pmoc.osg",1,0,"QReflect_SampleMaski");
-           qmlRegisterType<QMLSampleMaski>("pmoc.osg",1,0,"QMLSampleMaski");
+_typeid=&typeid(osg::SampleMaski );
+           qRegisterMetaType<osg::QMLSampleMaski>();
+           qRegisterMetaType<osg::QMLSampleMaski*>("pmoc.osg.QMLSampleMaski");
+qmlRegisterType<osg::QReflect_SampleMaski>("pmoc.osg",1,0,"QReflect_SampleMaski");
+           qmlRegisterType<osg::QMLSampleMaski>("pmoc.osg",1,0,"QMLSampleMaski");
 };
 const std::string osg::MetaQReflect_SampleMaski::Imports() const{
  return std::string("");
@@ -61,7 +75,7 @@ const std::string osg::MetaQReflect_SampleMaski::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_SampleMaski::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_SampleMaski::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_SampleMaski::createQQModel(Instance*i){ //return new MetaQReflect_SampleMaski_QModel(i);}
+QQModel* osg::MetaQReflect_SampleMaski::createQQModel(const Instance*i){ //return new MetaQReflect_SampleMaski_QModel(i);}
 QMLSampleMaski *ret =new QMLSampleMaski(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -83,5 +97,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_SampleMaski_pmoc.cpp"
 #endif
+
+
 
 

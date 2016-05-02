@@ -1,9 +1,14 @@
 #ifndef osg_StencilTwoSided_pmocHPP
 #define  osg_StencilTwoSided_pmocHPP 1
+
+
 #include <osg/StencilTwoSided_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/StencilTwoSided>
 #include <osg/StencilTwoSided>
@@ -50,28 +55,28 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 StencilTwoSided * _model;
-QReflect_StencilTwoSided(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_StencilTwoSided(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_StencilTwoSided( );
 //StencilTwoSided
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE  int  getFunctionRef(osg::QReflect_StencilTwoSided::Face )const;
-Q_INVOKABLE  unsigned int  getFunctionMask(osg::QReflect_StencilTwoSided::Face )const;
-Q_INVOKABLE  unsigned int  getWriteMask(osg::QReflect_StencilTwoSided::Face )const;
-Q_INVOKABLE osg::QReflect_StencilTwoSided::Function  getFunction(osg::QReflect_StencilTwoSided::Face )const;
-Q_INVOKABLE osg::QReflect_StencilTwoSided::Operation  getStencilFailOperation(osg::QReflect_StencilTwoSided::Face )const;
-Q_INVOKABLE osg::QReflect_StencilTwoSided::Operation  getStencilPassAndDepthFailOperation(osg::QReflect_StencilTwoSided::Face )const;
-Q_INVOKABLE osg::QReflect_StencilTwoSided::Operation  getStencilPassAndDepthPassOperation(osg::QReflect_StencilTwoSided::Face )const;
-Q_INVOKABLE void  setFunction(osg::QReflect_StencilTwoSided::Face  ,osg::QReflect_StencilTwoSided::Function  , int  , unsigned int );
-Q_INVOKABLE void  setFunction(osg::QReflect_StencilTwoSided::Face  ,osg::QReflect_StencilTwoSided::Function );
-Q_INVOKABLE void  setFunctionMask(osg::QReflect_StencilTwoSided::Face  , unsigned int );
-Q_INVOKABLE void  setFunctionRef(osg::QReflect_StencilTwoSided::Face  , int );
-Q_INVOKABLE void  setOperation(osg::QReflect_StencilTwoSided::Face  ,osg::QReflect_StencilTwoSided::Operation  ,osg::QReflect_StencilTwoSided::Operation  ,osg::QReflect_StencilTwoSided::Operation );
-Q_INVOKABLE void  setStencilFailOperation(osg::QReflect_StencilTwoSided::Face  ,osg::QReflect_StencilTwoSided::Operation );
-Q_INVOKABLE void  setStencilPassAndDepthFailOperation(osg::QReflect_StencilTwoSided::Face  ,osg::QReflect_StencilTwoSided::Operation );
-Q_INVOKABLE void  setStencilPassAndDepthPassOperation(osg::QReflect_StencilTwoSided::Face  ,osg::QReflect_StencilTwoSided::Operation );
-Q_INVOKABLE void  setWriteMask(osg::QReflect_StencilTwoSided::Face  , unsigned int );
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE  int  getFunctionRef(osg::QReflect_StencilTwoSided::Face face)const;
+Q_INVOKABLE  unsigned int  getFunctionMask(osg::QReflect_StencilTwoSided::Face face)const;
+Q_INVOKABLE  unsigned int  getWriteMask(osg::QReflect_StencilTwoSided::Face face)const;
+Q_INVOKABLE osg::QReflect_StencilTwoSided::Function  getFunction(osg::QReflect_StencilTwoSided::Face face)const;
+Q_INVOKABLE osg::QReflect_StencilTwoSided::Operation  getStencilFailOperation(osg::QReflect_StencilTwoSided::Face face)const;
+Q_INVOKABLE osg::QReflect_StencilTwoSided::Operation  getStencilPassAndDepthFailOperation(osg::QReflect_StencilTwoSided::Face face)const;
+Q_INVOKABLE osg::QReflect_StencilTwoSided::Operation  getStencilPassAndDepthPassOperation(osg::QReflect_StencilTwoSided::Face face)const;
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setFunction(osg::QReflect_StencilTwoSided::Face face ,osg::QReflect_StencilTwoSided::Function func , int ref , unsigned int mask);
+Q_INVOKABLE void  setFunction(osg::QReflect_StencilTwoSided::Face face ,osg::QReflect_StencilTwoSided::Function func);
+Q_INVOKABLE void  setFunctionMask(osg::QReflect_StencilTwoSided::Face face , unsigned int mask);
+Q_INVOKABLE void  setFunctionRef(osg::QReflect_StencilTwoSided::Face face , int ref);
+Q_INVOKABLE void  setOperation(osg::QReflect_StencilTwoSided::Face face ,osg::QReflect_StencilTwoSided::Operation sfail ,osg::QReflect_StencilTwoSided::Operation zfail ,osg::QReflect_StencilTwoSided::Operation zpass);
+Q_INVOKABLE void  setStencilFailOperation(osg::QReflect_StencilTwoSided::Face face ,osg::QReflect_StencilTwoSided::Operation sfail);
+Q_INVOKABLE void  setStencilPassAndDepthFailOperation(osg::QReflect_StencilTwoSided::Face face ,osg::QReflect_StencilTwoSided::Operation zfail);
+Q_INVOKABLE void  setStencilPassAndDepthPassOperation(osg::QReflect_StencilTwoSided::Face face ,osg::QReflect_StencilTwoSided::Operation zpass);
+Q_INVOKABLE void  setWriteMask(osg::QReflect_StencilTwoSided::Face face , unsigned int mask);
 public slots:
 virtual void updateModel();
  
@@ -84,7 +89,7 @@ public:
 MetaQReflect_StencilTwoSided();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -95,6 +100,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_StencilTwoSided_pmocHPP
 

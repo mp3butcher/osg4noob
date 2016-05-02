@@ -49,13 +49,13 @@ FocusScope {
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -63,7 +63,7 @@ FocusScope {
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
@@ -78,7 +78,7 @@ FocusScope {
             drag.target: main
             drag.axis: Drag.XandYAxis
             onClicked: if (mouse.button != Qt.RightButton)
-                           globalEditor.setOperand(main.qmodel)
+                           pmocjs.setOperand(main.qmodel)
 
 
                 /////CLASSIC PART TO END
@@ -101,7 +101,7 @@ y:75
                                 objectName: "shadertypeComboBox2Hack"
                                 id: typeshader
                                 model: ["UNDEFINED", "VERTEX_SHADER", "GEOMETRY_SHADER", "FRAGMENT_SHADER", "COMPUTE_SHADER", "TESSELATION_EVALUATION_SHADER", "TESSELATION_CONTROL_SHADER"] //obj.osg_Shader.typeList //
-                                currentIndex: obj.osg_Shader.shaderType
+                                currentIndex: obj.osg_Shader.getShaderType()
                                 width: 200
                                 //     enabled: (currentIndex==0)//(obj. osg_Shader.shaderType == 0)
                                 onCurrentIndexChanged: {

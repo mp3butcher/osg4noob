@@ -13,7 +13,7 @@ class  QMLLogicOp: public QReflect_LogicOp
 {
 Q_OBJECT
 public:
-QMLLogicOp(pmoc::Instance *i=0,QObject* parent=0);
+QMLLogicOp(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

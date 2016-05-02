@@ -1,5 +1,6 @@
 #include <osg/GraphicsThread>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,7 +10,7 @@
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_BarrierOperation::QReflect_BarrierOperation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_BarrierOperation::QReflect_BarrierOperation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::BarrierOperation*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -34,9 +35,11 @@ std::cerr<<"osg::BarrierOperation is not instanciable"<<std::endl;return Instanc
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_BarrierOperation::MetaQReflect_BarrierOperation():MetaQQuickClass( "osg::BarrierOperation"){
-_typeid=&typeid(osg::BarrierOperation );           qRegisterMetaType<QMLBarrierOperation>();
-qmlRegisterType<QReflect_BarrierOperation>("pmoc.osg",1,0,"QReflect_BarrierOperation");
-           qmlRegisterType<QMLBarrierOperation>("pmoc.osg",1,0,"QMLBarrierOperation");
+_typeid=&typeid(osg::BarrierOperation );
+           qRegisterMetaType<osg::QMLBarrierOperation>();
+           qRegisterMetaType<osg::QMLBarrierOperation*>("pmoc.osg.QMLBarrierOperation");
+qmlRegisterType<osg::QReflect_BarrierOperation>("pmoc.osg",1,0,"QReflect_BarrierOperation");
+           qmlRegisterType<osg::QMLBarrierOperation>("pmoc.osg",1,0,"QMLBarrierOperation");
 };
 const std::string osg::MetaQReflect_BarrierOperation::Imports() const{
  return std::string("");
@@ -45,7 +48,7 @@ const std::string osg::MetaQReflect_BarrierOperation::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_BarrierOperation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_BarrierOperation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_BarrierOperation::createQQModel(Instance*i){ //return new MetaQReflect_BarrierOperation_QModel(i);}
+QQModel* osg::MetaQReflect_BarrierOperation::createQQModel(const Instance*i){ //return new MetaQReflect_BarrierOperation_QModel(i);}
 QMLBarrierOperation *ret =new QMLBarrierOperation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -76,7 +79,7 @@ return ret;}
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_BlockAndFlushOperation::QReflect_BlockAndFlushOperation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_BlockAndFlushOperation::QReflect_BlockAndFlushOperation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::BlockAndFlushOperation*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -101,9 +104,11 @@ std::cerr<<"osg::BlockAndFlushOperation is not instanciable"<<std::endl;return I
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_BlockAndFlushOperation::MetaQReflect_BlockAndFlushOperation():MetaQQuickClass( "osg::BlockAndFlushOperation"){
-_typeid=&typeid(osg::BlockAndFlushOperation );           qRegisterMetaType<QMLBlockAndFlushOperation>();
-qmlRegisterType<QReflect_BlockAndFlushOperation>("pmoc.osg",1,0,"QReflect_BlockAndFlushOperation");
-           qmlRegisterType<QMLBlockAndFlushOperation>("pmoc.osg",1,0,"QMLBlockAndFlushOperation");
+_typeid=&typeid(osg::BlockAndFlushOperation );
+           qRegisterMetaType<osg::QMLBlockAndFlushOperation>();
+           qRegisterMetaType<osg::QMLBlockAndFlushOperation*>("pmoc.osg.QMLBlockAndFlushOperation");
+qmlRegisterType<osg::QReflect_BlockAndFlushOperation>("pmoc.osg",1,0,"QReflect_BlockAndFlushOperation");
+           qmlRegisterType<osg::QMLBlockAndFlushOperation>("pmoc.osg",1,0,"QMLBlockAndFlushOperation");
 };
 const std::string osg::MetaQReflect_BlockAndFlushOperation::Imports() const{
  return std::string("");
@@ -112,7 +117,7 @@ const std::string osg::MetaQReflect_BlockAndFlushOperation::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_BlockAndFlushOperation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_BlockAndFlushOperation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_BlockAndFlushOperation::createQQModel(Instance*i){ //return new MetaQReflect_BlockAndFlushOperation_QModel(i);}
+QQModel* osg::MetaQReflect_BlockAndFlushOperation::createQQModel(const Instance*i){ //return new MetaQReflect_BlockAndFlushOperation_QModel(i);}
 QMLBlockAndFlushOperation *ret =new QMLBlockAndFlushOperation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -141,13 +146,15 @@ return ret;}
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_EndOfDynamicDrawBlock::completed(osg::QReflect_State *p0){
+ void osg::QReflect_EndOfDynamicDrawBlock::completed(osg::QReflect_State  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_EndOfDynamicDrawBlock::completed : parameter n.0 is NULL\n"<<endl;return;}
  _model->completed(p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_EndOfDynamicDrawBlock::QReflect_EndOfDynamicDrawBlock(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_EndOfDynamicDrawBlock::QReflect_EndOfDynamicDrawBlock(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::EndOfDynamicDrawBlock*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -167,9 +174,11 @@ std::cerr<<"osg::EndOfDynamicDrawBlock is not instanciable"<<std::endl;return In
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_EndOfDynamicDrawBlock::MetaQReflect_EndOfDynamicDrawBlock():MetaQQuickClass( "osg::EndOfDynamicDrawBlock"){
-_typeid=&typeid(osg::EndOfDynamicDrawBlock );           qRegisterMetaType<QMLEndOfDynamicDrawBlock>();
-qmlRegisterType<QReflect_EndOfDynamicDrawBlock>("pmoc.osg",1,0,"QReflect_EndOfDynamicDrawBlock");
-           qmlRegisterType<QMLEndOfDynamicDrawBlock>("pmoc.osg",1,0,"QMLEndOfDynamicDrawBlock");
+_typeid=&typeid(osg::EndOfDynamicDrawBlock );
+           qRegisterMetaType<osg::QMLEndOfDynamicDrawBlock>();
+           qRegisterMetaType<osg::QMLEndOfDynamicDrawBlock*>("pmoc.osg.QMLEndOfDynamicDrawBlock");
+qmlRegisterType<osg::QReflect_EndOfDynamicDrawBlock>("pmoc.osg",1,0,"QReflect_EndOfDynamicDrawBlock");
+           qmlRegisterType<osg::QMLEndOfDynamicDrawBlock>("pmoc.osg",1,0,"QMLEndOfDynamicDrawBlock");
 };
 const std::string osg::MetaQReflect_EndOfDynamicDrawBlock::Imports() const{
  return std::string("");
@@ -178,7 +187,7 @@ const std::string osg::MetaQReflect_EndOfDynamicDrawBlock::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_EndOfDynamicDrawBlock::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_EndOfDynamicDrawBlock::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_EndOfDynamicDrawBlock::createQQModel(Instance*i){ //return new MetaQReflect_EndOfDynamicDrawBlock_QModel(i);}
+QQModel* osg::MetaQReflect_EndOfDynamicDrawBlock::createQQModel(const Instance*i){ //return new MetaQReflect_EndOfDynamicDrawBlock_QModel(i);}
 QMLEndOfDynamicDrawBlock *ret =new QMLEndOfDynamicDrawBlock(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -198,7 +207,7 @@ return ret;}
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_FlushDeletedGLObjectsOperation::QReflect_FlushDeletedGLObjectsOperation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_FlushDeletedGLObjectsOperation::QReflect_FlushDeletedGLObjectsOperation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::FlushDeletedGLObjectsOperation*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -223,9 +232,11 @@ std::cerr<<"osg::FlushDeletedGLObjectsOperation is not instanciable"<<std::endl;
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_FlushDeletedGLObjectsOperation::MetaQReflect_FlushDeletedGLObjectsOperation():MetaQQuickClass( "osg::FlushDeletedGLObjectsOperation"){
-_typeid=&typeid(osg::FlushDeletedGLObjectsOperation );           qRegisterMetaType<QMLFlushDeletedGLObjectsOperation>();
-qmlRegisterType<QReflect_FlushDeletedGLObjectsOperation>("pmoc.osg",1,0,"QReflect_FlushDeletedGLObjectsOperation");
-           qmlRegisterType<QMLFlushDeletedGLObjectsOperation>("pmoc.osg",1,0,"QMLFlushDeletedGLObjectsOperation");
+_typeid=&typeid(osg::FlushDeletedGLObjectsOperation );
+           qRegisterMetaType<osg::QMLFlushDeletedGLObjectsOperation>();
+           qRegisterMetaType<osg::QMLFlushDeletedGLObjectsOperation*>("pmoc.osg.QMLFlushDeletedGLObjectsOperation");
+qmlRegisterType<osg::QReflect_FlushDeletedGLObjectsOperation>("pmoc.osg",1,0,"QReflect_FlushDeletedGLObjectsOperation");
+           qmlRegisterType<osg::QMLFlushDeletedGLObjectsOperation>("pmoc.osg",1,0,"QMLFlushDeletedGLObjectsOperation");
 };
 const std::string osg::MetaQReflect_FlushDeletedGLObjectsOperation::Imports() const{
  return std::string("");
@@ -234,7 +245,7 @@ const std::string osg::MetaQReflect_FlushDeletedGLObjectsOperation::Imports() co
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_FlushDeletedGLObjectsOperation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_FlushDeletedGLObjectsOperation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_FlushDeletedGLObjectsOperation::createQQModel(Instance*i){ //return new MetaQReflect_FlushDeletedGLObjectsOperation_QModel(i);}
+QQModel* osg::MetaQReflect_FlushDeletedGLObjectsOperation::createQQModel(const Instance*i){ //return new MetaQReflect_FlushDeletedGLObjectsOperation_QModel(i);}
 QMLFlushDeletedGLObjectsOperation *ret =new QMLFlushDeletedGLObjectsOperation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -265,7 +276,7 @@ return ret;}
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_GraphicsOperation::QReflect_GraphicsOperation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_GraphicsOperation::QReflect_GraphicsOperation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::GraphicsOperation*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -290,9 +301,11 @@ std::cerr<<"osg::GraphicsOperation is not instanciable"<<std::endl;return Instan
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_GraphicsOperation::MetaQReflect_GraphicsOperation():MetaQQuickClass( "osg::GraphicsOperation"){
-_typeid=&typeid(osg::GraphicsOperation );           qRegisterMetaType<QMLGraphicsOperation>();
-qmlRegisterType<QReflect_GraphicsOperation>("pmoc.osg",1,0,"QReflect_GraphicsOperation");
-           qmlRegisterType<QMLGraphicsOperation>("pmoc.osg",1,0,"QMLGraphicsOperation");
+_typeid=&typeid(osg::GraphicsOperation );
+           qRegisterMetaType<osg::QMLGraphicsOperation>();
+           qRegisterMetaType<osg::QMLGraphicsOperation*>("pmoc.osg.QMLGraphicsOperation");
+qmlRegisterType<osg::QReflect_GraphicsOperation>("pmoc.osg",1,0,"QReflect_GraphicsOperation");
+           qmlRegisterType<osg::QMLGraphicsOperation>("pmoc.osg",1,0,"QMLGraphicsOperation");
 };
 const std::string osg::MetaQReflect_GraphicsOperation::Imports() const{
  return std::string("");
@@ -301,7 +314,7 @@ const std::string osg::MetaQReflect_GraphicsOperation::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_GraphicsOperation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_GraphicsOperation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_GraphicsOperation::createQQModel(Instance*i){ //return new MetaQReflect_GraphicsOperation_QModel(i);}
+QQModel* osg::MetaQReflect_GraphicsOperation::createQQModel(const Instance*i){ //return new MetaQReflect_GraphicsOperation_QModel(i);}
 QMLGraphicsOperation *ret =new QMLGraphicsOperation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -331,12 +344,13 @@ return ret;}
 #include <customCode/osg/OperationThread_pmoc.hpp>
 using namespace pmoc;
  void osg::QReflect_GraphicsThread::run(){
+//params checking
  _model->run();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_GraphicsThread::QReflect_GraphicsThread(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_GraphicsThread::QReflect_GraphicsThread(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::GraphicsThread*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -364,9 +378,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_GraphicsThread::MetaQReflect_GraphicsThread():MetaQQuickClass( "osg::GraphicsThread"){
-_typeid=&typeid(osg::GraphicsThread );           qRegisterMetaType<QMLGraphicsThread>();
-qmlRegisterType<QReflect_GraphicsThread>("pmoc.osg",1,0,"QReflect_GraphicsThread");
-           qmlRegisterType<QMLGraphicsThread>("pmoc.osg",1,0,"QMLGraphicsThread");
+_typeid=&typeid(osg::GraphicsThread );
+           qRegisterMetaType<osg::QMLGraphicsThread>();
+           qRegisterMetaType<osg::QMLGraphicsThread*>("pmoc.osg.QMLGraphicsThread");
+qmlRegisterType<osg::QReflect_GraphicsThread>("pmoc.osg",1,0,"QReflect_GraphicsThread");
+           qmlRegisterType<osg::QMLGraphicsThread>("pmoc.osg",1,0,"QMLGraphicsThread");
 };
 const std::string osg::MetaQReflect_GraphicsThread::Imports() const{
  return std::string("");
@@ -375,7 +391,7 @@ const std::string osg::MetaQReflect_GraphicsThread::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_GraphicsThread::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_GraphicsThread::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_GraphicsThread::createQQModel(Instance*i){ //return new MetaQReflect_GraphicsThread_QModel(i);}
+QQModel* osg::MetaQReflect_GraphicsThread::createQQModel(const Instance*i){ //return new MetaQReflect_GraphicsThread_QModel(i);}
 QMLGraphicsThread *ret =new QMLGraphicsThread(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -407,7 +423,7 @@ return ret;}
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_ReleaseContext_Block_MakeCurrentOperation::QReflect_ReleaseContext_Block_MakeCurrentOperation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ReleaseContext_Block_MakeCurrentOperation::QReflect_ReleaseContext_Block_MakeCurrentOperation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ReleaseContext_Block_MakeCurrentOperation*>(i->ptr);
     _parentboxes[0]=0;
     _parentboxes[1]=0;
@@ -437,9 +453,11 @@ std::cerr<<"osg::ReleaseContext_Block_MakeCurrentOperation is not instanciable"<
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation():MetaQQuickClass( "osg::ReleaseContext_Block_MakeCurrentOperation"){
-_typeid=&typeid(osg::ReleaseContext_Block_MakeCurrentOperation );           qRegisterMetaType<QMLReleaseContext_Block_MakeCurrentOperation>();
-qmlRegisterType<QReflect_ReleaseContext_Block_MakeCurrentOperation>("pmoc.osg",1,0,"QReflect_ReleaseContext_Block_MakeCurrentOperation");
-           qmlRegisterType<QMLReleaseContext_Block_MakeCurrentOperation>("pmoc.osg",1,0,"QMLReleaseContext_Block_MakeCurrentOperation");
+_typeid=&typeid(osg::ReleaseContext_Block_MakeCurrentOperation );
+           qRegisterMetaType<osg::QMLReleaseContext_Block_MakeCurrentOperation>();
+           qRegisterMetaType<osg::QMLReleaseContext_Block_MakeCurrentOperation*>("pmoc.osg.QMLReleaseContext_Block_MakeCurrentOperation");
+qmlRegisterType<osg::QReflect_ReleaseContext_Block_MakeCurrentOperation>("pmoc.osg",1,0,"QReflect_ReleaseContext_Block_MakeCurrentOperation");
+           qmlRegisterType<osg::QMLReleaseContext_Block_MakeCurrentOperation>("pmoc.osg",1,0,"QMLReleaseContext_Block_MakeCurrentOperation");
 };
 const std::string osg::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation::Imports() const{
  return std::string("");
@@ -448,7 +466,7 @@ const std::string osg::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation::I
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation::createQQModel(Instance*i){ //return new MetaQReflect_ReleaseContext_Block_MakeCurrentOperation_QModel(i);}
+QQModel* osg::MetaQReflect_ReleaseContext_Block_MakeCurrentOperation::createQQModel(const Instance*i){ //return new MetaQReflect_ReleaseContext_Block_MakeCurrentOperation_QModel(i);}
 QMLReleaseContext_Block_MakeCurrentOperation *ret =new QMLReleaseContext_Block_MakeCurrentOperation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -487,10 +505,16 @@ return ret;}
 #include <osg/GraphicsThread_pmoc.hpp>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
+#include <customCode/osg/GraphicsContext_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_RunOperations::operator()(osg::QReflect_GraphicsContext  *p0){
+//params checking
+ _model->operator()(p0->_model);
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_RunOperations::QReflect_RunOperations(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_RunOperations::QReflect_RunOperations(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::RunOperations*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -518,9 +542,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_RunOperations::MetaQReflect_RunOperations():MetaQQuickClass( "osg::RunOperations"){
-_typeid=&typeid(osg::RunOperations );           qRegisterMetaType<QMLRunOperations>();
-qmlRegisterType<QReflect_RunOperations>("pmoc.osg",1,0,"QReflect_RunOperations");
-           qmlRegisterType<QMLRunOperations>("pmoc.osg",1,0,"QMLRunOperations");
+_typeid=&typeid(osg::RunOperations );
+           qRegisterMetaType<osg::QMLRunOperations>();
+           qRegisterMetaType<osg::QMLRunOperations*>("pmoc.osg.QMLRunOperations");
+qmlRegisterType<osg::QReflect_RunOperations>("pmoc.osg",1,0,"QReflect_RunOperations");
+           qmlRegisterType<osg::QMLRunOperations>("pmoc.osg",1,0,"QMLRunOperations");
 };
 const std::string osg::MetaQReflect_RunOperations::Imports() const{
  return std::string("");
@@ -529,7 +555,7 @@ const std::string osg::MetaQReflect_RunOperations::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_RunOperations::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_RunOperations::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_RunOperations::createQQModel(Instance*i){ //return new MetaQReflect_RunOperations_QModel(i);}
+QQModel* osg::MetaQReflect_RunOperations::createQQModel(const Instance*i){ //return new MetaQReflect_RunOperations_QModel(i);}
 QMLRunOperations *ret =new QMLRunOperations(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -560,7 +586,7 @@ return ret;}
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_SwapBuffersOperation::QReflect_SwapBuffersOperation(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_SwapBuffersOperation::QReflect_SwapBuffersOperation(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::SwapBuffersOperation*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -585,9 +611,11 @@ std::cerr<<"osg::SwapBuffersOperation is not instanciable"<<std::endl;return Ins
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_SwapBuffersOperation::MetaQReflect_SwapBuffersOperation():MetaQQuickClass( "osg::SwapBuffersOperation"){
-_typeid=&typeid(osg::SwapBuffersOperation );           qRegisterMetaType<QMLSwapBuffersOperation>();
-qmlRegisterType<QReflect_SwapBuffersOperation>("pmoc.osg",1,0,"QReflect_SwapBuffersOperation");
-           qmlRegisterType<QMLSwapBuffersOperation>("pmoc.osg",1,0,"QMLSwapBuffersOperation");
+_typeid=&typeid(osg::SwapBuffersOperation );
+           qRegisterMetaType<osg::QMLSwapBuffersOperation>();
+           qRegisterMetaType<osg::QMLSwapBuffersOperation*>("pmoc.osg.QMLSwapBuffersOperation");
+qmlRegisterType<osg::QReflect_SwapBuffersOperation>("pmoc.osg",1,0,"QReflect_SwapBuffersOperation");
+           qmlRegisterType<osg::QMLSwapBuffersOperation>("pmoc.osg",1,0,"QMLSwapBuffersOperation");
 };
 const std::string osg::MetaQReflect_SwapBuffersOperation::Imports() const{
  return std::string("");
@@ -596,7 +624,7 @@ const std::string osg::MetaQReflect_SwapBuffersOperation::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_SwapBuffersOperation::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_SwapBuffersOperation::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_SwapBuffersOperation::createQQModel(Instance*i){ //return new MetaQReflect_SwapBuffersOperation_QModel(i);}
+QQModel* osg::MetaQReflect_SwapBuffersOperation::createQQModel(const Instance*i){ //return new MetaQReflect_SwapBuffersOperation_QModel(i);}
 QMLSwapBuffersOperation *ret =new QMLSwapBuffersOperation(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -618,5 +646,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_GraphicsThread_pmoc.cpp"
 #endif
+
+
 
 

@@ -1,16 +1,17 @@
 #ifndef osg_CullingSet_pmocHPP
 #define  osg_CullingSet_pmocHPP 1
 
+
 #include <osg/CullingSet_pmoc.hpp>
 #include <QObject>
+namespace osg{ 
+class QReflect_StateSet;
+			} ;
 namespace osg{ 
 class QReflect_Vec4f;
 			} ;
 namespace osg{ 
 class QReflect_Vec3f;
-			} ;
-namespace osg{ 
-class QReflect_StateSet;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
@@ -19,10 +20,10 @@ namespace osg{
 class QReflect_Polytope;
 			} ;
 namespace osg{ 
-class QReflect_ShadowVolumeOccluder;
+class QReflect_CullingSet;
 			} ;
 namespace osg{ 
-class QReflect_CullingSet;
+class QReflect_ShadowVolumeOccluder;
 			} ;
 #include <osg/CullingSet>
 #include <osg/CullingSet>
@@ -51,7 +52,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 CullingSet * _model;
-QReflect_CullingSet(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CullingSet(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CullingSet( );
 //CullingSet
 // CullingSet & operator=(const  CullingSet &);
@@ -70,23 +71,27 @@ virtual ~QReflect_CullingSet( );
 // void  popOccludersCurrentMask( NodePath &);
 //const  Polytope & getFrustum();
 //const  Vec4 & getPixelSizeVector();
-Q_INVOKABLE  float  clampedPixelSize(osg::QReflect_Vec3f * , float )const;
-Q_INVOKABLE  float  pixelSize(osg::QReflect_Vec3f * , float )const;
+Q_INVOKABLE  float  clampedPixelSize(osg::QReflect_Vec3f *v , float radius)const;
+Q_INVOKABLE  float  getSmallFeatureCullingPixelSize()const;
+Q_INVOKABLE  float  pixelSize(osg::QReflect_Vec3f *v , float radius)const;
+Q_INVOKABLE  float&  getSmallFeatureCullingPixelSize();
 Q_INVOKABLE  int  getCullingMask()const;
-Q_INVOKABLE const float  getSmallFeatureCullingPixelSize()const;
-Q_INVOKABLE void  addOccluder(osg::QReflect_ShadowVolumeOccluder *);
-Q_INVOKABLE void  addStateFrustum(osg::QReflect_StateSet * ,osg::QReflect_Polytope *);
+Q_INVOKABLE void  addOccluder(osg::QReflect_ShadowVolumeOccluder *cv);
+Q_INVOKABLE void  addStateFrustum(osg::QReflect_StateSet *stateset ,osg::QReflect_Polytope *polytope);
 Q_INVOKABLE void  popCurrentMask();
 Q_INVOKABLE void  pushCurrentMask();
 Q_INVOKABLE void  resetCullingMask();
-Q_INVOKABLE void  set(osg::QReflect_CullingSet * ,osg::QReflect_Matrixd * ,osg::QReflect_Vec4f *);
-Q_INVOKABLE void  set(osg::QReflect_CullingSet *);
-Q_INVOKABLE void  setCullingMask( int );
-Q_INVOKABLE void  setFrustum(osg::QReflect_Polytope *);
-Q_INVOKABLE void  setPixelSizeVector(osg::QReflect_Vec4f *);
-Q_INVOKABLE void setSmallFeatureCullingPixelSize(const float &);
-Q_PROPERTY(float SmallFeatureCullingPixelSize  READ getSmallFeatureCullingPixelSize WRITE setSmallFeatureCullingPixelSize NOTIFY SmallFeatureCullingPixelSizeChanged)
-signals: void SmallFeatureCullingPixelSizeChanged(const float&);
+Q_INVOKABLE void  set(osg::QReflect_CullingSet *cs ,osg::QReflect_Matrixd *matrix ,osg::QReflect_Vec4f *pixelSizeVector);
+Q_INVOKABLE void  set(osg::QReflect_CullingSet *cs);
+Q_INVOKABLE void  setCullingMask( int mask);
+Q_INVOKABLE void  setFrustum(osg::QReflect_Polytope *cv);
+Q_INVOKABLE void  setPixelSizeVector(osg::QReflect_Vec4f *v);
+Q_INVOKABLE void  setSmallFeatureCullingPixelSize( float value);
+Q_PROPERTY(float  SmallFeatureCullingPixelSize  READ getSmallFeatureCullingPixelSize WRITE setSmallFeatureCullingPixelSize NOTIFY SmallFeatureCullingPixelSizeChanged)
+Q_PROPERTY(int  CullingMask  READ getCullingMask WRITE setCullingMask NOTIFY CullingMaskChanged)
+signals: void CullingMaskChanged();
+public:
+signals: void SmallFeatureCullingPixelSizeChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -100,7 +105,7 @@ public:
 MetaQReflect_CullingSet();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -111,6 +116,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_CullingSet_pmocHPP
 

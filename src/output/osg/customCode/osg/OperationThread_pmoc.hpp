@@ -12,7 +12,7 @@ class  QMLRefBlock: public QReflect_RefBlock
 {
 Q_OBJECT
 public:
-QMLRefBlock(pmoc::Instance *i=0,QObject* parent=0);
+QMLRefBlock(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -33,7 +33,7 @@ class  QMLOperationQueue: public QReflect_OperationQueue
 {
 Q_OBJECT
 public:
-QMLOperationQueue(pmoc::Instance *i=0,QObject* parent=0);
+QMLOperationQueue(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -53,7 +53,7 @@ class  QMLRefBlockCount: public QReflect_RefBlockCount
 {
 Q_OBJECT
 public:
-QMLRefBlockCount(pmoc::Instance *i=0,QObject* parent=0);
+QMLRefBlockCount(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -74,7 +74,7 @@ class  QMLOperation: public QReflect_Operation
 {
 Q_OBJECT
 public:
-QMLOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -104,7 +104,7 @@ class  QMLOperationThread: public QReflect_OperationThread
 {
 Q_OBJECT
 public:
-QMLOperationThread(pmoc::Instance *i=0,QObject* parent=0);
+QMLOperationThread(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

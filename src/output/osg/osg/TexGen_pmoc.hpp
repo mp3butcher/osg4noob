@@ -1,9 +1,14 @@
 #ifndef osg_TexGen_pmocHPP
 #define  osg_TexGen_pmocHPP 1
+
+
 #include <osg/TexGen_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_Matrixd;
@@ -43,19 +48,22 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 TexGen * _model;
-QReflect_TexGen(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_TexGen(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TexGen( );
 //TexGen
 // Plane & getPlane( Coord );
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
 //const  Plane & getPlane( Coord );
 Q_INVOKABLE  bool  isTextureAttribute()const;
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_TexGen::Mode  getMode()const;
-Q_INVOKABLE void  setMode(osg::QReflect_TexGen::Mode );
-Q_INVOKABLE void  setPlane(osg::QReflect_TexGen::Coord  ,osg::QReflect_Plane *);
-Q_INVOKABLE void  setPlanesFromMatrix(osg::QReflect_Matrixd *);
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setMode(osg::QReflect_TexGen::Mode mode);
+Q_INVOKABLE void  setPlane(osg::QReflect_TexGen::Coord which ,osg::QReflect_Plane *plane);
+Q_INVOKABLE void  setPlanesFromMatrix(osg::QReflect_Matrixd *matrix);
+Q_PROPERTY(osg::QReflect_TexGen::Mode  Mode  READ getMode WRITE setMode NOTIFY ModeChanged)
+signals: void ModeChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -68,7 +76,7 @@ public:
 MetaQReflect_TexGen();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -79,6 +87,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_TexGen_pmocHPP
 

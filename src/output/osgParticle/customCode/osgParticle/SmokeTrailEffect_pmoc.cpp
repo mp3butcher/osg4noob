@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/SmokeTrailEffect_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLSmokeTrailEffect::QMLSmokeTrailEffect(pmoc::Instance *i,QObject* parent):QReflect_SmokeTrailEffect(i,parent){
+osgParticle::QMLSmokeTrailEffect::QMLSmokeTrailEffect(const pmoc::Instance *i,QObject* parent):QReflect_SmokeTrailEffect(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLSmokeTrailEffect::connect2View(QQuickItem*i){

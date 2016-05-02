@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/ForceOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLForceOperator::QMLForceOperator(pmoc::Instance *i,QObject* parent):QReflect_ForceOperator(i,parent){
+osgParticle::QMLForceOperator::QMLForceOperator(const pmoc::Instance *i,QObject* parent):QReflect_ForceOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLForceOperator::connect2View(QQuickItem*i){

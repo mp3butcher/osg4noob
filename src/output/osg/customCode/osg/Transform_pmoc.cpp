@@ -199,7 +199,7 @@ protected:
 osg::QMLTransform::~QMLTransform(){
 
 }
-osg::QMLTransform::QMLTransform(pmoc::Instance *i,QObject* parent):QReflect_Transform(i,parent){
+osg::QMLTransform::QMLTransform(const pmoc::Instance *i,QObject* parent):QReflect_Transform(i,parent){
 //custom initializations
 _dragger=0;
  /* _dragger = createDragger(name);

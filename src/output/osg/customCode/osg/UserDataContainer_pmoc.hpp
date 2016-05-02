@@ -13,7 +13,7 @@ class  QMLUserDataContainer: public QReflect_UserDataContainer
 {
 Q_OBJECT
 public:
-QMLUserDataContainer(pmoc::Instance *i=0,QObject* parent=0);
+QMLUserDataContainer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -39,7 +39,7 @@ class  QMLDefaultUserDataContainer: public QReflect_DefaultUserDataContainer
 {
 Q_OBJECT
 public:
-QMLDefaultUserDataContainer(pmoc::Instance *i=0,QObject* parent=0);
+QMLDefaultUserDataContainer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

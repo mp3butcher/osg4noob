@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ClampColor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLClampColor::QMLClampColor(pmoc::Instance *i,QObject* parent):QReflect_ClampColor(i,parent){
+osg::QMLClampColor::QMLClampColor(const pmoc::Instance *i,QObject* parent):QReflect_ClampColor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLClampColor::connect2View(QQuickItem*i){

@@ -5,9 +5,6 @@
 #include <osg/DrawPixels_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Vec3f;
-			} ;
-namespace osg{ 
 class QReflect_Object;
 			} ;
 namespace osg{ 
@@ -15,6 +12,9 @@ class QReflect_Image;
 			} ;
 namespace osg{ 
 class QReflect_CopyOp;
+			} ;
+namespace osg{ 
+class QReflect_Vec3f;
 			} ;
 namespace osg{ 
 class QReflect_RenderInfo;
@@ -33,30 +33,31 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 DrawPixels * _model;
-QReflect_DrawPixels(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_DrawPixels(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DrawPixels( );
 //DrawPixels
 //virtual  BoundingBox  computeBoundingBox();
 // osg::Vec3 & getPosition();
 //const  osg::Vec3 & getPosition();
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
-Q_INVOKABLE  osg::QReflect_Image * getImage()const;
+Q_INVOKABLE  bool  getUseSubImage()const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE const bool  getUseSubImage()const;
-Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *)const;
+Q_INVOKABLE osg::QReflect_Image*  getImage();
+Q_INVOKABLE osg::QReflect_Image*  getImage()const;
+Q_INVOKABLE osg::QReflect_Object*  clone(osg::QReflect_CopyOp *copyop)const;
 Q_INVOKABLE osg::QReflect_Object*  cloneType()const;
-Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
-Q_INVOKABLE void  getSubImageDimensions( unsigned int & , unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE void  setPosition(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setSubImageDimensions( unsigned int  , unsigned int  , unsigned int  , unsigned int );
-Q_INVOKABLE void pmoc_reverse_setImage( osg::QReflect_Image *par=0);
-Q_INVOKABLE void setImage( osg::QReflect_Image *par);
-Q_INVOKABLE void setUseSubImage(const bool &);
-Q_PROPERTY(bool UseSubImage  READ getUseSubImage WRITE setUseSubImage NOTIFY UseSubImageChanged)
-signals: void ImageChanged(const osg::QReflect_Image*);
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *renderInfo)const;
+Q_INVOKABLE void  getSubImageDimensions( unsigned int &offsetX , unsigned int &offsetY , unsigned int &width , unsigned int &height)const;
+Q_INVOKABLE void  setImage(osg::QReflect_Image *image);
+Q_INVOKABLE void  setPosition(osg::QReflect_Vec3f *position);
+Q_INVOKABLE void  setSubImageDimensions( unsigned int offsetX , unsigned int offsetY , unsigned int width , unsigned int height);
+Q_INVOKABLE void  setUseSubImage( bool useSubImage);
+Q_PROPERTY(bool  UseSubImage  READ getUseSubImage WRITE setUseSubImage NOTIFY UseSubImageChanged)
+Q_PROPERTY(osg::QReflect_Image * Image  READ getImage WRITE setImage NOTIFY ImageChanged)
+signals: void ImageChanged();
 public:
-signals: void UseSubImageChanged(const bool&);
+signals: void UseSubImageChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -70,7 +71,7 @@ public:
 MetaQReflect_DrawPixels();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -81,6 +82,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_DrawPixels_pmocHPP
 

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Polytope_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPolytope::QMLPolytope(pmoc::Instance *i,QObject* parent):QReflect_Polytope(i,parent){
+osg::QMLPolytope::QMLPolytope(const pmoc::Instance *i,QObject* parent):QReflect_Polytope(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPolytope::connect2View(QQuickItem*i){

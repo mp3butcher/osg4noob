@@ -4,7 +4,7 @@
 #include <customCode/osg/Vec3f_pmoc.hpp>
 using namespace pmoc;
 
-osg::QMLVec3f::QMLVec3f(pmoc::Instance *i,QObject* parent):QReflect_Vec3f(i,parent){
+osg::QMLVec3f::QMLVec3f(const pmoc::Instance *i,QObject* parent):QReflect_Vec3f(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLVec3f::connect2View(QQuickItem*i){

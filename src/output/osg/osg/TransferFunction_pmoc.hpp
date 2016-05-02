@@ -1,5 +1,7 @@
 #ifndef osg_TransferFunction_pmocHPP
 #define  osg_TransferFunction_pmocHPP 1
+
+
 #include <osg/TransferFunction_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -19,7 +21,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 TransferFunction * _model;
-QReflect_TransferFunction(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_TransferFunction(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TransferFunction( );
 //TransferFunction
 Q_INVOKABLE osg::QReflect_Image*  getImage();
@@ -36,7 +38,7 @@ public:
 MetaQReflect_TransferFunction();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -66,7 +68,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 TransferFunction1D * _model;
-QReflect_TransferFunction1D(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_TransferFunction1D(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TransferFunction1D( );
 //TransferFunction1D
 // ColorMap & getColorMap();
@@ -78,9 +80,9 @@ virtual ~QReflect_TransferFunction1D( );
 Q_INVOKABLE  float  getMaximum()const;
 Q_INVOKABLE  float  getMinimum()const;
 Q_INVOKABLE  unsigned int  getNumberImageCells()const;
-Q_INVOKABLE void  allocate( unsigned int );
-Q_INVOKABLE void  clear(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  setColor( float  ,osg::QReflect_Vec4f * , bool );
+Q_INVOKABLE void  allocate( unsigned int numImageCells);
+Q_INVOKABLE void  clear(osg::QReflect_Vec4f *color);
+Q_INVOKABLE void  setColor( float v ,osg::QReflect_Vec4f *color , bool updateImage);
 Q_INVOKABLE void  updateImage();
 public slots:
 virtual void updateModel();
@@ -94,7 +96,7 @@ public:
 MetaQReflect_TransferFunction1D();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -105,6 +107,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_TransferFunction_pmocHPP
 

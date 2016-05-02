@@ -1,9 +1,14 @@
 #ifndef osg_PointSprite_pmocHPP
 #define  osg_PointSprite_pmocHPP 1
+
+
 #include <osg/PointSprite_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/PointSprite>
 #include <osg/PointSprite>
@@ -26,16 +31,19 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 PointSprite * _model;
-QReflect_PointSprite(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_PointSprite(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_PointSprite( );
 //PointSprite
-//virtual  bool  checkValidityOfAssociatedModes( osg::State &);
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( osg::State &);
+Q_INVOKABLE  bool  checkValidityOfAssociatedModes(osg::QReflect_State *)const;
 Q_INVOKABLE  bool  isTextureAttribute()const;
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_PointSprite::CoordOriginMode  getCoordOriginMode()const;
-Q_INVOKABLE void  setCoordOriginMode(osg::QReflect_PointSprite::CoordOriginMode );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setCoordOriginMode(osg::QReflect_PointSprite::CoordOriginMode mode);
+Q_PROPERTY(osg::QReflect_PointSprite::CoordOriginMode  CoordOriginMode  READ getCoordOriginMode WRITE setCoordOriginMode NOTIFY CoordOriginModeChanged)
+signals: void CoordOriginModeChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -48,7 +56,7 @@ public:
 MetaQReflect_PointSprite();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -59,6 +67,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_PointSprite_pmocHPP
 

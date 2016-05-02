@@ -13,7 +13,7 @@ class  QMLConstantRateCounter: public QReflect_ConstantRateCounter
 {
 Q_OBJECT
 public:
-QMLConstantRateCounter(pmoc::Instance *i=0,QObject* parent=0);
+QMLConstantRateCounter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

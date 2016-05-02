@@ -15,7 +15,7 @@ class  QMLCollectOccludersVisitor: public QReflect_CollectOccludersVisitor
 {
 Q_OBJECT
 public:
-QMLCollectOccludersVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLCollectOccludersVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

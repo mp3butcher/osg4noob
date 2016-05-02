@@ -6,6 +6,7 @@
 #include <QObject>
 #include <QVector3D>
 #include <QVector4D>
+#include <QColor>
 #include <osg/Light>
 
 #include <osg/StateAttribute_pmoc.hpp>
@@ -23,7 +24,7 @@ class  QMLLight: public QReflect_Light
 public slots:
 virtual void updateModel();
 public:
-    QMLLight(pmoc::Instance *i=0,QObject* parent=0);
+    QMLLight(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 
     QVector4D position()

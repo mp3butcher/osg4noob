@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/MultiSegmentPlacer_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLMultiSegmentPlacer::QMLMultiSegmentPlacer(pmoc::Instance *i,QObject* parent):QReflect_MultiSegmentPlacer(i,parent){
+osgParticle::QMLMultiSegmentPlacer::QMLMultiSegmentPlacer(const pmoc::Instance *i,QObject* parent):QReflect_MultiSegmentPlacer(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLMultiSegmentPlacer::connect2View(QQuickItem*i){

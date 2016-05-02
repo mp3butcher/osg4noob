@@ -24,11 +24,11 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 KdTreeBuilder * _model;
-QReflect_KdTreeBuilder(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_KdTreeBuilder(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_KdTreeBuilder( );
 //KdTreeBuilder
 Q_INVOKABLE osg::QReflect_KdTreeBuilder*  clone();
-Q_INVOKABLE void  apply(osg::QReflect_Geometry *);
+Q_INVOKABLE void  apply(osg::QReflect_Geometry *geometry);
 public slots:
 virtual void updateModel();
  
@@ -41,7 +41,7 @@ public:
 MetaQReflect_KdTreeBuilder();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -68,7 +68,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 KdTree * _model;
-QReflect_KdTree(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_KdTree(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_KdTree( );
 //KdTree
 // KdNode & getNode( int );
@@ -97,7 +97,7 @@ public:
 MetaQReflect_KdTree();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;

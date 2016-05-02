@@ -21,7 +21,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 BoxPlacer * _model;
-QReflect_BoxPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_BoxPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BoxPlacer( );
 //BoxPlacer
 // osg::Vec3  getControlPosition();
@@ -32,10 +32,10 @@ virtual ~QReflect_BoxPlacer( );
 //const  rangef & getYRange();
 //const  rangef & getZRange();
 Q_INVOKABLE  float  volume()const;
-Q_INVOKABLE void  place(osgParticle::QReflect_Particle *)const;
-Q_INVOKABLE void  setXRange( float  , float );
-Q_INVOKABLE void  setYRange( float  , float );
-Q_INVOKABLE void  setZRange( float  , float );
+Q_INVOKABLE void  place(osgParticle::QReflect_Particle *P)const;
+Q_INVOKABLE void  setXRange( float r1 , float r2);
+Q_INVOKABLE void  setYRange( float r1 , float r2);
+Q_INVOKABLE void  setZRange( float r1 , float r2);
 public slots:
 virtual void updateModel();
  
@@ -48,7 +48,7 @@ public:
 MetaQReflect_BoxPlacer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -59,6 +59,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_BoxPlacer_pmocHPP

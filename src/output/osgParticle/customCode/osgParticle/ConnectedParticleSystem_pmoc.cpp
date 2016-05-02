@@ -1,10 +1,11 @@
 #include <osgParticle/ConnectedParticleSystem>
 //includes
 
+#include <QQuickItem>
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/ConnectedParticleSystem_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLConnectedParticleSystem::QMLConnectedParticleSystem(pmoc::Instance *i,QObject* parent):QReflect_ConnectedParticleSystem(i,parent){
+osgParticle::QMLConnectedParticleSystem::QMLConnectedParticleSystem(const pmoc::Instance *i,QObject* parent):QReflect_ConnectedParticleSystem(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLConnectedParticleSystem::connect2View(QQuickItem*i){

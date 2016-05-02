@@ -1,9 +1,14 @@
 #ifndef osg_LightModel_pmocHPP
 #define  osg_LightModel_pmocHPP 1
+
+
 #include <osg/LightModel_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_Vec4f;
@@ -29,24 +34,27 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 LightModel * _model;
-QReflect_LightModel(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_LightModel(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LightModel( );
 //LightModel
-//virtual  void  apply( State &);
 //const  osg::Vec4 & getAmbientIntensity();
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE const bool  getLocalViewer()const;
-Q_INVOKABLE const bool  getTwoSided()const;
+Q_INVOKABLE  bool  getLocalViewer()const;
+Q_INVOKABLE  bool  getTwoSided()const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_LightModel::ColorControl  getColorControl()const;
-Q_INVOKABLE void  setAmbientIntensity(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  setColorControl(osg::QReflect_LightModel::ColorControl );
-Q_INVOKABLE void setLocalViewer(const bool &);
-Q_INVOKABLE void setTwoSided(const bool &);
-Q_PROPERTY(bool LocalViewer  READ getLocalViewer WRITE setLocalViewer NOTIFY LocalViewerChanged)
-Q_PROPERTY(bool TwoSided  READ getTwoSided WRITE setTwoSided NOTIFY TwoSidedChanged)
-signals: void LocalViewerChanged(const bool&);
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setAmbientIntensity(osg::QReflect_Vec4f *ambient);
+Q_INVOKABLE void  setColorControl(osg::QReflect_LightModel::ColorControl cc);
+Q_INVOKABLE void  setLocalViewer( bool localViewer);
+Q_INVOKABLE void  setTwoSided( bool twoSided);
+Q_PROPERTY(bool  LocalViewer  READ getLocalViewer WRITE setLocalViewer NOTIFY LocalViewerChanged)
+Q_PROPERTY(bool  TwoSided  READ getTwoSided WRITE setTwoSided NOTIFY TwoSidedChanged)
+Q_PROPERTY(osg::QReflect_LightModel::ColorControl  ColorControl  READ getColorControl WRITE setColorControl NOTIFY ColorControlChanged)
+signals: void ColorControlChanged();
 public:
-signals: void TwoSidedChanged(const bool&);
+signals: void LocalViewerChanged();
+public:
+signals: void TwoSidedChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -60,7 +68,7 @@ public:
 MetaQReflect_LightModel();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -71,6 +79,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_LightModel_pmocHPP
 

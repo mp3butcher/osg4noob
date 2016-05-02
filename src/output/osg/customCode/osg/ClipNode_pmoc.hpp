@@ -14,7 +14,7 @@ class  QMLClipNode: public QReflect_ClipNode
 {
 Q_OBJECT
 public:
-QMLClipNode(pmoc::Instance *i=0,QObject* parent=0);
+QMLClipNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

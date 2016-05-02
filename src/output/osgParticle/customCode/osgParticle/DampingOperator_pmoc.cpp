@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/DampingOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLDampingOperator::QMLDampingOperator(pmoc::Instance *i,QObject* parent):QReflect_DampingOperator(i,parent){
+osgParticle::QMLDampingOperator::QMLDampingOperator(const pmoc::Instance *i,QObject* parent):QReflect_DampingOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLDampingOperator::connect2View(QQuickItem*i){

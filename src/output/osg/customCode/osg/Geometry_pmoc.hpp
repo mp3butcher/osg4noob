@@ -25,7 +25,7 @@ class  QMLGeometry: public QReflect_Geometry
 
      Q_OBJECT
 public:
-    QMLGeometry(pmoc::Instance *i=0,QObject* parent=0);
+    QMLGeometry(const pmoc::Instance *i=0,QObject* parent=0);
 
     Q_INVOKABLE void pmoc_reverse_addPrimitiveSet(osg::QReflect_PrimitiveSet*);
 ///add attrib array to the first unsettted index
@@ -104,7 +104,7 @@ class  QMLGeometry: public QReflect_Geometry
 {
     Q_OBJECT
 public:
-    QMLGeometry(pmoc::Instance *i=0,QObject* parent=0);
+    QMLGeometry(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 
 };

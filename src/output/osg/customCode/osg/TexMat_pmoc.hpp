@@ -13,7 +13,7 @@ class  QMLTexMat: public QReflect_TexMat
 {
 Q_OBJECT
 public:
-QMLTexMat(pmoc::Instance *i=0,QObject* parent=0);
+QMLTexMat(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

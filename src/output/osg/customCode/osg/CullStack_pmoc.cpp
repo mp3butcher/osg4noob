@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CullStack_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCullStack::QMLCullStack(pmoc::Instance *i,QObject* parent):QReflect_CullStack(i,parent){
+osg::QMLCullStack::QMLCullStack(const pmoc::Instance *i,QObject* parent):QReflect_CullStack(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCullStack::connect2View(QQuickItem*i){

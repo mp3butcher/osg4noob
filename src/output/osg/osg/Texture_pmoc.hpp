@@ -1,153 +1,7 @@
 #ifndef osg_Texture_pmocHPP
 #define  osg_Texture_pmocHPP 1
-#include <osg/Texture_pmoc.hpp>
-#include <QObject>
-namespace osg{ 
-class QReflect_FrameStamp;
-			} ;
-#include <osg/Texture>
 
-#include <MetaQQuickClass.h>
-namespace osg{
-class QReflect_TextureObjectManager: public pmoc::QQModel
-{
-Q_OBJECT
-public:
-virtual unsigned int getNumParentBox(){return 0;}
 
-/// inheritance simulated via composition
-TextureObjectManager * _model;
-QReflect_TextureObjectManager(pmoc::Instance *i=0,QObject* parent=0);
-virtual ~QReflect_TextureObjectManager( );
-//TextureObjectManager
-// TextureObjectSet * getTextureObjectSet(const  Texture::TextureProfile &);
-// osg::ref_ptr<Texture::TextureObject>  generateTextureObject(const  Texture * , GLenum );
-// osg::ref_ptr<Texture::TextureObject>  generateTextureObject(const  Texture * , GLenum  , GLint  , GLenum  , GLsizei  , GLsizei  , GLsizei  , GLint );
-// void  recomputeStats( std::ostream &);
-// void  reportStats( std::ostream &);
-Q_INVOKABLE  bool  checkConsistency()const;
-Q_INVOKABLE  bool  hasSpace( unsigned int )const;
-Q_INVOKABLE  bool  makeSpace( unsigned int );
-Q_INVOKABLE  double&  getDeleteTime();
-Q_INVOKABLE  double&  getGenerateTime();
-Q_INVOKABLE  unsigned int&  getFrameNumber();
-Q_INVOKABLE  unsigned int&  getNumberDeleted();
-Q_INVOKABLE  unsigned int&  getNumberFrames();
-Q_INVOKABLE  unsigned int&  getNumberGenerated();
-Q_INVOKABLE const unsigned int  getCurrTexturePoolSize()const;
-Q_INVOKABLE const unsigned int  getMaxTexturePoolSize()const;
-Q_INVOKABLE const unsigned int  getNumberActiveTextureObjects()const;
-Q_INVOKABLE const unsigned int  getNumberOrphanedTextureObjects()const;
-Q_INVOKABLE void  deleteAllGLObjects();
-Q_INVOKABLE void  discardAllDeletedGLObjects();
-Q_INVOKABLE void  discardAllGLObjects();
-Q_INVOKABLE void  flushAllDeletedGLObjects();
-Q_INVOKABLE void  flushDeletedGLObjects( double  , double &);
-Q_INVOKABLE void  handlePendingOrphandedTextureObjects();
-Q_INVOKABLE void  newFrame(osg::QReflect_FrameStamp *);
-Q_INVOKABLE void  resetStats();
-Q_INVOKABLE void setCurrTexturePoolSize(const unsigned int &);
-Q_INVOKABLE void setMaxTexturePoolSize(const unsigned int &);
-Q_INVOKABLE void setNumberActiveTextureObjects(const unsigned int &);
-Q_INVOKABLE void setNumberOrphanedTextureObjects(const unsigned int &);
-Q_PROPERTY(unsigned int CurrTexturePoolSize  READ getCurrTexturePoolSize WRITE setCurrTexturePoolSize NOTIFY CurrTexturePoolSizeChanged)
-Q_PROPERTY(unsigned int MaxTexturePoolSize  READ getMaxTexturePoolSize WRITE setMaxTexturePoolSize NOTIFY MaxTexturePoolSizeChanged)
-Q_PROPERTY(unsigned int NumberActiveTextureObjects  READ getNumberActiveTextureObjects WRITE setNumberActiveTextureObjects NOTIFY NumberActiveTextureObjectsChanged)
-Q_PROPERTY(unsigned int NumberOrphanedTextureObjects  READ getNumberOrphanedTextureObjects WRITE setNumberOrphanedTextureObjects NOTIFY NumberOrphanedTextureObjectsChanged)
-signals: void CurrTexturePoolSizeChanged(const unsigned int&);
-public:
-signals: void MaxTexturePoolSizeChanged(const unsigned int&);
-public:
-signals: void NumberActiveTextureObjectsChanged(const unsigned int&);
-public:
-signals: void NumberOrphanedTextureObjectsChanged(const unsigned int&);
-public:
-public slots:
-virtual void updateModel();
- 
-}; 
-class MetaQReflect_TextureObjectManager: public pmoc::MetaQQuickClass{
-protected:
-   public:
-MetaQReflect_TextureObjectManager();
- virtual pmoc::Instance createInstance();
-public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
-       virtual const std::string Imports() const;
-    ///if not null return statement to describe yourself by hand
-    //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
-    ///these strings will be used to composite it hierarchically in case no qml is found at runtime
-    ///DONT work yet..
-    virtual  const std::string PREcompoQML()const;
-    virtual const std::string POSTcompoQML()const;
-};
-  
-} 
-#include <osg/Texture_pmoc.hpp>
-#include <QObject>
-namespace osg{ 
-class QReflect_TextureObjectManager;
-			} ;
-#include <osg/Texture>
-#include <osg/Texture>
-
-#include <osg/ref_ptr>
-#include <MetaQQuickClass.h>
-namespace osg{
-class QReflect_TextureObjectSet: public pmoc::QQModel
-{
-Q_OBJECT
-public:
-virtual unsigned int getNumParentBox(){return 1;}
-
-/// inheritance simulated via composition
-TextureObjectSet * _model;
-QReflect_TextureObjectSet(pmoc::Instance *i=0,QObject* parent=0);
-virtual ~QReflect_TextureObjectSet( );
-//TextureObjectSet
-// osg::ref_ptr<Texture::TextureObject>  takeFromOrphans( Texture *);
-// osg::ref_ptr<Texture::TextureObject>  takeOrGenerate( Texture *);
-// void  addToBack( Texture::TextureObject *);
-// void  moveToBack( Texture::TextureObject *);
-// void  moveToSet( Texture::TextureObject * , TextureObjectSet *);
-// void  orphan( Texture::TextureObject *);
-// void  remove( Texture::TextureObject *);
-//const  Texture::TextureProfile & getProfile();
-Q_INVOKABLE  bool  checkConsistency()const;
-Q_INVOKABLE  bool  makeSpace( unsigned int &);
-Q_INVOKABLE  unsigned int  computeNumTextureObjectsInList()const;
-Q_INVOKABLE  unsigned int  getNumOfTextureObjects()const;
-Q_INVOKABLE  unsigned int  getNumOrphans()const;
-Q_INVOKABLE  unsigned int  getNumPendingOrphans()const;
-Q_INVOKABLE  unsigned int  size()const;
-Q_INVOKABLE osg::QReflect_TextureObjectManager*  getParent();
-Q_INVOKABLE void  deleteAllTextureObjects();
-Q_INVOKABLE void  discardAllDeletedTextureObjects();
-Q_INVOKABLE void  discardAllTextureObjects();
-Q_INVOKABLE void  flushAllDeletedTextureObjects();
-Q_INVOKABLE void  flushDeletedTextureObjects( double  , double &);
-Q_INVOKABLE void  handlePendingOrphandedTextureObjects();
-public slots:
-virtual void updateModel();
- 
-}; 
-class MetaQReflect_TextureObjectSet: public pmoc::MetaQQuickClass{
-protected:
-   public:
-MetaQReflect_TextureObjectSet();
- virtual pmoc::Instance createInstance();
-public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
-       virtual const std::string Imports() const;
-    ///if not null return statement to describe yourself by hand
-    //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
-    ///these strings will be used to composite it hierarchically in case no qml is found at runtime
-    ///DONT work yet..
-    virtual  const std::string PREcompoQML()const;
-    virtual const std::string POSTcompoQML()const;
-};
-  
-} 
 #include <osg/Texture_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -278,7 +132,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Texture * _model;
-QReflect_Texture(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Texture(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Texture( );
 //Texture
 // ImageAttachment & getImageAttachment();
@@ -287,8 +141,10 @@ virtual ~QReflect_Texture( );
 // TextureObject * getTextureObject( unsigned int );
 //virtual  Type  getType();
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
+// osg::ref_ptr<Texture::TextureObjectManager> & getTextureObjectManager( unsigned int );
 // osg::ref_ptr<TextureObject>  generateTextureObject(const  Texture * , unsigned int  , GLenum );
 // osg::ref_ptr<TextureObject>  generateTextureObject(const  Texture * , unsigned int  , GLenum  , GLint  , GLenum  , GLsizei  , GLsizei  , GLsizei  , GLint );
+// void  releaseTextureObject( unsigned int  , TextureObject *);
 // void  setTextureObject( unsigned int  , TextureObject *);
 //const  ImageAttachment & getImageAttachment();
 //const  Vec4d & getBorderColor();
@@ -298,84 +154,111 @@ Q_INVOKABLE  GLenum  getSourceType()const;
 Q_INVOKABLE  GLint  getBorderWidth()const;
 Q_INVOKABLE  GLint  getInternalFormat()const;
 Q_INVOKABLE  bool  areAllTextureObjectsLoaded()const;
-Q_INVOKABLE  bool  isCompressedInternalFormat( GLint );
+Q_INVOKABLE  bool  getClientStorageHint()const;
+Q_INVOKABLE  bool  getResizeNonPowerOfTwoHint()const;
+Q_INVOKABLE  bool  getShadowComparison()const;
+Q_INVOKABLE  bool  getUnRefImageDataAfterApply()const;
+Q_INVOKABLE  bool  getUseHardwareMipMapGeneration()const;
+Q_INVOKABLE  bool  isCompressedInternalFormat( GLint internalFormat);
 Q_INVOKABLE  bool  isCompressedInternalFormat()const;
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE  bool  isTextureAttribute()const;
+Q_INVOKABLE  float  getMaxAnisotropy()const;
+Q_INVOKABLE  float  getShadowAmbient()const;
 Q_INVOKABLE  int  getTextureDepth()const;
 Q_INVOKABLE  int  getTextureHeight()const;
 Q_INVOKABLE  int  getTextureWidth()const;
-Q_INVOKABLE  osg::QReflect_GraphicsContext * getReadPBuffer()const;
-Q_INVOKABLE  unsigned int&  getTextureParameterDirty( unsigned int )const;
+Q_INVOKABLE  unsigned int&  getTextureParameterDirty( unsigned int contextID)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE const bool  getClientStorageHint()const;
-Q_INVOKABLE const bool  getResizeNonPowerOfTwoHint()const;
-Q_INVOKABLE const bool  getShadowComparison()const;
-Q_INVOKABLE const bool  getUnRefImageDataAfterApply()const;
-Q_INVOKABLE const bool  getUseHardwareMipMapGeneration()const;
-Q_INVOKABLE const float  getMaxAnisotropy()const;
-Q_INVOKABLE const float  getShadowAmbient()const;
+Q_INVOKABLE osg::QReflect_GraphicsContext*  getReadPBuffer();
+Q_INVOKABLE osg::QReflect_GraphicsContext*  getReadPBuffer()const;
 Q_INVOKABLE osg::QReflect_Texture*  asTexture();
 Q_INVOKABLE osg::QReflect_Texture*  asTexture()const;
-Q_INVOKABLE osg::QReflect_Texture::FilterMode  getFilter(osg::QReflect_Texture::FilterParameter )const;
+Q_INVOKABLE osg::QReflect_Texture::FilterMode  getFilter(osg::QReflect_Texture::FilterParameter which)const;
 Q_INVOKABLE osg::QReflect_Texture::InternalFormatMode  getInternalFormatMode()const;
 Q_INVOKABLE osg::QReflect_Texture::InternalFormatType  getInternalFormatType()const;
 Q_INVOKABLE osg::QReflect_Texture::ShadowCompareFunc  getShadowCompareFunc()const;
 Q_INVOKABLE osg::QReflect_Texture::ShadowTextureMode  getShadowTextureMode()const;
-Q_INVOKABLE osg::QReflect_Texture::WrapMode  getWrap(osg::QReflect_Texture::WrapParameter )const;
+Q_INVOKABLE osg::QReflect_Texture::WrapMode  getWrap(osg::QReflect_Texture::WrapParameter which)const;
 Q_INVOKABLE void  allocateMipmapLevels();
-Q_INVOKABLE void  applyTexImage2D_load(osg::QReflect_State * , GLenum  ,osg::QReflect_Image * , GLsizei  , GLsizei  , GLsizei )const;
-Q_INVOKABLE void  applyTexImage2D_subload(osg::QReflect_State * , GLenum  ,osg::QReflect_Image * , GLsizei  , GLsizei  , GLint  , GLsizei )const;
-Q_INVOKABLE void  bindToImageUnit( unsigned int  , GLenum  , GLenum  , int  , bool  , int );
-Q_INVOKABLE void  compileGLObjects(osg::QReflect_State *)const;
+Q_INVOKABLE void  applyTexImage2D_load(osg::QReflect_State *state , GLenum target ,osg::QReflect_Image *image , GLsizei width , GLsizei height , GLsizei numMipmapLevels)const;
+Q_INVOKABLE void  applyTexImage2D_subload(osg::QReflect_State *state , GLenum target ,osg::QReflect_Image *image , GLsizei width , GLsizei height , GLint inInternalFormat , GLsizei numMipmapLevels)const;
+Q_INVOKABLE void  bindToImageUnit( unsigned int unit , GLenum access , GLenum format , int level , bool layered , int layer);
+Q_INVOKABLE void  compileGLObjects(osg::QReflect_State *state)const;
+Q_INVOKABLE void  deleteAllTextureObjects( unsigned int contextID);
 Q_INVOKABLE void  dirtyTextureObject();
 Q_INVOKABLE void  dirtyTextureParameters();
-Q_INVOKABLE void  getCompressedSize( GLenum  , GLint  , GLint  , GLint  , GLint & , GLint &);
-Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
-Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
-Q_INVOKABLE void  setBorderColor(osg::QReflect_Vec4d *);
-Q_INVOKABLE void  setBorderWidth( GLint );
-Q_INVOKABLE void  setFilter(osg::QReflect_Texture::FilterParameter  ,osg::QReflect_Texture::FilterMode );
-Q_INVOKABLE void  setInternalFormat( GLint );
-Q_INVOKABLE void  setInternalFormatMode(osg::QReflect_Texture::InternalFormatMode );
-Q_INVOKABLE void  setShadowCompareFunc(osg::QReflect_Texture::ShadowCompareFunc );
-Q_INVOKABLE void  setShadowTextureMode(osg::QReflect_Texture::ShadowTextureMode );
-Q_INVOKABLE void  setSourceFormat( GLenum );
-Q_INVOKABLE void  setSourceType( GLenum );
-Q_INVOKABLE void  setSwizzle(osg::QReflect_Vec4i *);
-Q_INVOKABLE void  setWrap(osg::QReflect_Texture::WrapParameter  ,osg::QReflect_Texture::WrapMode );
-Q_INVOKABLE void pmoc_reverse_setReadPBuffer( osg::QReflect_GraphicsContext *par=0);
-Q_INVOKABLE void setClientStorageHint(const bool &);
-Q_INVOKABLE void setMaxAnisotropy(const float &);
-Q_INVOKABLE void setReadPBuffer( osg::QReflect_GraphicsContext *par);
-Q_INVOKABLE void setResizeNonPowerOfTwoHint(const bool &);
-Q_INVOKABLE void setShadowAmbient(const float &);
-Q_INVOKABLE void setShadowComparison(const bool &);
-Q_INVOKABLE void setUnRefImageDataAfterApply(const bool &);
-Q_INVOKABLE void setUseHardwareMipMapGeneration(const bool &);
-Q_PROPERTY(bool ClientStorageHint  READ getClientStorageHint WRITE setClientStorageHint NOTIFY ClientStorageHintChanged)
-Q_PROPERTY(bool ResizeNonPowerOfTwoHint  READ getResizeNonPowerOfTwoHint WRITE setResizeNonPowerOfTwoHint NOTIFY ResizeNonPowerOfTwoHintChanged)
-Q_PROPERTY(bool ShadowComparison  READ getShadowComparison WRITE setShadowComparison NOTIFY ShadowComparisonChanged)
-Q_PROPERTY(bool UnRefImageDataAfterApply  READ getUnRefImageDataAfterApply WRITE setUnRefImageDataAfterApply NOTIFY UnRefImageDataAfterApplyChanged)
-Q_PROPERTY(bool UseHardwareMipMapGeneration  READ getUseHardwareMipMapGeneration WRITE setUseHardwareMipMapGeneration NOTIFY UseHardwareMipMapGenerationChanged)
-Q_PROPERTY(float MaxAnisotropy  READ getMaxAnisotropy WRITE setMaxAnisotropy NOTIFY MaxAnisotropyChanged)
-Q_PROPERTY(float ShadowAmbient  READ getShadowAmbient WRITE setShadowAmbient NOTIFY ShadowAmbientChanged)
-signals: void ClientStorageHintChanged(const bool&);
+Q_INVOKABLE void  discardAllDeletedTextureObjects( unsigned int contextID);
+Q_INVOKABLE void  discardAllTextureObjects( unsigned int contextID);
+Q_INVOKABLE void  flushAllDeletedTextureObjects( unsigned int contextID);
+Q_INVOKABLE void  flushDeletedTextureObjects( unsigned int contextID , double currentTime , double &availableTime);
+Q_INVOKABLE void  getCompressedSize( GLenum internalFormat , GLint width , GLint height , GLint depth , GLint &blockSize , GLint &size);
+Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *state)const;
+Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int maxSize);
+Q_INVOKABLE void  setBorderColor(osg::QReflect_Vec4d *color);
+Q_INVOKABLE void  setBorderWidth( GLint width);
+Q_INVOKABLE void  setClientStorageHint( bool flag);
+Q_INVOKABLE void  setFilter(osg::QReflect_Texture::FilterParameter which ,osg::QReflect_Texture::FilterMode filter);
+Q_INVOKABLE void  setInternalFormat( GLint internalFormat);
+Q_INVOKABLE void  setInternalFormatMode(osg::QReflect_Texture::InternalFormatMode mode);
+Q_INVOKABLE void  setMaxAnisotropy( float anis);
+Q_INVOKABLE void  setReadPBuffer(osg::QReflect_GraphicsContext *context);
+Q_INVOKABLE void  setResizeNonPowerOfTwoHint( bool flag);
+Q_INVOKABLE void  setShadowAmbient( float shadow_ambient);
+Q_INVOKABLE void  setShadowCompareFunc(osg::QReflect_Texture::ShadowCompareFunc func);
+Q_INVOKABLE void  setShadowComparison( bool flag);
+Q_INVOKABLE void  setShadowTextureMode(osg::QReflect_Texture::ShadowTextureMode mode);
+Q_INVOKABLE void  setSourceFormat( GLenum sourceFormat);
+Q_INVOKABLE void  setSourceType( GLenum sourceType);
+Q_INVOKABLE void  setSwizzle(osg::QReflect_Vec4i *swizzle);
+Q_INVOKABLE void  setUnRefImageDataAfterApply( bool flag);
+Q_INVOKABLE void  setUseHardwareMipMapGeneration( bool useHardwareMipMapGeneration);
+Q_INVOKABLE void  setWrap(osg::QReflect_Texture::WrapParameter which ,osg::QReflect_Texture::WrapMode wrap);
+Q_PROPERTY(GLenum  SourceFormat  READ getSourceFormat WRITE setSourceFormat NOTIFY SourceFormatChanged)
+Q_PROPERTY(GLenum  SourceType  READ getSourceType WRITE setSourceType NOTIFY SourceTypeChanged)
+Q_PROPERTY(GLint  BorderWidth  READ getBorderWidth WRITE setBorderWidth NOTIFY BorderWidthChanged)
+Q_PROPERTY(GLint  InternalFormat  READ getInternalFormat WRITE setInternalFormat NOTIFY InternalFormatChanged)
+Q_PROPERTY(bool  ClientStorageHint  READ getClientStorageHint WRITE setClientStorageHint NOTIFY ClientStorageHintChanged)
+Q_PROPERTY(bool  ResizeNonPowerOfTwoHint  READ getResizeNonPowerOfTwoHint WRITE setResizeNonPowerOfTwoHint NOTIFY ResizeNonPowerOfTwoHintChanged)
+Q_PROPERTY(bool  ShadowComparison  READ getShadowComparison WRITE setShadowComparison NOTIFY ShadowComparisonChanged)
+Q_PROPERTY(bool  UnRefImageDataAfterApply  READ getUnRefImageDataAfterApply WRITE setUnRefImageDataAfterApply NOTIFY UnRefImageDataAfterApplyChanged)
+Q_PROPERTY(bool  UseHardwareMipMapGeneration  READ getUseHardwareMipMapGeneration WRITE setUseHardwareMipMapGeneration NOTIFY UseHardwareMipMapGenerationChanged)
+Q_PROPERTY(float  MaxAnisotropy  READ getMaxAnisotropy WRITE setMaxAnisotropy NOTIFY MaxAnisotropyChanged)
+Q_PROPERTY(float  ShadowAmbient  READ getShadowAmbient WRITE setShadowAmbient NOTIFY ShadowAmbientChanged)
+Q_PROPERTY(osg::QReflect_GraphicsContext * ReadPBuffer  READ getReadPBuffer WRITE setReadPBuffer NOTIFY ReadPBufferChanged)
+Q_PROPERTY(osg::QReflect_Texture::InternalFormatMode  InternalFormatMode  READ getInternalFormatMode WRITE setInternalFormatMode NOTIFY InternalFormatModeChanged)
+Q_PROPERTY(osg::QReflect_Texture::ShadowCompareFunc  ShadowCompareFunc  READ getShadowCompareFunc WRITE setShadowCompareFunc NOTIFY ShadowCompareFuncChanged)
+Q_PROPERTY(osg::QReflect_Texture::ShadowTextureMode  ShadowTextureMode  READ getShadowTextureMode WRITE setShadowTextureMode NOTIFY ShadowTextureModeChanged)
+signals: void BorderWidthChanged();
 public:
-signals: void MaxAnisotropyChanged(const float&);
+signals: void ClientStorageHintChanged();
 public:
-signals: void ReadPBufferChanged(const osg::QReflect_GraphicsContext*);
+signals: void InternalFormatChanged();
 public:
-signals: void ResizeNonPowerOfTwoHintChanged(const bool&);
+signals: void InternalFormatModeChanged();
 public:
-signals: void ShadowAmbientChanged(const float&);
+signals: void MaxAnisotropyChanged();
 public:
-signals: void ShadowComparisonChanged(const bool&);
+signals: void ReadPBufferChanged();
 public:
-signals: void UnRefImageDataAfterApplyChanged(const bool&);
+signals: void ResizeNonPowerOfTwoHintChanged();
 public:
-signals: void UseHardwareMipMapGenerationChanged(const bool&);
+signals: void ShadowAmbientChanged();
+public:
+signals: void ShadowCompareFuncChanged();
+public:
+signals: void ShadowComparisonChanged();
+public:
+signals: void ShadowTextureModeChanged();
+public:
+signals: void SourceFormatChanged();
+public:
+signals: void SourceTypeChanged();
+public:
+signals: void UnRefImageDataAfterApplyChanged();
+public:
+signals: void UseHardwareMipMapGenerationChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -387,7 +270,7 @@ protected:
 MetaQReflect_Texture();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -398,6 +281,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Texture_pmocHPP
 

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BlendEquationi_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBlendEquationi::QMLBlendEquationi(pmoc::Instance *i,QObject* parent):QReflect_BlendEquationi(i,parent){
+osg::QMLBlendEquationi::QMLBlendEquationi(const pmoc::Instance *i,QObject* parent):QReflect_BlendEquationi(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBlendEquationi::connect2View(QQuickItem*i){

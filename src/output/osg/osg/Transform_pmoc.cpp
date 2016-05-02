@@ -1,41 +1,76 @@
 #include <osg/Transform>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osg/Transform_pmoc.hpp>
 #include <customCode/osg/Transform_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
+#include <customCode/osg/MatrixTransform_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
+#include <customCode/osg/PositionAttitudeTransform_pmoc.hpp>
+#include <customCode/osg/Transform_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_Transform::computeLocalToWorldMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+ bool  osg::QReflect_Transform:: computeLocalToWorldMatrix(osg::QReflect_Matrixd  *p0 ,osg::QReflect_NodeVisitor  *p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Transform::computeLocalToWorldMatrix : parameter n.0 is NULL\n"<<endl;return -1;}
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_Transform::computeLocalToWorldMatrix : parameter n.1 is NULL\n"<<endl;return -1;}
 return _model->computeLocalToWorldMatrix(*p0->_model ,p1->_model);
 
 }
- bool  osg::QReflect_Transform::computeWorldToLocalMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+ bool  osg::QReflect_Transform:: computeWorldToLocalMatrix(osg::QReflect_Matrixd  *p0 ,osg::QReflect_NodeVisitor  *p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Transform::computeWorldToLocalMatrix : parameter n.0 is NULL\n"<<endl;return -1;}
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_Transform::computeWorldToLocalMatrix : parameter n.1 is NULL\n"<<endl;return -1;}
 return _model->computeWorldToLocalMatrix(*p0->_model ,p1->_model);
 
 }
- void osg::QReflect_Transform::setReferenceFrame(osg::QReflect_Transform::ReferenceFrame p0){
+ void osg::QReflect_Transform::setReferenceFrame(osg::QReflect_Transform::ReferenceFrame  p0){
+//params checking
  _model->setReferenceFrame(static_cast<osg::Transform::ReferenceFrame>(p0));
+emit ReferenceFrameChanged();
 
 }
+osg::QReflect_MatrixTransform*osg::QReflect_Transform::asMatrixTransform()const{
+//params checking
+PMOCSAFEADDOBJECT(*_model->asMatrixTransform(),inst);
+return inst.isValid()?((osg::QReflect_MatrixTransform * )inst.model->createQQModel(&inst)):NULL;
+}
+osg::QReflect_MatrixTransform*osg::QReflect_Transform::asMatrixTransform(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->asMatrixTransform(),inst);
+return inst.isValid()?((osg::QReflect_MatrixTransform * )inst.model->createQQModel(&inst)):NULL;
+}
+osg::QReflect_PositionAttitudeTransform*osg::QReflect_Transform::asPositionAttitudeTransform()const{
+//params checking
+PMOCSAFEADDOBJECT(*_model->asPositionAttitudeTransform(),inst);
+return inst.isValid()?((osg::QReflect_PositionAttitudeTransform * )inst.model->createQQModel(&inst)):NULL;
+}
+osg::QReflect_PositionAttitudeTransform*osg::QReflect_Transform::asPositionAttitudeTransform(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->asPositionAttitudeTransform(),inst);
+return inst.isValid()?((osg::QReflect_PositionAttitudeTransform * )inst.model->createQQModel(&inst)):NULL;
+}
 osg::QReflect_Transform*osg::QReflect_Transform::asTransform()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->asTransform(),inst);
 return inst.isValid()?((osg::QReflect_Transform * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Transform*osg::QReflect_Transform::asTransform(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->asTransform(),inst);
 return inst.isValid()?((osg::QReflect_Transform * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Transform::ReferenceFrame  osg::QReflect_Transform::getReferenceFrame()const{
+//params checking
 osg::QReflect_Transform::ReferenceFrame ret=static_cast<osg::QReflect_Transform::ReferenceFrame>( _model->getReferenceFrame());return  ret;
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Transform::QReflect_Transform(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Transform::QReflect_Transform(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Transform*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -63,9 +98,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Transform::MetaQReflect_Transform():MetaQQuickClass( "osg::Transform"){
-_typeid=&typeid(osg::Transform );           qRegisterMetaType<QMLTransform>();
-qmlRegisterType<QReflect_Transform>("pmoc.osg",1,0,"QReflect_Transform");
-           qmlRegisterType<QMLTransform>("pmoc.osg",1,0,"QMLTransform");
+_typeid=&typeid(osg::Transform );
+           qRegisterMetaType<osg::QMLTransform>();
+           qRegisterMetaType<osg::QMLTransform*>("pmoc.osg.QMLTransform");
+qmlRegisterType<osg::QReflect_Transform>("pmoc.osg",1,0,"QReflect_Transform");
+           qmlRegisterType<osg::QMLTransform>("pmoc.osg",1,0,"QMLTransform");
 };
 const std::string osg::MetaQReflect_Transform::Imports() const{
  return std::string("");
@@ -74,7 +111,7 @@ const std::string osg::MetaQReflect_Transform::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Transform::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Transform::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Transform::createQQModel(Instance*i){ //return new MetaQReflect_Transform_QModel(i);}
+QQModel* osg::MetaQReflect_Transform::createQQModel(const Instance*i){ //return new MetaQReflect_Transform_QModel(i);}
 QMLTransform *ret =new QMLTransform(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -96,6 +133,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Transform_pmoc.cpp"
 #endif
+
 
 
 

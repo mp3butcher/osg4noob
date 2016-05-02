@@ -13,7 +13,7 @@ class  QMLLightModel: public QReflect_LightModel
 {
 Q_OBJECT
 public:
-QMLLightModel(pmoc::Instance *i=0,QObject* parent=0);
+QMLLightModel(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

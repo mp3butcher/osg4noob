@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Texture2DMultisample_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTexture2DMultisample::QMLTexture2DMultisample(pmoc::Instance *i,QObject* parent):QReflect_Texture2DMultisample(i,parent){
+osg::QMLTexture2DMultisample::QMLTexture2DMultisample(const pmoc::Instance *i,QObject* parent):QReflect_Texture2DMultisample(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexture2DMultisample::connect2View(QQuickItem*i){

@@ -13,7 +13,7 @@ class  QMLShaderComposer: public QReflect_ShaderComposer
 {
 Q_OBJECT
 public:
-QMLShaderComposer(pmoc::Instance *i=0,QObject* parent=0);
+QMLShaderComposer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

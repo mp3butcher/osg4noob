@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/FluidFrictionOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLFluidFrictionOperator::QMLFluidFrictionOperator(pmoc::Instance *i,QObject* parent):QReflect_FluidFrictionOperator(i,parent){
+osgParticle::QMLFluidFrictionOperator::QMLFluidFrictionOperator(const pmoc::Instance *i,QObject* parent):QReflect_FluidFrictionOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLFluidFrictionOperator::connect2View(QQuickItem*i){

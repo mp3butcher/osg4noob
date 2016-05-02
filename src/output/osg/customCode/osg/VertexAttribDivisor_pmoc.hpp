@@ -13,7 +13,7 @@ class  QMLVertexAttribDivisor: public QReflect_VertexAttribDivisor
 {
 Q_OBJECT
 public:
-QMLVertexAttribDivisor(pmoc::Instance *i=0,QObject* parent=0);
+QMLVertexAttribDivisor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

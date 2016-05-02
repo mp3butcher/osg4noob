@@ -1,9 +1,14 @@
 #ifndef osg_ShadeModel_pmocHPP
 #define  osg_ShadeModel_pmocHPP 1
+
+
 #include <osg/ShadeModel_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/ShadeModel>
 #include <osg/ShadeModel>
@@ -26,13 +31,16 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ShadeModel * _model;
-QReflect_ShadeModel(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ShadeModel(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ShadeModel( );
 //ShadeModel
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_ShadeModel::Mode  getMode()const;
-Q_INVOKABLE void  setMode(osg::QReflect_ShadeModel::Mode );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setMode(osg::QReflect_ShadeModel::Mode mode);
+Q_PROPERTY(osg::QReflect_ShadeModel::Mode  Mode  READ getMode WRITE setMode NOTIFY ModeChanged)
+signals: void ModeChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -45,7 +53,7 @@ public:
 MetaQReflect_ShadeModel();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -56,6 +64,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ShadeModel_pmocHPP
 

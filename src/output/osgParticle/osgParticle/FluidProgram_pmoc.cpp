@@ -1,6 +1,7 @@
 #include <osgParticle/FluidProgram>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,33 +10,58 @@
 #include <customCode/osgParticle/Program_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_FluidProgram::setAcceleration(osg::QReflect_Vec3f *p0){
+ float  osgParticle::QReflect_FluidProgram:: getFluidDensity()const{
+//params checking
+return _model->getFluidDensity();
+
+}
+ float  osgParticle::QReflect_FluidProgram:: getFluidViscosity()const{
+//params checking
+return _model->getFluidViscosity();
+
+}
+ void osgParticle::QReflect_FluidProgram::setAcceleration(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_FluidProgram::setAcceleration : parameter n.0 is NULL\n"<<endl;return;}
  _model->setAcceleration(*p0->_model);
 
 }
+ void osgParticle::QReflect_FluidProgram::setFluidDensity( float  p0){
+//params checking
+ _model->setFluidDensity(p0);
+emit FluidDensityChanged();
+
+}
  void osgParticle::QReflect_FluidProgram::setFluidToAir(){
+//params checking
  _model->setFluidToAir();
 
 }
  void osgParticle::QReflect_FluidProgram::setFluidToWater(){
+//params checking
  _model->setFluidToWater();
 
 }
- void osgParticle::QReflect_FluidProgram::setToGravity( float p0){
+ void osgParticle::QReflect_FluidProgram::setFluidViscosity( float  p0){
+//params checking
+ _model->setFluidViscosity(p0);
+emit FluidViscosityChanged();
+
+}
+ void osgParticle::QReflect_FluidProgram::setToGravity( float  p0){
+//params checking
  _model->setToGravity(p0);
 
 }
- void osgParticle::QReflect_FluidProgram::setWind(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_FluidProgram::setWind(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_FluidProgram::setWind : parameter n.0 is NULL\n"<<endl;return;}
  _model->setWind(*p0->_model);
 
 }
-const float osgParticle::QReflect_FluidProgram::getFluidDensity()const{return _model->getFluidDensity();}
-const float osgParticle::QReflect_FluidProgram::getFluidViscosity()const{return _model->getFluidViscosity();}
-void  osgParticle::QReflect_FluidProgram::setFluidDensity(const float &par){_model->setFluidDensity(par);emit FluidDensityChanged(par);}
-void  osgParticle::QReflect_FluidProgram::setFluidViscosity(const float &par){_model->setFluidViscosity(par);emit FluidViscosityChanged(par);}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_FluidProgram::QReflect_FluidProgram(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_FluidProgram::QReflect_FluidProgram(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::FluidProgram*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -63,9 +89,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_FluidProgram::MetaQReflect_FluidProgram():MetaQQuickClass( "osgParticle::FluidProgram"){
-_typeid=&typeid(osgParticle::FluidProgram );           qRegisterMetaType<QMLFluidProgram>();
-qmlRegisterType<QReflect_FluidProgram>("pmoc.osgParticle",1,0,"QReflect_FluidProgram");
-           qmlRegisterType<QMLFluidProgram>("pmoc.osgParticle",1,0,"QMLFluidProgram");
+_typeid=&typeid(osgParticle::FluidProgram );
+           qRegisterMetaType<osgParticle::QMLFluidProgram>();
+           qRegisterMetaType<osgParticle::QMLFluidProgram*>("pmoc.osgParticle.QMLFluidProgram");
+qmlRegisterType<osgParticle::QReflect_FluidProgram>("pmoc.osgParticle",1,0,"QReflect_FluidProgram");
+           qmlRegisterType<osgParticle::QMLFluidProgram>("pmoc.osgParticle",1,0,"QMLFluidProgram");
 };
 const std::string osgParticle::MetaQReflect_FluidProgram::Imports() const{
  return std::string("");
@@ -74,7 +102,7 @@ const std::string osgParticle::MetaQReflect_FluidProgram::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_FluidProgram::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_FluidProgram::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_FluidProgram::createQQModel(Instance*i){ //return new MetaQReflect_FluidProgram_QModel(i);}
+QQModel* osgParticle::MetaQReflect_FluidProgram::createQQModel(const Instance*i){ //return new MetaQReflect_FluidProgram_QModel(i);}
 QMLFluidProgram *ret =new QMLFluidProgram(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

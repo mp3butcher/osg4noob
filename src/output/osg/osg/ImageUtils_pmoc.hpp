@@ -1,5 +1,7 @@
 #ifndef osg_ImageUtils_pmocHPP
 #define  osg_ImageUtils_pmocHPP 1
+
+
 #include <osg/ImageUtils_pmoc.hpp>
 #include <QObject>
 #include <osg/ImageUtils>
@@ -14,7 +16,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 struct CastAndScaleToFloatOperation * _model;
-QReflect_CastAndScaleToFloatOperation(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CastAndScaleToFloatOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CastAndScaleToFloatOperation( );
 //CastAndScaleToFloatOperation
 public slots:
@@ -27,7 +29,7 @@ protected:
 MetaQReflect_CastAndScaleToFloatOperation();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -38,6 +40,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ImageUtils_pmocHPP
 

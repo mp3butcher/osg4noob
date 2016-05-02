@@ -1,6 +1,7 @@
 #include <osgParticle/DampingOperator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -10,41 +11,68 @@
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_DampingOperator::getCutoff( float &p0 , float &p1)const{
+ float  osgParticle::QReflect_DampingOperator:: getCutoffHigh()const{
+//params checking
+return _model->getCutoffHigh();
+
+}
+ float  osgParticle::QReflect_DampingOperator:: getCutoffLow()const{
+//params checking
+return _model->getCutoffLow();
+
+}
+ void osgParticle::QReflect_DampingOperator::getCutoff( float  &p0 , float  &p1)const{
+//params checking
  _model->getCutoff(p0 ,p1);
 
 }
- void osgParticle::QReflect_DampingOperator::getDamping( float &p0 , float &p1 , float &p2)const{
+ void osgParticle::QReflect_DampingOperator::getDamping( float  &p0 , float  &p1 , float  &p2)const{
+//params checking
  _model->getDamping(p0 ,p1 ,p2);
 
 }
- void osgParticle::QReflect_DampingOperator::operate(osgParticle::QReflect_Particle *p0 , double p1){
+ void osgParticle::QReflect_DampingOperator::operate(osgParticle::QReflect_Particle  *p0 , double  p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_DampingOperator::operate : parameter n.0 is NULL\n"<<endl;return;}
  _model->operate(p0->_model ,p1);
 
 }
- void osgParticle::QReflect_DampingOperator::setCutoff( float p0 , float p1){
+ void osgParticle::QReflect_DampingOperator::setCutoff( float  p0 , float  p1){
+//params checking
  _model->setCutoff(p0 ,p1);
 
 }
- void osgParticle::QReflect_DampingOperator::setDamping( float p0 , float p1 , float p2){
+ void osgParticle::QReflect_DampingOperator::setCutoffHigh( float  p0){
+//params checking
+ _model->setCutoffHigh(p0);
+emit CutoffHighChanged();
+
+}
+ void osgParticle::QReflect_DampingOperator::setCutoffLow( float  p0){
+//params checking
+ _model->setCutoffLow(p0);
+emit CutoffLowChanged();
+
+}
+ void osgParticle::QReflect_DampingOperator::setDamping( float  p0 , float  p1 , float  p2){
+//params checking
  _model->setDamping(p0 ,p1 ,p2);
 
 }
- void osgParticle::QReflect_DampingOperator::setDamping( float p0){
+ void osgParticle::QReflect_DampingOperator::setDamping( float  p0){
+//params checking
  _model->setDamping(p0);
 
 }
- void osgParticle::QReflect_DampingOperator::setDamping(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_DampingOperator::setDamping(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_DampingOperator::setDamping : parameter n.0 is NULL\n"<<endl;return;}
  _model->setDamping(*p0->_model);
 
 }
-const float osgParticle::QReflect_DampingOperator::getCutoffHigh()const{return _model->getCutoffHigh();}
-const float osgParticle::QReflect_DampingOperator::getCutoffLow()const{return _model->getCutoffLow();}
-void  osgParticle::QReflect_DampingOperator::setCutoffHigh(const float &par){_model->setCutoffHigh(par);emit CutoffHighChanged(par);}
-void  osgParticle::QReflect_DampingOperator::setCutoffLow(const float &par){_model->setCutoffLow(par);emit CutoffLowChanged(par);}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_DampingOperator::QReflect_DampingOperator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_DampingOperator::QReflect_DampingOperator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::DampingOperator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -72,9 +100,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_DampingOperator::MetaQReflect_DampingOperator():MetaQQuickClass( "osgParticle::DampingOperator"){
-_typeid=&typeid(osgParticle::DampingOperator );           qRegisterMetaType<QMLDampingOperator>();
-qmlRegisterType<QReflect_DampingOperator>("pmoc.osgParticle",1,0,"QReflect_DampingOperator");
-           qmlRegisterType<QMLDampingOperator>("pmoc.osgParticle",1,0,"QMLDampingOperator");
+_typeid=&typeid(osgParticle::DampingOperator );
+           qRegisterMetaType<osgParticle::QMLDampingOperator>();
+           qRegisterMetaType<osgParticle::QMLDampingOperator*>("pmoc.osgParticle.QMLDampingOperator");
+qmlRegisterType<osgParticle::QReflect_DampingOperator>("pmoc.osgParticle",1,0,"QReflect_DampingOperator");
+           qmlRegisterType<osgParticle::QMLDampingOperator>("pmoc.osgParticle",1,0,"QMLDampingOperator");
 };
 const std::string osgParticle::MetaQReflect_DampingOperator::Imports() const{
  return std::string("");
@@ -83,7 +113,7 @@ const std::string osgParticle::MetaQReflect_DampingOperator::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_DampingOperator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_DampingOperator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_DampingOperator::createQQModel(Instance*i){ //return new MetaQReflect_DampingOperator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_DampingOperator::createQQModel(const Instance*i){ //return new MetaQReflect_DampingOperator_QModel(i);}
 QMLDampingOperator *ret =new QMLDampingOperator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

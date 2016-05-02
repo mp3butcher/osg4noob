@@ -20,7 +20,7 @@ class  QMLDrawPixels: public QReflect_DrawPixels
 {
 Q_OBJECT
 public:
-QMLDrawPixels(pmoc::Instance *i=0,QObject* parent=0);
+QMLDrawPixels(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

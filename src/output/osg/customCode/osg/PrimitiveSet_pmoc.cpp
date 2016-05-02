@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawArrayLengths::QMLDrawArrayLengths(pmoc::Instance *i,QObject* parent):QReflect_DrawArrayLengths(i,parent){
+osg::QMLDrawArrayLengths::QMLDrawArrayLengths(const pmoc::Instance *i,QObject* parent):QReflect_DrawArrayLengths(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawArrayLengths::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLDrawArrayLengths::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawArrays::QMLDrawArrays(pmoc::Instance *i,QObject* parent):QReflect_DrawArrays(i,parent){
+osg::QMLDrawArrays::QMLDrawArrays(const pmoc::Instance *i,QObject* parent):QReflect_DrawArrays(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawArrays::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLDrawArrays::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawElements::QMLDrawElements(pmoc::Instance *i,QObject* parent):QReflect_DrawElements(i,parent){
+osg::QMLDrawElements::QMLDrawElements(const pmoc::Instance *i,QObject* parent):QReflect_DrawElements(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawElements::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLDrawElements::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawElementsUByte::QMLDrawElementsUByte(pmoc::Instance *i,QObject* parent):QReflect_DrawElementsUByte(i,parent){
+osg::QMLDrawElementsUByte::QMLDrawElementsUByte(const pmoc::Instance *i,QObject* parent):QReflect_DrawElementsUByte(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawElementsUByte::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLDrawElementsUByte::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawElementsUInt::QMLDrawElementsUInt(pmoc::Instance *i,QObject* parent):QReflect_DrawElementsUInt(i,parent){
+osg::QMLDrawElementsUInt::QMLDrawElementsUInt(const pmoc::Instance *i,QObject* parent):QReflect_DrawElementsUInt(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawElementsUInt::connect2View(QQuickItem*i){
@@ -133,7 +133,7 @@ void  osg::QMLDrawElementsUInt::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawElementsUShort::QMLDrawElementsUShort(pmoc::Instance *i,QObject* parent):QReflect_DrawElementsUShort(i,parent){
+osg::QMLDrawElementsUShort::QMLDrawElementsUShort(const pmoc::Instance *i,QObject* parent):QReflect_DrawElementsUShort(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawElementsUShort::connect2View(QQuickItem*i){
@@ -159,7 +159,7 @@ void  osg::QMLDrawElementsUShort::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPrimitiveFunctor::QMLPrimitiveFunctor(pmoc::Instance *i,QObject* parent):QReflect_PrimitiveFunctor(i,parent){
+osg::QMLPrimitiveFunctor::QMLPrimitiveFunctor(const pmoc::Instance *i,QObject* parent):QReflect_PrimitiveFunctor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPrimitiveFunctor::connect2View(QQuickItem*i){
@@ -185,7 +185,7 @@ void  osg::QMLPrimitiveFunctor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPrimitiveIndexFunctor::QMLPrimitiveIndexFunctor(pmoc::Instance *i,QObject* parent):QReflect_PrimitiveIndexFunctor(i,parent){
+osg::QMLPrimitiveIndexFunctor::QMLPrimitiveIndexFunctor(const pmoc::Instance *i,QObject* parent):QReflect_PrimitiveIndexFunctor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPrimitiveIndexFunctor::connect2View(QQuickItem*i){
@@ -211,7 +211,7 @@ void  osg::QMLPrimitiveIndexFunctor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPrimitiveSet::QMLPrimitiveSet(pmoc::Instance *i,QObject* parent):QReflect_PrimitiveSet(i,parent){
+osg::QMLPrimitiveSet::QMLPrimitiveSet(const pmoc::Instance *i,QObject* parent):QReflect_PrimitiveSet(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPrimitiveSet::connect2View(QQuickItem*i){

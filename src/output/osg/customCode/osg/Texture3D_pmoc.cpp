@@ -92,7 +92,7 @@ void osg::QMLTexture3D::setfilename(QUrl sss)
 
     }
 }
-osg::QMLTexture3D::QMLTexture3D(pmoc::Instance *i,QObject* parent):QReflect_Texture3D(i,parent){
+osg::QMLTexture3D::QMLTexture3D(const pmoc::Instance *i,QObject* parent):QReflect_Texture3D(i,parent){
 //custom initializations
 }
 

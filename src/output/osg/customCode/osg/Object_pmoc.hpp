@@ -32,10 +32,11 @@ signals:
     void classNameNeverChanged(QString);
     void dataVarianceChanged(int);
 public:
-    QMLObject(pmoc::Instance *i=0,QObject* parent=0);
+    QMLObject(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 
-
+///not working Q_INVOKABLE const QMetaObject * getMetaObject()const;
+//getEnumAsStringList( )
 
     QString className()const;
 
@@ -64,7 +65,7 @@ class  QMLDummyObject: public QReflect_DummyObject
 {
     Q_OBJECT
 public:
-    QMLDummyObject(pmoc::Instance *i=0,QObject* parent=0);
+    QMLDummyObject(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 
 };

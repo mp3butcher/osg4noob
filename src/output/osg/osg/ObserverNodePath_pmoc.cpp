@@ -1,5 +1,6 @@
 #include <osg/ObserverNodePath>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,21 +8,25 @@
 #include <customCode/osg/ObserverNodePath_pmoc.hpp>
 #include <customCode/osg/Node_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_ObserverNodePath::empty()const{
+ bool  osg::QReflect_ObserverNodePath:: empty()const{
+//params checking
 return _model->empty();
 
 }
  void osg::QReflect_ObserverNodePath::clearNodePath(){
+//params checking
  _model->clearNodePath();
 
 }
- void osg::QReflect_ObserverNodePath::setNodePathTo(osg::QReflect_Node *p0){
+ void osg::QReflect_ObserverNodePath::setNodePathTo(osg::QReflect_Node  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ObserverNodePath::setNodePathTo : parameter n.0 is NULL\n"<<endl;return;}
  _model->setNodePathTo(p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_ObserverNodePath::QReflect_ObserverNodePath(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ObserverNodePath::QReflect_ObserverNodePath(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ObserverNodePath*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -44,9 +49,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ObserverNodePath::MetaQReflect_ObserverNodePath():MetaQQuickClass( "osg::ObserverNodePath"){
-_typeid=&typeid(osg::ObserverNodePath );           qRegisterMetaType<QMLObserverNodePath>();
-qmlRegisterType<QReflect_ObserverNodePath>("pmoc.osg",1,0,"QReflect_ObserverNodePath");
-           qmlRegisterType<QMLObserverNodePath>("pmoc.osg",1,0,"QMLObserverNodePath");
+_typeid=&typeid(osg::ObserverNodePath );
+           qRegisterMetaType<osg::QMLObserverNodePath>();
+           qRegisterMetaType<osg::QMLObserverNodePath*>("pmoc.osg.QMLObserverNodePath");
+qmlRegisterType<osg::QReflect_ObserverNodePath>("pmoc.osg",1,0,"QReflect_ObserverNodePath");
+           qmlRegisterType<osg::QMLObserverNodePath>("pmoc.osg",1,0,"QMLObserverNodePath");
 };
 const std::string osg::MetaQReflect_ObserverNodePath::Imports() const{
  return std::string("");
@@ -55,7 +62,7 @@ const std::string osg::MetaQReflect_ObserverNodePath::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ObserverNodePath::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ObserverNodePath::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ObserverNodePath::createQQModel(Instance*i){ //return new MetaQReflect_ObserverNodePath_QModel(i);}
+QQModel* osg::MetaQReflect_ObserverNodePath::createQQModel(const Instance*i){ //return new MetaQReflect_ObserverNodePath_QModel(i);}
 QMLObserverNodePath *ret =new QMLObserverNodePath(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -66,6 +73,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ObserverNodePath_pmoc.cpp"
 #endif
+
 
 
 

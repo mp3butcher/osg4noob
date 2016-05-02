@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TextureRectangle_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTextureRectangle::QMLTextureRectangle(pmoc::Instance *i,QObject* parent):QReflect_TextureRectangle(i,parent){
+osg::QMLTextureRectangle::QMLTextureRectangle(const pmoc::Instance *i,QObject* parent):QReflect_TextureRectangle(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTextureRectangle::connect2View(QQuickItem*i){

@@ -1,7 +1,7 @@
 #include "UIEditor.hpp"
 
 #include <MetaQQuickLibraryRegistry.h>
-//#include <pmoc.blackboard.hpp>
+//#include <pmocjs.blackboard.hpp>
 #include <list>
 #include <map>
 #include <memory>
@@ -117,6 +117,9 @@ std::vector<	string > split(string f, string delimiter)
 
 UIEditor::UIEditor(const string &conffile,QQuickView*win,QQuickItem*parent):QObject(),_win(win)
 {
+    cur_operand=0;
+    cur_operatorsubject=0;
+
     lexer   = new QsciLexerPython (); ///the only lexer with working api completion....GRR no color syntaxing!!!!
     api=new QsciAPIs(lexer);
 //api->load("config/qt-4.4.0.api");
@@ -169,7 +172,7 @@ UIEditor::UIEditor(const string &conffile,QQuickView*win,QQuickItem*parent):QObj
                     else if(part==1)
                     {
                         MetaQQuickClass * cl=PMOCGETMETACLASS(inc);
-                  //      cout<<inc<<endl;
+                        //      cout<<inc<<endl;
                         if(cl)
                             _global_instanciables.insert(cl);
                         else cerr<<"problem finding Global Instanciable "<<inc<<endl;
@@ -213,7 +216,7 @@ UIEditor::UIEditor(const string &conffile,QQuickView*win,QQuickItem*parent):QObj
     for(set<MetaQQuickClass*>::iterator able=_global_instanciables.begin(); able!=_global_instanciables.end(); able++)
     {
         menu+= " Button {\n"
-               //"visible:globalEditor."+replace((*able)->id(),"::","_")+"_selected\n"
+               //"visible:pmocjs."+replace((*able)->id(),"::","_")+"_selected\n"
                "menu: m_"+replace((*able)->id(),"::","_")+"\n"
                "width:l_"+replace((*able)->id(),"::","_")+".width+20\n"
                "Label{ id:l_"+replace((*able)->id(),"::","_")+"\n"
@@ -239,7 +242,7 @@ UIEditor::UIEditor(const string &conffile,QQuickView*win,QQuickItem*parent):QObj
         for(Actions::iterator act=_operators.begin(); act!=_operators.end(); act++)
         {
             menu+= " Button {\n"
-                   "visible:globalEditor."+replace((*act).operatorsubject->id(),"::","_")+"_selected\n"
+                   "visible:pmocjs."+replace((*act).operatorsubject->id(),"::","_")+"_selected\n"
                    "menu: m_"+replace((*act).name," ","_")+"\n"
                    "width:l_"+replace((*act).name," ","_")+".width+20\n"
                    "Label{ id:l_"+replace((*act).name," ","_")+"\n"
@@ -251,7 +254,7 @@ UIEditor::UIEditor(const string &conffile,QQuickView*win,QQuickItem*parent):QObj
         menu+="}}\n";
         menu+="}\n";*/
     _rootobject=parent?parent:win->rootObject();
-    win->rootContext()->setContextProperty("globalEditor",this );
+    win->rootContext()->setContextProperty("pmocjs",this );
     QQmlComponent *component = new QQmlComponent( win->engine());
     component->setData(menu.c_str(), QUrl("globalToolBar"));
     _thisqitem = qobject_cast<QQuickItem *>(component->create());
@@ -269,7 +272,7 @@ UIEditor::UIEditor(const string &conffile,QQuickView*win,QQuickItem*parent):QObj
      out+="MenuItem{\n"
           "text: 'new "+c->id()+"'\n"
           "enabled:"+(c->isInstanciable()?"true":"false")+" \n"
-          "onTriggered: globalEditor. operator_with_operand_"+replace(c->id(),"::","_")+"('"+a.name+"' ,true);\n"
+          "onTriggered: pmocjs. operator_with_operand_"+replace(c->id(),"::","_")+"('"+a.name+"' ,true);\n"
           "}\n";
      std::string childstring;
      for(set<MetaQQuickClass*>::const_iterator down=c->children().begin(); down!=c->children().end(); down++)
@@ -289,8 +292,8 @@ void UIEditor::generatemenus(MetaQQuickClass* c,std::string &out)
     out+="MenuItem{\n"
          "text: 'new "+c->id()+"'\n"
          "enabled:"+(c->isInstanciable()?"true":"false")+" \n"
-         "onTriggered: {\n var newone=globalEditor.createInstance(\'"+c->id()+"\',\'"+c->id()+"\');\n"
-         "globalEditor.  popQQModelUi(newone)\n"
+         "onTriggered: {\n var newone=pmocjs.createInstance(\'"+c->id()+"\',\'"+c->id()+"\');\n"
+         "pmocjs.  popQQModelUi(newone)\n"
          "}\n"
          "}\n";
     std::string childstring;
@@ -309,20 +312,20 @@ void UIEditor::generatemenus(MetaQQuickClass* c,std::string &out)
 ///dispatch on the good HxCinvoquable (where subject coercition is done)
 void UIEditor::resolvOperator( QQModel*subject, QQModel*operand)
 {
-    if(!subject||!subject->_instance.isValid())
+    if(!subject||!subject->getInstance().isValid())
     {
         cerr<<"subject is invalid"<<endl;
         return;
     }
-    if(!operand||!operand->_instance.isValid())
+    if(!operand||!operand->getInstance().isValid())
     {
         cerr<<"operand is invalid"<<endl;
         return;
     }
     //     set<string> possibleActions;
     SetPossibilities possibleActions;
-    subject->generateDisambiguationPossibilities(operand->_instance.model,possibleActions);
-    string menu=   subject->_instance.model->generateAmbiguityMenu(operand->_instance.model,possibleActions);
+    subject->generateDisambiguationPossibilities(operand->getInstance().model,possibleActions);
+    string menu=   subject->getInstance().model->generateAmbiguityMenu(operand->getInstance().model,possibleActions);
     /*
     string operandstring ="operator_with_operand_"+replace(operand->_instance.model->id(),"::","_");
     for(Actions::iterator act=_operators.begin(); act!=_operators.end(); act++)
@@ -341,7 +344,7 @@ void UIEditor::resolvOperator( QQModel*subject, QQModel*operand)
     if (qitem)
     {
         subject->link2ContextMenu(qitem);
-        qitem->setParentItem(/*_thisqitem*/ subject->_view);
+        qitem->setParentItem(/*_thisqitem*/ subject->getQuickItem());
         qitem->update();//emit qitem->componentComplete();
         if(possibleActions.size()==1)//no ambiguity so kill the item
             delete qitem;
@@ -353,12 +356,12 @@ void UIEditor::resolvOperator( QQModel*subject, QQModel*operand)
 ///dispatch on the good HxCinvoquable (where subject coercition is done)
 void UIEditor::resolvReverseOperator( QQModel*subject, QQModel*operand)
 {
-    if(!subject||!subject->_instance.isValid())
+    if(!subject||!subject->getInstance().isValid())
     {
         cerr<<"subject is invalid"<<endl;
         return;
     }
-    if(!operand||!operand->_instance.isValid())
+    if(!operand||!operand->getInstance().isValid())
     {
         cerr<<"operand is invalid"<<endl;
         return;
@@ -366,8 +369,8 @@ void UIEditor::resolvReverseOperator( QQModel*subject, QQModel*operand)
     //set<string> possibleActions;
     //string menu= subject->generateDisambiguationMenu(operand->_instance.model,true);
     SetPossibilities possibleActions;
-    subject->generateDisambiguationPossibilities(operand->_instance.model,possibleActions,true);
-    string menu=   subject->_instance.model->generateAmbiguityMenu(operand->_instance.model,possibleActions);
+    subject->generateDisambiguationPossibilities(operand->getInstance().model,possibleActions,true);
+    string menu=   subject->getInstance().model->generateAmbiguityMenu(operand->getInstance().model,possibleActions);
     /*
     string operandstring ="operator_with_operand_"+replace(operand->_instance.model->id(),"::","_");
     for(Actions::iterator act=_operators.begin(); act!=_operators.end(); act++)
@@ -386,7 +389,7 @@ void UIEditor::resolvReverseOperator( QQModel*subject, QQModel*operand)
     if (qitem)
     {
         subject->link2ContextMenu(qitem);
-        qitem->setParentItem(/*_thisqitem*/ subject->_view);
+        qitem->setParentItem(/*_thisqitem*/ subject->getQuickItem());
         qitem->update();//emit qitem->componentComplete();
         if(possibleActions.size()==1)//no ambiguity so kill the item
             delete qitem;
@@ -412,9 +415,9 @@ void UIEditor::generateAmbiguitiesMenu(string operandstring,set<string> &possibl
     if(possibleactions.size()==1)
     {
         menu+="Component.onCompleted: {\n"
-              " globalEditor."+operandstring+"('"+(*possibleactions.begin())+"',false);\n";
-        if(_isCutAction)menu+="globalEditor.realRemoval();\n";
-        else menu+="globalEditor.restoreState();\n";
+              " pmocjs."+operandstring+"('"+(*possibleactions.begin())+"',false);\n";
+        if(_isCutAction)menu+="pmocjs.realRemoval();\n";
+        else menu+="pmocjs.restoreState();\n";
         menu+="}\n";
 /// HAck QML to InvoKe the action
     }
@@ -427,9 +430,9 @@ void UIEditor::generateAmbiguitiesMenu(string operandstring,set<string> &possibl
             menu+="MenuItem{\n"
                   "text: \""+(*actstring)+"\"\n"
                   "onTriggered: {\n"
-                  "globalEditor."+operandstring+"('"+(*actstring)+"');\n";
-            if(_isCutAction)menu+="globalEditor.realRemoval();\n";
-            else menu+="globalEditor.restoreState();\n";
+                  "pmocjs."+operandstring+"('"+(*actstring)+"');\n";
+            if(_isCutAction)menu+="pmocjs.realRemoval();\n";
+            else menu+="pmocjs.restoreState();\n";
             menu+=
                 "}\n"
                 "}\n";
@@ -450,88 +453,165 @@ void UIEditor::generateAmbiguitiesMenu(string operandstring,set<string> &possibl
     else std::cerr<<menu;
 }
 */
+///check if parameter is a metatype name and add methods to the api if it does
+void UIEditor::checkMetaType(QString lex)
+{
+    int QtType=QMetaType::type(lex.toStdString().c_str());
 
+    if(QtType!=0 )
+    {
+        cout<<lex.toStdString()<<" is a known type "<<QMetaType::type(lex.toStdString().c_str())<<endl;
+        const QMetaObject * metaobject=QMetaType::metaObjectForType(QMetaType::type(lex.toStdString().c_str()));
+        //  std::cout<<metaobject->className()<<std::endl;
+        int count = metaobject->propertyCount();
+
+        QString classtype=metaobject->className();
+        ///convert C++ namin to QML (the last of C++ naming as import statement is assumed)
+        classtype=classtype.split("::").last();
+
+        api->add(lex);
+        //api->add( QString(name)+"");
+
+        for(int i=0; i<metaobject->enumeratorCount(); i++)
+        {
+            QMetaEnum metaenum=metaobject->enumerator(i);
+            api->add(classtype+"."+QString(metaenum.name())+"");
+            for(int j=0; j<metaenum.keyCount(); j++)
+            {
+//metaenum.key(j);
+                api->add(classtype+"."+QString(metaenum.key(j))+"");
+            }
+        }
+        for (int i=0; i<count; ++i)
+        {
+            QMetaProperty metaproperty = metaobject->property(i);
+            //    std::cout<<name<<"."<<metaproperty.name()<<std::endl;
+            api->add(lex+"."+QString(metaproperty.name())+"");
+//  api->add(QString(name)+"."+QString(metaproperty.name())+"");
+
+        }
+
+
+
+        for(int i=0; i<metaobject->methodCount(); i++)
+        {
+
+            //      std::cout<<name<<"."<<metaobject->method(i).name().constData()<<endl;
+            QString pcall;
+            //QList<QByteArray> l= metaobject->method(i).parameterTypes();
+            for(int j=0; j<metaobject->method(i).parameterCount(); j++)
+            {
+                pcall+=QMetaType::typeName(metaobject->method(i).parameterType(j));
+                pcall+=" "+metaobject->method(i).parameterNames()[j];
+                if(j<metaobject->method(i).parameterCount()-1)pcall+=",";
+            }
+
+            // cerr<<pcall.toStdString()<<endl;
+            api->add(lex+"."+QString(metaobject->method(i).name())+"("+pcall+")");
+            //api->add(""+QString(name)+"."+QString(metaobject->method(i).name())+"("+pcall+")");
+        }
+
+
+        api->prepare();
+    }
+
+
+}
 
 void UIEditor::check4newLex(QQModel*qmod)
 {
+
+
+
+
     if(qmod)
     {
-     //   api->clear();
+        //   api->clear();
         //  api->add("fok(??)");
         QQuickItem *mousearea=qmod->getQuickItem()->findChild<QQuickItem*>("pmocmousearea");
-        QQuickItem *menu=mousearea->childItems().last();
-        const QMetaObject * metaobj =menu->metaObject();
-
-        for (int i=0; i<metaobj->propertyCount(); ++i)
+        if(mousearea)
         {
-            QMetaProperty metaproperty = metaobj->property(i);
-            const char *name = metaproperty.name();
+            QQuickItem *menu=mousearea->childItems().last();
+            const QMetaObject * metaobj =menu->metaObject();
 
-            if(!strcmp(metaproperty.typeName(),"QVariant"))
+            for (int i=0; i<metaobj->propertyCount(); ++i)
             {
+                QMetaProperty metaproperty = metaobj->property(i);
+                const char *name = metaproperty.name();
 
-                //std::cout<<name<<std::endl;
-
-                QObject * qmodel=menu->property(name).value<QObject *>();
-                if(qmodel)
+                if(!strcmp(metaproperty.typeName(),"QVariant"))
                 {
-                    const QMetaObject * metaobject=(qmodel)->metaObject();//QMetaType::metaObjectForType(id);
-                  //  std::cout<<metaobject->className()<<std::endl;
-                    int count = metaobject->propertyCount();
 
-                    QString classtype=metaobject->className();
-                    ///convert C++ namin to QML (the last of C++ naming as import statement is assumed)
-                    classtype=classtype.split("::").last();
+                    //std::cout<<name<<std::endl;
 
-                    api->add("self."+QString(name)+"");
-                    api->add( QString(name)+"");
-
-for(int i=0;i<metaobject->enumeratorCount();i++){
-QMetaEnum metaenum=metaobject->enumerator(i);
- api->add(classtype+"."+QString(metaenum.name())+"");
-for(int j=0;j<metaenum.keyCount();j++){
-//metaenum.key(j);
- api->add(classtype+"."+QString(metaenum.key(j))+"");
-}
-}
-                    for (int i=0; i<count; ++i)
+                    QObject * qmodel=menu->property(name).value<QObject *>();
+                    if(qmodel)
                     {
-                        QMetaProperty metaproperty = metaobject->property(i);
-                        //    std::cout<<name<<"."<<metaproperty.name()<<std::endl;
-                        api->add("self."+QString(name)+"."+QString(metaproperty.name())+"");
-   api->add(QString(name)+"."+QString(metaproperty.name())+"");
+                        const QMetaObject * metaobject=(qmodel)->metaObject();//QMetaType::metaObjectForType(id);
+                        //  std::cout<<metaobject->className()<<std::endl;
+                        int count = metaobject->propertyCount();
 
-                    }
+                        QString classtype=metaobject->className();
+                        ///convert C++ namin to QML (the last of C++ naming as import statement is assumed)
+                        classtype=classtype.split("::").last();
 
+                        api->add("self."+QString(name)+"");
+                        api->add( QString(name)+"");
 
-
-                    for(int i=0; i<metaobject->methodCount(); i++)
-                    {
-
-                        //      std::cout<<name<<"."<<metaobject->method(i).name().constData()<<endl;
-                        QString pcall;
-                        //QList<QByteArray> l= metaobject->method(i).parameterTypes();
-                        for(int j=0; j<metaobject->method(i).parameterCount(); j++)
+                        for(int i=0; i<metaobject->enumeratorCount(); i++)
                         {
-                            pcall+=QMetaType::typeName(metaobject->method(i).parameterType(j));
-                            if(j<metaobject->method(i).parameterCount()-1)pcall+=",";
+                            QMetaEnum metaenum=metaobject->enumerator(i);
+                            api->add(classtype+"."+QString(metaenum.name())+"");
+                            for(int j=0; j<metaenum.keyCount(); j++)
+                            {
+//metaenum.key(j);
+                                api->add(classtype+"."+QString(metaenum.key(j))+"");
+                            }
+                        }
+                        for (int i=0; i<count; ++i)
+                        {
+                            QMetaProperty metaproperty = metaobject->property(i);
+                            //    std::cout<<name<<"."<<metaproperty.name()<<std::endl;
+                            api->add("self."+QString(name)+"."+QString(metaproperty.name())+"");
+                            api->add(QString(name)+"."+QString(metaproperty.name())+"");
+
                         }
 
-                        // cerr<<pcall.toStdString()<<endl;
-                        api->add("self."+QString(name)+"."+QString(metaobject->method(i).name())+"("+pcall+")");
-                        api->add(""+QString(name)+"."+QString(metaobject->method(i).name())+"("+pcall+")");
+
+
+                        for(int i=0; i<metaobject->methodCount(); i++)
+                        {
+
+                            //      std::cout<<name<<"."<<metaobject->method(i).name().constData()<<endl;
+                            QString pcall;
+                            //QList<QByteArray> l= metaobject->method(i).parameterTypes();
+                            for(int j=0; j<metaobject->method(i).parameterCount(); j++)
+                            {
+                                pcall+=QMetaType::typeName(metaobject->method(i).parameterType(j));
+                                pcall+=" "+metaobject->method(i).parameterNames()[j];
+                                if(j<metaobject->method(i).parameterCount()-1)pcall+=",";
+                            }
+
+                            // cerr<<pcall.toStdString()<<endl;
+                            api->add("self."+QString(name)+"."+QString(metaobject->method(i).name())+"("+pcall+")");
+                            api->add(""+QString(name)+"."+QString(metaobject->method(i).name())+"("+pcall+")");
+                        }
+
                     }
-
                 }
-            }
 
+            }
+            api->prepare();
         }
-        api->prepare();
+        else
+        {
+            std::cerr<<"can't find mousearea named pmocmousearea in quickitem : injection impossible"<<endl;
+        }
     }
 }
 void UIEditor::injectJavaScriptInSelected(const QString &text)
 {
-    if(getOperand())
+    if(getOperand() &&getOperand()->getQuickItem())
     {
         QString s=text;
 
@@ -541,9 +621,9 @@ void UIEditor::injectJavaScriptInSelected(const QString &text)
             QQmlComponent *component = new QQmlComponent( _win->engine());
 
             s=text.split("</imports>").at(1);
-QString imports=text.split("</imports>").first();
-imports=imports.replace("<imports>","");
- std::cout<<s.toStdString()<<endl;
+            QString imports=text.split("</imports>").first();
+            imports=imports.replace("<imports>","");
+            std::cout<<s.toStdString()<<endl;
             QString preItem="import QtQuick 2.1;"
                             "import QtQuick.Window 2.0;"
                             "import QtQuick.Layouts 1.0;"
@@ -572,26 +652,12 @@ imports=imports.replace("<imports>","");
         cerr<<"no qmodel selected"<<endl;
     }
 }
-pmoc::QQModel* UIEditor::brutalCast(QQModel* qmod,QString casttype)
-{
-    QQModel *out=0;
-    MetaQQuickClass* brutalcaster= PMOCGETMETACLASS(string(casttype.toStdString()));
-    if( brutalcaster&& qmod&&qmod->_instance.isValid())
-    {
-        out=brutalcaster->createQQModel(& qmod->_instance);
 
-    }
-    else cerr<<casttype.toStdString()<<" brutalCast fail"<<endl;
-    return out;
-
-}
 
 pmoc::QQModel* UIEditor::createInstance(QString instancetype)
 {
     MetaQQuickClass* cl= PMOCGETMETACLASS(string(instancetype.toStdString()));
-    // MetaQQuickClass* brutalcaster= PMOCGETMETACLASS(string(casttype.toStdString()));
     Instance inst=cl->createInstance();
-    //QQModel * ret=brutalcaster->createQQModel(& inst);
 
     return (cl->createQQModel(&inst));//ret;
 }
@@ -610,12 +676,12 @@ QQuickItem* UIEditor::genUI4QQModel( pmoc::QQModel* qmod,QQuickItem* parent,QStr
         std::cerr<<" You're trying to display Ui for a null QQModel!!!"<<endl;
         return 0;
     }
-    if(!qmod->_instance.isValid())
+    if(!qmod->getInstance().isValid())
     {
         std::cerr<<" You're trying to display Ui for an invalid Instance!!!"<<endl;
         return 0;
     }
-    return qmod->_instance.model->getGuiComponent(_win,qmod,parent,relationname.toStdString());
+    return qmod->getInstance().model->getGuiComponent(_win,qmod,parent,relationname.toStdString());
 }
 // return qmod->_instance.model->getGuiComponent(_win,qmod,parent);
 QQuickItem* UIEditor::popQQModelUi( pmoc::QQModel* qmod,QQuickItem* parent,QString relationname)
@@ -627,12 +693,76 @@ QQuickItem* UIEditor::popQQModelUi( pmoc::QQModel* qmod,QQuickItem* parent,QStri
         std::cerr<<" You're trying to display Ui for a null QQModel!!!"<<endl;
         return 0;
     }
-    if(!qmod->_instance.isValid())
+    if(!qmod->getInstance().isValid())
     {
         std::cerr<<" You're trying to display Ui for an invalid Instance!!!"<<endl;
         return 0;
     }
- ret=   qmod->_instance.model->getGuiComponent(_win,qmod->_instance,parent,relationname.toStdString());
+    ret=   qmod->getInstance().model->getGuiComponent(_win,qmod->getInstance(),parent,relationname.toStdString());
     return ret;
 // return qmod->_instance.model->getGuiComponent(_win,qmod,parent);
+}
+
+///Helper function in order to avoid some work
+const QStringList UIEditor::getEnumAsStringList(QObject*qmod,const QString& enumname) const
+{
+    QStringList ret;
+    if(qmod){
+    const QMetaObject * meta=qmod->metaObject();
+    for(int i=0; i<meta->enumeratorCount() ; i++)
+    {
+
+
+        if(enumname==QString(meta->enumerator(i).name()))
+        {
+            for(int j=0; j<meta->enumerator(i).keyCount() ; j++)
+            {
+
+      //       ret.insert(meta->enumerator(i).value(j),);
+               ret.append(QString(meta->enumerator(i).valueToKey(j)));
+
+            }
+            return ret;
+        }
+    }
+    }
+    return ret;///NOTFOUND
+}
+
+int  UIEditor::getEnumFromIndexInStringList(QObject*qmod,const QString& enumname, const int &j) const{
+ QStringList ret;
+ if(qmod){
+    const QMetaObject * meta= qmod->metaObject();
+    for(int i=0; i<meta->enumeratorCount() ; i++)
+    {
+
+
+        if(enumname==QString(meta->enumerator(i).name()))
+        {
+        return meta->enumerator(i).value(j);
+        }
+    }
+    }
+    return -1;///ENUMname NOT found
+
+}
+
+int  UIEditor::getIndexInStringListFromEnum(QObject*qmod,const QString& enumname, const int &index) const{
+ QStringList ret;
+    if(qmod){
+    const QMetaObject * meta= qmod->metaObject();
+    for(int i=0; i<meta->enumeratorCount() ; i++)
+    {
+
+
+        if(enumname==QString(meta->enumerator(i).name()))
+        {
+        for(int j=0; j<meta->enumerator(i).keyCount() ; j++)
+            {
+            if(meta->enumerator(i).value(j)==index )return j;
+            }
+            }
+            }
+}
+    return -1;///ENUMname NOT found
 }

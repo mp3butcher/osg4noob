@@ -9,78 +9,142 @@
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/Camera_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
+#include <customCode/osg/OcclusionQueryNode_pmoc.hpp>
 #include <customCode/osg/StateSet_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
-#include <osg/StateSet>
-#include <osg/StateSet_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_OcclusionQueryNode::getPassed()const{
+ bool  osg::QReflect_OcclusionQueryNode:: getDebugDisplay()const{
+//params checking
+return _model->getDebugDisplay();
+
+}
+ bool  osg::QReflect_OcclusionQueryNode:: getPassed()const{
+//params checking
 return _model->getPassed();
 
 }
- bool  osg::QReflect_OcclusionQueryNode::getPassed(osg::QReflect_Camera *p0 ,osg::QReflect_NodeVisitor *p1){
+ bool  osg::QReflect_OcclusionQueryNode:: getPassed(osg::QReflect_Camera  *p0 ,osg::QReflect_NodeVisitor  *p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::getPassed : parameter n.0 is NULL\n"<<endl;return -1;}
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::getPassed : parameter n.1 is NULL\n"<<endl;return -1;}
 return _model->getPassed(p0->_model ,*p1->_model);
 
 }
- void osg::QReflect_OcclusionQueryNode::discardDeletedQueryObjects( unsigned int p0){
+ bool  osg::QReflect_OcclusionQueryNode:: getQueriesEnabled()const{
+//params checking
+return _model->getQueriesEnabled();
+
+}
+ unsigned int  osg::QReflect_OcclusionQueryNode:: getQueryFrameCount()const{
+//params checking
+return _model->getQueryFrameCount();
+
+}
+ unsigned int  osg::QReflect_OcclusionQueryNode:: getVisibilityThreshold()const{
+//params checking
+return _model->getVisibilityThreshold();
+
+}
+ void osg::QReflect_OcclusionQueryNode::discardDeletedQueryObjects( unsigned int  p0){
+//params checking
  _model->discardDeletedQueryObjects(p0);
 
 }
- void osg::QReflect_OcclusionQueryNode::flushDeletedQueryObjects( unsigned int p0 , double p1 , double &p2){
+ void osg::QReflect_OcclusionQueryNode::flushDeletedQueryObjects( unsigned int  p0 , double  p1 , double  &p2){
+//params checking
  _model->flushDeletedQueryObjects(p0 ,p1 ,p2);
 
 }
- void osg::QReflect_OcclusionQueryNode::releaseGLObjects(osg::QReflect_State *p0)const{
+ void osg::QReflect_OcclusionQueryNode::releaseGLObjects(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::releaseGLObjects : parameter n.0 is NULL\n"<<endl;return;}
  _model->releaseGLObjects(p0->_model);
 
 }
- void osg::QReflect_OcclusionQueryNode::traverseDebug(osg::QReflect_NodeVisitor *p0){
+ void osg::QReflect_OcclusionQueryNode::setDebugDisplay( bool  p0){
+//params checking
+ _model->setDebugDisplay(p0);
+emit DebugDisplayChanged();
+
+}
+ void osg::QReflect_OcclusionQueryNode::setDebugStateSet(osg::QReflect_StateSet  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::setDebugStateSet : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setDebugStateSet(p0->_model);
+emit DebugStateSetChanged();
+
+}
+ void osg::QReflect_OcclusionQueryNode::setQueriesEnabled( bool  p0){
+//params checking
+ _model->setQueriesEnabled(p0);
+emit QueriesEnabledChanged();
+
+}
+ void osg::QReflect_OcclusionQueryNode::setQueryFrameCount( unsigned int  p0){
+//params checking
+ _model->setQueryFrameCount(p0);
+emit QueryFrameCountChanged();
+
+}
+ void osg::QReflect_OcclusionQueryNode::setQueryStateSet(osg::QReflect_StateSet  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::setQueryStateSet : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setQueryStateSet(p0->_model);
+emit QueryStateSetChanged();
+
+}
+ void osg::QReflect_OcclusionQueryNode::setVisibilityThreshold( unsigned int  p0){
+//params checking
+ _model->setVisibilityThreshold(p0);
+emit VisibilityThresholdChanged();
+
+}
+ void osg::QReflect_OcclusionQueryNode::traverseDebug(osg::QReflect_NodeVisitor  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::traverseDebug : parameter n.0 is NULL\n"<<endl;return;}
  _model->traverseDebug(*p0->_model);
 
 }
- void osg::QReflect_OcclusionQueryNode::traverseQuery(osg::QReflect_Camera *p0 ,osg::QReflect_NodeVisitor *p1){
+ void osg::QReflect_OcclusionQueryNode::traverseQuery(osg::QReflect_Camera  *p0 ,osg::QReflect_NodeVisitor  *p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::traverseQuery : parameter n.0 is NULL\n"<<endl;return;}
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_OcclusionQueryNode::traverseQuery : parameter n.1 is NULL\n"<<endl;return;}
  _model->traverseQuery(p0->_model ,*p1->_model);
 
 }
-const bool osg::QReflect_OcclusionQueryNode::getDebugDisplay()const{return _model->getDebugDisplay();}
-const bool osg::QReflect_OcclusionQueryNode::getQueriesEnabled()const{return _model->getQueriesEnabled();}
-const unsigned int osg::QReflect_OcclusionQueryNode::getQueryFrameCount()const{return _model->getQueryFrameCount();}
-const unsigned int osg::QReflect_OcclusionQueryNode::getVisibilityThreshold()const{return _model->getVisibilityThreshold();}
 osg::QReflect_QueryGeometry*osg::QReflect_OcclusionQueryNode::getQueryGeometry()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getQueryGeometry(),inst);
 return inst.isValid()?((osg::QReflect_QueryGeometry * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_QueryGeometry*osg::QReflect_OcclusionQueryNode::getQueryGeometry(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getQueryGeometry(),inst);
 return inst.isValid()?((osg::QReflect_QueryGeometry * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_StateSet * osg::QReflect_OcclusionQueryNode::getDebugStateSet()const{
+osg::QReflect_StateSet*osg::QReflect_OcclusionQueryNode::getDebugStateSet()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getDebugStateSet(),inst);
 return inst.isValid()?((osg::QReflect_StateSet * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_StateSet * osg::QReflect_OcclusionQueryNode::getQueryStateSet()const{
+osg::QReflect_StateSet*osg::QReflect_OcclusionQueryNode::getDebugStateSet(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getDebugStateSet(),inst);
+return inst.isValid()?((osg::QReflect_StateSet * )inst.model->createQQModel(&inst)):NULL;
+}
+osg::QReflect_StateSet*osg::QReflect_OcclusionQueryNode::getQueryStateSet()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getQueryStateSet(),inst);
 return inst.isValid()?((osg::QReflect_StateSet * )inst.model->createQQModel(&inst)):NULL;
 }
-void  osg::QReflect_OcclusionQueryNode::setDebugDisplay(const bool &par){_model->setDebugDisplay(par);emit DebugDisplayChanged(par);}
-void  osg::QReflect_OcclusionQueryNode::setQueriesEnabled(const bool &par){_model->setQueriesEnabled(par);emit QueriesEnabledChanged(par);}
-void  osg::QReflect_OcclusionQueryNode::setQueryFrameCount(const unsigned int &par){_model->setQueryFrameCount(par);emit QueryFrameCountChanged(par);}
-void  osg::QReflect_OcclusionQueryNode::setVisibilityThreshold(const unsigned int &par){_model->setVisibilityThreshold(par);emit VisibilityThresholdChanged(par);}
-void osg::QReflect_OcclusionQueryNode::pmoc_reverse_setDebugStateSet( osg::QReflect_StateSet *par){_model->setDebugStateSet(NULL);
-emit DebugStateSetChanged(NULL);
-}
-void osg::QReflect_OcclusionQueryNode::pmoc_reverse_setQueryStateSet( osg::QReflect_StateSet *par){_model->setQueryStateSet(NULL);
-emit QueryStateSetChanged(NULL);
-}
-void osg::QReflect_OcclusionQueryNode::setDebugStateSet( osg::QReflect_StateSet *par){_model->setDebugStateSet(par->_model);
-emit DebugStateSetChanged(par);
-}
-void osg::QReflect_OcclusionQueryNode::setQueryStateSet( osg::QReflect_StateSet *par){_model->setQueryStateSet(par->_model);
-emit QueryStateSetChanged(par);
+osg::QReflect_StateSet*osg::QReflect_OcclusionQueryNode::getQueryStateSet(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getQueryStateSet(),inst);
+return inst.isValid()?((osg::QReflect_StateSet * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_OcclusionQueryNode::QReflect_OcclusionQueryNode(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_OcclusionQueryNode::QReflect_OcclusionQueryNode(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::OcclusionQueryNode*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -108,11 +172,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_OcclusionQueryNode::MetaQReflect_OcclusionQueryNode():MetaQQuickClass( "osg::OcclusionQueryNode"){
-_typeid=&typeid(osg::OcclusionQueryNode );           qRegisterMetaType<QMLOcclusionQueryNode>();
-qmlRegisterType<QReflect_OcclusionQueryNode>("pmoc.osg",1,0,"QReflect_OcclusionQueryNode");
-           qmlRegisterType<QMLOcclusionQueryNode>("pmoc.osg",1,0,"QMLOcclusionQueryNode");
-       PMOCACTION("getDebugStateSet","setDebugStateSet","unsetDebugStateSet");
-       PMOCACTION("getQueryStateSet","setQueryStateSet","unsetQueryStateSet");
+_typeid=&typeid(osg::OcclusionQueryNode );
+           qRegisterMetaType<osg::QMLOcclusionQueryNode>();
+           qRegisterMetaType<osg::QMLOcclusionQueryNode*>("pmoc.osg.QMLOcclusionQueryNode");
+qmlRegisterType<osg::QReflect_OcclusionQueryNode>("pmoc.osg",1,0,"QReflect_OcclusionQueryNode");
+           qmlRegisterType<osg::QMLOcclusionQueryNode>("pmoc.osg",1,0,"QMLOcclusionQueryNode");
 };
 const std::string osg::MetaQReflect_OcclusionQueryNode::Imports() const{
  return std::string("");
@@ -121,7 +185,7 @@ const std::string osg::MetaQReflect_OcclusionQueryNode::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_OcclusionQueryNode::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_OcclusionQueryNode::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_OcclusionQueryNode::createQQModel(Instance*i){ //return new MetaQReflect_OcclusionQueryNode_QModel(i);}
+QQModel* osg::MetaQReflect_OcclusionQueryNode::createQQModel(const Instance*i){ //return new MetaQReflect_OcclusionQueryNode_QModel(i);}
 QMLOcclusionQueryNode *ret =new QMLOcclusionQueryNode(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -153,37 +217,47 @@ return ret;}
 #include <customCode/osg/RenderInfo_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- unsigned int  osg::QReflect_QueryGeometry::getNumPixels(osg::QReflect_Camera *p0){
+ unsigned int  osg::QReflect_QueryGeometry:: getNumPixels(osg::QReflect_Camera  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_QueryGeometry::getNumPixels : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->getNumPixels(p0->_model);
 
 }
- void osg::QReflect_QueryGeometry::deleteQueryObject( unsigned int p0 , GLuint p1){
+ void osg::QReflect_QueryGeometry::deleteQueryObject( unsigned int  p0 , GLuint  p1){
+//params checking
  _model->deleteQueryObject(p0 ,p1);
 
 }
- void osg::QReflect_QueryGeometry::discardDeletedQueryObjects( unsigned int p0){
+ void osg::QReflect_QueryGeometry::discardDeletedQueryObjects( unsigned int  p0){
+//params checking
  _model->discardDeletedQueryObjects(p0);
 
 }
- void osg::QReflect_QueryGeometry::drawImplementation(osg::QReflect_RenderInfo *p0)const{
+ void osg::QReflect_QueryGeometry::drawImplementation(osg::QReflect_RenderInfo  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_QueryGeometry::drawImplementation : parameter n.0 is NULL\n"<<endl;return;}
  _model->drawImplementation(*p0->_model);
 
 }
- void osg::QReflect_QueryGeometry::flushDeletedQueryObjects( unsigned int p0 , double p1 , double &p2){
+ void osg::QReflect_QueryGeometry::flushDeletedQueryObjects( unsigned int  p0 , double  p1 , double  &p2){
+//params checking
  _model->flushDeletedQueryObjects(p0 ,p1 ,p2);
 
 }
- void osg::QReflect_QueryGeometry::releaseGLObjects(osg::QReflect_State *p0)const{
+ void osg::QReflect_QueryGeometry::releaseGLObjects(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_QueryGeometry::releaseGLObjects : parameter n.0 is NULL\n"<<endl;return;}
  _model->releaseGLObjects(p0->_model);
 
 }
  void osg::QReflect_QueryGeometry::reset(){
+//params checking
  _model->reset();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_QueryGeometry::QReflect_QueryGeometry(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_QueryGeometry::QReflect_QueryGeometry(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::QueryGeometry*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -211,9 +285,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_QueryGeometry::MetaQReflect_QueryGeometry():MetaQQuickClass( "osg::QueryGeometry"){
-_typeid=&typeid(osg::QueryGeometry );           qRegisterMetaType<QMLQueryGeometry>();
-qmlRegisterType<QReflect_QueryGeometry>("pmoc.osg",1,0,"QReflect_QueryGeometry");
-           qmlRegisterType<QMLQueryGeometry>("pmoc.osg",1,0,"QMLQueryGeometry");
+_typeid=&typeid(osg::QueryGeometry );
+           qRegisterMetaType<osg::QMLQueryGeometry>();
+           qRegisterMetaType<osg::QMLQueryGeometry*>("pmoc.osg.QMLQueryGeometry");
+qmlRegisterType<osg::QReflect_QueryGeometry>("pmoc.osg",1,0,"QReflect_QueryGeometry");
+           qmlRegisterType<osg::QMLQueryGeometry>("pmoc.osg",1,0,"QMLQueryGeometry");
 };
 const std::string osg::MetaQReflect_QueryGeometry::Imports() const{
  return std::string("");
@@ -222,7 +298,7 @@ const std::string osg::MetaQReflect_QueryGeometry::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_QueryGeometry::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_QueryGeometry::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_QueryGeometry::createQQModel(Instance*i){ //return new MetaQReflect_QueryGeometry_QModel(i);}
+QQModel* osg::MetaQReflect_QueryGeometry::createQQModel(const Instance*i){ //return new MetaQReflect_QueryGeometry_QModel(i);}
 QMLQueryGeometry *ret =new QMLQueryGeometry(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -253,7 +329,7 @@ return ret;}
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_TestResult::QReflect_TestResult(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TestResult::QReflect_TestResult(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TestResult*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -281,9 +357,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TestResult::MetaQReflect_TestResult():MetaQQuickClass( "osg::TestResult"){
-_typeid=&typeid(osg::TestResult );           qRegisterMetaType<QMLTestResult>();
-qmlRegisterType<QReflect_TestResult>("pmoc.osg",1,0,"QReflect_TestResult");
-           qmlRegisterType<QMLTestResult>("pmoc.osg",1,0,"QMLTestResult");
+_typeid=&typeid(osg::TestResult );
+           qRegisterMetaType<osg::QMLTestResult>();
+           qRegisterMetaType<osg::QMLTestResult*>("pmoc.osg.QMLTestResult");
+qmlRegisterType<osg::QReflect_TestResult>("pmoc.osg",1,0,"QReflect_TestResult");
+           qmlRegisterType<osg::QMLTestResult>("pmoc.osg",1,0,"QMLTestResult");
 };
 const std::string osg::MetaQReflect_TestResult::Imports() const{
  return std::string("");
@@ -292,7 +370,7 @@ const std::string osg::MetaQReflect_TestResult::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TestResult::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TestResult::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TestResult::createQQModel(Instance*i){ //return new MetaQReflect_TestResult_QModel(i);}
+QQModel* osg::MetaQReflect_TestResult::createQQModel(const Instance*i){ //return new MetaQReflect_TestResult_QModel(i);}
 QMLTestResult *ret =new QMLTestResult(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

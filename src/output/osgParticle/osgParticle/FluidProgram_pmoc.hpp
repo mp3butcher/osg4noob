@@ -21,25 +21,25 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 FluidProgram * _model;
-QReflect_FluidProgram(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_FluidProgram(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_FluidProgram( );
 //FluidProgram
 //const  osg::Vec3 & getAcceleration();
 //const  osg::Vec3 & getWind();
-Q_INVOKABLE const float  getFluidDensity()const;
-Q_INVOKABLE const float  getFluidViscosity()const;
-Q_INVOKABLE void  setAcceleration(osg::QReflect_Vec3f *);
+Q_INVOKABLE  float  getFluidDensity()const;
+Q_INVOKABLE  float  getFluidViscosity()const;
+Q_INVOKABLE void  setAcceleration(osg::QReflect_Vec3f *v);
+Q_INVOKABLE void  setFluidDensity( float d);
 Q_INVOKABLE void  setFluidToAir();
 Q_INVOKABLE void  setFluidToWater();
-Q_INVOKABLE void  setToGravity( float );
-Q_INVOKABLE void  setWind(osg::QReflect_Vec3f *);
-Q_INVOKABLE void setFluidDensity(const float &);
-Q_INVOKABLE void setFluidViscosity(const float &);
-Q_PROPERTY(float FluidDensity  READ getFluidDensity WRITE setFluidDensity NOTIFY FluidDensityChanged)
-Q_PROPERTY(float FluidViscosity  READ getFluidViscosity WRITE setFluidViscosity NOTIFY FluidViscosityChanged)
-signals: void FluidDensityChanged(const float&);
+Q_INVOKABLE void  setFluidViscosity( float v);
+Q_INVOKABLE void  setToGravity( float scale);
+Q_INVOKABLE void  setWind(osg::QReflect_Vec3f *wind);
+Q_PROPERTY(float  FluidDensity  READ getFluidDensity WRITE setFluidDensity NOTIFY FluidDensityChanged)
+Q_PROPERTY(float  FluidViscosity  READ getFluidViscosity WRITE setFluidViscosity NOTIFY FluidViscosityChanged)
+signals: void FluidDensityChanged();
 public:
-signals: void FluidViscosityChanged(const float&);
+signals: void FluidViscosityChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -53,7 +53,7 @@ public:
 MetaQReflect_FluidProgram();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -64,6 +64,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_FluidProgram_pmocHPP

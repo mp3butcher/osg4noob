@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Quat_pmoc.hpp>
 using namespace pmoc;
-osg::QMLQuat::QMLQuat(pmoc::Instance *i,QObject* parent):QReflect_Quat(i,parent){
+osg::QMLQuat::QMLQuat(const pmoc::Instance *i,QObject* parent):QReflect_Quat(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLQuat::connect2View(QQuickItem*i){

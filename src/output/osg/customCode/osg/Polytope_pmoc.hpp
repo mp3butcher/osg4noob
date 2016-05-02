@@ -12,7 +12,7 @@ class  QMLPolytope: public QReflect_Polytope
 {
 Q_OBJECT
 public:
-QMLPolytope(pmoc::Instance *i=0,QObject* parent=0);
+QMLPolytope(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

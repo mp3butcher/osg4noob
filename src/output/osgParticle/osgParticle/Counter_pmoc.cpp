@@ -1,6 +1,7 @@
 #include <osgParticle/Counter>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,21 +10,25 @@
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 using namespace pmoc;
- bool  osgParticle::QReflect_Counter::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osgParticle::QReflect_Counter:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_Counter::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
-const  char*  osgParticle::QReflect_Counter::className()const{
+const  char*  osgParticle::QReflect_Counter:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osgParticle::QReflect_Counter::libraryName()const{
+const  char*  osgParticle::QReflect_Counter:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_Counter::QReflect_Counter(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_Counter::QReflect_Counter(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::Counter*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -48,9 +53,11 @@ std::cerr<<"osgParticle::Counter is not instanciable"<<std::endl;return Instance
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_Counter::MetaQReflect_Counter():MetaQQuickClass( "osgParticle::Counter"){
-_typeid=&typeid(osgParticle::Counter );           qRegisterMetaType<QMLCounter>();
-qmlRegisterType<QReflect_Counter>("pmoc.osgParticle",1,0,"QReflect_Counter");
-           qmlRegisterType<QMLCounter>("pmoc.osgParticle",1,0,"QMLCounter");
+_typeid=&typeid(osgParticle::Counter );
+           qRegisterMetaType<osgParticle::QMLCounter>();
+           qRegisterMetaType<osgParticle::QMLCounter*>("pmoc.osgParticle.QMLCounter");
+qmlRegisterType<osgParticle::QReflect_Counter>("pmoc.osgParticle",1,0,"QReflect_Counter");
+           qmlRegisterType<osgParticle::QMLCounter>("pmoc.osgParticle",1,0,"QMLCounter");
 };
 const std::string osgParticle::MetaQReflect_Counter::Imports() const{
  return std::string("");
@@ -59,7 +66,7 @@ const std::string osgParticle::MetaQReflect_Counter::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_Counter::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_Counter::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_Counter::createQQModel(Instance*i){ //return new MetaQReflect_Counter_QModel(i);}
+QQModel* osgParticle::MetaQReflect_Counter::createQQModel(const Instance*i){ //return new MetaQReflect_Counter_QModel(i);}
 QMLCounter *ret =new QMLCounter(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -81,5 +88,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Counter_pmoc.cpp"
 #endif
+
+
 
 

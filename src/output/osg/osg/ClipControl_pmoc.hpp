@@ -1,9 +1,14 @@
 #ifndef osg_ClipControl_pmocHPP
 #define  osg_ClipControl_pmocHPP 1
+
+
 #include <osg/ClipControl_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/ClipControl>
 #include <osg/ClipControl>
@@ -32,15 +37,21 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ClipControl * _model;
-QReflect_ClipControl(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ClipControl(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ClipControl( );
 //ClipControl
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_ClipControl::DepthMode  getDepthMode()const;
 Q_INVOKABLE osg::QReflect_ClipControl::Origin  getOrigin()const;
-Q_INVOKABLE void  setDepthMode(osg::QReflect_ClipControl::DepthMode );
-Q_INVOKABLE void  setOrigin(osg::QReflect_ClipControl::Origin );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setDepthMode(osg::QReflect_ClipControl::DepthMode depthMode);
+Q_INVOKABLE void  setOrigin(osg::QReflect_ClipControl::Origin origin);
+Q_PROPERTY(osg::QReflect_ClipControl::DepthMode  DepthMode  READ getDepthMode WRITE setDepthMode NOTIFY DepthModeChanged)
+Q_PROPERTY(osg::QReflect_ClipControl::Origin  Origin  READ getOrigin WRITE setOrigin NOTIFY OriginChanged)
+signals: void DepthModeChanged();
+public:
+signals: void OriginChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -53,7 +64,7 @@ public:
 MetaQReflect_ClipControl();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -64,6 +75,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ClipControl_pmocHPP
 

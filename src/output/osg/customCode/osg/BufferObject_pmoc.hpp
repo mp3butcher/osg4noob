@@ -12,7 +12,7 @@ class  QMLGLBufferObjectManager: public QReflect_GLBufferObjectManager
 {
 Q_OBJECT
 public:
-QMLGLBufferObjectManager(pmoc::Instance *i=0,QObject* parent=0);
+QMLGLBufferObjectManager(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -33,7 +33,7 @@ class  QMLBufferObject: public QReflect_BufferObject
 {
 Q_OBJECT
 public:
-QMLBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -54,7 +54,7 @@ class  QMLAtomicCounterBufferObject: public QReflect_AtomicCounterBufferObject
 {
 Q_OBJECT
 public:
-QMLAtomicCounterBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLAtomicCounterBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -75,7 +75,7 @@ class  QMLVertexBufferObject: public QReflect_VertexBufferObject
 {
 Q_OBJECT
 public:
-QMLVertexBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLVertexBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -96,7 +96,7 @@ class  QMLShaderStorageBufferObject: public QReflect_ShaderStorageBufferObject
 {
 Q_OBJECT
 public:
-QMLShaderStorageBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLShaderStorageBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -120,7 +120,7 @@ class  QMLPixelBufferObject: public QReflect_PixelBufferObject
 {
 Q_OBJECT
 public:
-QMLPixelBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLPixelBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -141,7 +141,7 @@ class  QMLGLBufferObjectSet: public QReflect_GLBufferObjectSet
 {
 Q_OBJECT
 public:
-QMLGLBufferObjectSet(pmoc::Instance *i=0,QObject* parent=0);
+QMLGLBufferObjectSet(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -162,7 +162,7 @@ class  QMLElementBufferObject: public QReflect_ElementBufferObject
 {
 Q_OBJECT
 public:
-QMLElementBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLElementBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -182,7 +182,7 @@ class  QMLBufferObjectProfile: public QReflect_BufferObjectProfile
 {
 Q_OBJECT
 public:
-QMLBufferObjectProfile(pmoc::Instance *i=0,QObject* parent=0);
+QMLBufferObjectProfile(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -203,7 +203,7 @@ class  QMLUniformBufferObject: public QReflect_UniformBufferObject
 {
 Q_OBJECT
 public:
-QMLUniformBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLUniformBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -224,7 +224,7 @@ class  QMLPixelDataBufferObject: public QReflect_PixelDataBufferObject
 {
 Q_OBJECT
 public:
-QMLPixelDataBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLPixelDataBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -252,7 +252,7 @@ class  QMLGLBufferObject: public QReflect_GLBufferObject
 {
 Q_OBJECT
 public:
-QMLGLBufferObject(pmoc::Instance *i=0,QObject* parent=0);
+QMLGLBufferObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -285,7 +285,7 @@ class  QMLBufferData: public QReflect_BufferData
 {
 Q_OBJECT
 public:
-QMLBufferData(pmoc::Instance *i=0,QObject* parent=0);
+QMLBufferData(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

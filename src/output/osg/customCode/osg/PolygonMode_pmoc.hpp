@@ -13,7 +13,7 @@ class  QMLPolygonMode: public QReflect_PolygonMode
 {
 Q_OBJECT
 public:
-QMLPolygonMode(pmoc::Instance *i=0,QObject* parent=0);
+QMLPolygonMode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

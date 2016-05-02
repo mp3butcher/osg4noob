@@ -1,6 +1,7 @@
 #include <osgParticle/AngularDampingOperator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -10,41 +11,68 @@
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_AngularDampingOperator::getCutoff( float &p0 , float &p1)const{
+ float  osgParticle::QReflect_AngularDampingOperator:: getCutoffHigh()const{
+//params checking
+return _model->getCutoffHigh();
+
+}
+ float  osgParticle::QReflect_AngularDampingOperator:: getCutoffLow()const{
+//params checking
+return _model->getCutoffLow();
+
+}
+ void osgParticle::QReflect_AngularDampingOperator::getCutoff( float  &p0 , float  &p1)const{
+//params checking
  _model->getCutoff(p0 ,p1);
 
 }
- void osgParticle::QReflect_AngularDampingOperator::getDamping( float &p0 , float &p1 , float &p2)const{
+ void osgParticle::QReflect_AngularDampingOperator::getDamping( float  &p0 , float  &p1 , float  &p2)const{
+//params checking
  _model->getDamping(p0 ,p1 ,p2);
 
 }
- void osgParticle::QReflect_AngularDampingOperator::operate(osgParticle::QReflect_Particle *p0 , double p1){
+ void osgParticle::QReflect_AngularDampingOperator::operate(osgParticle::QReflect_Particle  *p0 , double  p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_AngularDampingOperator::operate : parameter n.0 is NULL\n"<<endl;return;}
  _model->operate(p0->_model ,p1);
 
 }
- void osgParticle::QReflect_AngularDampingOperator::setCutoff( float p0 , float p1){
+ void osgParticle::QReflect_AngularDampingOperator::setCutoff( float  p0 , float  p1){
+//params checking
  _model->setCutoff(p0 ,p1);
 
 }
- void osgParticle::QReflect_AngularDampingOperator::setDamping( float p0 , float p1 , float p2){
+ void osgParticle::QReflect_AngularDampingOperator::setCutoffHigh( float  p0){
+//params checking
+ _model->setCutoffHigh(p0);
+emit CutoffHighChanged();
+
+}
+ void osgParticle::QReflect_AngularDampingOperator::setCutoffLow( float  p0){
+//params checking
+ _model->setCutoffLow(p0);
+emit CutoffLowChanged();
+
+}
+ void osgParticle::QReflect_AngularDampingOperator::setDamping( float  p0 , float  p1 , float  p2){
+//params checking
  _model->setDamping(p0 ,p1 ,p2);
 
 }
- void osgParticle::QReflect_AngularDampingOperator::setDamping( float p0){
+ void osgParticle::QReflect_AngularDampingOperator::setDamping( float  p0){
+//params checking
  _model->setDamping(p0);
 
 }
- void osgParticle::QReflect_AngularDampingOperator::setDamping(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_AngularDampingOperator::setDamping(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_AngularDampingOperator::setDamping : parameter n.0 is NULL\n"<<endl;return;}
  _model->setDamping(*p0->_model);
 
 }
-const float osgParticle::QReflect_AngularDampingOperator::getCutoffHigh()const{return _model->getCutoffHigh();}
-const float osgParticle::QReflect_AngularDampingOperator::getCutoffLow()const{return _model->getCutoffLow();}
-void  osgParticle::QReflect_AngularDampingOperator::setCutoffHigh(const float &par){_model->setCutoffHigh(par);emit CutoffHighChanged(par);}
-void  osgParticle::QReflect_AngularDampingOperator::setCutoffLow(const float &par){_model->setCutoffLow(par);emit CutoffLowChanged(par);}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_AngularDampingOperator::QReflect_AngularDampingOperator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_AngularDampingOperator::QReflect_AngularDampingOperator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::AngularDampingOperator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -72,9 +100,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_AngularDampingOperator::MetaQReflect_AngularDampingOperator():MetaQQuickClass( "osgParticle::AngularDampingOperator"){
-_typeid=&typeid(osgParticle::AngularDampingOperator );           qRegisterMetaType<QMLAngularDampingOperator>();
-qmlRegisterType<QReflect_AngularDampingOperator>("pmoc.osgParticle",1,0,"QReflect_AngularDampingOperator");
-           qmlRegisterType<QMLAngularDampingOperator>("pmoc.osgParticle",1,0,"QMLAngularDampingOperator");
+_typeid=&typeid(osgParticle::AngularDampingOperator );
+           qRegisterMetaType<osgParticle::QMLAngularDampingOperator>();
+           qRegisterMetaType<osgParticle::QMLAngularDampingOperator*>("pmoc.osgParticle.QMLAngularDampingOperator");
+qmlRegisterType<osgParticle::QReflect_AngularDampingOperator>("pmoc.osgParticle",1,0,"QReflect_AngularDampingOperator");
+           qmlRegisterType<osgParticle::QMLAngularDampingOperator>("pmoc.osgParticle",1,0,"QMLAngularDampingOperator");
 };
 const std::string osgParticle::MetaQReflect_AngularDampingOperator::Imports() const{
  return std::string("");
@@ -83,7 +113,7 @@ const std::string osgParticle::MetaQReflect_AngularDampingOperator::Imports() co
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_AngularDampingOperator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_AngularDampingOperator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_AngularDampingOperator::createQQModel(Instance*i){ //return new MetaQReflect_AngularDampingOperator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_AngularDampingOperator::createQQModel(const Instance*i){ //return new MetaQReflect_AngularDampingOperator_QModel(i);}
 QMLAngularDampingOperator *ret =new QMLAngularDampingOperator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

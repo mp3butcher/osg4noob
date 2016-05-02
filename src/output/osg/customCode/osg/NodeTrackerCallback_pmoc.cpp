@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/NodeTrackerCallback_pmoc.hpp>
 using namespace pmoc;
-osg::QMLNodeTrackerCallback::QMLNodeTrackerCallback(pmoc::Instance *i,QObject* parent):QReflect_NodeTrackerCallback(i,parent){
+osg::QMLNodeTrackerCallback::QMLNodeTrackerCallback(const pmoc::Instance *i,QObject* parent):QReflect_NodeTrackerCallback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLNodeTrackerCallback::connect2View(QQuickItem*i){

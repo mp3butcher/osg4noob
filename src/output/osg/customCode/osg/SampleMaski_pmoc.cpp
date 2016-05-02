@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/SampleMaski_pmoc.hpp>
 using namespace pmoc;
-osg::QMLSampleMaski::QMLSampleMaski(pmoc::Instance *i,QObject* parent):QReflect_SampleMaski(i,parent){
+osg::QMLSampleMaski::QMLSampleMaski(const pmoc::Instance *i,QObject* parent):QReflect_SampleMaski(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLSampleMaski::connect2View(QQuickItem*i){

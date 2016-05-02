@@ -20,7 +20,7 @@ class  QMLParticleProcessor: public QReflect_ParticleProcessor
 {
 Q_OBJECT
 public:
-QMLParticleProcessor(pmoc::Instance *i=0,QObject* parent=0);
+QMLParticleProcessor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

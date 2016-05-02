@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/AnimationPath_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAnimationPath::QMLAnimationPath(pmoc::Instance *i,QObject* parent):QReflect_AnimationPath(i,parent){
+osg::QMLAnimationPath::QMLAnimationPath(const pmoc::Instance *i,QObject* parent):QReflect_AnimationPath(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAnimationPath::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLAnimationPath::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/AnimationPath_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAnimationPathCallback::QMLAnimationPathCallback(pmoc::Instance *i,QObject* parent):QReflect_AnimationPathCallback(i,parent){
+osg::QMLAnimationPathCallback::QMLAnimationPathCallback(const pmoc::Instance *i,QObject* parent):QReflect_AnimationPathCallback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAnimationPathCallback::connect2View(QQuickItem*i){

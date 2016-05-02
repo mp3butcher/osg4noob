@@ -55,7 +55,7 @@ FocusScope {
                     else {
                         console.log("selected")
                         main.focus = true
-                        globalEditor.setOperand(obj.osg_Material)
+                        pmocjs.setOperand(obj.osg_Material)
                     }
                 }
                 // onPressAndHold: uaContextMenu.popup()
@@ -66,15 +66,15 @@ FocusScope {
                         text: 'Copy'
                         shortcut: "Ctrl+C"
                         onTriggered: {
-                            globalEditor.setCopyOperand(obj.osg_Material)
+                            pmocjs.setCopyOperand(obj.osg_Material)
                         }
                     }
                     MenuItem {
                         text: 'Cut'
                         shortcut: "Ctrl+X"
                         onTriggered: {
-                            globalEditor.setCopyOperand(obj.osg_Material)
-                            globalEditor.setCutSubject(main.parent.qmodel)
+                            pmocjs.setCopyOperand(obj.osg_Material)
+                            pmocjs.setCutSubject(main.parent.qmodel)
 
                             subjectrequired()
                         }
@@ -83,9 +83,9 @@ FocusScope {
                         text: 'Paste'
                         shortcut: "Ctrl+V"
                         onTriggered: {
-                            globalEditor.realPaste(obj.osg_Material)
-                            globalEditor.popQQModelUi(
-                                        globalEditor.getCopyOperand(),
+                            pmocjs.realPaste(obj.osg_Material)
+                            pmocjs.popQQModelUi(
+                                        pmocjs.getCopyOperand(),
                                         obj.osg_Material.getQuickItem())
                             obj.osg_Material.modelChanged()
                         }
@@ -95,10 +95,10 @@ FocusScope {
                         shortcut: "Suppr"
                         onTriggered: {
 
-                            globalEditor.setCopyOperand(main.qmodel)
-                            globalEditor.setCutSubject(main.parent.qmodel)
-                            globalEditor.isCutAction = false
-                            globalEditor.realRemoval()
+                            pmocjs.setCopyOperand(main.qmodel)
+                            pmocjs.setCutSubject(main.parent.qmodel)
+                            pmocjs.isCutAction = false
+                            pmocjs.realRemoval()
                             //main.parent.qmodel.modelChanged()
                             main.parent = null
                         }

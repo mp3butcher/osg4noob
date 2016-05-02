@@ -15,7 +15,7 @@ class  QMLAngularDampingOperator: public QReflect_AngularDampingOperator
 {
 Q_OBJECT
 public:
-QMLAngularDampingOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLAngularDampingOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

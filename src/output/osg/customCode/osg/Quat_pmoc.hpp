@@ -32,7 +32,7 @@ float w()const{return _model->w();}
 void w(float f){if(f!=w()){(*_model)[3]=f;emit wChanged(f);}}
 
 public:
-QMLQuat(pmoc::Instance *i=0,QObject* parent=0);
+QMLQuat(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

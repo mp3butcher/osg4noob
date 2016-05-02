@@ -48,7 +48,7 @@ target:main
                     else {
                         console.log("selected")
                         main.focus = true
-                        globalEditor.setOperand(main.qmodel)
+                        pmocjs.setOperand(main.qmodel)
                     }
                 }
 

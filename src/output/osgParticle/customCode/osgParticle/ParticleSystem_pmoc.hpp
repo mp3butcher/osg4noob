@@ -27,7 +27,7 @@ Q_INVOKABLE void pmoc_reverse_setDefaultParticleTemplate(osgParticle::QReflect_P
 }
 
 
-QMLParticleSystem(pmoc::Instance *i=0,QObject* parent=0);
+QMLParticleSystem(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

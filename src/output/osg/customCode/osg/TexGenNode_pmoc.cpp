@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TexGenNode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTexGenNode::QMLTexGenNode(pmoc::Instance *i,QObject* parent):QReflect_TexGenNode(i,parent){
+osg::QMLTexGenNode::QMLTexGenNode(const pmoc::Instance *i,QObject* parent):QReflect_TexGenNode(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexGenNode::connect2View(QQuickItem*i){

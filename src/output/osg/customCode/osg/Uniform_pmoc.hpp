@@ -42,7 +42,7 @@ protected:
 QString _stringvalue;
 QStringList _uniformstringlist;
 public:
-QMLUniform(pmoc::Instance *i=0,QObject* parent=0);
+QMLUniform(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

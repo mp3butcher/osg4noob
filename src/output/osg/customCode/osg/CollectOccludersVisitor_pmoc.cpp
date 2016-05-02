@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CollectOccludersVisitor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCollectOccludersVisitor::QMLCollectOccludersVisitor(pmoc::Instance *i,QObject* parent):QReflect_CollectOccludersVisitor(i,parent){
+osg::QMLCollectOccludersVisitor::QMLCollectOccludersVisitor(const pmoc::Instance *i,QObject* parent):QReflect_CollectOccludersVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCollectOccludersVisitor::connect2View(QQuickItem*i){

@@ -13,7 +13,7 @@ class  QMLTextureBuffer: public QReflect_TextureBuffer
 {
 Q_OBJECT
 public:
-QMLTextureBuffer(pmoc::Instance *i=0,QObject* parent=0);
+QMLTextureBuffer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

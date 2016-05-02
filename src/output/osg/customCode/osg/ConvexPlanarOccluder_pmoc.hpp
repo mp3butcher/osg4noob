@@ -18,7 +18,7 @@ class  QMLConvexPlanarOccluder: public QReflect_ConvexPlanarOccluder
 {
 Q_OBJECT
 public:
-QMLConvexPlanarOccluder(pmoc::Instance *i=0,QObject* parent=0);
+QMLConvexPlanarOccluder(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

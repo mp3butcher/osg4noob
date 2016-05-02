@@ -13,7 +13,7 @@ class  QMLShadeModel: public QReflect_ShadeModel
 {
 Q_OBJECT
 public:
-QMLShadeModel(pmoc::Instance *i=0,QObject* parent=0);
+QMLShadeModel(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

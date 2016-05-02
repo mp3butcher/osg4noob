@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/RadialShooter_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLRadialShooter::QMLRadialShooter(pmoc::Instance *i,QObject* parent):QReflect_RadialShooter(i,parent){
+osgParticle::QMLRadialShooter::QMLRadialShooter(const pmoc::Instance *i,QObject* parent):QReflect_RadialShooter(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLRadialShooter::connect2View(QQuickItem*i){

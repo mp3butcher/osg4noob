@@ -13,7 +13,7 @@ class  QMLAudioStream: public QReflect_AudioStream
 {
 Q_OBJECT
 public:
-QMLAudioStream(pmoc::Instance *i=0,QObject* parent=0);
+QMLAudioStream(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -34,7 +34,7 @@ class  QMLAudioSink: public QReflect_AudioSink
 {
 Q_OBJECT
 public:
-QMLAudioSink(pmoc::Instance *i=0,QObject* parent=0);
+QMLAudioSink(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

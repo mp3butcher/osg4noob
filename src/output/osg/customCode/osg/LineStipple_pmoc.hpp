@@ -13,7 +13,7 @@ class  QMLLineStipple: public QReflect_LineStipple
 {
 Q_OBJECT
 public:
-QMLLineStipple(pmoc::Instance *i=0,QObject* parent=0);
+QMLLineStipple(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

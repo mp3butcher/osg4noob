@@ -483,7 +483,7 @@ viewer.addView(new osgViewer::View);
 viewer.getView(0)->setSceneData(n);
 viewer.getView(0)->setUpViewInWindow(  0,0,WINDOW_WIDTH,WINDOW_HEIGHT );
 
-//viewer.realize();
+viewer.realize();
 viewer.run();
 }
 if(0){///remove boxes
@@ -968,7 +968,7 @@ int main(int argc, char *argv[])
     ////nview->addEventHandler(new osgViewer::WindowSizeHandler());
     ////nview->addEventHandler(new osgViewer::ThreadingHandler());
 
-    //compositeViewer->realize();    // Start loop
+    compositeViewer->realize();    // Start loop
 
 //	nview->getEventQueue()->keyPress(osgGA::GUIEventAdapter::KEY_S);
 
@@ -1054,7 +1054,7 @@ int main(int argc, char *argv[])
     compositeViewer->setCameraWithFocus(nview->getCamera());
 
 
-  //  compositeViewer->realize();
+    compositeViewer->realize();
 
 
     compositeViewer->run();

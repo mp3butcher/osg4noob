@@ -34,7 +34,7 @@ class  QMLView: public QReflect_View
 {
 Q_OBJECT
 public:
-QMLView(pmoc::Instance *i=0,QObject* parent=0);
+QMLView(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

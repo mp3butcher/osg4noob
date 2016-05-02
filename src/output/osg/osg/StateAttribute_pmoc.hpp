@@ -1,15 +1,26 @@
 #ifndef osg_StateAttribute_pmocHPP
 #define  osg_StateAttribute_pmocHPP 1
+
+
 #include <osg/StateAttribute_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_Object;
 			} ;
 namespace osg{ 
+class QReflect_Texture;
+			} ;
+namespace osg{ 
+class QReflect_StateSet;
+			} ;
+namespace osg{ 
 class QReflect_StateAttribute;
 			} ;
 namespace osg{ 
 class QReflect_StateAttributeCallback;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_ShaderComponent;
@@ -100,46 +111,49 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 StateAttribute * _model;
-QReflect_StateAttribute(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_StateAttribute(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_StateAttribute( );
 //StateAttribute
-// StateSet * getParent( unsigned int );
-//virtual  Texture * asTexture();
 // TypeMemberPair  getTypeMemberPair();
-//virtual  bool  checkValidityOfAssociatedModes( osg::State &);
 //virtual  bool  getModeUsage( ModeUsage &);
-// bool  operator!=(const  StateAttribute &);
-// bool  operator<(const  StateAttribute &);
-// bool  operator==(const  StateAttribute &);
-//virtual  void  apply( State &);
-//virtual  void  compileGLObjects( State &);
-//virtual  void  releaseGLObjects( State *);
 //const  ParentList & getParents();
-//const  StateSet * getParent( unsigned int );
-//virtual const  Texture * asTexture();
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  checkValidityOfAssociatedModes(osg::QReflect_State *)const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE  bool  isTextureAttribute()const;
-Q_INVOKABLE  osg::QReflect_ShaderComponent * getShaderComponent()const;
-Q_INVOKABLE  osg::QReflect_StateAttributeCallback * getEventCallback()const;
-Q_INVOKABLE  osg::QReflect_StateAttributeCallback * getUpdateCallback()const;
+Q_INVOKABLE  bool  operator!=(osg::QReflect_StateAttribute &rhs)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_StateAttribute &rhs)const;
+Q_INVOKABLE  bool  operator==(osg::QReflect_StateAttribute &rhs)const;
 Q_INVOKABLE  unsigned int  getMember()const;
 Q_INVOKABLE  unsigned int  getNumParents()const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
+Q_INVOKABLE osg::QReflect_ShaderComponent*  getShaderComponent();
+Q_INVOKABLE osg::QReflect_ShaderComponent*  getShaderComponent()const;
 Q_INVOKABLE osg::QReflect_StateAttribute*  asStateAttribute();
 Q_INVOKABLE osg::QReflect_StateAttribute*  asStateAttribute()const;
+Q_INVOKABLE osg::QReflect_StateAttributeCallback*  getEventCallback();
+Q_INVOKABLE osg::QReflect_StateAttributeCallback*  getEventCallback()const;
+Q_INVOKABLE osg::QReflect_StateAttributeCallback*  getUpdateCallback();
+Q_INVOKABLE osg::QReflect_StateAttributeCallback*  getUpdateCallback()const;
+Q_INVOKABLE osg::QReflect_StateSet*  getParent( unsigned int i);
+Q_INVOKABLE osg::QReflect_StateSet*  getParent( unsigned int i)const;
+Q_INVOKABLE osg::QReflect_Texture*  asTexture();
+Q_INVOKABLE osg::QReflect_Texture*  asTexture()const;
+Q_INVOKABLE void  apply(osg::QReflect_State *)const;
+Q_INVOKABLE void  compileGLObjects(osg::QReflect_State *)const;
+Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
 Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
-Q_INVOKABLE void pmoc_reverse_setEventCallback( osg::QReflect_StateAttributeCallback *par=0);
-Q_INVOKABLE void pmoc_reverse_setShaderComponent( osg::QReflect_ShaderComponent *par=0);
-Q_INVOKABLE void pmoc_reverse_setUpdateCallback( osg::QReflect_StateAttributeCallback *par=0);
-Q_INVOKABLE void setEventCallback( osg::QReflect_StateAttributeCallback *par);
-Q_INVOKABLE void setShaderComponent( osg::QReflect_ShaderComponent *par);
-Q_INVOKABLE void setUpdateCallback( osg::QReflect_StateAttributeCallback *par);
-signals: void EventCallbackChanged(const osg::QReflect_StateAttributeCallback*);
+Q_INVOKABLE void  setEventCallback(osg::QReflect_StateAttributeCallback *ec);
+Q_INVOKABLE void  setShaderComponent(osg::QReflect_ShaderComponent *sc);
+Q_INVOKABLE void  setUpdateCallback(osg::QReflect_StateAttributeCallback *uc);
+Q_PROPERTY(osg::QReflect_ShaderComponent * ShaderComponent  READ getShaderComponent WRITE setShaderComponent NOTIFY ShaderComponentChanged)
+Q_PROPERTY(osg::QReflect_StateAttributeCallback * EventCallback  READ getEventCallback WRITE setEventCallback NOTIFY EventCallbackChanged)
+Q_PROPERTY(osg::QReflect_StateAttributeCallback * UpdateCallback  READ getUpdateCallback WRITE setUpdateCallback NOTIFY UpdateCallbackChanged)
+signals: void EventCallbackChanged();
 public:
-signals: void ShaderComponentChanged(const osg::QReflect_ShaderComponent*);
+signals: void ShaderComponentChanged();
 public:
-signals: void UpdateCallbackChanged(const osg::QReflect_StateAttributeCallback*);
+signals: void UpdateCallbackChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -151,7 +165,7 @@ protected:
 MetaQReflect_StateAttribute();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -162,6 +176,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_StateAttribute_pmocHPP
 

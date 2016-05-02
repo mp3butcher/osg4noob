@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ShaderAttribute_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShaderAttribute::QMLShaderAttribute(pmoc::Instance *i,QObject* parent):QReflect_ShaderAttribute(i,parent){
+osg::QMLShaderAttribute::QMLShaderAttribute(const pmoc::Instance *i,QObject* parent):QReflect_ShaderAttribute(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShaderAttribute::connect2View(QQuickItem*i){

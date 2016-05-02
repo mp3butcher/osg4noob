@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/LineStipple_pmoc.hpp>
 using namespace pmoc;
-osg::QMLLineStipple::QMLLineStipple(pmoc::Instance *i,QObject* parent):QReflect_LineStipple(i,parent){
+osg::QMLLineStipple::QMLLineStipple(const pmoc::Instance *i,QObject* parent):QReflect_LineStipple(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLLineStipple::connect2View(QQuickItem*i){

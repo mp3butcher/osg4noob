@@ -1,6 +1,7 @@
 #ifndef osg_Camera_pmocHPP
 #define  osg_Camera_pmocHPP 1
 
+
 #include <osg/Camera_pmoc.hpp>
 #include <QObject>
 #include <osg/Camera>
@@ -15,7 +16,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 struct CameraRenderOrderSortOp * _model;
-QReflect_CameraRenderOrderSortOp(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_CameraRenderOrderSortOp(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_CameraRenderOrderSortOp( );
 //CameraRenderOrderSortOp
 public slots:
@@ -28,7 +29,7 @@ protected:
 MetaQReflect_CameraRenderOrderSortOp();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -41,9 +42,6 @@ public:
 } 
 #include <osg/Camera_pmoc.hpp>
 #include <QObject>
-namespace osg{ 
-class QReflect_Viewport;
-			} ;
 namespace osg{ 
 class QReflect_Object;
 			} ;
@@ -78,25 +76,31 @@ namespace osg{
 class QReflect_Matrixd;
 			} ;
 namespace osg{ 
-class QReflect_Camera;
-			} ;
-namespace osg{ 
-class QReflect_ColorMask;
-			} ;
-namespace osg{ 
-class QReflect_CullSettings;
-			} ;
-namespace osg{ 
-class QReflect_Stats;
+class QReflect_Viewport;
 			} ;
 namespace osg{ 
 class QReflect_GraphicsContext;
+			} ;
+namespace osg{ 
+class QReflect_Camera;
 			} ;
 namespace osg{ 
 class QReflect_GraphicsOperation;
 			} ;
 namespace osg{ 
 class QReflect_OperationThread;
+			} ;
+namespace osg{ 
+class QReflect_ColorMask;
+			} ;
+namespace osg{ 
+class QReflect_Stats;
+			} ;
+namespace osg{ 
+class QReflect_CullSettings;
+			} ;
+namespace osg{ 
+class QReflect_View;
 			} ;
 #include <osg/Camera>
 #include <osg/Camera>
@@ -182,7 +186,7 @@ virtual unsigned int getNumParentBox(){return 2;}
 
 /// inheritance simulated via composition
 Camera * _model;
-QReflect_Camera(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Camera(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Camera( );
 //Camera
 // BufferAttachmentMap & getBufferAttachmentMap();
@@ -192,20 +196,17 @@ virtual ~QReflect_Camera( );
 // DrawCallback * getPreDrawCallback();
 // Matrixd  getInverseViewMatrix();
 // OpenThreads::Mutex * getDataChangeMutex();
-// View * getView();
 // osg::Matrixd & getProjectionMatrix();
 // osg::Matrixd & getViewMatrix();
 // void  setFinalDrawCallback( DrawCallback *);
 // void  setInitialDrawCallback( DrawCallback *);
 // void  setPostDrawCallback( DrawCallback *);
 // void  setPreDrawCallback( DrawCallback *);
-// void  setView( View *);
 //const  BufferAttachmentMap & getBufferAttachmentMap();
 //const  DrawCallback * getFinalDrawCallback();
 //const  DrawCallback * getInitialDrawCallback();
 //const  DrawCallback * getPostDrawCallback();
 //const  DrawCallback * getPreDrawCallback();
-//const  View * getView();
 //const  osg::Matrixd & getProjectionMatrix();
 //const  osg::Matrixd & getViewMatrix();
 //const  osg::Vec4 & getClearAccum();
@@ -213,25 +214,19 @@ virtual ~QReflect_Camera( );
 Q_INVOKABLE  GLbitfield  getClearMask()const;
 Q_INVOKABLE  GLenum  getDrawBuffer()const;
 Q_INVOKABLE  GLenum  getReadBuffer()const;
-Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  getProjectionMatrixAsFrustum( double & , double & , double & , double & , double & , double &)const;
-Q_INVOKABLE  bool  getProjectionMatrixAsOrtho( double & , double & , double & , double & , double & , double &)const;
-Q_INVOKABLE  bool  getProjectionMatrixAsPerspective( double & , double & , double & , double &)const;
+Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE  bool  getAllowEventFocus()const;
+Q_INVOKABLE  bool  getProjectionMatrixAsFrustum( double &left , double &right , double &bottom , double &top , double &zNear , double &zFar)const;
+Q_INVOKABLE  bool  getProjectionMatrixAsOrtho( double &left , double &right , double &bottom , double &top , double &zNear , double &zFar)const;
+Q_INVOKABLE  bool  getProjectionMatrixAsPerspective( double &fovy , double &aspectRatio , double &zNear , double &zFar)const;
 Q_INVOKABLE  bool  isRenderToTextureCamera()const;
-Q_INVOKABLE  int  getImplicitBufferAttachmentRenderMask( bool )const;
-Q_INVOKABLE  int  getImplicitBufferAttachmentResolveMask( bool )const;
+Q_INVOKABLE  double  getClearDepth()const;
+Q_INVOKABLE  int  getClearStencil()const;
+Q_INVOKABLE  int  getImplicitBufferAttachmentRenderMask( bool effectiveMask)const;
+Q_INVOKABLE  int  getImplicitBufferAttachmentResolveMask( bool effectiveMask)const;
 Q_INVOKABLE  int  getRenderOrderNum()const;
-Q_INVOKABLE  osg::QReflect_DisplaySettings * getDisplaySettings()const;
-Q_INVOKABLE  osg::QReflect_GraphicsContext * getGraphicsContext()const;
-Q_INVOKABLE  osg::QReflect_GraphicsOperation * getRenderer()const;
-Q_INVOKABLE  osg::QReflect_Object * getRenderingCache()const;
-Q_INVOKABLE  osg::QReflect_OperationThread * getCameraThread()const;
-Q_INVOKABLE  osg::QReflect_Stats * getStats()const;
-Q_INVOKABLE const bool  getAllowEventFocus()const;
-Q_INVOKABLE const double  getClearDepth()const;
-Q_INVOKABLE const int  getClearStencil()const;
-Q_INVOKABLE const unsigned int  getAttachmentMapModifiedCount()const;
+Q_INVOKABLE  unsigned int  getAttachmentMapModifiedCount()const;
 Q_INVOKABLE osg::QReflect_Camera*  asCamera();
 Q_INVOKABLE osg::QReflect_Camera*  asCamera()const;
 Q_INVOKABLE osg::QReflect_Camera::ProjectionResizePolicy  getProjectionResizePolicy()const;
@@ -241,86 +236,122 @@ Q_INVOKABLE osg::QReflect_Camera::RenderTargetImplementation  getRenderTargetImp
 Q_INVOKABLE osg::QReflect_Camera::TransformOrder  getTransformOrder()const;
 Q_INVOKABLE osg::QReflect_ColorMask*  getColorMask();
 Q_INVOKABLE osg::QReflect_ColorMask*  getColorMask()const;
+Q_INVOKABLE osg::QReflect_DisplaySettings*  getDisplaySettings();
+Q_INVOKABLE osg::QReflect_DisplaySettings*  getDisplaySettings()const;
+Q_INVOKABLE osg::QReflect_GraphicsContext*  getGraphicsContext();
+Q_INVOKABLE osg::QReflect_GraphicsContext*  getGraphicsContext()const;
+Q_INVOKABLE osg::QReflect_GraphicsOperation*  getRenderer();
+Q_INVOKABLE osg::QReflect_GraphicsOperation*  getRenderer()const;
+Q_INVOKABLE osg::QReflect_Object*  getRenderingCache();
+Q_INVOKABLE osg::QReflect_Object*  getRenderingCache()const;
+Q_INVOKABLE osg::QReflect_OperationThread*  getCameraThread();
+Q_INVOKABLE osg::QReflect_OperationThread*  getCameraThread()const;
+Q_INVOKABLE osg::QReflect_Stats*  getStats();
+Q_INVOKABLE osg::QReflect_Stats*  getStats()const;
+Q_INVOKABLE osg::QReflect_View*  getView();
+Q_INVOKABLE osg::QReflect_View*  getView()const;
 Q_INVOKABLE osg::QReflect_Viewport*  getViewport();
 Q_INVOKABLE osg::QReflect_Viewport*  getViewport()const;
-Q_INVOKABLE void  attach(osg::QReflect_Camera::BufferComponent  , GLenum );
-Q_INVOKABLE void  attach(osg::QReflect_Camera::BufferComponent  ,osg::QReflect_Image * , unsigned int  , unsigned int );
-Q_INVOKABLE void  attach(osg::QReflect_Camera::BufferComponent  ,osg::QReflect_Texture * , unsigned int  , unsigned int  , bool  , unsigned int  , unsigned int );
+Q_INVOKABLE void  attach(osg::QReflect_Camera::BufferComponent buffer , GLenum internalFormat);
+Q_INVOKABLE void  attach(osg::QReflect_Camera::BufferComponent buffer ,osg::QReflect_Image *image , unsigned int multisampleSamples , unsigned int multisampleColorSamples);
+Q_INVOKABLE void  attach(osg::QReflect_Camera::BufferComponent buffer ,osg::QReflect_Texture *texture , unsigned int level , unsigned int face , bool mipMapGeneration , unsigned int multisampleSamples , unsigned int multisampleColorSamples);
 Q_INVOKABLE void  createCameraThread();
-Q_INVOKABLE void  detach(osg::QReflect_Camera::BufferComponent );
+Q_INVOKABLE void  detach(osg::QReflect_Camera::BufferComponent buffer);
 Q_INVOKABLE void  dirtyAttachmentMap();
-Q_INVOKABLE void  getViewMatrixAsLookAt(osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * , double )const;
-Q_INVOKABLE void  getViewMatrixAsLookAt(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * , float )const;
-Q_INVOKABLE void  inheritCullSettings(osg::QReflect_CullSettings * , unsigned int );
+Q_INVOKABLE void  getViewMatrixAsLookAt(osg::QReflect_Vec3d *eye ,osg::QReflect_Vec3d *center ,osg::QReflect_Vec3d *up , double lookDistance)const;
+Q_INVOKABLE void  getViewMatrixAsLookAt(osg::QReflect_Vec3f *eye ,osg::QReflect_Vec3f *center ,osg::QReflect_Vec3f *up , float lookDistance)const;
+Q_INVOKABLE void  inheritCullSettings(osg::QReflect_CullSettings *settings , unsigned int inheritanceMask);
 Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *)const;
-Q_INVOKABLE void  resize( int  , int  , int );
-Q_INVOKABLE void  resizeAttachments( int  , int );
-Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int );
-Q_INVOKABLE void  setClearAccum(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  setClearColor(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  setClearMask( GLbitfield );
-Q_INVOKABLE void  setColorMask( bool  , bool  , bool  , bool );
-Q_INVOKABLE void  setColorMask(osg::QReflect_ColorMask *);
-Q_INVOKABLE void  setDrawBuffer( GLenum );
-Q_INVOKABLE void  setImplicitBufferAttachmentMask( int  , int );
-Q_INVOKABLE void  setImplicitBufferAttachmentRenderMask( int );
-Q_INVOKABLE void  setImplicitBufferAttachmentResolveMask( int );
-Q_INVOKABLE void  setProjectionMatrix(osg::QReflect_Matrixd *);
-Q_INVOKABLE void  setProjectionMatrix(osg::QReflect_Matrixf *);
-Q_INVOKABLE void  setProjectionMatrixAsFrustum( double  , double  , double  , double  , double  , double );
-Q_INVOKABLE void  setProjectionMatrixAsOrtho( double  , double  , double  , double  , double  , double );
-Q_INVOKABLE void  setProjectionMatrixAsOrtho2D( double  , double  , double  , double );
-Q_INVOKABLE void  setProjectionMatrixAsPerspective( double  , double  , double  , double );
-Q_INVOKABLE void  setProjectionResizePolicy(osg::QReflect_Camera::ProjectionResizePolicy );
-Q_INVOKABLE void  setReadBuffer( GLenum );
-Q_INVOKABLE void  setRenderOrder(osg::QReflect_Camera::RenderOrder  , int );
-Q_INVOKABLE void  setRenderTargetImplementation(osg::QReflect_Camera::RenderTargetImplementation  ,osg::QReflect_Camera::RenderTargetImplementation );
-Q_INVOKABLE void  setRenderTargetImplementation(osg::QReflect_Camera::RenderTargetImplementation );
-Q_INVOKABLE void  setTransformOrder(osg::QReflect_Camera::TransformOrder );
-Q_INVOKABLE void  setViewMatrix(osg::QReflect_Matrixd *);
-Q_INVOKABLE void  setViewMatrix(osg::QReflect_Matrixf *);
-Q_INVOKABLE void  setViewMatrixAsLookAt(osg::QReflect_Vec3d * ,osg::QReflect_Vec3d * ,osg::QReflect_Vec3d *);
-Q_INVOKABLE void  setViewport( int  , int  , int  , int );
-Q_INVOKABLE void  setViewport(osg::QReflect_Viewport *);
-Q_INVOKABLE void pmoc_reverse_setCameraThread( osg::QReflect_OperationThread *par=0);
-Q_INVOKABLE void pmoc_reverse_setDisplaySettings( osg::QReflect_DisplaySettings *par=0);
-Q_INVOKABLE void pmoc_reverse_setGraphicsContext( osg::QReflect_GraphicsContext *par=0);
-Q_INVOKABLE void pmoc_reverse_setRenderer( osg::QReflect_GraphicsOperation *par=0);
-Q_INVOKABLE void pmoc_reverse_setRenderingCache( osg::QReflect_Object *par=0);
-Q_INVOKABLE void pmoc_reverse_setStats( osg::QReflect_Stats *par=0);
-Q_INVOKABLE void setAllowEventFocus(const bool &);
-Q_INVOKABLE void setAttachmentMapModifiedCount(const unsigned int &);
-Q_INVOKABLE void setCameraThread( osg::QReflect_OperationThread *par);
-Q_INVOKABLE void setClearDepth(const double &);
-Q_INVOKABLE void setClearStencil(const int &);
-Q_INVOKABLE void setDisplaySettings( osg::QReflect_DisplaySettings *par);
-Q_INVOKABLE void setGraphicsContext( osg::QReflect_GraphicsContext *par);
-Q_INVOKABLE void setRenderer( osg::QReflect_GraphicsOperation *par);
-Q_INVOKABLE void setRenderingCache( osg::QReflect_Object *par);
-Q_INVOKABLE void setStats( osg::QReflect_Stats *par);
-Q_PROPERTY(bool AllowEventFocus  READ getAllowEventFocus WRITE setAllowEventFocus NOTIFY AllowEventFocusChanged)
-Q_PROPERTY(double ClearDepth  READ getClearDepth WRITE setClearDepth NOTIFY ClearDepthChanged)
-Q_PROPERTY(int ClearStencil  READ getClearStencil WRITE setClearStencil NOTIFY ClearStencilChanged)
-Q_PROPERTY(unsigned int AttachmentMapModifiedCount  READ getAttachmentMapModifiedCount WRITE setAttachmentMapModifiedCount NOTIFY AttachmentMapModifiedCountChanged)
-signals: void AllowEventFocusChanged(const bool&);
+Q_INVOKABLE void  resize( int width , int height , int resizeMask);
+Q_INVOKABLE void  resizeAttachments( int width , int height);
+Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int maxSize);
+Q_INVOKABLE void  setAllowEventFocus( bool focus);
+Q_INVOKABLE void  setAttachmentMapModifiedCount( unsigned int v);
+Q_INVOKABLE void  setCameraThread(osg::QReflect_OperationThread *gt);
+Q_INVOKABLE void  setClearAccum(osg::QReflect_Vec4f *color);
+Q_INVOKABLE void  setClearColor(osg::QReflect_Vec4f *color);
+Q_INVOKABLE void  setClearDepth( double depth);
+Q_INVOKABLE void  setClearMask( GLbitfield mask);
+Q_INVOKABLE void  setClearStencil( int stencil);
+Q_INVOKABLE void  setColorMask( bool red , bool green , bool blue , bool alpha);
+Q_INVOKABLE void  setColorMask(osg::QReflect_ColorMask *colorMask);
+Q_INVOKABLE void  setDisplaySettings(osg::QReflect_DisplaySettings *ds);
+Q_INVOKABLE void  setDrawBuffer( GLenum buffer);
+Q_INVOKABLE void  setGraphicsContext(osg::QReflect_GraphicsContext *context);
+Q_INVOKABLE void  setImplicitBufferAttachmentMask( int renderMask , int resolveMask);
+Q_INVOKABLE void  setImplicitBufferAttachmentRenderMask( int implicitBufferAttachmentRenderMask);
+Q_INVOKABLE void  setImplicitBufferAttachmentResolveMask( int implicitBufferAttachmentResolveMask);
+Q_INVOKABLE void  setProjectionMatrix(osg::QReflect_Matrixd *matrix);
+Q_INVOKABLE void  setProjectionMatrix(osg::QReflect_Matrixf *matrix);
+Q_INVOKABLE void  setProjectionMatrixAsFrustum( double left , double right , double bottom , double top , double zNear , double zFar);
+Q_INVOKABLE void  setProjectionMatrixAsOrtho( double left , double right , double bottom , double top , double zNear , double zFar);
+Q_INVOKABLE void  setProjectionMatrixAsOrtho2D( double left , double right , double bottom , double top);
+Q_INVOKABLE void  setProjectionMatrixAsPerspective( double fovy , double aspectRatio , double zNear , double zFar);
+Q_INVOKABLE void  setProjectionResizePolicy(osg::QReflect_Camera::ProjectionResizePolicy policy);
+Q_INVOKABLE void  setReadBuffer( GLenum buffer);
+Q_INVOKABLE void  setRenderOrder(osg::QReflect_Camera::RenderOrder order , int orderNum);
+Q_INVOKABLE void  setRenderTargetImplementation(osg::QReflect_Camera::RenderTargetImplementation impl ,osg::QReflect_Camera::RenderTargetImplementation fallback);
+Q_INVOKABLE void  setRenderTargetImplementation(osg::QReflect_Camera::RenderTargetImplementation impl);
+Q_INVOKABLE void  setRenderer(osg::QReflect_GraphicsOperation *rc);
+Q_INVOKABLE void  setRenderingCache(osg::QReflect_Object *rc);
+Q_INVOKABLE void  setStats(osg::QReflect_Stats *stats);
+Q_INVOKABLE void  setTransformOrder(osg::QReflect_Camera::TransformOrder order);
+Q_INVOKABLE void  setView(osg::QReflect_View *view);
+Q_INVOKABLE void  setViewMatrix(osg::QReflect_Matrixd *matrix);
+Q_INVOKABLE void  setViewMatrix(osg::QReflect_Matrixf *matrix);
+Q_INVOKABLE void  setViewMatrixAsLookAt(osg::QReflect_Vec3d *eye ,osg::QReflect_Vec3d *center ,osg::QReflect_Vec3d *up);
+Q_INVOKABLE void  setViewport( int x , int y , int width , int height);
+Q_INVOKABLE void  setViewport(osg::QReflect_Viewport *viewport);
+Q_PROPERTY(GLbitfield  ClearMask  READ getClearMask WRITE setClearMask NOTIFY ClearMaskChanged)
+Q_PROPERTY(GLenum  DrawBuffer  READ getDrawBuffer WRITE setDrawBuffer NOTIFY DrawBufferChanged)
+Q_PROPERTY(GLenum  ReadBuffer  READ getReadBuffer WRITE setReadBuffer NOTIFY ReadBufferChanged)
+Q_PROPERTY(bool  AllowEventFocus  READ getAllowEventFocus WRITE setAllowEventFocus NOTIFY AllowEventFocusChanged)
+Q_PROPERTY(double  ClearDepth  READ getClearDepth WRITE setClearDepth NOTIFY ClearDepthChanged)
+Q_PROPERTY(int  ClearStencil  READ getClearStencil WRITE setClearStencil NOTIFY ClearStencilChanged)
+Q_PROPERTY(osg::QReflect_Camera::ProjectionResizePolicy  ProjectionResizePolicy  READ getProjectionResizePolicy WRITE setProjectionResizePolicy NOTIFY ProjectionResizePolicyChanged)
+Q_PROPERTY(osg::QReflect_Camera::RenderTargetImplementation  RenderTargetImplementation  READ getRenderTargetImplementation WRITE setRenderTargetImplementation NOTIFY RenderTargetImplementationChanged)
+Q_PROPERTY(osg::QReflect_Camera::TransformOrder  TransformOrder  READ getTransformOrder WRITE setTransformOrder NOTIFY TransformOrderChanged)
+Q_PROPERTY(osg::QReflect_DisplaySettings * DisplaySettings  READ getDisplaySettings WRITE setDisplaySettings NOTIFY DisplaySettingsChanged)
+Q_PROPERTY(osg::QReflect_GraphicsContext * GraphicsContext  READ getGraphicsContext WRITE setGraphicsContext NOTIFY GraphicsContextChanged)
+Q_PROPERTY(osg::QReflect_GraphicsOperation * Renderer  READ getRenderer WRITE setRenderer NOTIFY RendererChanged)
+Q_PROPERTY(osg::QReflect_Object * RenderingCache  READ getRenderingCache WRITE setRenderingCache NOTIFY RenderingCacheChanged)
+Q_PROPERTY(osg::QReflect_OperationThread * CameraThread  READ getCameraThread WRITE setCameraThread NOTIFY CameraThreadChanged)
+Q_PROPERTY(osg::QReflect_Stats * Stats  READ getStats WRITE setStats NOTIFY StatsChanged)
+Q_PROPERTY(osg::QReflect_View * View  READ getView WRITE setView NOTIFY ViewChanged)
+Q_PROPERTY(unsigned int  AttachmentMapModifiedCount  READ getAttachmentMapModifiedCount WRITE setAttachmentMapModifiedCount NOTIFY AttachmentMapModifiedCountChanged)
+signals: void AllowEventFocusChanged();
 public:
-signals: void AttachmentMapModifiedCountChanged(const unsigned int&);
+signals: void AttachmentMapModifiedCountChanged();
 public:
-signals: void CameraThreadChanged(const osg::QReflect_OperationThread*);
+signals: void CameraThreadChanged();
 public:
-signals: void ClearDepthChanged(const double&);
+signals: void ClearDepthChanged();
 public:
-signals: void ClearStencilChanged(const int&);
+signals: void ClearMaskChanged();
 public:
-signals: void DisplaySettingsChanged(const osg::QReflect_DisplaySettings*);
+signals: void ClearStencilChanged();
 public:
-signals: void GraphicsContextChanged(const osg::QReflect_GraphicsContext*);
+signals: void DisplaySettingsChanged();
 public:
-signals: void RendererChanged(const osg::QReflect_GraphicsOperation*);
+signals: void DrawBufferChanged();
 public:
-signals: void RenderingCacheChanged(const osg::QReflect_Object*);
+signals: void GraphicsContextChanged();
 public:
-signals: void StatsChanged(const osg::QReflect_Stats*);
+signals: void ProjectionResizePolicyChanged();
+public:
+signals: void ReadBufferChanged();
+public:
+signals: void RenderTargetImplementationChanged();
+public:
+signals: void RendererChanged();
+public:
+signals: void RenderingCacheChanged();
+public:
+signals: void StatsChanged();
+public:
+signals: void TransformOrderChanged();
+public:
+signals: void ViewChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -334,7 +365,7 @@ public:
 MetaQReflect_Camera();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -345,6 +376,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Camera_pmocHPP
 

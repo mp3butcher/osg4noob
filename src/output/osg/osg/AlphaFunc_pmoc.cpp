@@ -1,5 +1,6 @@
 #include <osg/AlphaFunc>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,28 +8,50 @@
 #include <customCode/osg/AlphaFunc_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_AlphaFunc::compare(osg::QReflect_StateAttribute *p0)const{
+ float  osg::QReflect_AlphaFunc:: getReferenceValue()const{
+//params checking
+return _model->getReferenceValue();
+
+}
+ int  osg::QReflect_AlphaFunc:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_AlphaFunc::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_AlphaFunc::setFunction(osg::QReflect_AlphaFunc::ComparisonFunction p0 , float p1){
+ void osg::QReflect_AlphaFunc::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_AlphaFunc::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_AlphaFunc::setFunction(osg::QReflect_AlphaFunc::ComparisonFunction  p0 , float  p1){
+//params checking
  _model->setFunction(static_cast<osg::AlphaFunc::ComparisonFunction>(p0) ,p1);
 
 }
- void osg::QReflect_AlphaFunc::setFunction(osg::QReflect_AlphaFunc::ComparisonFunction p0){
+ void osg::QReflect_AlphaFunc::setFunction(osg::QReflect_AlphaFunc::ComparisonFunction  p0){
+//params checking
  _model->setFunction(static_cast<osg::AlphaFunc::ComparisonFunction>(p0));
+emit FunctionChanged();
 
 }
-const float osg::QReflect_AlphaFunc::getReferenceValue()const{return _model->getReferenceValue();}
+ void osg::QReflect_AlphaFunc::setReferenceValue( float  p0){
+//params checking
+ _model->setReferenceValue(p0);
+emit ReferenceValueChanged();
+
+}
 osg::QReflect_AlphaFunc::ComparisonFunction  osg::QReflect_AlphaFunc::getFunction()const{
+//params checking
 osg::QReflect_AlphaFunc::ComparisonFunction ret=static_cast<osg::QReflect_AlphaFunc::ComparisonFunction>( _model->getFunction());return  ret;
 
 }
-void  osg::QReflect_AlphaFunc::setReferenceValue(const float &par){_model->setReferenceValue(par);emit ReferenceValueChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_AlphaFunc::QReflect_AlphaFunc(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_AlphaFunc::QReflect_AlphaFunc(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::AlphaFunc*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -56,9 +79,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_AlphaFunc::MetaQReflect_AlphaFunc():MetaQQuickClass( "osg::AlphaFunc"){
-_typeid=&typeid(osg::AlphaFunc );           qRegisterMetaType<QMLAlphaFunc>();
-qmlRegisterType<QReflect_AlphaFunc>("pmoc.osg",1,0,"QReflect_AlphaFunc");
-           qmlRegisterType<QMLAlphaFunc>("pmoc.osg",1,0,"QMLAlphaFunc");
+_typeid=&typeid(osg::AlphaFunc );
+           qRegisterMetaType<osg::QMLAlphaFunc>();
+           qRegisterMetaType<osg::QMLAlphaFunc*>("pmoc.osg.QMLAlphaFunc");
+qmlRegisterType<osg::QReflect_AlphaFunc>("pmoc.osg",1,0,"QReflect_AlphaFunc");
+           qmlRegisterType<osg::QMLAlphaFunc>("pmoc.osg",1,0,"QMLAlphaFunc");
 };
 const std::string osg::MetaQReflect_AlphaFunc::Imports() const{
  return std::string("");
@@ -67,7 +92,7 @@ const std::string osg::MetaQReflect_AlphaFunc::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_AlphaFunc::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_AlphaFunc::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_AlphaFunc::createQQModel(Instance*i){ //return new MetaQReflect_AlphaFunc_QModel(i);}
+QQModel* osg::MetaQReflect_AlphaFunc::createQQModel(const Instance*i){ //return new MetaQReflect_AlphaFunc_QModel(i);}
 QMLAlphaFunc *ret =new QMLAlphaFunc(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -89,5 +114,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_AlphaFunc_pmoc.cpp"
 #endif
+
+
 
 

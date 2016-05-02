@@ -1,5 +1,6 @@
 #include <osg/TextureCubeMap>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -10,59 +11,101 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_TextureCubeMap::getTextureTarget()const{
+ GLenum  osg::QReflect_TextureCubeMap:: getTextureTarget()const{
+//params checking
 return _model->getTextureTarget();
 
 }
- int  osg::QReflect_TextureCubeMap::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_TextureCubeMap:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TextureCubeMap::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- int  osg::QReflect_TextureCubeMap::getTextureDepth()const{
+ int  osg::QReflect_TextureCubeMap:: getTextureDepth()const{
+//params checking
 return _model->getTextureDepth();
 
 }
- unsigned int  osg::QReflect_TextureCubeMap::getNumImages()const{
+ int  osg::QReflect_TextureCubeMap:: getTextureHeight()const{
+//params checking
+return _model->getTextureHeight();
+
+}
+ int  osg::QReflect_TextureCubeMap:: getTextureWidth()const{
+//params checking
+return _model->getTextureWidth();
+
+}
+ unsigned int  osg::QReflect_TextureCubeMap:: getNumImages()const{
+//params checking
 return _model->getNumImages();
 
 }
- unsigned int&  osg::QReflect_TextureCubeMap::getModifiedCount( unsigned int p0 , unsigned int p1)const{
+ unsigned int  osg::QReflect_TextureCubeMap:: getNumMipmapLevels()const{
+//params checking
+return _model->getNumMipmapLevels();
+
+}
+ unsigned int&  osg::QReflect_TextureCubeMap:: getModifiedCount( unsigned int  p0 , unsigned int  p1)const{
+//params checking
 return _model->getModifiedCount(p0 ,p1);
 
 }
- void osg::QReflect_TextureCubeMap::apply(osg::QReflect_State *p0)const{
+ void osg::QReflect_TextureCubeMap::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TextureCubeMap::apply : parameter n.0 is NULL\n"<<endl;return;}
  _model->apply(*p0->_model);
 
 }
- void osg::QReflect_TextureCubeMap::copyTexSubImageCubeMap(osg::QReflect_State *p0 , int p1 , int p2 , int p3 , int p4 , int p5 , int p6 , int p7){
+ void osg::QReflect_TextureCubeMap::copyTexSubImageCubeMap(osg::QReflect_State  *p0 , int  p1 , int  p2 , int  p3 , int  p4 , int  p5 , int  p6 , int  p7){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TextureCubeMap::copyTexSubImageCubeMap : parameter n.0 is NULL\n"<<endl;return;}
  _model->copyTexSubImageCubeMap(*p0->_model ,p1 ,p2 ,p3 ,p4 ,p5 ,p6 ,p7);
 
 }
- void osg::QReflect_TextureCubeMap::setImage( unsigned int p0 ,osg::QReflect_Image *p1){
+ void osg::QReflect_TextureCubeMap::setImage( unsigned int  p0 ,osg::QReflect_Image  *p1){
+//params checking
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_TextureCubeMap::setImage : parameter n.1 is NULL\n"<<endl;return;}
  _model->setImage(p0 ,p1->_model);
 
 }
- void osg::QReflect_TextureCubeMap::setTextureSize( int p0 , int p1)const{
+ void osg::QReflect_TextureCubeMap::setNumMipmapLevels( unsigned int  p0)const{
+//params checking
+ _model->setNumMipmapLevels(p0);
+///This Property seams binded with a mutable attribute in a const method! in this case i can't emit signal !!!
+
+}
+ void osg::QReflect_TextureCubeMap::setTextureHeight( int  p0){
+//params checking
+ _model->setTextureHeight(p0);
+emit TextureHeightChanged();
+
+}
+ void osg::QReflect_TextureCubeMap::setTextureSize( int  p0 , int  p1)const{
+//params checking
  _model->setTextureSize(p0 ,p1);
 
 }
-const int osg::QReflect_TextureCubeMap::getTextureHeight()const{return _model->getTextureHeight();}
-const int osg::QReflect_TextureCubeMap::getTextureWidth()const{return _model->getTextureWidth();}
-const unsigned int osg::QReflect_TextureCubeMap::getNumMipmapLevels()const{return _model->getNumMipmapLevels();}
-osg::QReflect_Image*osg::QReflect_TextureCubeMap::getImage( unsigned int p0)const{
+ void osg::QReflect_TextureCubeMap::setTextureWidth( int  p0){
+//params checking
+ _model->setTextureWidth(p0);
+emit TextureWidthChanged();
+
+}
+osg::QReflect_Image*osg::QReflect_TextureCubeMap::getImage( unsigned int  p0)const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getImage(p0),inst);
 return inst.isValid()?((osg::QReflect_Image * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_Image*osg::QReflect_TextureCubeMap::getImage( unsigned int p0){
+osg::QReflect_Image*osg::QReflect_TextureCubeMap::getImage( unsigned int  p0){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getImage(p0),inst);
 return inst.isValid()?((osg::QReflect_Image * )inst.model->createQQModel(&inst)):NULL;
 }
-void  osg::QReflect_TextureCubeMap::setNumMipmapLevels(const unsigned int &par){_model->setNumMipmapLevels(par);emit NumMipmapLevelsChanged(par);}
-void  osg::QReflect_TextureCubeMap::setTextureHeight(const int &par){_model->setTextureHeight(par);emit TextureHeightChanged(par);}
-void  osg::QReflect_TextureCubeMap::setTextureWidth(const int &par){_model->setTextureWidth(par);emit TextureWidthChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_TextureCubeMap::QReflect_TextureCubeMap(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TextureCubeMap::QReflect_TextureCubeMap(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TextureCubeMap*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -90,9 +133,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TextureCubeMap::MetaQReflect_TextureCubeMap():MetaQQuickClass( "osg::TextureCubeMap"){
-_typeid=&typeid(osg::TextureCubeMap );           qRegisterMetaType<QMLTextureCubeMap>();
-qmlRegisterType<QReflect_TextureCubeMap>("pmoc.osg",1,0,"QReflect_TextureCubeMap");
-           qmlRegisterType<QMLTextureCubeMap>("pmoc.osg",1,0,"QMLTextureCubeMap");
+_typeid=&typeid(osg::TextureCubeMap );
+           qRegisterMetaType<osg::QMLTextureCubeMap>();
+           qRegisterMetaType<osg::QMLTextureCubeMap*>("pmoc.osg.QMLTextureCubeMap");
+qmlRegisterType<osg::QReflect_TextureCubeMap>("pmoc.osg",1,0,"QReflect_TextureCubeMap");
+           qmlRegisterType<osg::QMLTextureCubeMap>("pmoc.osg",1,0,"QMLTextureCubeMap");
 };
 const std::string osg::MetaQReflect_TextureCubeMap::Imports() const{
  return std::string("");
@@ -101,7 +146,7 @@ const std::string osg::MetaQReflect_TextureCubeMap::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TextureCubeMap::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TextureCubeMap::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TextureCubeMap::createQQModel(Instance*i){ //return new MetaQReflect_TextureCubeMap_QModel(i);}
+QQModel* osg::MetaQReflect_TextureCubeMap::createQQModel(const Instance*i){ //return new MetaQReflect_TextureCubeMap_QModel(i);}
 QMLTextureCubeMap *ret =new QMLTextureCubeMap(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -123,5 +168,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_TextureCubeMap_pmoc.cpp"
 #endif
+
+
 
 

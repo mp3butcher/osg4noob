@@ -1,9 +1,14 @@
 #ifndef osg_PrimitiveRestartIndex_pmocHPP
 #define  osg_PrimitiveRestartIndex_pmocHPP 1
+
+
 #include <osg/PrimitiveRestartIndex_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/PrimitiveRestartIndex>
 #include <osg/PrimitiveRestartIndex>
@@ -19,15 +24,15 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 PrimitiveRestartIndex * _model;
-QReflect_PrimitiveRestartIndex(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_PrimitiveRestartIndex(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_PrimitiveRestartIndex( );
 //PrimitiveRestartIndex
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE const unsigned int  getRestartIndex()const;
-Q_INVOKABLE void setRestartIndex(const unsigned int &);
-Q_PROPERTY(unsigned int RestartIndex  READ getRestartIndex WRITE setRestartIndex NOTIFY RestartIndexChanged)
-signals: void RestartIndexChanged(const unsigned int&);
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE  unsigned int  getRestartIndex()const;
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setRestartIndex( unsigned int restartIndex);
+Q_PROPERTY(unsigned int  RestartIndex  READ getRestartIndex WRITE setRestartIndex NOTIFY RestartIndexChanged)
+signals: void RestartIndexChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -41,7 +46,7 @@ public:
 MetaQReflect_PrimitiveRestartIndex();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -52,6 +57,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_PrimitiveRestartIndex_pmocHPP
 

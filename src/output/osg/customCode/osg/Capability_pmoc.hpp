@@ -13,7 +13,7 @@ class  QMLCapability: public QReflect_Capability
 {
 Q_OBJECT
 public:
-QMLCapability(pmoc::Instance *i=0,QObject* parent=0);
+QMLCapability(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -34,7 +34,7 @@ class  QMLCapabilityi: public QReflect_Capabilityi
 {
 Q_OBJECT
 public:
-QMLCapabilityi(pmoc::Instance *i=0,QObject* parent=0);
+QMLCapabilityi(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -55,7 +55,7 @@ class  QMLEnablei: public QReflect_Enablei
 {
 Q_OBJECT
 public:
-QMLEnablei(pmoc::Instance *i=0,QObject* parent=0);
+QMLEnablei(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -76,7 +76,7 @@ class  QMLDisablei: public QReflect_Disablei
 {
 Q_OBJECT
 public:
-QMLDisablei(pmoc::Instance *i=0,QObject* parent=0);
+QMLDisablei(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -13,7 +13,7 @@ class  QMLTextureRectangle: public QReflect_TextureRectangle
 {
 Q_OBJECT
 public:
-QMLTextureRectangle(pmoc::Instance *i=0,QObject* parent=0);
+QMLTextureRectangle(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

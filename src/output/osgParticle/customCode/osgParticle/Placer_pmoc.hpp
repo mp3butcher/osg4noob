@@ -13,7 +13,7 @@ class  QMLPlacer: public QReflect_Placer
 {
 Q_OBJECT
 public:
-QMLPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QMLPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

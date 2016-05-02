@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Callback_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCallback::QMLCallback(pmoc::Instance *i,QObject* parent):QReflect_Callback(i,parent){
+osg::QMLCallback::QMLCallback(const pmoc::Instance *i,QObject* parent):QReflect_Callback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCallback::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLCallback::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Callback_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCallbackObject::QMLCallbackObject(pmoc::Instance *i,QObject* parent):QReflect_CallbackObject(i,parent){
+osg::QMLCallbackObject::QMLCallbackObject(const pmoc::Instance *i,QObject* parent):QReflect_CallbackObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCallbackObject::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLCallbackObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Callback_pmoc.hpp>
 using namespace pmoc;
-osg::QMLNodeCallback::QMLNodeCallback(pmoc::Instance *i,QObject* parent):QReflect_NodeCallback(i,parent){
+osg::QMLNodeCallback::QMLNodeCallback(const pmoc::Instance *i,QObject* parent):QReflect_NodeCallback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLNodeCallback::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLNodeCallback::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Callback_pmoc.hpp>
 using namespace pmoc;
-osg::QMLStateAttributeCallback::QMLStateAttributeCallback(pmoc::Instance *i,QObject* parent):QReflect_StateAttributeCallback(i,parent){
+osg::QMLStateAttributeCallback::QMLStateAttributeCallback(const pmoc::Instance *i,QObject* parent):QReflect_StateAttributeCallback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLStateAttributeCallback::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLStateAttributeCallback::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Callback_pmoc.hpp>
 using namespace pmoc;
-osg::QMLUniformCallback::QMLUniformCallback(pmoc::Instance *i,QObject* parent):QReflect_UniformCallback(i,parent){
+osg::QMLUniformCallback::QMLUniformCallback(const pmoc::Instance *i,QObject* parent):QReflect_UniformCallback(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLUniformCallback::connect2View(QQuickItem*i){

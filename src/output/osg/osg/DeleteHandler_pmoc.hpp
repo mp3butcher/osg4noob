@@ -1,5 +1,7 @@
 #ifndef osg_DeleteHandler_pmocHPP
 #define  osg_DeleteHandler_pmocHPP 1
+
+
 #include <osg/DeleteHandler_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -17,22 +19,22 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 DeleteHandler * _model;
-QReflect_DeleteHandler(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_DeleteHandler(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DeleteHandler( );
 //DeleteHandler
-Q_INVOKABLE const unsigned int  getFrameNumber()const;
-Q_INVOKABLE const unsigned int  getNumFramesToRetainObjects()const;
-Q_INVOKABLE void  doDelete(osg::QReflect_Referenced *);
+Q_INVOKABLE  unsigned int  getFrameNumber()const;
+Q_INVOKABLE  unsigned int  getNumFramesToRetainObjects()const;
+Q_INVOKABLE void  doDelete(osg::QReflect_Referenced *object);
 Q_INVOKABLE void  flush();
 Q_INVOKABLE void  flushAll();
-Q_INVOKABLE void  requestDelete(osg::QReflect_Referenced *);
-Q_INVOKABLE void setFrameNumber(const unsigned int &);
-Q_INVOKABLE void setNumFramesToRetainObjects(const unsigned int &);
-Q_PROPERTY(unsigned int FrameNumber  READ getFrameNumber WRITE setFrameNumber NOTIFY FrameNumberChanged)
-Q_PROPERTY(unsigned int NumFramesToRetainObjects  READ getNumFramesToRetainObjects WRITE setNumFramesToRetainObjects NOTIFY NumFramesToRetainObjectsChanged)
-signals: void FrameNumberChanged(const unsigned int&);
+Q_INVOKABLE void  requestDelete(osg::QReflect_Referenced *object);
+Q_INVOKABLE void  setFrameNumber( unsigned int frameNumber);
+Q_INVOKABLE void  setNumFramesToRetainObjects( unsigned int numberOfFramesToRetainObjects);
+Q_PROPERTY(unsigned int  FrameNumber  READ getFrameNumber WRITE setFrameNumber NOTIFY FrameNumberChanged)
+Q_PROPERTY(unsigned int  NumFramesToRetainObjects  READ getNumFramesToRetainObjects WRITE setNumFramesToRetainObjects NOTIFY NumFramesToRetainObjectsChanged)
+signals: void FrameNumberChanged();
 public:
-signals: void NumFramesToRetainObjectsChanged(const unsigned int&);
+signals: void NumFramesToRetainObjectsChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -46,7 +48,7 @@ public:
 MetaQReflect_DeleteHandler();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -57,6 +59,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_DeleteHandler_pmocHPP
 

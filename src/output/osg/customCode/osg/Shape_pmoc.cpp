@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBox::QMLBox(pmoc::Instance *i,QObject* parent):QReflect_Box(i,parent){
+osg::QMLBox::QMLBox(const pmoc::Instance *i,QObject* parent):QReflect_Box(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBox::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLBox::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCapsule::QMLCapsule(pmoc::Instance *i,QObject* parent):QReflect_Capsule(i,parent){
+osg::QMLCapsule::QMLCapsule(const pmoc::Instance *i,QObject* parent):QReflect_Capsule(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCapsule::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLCapsule::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCompositeShape::QMLCompositeShape(pmoc::Instance *i,QObject* parent):QReflect_CompositeShape(i,parent){
+osg::QMLCompositeShape::QMLCompositeShape(const pmoc::Instance *i,QObject* parent):QReflect_CompositeShape(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCompositeShape::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLCompositeShape::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCone::QMLCone(pmoc::Instance *i,QObject* parent):QReflect_Cone(i,parent){
+osg::QMLCone::QMLCone(const pmoc::Instance *i,QObject* parent):QReflect_Cone(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCone::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLCone::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLConstShapeVisitor::QMLConstShapeVisitor(pmoc::Instance *i,QObject* parent):QReflect_ConstShapeVisitor(i,parent){
+osg::QMLConstShapeVisitor::QMLConstShapeVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ConstShapeVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLConstShapeVisitor::connect2View(QQuickItem*i){
@@ -133,7 +133,7 @@ void  osg::QMLConstShapeVisitor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLConvexHull::QMLConvexHull(pmoc::Instance *i,QObject* parent):QReflect_ConvexHull(i,parent){
+osg::QMLConvexHull::QMLConvexHull(const pmoc::Instance *i,QObject* parent):QReflect_ConvexHull(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLConvexHull::connect2View(QQuickItem*i){
@@ -159,7 +159,7 @@ void  osg::QMLConvexHull::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCylinder::QMLCylinder(pmoc::Instance *i,QObject* parent):QReflect_Cylinder(i,parent){
+osg::QMLCylinder::QMLCylinder(const pmoc::Instance *i,QObject* parent):QReflect_Cylinder(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCylinder::connect2View(QQuickItem*i){
@@ -185,7 +185,7 @@ void  osg::QMLCylinder::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLHeightField::QMLHeightField(pmoc::Instance *i,QObject* parent):QReflect_HeightField(i,parent){
+osg::QMLHeightField::QMLHeightField(const pmoc::Instance *i,QObject* parent):QReflect_HeightField(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLHeightField::connect2View(QQuickItem*i){
@@ -211,7 +211,7 @@ void  osg::QMLHeightField::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLInfinitePlane::QMLInfinitePlane(pmoc::Instance *i,QObject* parent):QReflect_InfinitePlane(i,parent){
+osg::QMLInfinitePlane::QMLInfinitePlane(const pmoc::Instance *i,QObject* parent):QReflect_InfinitePlane(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLInfinitePlane::connect2View(QQuickItem*i){
@@ -237,7 +237,7 @@ void  osg::QMLInfinitePlane::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShape::QMLShape(pmoc::Instance *i,QObject* parent):QReflect_Shape(i,parent){
+osg::QMLShape::QMLShape(const pmoc::Instance *i,QObject* parent):QReflect_Shape(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShape::connect2View(QQuickItem*i){
@@ -263,7 +263,7 @@ void  osg::QMLShape::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShapeVisitor::QMLShapeVisitor(pmoc::Instance *i,QObject* parent):QReflect_ShapeVisitor(i,parent){
+osg::QMLShapeVisitor::QMLShapeVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ShapeVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShapeVisitor::connect2View(QQuickItem*i){
@@ -289,7 +289,7 @@ void  osg::QMLShapeVisitor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLSphere::QMLSphere(pmoc::Instance *i,QObject* parent):QReflect_Sphere(i,parent){
+osg::QMLSphere::QMLSphere(const pmoc::Instance *i,QObject* parent):QReflect_Sphere(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLSphere::connect2View(QQuickItem*i){
@@ -315,7 +315,7 @@ void  osg::QMLSphere::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Shape_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTriangleMesh::QMLTriangleMesh(pmoc::Instance *i,QObject* parent):QReflect_TriangleMesh(i,parent){
+osg::QMLTriangleMesh::QMLTriangleMesh(const pmoc::Instance *i,QObject* parent):QReflect_TriangleMesh(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTriangleMesh::connect2View(QQuickItem*i){

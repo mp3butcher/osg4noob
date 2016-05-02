@@ -1,11 +1,12 @@
 #include <osg/Texture>
 //includes
+#include <QQuickItem>
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/StateSet_pmoc.hpp>
 #include <customCode/osg/Texture_pmoc.hpp>
 #include <QQmlProperty>
 using namespace pmoc;
-osg::QMLTexture::QMLTexture(pmoc::Instance *i,QObject* parent):QReflect_Texture(i,parent){
+osg::QMLTexture::QMLTexture(const pmoc::Instance *i,QObject* parent):QReflect_Texture(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexture::connect2View(QQuickItem*i){
@@ -52,7 +53,7 @@ void  osg::QMLTexture::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Texture_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTextureObjectManager::QMLTextureObjectManager(pmoc::Instance *i,QObject* parent):QReflect_TextureObjectManager(i,parent){
+/*osg::QMLTextureObjectManager::QMLTextureObjectManager(const pmoc::Instance *i,QObject* parent):QReflect_TextureObjectManager(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTextureObjectManager::connect2View(QQuickItem*i){
@@ -69,7 +70,7 @@ void  osg::QMLTextureObjectManager::updateModel(){
 	///CustomiZE here
 
 
-}
+}*/
 #ifndef AUTOMOCCPP
 #define AUTOMOCCPP 1
 #include "moc_Texture_pmoc.cpp"
@@ -77,7 +78,7 @@ void  osg::QMLTextureObjectManager::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Texture_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTextureObjectSet::QMLTextureObjectSet(pmoc::Instance *i,QObject* parent):QReflect_TextureObjectSet(i,parent){
+/*osg::QMLTextureObjectSet::QMLTextureObjectSet(const pmoc::Instance *i,QObject* parent):QReflect_TextureObjectSet(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTextureObjectSet::connect2View(QQuickItem*i){
@@ -94,7 +95,7 @@ void  osg::QMLTextureObjectSet::updateModel(){
 	///CustomiZE here
 
 
-}
+}*/
 #ifndef AUTOMOCCPP
 #define AUTOMOCCPP 1
 #include "moc_Texture_pmoc.cpp"

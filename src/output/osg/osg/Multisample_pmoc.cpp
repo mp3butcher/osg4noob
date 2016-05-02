@@ -1,5 +1,6 @@
 #include <osg/Multisample>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,30 +8,61 @@
 #include <customCode/osg/Multisample_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_Multisample::compare(osg::QReflect_StateAttribute *p0)const{
+ bool  osg::QReflect_Multisample:: getInvert()const{
+//params checking
+return _model->getInvert();
+
+}
+ float  osg::QReflect_Multisample:: getCoverage()const{
+//params checking
+return _model->getCoverage();
+
+}
+ int  osg::QReflect_Multisample:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Multisample::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_Multisample::setHint(osg::QReflect_Multisample::Mode p0){
- _model->setHint(static_cast<osg::Multisample::Mode>(p0));
+ void osg::QReflect_Multisample::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Multisample::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
 
 }
- void osg::QReflect_Multisample::setSampleCoverage( float p0 , bool p1){
+ void osg::QReflect_Multisample::setCoverage( float  p0){
+//params checking
+ _model->setCoverage(p0);
+emit CoverageChanged();
+
+}
+ void osg::QReflect_Multisample::setHint(osg::QReflect_Multisample::Mode  p0){
+//params checking
+ _model->setHint(static_cast<osg::Multisample::Mode>(p0));
+emit HintChanged();
+
+}
+ void osg::QReflect_Multisample::setInvert( bool  p0){
+//params checking
+ _model->setInvert(p0);
+emit InvertChanged();
+
+}
+ void osg::QReflect_Multisample::setSampleCoverage( float  p0 , bool  p1){
+//params checking
  _model->setSampleCoverage(p0 ,p1);
 
 }
-const bool osg::QReflect_Multisample::getInvert()const{return _model->getInvert();}
-const float osg::QReflect_Multisample::getCoverage()const{return _model->getCoverage();}
 osg::QReflect_Multisample::Mode  osg::QReflect_Multisample::getHint()const{
+//params checking
 osg::QReflect_Multisample::Mode ret=static_cast<osg::QReflect_Multisample::Mode>( _model->getHint());return  ret;
 
 }
-void  osg::QReflect_Multisample::setCoverage(const float &par){_model->setCoverage(par);emit CoverageChanged(par);}
-void  osg::QReflect_Multisample::setInvert(const bool &par){_model->setInvert(par);emit InvertChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Multisample::QReflect_Multisample(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Multisample::QReflect_Multisample(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Multisample*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -58,9 +90,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Multisample::MetaQReflect_Multisample():MetaQQuickClass( "osg::Multisample"){
-_typeid=&typeid(osg::Multisample );           qRegisterMetaType<QMLMultisample>();
-qmlRegisterType<QReflect_Multisample>("pmoc.osg",1,0,"QReflect_Multisample");
-           qmlRegisterType<QMLMultisample>("pmoc.osg",1,0,"QMLMultisample");
+_typeid=&typeid(osg::Multisample );
+           qRegisterMetaType<osg::QMLMultisample>();
+           qRegisterMetaType<osg::QMLMultisample*>("pmoc.osg.QMLMultisample");
+qmlRegisterType<osg::QReflect_Multisample>("pmoc.osg",1,0,"QReflect_Multisample");
+           qmlRegisterType<osg::QMLMultisample>("pmoc.osg",1,0,"QMLMultisample");
 };
 const std::string osg::MetaQReflect_Multisample::Imports() const{
  return std::string("");
@@ -69,7 +103,7 @@ const std::string osg::MetaQReflect_Multisample::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Multisample::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Multisample::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Multisample::createQQModel(Instance*i){ //return new MetaQReflect_Multisample_QModel(i);}
+QQModel* osg::MetaQReflect_Multisample::createQQModel(const Instance*i){ //return new MetaQReflect_Multisample_QModel(i);}
 QMLMultisample *ret =new QMLMultisample(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -91,5 +125,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Multisample_pmoc.cpp"
 #endif
+
+
 
 

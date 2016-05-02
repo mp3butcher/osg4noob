@@ -13,7 +13,7 @@ class  QMLClipPlane: public QReflect_ClipPlane
 {
 Q_OBJECT
 public:
-QMLClipPlane(pmoc::Instance *i=0,QObject* parent=0);
+QMLClipPlane(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -14,7 +14,7 @@ class  QMLComputeBoundsVisitor: public QReflect_ComputeBoundsVisitor
 {
 Q_OBJECT
 public:
-QMLComputeBoundsVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLComputeBoundsVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

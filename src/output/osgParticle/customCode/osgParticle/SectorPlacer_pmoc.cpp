@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/SectorPlacer_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLSectorPlacer::QMLSectorPlacer(pmoc::Instance *i,QObject* parent):QReflect_SectorPlacer(i,parent){
+osgParticle::QMLSectorPlacer::QMLSectorPlacer(const pmoc::Instance *i,QObject* parent):QReflect_SectorPlacer(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLSectorPlacer::connect2View(QQuickItem*i){

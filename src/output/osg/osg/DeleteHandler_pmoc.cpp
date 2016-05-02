@@ -1,5 +1,6 @@
 #include <osg/DeleteHandler>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,29 +8,53 @@
 #include <customCode/osg/DeleteHandler_pmoc.hpp>
 #include <customCode/osg/Referenced_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_DeleteHandler::doDelete(osg::QReflect_Referenced *p0){
+ unsigned int  osg::QReflect_DeleteHandler:: getFrameNumber()const{
+//params checking
+return _model->getFrameNumber();
+
+}
+ unsigned int  osg::QReflect_DeleteHandler:: getNumFramesToRetainObjects()const{
+//params checking
+return _model->getNumFramesToRetainObjects();
+
+}
+ void osg::QReflect_DeleteHandler::doDelete(osg::QReflect_Referenced  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DeleteHandler::doDelete : parameter n.0 is NULL\n"<<endl;return;}
  _model->doDelete(p0->_model);
 
 }
  void osg::QReflect_DeleteHandler::flush(){
+//params checking
  _model->flush();
 
 }
  void osg::QReflect_DeleteHandler::flushAll(){
+//params checking
  _model->flushAll();
 
 }
- void osg::QReflect_DeleteHandler::requestDelete(osg::QReflect_Referenced *p0){
+ void osg::QReflect_DeleteHandler::requestDelete(osg::QReflect_Referenced  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DeleteHandler::requestDelete : parameter n.0 is NULL\n"<<endl;return;}
  _model->requestDelete(p0->_model);
 
 }
-const unsigned int osg::QReflect_DeleteHandler::getFrameNumber()const{return _model->getFrameNumber();}
-const unsigned int osg::QReflect_DeleteHandler::getNumFramesToRetainObjects()const{return _model->getNumFramesToRetainObjects();}
-void  osg::QReflect_DeleteHandler::setFrameNumber(const unsigned int &par){_model->setFrameNumber(par);emit FrameNumberChanged(par);}
-void  osg::QReflect_DeleteHandler::setNumFramesToRetainObjects(const unsigned int &par){_model->setNumFramesToRetainObjects(par);emit NumFramesToRetainObjectsChanged(par);}
+ void osg::QReflect_DeleteHandler::setFrameNumber( unsigned int  p0){
+//params checking
+ _model->setFrameNumber(p0);
+emit FrameNumberChanged();
+
+}
+ void osg::QReflect_DeleteHandler::setNumFramesToRetainObjects( unsigned int  p0){
+//params checking
+ _model->setNumFramesToRetainObjects(p0);
+emit NumFramesToRetainObjectsChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_DeleteHandler::QReflect_DeleteHandler(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_DeleteHandler::QReflect_DeleteHandler(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::DeleteHandler*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -52,9 +77,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_DeleteHandler::MetaQReflect_DeleteHandler():MetaQQuickClass( "osg::DeleteHandler"){
-_typeid=&typeid(osg::DeleteHandler );           qRegisterMetaType<QMLDeleteHandler>();
-qmlRegisterType<QReflect_DeleteHandler>("pmoc.osg",1,0,"QReflect_DeleteHandler");
-           qmlRegisterType<QMLDeleteHandler>("pmoc.osg",1,0,"QMLDeleteHandler");
+_typeid=&typeid(osg::DeleteHandler );
+           qRegisterMetaType<osg::QMLDeleteHandler>();
+           qRegisterMetaType<osg::QMLDeleteHandler*>("pmoc.osg.QMLDeleteHandler");
+qmlRegisterType<osg::QReflect_DeleteHandler>("pmoc.osg",1,0,"QReflect_DeleteHandler");
+           qmlRegisterType<osg::QMLDeleteHandler>("pmoc.osg",1,0,"QMLDeleteHandler");
 };
 const std::string osg::MetaQReflect_DeleteHandler::Imports() const{
  return std::string("");
@@ -63,7 +90,7 @@ const std::string osg::MetaQReflect_DeleteHandler::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_DeleteHandler::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_DeleteHandler::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_DeleteHandler::createQQModel(Instance*i){ //return new MetaQReflect_DeleteHandler_QModel(i);}
+QQModel* osg::MetaQReflect_DeleteHandler::createQQModel(const Instance*i){ //return new MetaQReflect_DeleteHandler_QModel(i);}
 QMLDeleteHandler *ret =new QMLDeleteHandler(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -74,5 +101,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_DeleteHandler_pmoc.cpp"
 #endif
+
+
 
 

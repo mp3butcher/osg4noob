@@ -13,7 +13,7 @@ class  QMLStats: public QReflect_Stats
 {
 Q_OBJECT
 public:
-QMLStats(pmoc::Instance *i=0,QObject* parent=0);
+QMLStats(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

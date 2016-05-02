@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Multisample_pmoc.hpp>
 using namespace pmoc;
-osg::QMLMultisample::QMLMultisample(pmoc::Instance *i,QObject* parent):QReflect_Multisample(i,parent){
+osg::QMLMultisample::QMLMultisample(const pmoc::Instance *i,QObject* parent):QReflect_Multisample(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLMultisample::connect2View(QQuickItem*i){

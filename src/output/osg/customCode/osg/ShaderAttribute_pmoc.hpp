@@ -13,7 +13,7 @@ class  QMLShaderAttribute: public QReflect_ShaderAttribute
 {
 Q_OBJECT
 public:
-QMLShaderAttribute(pmoc::Instance *i=0,QObject* parent=0);
+QMLShaderAttribute(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

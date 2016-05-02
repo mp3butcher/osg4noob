@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Plane_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPlane::QMLPlane(pmoc::Instance *i,QObject* parent):QReflect_Plane(i,parent){
+osg::QMLPlane::QMLPlane(const pmoc::Instance *i,QObject* parent):QReflect_Plane(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPlane::connect2View(QQuickItem*i){

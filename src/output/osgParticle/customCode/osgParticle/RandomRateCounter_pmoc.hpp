@@ -17,7 +17,7 @@ class  QMLRandomRateCounter: public QReflect_RandomRateCounter
     Q_PROPERTY(float maxRate READ maxRate WRITE maxRate NOTIFY maxRateChanged )
 
 public:
-    QMLRandomRateCounter(pmoc::Instance *i=0,QObject* parent=0);
+    QMLRandomRateCounter(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 
     float minRate()const

@@ -1,5 +1,6 @@
 #include <osg/CoordinateSystemNode>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,30 +8,55 @@
 #include <customCode/osg/CoordinateSystemNode_pmoc.hpp>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/CoordinateSystemNode_pmoc.hpp>
-#include <osg/CoordinateSystemNode>
-#include <osg/CoordinateSystemNode_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_CoordinateSystemNode::set(osg::QReflect_CoordinateSystemNode *p0){
+ void osg::QReflect_CoordinateSystemNode::set(osg::QReflect_CoordinateSystemNode  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CoordinateSystemNode::set : parameter n.0 is NULL\n"<<endl;return;}
  _model->set(*p0->_model);
 
 }
-const QString osg::QReflect_CoordinateSystemNode::getCoordinateSystem()const{return QString(_model->getCoordinateSystem().c_str());}
-const QString osg::QReflect_CoordinateSystemNode::getFormat()const{return QString(_model->getFormat().c_str());}
-osg::QReflect_EllipsoidModel * osg::QReflect_CoordinateSystemNode::getEllipsoidModel()const{
+ void osg::QReflect_CoordinateSystemNode::setCoordinateSystem(const  QString  &p0){
+//params checking
+ _model->setCoordinateSystem(std::string(p0.toStdString()));
+emit CoordinateSystemChanged();
+
+}
+ void osg::QReflect_CoordinateSystemNode::setEllipsoidModel(osg::QReflect_EllipsoidModel  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_CoordinateSystemNode::setEllipsoidModel : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setEllipsoidModel(p0->_model);
+emit EllipsoidModelChanged();
+
+}
+ void osg::QReflect_CoordinateSystemNode::setFormat(const  QString  &p0){
+//params checking
+ _model->setFormat(std::string(p0.toStdString()));
+emit FormatChanged();
+
+}
+QString  osg::QReflect_CoordinateSystemNode::getCoordinateSystem()const{
+//params checking
+QString ret(_model->getCoordinateSystem().c_str());return ret;
+
+}
+QString  osg::QReflect_CoordinateSystemNode::getFormat()const{
+//params checking
+QString ret(_model->getFormat().c_str());return ret;
+
+}
+osg::QReflect_EllipsoidModel*osg::QReflect_CoordinateSystemNode::getEllipsoidModel()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getEllipsoidModel(),inst);
 return inst.isValid()?((osg::QReflect_EllipsoidModel * )inst.model->createQQModel(&inst)):NULL;
 }
-void osg::QReflect_CoordinateSystemNode::pmoc_reverse_setEllipsoidModel( osg::QReflect_EllipsoidModel *par){_model->setEllipsoidModel(NULL);
-emit EllipsoidModelChanged(NULL);
+osg::QReflect_EllipsoidModel*osg::QReflect_CoordinateSystemNode::getEllipsoidModel(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getEllipsoidModel(),inst);
+return inst.isValid()?((osg::QReflect_EllipsoidModel * )inst.model->createQQModel(&inst)):NULL;
 }
-void osg::QReflect_CoordinateSystemNode::setCoordinateSystem(const QString &par){_model->setCoordinateSystem(par.toStdString());emit CoordinateSystemChanged(par);}
-void osg::QReflect_CoordinateSystemNode::setEllipsoidModel( osg::QReflect_EllipsoidModel *par){_model->setEllipsoidModel(par->_model);
-emit EllipsoidModelChanged(par);
-}
-void osg::QReflect_CoordinateSystemNode::setFormat(const QString &par){_model->setFormat(par.toStdString());emit FormatChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_CoordinateSystemNode::QReflect_CoordinateSystemNode(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_CoordinateSystemNode::QReflect_CoordinateSystemNode(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::CoordinateSystemNode*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -58,10 +84,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_CoordinateSystemNode::MetaQReflect_CoordinateSystemNode():MetaQQuickClass( "osg::CoordinateSystemNode"){
-_typeid=&typeid(osg::CoordinateSystemNode );           qRegisterMetaType<QMLCoordinateSystemNode>();
-qmlRegisterType<QReflect_CoordinateSystemNode>("pmoc.osg",1,0,"QReflect_CoordinateSystemNode");
-           qmlRegisterType<QMLCoordinateSystemNode>("pmoc.osg",1,0,"QMLCoordinateSystemNode");
-       PMOCACTION("getEllipsoidModel","setEllipsoidModel","unsetEllipsoidModel");
+_typeid=&typeid(osg::CoordinateSystemNode );
+           qRegisterMetaType<osg::QMLCoordinateSystemNode>();
+           qRegisterMetaType<osg::QMLCoordinateSystemNode*>("pmoc.osg.QMLCoordinateSystemNode");
+qmlRegisterType<osg::QReflect_CoordinateSystemNode>("pmoc.osg",1,0,"QReflect_CoordinateSystemNode");
+           qmlRegisterType<osg::QMLCoordinateSystemNode>("pmoc.osg",1,0,"QMLCoordinateSystemNode");
 };
 const std::string osg::MetaQReflect_CoordinateSystemNode::Imports() const{
  return std::string("");
@@ -70,7 +97,7 @@ const std::string osg::MetaQReflect_CoordinateSystemNode::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_CoordinateSystemNode::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_CoordinateSystemNode::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_CoordinateSystemNode::createQQModel(Instance*i){ //return new MetaQReflect_CoordinateSystemNode_QModel(i);}
+QQModel* osg::MetaQReflect_CoordinateSystemNode::createQQModel(const Instance*i){ //return new MetaQReflect_CoordinateSystemNode_QModel(i);}
 QMLCoordinateSystemNode *ret =new QMLCoordinateSystemNode(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -98,39 +125,72 @@ return ret;}
 #include <osg/CoordinateSystemNode_pmoc.hpp>
 #include <customCode/osg/CoordinateSystemNode_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/CoordinateSystemNode_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_EllipsoidModel::isWGS84()const{
+ bool  osg::QReflect_EllipsoidModel:: isWGS84()const{
+//params checking
 return _model->isWGS84();
 
 }
- void osg::QReflect_EllipsoidModel::computeCoordinateFrame( double p0 , double p1 ,osg::QReflect_Matrixd *p2)const{
+ bool operator==(osg::QReflect_EllipsoidModel  &p0 ,osg::QReflect_EllipsoidModel  &p1){
+//params checking
+return *p0._model ==*p1._model;
+
+}
+ double  osg::QReflect_EllipsoidModel:: getRadiusEquator()const{
+//params checking
+return _model->getRadiusEquator();
+
+}
+ double  osg::QReflect_EllipsoidModel:: getRadiusPolar()const{
+//params checking
+return _model->getRadiusPolar();
+
+}
+ void osg::QReflect_EllipsoidModel::computeCoordinateFrame( double  p0 , double  p1 ,osg::QReflect_Matrixd  *p2)const{
+//params checking
+if(! p2) {std::cerr<<"PMOC: osg::QReflect_EllipsoidModel::computeCoordinateFrame : parameter n.2 is NULL\n"<<endl;return;}
  _model->computeCoordinateFrame(p0 ,p1 ,*p2->_model);
 
 }
- void osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromLatLongHeight( double p0 , double p1 , double p2 ,osg::QReflect_Matrixd *p3)const{
+ void osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromLatLongHeight( double  p0 , double  p1 , double  p2 ,osg::QReflect_Matrixd  *p3)const{
+//params checking
+if(! p3) {std::cerr<<"PMOC: osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromLatLongHeight : parameter n.3 is NULL\n"<<endl;return;}
  _model->computeLocalToWorldTransformFromLatLongHeight(p0 ,p1 ,p2 ,*p3->_model);
 
 }
- void osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromXYZ( double p0 , double p1 , double p2 ,osg::QReflect_Matrixd *p3)const{
+ void osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromXYZ( double  p0 , double  p1 , double  p2 ,osg::QReflect_Matrixd  *p3)const{
+//params checking
+if(! p3) {std::cerr<<"PMOC: osg::QReflect_EllipsoidModel::computeLocalToWorldTransformFromXYZ : parameter n.3 is NULL\n"<<endl;return;}
  _model->computeLocalToWorldTransformFromXYZ(p0 ,p1 ,p2 ,*p3->_model);
 
 }
- void osg::QReflect_EllipsoidModel::convertLatLongHeightToXYZ( double p0 , double p1 , double p2 , double &p3 , double &p4 , double &p5)const{
+ void osg::QReflect_EllipsoidModel::convertLatLongHeightToXYZ( double  p0 , double  p1 , double  p2 , double  &p3 , double  &p4 , double  &p5)const{
+//params checking
  _model->convertLatLongHeightToXYZ(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
 
 }
- void osg::QReflect_EllipsoidModel::convertXYZToLatLongHeight( double p0 , double p1 , double p2 , double &p3 , double &p4 , double &p5)const{
+ void osg::QReflect_EllipsoidModel::convertXYZToLatLongHeight( double  p0 , double  p1 , double  p2 , double  &p3 , double  &p4 , double  &p5)const{
+//params checking
  _model->convertXYZToLatLongHeight(p0 ,p1 ,p2 ,p3 ,p4 ,p5);
 
 }
-const double osg::QReflect_EllipsoidModel::getRadiusEquator()const{return _model->getRadiusEquator();}
-const double osg::QReflect_EllipsoidModel::getRadiusPolar()const{return _model->getRadiusPolar();}
-void  osg::QReflect_EllipsoidModel::setRadiusEquator(const double &par){_model->setRadiusEquator(par);emit RadiusEquatorChanged(par);}
-void  osg::QReflect_EllipsoidModel::setRadiusPolar(const double &par){_model->setRadiusPolar(par);emit RadiusPolarChanged(par);}
+ void osg::QReflect_EllipsoidModel::setRadiusEquator( double  p0){
+//params checking
+ _model->setRadiusEquator(p0);
+emit RadiusEquatorChanged();
+
+}
+ void osg::QReflect_EllipsoidModel::setRadiusPolar( double  p0){
+//params checking
+ _model->setRadiusPolar(p0);
+emit RadiusPolarChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_EllipsoidModel::QReflect_EllipsoidModel(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_EllipsoidModel::QReflect_EllipsoidModel(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::EllipsoidModel*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -158,9 +218,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_EllipsoidModel::MetaQReflect_EllipsoidModel():MetaQQuickClass( "osg::EllipsoidModel"){
-_typeid=&typeid(osg::EllipsoidModel );           qRegisterMetaType<QMLEllipsoidModel>();
-qmlRegisterType<QReflect_EllipsoidModel>("pmoc.osg",1,0,"QReflect_EllipsoidModel");
-           qmlRegisterType<QMLEllipsoidModel>("pmoc.osg",1,0,"QMLEllipsoidModel");
+_typeid=&typeid(osg::EllipsoidModel );
+           qRegisterMetaType<osg::QMLEllipsoidModel>();
+           qRegisterMetaType<osg::QMLEllipsoidModel*>("pmoc.osg.QMLEllipsoidModel");
+qmlRegisterType<osg::QReflect_EllipsoidModel>("pmoc.osg",1,0,"QReflect_EllipsoidModel");
+           qmlRegisterType<osg::QMLEllipsoidModel>("pmoc.osg",1,0,"QMLEllipsoidModel");
 };
 const std::string osg::MetaQReflect_EllipsoidModel::Imports() const{
  return std::string("");
@@ -169,7 +231,7 @@ const std::string osg::MetaQReflect_EllipsoidModel::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_EllipsoidModel::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_EllipsoidModel::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_EllipsoidModel::createQQModel(Instance*i){ //return new MetaQReflect_EllipsoidModel_QModel(i);}
+QQModel* osg::MetaQReflect_EllipsoidModel::createQQModel(const Instance*i){ //return new MetaQReflect_EllipsoidModel_QModel(i);}
 QMLEllipsoidModel *ret =new QMLEllipsoidModel(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -191,6 +253,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_CoordinateSystemNode_pmoc.cpp"
 #endif
+
 
 
 

@@ -1,5 +1,6 @@
 #include <osg/Projection>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,21 +9,27 @@
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 using namespace pmoc;
- void osg::QReflect_Projection::postMult(osg::QReflect_Matrixd *p0){
+ void osg::QReflect_Projection::postMult(osg::QReflect_Matrixd  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Projection::postMult : parameter n.0 is NULL\n"<<endl;return;}
  _model->postMult(*p0->_model);
 
 }
- void osg::QReflect_Projection::preMult(osg::QReflect_Matrixd *p0){
+ void osg::QReflect_Projection::preMult(osg::QReflect_Matrixd  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Projection::preMult : parameter n.0 is NULL\n"<<endl;return;}
  _model->preMult(*p0->_model);
 
 }
- void osg::QReflect_Projection::setMatrix(osg::QReflect_Matrixd *p0){
+ void osg::QReflect_Projection::setMatrix(osg::QReflect_Matrixd  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Projection::setMatrix : parameter n.0 is NULL\n"<<endl;return;}
  _model->setMatrix(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Projection::QReflect_Projection(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Projection::QReflect_Projection(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Projection*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -50,9 +57,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Projection::MetaQReflect_Projection():MetaQQuickClass( "osg::Projection"){
-_typeid=&typeid(osg::Projection );           qRegisterMetaType<QMLProjection>();
-qmlRegisterType<QReflect_Projection>("pmoc.osg",1,0,"QReflect_Projection");
-           qmlRegisterType<QMLProjection>("pmoc.osg",1,0,"QMLProjection");
+_typeid=&typeid(osg::Projection );
+           qRegisterMetaType<osg::QMLProjection>();
+           qRegisterMetaType<osg::QMLProjection*>("pmoc.osg.QMLProjection");
+qmlRegisterType<osg::QReflect_Projection>("pmoc.osg",1,0,"QReflect_Projection");
+           qmlRegisterType<osg::QMLProjection>("pmoc.osg",1,0,"QMLProjection");
 };
 const std::string osg::MetaQReflect_Projection::Imports() const{
  return std::string("");
@@ -61,7 +70,7 @@ const std::string osg::MetaQReflect_Projection::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Projection::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Projection::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Projection::createQQModel(Instance*i){ //return new MetaQReflect_Projection_QModel(i);}
+QQModel* osg::MetaQReflect_Projection::createQQModel(const Instance*i){ //return new MetaQReflect_Projection_QModel(i);}
 QMLProjection *ret =new QMLProjection(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -83,6 +92,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Projection_pmoc.cpp"
 #endif
+
 
 
 

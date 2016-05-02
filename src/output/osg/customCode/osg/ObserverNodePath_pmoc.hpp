@@ -13,7 +13,7 @@ class  QMLObserverNodePath: public QReflect_ObserverNodePath
 {
 Q_OBJECT
 public:
-QMLObserverNodePath(pmoc::Instance *i=0,QObject* parent=0);
+QMLObserverNodePath(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

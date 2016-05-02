@@ -1,9 +1,14 @@
 #ifndef osg_BlendFunc_pmocHPP
 #define  osg_BlendFunc_pmocHPP 1
+
+
 #include <osg/BlendFunc_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/BlendFunc>
 #include <osg/BlendFunc>
@@ -38,26 +43,44 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 BlendFunc * _model;
-QReflect_BlendFunc(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_BlendFunc(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_BlendFunc( );
 //BlendFunc
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
 Q_INVOKABLE  GLenum  getDestination()const;
 Q_INVOKABLE  GLenum  getDestinationAlpha()const;
 Q_INVOKABLE  GLenum  getDestinationRGB()const;
 Q_INVOKABLE  GLenum  getSource()const;
 Q_INVOKABLE  GLenum  getSourceAlpha()const;
 Q_INVOKABLE  GLenum  getSourceRGB()const;
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
-Q_INVOKABLE void  setDestination( GLenum );
-Q_INVOKABLE void  setDestinationAlpha( GLenum );
-Q_INVOKABLE void  setDestinationRGB( GLenum );
-Q_INVOKABLE void  setFunction( GLenum  , GLenum  , GLenum  , GLenum );
-Q_INVOKABLE void  setFunction( GLenum  , GLenum );
-Q_INVOKABLE void  setSource( GLenum );
-Q_INVOKABLE void  setSourceAlpha( GLenum );
-Q_INVOKABLE void  setSourceRGB( GLenum );
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setDestination( GLenum destination);
+Q_INVOKABLE void  setDestinationAlpha( GLenum destination);
+Q_INVOKABLE void  setDestinationRGB( GLenum destination);
+Q_INVOKABLE void  setFunction( GLenum source , GLenum destination);
+Q_INVOKABLE void  setFunction( GLenum source_rgb , GLenum destination_rgb , GLenum source_alpha , GLenum destination_alpha);
+Q_INVOKABLE void  setSource( GLenum source);
+Q_INVOKABLE void  setSourceAlpha( GLenum source);
+Q_INVOKABLE void  setSourceRGB( GLenum source);
+Q_PROPERTY(GLenum  Destination  READ getDestination WRITE setDestination NOTIFY DestinationChanged)
+Q_PROPERTY(GLenum  DestinationAlpha  READ getDestinationAlpha WRITE setDestinationAlpha NOTIFY DestinationAlphaChanged)
+Q_PROPERTY(GLenum  DestinationRGB  READ getDestinationRGB WRITE setDestinationRGB NOTIFY DestinationRGBChanged)
+Q_PROPERTY(GLenum  Source  READ getSource WRITE setSource NOTIFY SourceChanged)
+Q_PROPERTY(GLenum  SourceAlpha  READ getSourceAlpha WRITE setSourceAlpha NOTIFY SourceAlphaChanged)
+Q_PROPERTY(GLenum  SourceRGB  READ getSourceRGB WRITE setSourceRGB NOTIFY SourceRGBChanged)
+signals: void DestinationAlphaChanged();
+public:
+signals: void DestinationChanged();
+public:
+signals: void DestinationRGBChanged();
+public:
+signals: void SourceAlphaChanged();
+public:
+signals: void SourceChanged();
+public:
+signals: void SourceRGBChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -70,7 +93,7 @@ public:
 MetaQReflect_BlendFunc();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -81,6 +104,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_BlendFunc_pmocHPP
 

@@ -12,7 +12,7 @@ class  QMLSyncSwapBuffersCallback: public QReflect_SyncSwapBuffersCallback
 {
 Q_OBJECT
 public:
-QMLSyncSwapBuffersCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLSyncSwapBuffersCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -43,7 +43,7 @@ class  QMLGraphicsContext: public QReflect_GraphicsContext
 {
 Q_OBJECT
 public:
-QMLGraphicsContext(pmoc::Instance *i=0,QObject* parent=0);
+QMLGraphicsContext(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

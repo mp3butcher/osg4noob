@@ -1,6 +1,7 @@
 #ifndef osg_Sequence_pmocHPP
 #define  osg_Sequence_pmocHPP 1
 
+
 #include <osg/Sequence_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -14,11 +15,6 @@ class QReflect_NodeVisitor;
 
 #include <osg/ref_ptr>
 #include<osg/Sequence_pmoc.hpp>
-namespace osg{
-class QReflect_Node; 
-}
-
-
 #include <MetaQQuickClass.h>
 namespace osg{
 class QReflect_Sequence: public pmoc::QQModel
@@ -43,75 +39,81 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Sequence * _model;
-QReflect_Sequence(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Sequence(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Sequence( );
 //Sequence
 // void  getInterval( LoopMode & , int & , int &);
 // void  setTimeList(const  std::vector<double> &);
 //const  std::vector<double> & getTimeList();
-Q_INVOKABLE  bool  addChild(osg::QReflect_Node * , double );
-Q_INVOKABLE  bool  insertChild( unsigned int  ,osg::QReflect_Node * , double );
-Q_INVOKABLE  bool  insertChild( unsigned int  ,osg::QReflect_Node *);
-Q_INVOKABLE  bool  removeChildren( unsigned int  , unsigned int );
-Q_INVOKABLE  double  getTime( unsigned int )const;
+Q_INVOKABLE  bool  addChild(osg::QReflect_Node *child , double t);
+Q_INVOKABLE  bool  addChild(osg::QReflect_Node *child);
+Q_INVOKABLE  bool  getClearOnStop()const;
+Q_INVOKABLE  bool  getSync()const;
+Q_INVOKABLE  bool  insertChild( unsigned int index ,osg::QReflect_Node *child , double t);
+Q_INVOKABLE  bool  insertChild( unsigned int index ,osg::QReflect_Node *child);
+Q_INVOKABLE  bool  removeChild(osg::QReflect_Node *child);
+Q_INVOKABLE  bool  removeChildren( unsigned int pos , unsigned int numChildrenToRemove);
+Q_INVOKABLE  double  getDefaultTime()const;
+Q_INVOKABLE  double  getLastFrameTime()const;
+Q_INVOKABLE  double  getTime( unsigned int frame)const;
+Q_INVOKABLE  float  getSpeed()const;
+Q_INVOKABLE  int  getBegin()const;
+Q_INVOKABLE  int  getEnd()const;
+Q_INVOKABLE  int  getNumRepeats()const;
+Q_INVOKABLE  int  getValue()const;
 Q_INVOKABLE  unsigned int  getNumFrames()const;
-Q_INVOKABLE const bool  getClearOnStop()const;
-Q_INVOKABLE const bool  getSync()const;
-Q_INVOKABLE const double  getDefaultTime()const;
-Q_INVOKABLE const double  getLastFrameTime()const;
-Q_INVOKABLE const float  getSpeed()const;
-Q_INVOKABLE const int  getBegin()const;
-Q_INVOKABLE const int  getEnd()const;
-Q_INVOKABLE const int  getNumRepeats()const;
-Q_INVOKABLE const int  getValue()const;
 Q_INVOKABLE osg::QReflect_Sequence::LoopMode  getLoopMode()const;
 Q_INVOKABLE osg::QReflect_Sequence::SequenceMode  getMode()const;
-Q_INVOKABLE void  getDuration( float & , int &)const;
-Q_INVOKABLE void  setDuration( float  , int );
-Q_INVOKABLE void  setInterval(osg::QReflect_Sequence::LoopMode  , int  , int );
-Q_INVOKABLE void  setLoopMode(osg::QReflect_Sequence::LoopMode );
-Q_INVOKABLE void  setMode(osg::QReflect_Sequence::SequenceMode );
-Q_INVOKABLE void  setTime( unsigned int  , double );
-Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
-Q_INVOKABLE void setBegin(const int &);
-Q_INVOKABLE void setClearOnStop(const bool &);
-Q_INVOKABLE void setDefaultTime(const double &);
-Q_INVOKABLE void setEnd(const int &);
-Q_INVOKABLE void setLastFrameTime(const double &);
-Q_INVOKABLE void setNumRepeats(const int &);
-Q_INVOKABLE void setSpeed(const float &);
-Q_INVOKABLE void setSync(const bool &);
-Q_INVOKABLE void setValue(const int &);
-Q_PROPERTY(bool ClearOnStop  READ getClearOnStop WRITE setClearOnStop NOTIFY ClearOnStopChanged)
-Q_PROPERTY(bool Sync  READ getSync WRITE setSync NOTIFY SyncChanged)
-Q_PROPERTY(double DefaultTime  READ getDefaultTime WRITE setDefaultTime NOTIFY DefaultTimeChanged)
-Q_PROPERTY(double LastFrameTime  READ getLastFrameTime WRITE setLastFrameTime NOTIFY LastFrameTimeChanged)
-Q_PROPERTY(float Speed  READ getSpeed WRITE setSpeed NOTIFY SpeedChanged)
-Q_PROPERTY(int Begin  READ getBegin WRITE setBegin NOTIFY BeginChanged)
-Q_PROPERTY(int End  READ getEnd WRITE setEnd NOTIFY EndChanged)
-Q_PROPERTY(int NumRepeats  READ getNumRepeats WRITE setNumRepeats NOTIFY NumRepeatsChanged)
-Q_PROPERTY(int Value  READ getValue WRITE setValue NOTIFY ValueChanged)
-virtual Q_INVOKABLE void   addChild( osg::QReflect_Node *par);//{return new osg::QReflect_Node(_model->getChild());}
-virtual Q_INVOKABLE void pmoc_reverse_addChild( osg::QReflect_Node *par);//{_model->setChild(par->_model);emit ChildCollectionChanged(par);}
-signals: void BeginChanged(const int&);
+Q_INVOKABLE void  getDuration( float &speed , int &nreps)const;
+Q_INVOKABLE void  setBegin( int begin);
+Q_INVOKABLE void  setClearOnStop( bool clearOnStop);
+Q_INVOKABLE void  setDefaultTime( double t);
+Q_INVOKABLE void  setDuration( float speed , int nreps);
+Q_INVOKABLE void  setEnd( int end);
+Q_INVOKABLE void  setInterval(osg::QReflect_Sequence::LoopMode mode , int begin , int end);
+Q_INVOKABLE void  setLastFrameTime( double t);
+Q_INVOKABLE void  setLoopMode(osg::QReflect_Sequence::LoopMode mode);
+Q_INVOKABLE void  setMode(osg::QReflect_Sequence::SequenceMode mode);
+Q_INVOKABLE void  setNumRepeats( int nreps);
+Q_INVOKABLE void  setSpeed( float speed);
+Q_INVOKABLE void  setSync( bool sync);
+Q_INVOKABLE void  setTime( unsigned int frame , double t);
+Q_INVOKABLE void  setValue( int value);
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *nv);
+Q_PROPERTY(bool  ClearOnStop  READ getClearOnStop WRITE setClearOnStop NOTIFY ClearOnStopChanged)
+Q_PROPERTY(bool  Sync  READ getSync WRITE setSync NOTIFY SyncChanged)
+Q_PROPERTY(double  DefaultTime  READ getDefaultTime WRITE setDefaultTime NOTIFY DefaultTimeChanged)
+Q_PROPERTY(double  LastFrameTime  READ getLastFrameTime WRITE setLastFrameTime NOTIFY LastFrameTimeChanged)
+Q_PROPERTY(float  Speed  READ getSpeed WRITE setSpeed NOTIFY SpeedChanged)
+Q_PROPERTY(int  Begin  READ getBegin WRITE setBegin NOTIFY BeginChanged)
+Q_PROPERTY(int  End  READ getEnd WRITE setEnd NOTIFY EndChanged)
+Q_PROPERTY(int  NumRepeats  READ getNumRepeats WRITE setNumRepeats NOTIFY NumRepeatsChanged)
+Q_PROPERTY(int  Value  READ getValue WRITE setValue NOTIFY ValueChanged)
+Q_PROPERTY(osg::QReflect_Sequence::LoopMode  LoopMode  READ getLoopMode WRITE setLoopMode NOTIFY LoopModeChanged)
+Q_PROPERTY(osg::QReflect_Sequence::SequenceMode  Mode  READ getMode WRITE setMode NOTIFY ModeChanged)
+signals: void BeginChanged();
 public:
 signals: void ChildCollectionChanged();
 public:
-signals: void ClearOnStopChanged(const bool&);
+signals: void ClearOnStopChanged();
 public:
-signals: void DefaultTimeChanged(const double&);
+signals: void DefaultTimeChanged();
 public:
-signals: void EndChanged(const int&);
+signals: void EndChanged();
 public:
-signals: void LastFrameTimeChanged(const double&);
+signals: void LastFrameTimeChanged();
 public:
-signals: void NumRepeatsChanged(const int&);
+signals: void LoopModeChanged();
 public:
-signals: void SpeedChanged(const float&);
+signals: void ModeChanged();
 public:
-signals: void SyncChanged(const bool&);
+signals: void NumRepeatsChanged();
 public:
-signals: void ValueChanged(const int&);
+signals: void SpeedChanged();
+public:
+signals: void SyncChanged();
+public:
+signals: void ValueChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -125,7 +127,7 @@ public:
 MetaQReflect_Sequence();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -136,6 +138,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Sequence_pmocHPP
 

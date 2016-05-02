@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Observer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLObserver::QMLObserver(pmoc::Instance *i,QObject* parent):QReflect_Observer(i,parent){
+osg::QMLObserver::QMLObserver(const pmoc::Instance *i,QObject* parent):QReflect_Observer(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLObserver::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLObserver::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Observer_pmoc.hpp>
 using namespace pmoc;
-osg::QMLObserverSet::QMLObserverSet(pmoc::Instance *i,QObject* parent):QReflect_ObserverSet(i,parent){
+osg::QMLObserverSet::QMLObserverSet(const pmoc::Instance *i,QObject* parent):QReflect_ObserverSet(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLObserverSet::connect2View(QQuickItem*i){

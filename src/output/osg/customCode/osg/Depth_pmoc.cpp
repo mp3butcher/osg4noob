@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Depth_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDepth::QMLDepth(pmoc::Instance *i,QObject* parent):QReflect_Depth(i,parent){
+osg::QMLDepth::QMLDepth(const pmoc::Instance *i,QObject* parent):QReflect_Depth(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDepth::connect2View(QQuickItem*i){

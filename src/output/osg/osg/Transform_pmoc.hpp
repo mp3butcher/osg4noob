@@ -1,6 +1,7 @@
 #ifndef osg_Transform_pmocHPP
 #define  osg_Transform_pmocHPP 1
 
+
 #include <osg/Transform_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -11,6 +12,12 @@ class QReflect_Matrixd;
 			} ;
 namespace osg{ 
 class QReflect_Transform;
+			} ;
+namespace osg{ 
+class QReflect_MatrixTransform;
+			} ;
+namespace osg{ 
+class QReflect_PositionAttitudeTransform;
 			} ;
 #include <osg/Transform>
 #include <osg/Transform>
@@ -34,20 +41,23 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Transform * _model;
-QReflect_Transform(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Transform(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Transform( );
 //Transform
 //virtual  BoundingSphere  computeBound();
-//virtual  MatrixTransform * asMatrixTransform();
-//virtual  PositionAttitudeTransform * asPositionAttitudeTransform();
-//virtual const  MatrixTransform * asMatrixTransform();
-//virtual const  PositionAttitudeTransform * asPositionAttitudeTransform();
-Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
-Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd * ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE  bool  computeLocalToWorldMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE  bool  computeWorldToLocalMatrix(osg::QReflect_Matrixd *matrix ,osg::QReflect_NodeVisitor *)const;
+Q_INVOKABLE osg::QReflect_MatrixTransform*  asMatrixTransform();
+Q_INVOKABLE osg::QReflect_MatrixTransform*  asMatrixTransform()const;
+Q_INVOKABLE osg::QReflect_PositionAttitudeTransform*  asPositionAttitudeTransform();
+Q_INVOKABLE osg::QReflect_PositionAttitudeTransform*  asPositionAttitudeTransform()const;
 Q_INVOKABLE osg::QReflect_Transform*  asTransform();
 Q_INVOKABLE osg::QReflect_Transform*  asTransform()const;
 Q_INVOKABLE osg::QReflect_Transform::ReferenceFrame  getReferenceFrame()const;
-Q_INVOKABLE void  setReferenceFrame(osg::QReflect_Transform::ReferenceFrame );
+Q_INVOKABLE void  setReferenceFrame(osg::QReflect_Transform::ReferenceFrame rf);
+Q_PROPERTY(osg::QReflect_Transform::ReferenceFrame  ReferenceFrame  READ getReferenceFrame WRITE setReferenceFrame NOTIFY ReferenceFrameChanged)
+signals: void ReferenceFrameChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -60,7 +70,7 @@ public:
 MetaQReflect_Transform();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -71,6 +81,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Transform_pmocHPP
 

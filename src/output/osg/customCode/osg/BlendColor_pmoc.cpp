@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/BlendColor_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBlendColor::QMLBlendColor(pmoc::Instance *i,QObject* parent):QReflect_BlendColor(i,parent){
+osg::QMLBlendColor::QMLBlendColor(const pmoc::Instance *i,QObject* parent):QReflect_BlendColor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBlendColor::connect2View(QQuickItem*i){

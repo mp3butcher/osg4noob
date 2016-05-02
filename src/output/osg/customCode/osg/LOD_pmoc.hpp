@@ -26,7 +26,7 @@ class  QMLLOD: public QReflect_LOD
     UNION_OF_BOUNDING_SPHERE_AND_USER_DEFINED 	*/
     Q_OBJECT
 public:
-    QMLLOD(pmoc::Instance *i=0,QObject* parent=0);
+    QMLLOD(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 protected:
     pmoc::PagedLodListModel _qrangelist;

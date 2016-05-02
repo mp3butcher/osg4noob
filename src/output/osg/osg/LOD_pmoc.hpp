@@ -1,6 +1,7 @@
 #ifndef osg_LOD_pmocHPP
 #define  osg_LOD_pmocHPP 1
 
+
 #include <osg/LOD_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -37,7 +38,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 LOD * _model;
-QReflect_LOD(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_LOD(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LOD( );
 //LOD
 //virtual  BoundingSphere  computeBound();
@@ -47,18 +48,24 @@ virtual ~QReflect_LOD( );
 // void  setRangeList(const  RangeList &);
 //const  RangeList & getRangeList();
 //const  vec_type & getCenter();
-Q_INVOKABLE  bool  addChild(osg::QReflect_Node * , float  , float );
-Q_INVOKABLE  bool  addChild(osg::QReflect_Node *);
-Q_INVOKABLE  bool  removeChildren( unsigned int  , unsigned int );
-Q_INVOKABLE  float  getMaxRange( unsigned int )const;
-Q_INVOKABLE  float  getMinRange( unsigned int )const;
+Q_INVOKABLE  bool  addChild(osg::QReflect_Node *child , float min , float max);
+Q_INVOKABLE  bool  addChild(osg::QReflect_Node *child);
+Q_INVOKABLE  bool  removeChildren( unsigned int pos , unsigned int numChildrenToRemove);
+Q_INVOKABLE  float  getMaxRange( unsigned int childNo)const;
+Q_INVOKABLE  float  getMinRange( unsigned int childNo)const;
 Q_INVOKABLE  unsigned int  getNumRanges()const;
 Q_INVOKABLE osg::QReflect_LOD::CenterMode  getCenterMode()const;
 Q_INVOKABLE osg::QReflect_LOD::RangeMode  getRangeMode()const;
-Q_INVOKABLE void  setCenterMode(osg::QReflect_LOD::CenterMode );
-Q_INVOKABLE void  setRange( unsigned int  , float  , float );
-Q_INVOKABLE void  setRangeMode(osg::QReflect_LOD::RangeMode );
-Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
+Q_INVOKABLE void  setCenterMode(osg::QReflect_LOD::CenterMode mode);
+Q_INVOKABLE void  setRange( unsigned int childNo , float min , float max);
+Q_INVOKABLE void  setRangeMode(osg::QReflect_LOD::RangeMode mode);
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *nv);
+Q_PROPERTY(osg::QReflect_LOD::CenterMode  CenterMode  READ getCenterMode WRITE setCenterMode NOTIFY CenterModeChanged)
+Q_PROPERTY(osg::QReflect_LOD::RangeMode  RangeMode  READ getRangeMode WRITE setRangeMode NOTIFY RangeModeChanged)
+signals: void CenterModeChanged();
+public:
+signals: void RangeModeChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -71,7 +78,7 @@ public:
 MetaQReflect_LOD();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -82,6 +89,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_LOD_pmocHPP
 

@@ -1,6 +1,7 @@
 #include <osgParticle/VariableRateCounter>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,25 +10,30 @@
 #include <customCode/osgParticle/Counter_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 using namespace pmoc;
- bool  osgParticle::QReflect_VariableRateCounter::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osgParticle::QReflect_VariableRateCounter:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_VariableRateCounter::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- void osgParticle::QReflect_VariableRateCounter::setRateRange( float p0 , float p1){
+ void osgParticle::QReflect_VariableRateCounter::setRateRange( float  p0 , float  p1){
+//params checking
  _model->setRateRange(p0 ,p1);
 
 }
-const  char*  osgParticle::QReflect_VariableRateCounter::className()const{
+const  char*  osgParticle::QReflect_VariableRateCounter:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osgParticle::QReflect_VariableRateCounter::libraryName()const{
+const  char*  osgParticle::QReflect_VariableRateCounter:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_VariableRateCounter::QReflect_VariableRateCounter(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_VariableRateCounter::QReflect_VariableRateCounter(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::VariableRateCounter*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -52,9 +58,11 @@ std::cerr<<"osgParticle::VariableRateCounter is not instanciable"<<std::endl;ret
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_VariableRateCounter::MetaQReflect_VariableRateCounter():MetaQQuickClass( "osgParticle::VariableRateCounter"){
-_typeid=&typeid(osgParticle::VariableRateCounter );           qRegisterMetaType<QMLVariableRateCounter>();
-qmlRegisterType<QReflect_VariableRateCounter>("pmoc.osgParticle",1,0,"QReflect_VariableRateCounter");
-           qmlRegisterType<QMLVariableRateCounter>("pmoc.osgParticle",1,0,"QMLVariableRateCounter");
+_typeid=&typeid(osgParticle::VariableRateCounter );
+           qRegisterMetaType<osgParticle::QMLVariableRateCounter>();
+           qRegisterMetaType<osgParticle::QMLVariableRateCounter*>("pmoc.osgParticle.QMLVariableRateCounter");
+qmlRegisterType<osgParticle::QReflect_VariableRateCounter>("pmoc.osgParticle",1,0,"QReflect_VariableRateCounter");
+           qmlRegisterType<osgParticle::QMLVariableRateCounter>("pmoc.osgParticle",1,0,"QMLVariableRateCounter");
 };
 const std::string osgParticle::MetaQReflect_VariableRateCounter::Imports() const{
  return std::string("");
@@ -63,7 +71,7 @@ const std::string osgParticle::MetaQReflect_VariableRateCounter::Imports() const
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_VariableRateCounter::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_VariableRateCounter::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_VariableRateCounter::createQQModel(Instance*i){ //return new MetaQReflect_VariableRateCounter_QModel(i);}
+QQModel* osgParticle::MetaQReflect_VariableRateCounter::createQQModel(const Instance*i){ //return new MetaQReflect_VariableRateCounter_QModel(i);}
 QMLVariableRateCounter *ret =new QMLVariableRateCounter(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -85,5 +93,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_VariableRateCounter_pmoc.cpp"
 #endif
+
+
 
 

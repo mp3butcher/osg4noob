@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBarrierOperation::QMLBarrierOperation(pmoc::Instance *i,QObject* parent):QReflect_BarrierOperation(i,parent){
+osg::QMLBarrierOperation::QMLBarrierOperation(const pmoc::Instance *i,QObject* parent):QReflect_BarrierOperation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBarrierOperation::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLBarrierOperation::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLBlockAndFlushOperation::QMLBlockAndFlushOperation(pmoc::Instance *i,QObject* parent):QReflect_BlockAndFlushOperation(i,parent){
+osg::QMLBlockAndFlushOperation::QMLBlockAndFlushOperation(const pmoc::Instance *i,QObject* parent):QReflect_BlockAndFlushOperation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLBlockAndFlushOperation::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLBlockAndFlushOperation::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLEndOfDynamicDrawBlock::QMLEndOfDynamicDrawBlock(pmoc::Instance *i,QObject* parent):QReflect_EndOfDynamicDrawBlock(i,parent){
+osg::QMLEndOfDynamicDrawBlock::QMLEndOfDynamicDrawBlock(const pmoc::Instance *i,QObject* parent):QReflect_EndOfDynamicDrawBlock(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLEndOfDynamicDrawBlock::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLEndOfDynamicDrawBlock::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLFlushDeletedGLObjectsOperation::QMLFlushDeletedGLObjectsOperation(pmoc::Instance *i,QObject* parent):QReflect_FlushDeletedGLObjectsOperation(i,parent){
+osg::QMLFlushDeletedGLObjectsOperation::QMLFlushDeletedGLObjectsOperation(const pmoc::Instance *i,QObject* parent):QReflect_FlushDeletedGLObjectsOperation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLFlushDeletedGLObjectsOperation::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLFlushDeletedGLObjectsOperation::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGraphicsOperation::QMLGraphicsOperation(pmoc::Instance *i,QObject* parent):QReflect_GraphicsOperation(i,parent){
+osg::QMLGraphicsOperation::QMLGraphicsOperation(const pmoc::Instance *i,QObject* parent):QReflect_GraphicsOperation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGraphicsOperation::connect2View(QQuickItem*i){
@@ -133,7 +133,7 @@ void  osg::QMLGraphicsOperation::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGraphicsThread::QMLGraphicsThread(pmoc::Instance *i,QObject* parent):QReflect_GraphicsThread(i,parent){
+osg::QMLGraphicsThread::QMLGraphicsThread(const pmoc::Instance *i,QObject* parent):QReflect_GraphicsThread(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGraphicsThread::connect2View(QQuickItem*i){
@@ -159,7 +159,7 @@ void  osg::QMLGraphicsThread::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLReleaseContext_Block_MakeCurrentOperation::QMLReleaseContext_Block_MakeCurrentOperation(pmoc::Instance *i,QObject* parent):QReflect_ReleaseContext_Block_MakeCurrentOperation(i,parent){
+osg::QMLReleaseContext_Block_MakeCurrentOperation::QMLReleaseContext_Block_MakeCurrentOperation(const pmoc::Instance *i,QObject* parent):QReflect_ReleaseContext_Block_MakeCurrentOperation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLReleaseContext_Block_MakeCurrentOperation::connect2View(QQuickItem*i){
@@ -185,7 +185,7 @@ void  osg::QMLReleaseContext_Block_MakeCurrentOperation::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLRunOperations::QMLRunOperations(pmoc::Instance *i,QObject* parent):QReflect_RunOperations(i,parent){
+osg::QMLRunOperations::QMLRunOperations(const pmoc::Instance *i,QObject* parent):QReflect_RunOperations(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLRunOperations::connect2View(QQuickItem*i){
@@ -211,7 +211,7 @@ void  osg::QMLRunOperations::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GraphicsThread_pmoc.hpp>
 using namespace pmoc;
-osg::QMLSwapBuffersOperation::QMLSwapBuffersOperation(pmoc::Instance *i,QObject* parent):QReflect_SwapBuffersOperation(i,parent){
+osg::QMLSwapBuffersOperation::QMLSwapBuffersOperation(const pmoc::Instance *i,QObject* parent):QReflect_SwapBuffersOperation(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLSwapBuffersOperation::connect2View(QQuickItem*i){

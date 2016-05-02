@@ -14,7 +14,7 @@ class  QMLCameraRenderOrderSortOp: public QReflect_CameraRenderOrderSortOp
 {
     Q_OBJECT
 public:
-    QMLCameraRenderOrderSortOp(pmoc::Instance *i=0,QObject* parent=0);
+    QMLCameraRenderOrderSortOp(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
     virtual void  updateModel();
@@ -124,7 +124,7 @@ signals:
     void renderTargetImplementationChanged(int );
     void bufferAttachmentsChanged(  pmoc::StateAttribListModel* );
 public:
-    QMLCamera(pmoc::Instance *i=0,QObject* parent=0);
+    QMLCamera(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
     pmoc::StateAttribListModel _bufferAttachments;
 public slots:

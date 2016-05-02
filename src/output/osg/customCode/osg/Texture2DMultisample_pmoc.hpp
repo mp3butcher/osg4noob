@@ -13,7 +13,7 @@ class  QMLTexture2DMultisample: public QReflect_Texture2DMultisample
 {
 Q_OBJECT
 public:
-QMLTexture2DMultisample(pmoc::Instance *i=0,QObject* parent=0);
+QMLTexture2DMultisample(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLFrameBufferAttachment::QMLFrameBufferAttachment(pmoc::Instance *i,QObject* parent):QReflect_FrameBufferAttachment(i,parent){
+osg::QMLFrameBufferAttachment::QMLFrameBufferAttachment(const pmoc::Instance *i,QObject* parent):QReflect_FrameBufferAttachment(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLFrameBufferAttachment::connect2View(QQuickItem*i){
@@ -28,7 +28,7 @@ void  osg::QMLFrameBufferAttachment::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLFrameBufferObject::QMLFrameBufferObject(pmoc::Instance *i,QObject* parent):QReflect_FrameBufferObject(i,parent){
+osg::QMLFrameBufferObject::QMLFrameBufferObject(const pmoc::Instance *i,QObject* parent):QReflect_FrameBufferObject(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLFrameBufferObject::connect2View(QQuickItem*i){
@@ -53,7 +53,7 @@ void  osg::QMLFrameBufferObject::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGLFrameBufferObjectManager::QMLGLFrameBufferObjectManager(pmoc::Instance *i,QObject* parent):QReflect_GLFrameBufferObjectManager(i,parent){
+/*osg::QMLGLFrameBufferObjectManager::QMLGLFrameBufferObjectManager(const pmoc::Instance *i,QObject* parent):QReflect_GLFrameBufferObjectManager(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGLFrameBufferObjectManager::connect2View(QQuickItem*i){
@@ -70,7 +70,7 @@ void  osg::QMLGLFrameBufferObjectManager::updateModel(){
 	///CustomiZE here
 
 
-}
+}*/
 #ifndef AUTOMOCCPP
 #define AUTOMOCCPP 1
 #include "moc_FrameBufferObject_pmoc.cpp"
@@ -78,7 +78,7 @@ void  osg::QMLGLFrameBufferObjectManager::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGLRenderBufferManager::QMLGLRenderBufferManager(pmoc::Instance *i,QObject* parent):QReflect_GLRenderBufferManager(i,parent){
+/*osg::QMLGLRenderBufferManager::QMLGLRenderBufferManager(const pmoc::Instance *i,QObject* parent):QReflect_GLRenderBufferManager(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGLRenderBufferManager::connect2View(QQuickItem*i){
@@ -95,7 +95,7 @@ void  osg::QMLGLRenderBufferManager::updateModel(){
 	///CustomiZE here
 
 
-}
+}*/
 #ifndef AUTOMOCCPP
 #define AUTOMOCCPP 1
 #include "moc_FrameBufferObject_pmoc.cpp"
@@ -103,7 +103,7 @@ void  osg::QMLGLRenderBufferManager::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FrameBufferObject_pmoc.hpp>
 using namespace pmoc;
-osg::QMLRenderBuffer::QMLRenderBuffer(pmoc::Instance *i,QObject* parent):QReflect_RenderBuffer(i,parent){
+osg::QMLRenderBuffer::QMLRenderBuffer(const pmoc::Instance *i,QObject* parent):QReflect_RenderBuffer(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLRenderBuffer::connect2View(QQuickItem*i){

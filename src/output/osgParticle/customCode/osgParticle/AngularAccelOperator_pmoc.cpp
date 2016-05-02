@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/AngularAccelOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLAngularAccelOperator::QMLAngularAccelOperator(pmoc::Instance *i,QObject* parent):QReflect_AngularAccelOperator(i,parent){
+osgParticle::QMLAngularAccelOperator::QMLAngularAccelOperator(const pmoc::Instance *i,QObject* parent):QReflect_AngularAccelOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLAngularAccelOperator::connect2View(QQuickItem*i){

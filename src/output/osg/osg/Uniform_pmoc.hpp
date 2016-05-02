@@ -1,30 +1,11 @@
 #ifndef osg_Uniform_pmocHPP
 #define  osg_Uniform_pmocHPP 1
+
+
 #include <osg/Uniform_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Vec3f;
-			} ;
-namespace osg{ 
-class QReflect_Vec2f;
-			} ;
-namespace osg{ 
-class QReflect_Vec4f;
-			} ;
-namespace osg{ 
-class QReflect_Vec3d;
-			} ;
-namespace osg{ 
-class QReflect_Vec2d;
-			} ;
-namespace osg{ 
-class QReflect_Vec4d;
-			} ;
-namespace osg{ 
-class QReflect_Matrixf;
-			} ;
-namespace osg{ 
-class QReflect_Matrixd;
+class QReflect_StateSet;
 			} ;
 namespace osg{ 
 class QReflect_Uniform;
@@ -34,6 +15,30 @@ class QReflect_UniformCallback;
 			} ;
 namespace osg{ 
 class QReflect_GLExtensions;
+			} ;
+namespace osg{ 
+class QReflect_Vec4f;
+			} ;
+namespace osg{ 
+class QReflect_Vec3f;
+			} ;
+namespace osg{ 
+class QReflect_Vec2d;
+			} ;
+namespace osg{ 
+class QReflect_Vec2f;
+			} ;
+namespace osg{ 
+class QReflect_Vec3d;
+			} ;
+namespace osg{ 
+class QReflect_Matrixf;
+			} ;
+namespace osg{ 
+class QReflect_Matrixd;
+			} ;
+namespace osg{ 
+class QReflect_Vec4d;
 			} ;
 #include <osg/Uniform>
 #include <osg/Uniform>
@@ -166,14 +171,13 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Uniform * _model;
-QReflect_Uniform(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Uniform(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Uniform( );
 //Uniform
 // DoubleArray * getDoubleArray();
 // FloatArray * getFloatArray();
 // IntArray * getIntArray();
 // ParentList  getParents();
-// StateSet * getParent( unsigned int );
 // UIntArray * getUIntArray();
 // bool  get( osg::Matrix2 &);
 // bool  get( osg::Matrix2d &);
@@ -207,9 +211,6 @@ virtual ~QReflect_Uniform( );
 // bool  getElement( unsigned int  , osg::Matrix4x2d &);
 // bool  getElement( unsigned int  , osg::Matrix4x3 &);
 // bool  getElement( unsigned int  , osg::Matrix4x3d &);
-// bool  operator!=(const  Uniform &);
-// bool  operator<(const  Uniform &);
-// bool  operator==(const  Uniform &);
 // bool  set(const  osg::Matrix2 &);
 // bool  set(const  osg::Matrix2d &);
 // bool  set(const  osg::Matrix2x3 &);
@@ -250,134 +251,143 @@ virtual ~QReflect_Uniform( );
 //const  FloatArray * getFloatArray();
 //const  IntArray * getIntArray();
 //const  ParentList & getParents();
-//const  StateSet * getParent( unsigned int );
 //const  UIntArray * getUIntArray();
-Q_INVOKABLE  GLenum  getInternalArrayType(osg::QReflect_Uniform::Type );
-Q_INVOKABLE  bool  get( bool & , bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  get( bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  get( bool & , bool &)const;
-Q_INVOKABLE  bool  get( bool &)const;
-Q_INVOKABLE  bool  get( double &)const;
-Q_INVOKABLE  bool  get( float &)const;
-Q_INVOKABLE  bool  get( int & , int & , int & , int &)const;
-Q_INVOKABLE  bool  get( int & , int & , int &)const;
-Q_INVOKABLE  bool  get( int & , int &)const;
-Q_INVOKABLE  bool  get( int &)const;
-Q_INVOKABLE  bool  get( unsigned int & , unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  get( unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  get( unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  get( unsigned int &)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Matrixd *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Matrixf *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec2d *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec2f *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec3d *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec3f *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec4d *)const;
-Q_INVOKABLE  bool  get(osg::QReflect_Vec4f *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool & , bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool & , bool & , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool & , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , bool &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , double &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , float &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int & , int & , int & , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int & , int & , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int & , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int & , unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int & , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int & , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  , unsigned int &)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Matrixd *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Matrixf *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec2d *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec2f *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec3d *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec3f *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec4d *)const;
-Q_INVOKABLE  bool  getElement( unsigned int  ,osg::QReflect_Vec4f *)const;
-Q_INVOKABLE  bool  set( bool  , bool  , bool  , bool );
-Q_INVOKABLE  bool  set( bool  , bool  , bool );
-Q_INVOKABLE  bool  set( bool  , bool );
-Q_INVOKABLE  bool  set( bool );
-Q_INVOKABLE  bool  set( double );
-Q_INVOKABLE  bool  set( float );
-Q_INVOKABLE  bool  set( int  , int  , int  , int );
-Q_INVOKABLE  bool  set( int  , int  , int );
-Q_INVOKABLE  bool  set( int  , int );
-Q_INVOKABLE  bool  set( int );
-Q_INVOKABLE  bool  set( unsigned int  , unsigned int  , unsigned int  , unsigned int );
-Q_INVOKABLE  bool  set( unsigned int  , unsigned int  , unsigned int );
-Q_INVOKABLE  bool  set( unsigned int  , unsigned int );
-Q_INVOKABLE  bool  set( unsigned int );
-Q_INVOKABLE  bool  set(osg::QReflect_Matrixd *);
-Q_INVOKABLE  bool  set(osg::QReflect_Matrixf *);
-Q_INVOKABLE  bool  set(osg::QReflect_Vec2d *);
-Q_INVOKABLE  bool  set(osg::QReflect_Vec2f *);
-Q_INVOKABLE  bool  set(osg::QReflect_Vec3d *);
-Q_INVOKABLE  bool  set(osg::QReflect_Vec3f *);
-Q_INVOKABLE  bool  set(osg::QReflect_Vec4d *);
-Q_INVOKABLE  bool  set(osg::QReflect_Vec4f *);
-Q_INVOKABLE  bool  setElement( unsigned int  , bool  , bool  , bool  , bool );
-Q_INVOKABLE  bool  setElement( unsigned int  , bool  , bool  , bool );
-Q_INVOKABLE  bool  setElement( unsigned int  , bool  , bool );
-Q_INVOKABLE  bool  setElement( unsigned int  , bool );
-Q_INVOKABLE  bool  setElement( unsigned int  , double );
-Q_INVOKABLE  bool  setElement( unsigned int  , float );
-Q_INVOKABLE  bool  setElement( unsigned int  , int  , int  , int  , int );
-Q_INVOKABLE  bool  setElement( unsigned int  , int  , int  , int );
-Q_INVOKABLE  bool  setElement( unsigned int  , int  , int );
-Q_INVOKABLE  bool  setElement( unsigned int  , int );
-Q_INVOKABLE  bool  setElement( unsigned int  , unsigned int  , unsigned int  , unsigned int  , unsigned int );
-Q_INVOKABLE  bool  setElement( unsigned int  , unsigned int  , unsigned int  , unsigned int );
-Q_INVOKABLE  bool  setElement( unsigned int  , unsigned int  , unsigned int );
-Q_INVOKABLE  bool  setElement( unsigned int  , unsigned int );
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Matrixd *);
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Matrixf *);
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Vec2d *);
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Vec2f *);
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Vec3d *);
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Vec3f *);
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Vec4d *);
-Q_INVOKABLE  bool  setElement( unsigned int  ,osg::QReflect_Vec4f *);
-Q_INVOKABLE  bool  setType(osg::QReflect_Uniform::Type );
-Q_INVOKABLE  int  compare(osg::QReflect_Uniform *)const;
-Q_INVOKABLE  int  compareData(osg::QReflect_Uniform *)const;
-Q_INVOKABLE  int  getTypeNumComponents(osg::QReflect_Uniform::Type );
-Q_INVOKABLE  osg::QReflect_UniformCallback * getEventCallback()const;
-Q_INVOKABLE  osg::QReflect_UniformCallback * getUpdateCallback()const;
+Q_INVOKABLE  GLenum  getInternalArrayType(osg::QReflect_Uniform::Type t);
+Q_INVOKABLE  bool  get( bool &b)const;
+Q_INVOKABLE  bool  get( bool &b0 , bool &b1 , bool &b2 , bool &b3)const;
+Q_INVOKABLE  bool  get( bool &b0 , bool &b1 , bool &b2)const;
+Q_INVOKABLE  bool  get( bool &b0 , bool &b1)const;
+Q_INVOKABLE  bool  get( double &d)const;
+Q_INVOKABLE  bool  get( float &f)const;
+Q_INVOKABLE  bool  get( int &i)const;
+Q_INVOKABLE  bool  get( int &i0 , int &i1 , int &i2 , int &i3)const;
+Q_INVOKABLE  bool  get( int &i0 , int &i1 , int &i2)const;
+Q_INVOKABLE  bool  get( int &i0 , int &i1)const;
+Q_INVOKABLE  bool  get( unsigned int &ui)const;
+Q_INVOKABLE  bool  get( unsigned int &ui0 , unsigned int &ui1 , unsigned int &ui2 , unsigned int &ui3)const;
+Q_INVOKABLE  bool  get( unsigned int &ui0 , unsigned int &ui1 , unsigned int &ui2)const;
+Q_INVOKABLE  bool  get( unsigned int &ui0 , unsigned int &ui1)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Matrixd *m4)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Matrixf *m4)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Vec2d *v2)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Vec2f *v2)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Vec3d *v3)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Vec3f *v3)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Vec4d *v4)const;
+Q_INVOKABLE  bool  get(osg::QReflect_Vec4f *v4)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , bool &b)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , bool &b0 , bool &b1 , bool &b2 , bool &b3)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , bool &b0 , bool &b1 , bool &b2)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , bool &b0 , bool &b1)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , double &d)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , float &f)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , int &i)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , int &i0 , int &i1 , int &i2 , int &i3)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , int &i0 , int &i1 , int &i2)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , int &i0 , int &i1)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , unsigned int &ui)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , unsigned int &ui0 , unsigned int &ui1 , unsigned int &ui2 , unsigned int &ui3)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , unsigned int &ui0 , unsigned int &ui1 , unsigned int &ui2)const;
+Q_INVOKABLE  bool  getElement( unsigned int index , unsigned int &ui0 , unsigned int &ui1)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Matrixd *m4)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Matrixf *m4)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Vec2d *v2)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Vec2f *v2)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Vec3d *v3)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Vec3f *v3)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Vec4d *v4)const;
+Q_INVOKABLE  bool  getElement( unsigned int index ,osg::QReflect_Vec4f *v4)const;
+Q_INVOKABLE  bool  operator!=(osg::QReflect_Uniform &rhs)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_Uniform &rhs)const;
+Q_INVOKABLE  bool  operator==(osg::QReflect_Uniform &rhs)const;
+Q_INVOKABLE  bool  set( bool b);
+Q_INVOKABLE  bool  set( bool b0 , bool b1 , bool b2 , bool b3);
+Q_INVOKABLE  bool  set( bool b0 , bool b1 , bool b2);
+Q_INVOKABLE  bool  set( bool b0 , bool b1);
+Q_INVOKABLE  bool  set( double d);
+Q_INVOKABLE  bool  set( float f);
+Q_INVOKABLE  bool  set( int i);
+Q_INVOKABLE  bool  set( int i0 , int i1 , int i2 , int i3);
+Q_INVOKABLE  bool  set( int i0 , int i1 , int i2);
+Q_INVOKABLE  bool  set( int i0 , int i1);
+Q_INVOKABLE  bool  set( unsigned int ui);
+Q_INVOKABLE  bool  set( unsigned int ui0 , unsigned int ui1 , unsigned int ui2 , unsigned int ui3);
+Q_INVOKABLE  bool  set( unsigned int ui0 , unsigned int ui1 , unsigned int ui2);
+Q_INVOKABLE  bool  set( unsigned int ui0 , unsigned int ui1);
+Q_INVOKABLE  bool  set(osg::QReflect_Matrixd *m4);
+Q_INVOKABLE  bool  set(osg::QReflect_Matrixf *m4);
+Q_INVOKABLE  bool  set(osg::QReflect_Vec2d *v2);
+Q_INVOKABLE  bool  set(osg::QReflect_Vec2f *v2);
+Q_INVOKABLE  bool  set(osg::QReflect_Vec3d *v3);
+Q_INVOKABLE  bool  set(osg::QReflect_Vec3f *v3);
+Q_INVOKABLE  bool  set(osg::QReflect_Vec4d *v4);
+Q_INVOKABLE  bool  set(osg::QReflect_Vec4f *v4);
+Q_INVOKABLE  bool  setElement( unsigned int index , bool b);
+Q_INVOKABLE  bool  setElement( unsigned int index , bool b0 , bool b1 , bool b2 , bool b3);
+Q_INVOKABLE  bool  setElement( unsigned int index , bool b0 , bool b1 , bool b2);
+Q_INVOKABLE  bool  setElement( unsigned int index , bool b0 , bool b1);
+Q_INVOKABLE  bool  setElement( unsigned int index , double d);
+Q_INVOKABLE  bool  setElement( unsigned int index , float f);
+Q_INVOKABLE  bool  setElement( unsigned int index , int i);
+Q_INVOKABLE  bool  setElement( unsigned int index , int i0 , int i1 , int i2 , int i3);
+Q_INVOKABLE  bool  setElement( unsigned int index , int i0 , int i1 , int i2);
+Q_INVOKABLE  bool  setElement( unsigned int index , int i0 , int i1);
+Q_INVOKABLE  bool  setElement( unsigned int index , unsigned int ui);
+Q_INVOKABLE  bool  setElement( unsigned int index , unsigned int ui0 , unsigned int ui1 , unsigned int ui2 , unsigned int ui3);
+Q_INVOKABLE  bool  setElement( unsigned int index , unsigned int ui0 , unsigned int ui1 , unsigned int ui2);
+Q_INVOKABLE  bool  setElement( unsigned int index , unsigned int ui0 , unsigned int ui1);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Matrixd *m4);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Matrixf *m4);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Vec2d *v2);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Vec2f *v2);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Vec3d *v3);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Vec3f *v3);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Vec4d *v4);
+Q_INVOKABLE  bool  setElement( unsigned int index ,osg::QReflect_Vec4f *v4);
+Q_INVOKABLE  bool  setType(osg::QReflect_Uniform::Type t);
+Q_INVOKABLE  int  compare(osg::QReflect_Uniform *rhs)const;
+Q_INVOKABLE  int  compareData(osg::QReflect_Uniform *rhs)const;
+Q_INVOKABLE  int  getTypeNumComponents(osg::QReflect_Uniform::Type t);
 Q_INVOKABLE  unsigned int  getInternalArrayNumElements()const;
+Q_INVOKABLE  unsigned int  getModifiedCount()const;
 Q_INVOKABLE  unsigned int  getNameID()const;
-Q_INVOKABLE  unsigned int  getNameID(const  QString &);
+Q_INVOKABLE  unsigned int  getNameID(const  QString &name);
+Q_INVOKABLE  unsigned int  getNumElements()const;
 Q_INVOKABLE  unsigned int  getNumParents()const;
-Q_INVOKABLE const  char*  getTypename(osg::QReflect_Uniform::Type );
-Q_INVOKABLE const unsigned int  getModifiedCount()const;
-Q_INVOKABLE const unsigned int  getNumElements()const;
+Q_INVOKABLE const  char*  getTypename(osg::QReflect_Uniform::Type t);
+Q_INVOKABLE osg::QReflect_StateSet*  getParent( unsigned int i);
+Q_INVOKABLE osg::QReflect_StateSet*  getParent( unsigned int i)const;
 Q_INVOKABLE osg::QReflect_Uniform*  asUniform();
 Q_INVOKABLE osg::QReflect_Uniform*  asUniform()const;
-Q_INVOKABLE osg::QReflect_Uniform::Type  getGlApiType(osg::QReflect_Uniform::Type );
+Q_INVOKABLE osg::QReflect_Uniform::Type  getGlApiType(osg::QReflect_Uniform::Type t);
 Q_INVOKABLE osg::QReflect_Uniform::Type  getType()const;
-Q_INVOKABLE osg::QReflect_Uniform::Type  getTypeId(const  QString &);
-Q_INVOKABLE void  apply(osg::QReflect_GLExtensions * , GLint )const;
-Q_INVOKABLE void  copyData(osg::QReflect_Uniform *);
+Q_INVOKABLE osg::QReflect_Uniform::Type  getTypeId(const  QString &tname);
+Q_INVOKABLE osg::QReflect_UniformCallback*  getEventCallback();
+Q_INVOKABLE osg::QReflect_UniformCallback*  getEventCallback()const;
+Q_INVOKABLE osg::QReflect_UniformCallback*  getUpdateCallback();
+Q_INVOKABLE osg::QReflect_UniformCallback*  getUpdateCallback()const;
+Q_INVOKABLE void  apply(osg::QReflect_GLExtensions *ext , GLint location)const;
+Q_INVOKABLE void  copyData(osg::QReflect_Uniform *rhs);
 Q_INVOKABLE void  dirty();
-Q_INVOKABLE void  setName(const  QString &);
-Q_INVOKABLE void pmoc_reverse_setEventCallback( osg::QReflect_UniformCallback *par=0);
-Q_INVOKABLE void pmoc_reverse_setUpdateCallback( osg::QReflect_UniformCallback *par=0);
-Q_INVOKABLE void setEventCallback( osg::QReflect_UniformCallback *par);
-Q_INVOKABLE void setModifiedCount(const unsigned int &);
-Q_INVOKABLE void setNumElements(const unsigned int &);
-Q_INVOKABLE void setUpdateCallback( osg::QReflect_UniformCallback *par);
-Q_PROPERTY(unsigned int ModifiedCount  READ getModifiedCount WRITE setModifiedCount NOTIFY ModifiedCountChanged)
-Q_PROPERTY(unsigned int NumElements  READ getNumElements WRITE setNumElements NOTIFY NumElementsChanged)
-signals: void EventCallbackChanged(const osg::QReflect_UniformCallback*);
+Q_INVOKABLE void  setEventCallback(osg::QReflect_UniformCallback *ec);
+Q_INVOKABLE void  setModifiedCount( unsigned int mc);
+Q_INVOKABLE void  setName(const  QString &name);
+Q_INVOKABLE void  setNumElements( unsigned int numElements);
+Q_INVOKABLE void  setUpdateCallback(osg::QReflect_UniformCallback *uc);
+Q_PROPERTY(osg::QReflect_Uniform::Type  Type  READ getType WRITE setType NOTIFY TypeChanged)
+Q_PROPERTY(osg::QReflect_UniformCallback * EventCallback  READ getEventCallback WRITE setEventCallback NOTIFY EventCallbackChanged)
+Q_PROPERTY(osg::QReflect_UniformCallback * UpdateCallback  READ getUpdateCallback WRITE setUpdateCallback NOTIFY UpdateCallbackChanged)
+Q_PROPERTY(unsigned int  ModifiedCount  READ getModifiedCount WRITE setModifiedCount NOTIFY ModifiedCountChanged)
+Q_PROPERTY(unsigned int  NumElements  READ getNumElements WRITE setNumElements NOTIFY NumElementsChanged)
+signals: void EventCallbackChanged();
 public:
-signals: void ModifiedCountChanged(const unsigned int&);
+signals: void ModifiedCountChanged();
 public:
-signals: void NumElementsChanged(const unsigned int&);
+signals: void NumElementsChanged();
 public:
-signals: void UpdateCallbackChanged(const osg::QReflect_UniformCallback*);
+signals: void TypeChanged();
+public:
+signals: void UpdateCallbackChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -391,7 +401,7 @@ public:
 MetaQReflect_Uniform();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -402,6 +412,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Uniform_pmocHPP
 

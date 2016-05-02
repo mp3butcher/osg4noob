@@ -15,7 +15,7 @@ class  QMLExplosionOperator: public QReflect_ExplosionOperator
 {
 Q_OBJECT
 public:
-QMLExplosionOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLExplosionOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

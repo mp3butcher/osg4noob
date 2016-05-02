@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GLBeginEndAdapter_pmoc.hpp>
 using namespace pmoc;
-osg::QMLGLBeginEndAdapter::QMLGLBeginEndAdapter(pmoc::Instance *i,QObject* parent):QReflect_GLBeginEndAdapter(i,parent){
+osg::QMLGLBeginEndAdapter::QMLGLBeginEndAdapter(const pmoc::Instance *i,QObject* parent):QReflect_GLBeginEndAdapter(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLGLBeginEndAdapter::connect2View(QQuickItem*i){

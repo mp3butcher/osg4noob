@@ -4,11 +4,11 @@
 
 #include <osgParticle/MultiSegmentPlacer_pmoc.hpp>
 #include <QObject>
-namespace osgParticle{ 
-class QReflect_Particle;
-			} ;
 namespace osg{ 
 class QReflect_Vec3f;
+			} ;
+namespace osgParticle{ 
+class QReflect_Particle;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/MultiSegmentPlacer>
@@ -24,19 +24,19 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 MultiSegmentPlacer * _model;
-QReflect_MultiSegmentPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_MultiSegmentPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_MultiSegmentPlacer( );
 //MultiSegmentPlacer
 // osg::Vec3  getControlPosition();
 //const  osg::Vec3 & getVertex( int );
 Q_INVOKABLE  float  volume()const;
 Q_INVOKABLE  int  numVertices()const;
-Q_INVOKABLE void  addVertex( float  , float  , float );
-Q_INVOKABLE void  addVertex(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  place(osgParticle::QReflect_Particle *)const;
-Q_INVOKABLE void  removeVertex( int );
-Q_INVOKABLE void  setVertex( int  , float  , float  , float );
-Q_INVOKABLE void  setVertex( int  ,osg::QReflect_Vec3f *);
+Q_INVOKABLE void  addVertex( float x , float y , float z);
+Q_INVOKABLE void  addVertex(osg::QReflect_Vec3f *v);
+Q_INVOKABLE void  place(osgParticle::QReflect_Particle *P)const;
+Q_INVOKABLE void  removeVertex( int i);
+Q_INVOKABLE void  setVertex( int i , float x , float y , float z);
+Q_INVOKABLE void  setVertex( int i ,osg::QReflect_Vec3f *v);
 public slots:
 virtual void updateModel();
  
@@ -49,7 +49,7 @@ public:
 MetaQReflect_MultiSegmentPlacer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -60,6 +60,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_MultiSegmentPlacer_pmocHPP

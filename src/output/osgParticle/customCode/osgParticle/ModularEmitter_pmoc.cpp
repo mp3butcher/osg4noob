@@ -5,7 +5,7 @@
 #include <customCode/osgParticle/ModularEmitter_pmoc.hpp>
 #include <osgParticle/ParticleProcessor>
 using namespace pmoc;
-osgParticle::QMLModularEmitter::QMLModularEmitter(pmoc::Instance *i,QObject* parent):QReflect_ModularEmitter(i,parent){
+osgParticle::QMLModularEmitter::QMLModularEmitter(const pmoc::Instance *i,QObject* parent):QReflect_ModularEmitter(i,parent){
 //custom initializations
 // _model->setReferenceFrame(osgParticle::ParticleProcessor::ABSOLUTE_RF);
   // _model->setStartTime(_startTime);

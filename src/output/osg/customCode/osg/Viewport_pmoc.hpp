@@ -33,7 +33,7 @@ void width(float f){if(f!=width()){(*_model).width()=f;emit widthChanged(f);}}
 float height()const{return _model->height();}
 void height(float f){if(f!=height()){_model->height()=f;emit heightChanged(f);}}
 
-QMLViewport(pmoc::Instance *i=0,QObject* parent=0);
+QMLViewport(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

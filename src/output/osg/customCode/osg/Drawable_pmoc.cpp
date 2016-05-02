@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Drawable_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAttributeFunctorArrayVisitor::QMLAttributeFunctorArrayVisitor(pmoc::Instance *i,QObject* parent):QReflect_AttributeFunctorArrayVisitor(i,parent){
+osg::QMLAttributeFunctorArrayVisitor::QMLAttributeFunctorArrayVisitor(const pmoc::Instance *i,QObject* parent):QReflect_AttributeFunctorArrayVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAttributeFunctorArrayVisitor::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLAttributeFunctorArrayVisitor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Drawable_pmoc.hpp>
 using namespace pmoc;
-osg::QMLConstAttributeFunctorArrayVisitor::QMLConstAttributeFunctorArrayVisitor(pmoc::Instance *i,QObject* parent):QReflect_ConstAttributeFunctorArrayVisitor(i,parent){
+osg::QMLConstAttributeFunctorArrayVisitor::QMLConstAttributeFunctorArrayVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ConstAttributeFunctorArrayVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLConstAttributeFunctorArrayVisitor::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLConstAttributeFunctorArrayVisitor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Drawable_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDrawable::QMLDrawable(pmoc::Instance *i,QObject* parent):QReflect_Drawable(i,parent){
+osg::QMLDrawable::QMLDrawable(const pmoc::Instance *i,QObject* parent):QReflect_Drawable(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDrawable::connect2View(QQuickItem*i){

@@ -1,6 +1,7 @@
 #include <osgParticle/ConstantRateCounter>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,17 +9,36 @@
 #include <customCode/osgParticle/ConstantRateCounter_pmoc.hpp>
 #include <customCode/osgParticle/Counter_pmoc.hpp>
 using namespace pmoc;
- int  osgParticle::QReflect_ConstantRateCounter::numParticlesToCreate( double p0)const{
+ double  osgParticle::QReflect_ConstantRateCounter:: getNumberOfParticlesPerSecondToCreate()const{
+//params checking
+return _model->getNumberOfParticlesPerSecondToCreate();
+
+}
+ int  osgParticle::QReflect_ConstantRateCounter:: getMinimumNumberOfParticlesToCreate()const{
+//params checking
+return _model->getMinimumNumberOfParticlesToCreate();
+
+}
+ int  osgParticle::QReflect_ConstantRateCounter:: numParticlesToCreate( double  p0)const{
+//params checking
 return _model->numParticlesToCreate(p0);
 
 }
-const double osgParticle::QReflect_ConstantRateCounter::getNumberOfParticlesPerSecondToCreate()const{return _model->getNumberOfParticlesPerSecondToCreate();}
-const int osgParticle::QReflect_ConstantRateCounter::getMinimumNumberOfParticlesToCreate()const{return _model->getMinimumNumberOfParticlesToCreate();}
-void  osgParticle::QReflect_ConstantRateCounter::setMinimumNumberOfParticlesToCreate(const int &par){_model->setMinimumNumberOfParticlesToCreate(par);emit MinimumNumberOfParticlesToCreateChanged(par);}
-void  osgParticle::QReflect_ConstantRateCounter::setNumberOfParticlesPerSecondToCreate(const double &par){_model->setNumberOfParticlesPerSecondToCreate(par);emit NumberOfParticlesPerSecondToCreateChanged(par);}
+ void osgParticle::QReflect_ConstantRateCounter::setMinimumNumberOfParticlesToCreate( int  p0){
+//params checking
+ _model->setMinimumNumberOfParticlesToCreate(p0);
+emit MinimumNumberOfParticlesToCreateChanged();
+
+}
+ void osgParticle::QReflect_ConstantRateCounter::setNumberOfParticlesPerSecondToCreate( double  p0){
+//params checking
+ _model->setNumberOfParticlesPerSecondToCreate(p0);
+emit NumberOfParticlesPerSecondToCreateChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_ConstantRateCounter::QReflect_ConstantRateCounter(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_ConstantRateCounter::QReflect_ConstantRateCounter(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::ConstantRateCounter*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -46,9 +66,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_ConstantRateCounter::MetaQReflect_ConstantRateCounter():MetaQQuickClass( "osgParticle::ConstantRateCounter"){
-_typeid=&typeid(osgParticle::ConstantRateCounter );           qRegisterMetaType<QMLConstantRateCounter>();
-qmlRegisterType<QReflect_ConstantRateCounter>("pmoc.osgParticle",1,0,"QReflect_ConstantRateCounter");
-           qmlRegisterType<QMLConstantRateCounter>("pmoc.osgParticle",1,0,"QMLConstantRateCounter");
+_typeid=&typeid(osgParticle::ConstantRateCounter );
+           qRegisterMetaType<osgParticle::QMLConstantRateCounter>();
+           qRegisterMetaType<osgParticle::QMLConstantRateCounter*>("pmoc.osgParticle.QMLConstantRateCounter");
+qmlRegisterType<osgParticle::QReflect_ConstantRateCounter>("pmoc.osgParticle",1,0,"QReflect_ConstantRateCounter");
+           qmlRegisterType<osgParticle::QMLConstantRateCounter>("pmoc.osgParticle",1,0,"QMLConstantRateCounter");
 };
 const std::string osgParticle::MetaQReflect_ConstantRateCounter::Imports() const{
  return std::string("");
@@ -57,7 +79,7 @@ const std::string osgParticle::MetaQReflect_ConstantRateCounter::Imports() const
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_ConstantRateCounter::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_ConstantRateCounter::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_ConstantRateCounter::createQQModel(Instance*i){ //return new MetaQReflect_ConstantRateCounter_QModel(i);}
+QQModel* osgParticle::MetaQReflect_ConstantRateCounter::createQQModel(const Instance*i){ //return new MetaQReflect_ConstantRateCounter_QModel(i);}
 QMLConstantRateCounter *ret =new QMLConstantRateCounter(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -79,5 +101,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ConstantRateCounter_pmoc.cpp"
 #endif
+
+
 
 

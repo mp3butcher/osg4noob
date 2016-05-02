@@ -1,5 +1,7 @@
 #ifndef osgParticle_Placer_pmocHPP
 #define  osgParticle_Placer_pmocHPP 1
+
+
 #include <osgParticle/Placer_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -19,10 +21,10 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Placer * _model;
-QReflect_Placer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Placer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Placer( );
 //Placer
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE  float  volume()const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
@@ -36,7 +38,7 @@ protected:
 MetaQReflect_Placer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -47,6 +49,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_Placer_pmocHPP

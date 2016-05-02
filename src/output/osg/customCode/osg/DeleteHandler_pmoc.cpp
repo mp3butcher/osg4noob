@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/DeleteHandler_pmoc.hpp>
 using namespace pmoc;
-osg::QMLDeleteHandler::QMLDeleteHandler(pmoc::Instance *i,QObject* parent):QReflect_DeleteHandler(i,parent){
+osg::QMLDeleteHandler::QMLDeleteHandler(const pmoc::Instance *i,QObject* parent):QReflect_DeleteHandler(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLDeleteHandler::connect2View(QQuickItem*i){

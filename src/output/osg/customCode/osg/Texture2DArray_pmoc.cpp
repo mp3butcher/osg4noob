@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Texture2DArray_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTexture2DArray::QMLTexture2DArray(pmoc::Instance *i,QObject* parent):QReflect_Texture2DArray(i,parent){
+osg::QMLTexture2DArray::QMLTexture2DArray(const pmoc::Instance *i,QObject* parent):QReflect_Texture2DArray(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexture2DArray::connect2View(QQuickItem*i){

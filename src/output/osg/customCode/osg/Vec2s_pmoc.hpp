@@ -12,7 +12,7 @@ class  QMLVec2s: public QReflect_Vec2s
 {
 Q_OBJECT
 public:
-QMLVec2s(pmoc::Instance *i=0,QObject* parent=0);
+QMLVec2s(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

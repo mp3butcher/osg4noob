@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/AlphaFunc_pmoc.hpp>
 using namespace pmoc;
-osg::QMLAlphaFunc::QMLAlphaFunc(pmoc::Instance *i,QObject* parent):QReflect_AlphaFunc(i,parent){
+osg::QMLAlphaFunc::QMLAlphaFunc(const pmoc::Instance *i,QObject* parent):QReflect_AlphaFunc(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLAlphaFunc::connect2View(QQuickItem*i){

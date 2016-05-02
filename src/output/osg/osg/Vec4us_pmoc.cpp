@@ -1,14 +1,31 @@
 #include <osg/Vec4us>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osg/Vec4us_pmoc.hpp>
 #include <customCode/osg/Vec4us_pmoc.hpp>
+#include <customCode/osg/Vec4us_pmoc.hpp>
 using namespace pmoc;
+ bool  osg::QReflect_Vec4us:: operator!=(osg::QReflect_Vec4us  &p0)const{
+//params checking
+return _model->operator!=(*p0._model);
+
+}
+ bool  osg::QReflect_Vec4us:: operator<(osg::QReflect_Vec4us  &p0)const{
+//params checking
+return _model->operator<(*p0._model);
+
+}
+ bool  osg::QReflect_Vec4us:: operator==(osg::QReflect_Vec4us  &p0)const{
+//params checking
+return _model->operator==(*p0._model);
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Vec4us::QReflect_Vec4us(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Vec4us::QReflect_Vec4us(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Vec4us*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -31,9 +48,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Vec4us::MetaQReflect_Vec4us():MetaQQuickClass( "osg::Vec4us"){
-_typeid=&typeid(osg::Vec4us );           qRegisterMetaType<QMLVec4us>();
-qmlRegisterType<QReflect_Vec4us>("pmoc.osg",1,0,"QReflect_Vec4us");
-           qmlRegisterType<QMLVec4us>("pmoc.osg",1,0,"QMLVec4us");
+_typeid=&typeid(osg::Vec4us );
+           qRegisterMetaType<osg::QMLVec4us>();
+           qRegisterMetaType<osg::QMLVec4us*>("pmoc.osg.QMLVec4us");
+qmlRegisterType<osg::QReflect_Vec4us>("pmoc.osg",1,0,"QReflect_Vec4us");
+           qmlRegisterType<osg::QMLVec4us>("pmoc.osg",1,0,"QMLVec4us");
 };
 const std::string osg::MetaQReflect_Vec4us::Imports() const{
  return std::string("");
@@ -42,7 +61,7 @@ const std::string osg::MetaQReflect_Vec4us::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Vec4us::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Vec4us::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Vec4us::createQQModel(Instance*i){ //return new MetaQReflect_Vec4us_QModel(i);}
+QQModel* osg::MetaQReflect_Vec4us::createQQModel(const Instance*i){ //return new MetaQReflect_Vec4us_QModel(i);}
 QMLVec4us *ret =new QMLVec4us(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -53,5 +72,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Vec4us_pmoc.cpp"
 #endif
+
+
 
 

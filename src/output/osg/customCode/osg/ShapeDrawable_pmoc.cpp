@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ShapeDrawable_pmoc.hpp>
 using namespace pmoc;
-osg::QMLShapeDrawable::QMLShapeDrawable(pmoc::Instance *i,QObject* parent):QReflect_ShapeDrawable(i,parent){
+osg::QMLShapeDrawable::QMLShapeDrawable(const pmoc::Instance *i,QObject* parent):QReflect_ShapeDrawable(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLShapeDrawable::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLShapeDrawable::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ShapeDrawable_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTessellationHints::QMLTessellationHints(pmoc::Instance *i,QObject* parent):QReflect_TessellationHints(i,parent){
+osg::QMLTessellationHints::QMLTessellationHints(const pmoc::Instance *i,QObject* parent):QReflect_TessellationHints(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTessellationHints::connect2View(QQuickItem*i){

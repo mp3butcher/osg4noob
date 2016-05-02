@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/ParticleEffect_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLParticleEffect::QMLParticleEffect(pmoc::Instance *i,QObject* parent):QReflect_ParticleEffect(i,parent){
+osgParticle::QMLParticleEffect::QMLParticleEffect(const pmoc::Instance *i,QObject* parent):QReflect_ParticleEffect(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLParticleEffect::connect2View(QQuickItem*i){

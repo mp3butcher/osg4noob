@@ -1,5 +1,7 @@
 #ifndef osg_Vec2ui_pmocHPP
 #define  osg_Vec2ui_pmocHPP 1
+
+
 #include <osg/Vec2ui_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -17,7 +19,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 Vec2ui * _model;
-QReflect_Vec2ui(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Vec2ui(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Vec2ui( );
 //Vec2ui
 // Vec2ui  operator*( value_type );
@@ -27,23 +29,23 @@ virtual ~QReflect_Vec2ui( );
 // Vec2ui  operator-( value_type );
 // Vec2ui  operator-(const  Vec2ui &);
 // Vec2ui  operator/( value_type );
-// bool  operator!=(const  Vec2ui &);
-// bool  operator<(const  Vec2ui &);
-// bool  operator==(const  Vec2ui &);
-// value_type  operator[]( int );
-// value_type & operator[]( int );
+Q_INVOKABLE  bool  operator!=(osg::QReflect_Vec2ui &v)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_Vec2ui &v)const;
+Q_INVOKABLE  bool  operator==(osg::QReflect_Vec2ui &v)const;
 Q_INVOKABLE  unsigned int  g()const;
+Q_INVOKABLE  unsigned int  operator[]( int i)const;
 Q_INVOKABLE  unsigned int  r()const;
 Q_INVOKABLE  unsigned int  x()const;
 Q_INVOKABLE  unsigned int  y()const;
 Q_INVOKABLE  unsigned int&  g();
+Q_INVOKABLE  unsigned int&  operator[]( int i);
 Q_INVOKABLE  unsigned int&  r();
 Q_INVOKABLE  unsigned int&  x();
 Q_INVOKABLE  unsigned int&  y();
 Q_INVOKABLE  unsigned int*  ptr();
 Q_INVOKABLE const  unsigned int*  ptr()const;
-Q_INVOKABLE void  set( unsigned int  , unsigned int );
-Q_INVOKABLE void  set(osg::QReflect_Vec2ui *);
+Q_INVOKABLE void  set( unsigned int x , unsigned int y);
+Q_INVOKABLE void  set(osg::QReflect_Vec2ui *rhs);
 public slots:
 virtual void updateModel();
  
@@ -56,7 +58,7 @@ public:
 MetaQReflect_Vec2ui();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -67,6 +69,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Vec2ui_pmocHPP
 

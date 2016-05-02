@@ -1,5 +1,6 @@
 #include <osg/ClipNode>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,50 +9,66 @@
 #include <customCode/osg/Group_pmoc.hpp>
 #include <customCode/osg/ClipPlane_pmoc.hpp>
 #include <customCode/osg/StateSet_pmoc.hpp>
-#include <osg/ClipPlane>
 using namespace pmoc;
- bool  osg::QReflect_ClipNode::removeClipPlane( unsigned int p0){
+ bool  osg::QReflect_ClipNode:: addClipPlane(osg::QReflect_ClipPlane  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ClipNode::addClipPlane : parameter n.0 is NULL\n"<<endl;return -1;}
+emit ClipPlaneCollectionChanged();
+return _model->addClipPlane(p0->_model);
+
+}
+ bool  osg::QReflect_ClipNode:: removeClipPlane( unsigned int  p0){
+//params checking
 return _model->removeClipPlane(p0);
 
 }
- unsigned int  osg::QReflect_ClipNode::getNumClipPlanes()const{
+ bool  osg::QReflect_ClipNode:: removeClipPlane(osg::QReflect_ClipPlane  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ClipNode::removeClipPlane : parameter n.0 is NULL\n"<<endl;return -1;}
+emit ClipPlaneCollectionChanged();
+return _model->removeClipPlane(p0->_model);
+
+}
+ unsigned int  osg::QReflect_ClipNode:: getNumClipPlanes()const{
+//params checking
 return _model->getNumClipPlanes();
 
 }
- void osg::QReflect_ClipNode::setLocalStateSetModes( unsigned int p0){
+ void osg::QReflect_ClipNode::setLocalStateSetModes( unsigned int  p0){
+//params checking
  _model->setLocalStateSetModes(p0);
 
 }
- void osg::QReflect_ClipNode::setReferenceFrame(osg::QReflect_ClipNode::ReferenceFrame p0){
+ void osg::QReflect_ClipNode::setReferenceFrame(osg::QReflect_ClipNode::ReferenceFrame  p0){
+//params checking
  _model->setReferenceFrame(static_cast<osg::ClipNode::ReferenceFrame>(p0));
+emit ReferenceFrameChanged();
 
 }
- void osg::QReflect_ClipNode::setStateSetModes(osg::QReflect_StateSet *p0 , unsigned int p1)const{
+ void osg::QReflect_ClipNode::setStateSetModes(osg::QReflect_StateSet  *p0 , unsigned int  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_ClipNode::setStateSetModes : parameter n.0 is NULL\n"<<endl;return;}
  _model->setStateSetModes(*p0->_model ,p1);
 
 }
 osg::QReflect_ClipNode::ReferenceFrame  osg::QReflect_ClipNode::getReferenceFrame()const{
+//params checking
 osg::QReflect_ClipNode::ReferenceFrame ret=static_cast<osg::QReflect_ClipNode::ReferenceFrame>( _model->getReferenceFrame());return  ret;
 
 }
-osg::QReflect_ClipPlane*osg::QReflect_ClipNode::getClipPlane( unsigned int p0)const{
+osg::QReflect_ClipPlane*osg::QReflect_ClipNode::getClipPlane( unsigned int  p0)const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getClipPlane(p0),inst);
 return inst.isValid()?((osg::QReflect_ClipPlane * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_ClipPlane*osg::QReflect_ClipNode::getClipPlane( unsigned int p0){
+osg::QReflect_ClipPlane*osg::QReflect_ClipNode::getClipPlane( unsigned int  p0){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getClipPlane(p0),inst);
 return inst.isValid()?((osg::QReflect_ClipPlane * )inst.model->createQQModel(&inst)):NULL;
-}
-void   osg::QReflect_ClipNode::addClipPlane( osg::QReflect_ClipPlane *par){
-_model->addClipPlane(par->_model);
-}
-void   osg::QReflect_ClipNode::pmoc_reverse_addClipPlane( osg::QReflect_ClipPlane *par){
-_model->removeClipPlane(par->_model);
-emit ClipPlaneCollectionChanged();
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_ClipNode::QReflect_ClipNode(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ClipNode::QReflect_ClipNode(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ClipNode*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -79,10 +96,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ClipNode::MetaQReflect_ClipNode():MetaQQuickClass( "osg::ClipNode"){
-_typeid=&typeid(osg::ClipNode );           qRegisterMetaType<QMLClipNode>();
-qmlRegisterType<QReflect_ClipNode>("pmoc.osg",1,0,"QReflect_ClipNode");
-           qmlRegisterType<QMLClipNode>("pmoc.osg",1,0,"QMLClipNode");
-       PMOCACTION("getClipPlane","addClipPlane","removeClipPlane");
+_typeid=&typeid(osg::ClipNode );
+           qRegisterMetaType<osg::QMLClipNode>();
+           qRegisterMetaType<osg::QMLClipNode*>("pmoc.osg.QMLClipNode");
+qmlRegisterType<osg::QReflect_ClipNode>("pmoc.osg",1,0,"QReflect_ClipNode");
+           qmlRegisterType<osg::QMLClipNode>("pmoc.osg",1,0,"QMLClipNode");
 };
 const std::string osg::MetaQReflect_ClipNode::Imports() const{
  return std::string("");
@@ -91,7 +109,7 @@ const std::string osg::MetaQReflect_ClipNode::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ClipNode::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ClipNode::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ClipNode::createQQModel(Instance*i){ //return new MetaQReflect_ClipNode_QModel(i);}
+QQModel* osg::MetaQReflect_ClipNode::createQQModel(const Instance*i){ //return new MetaQReflect_ClipNode_QModel(i);}
 QMLClipNode *ret =new QMLClipNode(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -113,6 +131,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ClipNode_pmoc.cpp"
 #endif
+
 
 
 

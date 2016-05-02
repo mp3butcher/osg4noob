@@ -20,7 +20,7 @@ class  QMLGroup: public QReflect_Group
 {
     Q_OBJECT
 public:
-    QMLGroup(pmoc::Instance *i=0,QObject* parent=0);
+    QMLGroup(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
     Q_PROPERTY(pmoc::StateAttribListModel* children READ children NOTIFY childrenChanged)
 Q_INVOKABLE void addTexturedQuad();

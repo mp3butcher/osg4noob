@@ -15,7 +15,7 @@ class  QMLExplosionDebrisEffect: public QReflect_ExplosionDebrisEffect
 {
 Q_OBJECT
 public:
-QMLExplosionDebrisEffect(pmoc::Instance *i=0,QObject* parent=0);
+QMLExplosionDebrisEffect(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

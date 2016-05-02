@@ -1,6 +1,7 @@
 #ifndef osg_State_customHPP
 #define  osg_State_customHPP 1
 
+#include <osg/GraphicsContext_pmoc.hpp>
 //includes
 #include <osg/State_pmoc.hpp>
 #include <QObject>
@@ -12,7 +13,7 @@ class  QMLVertexAttribAlias: public QReflect_VertexAttribAlias
 {
 Q_OBJECT
 public:
-QMLVertexAttribAlias(pmoc::Instance *i=0,QObject* parent=0);
+QMLVertexAttribAlias(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -75,7 +76,7 @@ class  QMLState: public QReflect_State
 {
 Q_OBJECT
 public:
-QMLState(pmoc::Instance *i=0,QObject* parent=0);
+QMLState(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

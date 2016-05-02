@@ -15,7 +15,7 @@ class  QMLAccelOperator: public QReflect_AccelOperator
 {
 Q_OBJECT
 public:
-QMLAccelOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLAccelOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

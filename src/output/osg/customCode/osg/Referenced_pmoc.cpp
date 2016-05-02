@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Referenced_pmoc.hpp>
 using namespace pmoc;
-osg::QMLReferenced::QMLReferenced(pmoc::Instance *i,QObject* parent):QReflect_Referenced(i,parent){
+osg::QMLReferenced::QMLReferenced(const pmoc::Instance *i,QObject* parent):QReflect_Referenced(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLReferenced::connect2View(QQuickItem*i){

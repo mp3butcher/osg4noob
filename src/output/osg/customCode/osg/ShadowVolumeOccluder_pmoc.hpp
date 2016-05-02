@@ -13,7 +13,7 @@ class  QMLShadowVolumeOccluder: public QReflect_ShadowVolumeOccluder
 {
 Q_OBJECT
 public:
-QMLShadowVolumeOccluder(pmoc::Instance *i=0,QObject* parent=0);
+QMLShadowVolumeOccluder(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

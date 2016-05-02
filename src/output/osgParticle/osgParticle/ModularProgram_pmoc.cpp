@@ -1,6 +1,7 @@
 #include <osgParticle/ModularProgram>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,29 +10,35 @@
 #include <customCode/osgParticle/Program_pmoc.hpp>
 #include <customCode/osgParticle/Operator_pmoc.hpp>
 using namespace pmoc;
- int  osgParticle::QReflect_ModularProgram::numOperators()const{
+ int  osgParticle::QReflect_ModularProgram:: numOperators()const{
+//params checking
 return _model->numOperators();
 
 }
- void osgParticle::QReflect_ModularProgram::addOperator(osgParticle::QReflect_Operator *p0){
+ void osgParticle::QReflect_ModularProgram::addOperator(osgParticle::QReflect_Operator  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ModularProgram::addOperator : parameter n.0 is NULL\n"<<endl;return;}
  _model->addOperator(p0->_model);
 
 }
- void osgParticle::QReflect_ModularProgram::removeOperator( int p0){
+ void osgParticle::QReflect_ModularProgram::removeOperator( int  p0){
+//params checking
  _model->removeOperator(p0);
 
 }
-osgParticle::QReflect_Operator*osgParticle::QReflect_ModularProgram::getOperator( int p0)const{
+osgParticle::QReflect_Operator*osgParticle::QReflect_ModularProgram::getOperator( int  p0)const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getOperator(p0),inst);
 return inst.isValid()?((osgParticle::QReflect_Operator * )inst.model->createQQModel(&inst)):NULL;
 }
-osgParticle::QReflect_Operator*osgParticle::QReflect_ModularProgram::getOperator( int p0){
+osgParticle::QReflect_Operator*osgParticle::QReflect_ModularProgram::getOperator( int  p0){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getOperator(p0),inst);
 return inst.isValid()?((osgParticle::QReflect_Operator * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_ModularProgram::QReflect_ModularProgram(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_ModularProgram::QReflect_ModularProgram(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::ModularProgram*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -59,9 +66,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_ModularProgram::MetaQReflect_ModularProgram():MetaQQuickClass( "osgParticle::ModularProgram"){
-_typeid=&typeid(osgParticle::ModularProgram );           qRegisterMetaType<QMLModularProgram>();
-qmlRegisterType<QReflect_ModularProgram>("pmoc.osgParticle",1,0,"QReflect_ModularProgram");
-           qmlRegisterType<QMLModularProgram>("pmoc.osgParticle",1,0,"QMLModularProgram");
+_typeid=&typeid(osgParticle::ModularProgram );
+           qRegisterMetaType<osgParticle::QMLModularProgram>();
+           qRegisterMetaType<osgParticle::QMLModularProgram*>("pmoc.osgParticle.QMLModularProgram");
+qmlRegisterType<osgParticle::QReflect_ModularProgram>("pmoc.osgParticle",1,0,"QReflect_ModularProgram");
+           qmlRegisterType<osgParticle::QMLModularProgram>("pmoc.osgParticle",1,0,"QMLModularProgram");
 };
 const std::string osgParticle::MetaQReflect_ModularProgram::Imports() const{
  return std::string("");
@@ -70,7 +79,7 @@ const std::string osgParticle::MetaQReflect_ModularProgram::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_ModularProgram::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_ModularProgram::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_ModularProgram::createQQModel(Instance*i){ //return new MetaQReflect_ModularProgram_QModel(i);}
+QQModel* osgParticle::MetaQReflect_ModularProgram::createQQModel(const Instance*i){ //return new MetaQReflect_ModularProgram_QModel(i);}
 QMLModularProgram *ret =new QMLModularProgram(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

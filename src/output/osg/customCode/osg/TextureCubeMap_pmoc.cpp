@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TextureCubeMap_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTextureCubeMap::QMLTextureCubeMap(pmoc::Instance *i,QObject* parent):QReflect_TextureCubeMap(i,parent){
+osg::QMLTextureCubeMap::QMLTextureCubeMap(const pmoc::Instance *i,QObject* parent):QReflect_TextureCubeMap(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTextureCubeMap::connect2View(QQuickItem*i){

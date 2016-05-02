@@ -15,7 +15,7 @@ class  QMLBounceOperator: public QReflect_BounceOperator
 {
 Q_OBJECT
 public:
-QMLBounceOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLBounceOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

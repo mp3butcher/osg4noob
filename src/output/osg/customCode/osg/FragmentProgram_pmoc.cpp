@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/FragmentProgram_pmoc.hpp>
 using namespace pmoc;
-osg::QMLFragmentProgram::QMLFragmentProgram(pmoc::Instance *i,QObject* parent):QReflect_FragmentProgram(i,parent){
+osg::QMLFragmentProgram::QMLFragmentProgram(const pmoc::Instance *i,QObject* parent):QReflect_FragmentProgram(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLFragmentProgram::connect2View(QQuickItem*i){

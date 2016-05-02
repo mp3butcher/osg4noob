@@ -45,7 +45,7 @@ return (osg::QReflect_Quat  * )PMOCGETMETACLASS("osg::Quat")->createQQModel(&ins
     QColor osg::QMLPositionAttitudeTransform::getrotation()const{return QColor(_model->getAttitude().x(),_model->getAttitude().y(),_model->getAttitude().z(),_model->getAttitude().w());}
 
 
-osg::QMLPositionAttitudeTransform::QMLPositionAttitudeTransform(pmoc::Instance *i,QObject* parent):QReflect_PositionAttitudeTransform(i,parent){
+osg::QMLPositionAttitudeTransform::QMLPositionAttitudeTransform(const pmoc::Instance *i,QObject* parent):QReflect_PositionAttitudeTransform(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPositionAttitudeTransform::connect2View(QQuickItem*i){

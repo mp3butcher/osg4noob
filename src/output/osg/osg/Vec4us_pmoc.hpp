@@ -1,7 +1,12 @@
 #ifndef osg_Vec4us_pmocHPP
 #define  osg_Vec4us_pmocHPP 1
+
+
 #include <osg/Vec4us_pmoc.hpp>
 #include <QObject>
+namespace osg{ 
+class QReflect_Vec4us;
+			} ;
 #include <osg/Vec4us>
 
 #include <MetaQQuickClass.h>
@@ -14,7 +19,7 @@ virtual unsigned int getNumParentBox(){return 0;}
 
 /// inheritance simulated via composition
 Vec4us * _model;
-QReflect_Vec4us(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Vec4us(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Vec4us( );
 //Vec4us
 // Vec4us  operator*( value_type );
@@ -26,9 +31,6 @@ virtual ~QReflect_Vec4us( );
 // Vec4us & operator-=(const  Vec4us &);
 // Vec4us  operator/( value_type );
 // Vec4us & operator/=( value_type );
-// bool  operator!=(const  Vec4us &);
-// bool  operator<(const  Vec4us &);
-// bool  operator==(const  Vec4us &);
 // value_type  a();
 // value_type & a();
 // value_type  b();
@@ -50,6 +52,9 @@ virtual ~QReflect_Vec4us( );
 // value_type & z();
 // void  set( value_type  , value_type  , value_type  , value_type );
 //const  value_type * ptr();
+Q_INVOKABLE  bool  operator!=(osg::QReflect_Vec4us &v)const;
+Q_INVOKABLE  bool  operator<(osg::QReflect_Vec4us &v)const;
+Q_INVOKABLE  bool  operator==(osg::QReflect_Vec4us &v)const;
 public slots:
 virtual void updateModel();
  
@@ -62,7 +67,7 @@ public:
 MetaQReflect_Vec4us();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -73,6 +78,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Vec4us_pmocHPP
 

@@ -15,7 +15,7 @@ class  QMLForceOperator: public QReflect_ForceOperator
 {
 Q_OBJECT
 public:
-QMLForceOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLForceOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

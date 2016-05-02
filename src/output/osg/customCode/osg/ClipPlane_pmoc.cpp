@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ClipPlane_pmoc.hpp>
 using namespace pmoc;
-osg::QMLClipPlane::QMLClipPlane(pmoc::Instance *i,QObject* parent):QReflect_ClipPlane(i,parent){
+osg::QMLClipPlane::QMLClipPlane(const pmoc::Instance *i,QObject* parent):QReflect_ClipPlane(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLClipPlane::connect2View(QQuickItem*i){

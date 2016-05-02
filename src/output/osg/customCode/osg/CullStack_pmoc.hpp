@@ -14,7 +14,7 @@ class  QMLCullStack: public QReflect_CullStack
 {
 Q_OBJECT
 public:
-QMLCullStack(pmoc::Instance *i=0,QObject* parent=0);
+QMLCullStack(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

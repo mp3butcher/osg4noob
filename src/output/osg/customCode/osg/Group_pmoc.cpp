@@ -1,5 +1,6 @@
 #include <osg/Group>
 //includes
+#include <QQuickItem>
 #include <customCode/osg/Group_pmoc.hpp>
 #include <MetaQQuickLibraryRegistry.h>
 #include <MetaQQuickLibraryRegistry.h>
@@ -8,7 +9,7 @@
 using namespace std;
 using namespace pmoc;
 
-osg::QMLGroup::QMLGroup(pmoc::Instance *i,QObject* parent):QReflect_Group(i,parent)
+osg::QMLGroup::QMLGroup(const pmoc::Instance *i,QObject* parent):QReflect_Group(i,parent)
 {
     ///custom initializations
     qmlRegisterType<pmoc::StateAttribListModel>();_clickedchild=0;

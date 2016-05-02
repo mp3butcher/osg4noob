@@ -8,7 +8,7 @@ using namespace pmoc;
  PMOCSAFEADDOBJECT(_model->getDefaultParticleTemplate(),inst);
 return (osgParticle::QReflect_Particle * )PMOCGETMETACLASS("osgParticle::Particle")->createQQModel(&inst);
 }
-osgParticle::QMLParticleSystem::QMLParticleSystem(pmoc::Instance *i,QObject* parent):QReflect_ParticleSystem(i,parent){
+osgParticle::QMLParticleSystem::QMLParticleSystem(const pmoc::Instance *i,QObject* parent):QReflect_ParticleSystem(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLParticleSystem::connect2View(QQuickItem*i){

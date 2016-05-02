@@ -34,7 +34,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ParticleProcessor * _model;
-QReflect_ParticleProcessor(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ParticleProcessor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ParticleProcessor( );
 //ParticleProcessor
 //virtual  osg::BoundingSphere  computeBound();
@@ -46,50 +46,54 @@ virtual ~QReflect_ParticleProcessor( );
 //const  osg::Matrix & getPreviousLocalToWorldMatrix();
 //const  osg::Matrix & getPreviousWorldToLocalMatrix();
 //const  osg::Matrix & getWorldToLocalMatrix();
+Q_INVOKABLE  bool  getEnabled()const;
+Q_INVOKABLE  bool  getEndless()const;
 Q_INVOKABLE  bool  isAlive()const;
 Q_INVOKABLE  bool  isEnabled()const;
 Q_INVOKABLE  bool  isEndless()const;
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
-Q_INVOKABLE  osgParticle::QReflect_ParticleSystem * getParticleSystem()const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
+Q_INVOKABLE  double  getCurrentTime()const;
+Q_INVOKABLE  double  getLifeTime()const;
+Q_INVOKABLE  double  getResetTime()const;
+Q_INVOKABLE  double  getStartTime()const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE const bool  getEnabled()const;
-Q_INVOKABLE const bool  getEndless()const;
-Q_INVOKABLE const double  getCurrentTime()const;
-Q_INVOKABLE const double  getLifeTime()const;
-Q_INVOKABLE const double  getResetTime()const;
-Q_INVOKABLE const double  getStartTime()const;
 Q_INVOKABLE osgParticle::QReflect_ParticleProcessor::ReferenceFrame  getReferenceFrame()const;
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
-Q_INVOKABLE void  setReferenceFrame(osgParticle::QReflect_ParticleProcessor::ReferenceFrame );
-Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *);
-Q_INVOKABLE void pmoc_reverse_setParticleSystem( osgParticle::QReflect_ParticleSystem *par=0);
-Q_INVOKABLE void setCurrentTime(const double &);
-Q_INVOKABLE void setEnabled(const bool &);
-Q_INVOKABLE void setEndless(const bool &);
-Q_INVOKABLE void setLifeTime(const double &);
-Q_INVOKABLE void setParticleSystem( osgParticle::QReflect_ParticleSystem *par);
-Q_INVOKABLE void setResetTime(const double &);
-Q_INVOKABLE void setStartTime(const double &);
-Q_PROPERTY(bool Enabled  READ getEnabled WRITE setEnabled NOTIFY EnabledChanged)
-Q_PROPERTY(bool Endless  READ getEndless WRITE setEndless NOTIFY EndlessChanged)
-Q_PROPERTY(double CurrentTime  READ getCurrentTime WRITE setCurrentTime NOTIFY CurrentTimeChanged)
-Q_PROPERTY(double LifeTime  READ getLifeTime WRITE setLifeTime NOTIFY LifeTimeChanged)
-Q_PROPERTY(double ResetTime  READ getResetTime WRITE setResetTime NOTIFY ResetTimeChanged)
-Q_PROPERTY(double StartTime  READ getStartTime WRITE setStartTime NOTIFY StartTimeChanged)
-signals: void CurrentTimeChanged(const double&);
+Q_INVOKABLE osgParticle::QReflect_ParticleSystem*  getParticleSystem();
+Q_INVOKABLE osgParticle::QReflect_ParticleSystem*  getParticleSystem()const;
+Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *nv);
+Q_INVOKABLE void  setCurrentTime( double t);
+Q_INVOKABLE void  setEnabled( bool v);
+Q_INVOKABLE void  setEndless( bool type);
+Q_INVOKABLE void  setLifeTime( double t);
+Q_INVOKABLE void  setParticleSystem(osgParticle::QReflect_ParticleSystem *ps);
+Q_INVOKABLE void  setReferenceFrame(osgParticle::QReflect_ParticleProcessor::ReferenceFrame rf);
+Q_INVOKABLE void  setResetTime( double t);
+Q_INVOKABLE void  setStartTime( double t);
+Q_INVOKABLE void  traverse(osg::QReflect_NodeVisitor *nv);
+Q_PROPERTY(bool  Enabled  READ getEnabled WRITE setEnabled NOTIFY EnabledChanged)
+Q_PROPERTY(bool  Endless  READ getEndless WRITE setEndless NOTIFY EndlessChanged)
+Q_PROPERTY(double  CurrentTime  READ getCurrentTime WRITE setCurrentTime NOTIFY CurrentTimeChanged)
+Q_PROPERTY(double  LifeTime  READ getLifeTime WRITE setLifeTime NOTIFY LifeTimeChanged)
+Q_PROPERTY(double  ResetTime  READ getResetTime WRITE setResetTime NOTIFY ResetTimeChanged)
+Q_PROPERTY(double  StartTime  READ getStartTime WRITE setStartTime NOTIFY StartTimeChanged)
+Q_PROPERTY(osgParticle::QReflect_ParticleProcessor::ReferenceFrame  ReferenceFrame  READ getReferenceFrame WRITE setReferenceFrame NOTIFY ReferenceFrameChanged)
+Q_PROPERTY(osgParticle::QReflect_ParticleSystem * ParticleSystem  READ getParticleSystem WRITE setParticleSystem NOTIFY ParticleSystemChanged)
+signals: void CurrentTimeChanged();
 public:
-signals: void EnabledChanged(const bool&);
+signals: void EnabledChanged();
 public:
-signals: void EndlessChanged(const bool&);
+signals: void EndlessChanged();
 public:
-signals: void LifeTimeChanged(const double&);
+signals: void LifeTimeChanged();
 public:
-signals: void ParticleSystemChanged(const osgParticle::QReflect_ParticleSystem*);
+signals: void ParticleSystemChanged();
 public:
-signals: void ResetTimeChanged(const double&);
+signals: void ReferenceFrameChanged();
 public:
-signals: void StartTimeChanged(const double&);
+signals: void ResetTimeChanged();
+public:
+signals: void StartTimeChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -101,7 +105,7 @@ protected:
 MetaQReflect_ParticleProcessor();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -112,6 +116,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_ParticleProcessor_pmocHPP

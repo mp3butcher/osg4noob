@@ -15,7 +15,7 @@ class  QMLFireEffect: public QReflect_FireEffect
 {
 Q_OBJECT
 public:
-QMLFireEffect(pmoc::Instance *i=0,QObject* parent=0);
+QMLFireEffect(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

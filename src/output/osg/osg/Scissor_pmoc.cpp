@@ -1,5 +1,6 @@
 #include <osg/Scissor>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -7,54 +8,73 @@
 #include <customCode/osg/Scissor_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- int  osg::QReflect_Scissor::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_Scissor:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Scissor::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- int  osg::QReflect_Scissor::height()const{
+ int  osg::QReflect_Scissor:: height()const{
+//params checking
 return _model->height();
 
 }
- int  osg::QReflect_Scissor::width()const{
+ int  osg::QReflect_Scissor:: width()const{
+//params checking
 return _model->width();
 
 }
- int  osg::QReflect_Scissor::x()const{
+ int  osg::QReflect_Scissor:: x()const{
+//params checking
 return _model->x();
 
 }
- int  osg::QReflect_Scissor::y()const{
+ int  osg::QReflect_Scissor:: y()const{
+//params checking
 return _model->y();
 
 }
- int&  osg::QReflect_Scissor::height(){
+ int&  osg::QReflect_Scissor:: height(){
+//params checking
 return _model->height();
 
 }
- int&  osg::QReflect_Scissor::width(){
+ int&  osg::QReflect_Scissor:: width(){
+//params checking
 return _model->width();
 
 }
- int&  osg::QReflect_Scissor::x(){
+ int&  osg::QReflect_Scissor:: x(){
+//params checking
 return _model->x();
 
 }
- int&  osg::QReflect_Scissor::y(){
+ int&  osg::QReflect_Scissor:: y(){
+//params checking
 return _model->y();
 
 }
- void osg::QReflect_Scissor::getScissor( int &p0 , int &p1 , int &p2 , int &p3)const{
+ void osg::QReflect_Scissor::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Scissor::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_Scissor::getScissor( int  &p0 , int  &p1 , int  &p2 , int  &p3)const{
+//params checking
  _model->getScissor(p0 ,p1 ,p2 ,p3);
 
 }
- void osg::QReflect_Scissor::setScissor( int p0 , int p1 , int p2 , int p3){
+ void osg::QReflect_Scissor::setScissor( int  p0 , int  p1 , int  p2 , int  p3){
+//params checking
  _model->setScissor(p0 ,p1 ,p2 ,p3);
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Scissor::QReflect_Scissor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Scissor::QReflect_Scissor(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Scissor*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -82,9 +102,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Scissor::MetaQReflect_Scissor():MetaQQuickClass( "osg::Scissor"){
-_typeid=&typeid(osg::Scissor );           qRegisterMetaType<QMLScissor>();
-qmlRegisterType<QReflect_Scissor>("pmoc.osg",1,0,"QReflect_Scissor");
-           qmlRegisterType<QMLScissor>("pmoc.osg",1,0,"QMLScissor");
+_typeid=&typeid(osg::Scissor );
+           qRegisterMetaType<osg::QMLScissor>();
+           qRegisterMetaType<osg::QMLScissor*>("pmoc.osg.QMLScissor");
+qmlRegisterType<osg::QReflect_Scissor>("pmoc.osg",1,0,"QReflect_Scissor");
+           qmlRegisterType<osg::QMLScissor>("pmoc.osg",1,0,"QMLScissor");
 };
 const std::string osg::MetaQReflect_Scissor::Imports() const{
  return std::string("");
@@ -93,7 +115,7 @@ const std::string osg::MetaQReflect_Scissor::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Scissor::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Scissor::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Scissor::createQQModel(Instance*i){ //return new MetaQReflect_Scissor_QModel(i);}
+QQModel* osg::MetaQReflect_Scissor::createQQModel(const Instance*i){ //return new MetaQReflect_Scissor_QModel(i);}
 QMLScissor *ret =new QMLScissor(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -115,5 +137,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Scissor_pmoc.cpp"
 #endif
+
+
 
 

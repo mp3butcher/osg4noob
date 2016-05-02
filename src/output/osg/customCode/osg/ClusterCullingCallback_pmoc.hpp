@@ -15,7 +15,7 @@ class  QMLClusterCullingCallback: public QReflect_ClusterCullingCallback
 {
 Q_OBJECT
 public:
-QMLClusterCullingCallback(pmoc::Instance *i=0,QObject* parent=0);
+QMLClusterCullingCallback(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

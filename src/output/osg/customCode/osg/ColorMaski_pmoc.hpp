@@ -13,7 +13,7 @@ class  QMLColorMaski: public QReflect_ColorMaski
 {
 Q_OBJECT
 public:
-QMLColorMaski(pmoc::Instance *i=0,QObject* parent=0);
+QMLColorMaski(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

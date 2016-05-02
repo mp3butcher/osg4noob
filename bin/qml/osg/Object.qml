@@ -1,4 +1,4 @@
-import QtQuick 2.1
+import QtQuick 2.0
 import QtQuick.Window 2.0
 import QtQuick.Layouts 1.0
 import QtQuick.Controls 1.0
@@ -45,21 +45,25 @@ target:main
                 drag.target: main
                 drag.axis: Drag.XandYAxis
                 onClicked: if (mouse.button == Qt.LeftButton)
-                               globalEditor.setOperand(main.qmodel)
+                               pmocjs.setOperand(main.qmodel)
 
 
                 /////CLASSIC PART TO END//////////////////////////////////////////////////////////////////////
 
                     Item {
-                        onOsg_ObjectChanged:   {///HACK (ComboBox index not updated automatiquelly)
-                          variance.currentIndex=obj.osg_Object.dataVariance
-                       }
+                      
 
                    //height: childrenRect.height
                         id: obj
                         objectName: "osg_ObjectQQQ"
                         property var osg_Object
 
+///REQUIRED HACK (ComboBox index not updated automatiquelly)
+			 onOsg_ObjectChanged:{ 
+				 varianceenum.enumOwner=obj.osg_Object  
+			}
+						 
+  			 
                         anchors.leftMargin: 5
                         //height: 30
                         anchors.fill: parent
@@ -114,19 +118,16 @@ target:main
                                     text: "DataVariance:"
 
                                 }
-                                ComboBox {
+EnumComboBox{
+id:varianceenum
+width: 200
+ enumName: "DataVariance"
+	   enumWatched:obj.osg_Object.DataVariance
+         enumOwner:obj.osg_Object
+onCurrentIndexChanged: obj.osg_Object.DataVariance=enumAtCurrentIndex()
 
-                                    id: variance
-                                    model: ["DYNAMIC", "STATIC", "UNSPECIFIED"]
-                                    currentIndex: obj.osg_Object.dataVariance
-                                    width: 200
-                                    //     enabled: (currentIndex==0)//(obj. osg_Shader.shaderType == 0)
-                                    onCurrentIndexChanged: {
-                                        console.log(currentIndex)
-                                       obj.osg_Object.dataVariance = currentIndex
-
-                                    }
-                                }
+}
+                                
                             }
                         }
                     }

@@ -10,6 +10,7 @@ import QtQml 2.0
 import QtQuick.Dialogs 1.0
 import QtQuick.Window 2.1
 
+import "qml/pmocComposer.js" as PMOC
 /*
 FileDialog {
     id: fileDialog
@@ -79,6 +80,7 @@ id:nodetreeview
 }
 //}
 Rectangle{
+
 // Anchored to 20px off the top left corner of the parent
 /*anchor make this staticallly linked to parent(so no anchors on main
 anchors.left: parent.left;
@@ -159,8 +161,46 @@ Keys.onPressed: {  console.log("keyfrom fullview");
         mode: OSGViewport.Native //Buffer //
 // FocusScope {
 // id:scope
-     id: fullview
+        id: fullview
+        objectName: 'fullview'
+  /*   Button{
+         y:100
+         x:100
+     property var  item1;
+         text:"fok"
+         onClicked:{ console.log("COMOPLOOPOPPO")
+         if (item1){
+          //  item1.parent=null
+          item1.destroy(0)
+         }
+        gc ()
+      //  item1=PMOC.createPMOC("osg/Group");
+         var naming = "StateSet"
+          // globalEditor.clearComponentCache()
+   naming = "osg/Group"
 
+
+
+         var component = Qt.createComponent(Qt.resolvedUrl("qml/"+naming + ".qml"))
+
+
+         var qmlnaming = naming.replace("/", "_")+"QQQ"
+         naming =naming.replace("/","::")
+         //var cl=globalEditor.getClassByName(naming)
+        // console.log(cl)
+         if (component.status == Component.Ready) {
+             item1 = component.createObject(fullview)
+             console.log("Qt.qsdqsdqsd(obj)!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+          //   console.log(getChildByObjectName(item1, "osg_StateSetQQQ"))
+
+             //obj.setProperty
+             ///globalEditor.connect2view(qmod,obj)
+         } else
+             console.log(component.errorString())
+         //item1.parent=fullview
+         component=null
+         }
+     }*/
 //MouseArea{  anchors.fill: parent;onClicked: { console.log("fok");fullview.focus = true;}}
     }//}
 

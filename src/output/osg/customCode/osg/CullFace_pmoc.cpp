@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CullFace_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCullFace::QMLCullFace(pmoc::Instance *i,QObject* parent):QReflect_CullFace(i,parent){
+osg::QMLCullFace::QMLCullFace(const pmoc::Instance *i,QObject* parent):QReflect_CullFace(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCullFace::connect2View(QQuickItem*i){

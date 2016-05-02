@@ -13,7 +13,7 @@ class  QMLTransferFunction: public QReflect_TransferFunction
 {
 Q_OBJECT
 public:
-QMLTransferFunction(pmoc::Instance *i=0,QObject* parent=0);
+QMLTransferFunction(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -34,7 +34,7 @@ class  QMLTransferFunction1D: public QReflect_TransferFunction1D
 {
 Q_OBJECT
 public:
-QMLTransferFunction1D(pmoc::Instance *i=0,QObject* parent=0);
+QMLTransferFunction1D(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

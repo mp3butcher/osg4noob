@@ -1,9 +1,14 @@
 #ifndef osg_TexEnv_pmocHPP
 #define  osg_TexEnv_pmocHPP 1
+
+
 #include <osg/TexEnv_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 namespace osg{ 
 class QReflect_Vec4f;
@@ -32,17 +37,20 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 TexEnv * _model;
-QReflect_TexEnv(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_TexEnv(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_TexEnv( );
 //TexEnv
 // Vec4 & getColor();
-//virtual  void  apply( State &);
 //const  Vec4 & getColor();
 Q_INVOKABLE  bool  isTextureAttribute()const;
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_TexEnv::Mode  getMode()const;
-Q_INVOKABLE void  setColor(osg::QReflect_Vec4f *);
-Q_INVOKABLE void  setMode(osg::QReflect_TexEnv::Mode );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setColor(osg::QReflect_Vec4f *color);
+Q_INVOKABLE void  setMode(osg::QReflect_TexEnv::Mode mode);
+Q_PROPERTY(osg::QReflect_TexEnv::Mode  Mode  READ getMode WRITE setMode NOTIFY ModeChanged)
+signals: void ModeChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -55,7 +63,7 @@ public:
 MetaQReflect_TexEnv();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -66,6 +74,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_TexEnv_pmocHPP
 

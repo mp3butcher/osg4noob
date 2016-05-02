@@ -24,18 +24,18 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ConnectedParticleSystem * _model;
-QReflect_ConnectedParticleSystem(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ConnectedParticleSystem(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ConnectedParticleSystem( );
 //ConnectedParticleSystem
-Q_INVOKABLE const unsigned int  getMaxNumberOfParticlesToSkip()const;
-Q_INVOKABLE osgParticle::QReflect_Particle*  createParticle(osgParticle::QReflect_Particle *);
+Q_INVOKABLE  unsigned int  getMaxNumberOfParticlesToSkip();
+Q_INVOKABLE osgParticle::QReflect_Particle*  createParticle(osgParticle::QReflect_Particle *ptemplate);
 Q_INVOKABLE osgParticle::QReflect_Particle*  getStartParticle();
 Q_INVOKABLE osgParticle::QReflect_Particle*  getStartParticle()const;
-Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *)const;
-Q_INVOKABLE void  reuseParticle( int );
-Q_INVOKABLE void setMaxNumberOfParticlesToSkip(const unsigned int &);
-Q_PROPERTY(unsigned int MaxNumberOfParticlesToSkip  READ getMaxNumberOfParticlesToSkip WRITE setMaxNumberOfParticlesToSkip NOTIFY MaxNumberOfParticlesToSkipChanged)
-signals: void MaxNumberOfParticlesToSkipChanged(const unsigned int&);
+Q_INVOKABLE void  drawImplementation(osg::QReflect_RenderInfo *renderInfo)const;
+Q_INVOKABLE void  reuseParticle( int i);
+Q_INVOKABLE void  setMaxNumberOfParticlesToSkip( unsigned int maxNumberofParticlesToSkip);
+Q_PROPERTY(unsigned int  MaxNumberOfParticlesToSkip  READ getMaxNumberOfParticlesToSkip WRITE setMaxNumberOfParticlesToSkip NOTIFY MaxNumberOfParticlesToSkipChanged)
+signals: void MaxNumberOfParticlesToSkipChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -49,7 +49,7 @@ public:
 MetaQReflect_ConnectedParticleSystem();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -60,6 +60,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_ConnectedParticleSystem_pmocHPP

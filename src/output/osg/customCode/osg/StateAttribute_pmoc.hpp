@@ -36,7 +36,7 @@ public:
     int overrideMode()const;
 
 
-    QMLStateAttribute(pmoc::Instance *i=0,QObject* parent=0);
+    QMLStateAttribute(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
     virtual void  updateModel();

@@ -15,7 +15,7 @@ class  QMLGLBeginEndAdapter: public QReflect_GLBeginEndAdapter
 {
 Q_OBJECT
 public:
-QMLGLBeginEndAdapter(pmoc::Instance *i=0,QObject* parent=0);
+QMLGLBeginEndAdapter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

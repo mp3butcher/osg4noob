@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/GLU_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPixelStorageModes::QMLPixelStorageModes(pmoc::Instance *i,QObject* parent):QReflect_PixelStorageModes(i,parent){
+osg::QMLPixelStorageModes::QMLPixelStorageModes(const pmoc::Instance *i,QObject* parent):QReflect_PixelStorageModes(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPixelStorageModes::connect2View(QQuickItem*i){

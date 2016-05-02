@@ -13,7 +13,7 @@ class  QMLArrayDispatchers: public QReflect_ArrayDispatchers
 {
 Q_OBJECT
 public:
-QMLArrayDispatchers(pmoc::Instance *i=0,QObject* parent=0);
+QMLArrayDispatchers(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -34,7 +34,7 @@ class  QMLAttributeDispatch: public QReflect_AttributeDispatch
 {
 Q_OBJECT
 public:
-QMLAttributeDispatch(pmoc::Instance *i=0,QObject* parent=0);
+QMLAttributeDispatch(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

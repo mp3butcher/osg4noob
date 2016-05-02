@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/Shooter_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLShooter::QMLShooter(pmoc::Instance *i,QObject* parent):QReflect_Shooter(i,parent){
+osgParticle::QMLShooter::QMLShooter(const pmoc::Instance *i,QObject* parent):QReflect_Shooter(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLShooter::connect2View(QQuickItem*i){

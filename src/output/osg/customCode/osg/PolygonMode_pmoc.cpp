@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PolygonMode_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPolygonMode::QMLPolygonMode(pmoc::Instance *i,QObject* parent):QReflect_PolygonMode(i,parent){
+osg::QMLPolygonMode::QMLPolygonMode(const pmoc::Instance *i,QObject* parent):QReflect_PolygonMode(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPolygonMode::connect2View(QQuickItem*i){

@@ -1,38 +1,45 @@
 #include <osg/Timer>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osg/Timer_pmoc.hpp>
 #include <customCode/osg/Timer_pmoc.hpp>
 using namespace pmoc;
- double  osg::QReflect_ElapsedTime::elapsedTime()const{
+ double  osg::QReflect_ElapsedTime:: elapsedTime()const{
+//params checking
 return _model->elapsedTime();
 
 }
- double  osg::QReflect_ElapsedTime::elapsedTime_m()const{
+ double  osg::QReflect_ElapsedTime:: elapsedTime_m()const{
+//params checking
 return _model->elapsedTime_m();
 
 }
- double  osg::QReflect_ElapsedTime::elapsedTime_n()const{
+ double  osg::QReflect_ElapsedTime:: elapsedTime_n()const{
+//params checking
 return _model->elapsedTime_n();
 
 }
- double  osg::QReflect_ElapsedTime::elapsedTime_u()const{
+ double  osg::QReflect_ElapsedTime:: elapsedTime_u()const{
+//params checking
 return _model->elapsedTime_u();
 
 }
  void osg::QReflect_ElapsedTime::finish(){
+//params checking
  _model->finish();
 
 }
  void osg::QReflect_ElapsedTime::reset(){
+//params checking
  _model->reset();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_ElapsedTime::QReflect_ElapsedTime(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ElapsedTime::QReflect_ElapsedTime(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ElapsedTime*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -55,9 +62,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ElapsedTime::MetaQReflect_ElapsedTime():MetaQQuickClass( "osg::ElapsedTime"){
-_typeid=&typeid(osg::ElapsedTime );           qRegisterMetaType<QMLElapsedTime>();
-qmlRegisterType<QReflect_ElapsedTime>("pmoc.osg",1,0,"QReflect_ElapsedTime");
-           qmlRegisterType<QMLElapsedTime>("pmoc.osg",1,0,"QMLElapsedTime");
+_typeid=&typeid(osg::ElapsedTime );
+           qRegisterMetaType<osg::QMLElapsedTime>();
+           qRegisterMetaType<osg::QMLElapsedTime*>("pmoc.osg.QMLElapsedTime");
+qmlRegisterType<osg::QReflect_ElapsedTime>("pmoc.osg",1,0,"QReflect_ElapsedTime");
+           qmlRegisterType<osg::QMLElapsedTime>("pmoc.osg",1,0,"QMLElapsedTime");
 };
 const std::string osg::MetaQReflect_ElapsedTime::Imports() const{
  return std::string("");
@@ -66,7 +75,7 @@ const std::string osg::MetaQReflect_ElapsedTime::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ElapsedTime::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ElapsedTime::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ElapsedTime::createQQModel(Instance*i){ //return new MetaQReflect_ElapsedTime_QModel(i);}
+QQModel* osg::MetaQReflect_ElapsedTime::createQQModel(const Instance*i){ //return new MetaQReflect_ElapsedTime_QModel(i);}
 QMLElapsedTime *ret =new QMLElapsedTime(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -82,38 +91,46 @@ return ret;}
 #include <QtQml/QQmlEngine>
 #include <osg/Timer_pmoc.hpp>
 #include <customCode/osg/Timer_pmoc.hpp>
+#include <customCode/osg/Timer_pmoc.hpp>
 using namespace pmoc;
- double  osg::QReflect_Timer::getSecondsPerTick()const{
+ double  osg::QReflect_Timer:: getSecondsPerTick()const{
+//params checking
 return _model->getSecondsPerTick();
 
 }
- double  osg::QReflect_Timer::time_m()const{
+ double  osg::QReflect_Timer:: time_m()const{
+//params checking
 return _model->time_m();
 
 }
- double  osg::QReflect_Timer::time_n()const{
+ double  osg::QReflect_Timer:: time_n()const{
+//params checking
 return _model->time_n();
 
 }
- double  osg::QReflect_Timer::time_s()const{
+ double  osg::QReflect_Timer:: time_s()const{
+//params checking
 return _model->time_s();
 
 }
- double  osg::QReflect_Timer::time_u()const{
+ double  osg::QReflect_Timer:: time_u()const{
+//params checking
 return _model->time_u();
 
 }
  void osg::QReflect_Timer::setStartTick(){
+//params checking
  _model->setStartTick();
 
 }
 osg::QReflect_Timer*osg::QReflect_Timer::instance(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->instance(),inst);
 return inst.isValid()?((osg::QReflect_Timer * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Timer::QReflect_Timer(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Timer::QReflect_Timer(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Timer*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -136,9 +153,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Timer::MetaQReflect_Timer():MetaQQuickClass( "osg::Timer"){
-_typeid=&typeid(osg::Timer );           qRegisterMetaType<QMLTimer>();
-qmlRegisterType<QReflect_Timer>("pmoc.osg",1,0,"QReflect_Timer");
-           qmlRegisterType<QMLTimer>("pmoc.osg",1,0,"QMLTimer");
+_typeid=&typeid(osg::Timer );
+           qRegisterMetaType<osg::QMLTimer>();
+           qRegisterMetaType<osg::QMLTimer*>("pmoc.osg.QMLTimer");
+qmlRegisterType<osg::QReflect_Timer>("pmoc.osg",1,0,"QReflect_Timer");
+           qmlRegisterType<osg::QMLTimer>("pmoc.osg",1,0,"QMLTimer");
 };
 const std::string osg::MetaQReflect_Timer::Imports() const{
  return std::string("");
@@ -147,7 +166,7 @@ const std::string osg::MetaQReflect_Timer::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Timer::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Timer::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Timer::createQQModel(Instance*i){ //return new MetaQReflect_Timer_QModel(i);}
+QQModel* osg::MetaQReflect_Timer::createQQModel(const Instance*i){ //return new MetaQReflect_Timer_QModel(i);}
 QMLTimer *ret =new QMLTimer(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -158,5 +177,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Timer_pmoc.cpp"
 #endif
+
+
 
 

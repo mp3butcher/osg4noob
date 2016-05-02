@@ -1,5 +1,6 @@
 #include <osg/PositionAttitudeTransform>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,44 +9,61 @@
 #include <customCode/osg/Transform_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/NodeVisitor_pmoc.hpp>
+#include <customCode/osg/PositionAttitudeTransform_pmoc.hpp>
 #include <customCode/osg/Quat_pmoc.hpp>
 #include <customCode/osg/Vec3d_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_PositionAttitudeTransform::computeLocalToWorldMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+ bool  osg::QReflect_PositionAttitudeTransform:: computeLocalToWorldMatrix(osg::QReflect_Matrixd  *p0 ,osg::QReflect_NodeVisitor  *p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::computeLocalToWorldMatrix : parameter n.0 is NULL\n"<<endl;return -1;}
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::computeLocalToWorldMatrix : parameter n.1 is NULL\n"<<endl;return -1;}
 return _model->computeLocalToWorldMatrix(*p0->_model ,p1->_model);
 
 }
- bool  osg::QReflect_PositionAttitudeTransform::computeWorldToLocalMatrix(osg::QReflect_Matrixd *p0 ,osg::QReflect_NodeVisitor *p1)const{
+ bool  osg::QReflect_PositionAttitudeTransform:: computeWorldToLocalMatrix(osg::QReflect_Matrixd  *p0 ,osg::QReflect_NodeVisitor  *p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::computeWorldToLocalMatrix : parameter n.0 is NULL\n"<<endl;return -1;}
+if(! p1) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::computeWorldToLocalMatrix : parameter n.1 is NULL\n"<<endl;return -1;}
 return _model->computeWorldToLocalMatrix(*p0->_model ,p1->_model);
 
 }
- void osg::QReflect_PositionAttitudeTransform::setAttitude(osg::QReflect_Quat *p0){
+ void osg::QReflect_PositionAttitudeTransform::setAttitude(osg::QReflect_Quat  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::setAttitude : parameter n.0 is NULL\n"<<endl;return;}
  _model->setAttitude(*p0->_model);
 
 }
- void osg::QReflect_PositionAttitudeTransform::setPivotPoint(osg::QReflect_Vec3d *p0){
+ void osg::QReflect_PositionAttitudeTransform::setPivotPoint(osg::QReflect_Vec3d  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::setPivotPoint : parameter n.0 is NULL\n"<<endl;return;}
  _model->setPivotPoint(*p0->_model);
 
 }
- void osg::QReflect_PositionAttitudeTransform::setPosition(osg::QReflect_Vec3d *p0){
+ void osg::QReflect_PositionAttitudeTransform::setPosition(osg::QReflect_Vec3d  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::setPosition : parameter n.0 is NULL\n"<<endl;return;}
  _model->setPosition(*p0->_model);
 
 }
- void osg::QReflect_PositionAttitudeTransform::setScale(osg::QReflect_Vec3d *p0){
+ void osg::QReflect_PositionAttitudeTransform::setScale(osg::QReflect_Vec3d  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PositionAttitudeTransform::setScale : parameter n.0 is NULL\n"<<endl;return;}
  _model->setScale(*p0->_model);
 
 }
 osg::QReflect_PositionAttitudeTransform*osg::QReflect_PositionAttitudeTransform::asPositionAttitudeTransform()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->asPositionAttitudeTransform(),inst);
 return inst.isValid()?((osg::QReflect_PositionAttitudeTransform * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_PositionAttitudeTransform*osg::QReflect_PositionAttitudeTransform::asPositionAttitudeTransform(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->asPositionAttitudeTransform(),inst);
 return inst.isValid()?((osg::QReflect_PositionAttitudeTransform * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_PositionAttitudeTransform::QReflect_PositionAttitudeTransform(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_PositionAttitudeTransform::QReflect_PositionAttitudeTransform(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::PositionAttitudeTransform*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -73,9 +91,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_PositionAttitudeTransform::MetaQReflect_PositionAttitudeTransform():MetaQQuickClass( "osg::PositionAttitudeTransform"){
-_typeid=&typeid(osg::PositionAttitudeTransform );           qRegisterMetaType<QMLPositionAttitudeTransform>();
-qmlRegisterType<QReflect_PositionAttitudeTransform>("pmoc.osg",1,0,"QReflect_PositionAttitudeTransform");
-           qmlRegisterType<QMLPositionAttitudeTransform>("pmoc.osg",1,0,"QMLPositionAttitudeTransform");
+_typeid=&typeid(osg::PositionAttitudeTransform );
+           qRegisterMetaType<osg::QMLPositionAttitudeTransform>();
+           qRegisterMetaType<osg::QMLPositionAttitudeTransform*>("pmoc.osg.QMLPositionAttitudeTransform");
+qmlRegisterType<osg::QReflect_PositionAttitudeTransform>("pmoc.osg",1,0,"QReflect_PositionAttitudeTransform");
+           qmlRegisterType<osg::QMLPositionAttitudeTransform>("pmoc.osg",1,0,"QMLPositionAttitudeTransform");
 };
 const std::string osg::MetaQReflect_PositionAttitudeTransform::Imports() const{
  return std::string("");
@@ -84,7 +104,7 @@ const std::string osg::MetaQReflect_PositionAttitudeTransform::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_PositionAttitudeTransform::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_PositionAttitudeTransform::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_PositionAttitudeTransform::createQQModel(Instance*i){ //return new MetaQReflect_PositionAttitudeTransform_QModel(i);}
+QQModel* osg::MetaQReflect_PositionAttitudeTransform::createQQModel(const Instance*i){ //return new MetaQReflect_PositionAttitudeTransform_QModel(i);}
 QMLPositionAttitudeTransform *ret =new QMLPositionAttitudeTransform(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -106,6 +126,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_PositionAttitudeTransform_pmoc.cpp"
 #endif
+
 
 
 

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/VariableRateCounter_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLVariableRateCounter::QMLVariableRateCounter(pmoc::Instance *i,QObject* parent):QReflect_VariableRateCounter(i,parent){
+osgParticle::QMLVariableRateCounter::QMLVariableRateCounter(const pmoc::Instance *i,QObject* parent):QReflect_VariableRateCounter(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLVariableRateCounter::connect2View(QQuickItem*i){

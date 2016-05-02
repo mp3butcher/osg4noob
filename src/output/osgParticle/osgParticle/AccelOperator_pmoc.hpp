@@ -4,14 +4,14 @@
 
 #include <osgParticle/AccelOperator_pmoc.hpp>
 #include <QObject>
-namespace osgParticle{ 
-class QReflect_Program;
-			} ;
 namespace osg{ 
 class QReflect_Vec3f;
 			} ;
 namespace osgParticle{ 
 class QReflect_Particle;
+			} ;
+namespace osgParticle{ 
+class QReflect_Program;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/AccelOperator>
@@ -27,14 +27,14 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 AccelOperator * _model;
-QReflect_AccelOperator(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_AccelOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_AccelOperator( );
 //AccelOperator
 //const  osg::Vec3 & getAcceleration();
-Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *);
-Q_INVOKABLE void  operate(osgParticle::QReflect_Particle * , double );
-Q_INVOKABLE void  setAcceleration(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setToGravity( float );
+Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *prg);
+Q_INVOKABLE void  operate(osgParticle::QReflect_Particle *P , double dt);
+Q_INVOKABLE void  setAcceleration(osg::QReflect_Vec3f *v);
+Q_INVOKABLE void  setToGravity( float scale);
 public slots:
 virtual void updateModel();
  
@@ -47,7 +47,7 @@ public:
 MetaQReflect_AccelOperator();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -58,6 +58,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_AccelOperator_pmocHPP

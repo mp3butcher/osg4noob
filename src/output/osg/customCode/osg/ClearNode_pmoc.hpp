@@ -14,7 +14,7 @@ class  QMLClearNode: public QReflect_ClearNode
 {
 Q_OBJECT
 public:
-QMLClearNode(pmoc::Instance *i=0,QObject* parent=0);
+QMLClearNode(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

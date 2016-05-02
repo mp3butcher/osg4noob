@@ -1,6 +1,7 @@
 #include <osgParticle/ForceOperator>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -11,21 +12,27 @@
 #include <customCode/osgParticle/Particle_pmoc.hpp>
 #include <customCode/osgParticle/Program_pmoc.hpp>
 using namespace pmoc;
- void osgParticle::QReflect_ForceOperator::beginOperate(osgParticle::QReflect_Program *p0){
+ void osgParticle::QReflect_ForceOperator::beginOperate(osgParticle::QReflect_Program  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ForceOperator::beginOperate : parameter n.0 is NULL\n"<<endl;return;}
  _model->beginOperate(p0->_model);
 
 }
- void osgParticle::QReflect_ForceOperator::operate(osgParticle::QReflect_Particle *p0 , double p1){
+ void osgParticle::QReflect_ForceOperator::operate(osgParticle::QReflect_Particle  *p0 , double  p1){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ForceOperator::operate : parameter n.0 is NULL\n"<<endl;return;}
  _model->operate(p0->_model ,p1);
 
 }
- void osgParticle::QReflect_ForceOperator::setForce(osg::QReflect_Vec3f *p0){
+ void osgParticle::QReflect_ForceOperator::setForce(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osgParticle::QReflect_ForceOperator::setForce : parameter n.0 is NULL\n"<<endl;return;}
  _model->setForce(*p0->_model);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_ForceOperator::QReflect_ForceOperator(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_ForceOperator::QReflect_ForceOperator(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::ForceOperator*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -53,9 +60,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_ForceOperator::MetaQReflect_ForceOperator():MetaQQuickClass( "osgParticle::ForceOperator"){
-_typeid=&typeid(osgParticle::ForceOperator );           qRegisterMetaType<QMLForceOperator>();
-qmlRegisterType<QReflect_ForceOperator>("pmoc.osgParticle",1,0,"QReflect_ForceOperator");
-           qmlRegisterType<QMLForceOperator>("pmoc.osgParticle",1,0,"QMLForceOperator");
+_typeid=&typeid(osgParticle::ForceOperator );
+           qRegisterMetaType<osgParticle::QMLForceOperator>();
+           qRegisterMetaType<osgParticle::QMLForceOperator*>("pmoc.osgParticle.QMLForceOperator");
+qmlRegisterType<osgParticle::QReflect_ForceOperator>("pmoc.osgParticle",1,0,"QReflect_ForceOperator");
+           qmlRegisterType<osgParticle::QMLForceOperator>("pmoc.osgParticle",1,0,"QMLForceOperator");
 };
 const std::string osgParticle::MetaQReflect_ForceOperator::Imports() const{
  return std::string("");
@@ -64,7 +73,7 @@ const std::string osgParticle::MetaQReflect_ForceOperator::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_ForceOperator::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_ForceOperator::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_ForceOperator::createQQModel(Instance*i){ //return new MetaQReflect_ForceOperator_QModel(i);}
+QQModel* osgParticle::MetaQReflect_ForceOperator::createQQModel(const Instance*i){ //return new MetaQReflect_ForceOperator_QModel(i);}
 QMLForceOperator *ret =new QMLForceOperator(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;

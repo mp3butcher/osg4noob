@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Hint_pmoc.hpp>
 using namespace pmoc;
-osg::QMLHint::QMLHint(pmoc::Instance *i,QObject* parent):QReflect_Hint(i,parent){
+osg::QMLHint::QMLHint(const pmoc::Instance *i,QObject* parent):QReflect_Hint(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLHint::connect2View(QQuickItem*i){

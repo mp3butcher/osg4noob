@@ -46,14 +46,14 @@ Component.onCompleted:
         objtest.parent = null
                          var naming = "StateSet"
                                       gc ()
-                                      globalEditor.clearComponentCache()
+                                      pmocjs.clearComponentCache()
 
                                       var component = Qt.createComponent(Qt.resolvedUrl(naming + ".qml"))
                                               naming = "osg/StateSet"
 
                                                       var qmlnaming = naming.replace("/", "_")+"QQQ"
                                                               naming =naming.replace("/","::")
-                                                                      //var cl=globalEditor.getClassByName(naming)
+                                                                      //var cl=pmocjs.getClassByName(naming)
                                                                       // console.log(cl)
                                                                       if (component.status == Component.Ready)
         {
@@ -83,7 +83,7 @@ Component.onCompleted:
             }* /
 
             //obj.setProperty
-            ///globalEditor.connect2view(qmod,obj)
+            ///pmocjs.connect2view(qmod,obj)
         }
         else
 
@@ -104,13 +104,13 @@ Component.onCompleted:
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -118,7 +118,7 @@ Component.onCompleted:
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
@@ -133,7 +133,7 @@ Component.onCompleted:
             drag.target: main
             drag.axis: Drag.XandYAxis
             onClicked: if (mouse.button != Qt.RightButton)
-                           globalEditor.setOperand(main.qmodel)
+                           pmocjs.setOperand(main.qmodel)
 
             /////CLASSIC PART TO END
             Column {

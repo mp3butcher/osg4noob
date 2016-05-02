@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/RenderInfo_pmoc.hpp>
 using namespace pmoc;
-osg::QMLRenderInfo::QMLRenderInfo(pmoc::Instance *i,QObject* parent):QReflect_RenderInfo(i,parent){
+osg::QMLRenderInfo::QMLRenderInfo(const pmoc::Instance *i,QObject* parent):QReflect_RenderInfo(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLRenderInfo::connect2View(QQuickItem*i){

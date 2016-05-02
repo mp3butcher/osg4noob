@@ -1,5 +1,7 @@
 #ifndef osgParticle_Counter_pmocHPP
 #define  osgParticle_Counter_pmocHPP 1
+
+
 #include <osgParticle/Counter_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
@@ -19,10 +21,10 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Counter * _model;
-QReflect_Counter(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Counter(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Counter( );
 //Counter
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
 public slots:
@@ -35,7 +37,7 @@ protected:
 MetaQReflect_Counter();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -46,6 +48,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_Counter_pmocHPP

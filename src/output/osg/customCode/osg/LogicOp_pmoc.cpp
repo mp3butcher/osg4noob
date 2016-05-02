@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/LogicOp_pmoc.hpp>
 using namespace pmoc;
-osg::QMLLogicOp::QMLLogicOp(pmoc::Instance *i,QObject* parent):QReflect_LogicOp(i,parent){
+osg::QMLLogicOp::QMLLogicOp(const pmoc::Instance *i,QObject* parent):QReflect_LogicOp(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLLogicOp::connect2View(QQuickItem*i){

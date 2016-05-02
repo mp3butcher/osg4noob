@@ -1,12 +1,13 @@
 #include <osg/Geode>
 //includes
+#include <QQuickItem>
 #include <customCode/osg/Geode_pmoc.hpp>
 #include <MetaQQuickLibraryRegistry.h>
 #include <iostream>
 
 using namespace pmoc;
 
-osg::QMLGeode::QMLGeode(pmoc::Instance *i,QObject* parent):QReflect_Geode(i,parent)
+osg::QMLGeode::QMLGeode(const pmoc::Instance *i,QObject* parent):QReflect_Geode(i,parent)
 {
 //custom initializations
     _clickeddrawable=0;  qmlRegisterType<pmoc::StateAttribListModel>();

@@ -24,26 +24,26 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 AngularDampingOperator * _model;
-QReflect_AngularDampingOperator(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_AngularDampingOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_AngularDampingOperator( );
 //AngularDampingOperator
 //const  osg::Vec3 & getDamping();
-Q_INVOKABLE const float  getCutoffHigh()const;
-Q_INVOKABLE const float  getCutoffLow()const;
-Q_INVOKABLE void  getCutoff( float & , float &)const;
-Q_INVOKABLE void  getDamping( float & , float & , float &)const;
-Q_INVOKABLE void  operate(osgParticle::QReflect_Particle * , double );
-Q_INVOKABLE void  setCutoff( float  , float );
-Q_INVOKABLE void  setDamping( float  , float  , float );
-Q_INVOKABLE void  setDamping( float );
-Q_INVOKABLE void  setDamping(osg::QReflect_Vec3f *);
-Q_INVOKABLE void setCutoffHigh(const float &);
-Q_INVOKABLE void setCutoffLow(const float &);
-Q_PROPERTY(float CutoffHigh  READ getCutoffHigh WRITE setCutoffHigh NOTIFY CutoffHighChanged)
-Q_PROPERTY(float CutoffLow  READ getCutoffLow WRITE setCutoffLow NOTIFY CutoffLowChanged)
-signals: void CutoffHighChanged(const float&);
+Q_INVOKABLE  float  getCutoffHigh()const;
+Q_INVOKABLE  float  getCutoffLow()const;
+Q_INVOKABLE void  getCutoff( float &low , float &high)const;
+Q_INVOKABLE void  getDamping( float &x , float &y , float &z)const;
+Q_INVOKABLE void  operate(osgParticle::QReflect_Particle *P , double dt);
+Q_INVOKABLE void  setCutoff( float low , float high);
+Q_INVOKABLE void  setCutoffHigh( float low);
+Q_INVOKABLE void  setCutoffLow( float low);
+Q_INVOKABLE void  setDamping( float x , float y , float z);
+Q_INVOKABLE void  setDamping( float x);
+Q_INVOKABLE void  setDamping(osg::QReflect_Vec3f *damping);
+Q_PROPERTY(float  CutoffHigh  READ getCutoffHigh WRITE setCutoffHigh NOTIFY CutoffHighChanged)
+Q_PROPERTY(float  CutoffLow  READ getCutoffLow WRITE setCutoffLow NOTIFY CutoffLowChanged)
+signals: void CutoffHighChanged();
 public:
-signals: void CutoffLowChanged(const float&);
+signals: void CutoffLowChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -57,7 +57,7 @@ public:
 MetaQReflect_AngularDampingOperator();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -68,6 +68,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_AngularDampingOperator_pmocHPP

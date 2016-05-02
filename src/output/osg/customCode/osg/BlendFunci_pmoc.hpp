@@ -13,7 +13,7 @@ class  QMLBlendFunci: public QReflect_BlendFunci
 {
 Q_OBJECT
 public:
-QMLBlendFunci(pmoc::Instance *i=0,QObject* parent=0);
+QMLBlendFunci(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

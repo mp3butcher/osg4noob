@@ -12,7 +12,7 @@ class  QMLCastAndScaleToFloatOperation: public QReflect_CastAndScaleToFloatOpera
 {
 Q_OBJECT
 public:
-QMLCastAndScaleToFloatOperation(pmoc::Instance *i=0,QObject* parent=0);
+QMLCastAndScaleToFloatOperation(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

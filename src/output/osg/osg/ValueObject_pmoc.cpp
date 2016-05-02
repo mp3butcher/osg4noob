@@ -1,5 +1,6 @@
 #include <osg/ValueObject>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,7 +10,7 @@
 using namespace pmoc;
 
 ///DefaultConstructor////////////////
-osg::QReflect_ValueObject::QReflect_ValueObject(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_ValueObject::QReflect_ValueObject(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::ValueObject*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -37,9 +38,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_ValueObject::MetaQReflect_ValueObject():MetaQQuickClass( "osg::ValueObject"){
-_typeid=&typeid(osg::ValueObject );           qRegisterMetaType<QMLValueObject>();
-qmlRegisterType<QReflect_ValueObject>("pmoc.osg",1,0,"QReflect_ValueObject");
-           qmlRegisterType<QMLValueObject>("pmoc.osg",1,0,"QMLValueObject");
+_typeid=&typeid(osg::ValueObject );
+           qRegisterMetaType<osg::QMLValueObject>();
+           qRegisterMetaType<osg::QMLValueObject*>("pmoc.osg.QMLValueObject");
+qmlRegisterType<osg::QReflect_ValueObject>("pmoc.osg",1,0,"QReflect_ValueObject");
+           qmlRegisterType<osg::QMLValueObject>("pmoc.osg",1,0,"QMLValueObject");
 };
 const std::string osg::MetaQReflect_ValueObject::Imports() const{
  return std::string("");
@@ -48,7 +51,7 @@ const std::string osg::MetaQReflect_ValueObject::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_ValueObject::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_ValueObject::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_ValueObject::createQQModel(Instance*i){ //return new MetaQReflect_ValueObject_QModel(i);}
+QQModel* osg::MetaQReflect_ValueObject::createQQModel(const Instance*i){ //return new MetaQReflect_ValueObject_QModel(i);}
 QMLValueObject *ret =new QMLValueObject(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -70,5 +73,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_ValueObject_pmoc.cpp"
 #endif
+
+
 
 

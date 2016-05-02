@@ -1,7 +1,12 @@
 #ifndef osg_ShaderComposer_pmocHPP
 #define  osg_ShaderComposer_pmocHPP 1
+
+
 #include <osg/ShaderComposer_pmoc.hpp>
 #include <QObject>
+namespace osg{ 
+class QReflect_State;
+			} ;
 #include <osg/ShaderComposer>
 #include <osg/ShaderComposer>
 
@@ -16,13 +21,13 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ShaderComposer * _model;
-QReflect_ShaderComposer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ShaderComposer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ShaderComposer( );
 //ShaderComposer
 //virtual  osg::Program * getOrCreateProgram(const  ShaderComponents &);
 //virtual  osg::Shader * composeMain(const  Shaders &);
 //virtual  void  addShaderToProgram( Program * ,const  Shaders &);
-// void  releaseGLObjects( osg::State *);
+Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *state);
 public slots:
 virtual void updateModel();
  
@@ -35,7 +40,7 @@ public:
 MetaQReflect_ShaderComposer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -46,6 +51,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ShaderComposer_pmocHPP
 

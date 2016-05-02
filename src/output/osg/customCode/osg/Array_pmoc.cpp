@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Array_pmoc.hpp>
 using namespace pmoc;
-osg::QMLArray::QMLArray(pmoc::Instance *i,QObject* parent):QReflect_Array(i,parent){
+osg::QMLArray::QMLArray(const pmoc::Instance *i,QObject* parent):QReflect_Array(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLArray::connect2View(QQuickItem*i){
@@ -29,7 +29,7 @@ void  osg::QMLArray::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Array_pmoc.hpp>
 using namespace pmoc;
-osg::QMLArrayVisitor::QMLArrayVisitor(pmoc::Instance *i,QObject* parent):QReflect_ArrayVisitor(i,parent){
+osg::QMLArrayVisitor::QMLArrayVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ArrayVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLArrayVisitor::connect2View(QQuickItem*i){
@@ -55,7 +55,7 @@ void  osg::QMLArrayVisitor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Array_pmoc.hpp>
 using namespace pmoc;
-osg::QMLConstArrayVisitor::QMLConstArrayVisitor(pmoc::Instance *i,QObject* parent):QReflect_ConstArrayVisitor(i,parent){
+osg::QMLConstArrayVisitor::QMLConstArrayVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ConstArrayVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLConstArrayVisitor::connect2View(QQuickItem*i){
@@ -81,7 +81,7 @@ void  osg::QMLConstArrayVisitor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Array_pmoc.hpp>
 using namespace pmoc;
-osg::QMLConstValueVisitor::QMLConstValueVisitor(pmoc::Instance *i,QObject* parent):QReflect_ConstValueVisitor(i,parent){
+osg::QMLConstValueVisitor::QMLConstValueVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ConstValueVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLConstValueVisitor::connect2View(QQuickItem*i){
@@ -107,7 +107,7 @@ void  osg::QMLConstValueVisitor::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Array_pmoc.hpp>
 using namespace pmoc;
-osg::QMLIndexArray::QMLIndexArray(pmoc::Instance *i,QObject* parent):QReflect_IndexArray(i,parent){
+osg::QMLIndexArray::QMLIndexArray(const pmoc::Instance *i,QObject* parent):QReflect_IndexArray(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLIndexArray::connect2View(QQuickItem*i){
@@ -133,7 +133,7 @@ void  osg::QMLIndexArray::updateModel(){
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Array_pmoc.hpp>
 using namespace pmoc;
-osg::QMLValueVisitor::QMLValueVisitor(pmoc::Instance *i,QObject* parent):QReflect_ValueVisitor(i,parent){
+osg::QMLValueVisitor::QMLValueVisitor(const pmoc::Instance *i,QObject* parent):QReflect_ValueVisitor(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLValueVisitor::connect2View(QQuickItem*i){

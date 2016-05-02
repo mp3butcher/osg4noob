@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ColorMask_pmoc.hpp>
 using namespace pmoc;
-osg::QMLColorMask::QMLColorMask(pmoc::Instance *i,QObject* parent):QReflect_ColorMask(i,parent){
+osg::QMLColorMask::QMLColorMask(const pmoc::Instance *i,QObject* parent):QReflect_ColorMask(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLColorMask::connect2View(QQuickItem*i){

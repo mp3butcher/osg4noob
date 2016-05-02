@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/TexEnvCombine_pmoc.hpp>
 using namespace pmoc;
-osg::QMLTexEnvCombine::QMLTexEnvCombine(pmoc::Instance *i,QObject* parent):QReflect_TexEnvCombine(i,parent){
+osg::QMLTexEnvCombine::QMLTexEnvCombine(const pmoc::Instance *i,QObject* parent):QReflect_TexEnvCombine(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLTexEnvCombine::connect2View(QQuickItem*i){

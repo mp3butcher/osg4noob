@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PointSprite_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPointSprite::QMLPointSprite(pmoc::Instance *i,QObject* parent):QReflect_PointSprite(i,parent){
+osg::QMLPointSprite::QMLPointSprite(const pmoc::Instance *i,QObject* parent):QReflect_PointSprite(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPointSprite::connect2View(QQuickItem*i){

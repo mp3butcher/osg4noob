@@ -13,7 +13,7 @@ class  QMLAlphaFunc: public QReflect_AlphaFunc
 {
 Q_OBJECT
 public:
-QMLAlphaFunc(pmoc::Instance *i=0,QObject* parent=0);
+QMLAlphaFunc(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

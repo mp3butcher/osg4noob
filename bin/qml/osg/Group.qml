@@ -7,6 +7,7 @@ import QtQuick.Dialogs 1.0
 import ".."
 
 FocusScope {
+
     width: 320
     height: 300
     id: main //FocusScope For keyboard events
@@ -46,14 +47,14 @@ Component.onCompleted:
         objtest.parent = null
                          var naming = "StateSet"
                                       gc ()
-                                      globalEditor.clearComponentCache()
+                                      pmocjs.clearComponentCache()
 
                                       var component = Qt.createComponent(Qt.resolvedUrl(naming + ".qml"))
                                               naming = "osg/StateSet"
 
                                                       var qmlnaming = naming.replace("/", "_")+"QQQ"
                                                               naming =naming.replace("/","::")
-                                                                      //var cl=globalEditor.getClassByName(naming)
+                                                                      //var cl=pmocjs.getClassByName(naming)
                                                                       // console.log(cl)
                                                                       if (component.status == Component.Ready)
         {
@@ -83,12 +84,64 @@ Component.onCompleted:
             }* /
 
             //obj.setProperty
-            ///globalEditor.connect2view(qmod,obj)
+            ///pmocjs.connect2view(qmod,obj)
         }
         else
 
 
-*/ Rectangle {
+*/
+
+
+ Rectangle { 
+	Row{
+id:rowstate
+property var reduced:false
+property var reducedsize:80
+property var reducedcontent
+
+//private (inner used)
+property var restoredsize
+
+anchors.right:parent.right
+Button{
+text:'X'
+y:4
+anchors.right:parent.right
+anchors.rightMargin:4
+width:20
+	height:20
+            onClicked: rectangle.parent=null
+	}
+Button{
+text:'_'
+y:4
+anchors.right:parent.right
+anchors.rightMargin:22
+width:20
+	height:20
+            onClicked: {
+if(rowstate.reduced==false){
+rowstate.reduced=true
+rowstate.restoredsize=rectangle.parent.height
+rectangle.parent.height=rowstate. reducedsize
+//rectangle.height=80
+var composite=rectangle.children[1].children[0]
+ 
+for(var i=1;i<composite.children.length;i=i+1)
+composite.children[i].visible=false
+ 
+}else{
+rowstate.reduced=false
+rectangle.parent.height=rowstate.restoredsize
+var composite=rectangle.children[1].children[0]
+for(var i=1;i<composite.children.length;i=i+1)
+composite.children[i].visible=true
+ 
+}
+}
+	}
+
+}
         border.color: "black"
         border.width: 3
         radius: 10
@@ -104,13 +157,13 @@ Component.onCompleted:
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -118,7 +171,7 @@ Component.onCompleted:
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
@@ -129,12 +182,14 @@ Component.onCompleted:
         MouseArea {
             objectName: 'pmocmousearea'
             anchors.fill: parent
-            acceptedButtons: Qt.AllButtons
+            acceptedButtons:  Qt.RightButton
             drag.target: main
             drag.axis: Drag.XandYAxis
-            onClicked: if (mouse.button != Qt.RightButton)
-                           globalEditor.setOperand(main.qmodel)
-
+            onClicked: {
+//if (mouse.button != Qt.RightButton)
+                           pmocjs.setOperand(main.qmodel)
+ 
+}
             /////CLASSIC PART TO END
             Column {
                 Component.onDestruction: {
@@ -145,7 +200,14 @@ Component.onCompleted:
                 id: obj
                 property var osg_Group
 
-
+		property var childrenlist:[]
+		onOsg_GroupChanged:{ 
+					for(var i=0;i< osg_Group.getNumChildren();i=i+1){
+						var ch= osg_Group.getChild(i); 				 
+						 childrenlist[i]=ch.cast("osg::Object")
+					}
+					childrenlistChanged()
+		}
                 // //QQModel
                 Button {
 text:'addQuad'
@@ -160,7 +222,10 @@ text:'addQuad'
                     // width: layout.width
                     text: "add Node From File"
                     iconSource: 'qrc:/content/openbutton.png'
-                    onClicked: {
+                    onClicked: { 
+			
+
+
                         /*   console.log(JSON.stringify(  (obj.osg_Group.undoActions))) var l = String()
                         (obj.osg_Group.undoActions[0])))
               console.log(obj.osg_Group.undoActions[0])
@@ -191,7 +256,10 @@ text:'addQuad'
                         //anchors.fill: parent
                         ListView {
                             //	z:-100
-                            model: obj.osg_Group.children
+                           ///C++ way 
+				//model: obj.osg_Group.children
+			   ///js way
+				model:obj.childrenlist
                             delegate: Rectangle {
                                 property int m_iIndex: model.index
                                 height: 25
@@ -204,21 +272,28 @@ text:'addQuad'
 
                                     onDoubleClicked: {
 
-                                        //soft way to maintain child preview
-                                        console.log(parent.m_iIndex)
-                                        obj.osg_Group.childSelected(
-                                                    parent.m_iIndex)
+                                        //runtime way to popup child
+var newqmodel=obj.osg_Group.getChild(parent.m_iIndex);                                
+var newqitem=pmocjs.genUI4QQModel(newqmodel,obj.osg_Group.getQuickItem());                                
+if(newqitem)newqmodel.connect2View(newqitem);                                     
+newqmodel.updateModel()
+                                    
+//compiletime way to popup child (signal should be connected to a C++ slot)
+// obj.osg_Group.childSelected(parent.m_iIndex)
+
                                     }
                                     Grid {
                                         columns: 2
                                         // id: layout
                                         anchors.fill: parent
                                         Text {
-                                            text: model.name //;onTextChanged:{model.name=text}
+                                            //text: model.name //;onTextChanged:{model.name=text}
+						text:model.modelData.className
                                         }
                                         ///model.modelData.name(for unwatched list)
                                         Text {
-                                            text: ":" + model.type
+                                            //text: ":" + model.type
+					text:model.modelData.Name
                                         }
                                     }
                                 }

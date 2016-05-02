@@ -29,7 +29,7 @@ message("projectsourcedir ${CMAKE_BINARY_DIR}/src/inputinclude")
  FILE(GLOB_RECURSE  OSG_INCLUDES RELATIVE ${CMAKE_BINARY_DIR}/src/inputinclude      ${CMAKE_BINARY_DIR}/src/inputinclude/osg/*
 )
 
- 
+
 #SET(CMAKE_CURRENT_SOURCE_DIR  ${PATHTOHEADER})
     message(${OSG_INCLUDES})
  link_directories(${Boost_LIBRARY_DIRS})
@@ -42,35 +42,34 @@ SET(PROJECT_INCLUDES
 #${OSG_INCLUDES}
 )
 
+
+#create include file list
 set(hpp_gen)
 set(cpp_gen)
-file(REMOVE fileslist.txt)
+set(hpp_gen_custom)
+set(cpp_gen_custom)
+file(REMOVE includefileslist.hpp)
 foreach(_file ${OSG_INCLUDES})
 ##  string(REPLACE "." "_" file_tro ${_file})
-set(file_tro ${CMAKE_BINARY_DIR}/src/output/osg/${_file}_pmoc.hpp)
+  set(file_tro ${CMAKE_BINARY_DIR}/src/output/osg/${_file}_pmoc.hpp)
 set(file_troc ${CMAKE_BINARY_DIR}/src/output/osg/${_file}_pmoc.cpp)
-set(file_custom_tro ${CMAKE_BINARY_DIR}/src/output/osg/customCode/${_file}_pmoc.hpp)
+  set(file_custom_tro ${CMAKE_BINARY_DIR}/src/output/osg/customCode/${_file}_pmoc.hpp)
 set(file_custom_troc ${CMAKE_BINARY_DIR}/src/output/osg/customCode/${_file}_pmoc.cpp)
+  
 
-file(APPEND fileslist.txt "#include <${_file}>\n"  )
-   message (${PATHTOHEADER})
-   message (${_file})
-   message (${file_troc})
-if(0)
- add_custom_command(
-    OUTPUT ${file_tro} ${file_troc}  #BEWARE: remove stubs after first generation in order not to be remove on clean  ${file_custom_tro} ${file_custom_troc}
-    COMMAND pmoc  ${_file}  -o ../output/osg/ --conf ../output/ContextGenerator.conf
-    DEPENDS pmoc  ${PATHTOHEADER}/${_file}
-WORKING_DIRECTORY ${PATHTOHEADER}
+file(APPEND includefileslist.hpp "#include <${_file}>\n"  )
+   #message (${PATHTOHEADER})
+  # message (${_file})
+  # message (${file_troc})
 
-  )
-endif()
+ 
   list(APPEND hpp_gen ${file_tro})
   list(APPEND cpp_gen ${file_troc})
-   list(APPEND hpp_gen ${file_custom_tro})
-   list(APPEND cpp_gen ${file_custom_troc})
+   list(APPEND hpp_gen_custom ${file_custom_tro})
+   list(APPEND cpp_gen_custom ${file_custom_troc})
   endforeach()
  
+if(1)
 set(PROJECT_ADDITIONAL_INCLUDES
 customCode/osg/AttribListModel.hpp
 customCode/osg/PagedLodListModel.hpp
@@ -78,45 +77,42 @@ customCode/osg/PagedLodListModel.hpp
 set(PROJECT_ADDITIONAL_SRC
 customCode/osg/AttribListModel.cpp
 customCode/osg/PagedLodListModel.cpp
-) 
+)
+endif()
 
-QT5_WRAP_CPP(PROJECT_INCLUDES_MOC_OSG   ${PROJECT_ADDITIONAL_INCLUDES}  ${hpp_gen} )
 #QT5_WRAP_CPP(ADDITIONAL_MOC  )
 
-#generate Plugin from filelist.txt
-  set(pluginfile_tro ${CMAKE_BINARY_DIR}/src/output/osg/plugin.h)
-set(pluginfile_troc ${CMAKE_BINARY_DIR}/src/output/osg/plugin.cpp)
+#generate Plugin from include file list (includefilelist.hpp)
+  set(pluginfile_tro ${CMAKE_BINARY_DIR}/src/output/osg/plugin${PROJECT_NAME}.h)
+set(pluginfile_troc ${CMAKE_BINARY_DIR}/src/output/osg/plugin${PROJECT_NAME}.cpp)
+ 
 
-if(0)
-add_custom_command(
+QT5_WRAP_CPP(PROJECT_INCLUDES_MOC_OSG    ${PROJECT_ADDITIONAL_INCLUDES}  )
+ 
 
-    OUTPUT ${pluginfile_tro} ${pluginfile_troc}
-    COMMAND pmoc  --genplugin ../output/osg/fileslist.txt --conf ../output/ContextGenerator.conf -o ../output/osg/plugin
-    DEPENDS pmoc ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
-WORKING_DIRECTORY ${PATHTOHEADER}
 
-  )
-else()
-#FAKE just for depends
-add_custom_command(
-    OUTPUT ${pluginfile_tro} ${pluginfile_troc}
-    COMMAND echo off
-    DEPENDS  ${hpp_gen} ${PROJECT_INCLUDES_MOC_OSG}
-WORKING_DIRECTORY ${PATHTOHEADER}
-  )
-endif()  
- list(APPEND hpp_gen ${pluginfile_tro})
- list(APPEND cpp_gen ${pluginfile_troc})
 
-#INCLUDE_DIRECTORIES( "../pmoc/")
+#INCLUDE_DIRECTORIES( "../mylex/")
 INCLUDE_DIRECTORIES( "${CMAKE_BINARY_DIR}/src/output/osg")
 include_directories(
     ${CMAKE_CURRENT_BINARY_DIR}
     "${CMAKE_BINARY_DIR}/src/include"
     ${OPENSCENEGRAPH_INCLUDE_DIRS})
- 
+# INCLUDE_DIRECTORIES( ${BOOST_INCLUDE_PATH})
+# include_directories(${Boost_INCLUDE_DIR})
+# include_directories(${Qt5Widgets_INCLUDES})
+# include_directories(${Qt5OpenGL_INCLUDES})
+# include_directories(${Qt5Core_INCLUDES})
+# include_directories(${Qt5_INCLUDES})
 
-	INCLUDE_DIRECTORIES("../../../include")
+
+
+
+
+
+
+	#INCLUDE_DIRECTORIES("../../../MetaInterfaceLib")
+	INCLUDE_DIRECTORIES("../../../MetaQMLInterfaceLib")
 include_directories(
 ${CMAKE_CURRENT_BINARY_DIR}
 "${CMAKE_CURRENT_BINARY_DIR}/include"
@@ -125,22 +121,27 @@ ${CMAKE_CURRENT_BINARY_DIR}
 
 #set(CMAKE_AUTOMOC ON)
 
+FIND_PACKAGE(PMOC REQUIRED)
+ 
+
+
+
+ 
+set(pmoc_cpp)
+PMOC_BOX_HPP(pmoc_cpp  "${OSG_INCLUDES}" "--conf ../output/ContextGenerator.conf --exportmacro   OSG_EXPORT" "${PATHTOHEADER}")
 
 SET(LIBRARY_OUTPUT_PATH ${CMAKE_HOME_DIRECTORY}/bin/PlugIns)
-ADD_LIBRARY(${PROJECT_NAME} MODULE ${cpp_gen}  ${PROJECT_ADDITIONAL_SRC} #${PROJECT_INCLUDES_MOC_OSG}
+ADD_LIBRARY(${PROJECT_NAME} MODULE ${pmoc_cpp}    ${PROJECT_ADDITIONAL_SRC} #${PROJECT_INCLUDES_MOC_OSG}
 ${ADDITIONAL_MOC})
 TARGET_LINK_LIBRARIES(${PROJECT_NAME}
-#MetaQQuickLibraryLib 
-"../../../lib/msvc2013-x64/lib/MetaQQuickLibraryLib"
-${QSCINTILLA_LIBRARY}
-${OPENSCENEGRAPH_LIBRARIES} 
-
+MetaQQuickLibraryLib ${QSCINTILLA_LIBRARY}
+${Boost_LIBRARIES}
+${OPENSCENEGRAPH_LIBRARIES}
 )
- 
-qt5_use_modules(${PROJECT_NAME} Quick Gui OpenGL Core Widgets)
-SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PROJECT_LABEL "Module UIEditor_osg"  COMPILE_FLAGS -std=c++11  
- LIBRARY_OUTPUT_DIRECTORY ${CMAKE_HOME_DIRECTORY}/bin/PlugIns
-LIBRARY_OUTPUT_DIRECTORY_DEBUG  ${CMAKE_HOME_DIRECTORY}/bin/PlugIns
-LIBRARY_OUTPUT_DIRECTORY_RELEASE  ${CMAKE_HOME_DIRECTORY}/bin/PlugIns
- )
+
+SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES PROJECT_LABEL "Module PMOC_osg"
+LIBRARY_OUTPUT_DIRECTORY ${LIBRARY_OUTPUT_PATH}
+LIBRARY_OUTPUT_DIRECTORY_DEBUG ${LIBRARY_OUTPUT_PATH}
+LIBRARY_OUTPUT_DIRECTORY_RELEASE ${LIBRARY_OUTPUT_PATH}
+  COMPILE_FLAGS -std=c++11 )
 #

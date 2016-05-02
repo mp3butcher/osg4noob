@@ -15,7 +15,7 @@ class  QMLMultiSegmentPlacer: public QReflect_MultiSegmentPlacer
 {
 Q_OBJECT
 public:
-QMLMultiSegmentPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QMLMultiSegmentPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

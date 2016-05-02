@@ -13,7 +13,7 @@ class  QMLImageStream: public QReflect_ImageStream
 {
 Q_OBJECT
 public:
-QMLImageStream(pmoc::Instance *i=0,QObject* parent=0);
+QMLImageStream(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

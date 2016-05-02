@@ -13,7 +13,7 @@ class  QMLClampColor: public QReflect_ClampColor
 {
 Q_OBJECT
 public:
-QMLClampColor(pmoc::Instance *i=0,QObject* parent=0);
+QMLClampColor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

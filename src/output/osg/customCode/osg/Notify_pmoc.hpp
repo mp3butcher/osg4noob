@@ -12,7 +12,7 @@ class  QMLNotifyHandler: public QReflect_NotifyHandler
 {
 Q_OBJECT
 public:
-QMLNotifyHandler(pmoc::Instance *i=0,QObject* parent=0);
+QMLNotifyHandler(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -40,7 +40,7 @@ class  QMLStandardNotifyHandler: public QReflect_StandardNotifyHandler
 {
 Q_OBJECT
 public:
-QMLStandardNotifyHandler(pmoc::Instance *i=0,QObject* parent=0);
+QMLStandardNotifyHandler(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

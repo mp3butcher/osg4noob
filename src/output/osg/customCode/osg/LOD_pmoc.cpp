@@ -5,7 +5,7 @@
 #include <osgDB/FileUtils>
 using namespace pmoc;
 using namespace osg;
-osg::QMLLOD::QMLLOD(pmoc::Instance *i,QObject* parent):QReflect_LOD(i,parent){
+osg::QMLLOD::QMLLOD(const pmoc::Instance *i,QObject* parent):QReflect_LOD(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLLOD::connect2View(QQuickItem*i){

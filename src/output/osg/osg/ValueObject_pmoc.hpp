@@ -1,13 +1,7 @@
 #ifndef osg_ValueObject_pmocHPP
 #define  osg_ValueObject_pmocHPP 1
-#include <osg/Vec3f_pmoc.hpp>
-#include <QObject>
-#include <osg/Vec2f_pmoc.hpp>
-#include <QObject>
-#include <osg/Vec2d_pmoc.hpp>
-#include <QObject>
-#include <osg/Vec3d_pmoc.hpp>
-#include <QObject>
+
+
 #include <osg/ValueObject_pmoc.hpp>
 #include <QObject>
 #include <osg/ValueObject>
@@ -24,7 +18,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 ValueObject * _model;
-QReflect_ValueObject(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_ValueObject(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_ValueObject( );
 //ValueObject
 //virtual  bool  get( GetValueVisitor &);
@@ -41,7 +35,7 @@ public:
 MetaQReflect_ValueObject();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -52,6 +46,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_ValueObject_pmocHPP
 

@@ -1,5 +1,6 @@
 #include <osg/Geometry>
 //includes
+#include <QQuickItem>
 #include <customCode/osg/Geometry_pmoc.hpp>
 #include <customCode/osg/Array_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
@@ -9,7 +10,7 @@
 using namespace std;
 using namespace pmoc;
 
-deprecated_osg::QMLGeometry::QMLGeometry(pmoc::Instance *i,QObject* parent):QReflect_Geometry(i,parent)
+deprecated_osg::QMLGeometry::QMLGeometry(const pmoc::Instance *i,QObject* parent):QReflect_Geometry(i,parent)
 {
 //custom initializations
 }
@@ -38,7 +39,7 @@ void osg::QMLGeometry::generateTangentSpace(int normapmaptu,int coordindex)
 }
 
 
-osg::QMLGeometry::QMLGeometry(pmoc::Instance *i,QObject* parent):QReflect_Geometry(i,parent)
+osg::QMLGeometry::QMLGeometry(const pmoc::Instance *i,QObject* parent):QReflect_Geometry(i,parent)
 {
 //custom initializations
     qmlRegisterType<pmoc::StateAttribListModel>();

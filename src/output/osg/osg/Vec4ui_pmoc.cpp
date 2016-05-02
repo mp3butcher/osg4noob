@@ -1,90 +1,136 @@
 #include <osg/Vec4ui>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
 #include <osg/Vec4ui_pmoc.hpp>
 #include <customCode/osg/Vec4ui_pmoc.hpp>
+#include <customCode/osg/Vec4ui_pmoc.hpp>
 using namespace pmoc;
- unsigned int  osg::QReflect_Vec4ui::a()const{
+ bool  osg::QReflect_Vec4ui:: operator!=(osg::QReflect_Vec4ui  &p0)const{
+//params checking
+return _model->operator!=(*p0._model);
+
+}
+ bool  osg::QReflect_Vec4ui:: operator<(osg::QReflect_Vec4ui  &p0)const{
+//params checking
+return _model->operator<(*p0._model);
+
+}
+ bool  osg::QReflect_Vec4ui:: operator==(osg::QReflect_Vec4ui  &p0)const{
+//params checking
+return _model->operator==(*p0._model);
+
+}
+ unsigned int  osg::QReflect_Vec4ui:: a()const{
+//params checking
 return _model->a();
 
 }
- unsigned int  osg::QReflect_Vec4ui::b()const{
+ unsigned int  osg::QReflect_Vec4ui:: b()const{
+//params checking
 return _model->b();
 
 }
- unsigned int  osg::QReflect_Vec4ui::g()const{
+ unsigned int  osg::QReflect_Vec4ui:: g()const{
+//params checking
 return _model->g();
 
 }
- unsigned int  osg::QReflect_Vec4ui::r()const{
+ unsigned int  osg::QReflect_Vec4ui:: operator[]( unsigned int  p0)const{
+//params checking
+return _model->operator[](p0);
+
+}
+ unsigned int  osg::QReflect_Vec4ui:: r()const{
+//params checking
 return _model->r();
 
 }
- unsigned int  osg::QReflect_Vec4ui::w()const{
+ unsigned int  osg::QReflect_Vec4ui:: w()const{
+//params checking
 return _model->w();
 
 }
- unsigned int  osg::QReflect_Vec4ui::x()const{
+ unsigned int  osg::QReflect_Vec4ui:: x()const{
+//params checking
 return _model->x();
 
 }
- unsigned int  osg::QReflect_Vec4ui::y()const{
+ unsigned int  osg::QReflect_Vec4ui:: y()const{
+//params checking
 return _model->y();
 
 }
- unsigned int  osg::QReflect_Vec4ui::z()const{
+ unsigned int  osg::QReflect_Vec4ui:: z()const{
+//params checking
 return _model->z();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::a(){
+ unsigned int&  osg::QReflect_Vec4ui:: a(){
+//params checking
 return _model->a();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::b(){
+ unsigned int&  osg::QReflect_Vec4ui:: b(){
+//params checking
 return _model->b();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::g(){
+ unsigned int&  osg::QReflect_Vec4ui:: g(){
+//params checking
 return _model->g();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::r(){
+ unsigned int&  osg::QReflect_Vec4ui:: operator[]( unsigned int  p0){
+//params checking
+return _model->operator[](p0);
+
+}
+ unsigned int&  osg::QReflect_Vec4ui:: r(){
+//params checking
 return _model->r();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::w(){
+ unsigned int&  osg::QReflect_Vec4ui:: w(){
+//params checking
 return _model->w();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::x(){
+ unsigned int&  osg::QReflect_Vec4ui:: x(){
+//params checking
 return _model->x();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::y(){
+ unsigned int&  osg::QReflect_Vec4ui:: y(){
+//params checking
 return _model->y();
 
 }
- unsigned int&  osg::QReflect_Vec4ui::z(){
+ unsigned int&  osg::QReflect_Vec4ui:: z(){
+//params checking
 return _model->z();
 
 }
- unsigned int*  osg::QReflect_Vec4ui::ptr(){
+ unsigned int*  osg::QReflect_Vec4ui:: ptr(){
+//params checking
 return _model->ptr();
 
 }
- void osg::QReflect_Vec4ui::set( unsigned int p0 , unsigned int p1 , unsigned int p2 , unsigned int p3){
+ void osg::QReflect_Vec4ui::set( unsigned int  p0 , unsigned int  p1 , unsigned int  p2 , unsigned int  p3){
+//params checking
  _model->set(p0 ,p1 ,p2 ,p3);
 
 }
-const  unsigned int*  osg::QReflect_Vec4ui::ptr()const{
+const  unsigned int*  osg::QReflect_Vec4ui:: ptr()const{
+//params checking
 return _model->ptr();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_Vec4ui::QReflect_Vec4ui(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Vec4ui::QReflect_Vec4ui(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Vec4ui*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -107,9 +153,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Vec4ui::MetaQReflect_Vec4ui():MetaQQuickClass( "osg::Vec4ui"){
-_typeid=&typeid(osg::Vec4ui );           qRegisterMetaType<QMLVec4ui>();
-qmlRegisterType<QReflect_Vec4ui>("pmoc.osg",1,0,"QReflect_Vec4ui");
-           qmlRegisterType<QMLVec4ui>("pmoc.osg",1,0,"QMLVec4ui");
+_typeid=&typeid(osg::Vec4ui );
+           qRegisterMetaType<osg::QMLVec4ui>();
+           qRegisterMetaType<osg::QMLVec4ui*>("pmoc.osg.QMLVec4ui");
+qmlRegisterType<osg::QReflect_Vec4ui>("pmoc.osg",1,0,"QReflect_Vec4ui");
+           qmlRegisterType<osg::QMLVec4ui>("pmoc.osg",1,0,"QMLVec4ui");
 };
 const std::string osg::MetaQReflect_Vec4ui::Imports() const{
  return std::string("");
@@ -118,7 +166,7 @@ const std::string osg::MetaQReflect_Vec4ui::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Vec4ui::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Vec4ui::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Vec4ui::createQQModel(Instance*i){ //return new MetaQReflect_Vec4ui_QModel(i);}
+QQModel* osg::MetaQReflect_Vec4ui::createQQModel(const Instance*i){ //return new MetaQReflect_Vec4ui_QModel(i);}
 QMLVec4ui *ret =new QMLVec4ui(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -129,5 +177,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Vec4ui_pmoc.cpp"
 #endif
+
+
 
 

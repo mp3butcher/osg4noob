@@ -1,6 +1,7 @@
 #include <osgParticle/RandomRateCounter>
 //includes
 
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,13 +9,14 @@
 #include <customCode/osgParticle/RandomRateCounter_pmoc.hpp>
 #include <customCode/osgParticle/VariableRateCounter_pmoc.hpp>
 using namespace pmoc;
- int  osgParticle::QReflect_RandomRateCounter::numParticlesToCreate( double p0)const{
+ int  osgParticle::QReflect_RandomRateCounter:: numParticlesToCreate( double  p0)const{
+//params checking
 return _model->numParticlesToCreate(p0);
 
 }
 
 ///DefaultConstructor////////////////
-osgParticle::QReflect_RandomRateCounter::QReflect_RandomRateCounter(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osgParticle::QReflect_RandomRateCounter::QReflect_RandomRateCounter(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osgParticle::RandomRateCounter*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -42,9 +44,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osgParticle::MetaQReflect_RandomRateCounter::MetaQReflect_RandomRateCounter():MetaQQuickClass( "osgParticle::RandomRateCounter"){
-_typeid=&typeid(osgParticle::RandomRateCounter );           qRegisterMetaType<QMLRandomRateCounter>();
-qmlRegisterType<QReflect_RandomRateCounter>("pmoc.osgParticle",1,0,"QReflect_RandomRateCounter");
-           qmlRegisterType<QMLRandomRateCounter>("pmoc.osgParticle",1,0,"QMLRandomRateCounter");
+_typeid=&typeid(osgParticle::RandomRateCounter );
+           qRegisterMetaType<osgParticle::QMLRandomRateCounter>();
+           qRegisterMetaType<osgParticle::QMLRandomRateCounter*>("pmoc.osgParticle.QMLRandomRateCounter");
+qmlRegisterType<osgParticle::QReflect_RandomRateCounter>("pmoc.osgParticle",1,0,"QReflect_RandomRateCounter");
+           qmlRegisterType<osgParticle::QMLRandomRateCounter>("pmoc.osgParticle",1,0,"QMLRandomRateCounter");
 };
 const std::string osgParticle::MetaQReflect_RandomRateCounter::Imports() const{
  return std::string("");
@@ -53,7 +57,7 @@ const std::string osgParticle::MetaQReflect_RandomRateCounter::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osgParticle::MetaQReflect_RandomRateCounter::PREcompoQML()const{return std::string("");}
 const std::string osgParticle::MetaQReflect_RandomRateCounter::POSTcompoQML()const{return std::string("");}
-QQModel* osgParticle::MetaQReflect_RandomRateCounter::createQQModel(Instance*i){ //return new MetaQReflect_RandomRateCounter_QModel(i);}
+QQModel* osgParticle::MetaQReflect_RandomRateCounter::createQQModel(const Instance*i){ //return new MetaQReflect_RandomRateCounter_QModel(i);}
 QMLRandomRateCounter *ret =new QMLRandomRateCounter(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -75,5 +79,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_RandomRateCounter_pmoc.cpp"
 #endif
+
+
 
 

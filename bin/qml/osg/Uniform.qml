@@ -43,13 +43,13 @@ FocusScope {
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -57,7 +57,7 @@ FocusScope {
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
@@ -78,7 +78,7 @@ FocusScope {
                 else {
                     console.log("selected")
                     main.focus = true
-                    globalEditor.setOperand(main.qmodel)
+                    pmocjs.setOperand(main.qmodel)
                 }
             }
 
@@ -96,9 +96,9 @@ FocusScope {
                    
 
                     /*   if(main.parent!= 'null') {  console.log(" parent changed");connectEditor() }
-                    else{console.log("no parent");   globalEditor.osg_StateAttribute_added.disconnect(
+                    else{console.log("no parent");   pmocjs.osg_StateAttribute_added.disconnect(
                                                     obj.osg_Uniform.StateSetUpdate);}
-                                                       Component.onDestruction:  {console.log("destruction");   globalEditor.osg_StateAttribute_added.disconnect(
+                                                       Component.onDestruction:  {console.log("destruction");   pmocjs.osg_StateAttribute_added.disconnect(
                                                                                        obj.osg_Uniform.StateSetUpdate);}
                                                                                               */
                     //y:200

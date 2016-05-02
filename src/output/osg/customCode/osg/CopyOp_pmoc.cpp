@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/CopyOp_pmoc.hpp>
 using namespace pmoc;
-osg::QMLCopyOp::QMLCopyOp(pmoc::Instance *i,QObject* parent):QReflect_CopyOp(i,parent){
+osg::QMLCopyOp::QMLCopyOp(const pmoc::Instance *i,QObject* parent):QReflect_CopyOp(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLCopyOp::connect2View(QQuickItem*i){

@@ -13,7 +13,7 @@ class  QMLInterpolator: public QReflect_Interpolator
 {
 Q_OBJECT
 public:
-QMLInterpolator(pmoc::Instance *i=0,QObject* parent=0);
+QMLInterpolator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

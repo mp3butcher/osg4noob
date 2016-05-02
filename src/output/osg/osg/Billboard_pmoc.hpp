@@ -18,11 +18,6 @@ class QReflect_Matrixd;
 
 #include <osg/ref_ptr>
 #include<osg/Billboard_pmoc.hpp>
-namespace osg{
-class QReflect_Drawable; 
-}
-
-
 #include <MetaQQuickClass.h>
 namespace osg{
 class QReflect_Billboard: public pmoc::QQModel
@@ -40,7 +35,7 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Billboard * _model;
-QReflect_Billboard(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Billboard(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Billboard( );
 //Billboard
 //virtual  BoundingSphere  computeBound();
@@ -50,16 +45,19 @@ virtual ~QReflect_Billboard( );
 //const  Vec3 & getAxis();
 //const  Vec3 & getNormal();
 //const  Vec3 & getPosition( unsigned int );
-Q_INVOKABLE  bool  addDrawable(osg::QReflect_Drawable * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE  bool  computeMatrix(osg::QReflect_Matrixd * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *)const;
+Q_INVOKABLE  bool  addDrawable(osg::QReflect_Drawable *gset ,osg::QReflect_Vec3f *pos);
+Q_INVOKABLE  bool  addDrawable(osg::QReflect_Drawable *gset);
+Q_INVOKABLE  bool  computeMatrix(osg::QReflect_Matrixd *modelview ,osg::QReflect_Vec3f *eye_local ,osg::QReflect_Vec3f *pos_local)const;
+Q_INVOKABLE  bool  removeDrawable(osg::QReflect_Drawable *gset);
 Q_INVOKABLE osg::QReflect_Billboard::Mode  getMode()const;
-Q_INVOKABLE void  setAxis(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setMode(osg::QReflect_Billboard::Mode );
-Q_INVOKABLE void  setNormal(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setPosition( unsigned int  ,osg::QReflect_Vec3f *);
-virtual Q_INVOKABLE void   addDrawable( osg::QReflect_Drawable *par);//{return new osg::QReflect_Drawable(_model->getDrawable());}
-virtual Q_INVOKABLE void pmoc_reverse_addDrawable( osg::QReflect_Drawable *par);//{_model->setDrawable(par->_model);emit DrawableCollectionChanged(par);}
+Q_INVOKABLE void  setAxis(osg::QReflect_Vec3f *axis);
+Q_INVOKABLE void  setMode(osg::QReflect_Billboard::Mode mode);
+Q_INVOKABLE void  setNormal(osg::QReflect_Vec3f *normal);
+Q_INVOKABLE void  setPosition( unsigned int i ,osg::QReflect_Vec3f *pos);
+Q_PROPERTY(osg::QReflect_Billboard::Mode  Mode  READ getMode WRITE setMode NOTIFY ModeChanged)
 signals: void DrawableCollectionChanged();
+public:
+signals: void ModeChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -73,7 +71,7 @@ public:
 MetaQReflect_Billboard();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -84,6 +82,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_Billboard_pmocHPP
 

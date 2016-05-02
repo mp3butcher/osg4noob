@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ConvexPlanarOccluder_pmoc.hpp>
 using namespace pmoc;
-osg::QMLConvexPlanarOccluder::QMLConvexPlanarOccluder(pmoc::Instance *i,QObject* parent):QReflect_ConvexPlanarOccluder(i,parent){
+osg::QMLConvexPlanarOccluder::QMLConvexPlanarOccluder(const pmoc::Instance *i,QObject* parent):QReflect_ConvexPlanarOccluder(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLConvexPlanarOccluder::connect2View(QQuickItem*i){

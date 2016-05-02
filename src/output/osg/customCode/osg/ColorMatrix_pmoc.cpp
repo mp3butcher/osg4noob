@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/ColorMatrix_pmoc.hpp>
 using namespace pmoc;
-osg::QMLColorMatrix::QMLColorMatrix(pmoc::Instance *i,QObject* parent):QReflect_ColorMatrix(i,parent){
+osg::QMLColorMatrix::QMLColorMatrix(const pmoc::Instance *i,QObject* parent):QReflect_ColorMatrix(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLColorMatrix::connect2View(QQuickItem*i){

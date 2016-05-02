@@ -13,7 +13,7 @@ class  QMLStencilTwoSided: public QReflect_StencilTwoSided
 {
 Q_OBJECT
 public:
-QMLStencilTwoSided(pmoc::Instance *i=0,QObject* parent=0);
+QMLStencilTwoSided(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

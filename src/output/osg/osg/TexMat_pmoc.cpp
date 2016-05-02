@@ -1,5 +1,6 @@
 #include <osg/TexMat>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -8,24 +9,45 @@
 #include <customCode/osg/StateAttribute_pmoc.hpp>
 #include <customCode/osg/Matrixd_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_TexMat::isTextureAttribute()const{
+ bool  osg::QReflect_TexMat:: getScaleByTextureRectangleSize()const{
+//params checking
+return _model->getScaleByTextureRectangleSize();
+
+}
+ bool  osg::QReflect_TexMat:: isTextureAttribute()const{
+//params checking
 return _model->isTextureAttribute();
 
 }
- int  osg::QReflect_TexMat::compare(osg::QReflect_StateAttribute *p0)const{
+ int  osg::QReflect_TexMat:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TexMat::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- void osg::QReflect_TexMat::setMatrix(osg::QReflect_Matrixd *p0){
+ void osg::QReflect_TexMat::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TexMat::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
+ void osg::QReflect_TexMat::setMatrix(osg::QReflect_Matrixd  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_TexMat::setMatrix : parameter n.0 is NULL\n"<<endl;return;}
  _model->setMatrix(*p0->_model);
 
 }
-const bool osg::QReflect_TexMat::getScaleByTextureRectangleSize()const{return _model->getScaleByTextureRectangleSize();}
-void  osg::QReflect_TexMat::setScaleByTextureRectangleSize(const bool &par){_model->setScaleByTextureRectangleSize(par);emit ScaleByTextureRectangleSizeChanged(par);}
+ void osg::QReflect_TexMat::setScaleByTextureRectangleSize( bool  p0){
+//params checking
+ _model->setScaleByTextureRectangleSize(p0);
+emit ScaleByTextureRectangleSizeChanged();
+
+}
 
 ///DefaultConstructor////////////////
-osg::QReflect_TexMat::QReflect_TexMat(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_TexMat::QReflect_TexMat(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::TexMat*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -53,9 +75,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_TexMat::MetaQReflect_TexMat():MetaQQuickClass( "osg::TexMat"){
-_typeid=&typeid(osg::TexMat );           qRegisterMetaType<QMLTexMat>();
-qmlRegisterType<QReflect_TexMat>("pmoc.osg",1,0,"QReflect_TexMat");
-           qmlRegisterType<QMLTexMat>("pmoc.osg",1,0,"QMLTexMat");
+_typeid=&typeid(osg::TexMat );
+           qRegisterMetaType<osg::QMLTexMat>();
+           qRegisterMetaType<osg::QMLTexMat*>("pmoc.osg.QMLTexMat");
+qmlRegisterType<osg::QReflect_TexMat>("pmoc.osg",1,0,"QReflect_TexMat");
+           qmlRegisterType<osg::QMLTexMat>("pmoc.osg",1,0,"QMLTexMat");
 };
 const std::string osg::MetaQReflect_TexMat::Imports() const{
  return std::string("");
@@ -64,7 +88,7 @@ const std::string osg::MetaQReflect_TexMat::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_TexMat::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_TexMat::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_TexMat::createQQModel(Instance*i){ //return new MetaQReflect_TexMat_QModel(i);}
+QQModel* osg::MetaQReflect_TexMat::createQQModel(const Instance*i){ //return new MetaQReflect_TexMat_QModel(i);}
 QMLTexMat *ret =new QMLTexMat(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -86,5 +110,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_TexMat_pmoc.cpp"
 #endif
+
+
 
 

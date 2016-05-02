@@ -1,9 +1,14 @@
 #ifndef osg_LogicOp_pmocHPP
 #define  osg_LogicOp_pmocHPP 1
+
+
 #include <osg/LogicOp_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
 class QReflect_StateAttribute;
+			} ;
+namespace osg{ 
+class QReflect_State;
 			} ;
 #include <osg/LogicOp>
 #include <osg/LogicOp>
@@ -40,14 +45,17 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 LogicOp * _model;
-QReflect_LogicOp(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_LogicOp(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LogicOp( );
 //LogicOp
 //virtual  bool  getModeUsage( StateAttribute::ModeUsage &);
-//virtual  void  apply( State &);
-Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *)const;
+Q_INVOKABLE  int  compare(osg::QReflect_StateAttribute *sa)const;
 Q_INVOKABLE osg::QReflect_LogicOp::Opcode  getOpcode()const;
-Q_INVOKABLE void  setOpcode(osg::QReflect_LogicOp::Opcode );
+Q_INVOKABLE void  apply(osg::QReflect_State *state)const;
+Q_INVOKABLE void  setOpcode(osg::QReflect_LogicOp::Opcode opcode);
+Q_PROPERTY(osg::QReflect_LogicOp::Opcode  Opcode  READ getOpcode WRITE setOpcode NOTIFY OpcodeChanged)
+signals: void OpcodeChanged();
+public:
 public slots:
 virtual void updateModel();
  
@@ -60,7 +68,7 @@ public:
 MetaQReflect_LogicOp();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -71,6 +79,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_LogicOp_pmocHPP
 

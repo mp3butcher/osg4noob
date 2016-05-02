@@ -1,5 +1,6 @@
 #include <osg/Light>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,76 +10,158 @@
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/StateAttribute_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 #include <customCode/osg/Vec3f_pmoc.hpp>
 #include <customCode/osg/Vec4f_pmoc.hpp>
 using namespace pmoc;
- bool  osg::QReflect_Light::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_Light:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- int  osg::QReflect_Light::compare(osg::QReflect_StateAttribute *p0)const{
+ float  osg::QReflect_Light:: getConstantAttenuation()const{
+//params checking
+return _model->getConstantAttenuation();
+
+}
+ float  osg::QReflect_Light:: getLinearAttenuation()const{
+//params checking
+return _model->getLinearAttenuation();
+
+}
+ float  osg::QReflect_Light:: getQuadraticAttenuation()const{
+//params checking
+return _model->getQuadraticAttenuation();
+
+}
+ float  osg::QReflect_Light:: getSpotCutoff()const{
+//params checking
+return _model->getSpotCutoff();
+
+}
+ float  osg::QReflect_Light:: getSpotExponent()const{
+//params checking
+return _model->getSpotExponent();
+
+}
+ int  osg::QReflect_Light:: compare(osg::QReflect_StateAttribute  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::compare : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->compare(*p0->_model);
 
 }
- unsigned int  osg::QReflect_Light::getMember()const{
+ int  osg::QReflect_Light:: getLightNum()const{
+//params checking
+return _model->getLightNum();
+
+}
+ unsigned int  osg::QReflect_Light:: getMember()const{
+//params checking
 return _model->getMember();
 
 }
+ void osg::QReflect_Light::apply(osg::QReflect_State  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::apply : parameter n.0 is NULL\n"<<endl;return;}
+ _model->apply(*p0->_model);
+
+}
  void osg::QReflect_Light::captureLightState(){
+//params checking
  _model->captureLightState();
 
 }
- void osg::QReflect_Light::setAmbient(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_Light::setAmbient(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::setAmbient : parameter n.0 is NULL\n"<<endl;return;}
  _model->setAmbient(*p0->_model);
 
 }
- void osg::QReflect_Light::setDiffuse(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_Light::setConstantAttenuation( float  p0){
+//params checking
+ _model->setConstantAttenuation(p0);
+emit ConstantAttenuationChanged();
+
+}
+ void osg::QReflect_Light::setDiffuse(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::setDiffuse : parameter n.0 is NULL\n"<<endl;return;}
  _model->setDiffuse(*p0->_model);
 
 }
- void osg::QReflect_Light::setDirection(osg::QReflect_Vec3f *p0){
+ void osg::QReflect_Light::setDirection(osg::QReflect_Vec3f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::setDirection : parameter n.0 is NULL\n"<<endl;return;}
  _model->setDirection(*p0->_model);
 
 }
- void osg::QReflect_Light::setPosition(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_Light::setLightNum( int  p0){
+//params checking
+ _model->setLightNum(p0);
+emit LightNumChanged();
+
+}
+ void osg::QReflect_Light::setLinearAttenuation( float  p0){
+//params checking
+ _model->setLinearAttenuation(p0);
+emit LinearAttenuationChanged();
+
+}
+ void osg::QReflect_Light::setPosition(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::setPosition : parameter n.0 is NULL\n"<<endl;return;}
  _model->setPosition(*p0->_model);
 
 }
- void osg::QReflect_Light::setSpecular(osg::QReflect_Vec4f *p0){
+ void osg::QReflect_Light::setQuadraticAttenuation( float  p0){
+//params checking
+ _model->setQuadraticAttenuation(p0);
+emit QuadraticAttenuationChanged();
+
+}
+ void osg::QReflect_Light::setSpecular(osg::QReflect_Vec4f  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::setSpecular : parameter n.0 is NULL\n"<<endl;return;}
  _model->setSpecular(*p0->_model);
 
 }
-const  char*  osg::QReflect_Light::className()const{
+ void osg::QReflect_Light::setSpotCutoff( float  p0){
+//params checking
+ _model->setSpotCutoff(p0);
+emit SpotCutoffChanged();
+
+}
+ void osg::QReflect_Light::setSpotExponent( float  p0){
+//params checking
+ _model->setSpotExponent(p0);
+emit SpotExponentChanged();
+
+}
+const  char*  osg::QReflect_Light:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_Light::libraryName()const{
+const  char*  osg::QReflect_Light:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-const float osg::QReflect_Light::getConstantAttenuation()const{return _model->getConstantAttenuation();}
-const float osg::QReflect_Light::getLinearAttenuation()const{return _model->getLinearAttenuation();}
-const float osg::QReflect_Light::getQuadraticAttenuation()const{return _model->getQuadraticAttenuation();}
-const float osg::QReflect_Light::getSpotCutoff()const{return _model->getSpotCutoff();}
-const float osg::QReflect_Light::getSpotExponent()const{return _model->getSpotExponent();}
-const int osg::QReflect_Light::getLightNum()const{return _model->getLightNum();}
-osg::QReflect_Object*osg::QReflect_Light::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_Light::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_Light::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_Light::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
-void  osg::QReflect_Light::setConstantAttenuation(const float &par){_model->setConstantAttenuation(par);emit ConstantAttenuationChanged(par);}
-void  osg::QReflect_Light::setLightNum(const int &par){_model->setLightNum(par);emit LightNumChanged(par);}
-void  osg::QReflect_Light::setLinearAttenuation(const float &par){_model->setLinearAttenuation(par);emit LinearAttenuationChanged(par);}
-void  osg::QReflect_Light::setQuadraticAttenuation(const float &par){_model->setQuadraticAttenuation(par);emit QuadraticAttenuationChanged(par);}
-void  osg::QReflect_Light::setSpotCutoff(const float &par){_model->setSpotCutoff(par);emit SpotCutoffChanged(par);}
-void  osg::QReflect_Light::setSpotExponent(const float &par){_model->setSpotExponent(par);emit SpotExponentChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_Light::QReflect_Light(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_Light::QReflect_Light(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::Light*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -106,9 +189,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_Light::MetaQReflect_Light():MetaQQuickClass( "osg::Light"){
-_typeid=&typeid(osg::Light );           qRegisterMetaType<QMLLight>();
-qmlRegisterType<QReflect_Light>("pmoc.osg",1,0,"QReflect_Light");
-           qmlRegisterType<QMLLight>("pmoc.osg",1,0,"QMLLight");
+_typeid=&typeid(osg::Light );
+           qRegisterMetaType<osg::QMLLight>();
+           qRegisterMetaType<osg::QMLLight*>("pmoc.osg.QMLLight");
+qmlRegisterType<osg::QReflect_Light>("pmoc.osg",1,0,"QReflect_Light");
+           qmlRegisterType<osg::QMLLight>("pmoc.osg",1,0,"QMLLight");
 };
 const std::string osg::MetaQReflect_Light::Imports() const{
  return std::string("");
@@ -117,7 +202,7 @@ const std::string osg::MetaQReflect_Light::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_Light::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_Light::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_Light::createQQModel(Instance*i){ //return new MetaQReflect_Light_QModel(i);}
+QQModel* osg::MetaQReflect_Light::createQQModel(const Instance*i){ //return new MetaQReflect_Light_QModel(i);}
 QMLLight *ret =new QMLLight(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -139,5 +224,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_Light_pmoc.cpp"
 #endif
+
+
 
 

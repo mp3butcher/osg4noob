@@ -31,13 +31,13 @@ Rectangle {
             if ((event.key == Qt.Key_C)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("copy")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 event.accepted = true
             }
             if ((event.key == Qt.Key_X)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("cut")
-                globalEditor.setCopyOperand(main.qmodel)
+                pmocjs.setCopyOperand(main.qmodel)
                 subjectrequired(
                             ) //send a signal (this should be connected with parent (a osg::group or subclass)
                 event.accepted = true
@@ -45,7 +45,7 @@ Rectangle {
             if ((event.key == Qt.Key_V)
                     && (event.modifiers & Qt.ControlModifier)) {
                 console.log("paste")
-                globalEditor.realPaste()
+                pmocjs.realPaste()
                 event.accepted = true
             }
         }
@@ -70,7 +70,7 @@ Rectangle {
             onClicked: {
                 console.log("selected")
                 main.focus = true
-                globalEditor.setOperand(main.qmodel)
+                pmocjs.setOperand(main.qmodel)
             }
             onPressAndHold: uaContextMenu.popup()
             Menu {
@@ -80,15 +80,15 @@ Rectangle {
                     text: 'Copy'
                     shortcut: "Ctrl+C"
                     onTriggered: {
-                        globalEditor.setCopyOperand(main.qmodel)
+                        pmocjs.setCopyOperand(main.qmodel)
                     }
                 }
                 MenuItem {
                     text: 'Cut'
                     shortcut: "Ctrl+X"
                     onTriggered: {
-                        globalEditor.setCopyOperand(main.qmodel)
-                        globalEditor.setCutSubject(main.parent.qmodel)
+                        pmocjs.setCopyOperand(main.qmodel)
+                        pmocjs.setCutSubject(main.parent.qmodel)
                         subjectrequired()
                     }
                 }
@@ -96,16 +96,16 @@ Rectangle {
                     text: 'Paste'
                     shortcut: "Ctrl+V"
                     onTriggered: {
-                        globalEditor.realPaste(main.qmodel)
+                        pmocjs.realPaste(main.qmodel)
                     }
                 }
                 MenuItem {
                     text: 'Remove'
                     shortcut: "Suppr"
                     onTriggered: {
-                        globalEditor.setCopyOperand(main.qmodel)
-                        globalEditor.setCutSubject(main.parent.qmodel)
-                        globalEditor.realRemoval()
+                        pmocjs.setCopyOperand(main.qmodel)
+                        pmocjs.setCutSubject(main.parent.qmodel)
+                        pmocjs.realRemoval()
                         subjectrequired()
                     }
                 }

@@ -4,7 +4,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osgParticle/OrbitOperator_pmoc.hpp>
 using namespace pmoc;
-osgParticle::QMLOrbitOperator::QMLOrbitOperator(pmoc::Instance *i,QObject* parent):QReflect_OrbitOperator(i,parent){
+osgParticle::QMLOrbitOperator::QMLOrbitOperator(const pmoc::Instance *i,QObject* parent):QReflect_OrbitOperator(i,parent){
 //custom initializations
 }
 QQuickItem* osgParticle::QMLOrbitOperator::connect2View(QQuickItem*i){

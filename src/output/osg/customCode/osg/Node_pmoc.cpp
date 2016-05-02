@@ -4,8 +4,9 @@
 #include <iostream>
 #include <customCode/osg/Node_pmoc.hpp>
 
+#include <QQuickItem>
 using namespace pmoc;
-osg::QMLNode::QMLNode(pmoc::Instance *i,QObject* parent):QReflect_Node(i,parent)
+osg::QMLNode::QMLNode(const pmoc::Instance *i,QObject* parent):QReflect_Node(i,parent)
 {
 //custom initializations
 }

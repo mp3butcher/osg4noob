@@ -13,7 +13,7 @@ class  QMLNodeAcceptOp: public QReflect_NodeAcceptOp
 {
 Q_OBJECT
 public:
-QMLNodeAcceptOp(pmoc::Instance *i=0,QObject* parent=0);
+QMLNodeAcceptOp(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();
@@ -39,7 +39,7 @@ class  QMLNodeVisitor: public QReflect_NodeVisitor
 {
 Q_OBJECT
 public:
-QMLNodeVisitor(pmoc::Instance *i=0,QObject* parent=0);
+QMLNodeVisitor(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

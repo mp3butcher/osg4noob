@@ -15,7 +15,7 @@ class  QMLSinkOperator: public QReflect_SinkOperator
 {
 Q_OBJECT
 public:
-QMLSinkOperator(pmoc::Instance *i=0,QObject* parent=0);
+QMLSinkOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
  virtual void  updateModel();

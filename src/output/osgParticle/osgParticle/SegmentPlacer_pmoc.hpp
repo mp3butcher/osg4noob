@@ -4,11 +4,11 @@
 
 #include <osgParticle/SegmentPlacer_pmoc.hpp>
 #include <QObject>
-namespace osgParticle{ 
-class QReflect_Particle;
-			} ;
 namespace osg{ 
 class QReflect_Vec3f;
+			} ;
+namespace osgParticle{ 
+class QReflect_Particle;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/SegmentPlacer>
@@ -24,19 +24,19 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 SegmentPlacer * _model;
-QReflect_SegmentPlacer(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_SegmentPlacer(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_SegmentPlacer( );
 //SegmentPlacer
 // osg::Vec3  getControlPosition();
 //const  osg::Vec3 & getVertexA();
 //const  osg::Vec3 & getVertexB();
 Q_INVOKABLE  float  volume()const;
-Q_INVOKABLE void  place(osgParticle::QReflect_Particle *)const;
-Q_INVOKABLE void  setSegment(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setVertexA( float  , float  , float );
-Q_INVOKABLE void  setVertexA(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  setVertexB( float  , float  , float );
-Q_INVOKABLE void  setVertexB(osg::QReflect_Vec3f *);
+Q_INVOKABLE void  place(osgParticle::QReflect_Particle *P)const;
+Q_INVOKABLE void  setSegment(osg::QReflect_Vec3f *A ,osg::QReflect_Vec3f *B);
+Q_INVOKABLE void  setVertexA( float x , float y , float z);
+Q_INVOKABLE void  setVertexA(osg::QReflect_Vec3f *v);
+Q_INVOKABLE void  setVertexB( float x , float y , float z);
+Q_INVOKABLE void  setVertexB(osg::QReflect_Vec3f *v);
 public slots:
 virtual void updateModel();
  
@@ -49,7 +49,7 @@ public:
 MetaQReflect_SegmentPlacer();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -60,6 +60,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_SegmentPlacer_pmocHPP

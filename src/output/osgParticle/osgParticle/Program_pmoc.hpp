@@ -24,13 +24,13 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 Program * _model;
-QReflect_Program(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_Program(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_Program( );
 //Program
-Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *)const;
+Q_INVOKABLE  bool  isSameKindAs(osg::QReflect_Object *obj)const;
 Q_INVOKABLE const  char*  className()const;
 Q_INVOKABLE const  char*  libraryName()const;
-Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *);
+Q_INVOKABLE void  accept(osg::QReflect_NodeVisitor *nv);
 public slots:
 virtual void updateModel();
  
@@ -41,7 +41,7 @@ protected:
 MetaQReflect_Program();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -52,6 +52,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_Program_pmocHPP

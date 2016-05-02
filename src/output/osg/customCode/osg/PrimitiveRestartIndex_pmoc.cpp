@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/PrimitiveRestartIndex_pmoc.hpp>
 using namespace pmoc;
-osg::QMLPrimitiveRestartIndex::QMLPrimitiveRestartIndex(pmoc::Instance *i,QObject* parent):QReflect_PrimitiveRestartIndex(i,parent){
+osg::QMLPrimitiveRestartIndex::QMLPrimitiveRestartIndex(const pmoc::Instance *i,QObject* parent):QReflect_PrimitiveRestartIndex(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLPrimitiveRestartIndex::connect2View(QQuickItem*i){

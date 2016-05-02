@@ -3,7 +3,7 @@
 #include <MetaQQuickLibraryRegistry.h>
 #include <customCode/osg/Fog_pmoc.hpp>
 using namespace pmoc;
-osg::QMLFog::QMLFog(pmoc::Instance *i,QObject* parent):QReflect_Fog(i,parent){
+osg::QMLFog::QMLFog(const pmoc::Instance *i,QObject* parent):QReflect_Fog(i,parent){
 //custom initializations
 }
 QQuickItem* osg::QMLFog::connect2View(QQuickItem*i){

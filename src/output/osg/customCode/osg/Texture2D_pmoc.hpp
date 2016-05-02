@@ -5,7 +5,7 @@
 #include <osg/Texture2D_pmoc.hpp>
 #include <QObject>
 #include <osg/Texture2D>
-
+#include <QColor>
 #include <osg/Texture_pmoc.hpp>
 #include <osg/Texture2D_pmoc.hpp>
 namespace osg
@@ -119,7 +119,7 @@ protected:
     QString _qtimage;
     QUrl _filename;
 public:
-    QMLTexture2D(pmoc::Instance *i=0,QObject* parent=0);
+    QMLTexture2D(const pmoc::Instance *i=0,QObject* parent=0);
     virtual QQuickItem * connect2View(QQuickItem*);
 public slots:
     virtual void  updateModel();

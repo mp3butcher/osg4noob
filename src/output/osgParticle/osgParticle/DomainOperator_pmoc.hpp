@@ -7,14 +7,14 @@
 namespace osg{ 
 class QReflect_Vec3f;
 			} ;
+namespace osgParticle{ 
+class QReflect_Particle;
+			} ;
 namespace osg{ 
 class QReflect_Plane;
 			} ;
 namespace osgParticle{ 
 class QReflect_Program;
-			} ;
-namespace osgParticle{ 
-class QReflect_Particle;
 			} ;
 #include <osg/ref_ptr>
 #include <osgParticle/DomainOperator>
@@ -30,25 +30,25 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 DomainOperator * _model;
-QReflect_DomainOperator(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_DomainOperator(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_DomainOperator( );
 //DomainOperator
 // void  addDomain(const  Domain &);
 //const  Domain & getDomain( unsigned int );
 Q_INVOKABLE  unsigned int  getNumDomains()const;
-Q_INVOKABLE void  addBoxDomain(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  addDiskDomain(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * , float  , float );
-Q_INVOKABLE void  addLineSegmentDomain(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  addPlaneDomain(osg::QReflect_Plane *);
-Q_INVOKABLE void  addPointDomain(osg::QReflect_Vec3f *);
-Q_INVOKABLE void  addRectangleDomain(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  addSphereDomain(osg::QReflect_Vec3f * , float );
-Q_INVOKABLE void  addTriangleDomain(osg::QReflect_Vec3f * ,osg::QReflect_Vec3f * ,osg::QReflect_Vec3f *);
-Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *);
+Q_INVOKABLE void  addBoxDomain(osg::QReflect_Vec3f *min ,osg::QReflect_Vec3f *max);
+Q_INVOKABLE void  addDiskDomain(osg::QReflect_Vec3f *c ,osg::QReflect_Vec3f *n , float r1 , float r2);
+Q_INVOKABLE void  addLineSegmentDomain(osg::QReflect_Vec3f *v1 ,osg::QReflect_Vec3f *v2);
+Q_INVOKABLE void  addPlaneDomain(osg::QReflect_Plane *plane);
+Q_INVOKABLE void  addPointDomain(osg::QReflect_Vec3f *p);
+Q_INVOKABLE void  addRectangleDomain(osg::QReflect_Vec3f *corner ,osg::QReflect_Vec3f *w ,osg::QReflect_Vec3f *h);
+Q_INVOKABLE void  addSphereDomain(osg::QReflect_Vec3f *c , float r);
+Q_INVOKABLE void  addTriangleDomain(osg::QReflect_Vec3f *v1 ,osg::QReflect_Vec3f *v2 ,osg::QReflect_Vec3f *v3);
+Q_INVOKABLE void  beginOperate(osgParticle::QReflect_Program *prg);
 Q_INVOKABLE void  endOperate();
-Q_INVOKABLE void  operate(osgParticle::QReflect_Particle * , double );
+Q_INVOKABLE void  operate(osgParticle::QReflect_Particle *P , double dt);
 Q_INVOKABLE void  removeAllDomains();
-Q_INVOKABLE void  removeDomain( unsigned int );
+Q_INVOKABLE void  removeDomain( unsigned int i);
 public slots:
 virtual void updateModel();
  
@@ -61,7 +61,7 @@ public:
 MetaQReflect_DomainOperator();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -72,6 +72,7 @@ public:
 };
   
 } 
+
 
 
 #endif //osgParticle_DomainOperator_pmocHPP

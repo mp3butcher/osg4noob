@@ -1,5 +1,6 @@
 #include <osg/PrimitiveSet>
 //includes
+
 #include <iostream>
 #include <MetaQQuickLibraryRegistry.h>
 #include <QtQml/QQmlEngine>
@@ -9,62 +10,87 @@
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLint  osg::QReflect_DrawArrayLengths::getFirst()const{
+ GLint  osg::QReflect_DrawArrayLengths:: getFirst()const{
+//params checking
 return _model->getFirst();
 
 }
- bool  osg::QReflect_DrawArrayLengths::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_DrawArrayLengths:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrayLengths::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- unsigned int  osg::QReflect_DrawArrayLengths::getNumIndices()const{
+ unsigned int  osg::QReflect_DrawArrayLengths:: getNumIndices()const{
+//params checking
 return _model->getNumIndices();
 
 }
- unsigned int  osg::QReflect_DrawArrayLengths::getNumPrimitives()const{
+ unsigned int  osg::QReflect_DrawArrayLengths:: getNumPrimitives()const{
+//params checking
 return _model->getNumPrimitives();
 
 }
- unsigned int  osg::QReflect_DrawArrayLengths::index( unsigned int p0)const{
+ unsigned int  osg::QReflect_DrawArrayLengths:: index( unsigned int  p0)const{
+//params checking
 return _model->index(p0);
 
 }
- void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrayLengths::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ void osg::QReflect_DrawArrayLengths::accept(osg::QReflect_PrimitiveIndexFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrayLengths::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawArrayLengths::offsetIndices( int p0){
+ void osg::QReflect_DrawArrayLengths::draw(osg::QReflect_State  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrayLengths::draw : parameter n.0 is NULL\n"<<endl;return;}
+ _model->draw(*p0->_model ,p1);
+
+}
+ void osg::QReflect_DrawArrayLengths::offsetIndices( int  p0){
+//params checking
  _model->offsetIndices(p0);
 
 }
- void osg::QReflect_DrawArrayLengths::setFirst( GLint p0){
+ void osg::QReflect_DrawArrayLengths::setFirst( GLint  p0){
+//params checking
  _model->setFirst(p0);
+emit FirstChanged();
 
 }
-const  char*  osg::QReflect_DrawArrayLengths::className()const{
+const  char*  osg::QReflect_DrawArrayLengths:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_DrawArrayLengths::libraryName()const{
+const  char*  osg::QReflect_DrawArrayLengths:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-osg::QReflect_Object*osg::QReflect_DrawArrayLengths::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_DrawArrayLengths::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrayLengths::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_DrawArrayLengths::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_DrawArrayLengths::QReflect_DrawArrayLengths(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_DrawArrayLengths::QReflect_DrawArrayLengths(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::DrawArrayLengths*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -92,9 +118,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_DrawArrayLengths::MetaQReflect_DrawArrayLengths():MetaQQuickClass( "osg::DrawArrayLengths"){
-_typeid=&typeid(osg::DrawArrayLengths );           qRegisterMetaType<QMLDrawArrayLengths>();
-qmlRegisterType<QReflect_DrawArrayLengths>("pmoc.osg",1,0,"QReflect_DrawArrayLengths");
-           qmlRegisterType<QMLDrawArrayLengths>("pmoc.osg",1,0,"QMLDrawArrayLengths");
+_typeid=&typeid(osg::DrawArrayLengths );
+           qRegisterMetaType<osg::QMLDrawArrayLengths>();
+           qRegisterMetaType<osg::QMLDrawArrayLengths*>("pmoc.osg.QMLDrawArrayLengths");
+qmlRegisterType<osg::QReflect_DrawArrayLengths>("pmoc.osg",1,0,"QReflect_DrawArrayLengths");
+           qmlRegisterType<osg::QMLDrawArrayLengths>("pmoc.osg",1,0,"QMLDrawArrayLengths");
 };
 const std::string osg::MetaQReflect_DrawArrayLengths::Imports() const{
  return std::string("");
@@ -103,7 +131,7 @@ const std::string osg::MetaQReflect_DrawArrayLengths::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_DrawArrayLengths::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_DrawArrayLengths::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_DrawArrayLengths::createQQModel(Instance*i){ //return new MetaQReflect_DrawArrayLengths_QModel(i);}
+QQModel* osg::MetaQReflect_DrawArrayLengths::createQQModel(const Instance*i){ //return new MetaQReflect_DrawArrayLengths_QModel(i);}
 QMLDrawArrayLengths *ret =new QMLDrawArrayLengths(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -134,70 +162,98 @@ return ret;}
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLint  osg::QReflect_DrawArrays::getFirst()const{
+ GLint  osg::QReflect_DrawArrays:: getFirst()const{
+//params checking
 return _model->getFirst();
 
 }
- GLsizei  osg::QReflect_DrawArrays::getCount()const{
+ GLsizei  osg::QReflect_DrawArrays:: getCount()const{
+//params checking
 return _model->getCount();
 
 }
- bool  osg::QReflect_DrawArrays::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_DrawArrays:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrays::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- unsigned int  osg::QReflect_DrawArrays::getNumIndices()const{
+ unsigned int  osg::QReflect_DrawArrays:: getNumIndices()const{
+//params checking
 return _model->getNumIndices();
 
 }
- unsigned int  osg::QReflect_DrawArrays::index( unsigned int p0)const{
+ unsigned int  osg::QReflect_DrawArrays:: index( unsigned int  p0)const{
+//params checking
 return _model->index(p0);
 
 }
- void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrays::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ void osg::QReflect_DrawArrays::accept(osg::QReflect_PrimitiveIndexFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrays::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawArrays::offsetIndices( int p0){
+ void osg::QReflect_DrawArrays::draw(osg::QReflect_State  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrays::draw : parameter n.0 is NULL\n"<<endl;return;}
+ _model->draw(*p0->_model ,p1);
+
+}
+ void osg::QReflect_DrawArrays::offsetIndices( int  p0){
+//params checking
  _model->offsetIndices(p0);
 
 }
- void osg::QReflect_DrawArrays::set( GLenum p0 , GLint p1 , GLsizei p2){
+ void osg::QReflect_DrawArrays::set( GLenum  p0 , GLint  p1 , GLsizei  p2){
+//params checking
  _model->set(p0 ,p1 ,p2);
 
 }
- void osg::QReflect_DrawArrays::setCount( GLsizei p0){
+ void osg::QReflect_DrawArrays::setCount( GLsizei  p0){
+//params checking
  _model->setCount(p0);
+emit CountChanged();
 
 }
- void osg::QReflect_DrawArrays::setFirst( GLint p0){
+ void osg::QReflect_DrawArrays::setFirst( GLint  p0){
+//params checking
  _model->setFirst(p0);
+emit FirstChanged();
 
 }
-const  char*  osg::QReflect_DrawArrays::className()const{
+const  char*  osg::QReflect_DrawArrays:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_DrawArrays::libraryName()const{
+const  char*  osg::QReflect_DrawArrays:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-osg::QReflect_Object*osg::QReflect_DrawArrays::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_DrawArrays::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawArrays::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_DrawArrays::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_DrawArrays::QReflect_DrawArrays(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_DrawArrays::QReflect_DrawArrays(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::DrawArrays*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -225,9 +281,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_DrawArrays::MetaQReflect_DrawArrays():MetaQQuickClass( "osg::DrawArrays"){
-_typeid=&typeid(osg::DrawArrays );           qRegisterMetaType<QMLDrawArrays>();
-qmlRegisterType<QReflect_DrawArrays>("pmoc.osg",1,0,"QReflect_DrawArrays");
-           qmlRegisterType<QMLDrawArrays>("pmoc.osg",1,0,"QMLDrawArrays");
+_typeid=&typeid(osg::DrawArrays );
+           qRegisterMetaType<osg::QMLDrawArrays>();
+           qRegisterMetaType<osg::QMLDrawArrays*>("pmoc.osg.QMLDrawArrays");
+qmlRegisterType<osg::QReflect_DrawArrays>("pmoc.osg",1,0,"QReflect_DrawArrays");
+           qmlRegisterType<osg::QMLDrawArrays>("pmoc.osg",1,0,"QMLDrawArrays");
 };
 const std::string osg::MetaQReflect_DrawArrays::Imports() const{
  return std::string("");
@@ -236,7 +294,7 @@ const std::string osg::MetaQReflect_DrawArrays::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_DrawArrays::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_DrawArrays::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_DrawArrays::createQQModel(Instance*i){ //return new MetaQReflect_DrawArrays_QModel(i);}
+QQModel* osg::MetaQReflect_DrawArrays::createQQModel(const Instance*i){ //return new MetaQReflect_DrawArrays_QModel(i);}
 QMLDrawArrays *ret =new QMLDrawArrays(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -265,30 +323,38 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/BufferObject_pmoc.hpp>
-#include <osg/BufferObject>
-#include <osg/BufferObject_pmoc.hpp>
+#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
+ void osg::QReflect_DrawElements::setElementBufferObject(osg::QReflect_ElementBufferObject  *p0){
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElements::setElementBufferObject : parameter n.0 is NULL\n"<<endl;return;}
+ _model->setElementBufferObject(p0->_model);
+emit ElementBufferObjectChanged();
+
+}
 osg::QReflect_DrawElements*osg::QReflect_DrawElements::getDrawElements()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getDrawElements(),inst);
 return inst.isValid()?((osg::QReflect_DrawElements * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_DrawElements*osg::QReflect_DrawElements::getDrawElements(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getDrawElements(),inst);
 return inst.isValid()?((osg::QReflect_DrawElements * )inst.model->createQQModel(&inst)):NULL;
 }
-osg::QReflect_ElementBufferObject * osg::QReflect_DrawElements::getElementBufferObject()const{
+osg::QReflect_ElementBufferObject*osg::QReflect_DrawElements::getElementBufferObject()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getElementBufferObject(),inst);
 return inst.isValid()?((osg::QReflect_ElementBufferObject * )inst.model->createQQModel(&inst)):NULL;
 }
-void osg::QReflect_DrawElements::pmoc_reverse_setElementBufferObject( osg::QReflect_ElementBufferObject *par){_model->setElementBufferObject(NULL);
-emit ElementBufferObjectChanged(NULL);
-}
-void osg::QReflect_DrawElements::setElementBufferObject( osg::QReflect_ElementBufferObject *par){_model->setElementBufferObject(par->_model);
-emit ElementBufferObjectChanged(par);
+osg::QReflect_ElementBufferObject*osg::QReflect_DrawElements::getElementBufferObject(){
+//params checking
+PMOCSAFEADDOBJECT(*_model->getElementBufferObject(),inst);
+return inst.isValid()?((osg::QReflect_ElementBufferObject * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_DrawElements::QReflect_DrawElements(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_DrawElements::QReflect_DrawElements(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::DrawElements*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -313,10 +379,11 @@ std::cerr<<"osg::DrawElements is not instanciable"<<std::endl;return Instance();
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_DrawElements::MetaQReflect_DrawElements():MetaQQuickClass( "osg::DrawElements"){
-_typeid=&typeid(osg::DrawElements );           qRegisterMetaType<QMLDrawElements>();
-qmlRegisterType<QReflect_DrawElements>("pmoc.osg",1,0,"QReflect_DrawElements");
-           qmlRegisterType<QMLDrawElements>("pmoc.osg",1,0,"QMLDrawElements");
-       PMOCACTION("getElementBufferObject","setElementBufferObject","unsetElementBufferObject");
+_typeid=&typeid(osg::DrawElements );
+           qRegisterMetaType<osg::QMLDrawElements>();
+           qRegisterMetaType<osg::QMLDrawElements*>("pmoc.osg.QMLDrawElements");
+qmlRegisterType<osg::QReflect_DrawElements>("pmoc.osg",1,0,"QReflect_DrawElements");
+           qmlRegisterType<osg::QMLDrawElements>("pmoc.osg",1,0,"QMLDrawElements");
 };
 const std::string osg::MetaQReflect_DrawElements::Imports() const{
  return std::string("");
@@ -325,7 +392,7 @@ const std::string osg::MetaQReflect_DrawElements::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_DrawElements::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_DrawElements::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_DrawElements::createQQModel(Instance*i){ //return new MetaQReflect_DrawElements_QModel(i);}
+QQModel* osg::MetaQReflect_DrawElements::createQQModel(const Instance*i){ //return new MetaQReflect_DrawElements_QModel(i);}
 QMLDrawElements *ret =new QMLDrawElements(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -356,86 +423,116 @@ return ret;}
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_DrawElementsUByte::getDataType(){
+ GLenum  osg::QReflect_DrawElementsUByte:: getDataType(){
+//params checking
 return _model->getDataType();
 
 }
- bool  osg::QReflect_DrawElementsUByte::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_DrawElementsUByte:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUByte::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- bool  osg::QReflect_DrawElementsUByte::supportsBufferObject()const{
+ bool  osg::QReflect_DrawElementsUByte:: supportsBufferObject()const{
+//params checking
 return _model->supportsBufferObject();
 
 }
- unsigned int  osg::QReflect_DrawElementsUByte::getElement( unsigned int p0){
+ unsigned int  osg::QReflect_DrawElementsUByte:: getElement( unsigned int  p0){
+//params checking
 return _model->getElement(p0);
 
 }
- unsigned int  osg::QReflect_DrawElementsUByte::getNumIndices()const{
+ unsigned int  osg::QReflect_DrawElementsUByte:: getNumIndices()const{
+//params checking
 return _model->getNumIndices();
 
 }
- unsigned int  osg::QReflect_DrawElementsUByte::getTotalDataSize()const{
+ unsigned int  osg::QReflect_DrawElementsUByte:: getTotalDataSize()const{
+//params checking
 return _model->getTotalDataSize();
 
 }
- unsigned int  osg::QReflect_DrawElementsUByte::index( unsigned int p0)const{
+ unsigned int  osg::QReflect_DrawElementsUByte:: index( unsigned int  p0)const{
+//params checking
 return _model->index(p0);
 
 }
- void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUByte::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ void osg::QReflect_DrawElementsUByte::accept(osg::QReflect_PrimitiveIndexFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUByte::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawElementsUByte::addElement( unsigned int p0){
+ void osg::QReflect_DrawElementsUByte::addElement( unsigned int  p0){
+//params checking
  _model->addElement(p0);
 
 }
- void osg::QReflect_DrawElementsUByte::offsetIndices( int p0){
+ void osg::QReflect_DrawElementsUByte::draw(osg::QReflect_State  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUByte::draw : parameter n.0 is NULL\n"<<endl;return;}
+ _model->draw(*p0->_model ,p1);
+
+}
+ void osg::QReflect_DrawElementsUByte::offsetIndices( int  p0){
+//params checking
  _model->offsetIndices(p0);
 
 }
- void osg::QReflect_DrawElementsUByte::reserveElements( unsigned int p0){
+ void osg::QReflect_DrawElementsUByte::reserveElements( unsigned int  p0){
+//params checking
  _model->reserveElements(p0);
 
 }
- void osg::QReflect_DrawElementsUByte::resizeElements( unsigned int p0){
+ void osg::QReflect_DrawElementsUByte::resizeElements( unsigned int  p0){
+//params checking
  _model->resizeElements(p0);
 
 }
- void osg::QReflect_DrawElementsUByte::setElement( unsigned int p0 , unsigned int p1){
+ void osg::QReflect_DrawElementsUByte::setElement( unsigned int  p0 , unsigned int  p1){
+//params checking
  _model->setElement(p0 ,p1);
 
 }
-const  GLvoid*  osg::QReflect_DrawElementsUByte::getDataPointer()const{
+const  GLvoid*  osg::QReflect_DrawElementsUByte:: getDataPointer()const{
+//params checking
 return _model->getDataPointer();
 
 }
-const  char*  osg::QReflect_DrawElementsUByte::className()const{
+const  char*  osg::QReflect_DrawElementsUByte:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_DrawElementsUByte::libraryName()const{
+const  char*  osg::QReflect_DrawElementsUByte:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-osg::QReflect_Object*osg::QReflect_DrawElementsUByte::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_DrawElementsUByte::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUByte::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_DrawElementsUByte::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_DrawElementsUByte::QReflect_DrawElementsUByte(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_DrawElementsUByte::QReflect_DrawElementsUByte(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::DrawElementsUByte*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -463,9 +560,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_DrawElementsUByte::MetaQReflect_DrawElementsUByte():MetaQQuickClass( "osg::DrawElementsUByte"){
-_typeid=&typeid(osg::DrawElementsUByte );           qRegisterMetaType<QMLDrawElementsUByte>();
-qmlRegisterType<QReflect_DrawElementsUByte>("pmoc.osg",1,0,"QReflect_DrawElementsUByte");
-           qmlRegisterType<QMLDrawElementsUByte>("pmoc.osg",1,0,"QMLDrawElementsUByte");
+_typeid=&typeid(osg::DrawElementsUByte );
+           qRegisterMetaType<osg::QMLDrawElementsUByte>();
+           qRegisterMetaType<osg::QMLDrawElementsUByte*>("pmoc.osg.QMLDrawElementsUByte");
+qmlRegisterType<osg::QReflect_DrawElementsUByte>("pmoc.osg",1,0,"QReflect_DrawElementsUByte");
+           qmlRegisterType<osg::QMLDrawElementsUByte>("pmoc.osg",1,0,"QMLDrawElementsUByte");
 };
 const std::string osg::MetaQReflect_DrawElementsUByte::Imports() const{
  return std::string("");
@@ -474,7 +573,7 @@ const std::string osg::MetaQReflect_DrawElementsUByte::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_DrawElementsUByte::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_DrawElementsUByte::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_DrawElementsUByte::createQQModel(Instance*i){ //return new MetaQReflect_DrawElementsUByte_QModel(i);}
+QQModel* osg::MetaQReflect_DrawElementsUByte::createQQModel(const Instance*i){ //return new MetaQReflect_DrawElementsUByte_QModel(i);}
 QMLDrawElementsUByte *ret =new QMLDrawElementsUByte(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -505,86 +604,116 @@ return ret;}
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_DrawElementsUInt::getDataType(){
+ GLenum  osg::QReflect_DrawElementsUInt:: getDataType(){
+//params checking
 return _model->getDataType();
 
 }
- bool  osg::QReflect_DrawElementsUInt::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_DrawElementsUInt:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUInt::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- bool  osg::QReflect_DrawElementsUInt::supportsBufferObject()const{
+ bool  osg::QReflect_DrawElementsUInt:: supportsBufferObject()const{
+//params checking
 return _model->supportsBufferObject();
 
 }
- unsigned int  osg::QReflect_DrawElementsUInt::getElement( unsigned int p0){
+ unsigned int  osg::QReflect_DrawElementsUInt:: getElement( unsigned int  p0){
+//params checking
 return _model->getElement(p0);
 
 }
- unsigned int  osg::QReflect_DrawElementsUInt::getNumIndices()const{
+ unsigned int  osg::QReflect_DrawElementsUInt:: getNumIndices()const{
+//params checking
 return _model->getNumIndices();
 
 }
- unsigned int  osg::QReflect_DrawElementsUInt::getTotalDataSize()const{
+ unsigned int  osg::QReflect_DrawElementsUInt:: getTotalDataSize()const{
+//params checking
 return _model->getTotalDataSize();
 
 }
- unsigned int  osg::QReflect_DrawElementsUInt::index( unsigned int p0)const{
+ unsigned int  osg::QReflect_DrawElementsUInt:: index( unsigned int  p0)const{
+//params checking
 return _model->index(p0);
 
 }
- void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUInt::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ void osg::QReflect_DrawElementsUInt::accept(osg::QReflect_PrimitiveIndexFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUInt::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawElementsUInt::addElement( unsigned int p0){
+ void osg::QReflect_DrawElementsUInt::addElement( unsigned int  p0){
+//params checking
  _model->addElement(p0);
 
 }
- void osg::QReflect_DrawElementsUInt::offsetIndices( int p0){
+ void osg::QReflect_DrawElementsUInt::draw(osg::QReflect_State  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUInt::draw : parameter n.0 is NULL\n"<<endl;return;}
+ _model->draw(*p0->_model ,p1);
+
+}
+ void osg::QReflect_DrawElementsUInt::offsetIndices( int  p0){
+//params checking
  _model->offsetIndices(p0);
 
 }
- void osg::QReflect_DrawElementsUInt::reserveElements( unsigned int p0){
+ void osg::QReflect_DrawElementsUInt::reserveElements( unsigned int  p0){
+//params checking
  _model->reserveElements(p0);
 
 }
- void osg::QReflect_DrawElementsUInt::resizeElements( unsigned int p0){
+ void osg::QReflect_DrawElementsUInt::resizeElements( unsigned int  p0){
+//params checking
  _model->resizeElements(p0);
 
 }
- void osg::QReflect_DrawElementsUInt::setElement( unsigned int p0 , unsigned int p1){
+ void osg::QReflect_DrawElementsUInt::setElement( unsigned int  p0 , unsigned int  p1){
+//params checking
  _model->setElement(p0 ,p1);
 
 }
-const  GLvoid*  osg::QReflect_DrawElementsUInt::getDataPointer()const{
+const  GLvoid*  osg::QReflect_DrawElementsUInt:: getDataPointer()const{
+//params checking
 return _model->getDataPointer();
 
 }
-const  char*  osg::QReflect_DrawElementsUInt::className()const{
+const  char*  osg::QReflect_DrawElementsUInt:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_DrawElementsUInt::libraryName()const{
+const  char*  osg::QReflect_DrawElementsUInt:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-osg::QReflect_Object*osg::QReflect_DrawElementsUInt::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_DrawElementsUInt::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUInt::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_DrawElementsUInt::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_DrawElementsUInt::QReflect_DrawElementsUInt(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_DrawElementsUInt::QReflect_DrawElementsUInt(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::DrawElementsUInt*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -612,9 +741,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_DrawElementsUInt::MetaQReflect_DrawElementsUInt():MetaQQuickClass( "osg::DrawElementsUInt"){
-_typeid=&typeid(osg::DrawElementsUInt );           qRegisterMetaType<QMLDrawElementsUInt>();
-qmlRegisterType<QReflect_DrawElementsUInt>("pmoc.osg",1,0,"QReflect_DrawElementsUInt");
-           qmlRegisterType<QMLDrawElementsUInt>("pmoc.osg",1,0,"QMLDrawElementsUInt");
+_typeid=&typeid(osg::DrawElementsUInt );
+           qRegisterMetaType<osg::QMLDrawElementsUInt>();
+           qRegisterMetaType<osg::QMLDrawElementsUInt*>("pmoc.osg.QMLDrawElementsUInt");
+qmlRegisterType<osg::QReflect_DrawElementsUInt>("pmoc.osg",1,0,"QReflect_DrawElementsUInt");
+           qmlRegisterType<osg::QMLDrawElementsUInt>("pmoc.osg",1,0,"QMLDrawElementsUInt");
 };
 const std::string osg::MetaQReflect_DrawElementsUInt::Imports() const{
  return std::string("");
@@ -623,7 +754,7 @@ const std::string osg::MetaQReflect_DrawElementsUInt::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_DrawElementsUInt::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_DrawElementsUInt::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_DrawElementsUInt::createQQModel(Instance*i){ //return new MetaQReflect_DrawElementsUInt_QModel(i);}
+QQModel* osg::MetaQReflect_DrawElementsUInt::createQQModel(const Instance*i){ //return new MetaQReflect_DrawElementsUInt_QModel(i);}
 QMLDrawElementsUInt *ret =new QMLDrawElementsUInt(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -654,86 +785,116 @@ return ret;}
 #include <customCode/osg/CopyOp_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
+#include <customCode/osg/State_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_DrawElementsUShort::getDataType(){
+ GLenum  osg::QReflect_DrawElementsUShort:: getDataType(){
+//params checking
 return _model->getDataType();
 
 }
- bool  osg::QReflect_DrawElementsUShort::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_DrawElementsUShort:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUShort::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- bool  osg::QReflect_DrawElementsUShort::supportsBufferObject()const{
+ bool  osg::QReflect_DrawElementsUShort:: supportsBufferObject()const{
+//params checking
 return _model->supportsBufferObject();
 
 }
- unsigned int  osg::QReflect_DrawElementsUShort::getElement( unsigned int p0){
+ unsigned int  osg::QReflect_DrawElementsUShort:: getElement( unsigned int  p0){
+//params checking
 return _model->getElement(p0);
 
 }
- unsigned int  osg::QReflect_DrawElementsUShort::getNumIndices()const{
+ unsigned int  osg::QReflect_DrawElementsUShort:: getNumIndices()const{
+//params checking
 return _model->getNumIndices();
 
 }
- unsigned int  osg::QReflect_DrawElementsUShort::getTotalDataSize()const{
+ unsigned int  osg::QReflect_DrawElementsUShort:: getTotalDataSize()const{
+//params checking
 return _model->getTotalDataSize();
 
 }
- unsigned int  osg::QReflect_DrawElementsUShort::index( unsigned int p0)const{
+ unsigned int  osg::QReflect_DrawElementsUShort:: index( unsigned int  p0)const{
+//params checking
 return _model->index(p0);
 
 }
- void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveFunctor *p0)const{
+ void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUShort::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveIndexFunctor *p0)const{
+ void osg::QReflect_DrawElementsUShort::accept(osg::QReflect_PrimitiveIndexFunctor  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUShort::accept : parameter n.0 is NULL\n"<<endl;return;}
  _model->accept(*p0->_model);
 
 }
- void osg::QReflect_DrawElementsUShort::addElement( unsigned int p0){
+ void osg::QReflect_DrawElementsUShort::addElement( unsigned int  p0){
+//params checking
  _model->addElement(p0);
 
 }
- void osg::QReflect_DrawElementsUShort::offsetIndices( int p0){
+ void osg::QReflect_DrawElementsUShort::draw(osg::QReflect_State  *p0 , bool  p1)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUShort::draw : parameter n.0 is NULL\n"<<endl;return;}
+ _model->draw(*p0->_model ,p1);
+
+}
+ void osg::QReflect_DrawElementsUShort::offsetIndices( int  p0){
+//params checking
  _model->offsetIndices(p0);
 
 }
- void osg::QReflect_DrawElementsUShort::reserveElements( unsigned int p0){
+ void osg::QReflect_DrawElementsUShort::reserveElements( unsigned int  p0){
+//params checking
  _model->reserveElements(p0);
 
 }
- void osg::QReflect_DrawElementsUShort::resizeElements( unsigned int p0){
+ void osg::QReflect_DrawElementsUShort::resizeElements( unsigned int  p0){
+//params checking
  _model->resizeElements(p0);
 
 }
- void osg::QReflect_DrawElementsUShort::setElement( unsigned int p0 , unsigned int p1){
+ void osg::QReflect_DrawElementsUShort::setElement( unsigned int  p0 , unsigned int  p1){
+//params checking
  _model->setElement(p0 ,p1);
 
 }
-const  GLvoid*  osg::QReflect_DrawElementsUShort::getDataPointer()const{
+const  GLvoid*  osg::QReflect_DrawElementsUShort:: getDataPointer()const{
+//params checking
 return _model->getDataPointer();
 
 }
-const  char*  osg::QReflect_DrawElementsUShort::className()const{
+const  char*  osg::QReflect_DrawElementsUShort:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_DrawElementsUShort::libraryName()const{
+const  char*  osg::QReflect_DrawElementsUShort:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-osg::QReflect_Object*osg::QReflect_DrawElementsUShort::clone(osg::QReflect_CopyOp *p0)const{
+osg::QReflect_Object*osg::QReflect_DrawElementsUShort::clone(osg::QReflect_CopyOp  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_DrawElementsUShort::clone : parameter n.0 is NULL\n"<<endl;;}
 PMOCSAFEADDOBJECT(*_model->clone(*p0->_model),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_Object*osg::QReflect_DrawElementsUShort::cloneType()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->cloneType(),inst);
 return inst.isValid()?((osg::QReflect_Object * )inst.model->createQQModel(&inst)):NULL;
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_DrawElementsUShort::QReflect_DrawElementsUShort(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_DrawElementsUShort::QReflect_DrawElementsUShort(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::DrawElementsUShort*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -761,9 +922,11 @@ return(o);
    
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_DrawElementsUShort::MetaQReflect_DrawElementsUShort():MetaQQuickClass( "osg::DrawElementsUShort"){
-_typeid=&typeid(osg::DrawElementsUShort );           qRegisterMetaType<QMLDrawElementsUShort>();
-qmlRegisterType<QReflect_DrawElementsUShort>("pmoc.osg",1,0,"QReflect_DrawElementsUShort");
-           qmlRegisterType<QMLDrawElementsUShort>("pmoc.osg",1,0,"QMLDrawElementsUShort");
+_typeid=&typeid(osg::DrawElementsUShort );
+           qRegisterMetaType<osg::QMLDrawElementsUShort>();
+           qRegisterMetaType<osg::QMLDrawElementsUShort*>("pmoc.osg.QMLDrawElementsUShort");
+qmlRegisterType<osg::QReflect_DrawElementsUShort>("pmoc.osg",1,0,"QReflect_DrawElementsUShort");
+           qmlRegisterType<osg::QMLDrawElementsUShort>("pmoc.osg",1,0,"QMLDrawElementsUShort");
 };
 const std::string osg::MetaQReflect_DrawElementsUShort::Imports() const{
  return std::string("");
@@ -772,7 +935,7 @@ const std::string osg::MetaQReflect_DrawElementsUShort::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_DrawElementsUShort::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_DrawElementsUShort::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_DrawElementsUShort::createQQModel(Instance*i){ //return new MetaQReflect_DrawElementsUShort_QModel(i);}
+QQModel* osg::MetaQReflect_DrawElementsUShort::createQQModel(const Instance*i){ //return new MetaQReflect_DrawElementsUShort_QModel(i);}
 QMLDrawElementsUShort *ret =new QMLDrawElementsUShort(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -801,12 +964,13 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
  void osg::QReflect_PrimitiveFunctor::useVertexCacheAsVertexArray(){
+//params checking
  _model->useVertexCacheAsVertexArray();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_PrimitiveFunctor::QReflect_PrimitiveFunctor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_PrimitiveFunctor::QReflect_PrimitiveFunctor(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::PrimitiveFunctor*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -826,9 +990,11 @@ std::cerr<<"osg::PrimitiveFunctor is not instanciable"<<std::endl;return Instanc
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_PrimitiveFunctor::MetaQReflect_PrimitiveFunctor():MetaQQuickClass( "osg::PrimitiveFunctor"){
-_typeid=&typeid(osg::PrimitiveFunctor );           qRegisterMetaType<QMLPrimitiveFunctor>();
-qmlRegisterType<QReflect_PrimitiveFunctor>("pmoc.osg",1,0,"QReflect_PrimitiveFunctor");
-           qmlRegisterType<QMLPrimitiveFunctor>("pmoc.osg",1,0,"QMLPrimitiveFunctor");
+_typeid=&typeid(osg::PrimitiveFunctor );
+           qRegisterMetaType<osg::QMLPrimitiveFunctor>();
+           qRegisterMetaType<osg::QMLPrimitiveFunctor*>("pmoc.osg.QMLPrimitiveFunctor");
+qmlRegisterType<osg::QReflect_PrimitiveFunctor>("pmoc.osg",1,0,"QReflect_PrimitiveFunctor");
+           qmlRegisterType<osg::QMLPrimitiveFunctor>("pmoc.osg",1,0,"QMLPrimitiveFunctor");
 };
 const std::string osg::MetaQReflect_PrimitiveFunctor::Imports() const{
  return std::string("");
@@ -837,7 +1003,7 @@ const std::string osg::MetaQReflect_PrimitiveFunctor::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_PrimitiveFunctor::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_PrimitiveFunctor::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_PrimitiveFunctor::createQQModel(Instance*i){ //return new MetaQReflect_PrimitiveFunctor_QModel(i);}
+QQModel* osg::MetaQReflect_PrimitiveFunctor::createQQModel(const Instance*i){ //return new MetaQReflect_PrimitiveFunctor_QModel(i);}
 QMLPrimitiveFunctor *ret =new QMLPrimitiveFunctor(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -855,12 +1021,13 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
  void osg::QReflect_PrimitiveIndexFunctor::useVertexCacheAsVertexArray(){
+//params checking
  _model->useVertexCacheAsVertexArray();
 
 }
 
 ///DefaultConstructor////////////////
-osg::QReflect_PrimitiveIndexFunctor::QReflect_PrimitiveIndexFunctor(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_PrimitiveIndexFunctor::QReflect_PrimitiveIndexFunctor(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::PrimitiveIndexFunctor*>(i->ptr);
        ///Initialize Qt Model Here/////////////////////////////////////////
 
@@ -880,9 +1047,11 @@ std::cerr<<"osg::PrimitiveIndexFunctor is not instanciable"<<std::endl;return In
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_PrimitiveIndexFunctor::MetaQReflect_PrimitiveIndexFunctor():MetaQQuickClass( "osg::PrimitiveIndexFunctor"){
-_typeid=&typeid(osg::PrimitiveIndexFunctor );           qRegisterMetaType<QMLPrimitiveIndexFunctor>();
-qmlRegisterType<QReflect_PrimitiveIndexFunctor>("pmoc.osg",1,0,"QReflect_PrimitiveIndexFunctor");
-           qmlRegisterType<QMLPrimitiveIndexFunctor>("pmoc.osg",1,0,"QMLPrimitiveIndexFunctor");
+_typeid=&typeid(osg::PrimitiveIndexFunctor );
+           qRegisterMetaType<osg::QMLPrimitiveIndexFunctor>();
+           qRegisterMetaType<osg::QMLPrimitiveIndexFunctor*>("pmoc.osg.QMLPrimitiveIndexFunctor");
+qmlRegisterType<osg::QReflect_PrimitiveIndexFunctor>("pmoc.osg",1,0,"QReflect_PrimitiveIndexFunctor");
+           qmlRegisterType<osg::QMLPrimitiveIndexFunctor>("pmoc.osg",1,0,"QMLPrimitiveIndexFunctor");
 };
 const std::string osg::MetaQReflect_PrimitiveIndexFunctor::Imports() const{
  return std::string("");
@@ -891,7 +1060,7 @@ const std::string osg::MetaQReflect_PrimitiveIndexFunctor::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_PrimitiveIndexFunctor::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_PrimitiveIndexFunctor::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_PrimitiveIndexFunctor::createQQModel(Instance*i){ //return new MetaQReflect_PrimitiveIndexFunctor_QModel(i);}
+QQModel* osg::MetaQReflect_PrimitiveIndexFunctor::createQQModel(const Instance*i){ //return new MetaQReflect_PrimitiveIndexFunctor_QModel(i);}
 QMLPrimitiveIndexFunctor *ret =new QMLPrimitiveIndexFunctor(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -909,72 +1078,99 @@ return ret;}
 #include <customCode/osg/PrimitiveSet_pmoc.hpp>
 #include <customCode/osg/BufferObject_pmoc.hpp>
 #include <customCode/osg/Object_pmoc.hpp>
+#include <customCode/osg/PrimitiveSet_pmoc.hpp>
 using namespace pmoc;
- GLenum  osg::QReflect_PrimitiveSet::getMode()const{
+ GLenum  osg::QReflect_PrimitiveSet:: getMode()const{
+//params checking
 return _model->getMode();
 
 }
- bool  osg::QReflect_PrimitiveSet::isSameKindAs(osg::QReflect_Object *p0)const{
+ bool  osg::QReflect_PrimitiveSet:: isSameKindAs(osg::QReflect_Object  *p0)const{
+//params checking
+if(! p0) {std::cerr<<"PMOC: osg::QReflect_PrimitiveSet::isSameKindAs : parameter n.0 is NULL\n"<<endl;return -1;}
 return _model->isSameKindAs(p0->_model);
 
 }
- bool  osg::QReflect_PrimitiveSet::supportsBufferObject()const{
+ bool  osg::QReflect_PrimitiveSet:: supportsBufferObject()const{
+//params checking
 return _model->supportsBufferObject();
 
 }
- unsigned int  osg::QReflect_PrimitiveSet::getNumPrimitives()const{
+ int  osg::QReflect_PrimitiveSet:: getNumInstances()const{
+//params checking
+return _model->getNumInstances();
+
+}
+ unsigned int  osg::QReflect_PrimitiveSet:: getNumPrimitives()const{
+//params checking
 return _model->getNumPrimitives();
 
 }
- unsigned int  osg::QReflect_PrimitiveSet::getTotalDataSize()const{
+ unsigned int  osg::QReflect_PrimitiveSet:: getTotalDataSize()const{
+//params checking
 return _model->getTotalDataSize();
 
 }
  void osg::QReflect_PrimitiveSet::computeRange()const{
+//params checking
  _model->computeRange();
 
 }
- void osg::QReflect_PrimitiveSet::setMode( GLenum p0){
+ void osg::QReflect_PrimitiveSet::setMode( GLenum  p0){
+//params checking
  _model->setMode(p0);
+emit ModeChanged();
 
 }
-const  GLvoid*  osg::QReflect_PrimitiveSet::getDataPointer()const{
+ void osg::QReflect_PrimitiveSet::setNumInstances( int  p0){
+//params checking
+ _model->setNumInstances(p0);
+emit NumInstancesChanged();
+
+}
+const  GLvoid*  osg::QReflect_PrimitiveSet:: getDataPointer()const{
+//params checking
 return _model->getDataPointer();
 
 }
-const  char*  osg::QReflect_PrimitiveSet::className()const{
+const  char*  osg::QReflect_PrimitiveSet:: className()const{
+//params checking
 return _model->className();
 
 }
-const  char*  osg::QReflect_PrimitiveSet::libraryName()const{
+const  char*  osg::QReflect_PrimitiveSet:: libraryName()const{
+//params checking
 return _model->libraryName();
 
 }
-const int osg::QReflect_PrimitiveSet::getNumInstances()const{return _model->getNumInstances();}
 osg::QReflect_DrawElements*osg::QReflect_PrimitiveSet::getDrawElements()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->getDrawElements(),inst);
 return inst.isValid()?((osg::QReflect_DrawElements * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_DrawElements*osg::QReflect_PrimitiveSet::getDrawElements(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->getDrawElements(),inst);
 return inst.isValid()?((osg::QReflect_DrawElements * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_PrimitiveSet*osg::QReflect_PrimitiveSet::asPrimitiveSet()const{
+//params checking
 PMOCSAFEADDOBJECT(*_model->asPrimitiveSet(),inst);
 return inst.isValid()?((osg::QReflect_PrimitiveSet * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_PrimitiveSet*osg::QReflect_PrimitiveSet::asPrimitiveSet(){
+//params checking
 PMOCSAFEADDOBJECT(*_model->asPrimitiveSet(),inst);
 return inst.isValid()?((osg::QReflect_PrimitiveSet * )inst.model->createQQModel(&inst)):NULL;
 }
 osg::QReflect_PrimitiveSet::Type  osg::QReflect_PrimitiveSet::getType()const{
+//params checking
 osg::QReflect_PrimitiveSet::Type ret=static_cast<osg::QReflect_PrimitiveSet::Type>( _model->getType());return  ret;
 
 }
-void  osg::QReflect_PrimitiveSet::setNumInstances(const int &par){_model->setNumInstances(par);emit NumInstancesChanged(par);}
 
 ///DefaultConstructor////////////////
-osg::QReflect_PrimitiveSet::QReflect_PrimitiveSet(Instance *i,QObject* parent):QQModel(i,parent),_model(0){
+osg::QReflect_PrimitiveSet::QReflect_PrimitiveSet(const Instance *i,QObject* parent):QQModel(i,parent),_model(0){
  if(!_model)  _model =reinterpret_cast<osg::PrimitiveSet*>(i->ptr);
     _parentboxes[0]=0;
        ///Initialize Qt Model Here/////////////////////////////////////////
@@ -999,9 +1195,11 @@ std::cerr<<"osg::PrimitiveSet is not instanciable"<<std::endl;return Instance();
 
 }///////////////////////////////////////////META CLASS STRING////////////////////////////////////////////////////
 osg::MetaQReflect_PrimitiveSet::MetaQReflect_PrimitiveSet():MetaQQuickClass( "osg::PrimitiveSet"){
-_typeid=&typeid(osg::PrimitiveSet );           qRegisterMetaType<QMLPrimitiveSet>();
-qmlRegisterType<QReflect_PrimitiveSet>("pmoc.osg",1,0,"QReflect_PrimitiveSet");
-           qmlRegisterType<QMLPrimitiveSet>("pmoc.osg",1,0,"QMLPrimitiveSet");
+_typeid=&typeid(osg::PrimitiveSet );
+           qRegisterMetaType<osg::QMLPrimitiveSet>();
+           qRegisterMetaType<osg::QMLPrimitiveSet*>("pmoc.osg.QMLPrimitiveSet");
+qmlRegisterType<osg::QReflect_PrimitiveSet>("pmoc.osg",1,0,"QReflect_PrimitiveSet");
+           qmlRegisterType<osg::QMLPrimitiveSet>("pmoc.osg",1,0,"QMLPrimitiveSet");
 };
 const std::string osg::MetaQReflect_PrimitiveSet::Imports() const{
  return std::string("");
@@ -1010,7 +1208,7 @@ const std::string osg::MetaQReflect_PrimitiveSet::Imports() const{
 ///else these strings will be used to composite it  hierarchically
 const std::string osg::MetaQReflect_PrimitiveSet::PREcompoQML()const{return std::string("");}
 const std::string osg::MetaQReflect_PrimitiveSet::POSTcompoQML()const{return std::string("");}
-QQModel* osg::MetaQReflect_PrimitiveSet::createQQModel(Instance*i){ //return new MetaQReflect_PrimitiveSet_QModel(i);}
+QQModel* osg::MetaQReflect_PrimitiveSet::createQQModel(const Instance*i){ //return new MetaQReflect_PrimitiveSet_QModel(i);}
 QMLPrimitiveSet *ret =new QMLPrimitiveSet(i);
                  bool gencontextmenu=false;
 if(contextMenu.empty())gencontextmenu=true;
@@ -1032,5 +1230,7 @@ return ret;}
 #define AUTOMOCCPP 1
 #include "moc_PrimitiveSet_pmoc.cpp"
 #endif
+
+
 
 

@@ -1,13 +1,14 @@
 #ifndef osg_LightSource_pmocHPP
 #define  osg_LightSource_pmocHPP 1
 
+
 #include <osg/LightSource_pmoc.hpp>
 #include <QObject>
 namespace osg{ 
-class QReflect_Light;
+class QReflect_StateSet;
 			} ;
 namespace osg{ 
-class QReflect_StateSet;
+class QReflect_Light;
 			} ;
 #include <osg/LightSource>
 #include <osg/LightSource>
@@ -30,19 +31,23 @@ virtual unsigned int getNumParentBox(){return 1;}
 
 /// inheritance simulated via composition
 LightSource * _model;
-QReflect_LightSource(pmoc::Instance *i=0,QObject* parent=0);
+QReflect_LightSource(const pmoc::Instance *i=0,QObject* parent=0);
 virtual ~QReflect_LightSource( );
 //LightSource
 //virtual  BoundingSphere  computeBound();
-Q_INVOKABLE  osg::QReflect_Light * getLight()const;
+Q_INVOKABLE osg::QReflect_Light*  getLight();
+Q_INVOKABLE osg::QReflect_Light*  getLight()const;
 Q_INVOKABLE osg::QReflect_LightSource::ReferenceFrame  getReferenceFrame()const;
-Q_INVOKABLE void  setLocalStateSetModes( unsigned int );
-Q_INVOKABLE void  setReferenceFrame(osg::QReflect_LightSource::ReferenceFrame );
+Q_INVOKABLE void  setLight(osg::QReflect_Light *light);
+Q_INVOKABLE void  setLocalStateSetModes( unsigned int value);
+Q_INVOKABLE void  setReferenceFrame(osg::QReflect_LightSource::ReferenceFrame rf);
 Q_INVOKABLE void  setStateSetModes(osg::QReflect_StateSet * , unsigned int )const;
-Q_INVOKABLE void  setThreadSafeRefUnref( bool );
-Q_INVOKABLE void pmoc_reverse_setLight( osg::QReflect_Light *par=0);
-Q_INVOKABLE void setLight( osg::QReflect_Light *par);
-signals: void LightChanged(const osg::QReflect_Light*);
+Q_INVOKABLE void  setThreadSafeRefUnref( bool threadSafe);
+Q_PROPERTY(osg::QReflect_Light * Light  READ getLight WRITE setLight NOTIFY LightChanged)
+Q_PROPERTY(osg::QReflect_LightSource::ReferenceFrame  ReferenceFrame  READ getReferenceFrame WRITE setReferenceFrame NOTIFY ReferenceFrameChanged)
+signals: void LightChanged();
+public:
+signals: void ReferenceFrameChanged();
 public:
 public slots:
 virtual void updateModel();
@@ -56,7 +61,7 @@ public:
 MetaQReflect_LightSource();
  virtual pmoc::Instance createInstance();
 public:
-    virtual pmoc::QQModel* createQQModel(pmoc::Instance*i);
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
        virtual const std::string Imports() const;
     ///if not null return statement to describe yourself by hand
     //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
@@ -67,6 +72,7 @@ public:
 };
   
 } 
+
 
 #endif //osg_LightSource_pmocHPP
 
