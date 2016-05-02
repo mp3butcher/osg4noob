@@ -179,6 +179,7 @@
 #include <osg/OcclusionQueryNode>
 #include <osg/OccluderNode>
 #include <osg/BoundsChecking>
+#include <osg/Shader>
 #include <osg/GLDefines>
 #include <osg/Types>
 #include <osg/MatrixTransform>

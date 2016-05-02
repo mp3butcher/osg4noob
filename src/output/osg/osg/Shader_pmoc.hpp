@@ -1,0 +1,232 @@
+#ifndef osg_Shader_pmocHPP
+#define  osg_Shader_pmocHPP 1
+
+
+#include <osg/Shader_pmoc.hpp>
+#include <QObject>
+namespace osg{ 
+class QReflect_ShaderBinary;
+			} ;
+#include <osg/Shader>
+#include <osg/Shader>
+ 
+#include <osg/ref_ptr>
+#include <MetaQQuickClass.h>
+namespace osg{
+class QReflect_ShaderBinary: public pmoc::QQModel
+{
+Q_OBJECT
+public:
+virtual unsigned int getNumParentBox(){return 1;}
+
+/// inheritance simulated via composition
+ShaderBinary * _model;
+QReflect_ShaderBinary(const pmoc::Instance *i=0,QObject* parent=0);
+virtual ~QReflect_ShaderBinary( );
+//ShaderBinary
+// unsigned char * getData();
+// void  assign( unsigned int  ,const  unsigned char *);
+//const  unsigned char * getData();
+Q_INVOKABLE  unsigned int  getSize()const;
+Q_INVOKABLE osg::QReflect_ShaderBinary*  readShaderBinaryFile(const  QString &fileName);
+Q_INVOKABLE void  allocate( unsigned int size);
+public slots:
+virtual void updateModel();
+ 
+}; 
+class MetaQReflect_ShaderBinary: public pmoc::MetaQQuickClass{
+protected:
+std::set<osg::ref_ptr<osg::ShaderBinary> 	 > _managedinstances;
+public:
+  virtual bool isInstanciable(){return true;};
+MetaQReflect_ShaderBinary();
+ virtual pmoc::Instance createInstance();
+public:
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
+       virtual const std::string Imports() const;
+    ///if not null return statement to describe yourself by hand
+    //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
+    ///these strings will be used to composite it hierarchically in case no qml is found at runtime
+    ///DONT work yet..
+    virtual  const std::string PREcompoQML()const;
+    virtual const std::string POSTcompoQML()const;
+};
+  
+} 
+#include <osg/Shader_pmoc.hpp>
+#include <QObject>
+namespace osg{ 
+class QReflect_State;
+			} ;
+namespace osg{ 
+class QReflect_ShaderBinary;
+			} ;
+namespace osg{ 
+class QReflect_Shader;
+			} ;
+#include <osg/Shader>
+#include <osg/Shader>
+
+#include <osg/ref_ptr>
+#include<osg/Shader_pmoc.hpp>
+#include <MetaQQuickClass.h>
+namespace osg{
+class QReflect_Shader: public pmoc::QQModel
+{
+Q_OBJECT
+public:
+ enum ShaderDefinesMode{
+USE_SHADER_PRAGMA =Shader::USE_SHADER_PRAGMA,
+USE_MANUAL_SETTINGS =Shader::USE_MANUAL_SETTINGS};
+  Q_ENUMS(ShaderDefinesMode)
+private:
+public:
+ enum Type{
+VERTEX =Shader::VERTEX,
+TESSCONTROL =Shader::TESSCONTROL,
+TESSEVALUATION =Shader::TESSEVALUATION,
+GEOMETRY =Shader::GEOMETRY,
+FRAGMENT =Shader::FRAGMENT,
+COMPUTE =Shader::COMPUTE,
+UNDEFINED =Shader::UNDEFINED};
+  Q_ENUMS(Type)
+private:
+public:
+virtual unsigned int getNumParentBox(){return 1;}
+
+/// inheritance simulated via composition
+Shader * _model;
+QReflect_Shader(const pmoc::Instance *i=0,QObject* parent=0);
+virtual ~QReflect_Shader( );
+//Shader
+// CodeInjectionMap & getCodeInjectionMap();
+// PerContextShader * getPCS( osg::State &);
+// ShaderDefines & getShaderDefines();
+// ShaderDefines & getShaderRequirements();
+// void  setShaderDefines(const  ShaderDefines &);
+// void  setShaderRequirements(const  ShaderDefines &);
+//const  CodeInjectionMap & getCodeInjectionMap();
+//const  ShaderDefines & getShaderDefines();
+//const  ShaderDefines & getShaderRequirements();
+Q_INVOKABLE  bool  loadShaderSourceFromFile(const  QString &fileName);
+Q_INVOKABLE  bool  setType(osg::QReflect_Shader::Type t);
+Q_INVOKABLE  int  compare(osg::QReflect_Shader *rhs)const;
+Q_INVOKABLE QString  getFileName()const;
+Q_INVOKABLE QString  getShaderSource()const;
+Q_INVOKABLE const  char*  getTypename()const;
+Q_INVOKABLE osg::QReflect_Shader*  readShaderFile(osg::QReflect_Shader::Type type ,const  QString &fileName);
+Q_INVOKABLE osg::QReflect_Shader::ShaderDefinesMode  getShaderDefinesMode()const;
+Q_INVOKABLE osg::QReflect_Shader::Type  getType()const;
+Q_INVOKABLE osg::QReflect_Shader::Type  getTypeId(const  QString &tname);
+Q_INVOKABLE osg::QReflect_ShaderBinary*  getShaderBinary();
+Q_INVOKABLE osg::QReflect_ShaderBinary*  getShaderBinary()const;
+Q_INVOKABLE void  addCodeInjection( float position ,const  QString &code);
+Q_INVOKABLE void  compileShader(osg::QReflect_State *state)const;
+Q_INVOKABLE void  deleteGlShader( unsigned int contextID , GLuint shader);
+Q_INVOKABLE void  dirtyShader();
+Q_INVOKABLE void  discardDeletedGlShaders( unsigned int contextID);
+Q_INVOKABLE void  flushDeletedGlShaders( unsigned int contextID , double currentTime , double &availableTime);
+Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *state)const;
+Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int maxSize);
+Q_INVOKABLE void  setFileName(const  QString &fileName);
+Q_INVOKABLE void  setShaderBinary(osg::QReflect_ShaderBinary *shaderBinary);
+Q_INVOKABLE void  setShaderDefinesMode(osg::QReflect_Shader::ShaderDefinesMode sdm);
+Q_INVOKABLE void  setShaderSource(const  QString &sourceText);
+Q_PROPERTY(QString  FileName  READ getFileName WRITE setFileName NOTIFY FileNameChanged)
+Q_PROPERTY(QString  ShaderSource  READ getShaderSource WRITE setShaderSource NOTIFY ShaderSourceChanged)
+Q_PROPERTY(osg::QReflect_Shader::ShaderDefinesMode  ShaderDefinesMode  READ getShaderDefinesMode WRITE setShaderDefinesMode NOTIFY ShaderDefinesModeChanged)
+Q_PROPERTY(osg::QReflect_Shader::Type  Type  READ getType WRITE setType NOTIFY TypeChanged)
+Q_PROPERTY(osg::QReflect_ShaderBinary * ShaderBinary  READ getShaderBinary WRITE setShaderBinary NOTIFY ShaderBinaryChanged)
+signals: void FileNameChanged();
+public:
+signals: void ShaderBinaryChanged();
+public:
+signals: void ShaderDefinesModeChanged();
+public:
+signals: void ShaderSourceChanged();
+public:
+signals: void TypeChanged();
+public:
+public slots:
+virtual void updateModel();
+ 
+}; 
+class MetaQReflect_Shader: public pmoc::MetaQQuickClass{
+protected:
+std::set<osg::ref_ptr<osg::Shader> 	 > _managedinstances;
+public:
+  virtual bool isInstanciable(){return true;};
+MetaQReflect_Shader();
+ virtual pmoc::Instance createInstance();
+public:
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
+       virtual const std::string Imports() const;
+    ///if not null return statement to describe yourself by hand
+    //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
+    ///these strings will be used to composite it hierarchically in case no qml is found at runtime
+    ///DONT work yet..
+    virtual  const std::string PREcompoQML()const;
+    virtual const std::string POSTcompoQML()const;
+};
+  
+} 
+#include <osg/Shader_pmoc.hpp>
+#include <QObject>
+namespace osg{ 
+class QReflect_State;
+			} ;
+namespace osg{ 
+class QReflect_Shader;
+			} ;
+#include <osg/Shader>
+#include <osg/Shader>
+
+#include <osg/ref_ptr>
+#include <MetaQQuickClass.h>
+namespace osg{
+class QReflect_ShaderComponent: public pmoc::QQModel
+{
+Q_OBJECT
+public:
+virtual unsigned int getNumParentBox(){return 1;}
+
+/// inheritance simulated via composition
+ShaderComponent * _model;
+QReflect_ShaderComponent(const pmoc::Instance *i=0,QObject* parent=0);
+virtual ~QReflect_ShaderComponent( );
+//ShaderComponent
+Q_INVOKABLE  unsigned int  addShader(osg::QReflect_Shader *shader);
+Q_INVOKABLE  unsigned int  getNumShaders()const;
+Q_INVOKABLE osg::QReflect_Shader*  getShader( unsigned int i);
+Q_INVOKABLE osg::QReflect_Shader*  getShader( unsigned int i)const;
+Q_INVOKABLE void  compileGLObjects(osg::QReflect_State *state)const;
+Q_INVOKABLE void  releaseGLObjects(osg::QReflect_State *state)const;
+Q_INVOKABLE void  removeShader( unsigned int i);
+Q_INVOKABLE void  resizeGLObjectBuffers( unsigned int maxSize);
+public slots:
+virtual void updateModel();
+ 
+}; 
+class MetaQReflect_ShaderComponent: public pmoc::MetaQQuickClass{
+protected:
+std::set<osg::ref_ptr<osg::ShaderComponent> 	 > _managedinstances;
+public:
+  virtual bool isInstanciable(){return true;};
+MetaQReflect_ShaderComponent();
+ virtual pmoc::Instance createInstance();
+public:
+    virtual pmoc::QQModel* createQQModel(const pmoc::Instance*i);
+       virtual const std::string Imports() const;
+    ///if not null return statement to describe yourself by hand
+    //enough abstract 4 me but override it if you want virtual const std::string fullComponent()const;
+    ///these strings will be used to composite it hierarchically in case no qml is found at runtime
+    ///DONT work yet..
+    virtual  const std::string PREcompoQML()const;
+    virtual const std::string POSTcompoQML()const;
+};
+  
+} 
+
+
+#endif //osg_Shader_pmocHPP
+
