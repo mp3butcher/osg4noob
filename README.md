@@ -30,7 +30,7 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 4. Skin components/boxes in the editor at runtime (QML+javascript method wrapping)
 5. Reuse boxes in your own products
 
-###PMOC MetaLibrary: How to use the stuff 
+### PMOC MetaLibrary: How to use the stuff 
 (need some design improvement...:/)
 - PMOCSAFEADDOBJECT(INOBJECTREF,OUTPMOCINSTANCE) : inject native in pmoc system
 - PMOCINSTANCE.model->createQQModel(&PMOCINSTANCE) : embed instance in the associated manipulation box (no graphics)
@@ -54,16 +54,16 @@ It generates stubs and  skeletons of Qt Components to describe the logic of your
 |Native object boxing (put native objects in QT boxes)|
 |Javascript/QML method wrapping|
 |Hierarchical QML composition pattern|
-|Nodal logic ( generates "Actions" :copy/paste+fx ambiguities leverage)||
+|Nodal logic ( generates "Actions": copy/paste+fx ambiguities leverage)|
 |Pointer life cycle ( via config file,ex: handle ref_pointer/normalpointer)|
-|Multiple inheritance via delegation(seams to handle virtual inheritance)|
+|Multiple inheritance via delegation|
 
 |pmoc limitations:|
 -------------
-|No polymorphism in javascript|
+|polymorphism is simulated|
 |No macro parsing (work on copies if you're using in headers)|
 |Templates, operators are not handled|
-|Static and namespace functions not handled yet|
+
 
 #### PMOC win32 trial version + metalibs for MSVC2013 & Linux64 gcc4.9.2
 https://github.com/mp3butcher/osg4noob/blob/master/pmoc-beta-libbuiltQt5.5-msvc2013-trial.zip?raw=true
