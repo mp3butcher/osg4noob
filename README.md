@@ -2,7 +2,7 @@
 #### osg graphical editor
 This is a test case of using PMOC on OpenSceneGraph Libraries.
 
-In order to edit qmls at runtime (using qtcreator) setup environment variable PMOC_NOCACHE (to disable qml caching)
+In order to edit qmls at runtime (using qtcreator) you will have to disable cache (plugins managment menu)
 
 | Dependencies |
 -------------
@@ -10,6 +10,10 @@ In order to edit qmls at runtime (using qtcreator) setup environment variable PM
 | Qt5.5 |
 | Qscintilla |
 | MSVC2013 x64 or x86 |
+
+
+#### Windows built (x64 GL4 required):
+https://drive.google.com/file/d/0BxIH-jcsgYDdTkxlR1ppUFBXVmM/view?usp=sharing
 
 #### BEWARE:
 closed lib and dll (msvc2013 and linux gcc644.9.2) are in the lib directory:
