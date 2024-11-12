@@ -3,9 +3,9 @@
 This is a test case of using PMOC on OpenSceneGraph Libraries.
 In order to edit qmls at runtime (using qtcreator) you will have to disable cache (plugins managment menu)
 
-![Video sample](https://www.youtube.com/watch?v=A5LWZqLQYQ)
-![Video sample](https://www.youtube.com/watch?v=X_AGSXsGeuM)
-![Video sample](https://www.youtube.com/watch?v=fea8QLxoKX0)
+[<img src="https://i.ytimg.com/vi_webp/_gLGee3Q6GA/maxresdefault.webp" width="100"> ](https://www.youtube.com/watch?v=_gLGee3Q6GA)
+[<img src="https://i.ytimg.com/vi_webp/X_AGSXsGeuM/maxresdefault.webp" width="100"> ](https://www.youtube.com/watch?v=X_AGSXsGeuM)
+[<img src="https://i.ytimg.com/vi_webp/fea8QLxoKX0/maxresdefault.webp" width="100"> ](https://www.youtube.com/watch?v=fea8QLxoKX0)
 
 | Dependencies |
 -------------
